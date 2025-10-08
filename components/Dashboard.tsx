@@ -30,6 +30,20 @@ type AnnuaireRow = {
   longitude: string | number;
 };
 
+// Noms courts personnalisés pour les activités (à modifier selon vos besoins)
+const ACTIVITY_SHORT_NAMES: Record<string, string> = {
+  "2548348": "Intro IA",
+  "3515488": "Droites 2nde MNIST",
+  "3518185": "Stats MNIST",
+  "3534169": "BTS Meilleur Pixel",
+  "4388355": "Séance Python",
+  "5197770": "Geometry line MNIST",
+  "5862412": "Droite 1ere MNIST",
+  "5909323": "Challenge lycée",
+  "6659633": "Milieu Distance MNIST",
+  "6944347": "Stats Foetus",
+};
+
 // Carte Leaflet sans SSR
 const UsageMap = dynamic<UsageMapProps>(() => import("@/components/UsageMap"), { ssr: false });
 
@@ -53,6 +67,13 @@ const parseMaybeEpoch = (v: any): Date | null => {
   // ISO/date lisible
   const d = new Date(s);
   return isNaN(d.getTime()) ? null : d;
+};
+
+// Fonction pour obtenir le nom court d'une activité
+const getActivityName = (id: string | undefined, fullTitle?: string): string => {
+  if (!id) return "Activité inconnue";
+  // Priorité : nom court personnalisé > titre complet > ID
+  return ACTIVITY_SHORT_NAMES[id] || fullTitle || `Activité ${id}`;
 };
 
 const fmtMonth = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
@@ -100,6 +121,15 @@ export default function Dashboard() {
         console.log("[usages] Avec mathadata_id:", rows.filter(r => r.mathadata_id).length);
         console.log("[usages] Avec created:", rows.filter(r => r.created).length);
         console.log("[usages] Premier exemple:", rows[0]);
+        
+        // Liste des activités uniques avec leurs titres pour faciliter la configuration
+        const activities = new Map<string, string>();
+        rows.forEach(r => {
+          if (r.mathadata_id && r.mathadata_title && !activities.has(r.mathadata_id)) {
+            activities.set(r.mathadata_id, r.mathadata_title);
+          }
+        });
+        console.log("[usages] Activités trouvées:", Array.from(activities.entries()));
       },
       error: (err) => {
         console.error("[usages] Erreur de chargement:", err);
@@ -149,12 +179,13 @@ export default function Dashboard() {
     return result;
   }, [usageRows]);
 
-  // Mapping des IDs vers les titres d'activités
+  // Mapping des IDs vers les noms d'activités (courts si définis, sinon complets)
   const activityTitles = useMemo(() => {
     const map = new Map<string, string>();
     for (const r of rowsWithDate) {
-      if (r.mathadata_id && r.mathadata_title && !map.has(r.mathadata_id)) {
-        map.set(r.mathadata_id, r.mathadata_title);
+      if (r.mathadata_id && !map.has(r.mathadata_id)) {
+        const shortName = getActivityName(r.mathadata_id, r.mathadata_title);
+        map.set(r.mathadata_id, shortName);
       }
     }
     return map;
@@ -204,7 +235,9 @@ export default function Dashboard() {
   const usageByUai = useMemo(() => {
     const m = groupCount(filtered, r => (r.uai || "").trim() || null);
     const annMap = new Map(annuaire.map(a => [a.uai, a]));
-        return Array.from(m.entries()).map(([uai, nb]) => {
+        return Array.from(m.entries())
+        .filter(([uai]) => uai && uai !== "null") // Filtrer les UAI vides/null
+        .map(([uai, nb]) => {
         const meta = annMap.get(uai);
         return {
             uai, nb,
@@ -290,14 +323,13 @@ export default function Dashboard() {
 
         <div className="card">
           <h2>Usages totaux par activité</h2>
-          <div style={{height: 300}}>
+          <div style={{height: 420}}>
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={usageByActivity} layout="horizontal">
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="activity" angle={-45} textAnchor="end" height={120} interval={0} />
+                <XAxis dataKey="activity" angle={-50} textAnchor="end" height={140} interval={0} />
                 <YAxis allowDecimals={false} />
                 <Tooltip />
-                <Legend />
                 <Bar dataKey="count" name="Nombre d'usages" fill="#3b82f6" />
               </BarChart>
             </ResponsiveContainer>
