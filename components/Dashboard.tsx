@@ -21,6 +21,7 @@ type UsageRow = {
 type AnnuaireRow = {
   uai: string;
   nom: string;
+  type_etablissement?: string;
   commune: string;
   academie: string;
   departement?: string;
@@ -147,6 +148,7 @@ export default function Dashboard() {
             const rows = (res.data as any[]).map(r => ({
             uai: String(r.uai ?? "").trim(),
             nom: String(r.nom ?? ""),
+            type_etablissement: String(r.type_etablissement ?? ""),
             commune: String(r.commune ?? ""),
             academie: String(r.academie ?? ""),
             departement: String(r.departement ?? ""),
@@ -237,7 +239,7 @@ export default function Dashboard() {
   const usageByUai = useMemo(() => {
     const m = groupCount(filtered, r => (r.uai || "").trim() || null);
     return Array.from(m.entries())
-      .filter(([uai]) => uai && uai !== "null") // Filtrer les UAI vides/null
+      .filter(([uai]) => uai && uai.toLowerCase() !== "null") // Filtrer les UAI vides/null (insensible à la casse)
       .map(([uai, nb]) => {
         const meta = annMap.get(uai);
         return {
@@ -283,14 +285,35 @@ export default function Dashboard() {
   // Statistiques globales
   const globalStats = useMemo(() => {
     const totalUsages = rowsWithDate.length;
-    const totalLycees = usageByUai.length;
+    const totalEtablissements = usageByUai.length;
     
-    let lyceesPublic = 0;
-    let lyceesPrivate = 0;
-    for (const [uai] of groupCount(rowsWithDate, r => (r.uai || "").trim() || null)) {
-      const info = annMap.get(uai);
-      if (info?.secteur === "Public") lyceesPublic++;
-      else if (info?.secteur === "Privé") lyceesPrivate++;
+    let nombreLycees = 0;
+    let nombreColleges = 0;
+    let nombrePublics = 0;
+    let nombrePrives = 0;
+    let nombreInconnus = 0;
+    
+    for (const point of usageByUai) {
+      const info = annMap.get(point.uai);
+      
+      if (!info) {
+        nombreInconnus++;
+        continue;
+      }
+      
+      // Compter par type d'établissement
+      if (info.type_etablissement === "lycee") {
+        nombreLycees++;
+      } else if (info.type_etablissement === "college") {
+        nombreColleges++;
+      }
+      
+      // Compter par secteur
+      if (info.secteur === "Public") {
+        nombrePublics++;
+      } else if (info.secteur === "Privé") {
+        nombrePrives++;
+      }
     }
     
     // Usages par année scolaire (15 août → 14 août)
@@ -309,9 +332,12 @@ export default function Dashboard() {
     
     return {
       totalUsages,
-      totalLycees,
-      lyceesPublic,
-      lyceesPrivate,
+      totalEtablissements,
+      nombreLycees,
+      nombreColleges,
+      nombrePublics,
+      nombrePrives,
+      nombreInconnus,
       usages2023_2024,
       usages2024_2025,
       usages2025_2026,
@@ -482,16 +508,24 @@ export default function Dashboard() {
                 <td style={{textAlign:"right"}}>{globalStats.totalUsages.toLocaleString("fr-FR")}</td>
               </tr>
               <tr>
-                <td>Nombre total de lycées</td>
-                <td style={{textAlign:"right"}}>{globalStats.totalLycees.toLocaleString("fr-FR")}</td>
+                <td>Nombre de lycées</td>
+                <td style={{textAlign:"right"}}>{globalStats.nombreLycees.toLocaleString("fr-FR")}</td>
               </tr>
               <tr>
-                <td>Lycées publics</td>
-                <td style={{textAlign:"right"}}>{globalStats.lyceesPublic.toLocaleString("fr-FR")}</td>
+                <td>Nombre de collèges</td>
+                <td style={{textAlign:"right"}}>{globalStats.nombreColleges.toLocaleString("fr-FR")}</td>
               </tr>
               <tr>
-                <td>Lycées privés</td>
-                <td style={{textAlign:"right"}}>{globalStats.lyceesPrivate.toLocaleString("fr-FR")}</td>
+                <td>Établissements publics</td>
+                <td style={{textAlign:"right"}}>{globalStats.nombrePublics.toLocaleString("fr-FR")}</td>
+              </tr>
+              <tr>
+                <td>Établissements privés</td>
+                <td style={{textAlign:"right"}}>{globalStats.nombrePrives.toLocaleString("fr-FR")}</td>
+              </tr>
+              <tr>
+                <td>Établissements absents de l'annuaire</td>
+                <td style={{textAlign:"right"}}>{globalStats.nombreInconnus.toLocaleString("fr-FR")}</td>
               </tr>
               <tr>
                 <td>Usages 2023-2024</td>
