@@ -378,7 +378,7 @@ export default function Dashboard() {
 
   return (
     <div className="container">
-      <h1>Tableau de bord — Mathadata</h1>
+      <h1>Tableau de bord — Données d'usage Capytale</h1>
       <p className="muted">Filtrer par activité et explorer l'usage dans le temps et par lycée.</p>
 
       <div className="toolbar" style={{margin: "12px 0 6px"}}>
