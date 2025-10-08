@@ -25,14 +25,27 @@ h1 { color: #0f172a; font-size: 2rem; margin-bottom: 0.5rem; }
 h2 { color: #334155; font-size: 1.25rem; margin-bottom: 1rem; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* Mobile: réduire le padding */
+@media (max-width: 767px) {
+  .container { padding: 12px; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.1rem; }
+}
+
 .grid { display: grid; gap: 20px; }
-.grid-2 { grid-template-columns: 1fr 1fr; }
+.grid-2 { grid-template-columns: 1fr; }
 .card { 
   background: #ffffff; 
   border: 1px solid #e2e8f0; 
   border-radius: 12px; 
   padding: 20px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Desktop: grille 2x2 à partir de 768px */
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; }
 }
 .map { height: 520px; border-radius: 12px; overflow: hidden; }
 table { width: 100%; border-collapse: collapse; }
@@ -45,6 +58,13 @@ th {
 }
 tbody tr:hover { background: #f8fafc; }
 .toolbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+
+/* Mobile: toolbar en colonne */
+@media (max-width: 767px) {
+  .toolbar { flex-direction: column; align-items: stretch; }
+  .toolbar select, .toolbar input { width: 100%; }
+}
+
 select, input { 
   padding: 8px 12px; 
   border: 1px solid #cbd5e1; 
