@@ -9,6 +9,7 @@ export type Point = {
   nom_lycee?: string;
   ville?: string;
   academie?: string;
+  ips?: string | number;
   latitude: number;
   longitude: number;
 };
@@ -44,7 +45,8 @@ export default function UsageMap({ points }: UsageMapProps) {
             <div>
               <strong>{p.nom_lycee || p.uai}</strong><br />
               {p.ville} — {p.academie}<br />
-              Usages : {p.nb}
+              Usages : {p.nb}<br />
+              IPS : {p.ips != null ? p.ips : "—"}
             </div>
           </LeafletTooltip>
         </CircleMarker>

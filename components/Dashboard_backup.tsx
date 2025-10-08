@@ -232,25 +232,23 @@ export default function Dashboard() {
   }, [rowsWithDate, activityTitles]);
 
   // --- Agrégat par UAI & jointure annuaire ---
-  const annMap = useMemo(() => new Map(annuaire.map(a => [a.uai, a])), [annuaire]);
-  
   const usageByUai = useMemo(() => {
     const m = groupCount(filtered, r => (r.uai || "").trim() || null);
-    return Array.from(m.entries())
-      .filter(([uai]) => uai && uai !== "null") // Filtrer les UAI vides/null
-      .map(([uai, nb]) => {
+    const annMap = new Map(annuaire.map(a => [a.uai, a]));
+        return Array.from(m.entries())
+        .filter(([uai]) => uai && uai !== "null") // Filtrer les UAI vides/null
+        .map(([uai, nb]) => {
         const meta = annMap.get(uai);
         return {
-          uai, nb,
-          nom_lycee: meta?.nom ?? "",   // ← au lieu de meta?.nom_lycee
-          ville: meta?.commune ?? "",   // ← au lieu de meta?.ville
-          academie: meta?.academie ?? "",
-          ips: meta?.ips,
-          latitude: meta ? Number(meta.latitude) : NaN,
-          longitude: meta ? Number(meta.longitude) : NaN,
+            uai, nb,
+            nom_lycee: meta?.nom ?? "",   // ← au lieu de meta?.nom_lycee
+            ville: meta?.commune ?? "",   // ← au lieu de meta?.ville
+            academie: meta?.academie ?? "",
+            latitude: meta ? Number(meta.latitude) : NaN,
+            longitude: meta ? Number(meta.longitude) : NaN,
         };
-      });
-  }, [filtered, annMap]);
+        });
+  }, [filtered, annuaire]);
 
   // --- Tableau interactif ---
   const [q, setQ] = useState("");
@@ -274,86 +272,16 @@ export default function Dashboard() {
     return arr;
   }, [usageByUai, q, sortKey, sortAsc]);
 
-  // Liste d'activités pour empilé
+  // Liste d’activités pour empilé
   const activityKeys = useMemo(
     () => Array.from(new Set(rowsWithDate.map(r => r.mathadata_id || "NA"))).sort(),
     [rowsWithDate]
   );
 
-  // Statistiques globales
-  const globalStats = useMemo(() => {
-    const totalUsages = rowsWithDate.length;
-    const totalLycees = usageByUai.length;
-    
-    let lyceesPublic = 0;
-    let lyceesPrivate = 0;
-    for (const [uai] of groupCount(rowsWithDate, r => (r.uai || "").trim() || null)) {
-      const info = annMap.get(uai);
-      if (info?.secteur === "Public") lyceesPublic++;
-      else if (info?.secteur === "Privé") lyceesPrivate++;
-    }
-    
-    // Usages par année scolaire (15 août → 14 août)
-    const usages2023_2024 = rowsWithDate.filter(r => {
-      const d = r._date;
-      return d >= new Date(2023,7,15) && d < new Date(2024,7,15);
-    }).length;
-    const usages2024_2025 = rowsWithDate.filter(r => {
-      const d = r._date;
-      return d >= new Date(2024,7,15) && d < new Date(2025,7,15);
-    }).length;
-    const usages2025_2026 = rowsWithDate.filter(r => {
-      const d = r._date;
-      return d >= new Date(2025,7,15) && d < new Date(2026,7,15);
-    }).length;
-    
-    return {
-      totalUsages,
-      totalLycees,
-      lyceesPublic,
-      lyceesPrivate,
-      usages2023_2024,
-      usages2024_2025,
-      usages2025_2026,
-    };
-  }, [rowsWithDate, usageByUai, annMap]);
-
-  // Histogramme IPS des lycées avec au moins un usage
-  const ipsHistogram = useMemo(() => {
-    // Récupérer tous les IPS des lycées avec au moins un usage
-    const ipsValues: number[] = [];
-    for (const point of usageByUai) {
-      const ipsVal = point.ips;
-      if (ipsVal != null) {
-        const ipsNum = typeof ipsVal === 'string' ? parseFloat(ipsVal) : ipsVal;
-        if (!isNaN(ipsNum)) {
-          ipsValues.push(ipsNum);
-        }
-      }
-    }
-    
-    // Créer les bins de 10 en 10
-    const bins = new Map<string, number>();
-    for (const ips of ipsValues) {
-      const binStart = Math.floor(ips / 10) * 10;
-      const binLabel = `${binStart}-${binStart + 10}`;
-      bins.set(binLabel, (bins.get(binLabel) || 0) + 1);
-    }
-    
-    // Convertir en tableau trié
-    return Array.from(bins.entries())
-      .map(([range, count]) => ({ range, count }))
-      .sort((a, b) => {
-        const aStart = parseInt(a.range.split('-')[0]);
-        const bStart = parseInt(b.range.split('-')[0]);
-        return aStart - bStart;
-      });
-  }, [usageByUai]);
-
   return (
     <div className="container">
       <h1>Tableau de bord — Mathadata</h1>
-      <p className="muted">Filtrer par activité et explorer l'usage dans le temps et par lycée.</p>
+      <p className="muted">Filtrer par activité et explorer l’usage dans le temps et par lycée.</p>
 
       <div className="toolbar" style={{margin: "12px 0 6px"}}>
         <label>Activité :</label>
@@ -439,21 +367,21 @@ export default function Dashboard() {
             <table>
               <thead>
                 <tr>
+                  <th>UAI</th>
                   <th>Établissement</th>
                   <th>Ville</th>
                   <th>Académie</th>
                   <th style={{textAlign:"right"}}>Usages</th>
-                  <th style={{textAlign:"right"}}>IPS</th>
                 </tr>
               </thead>
               <tbody>
                 {tableData.map(r => (
                   <tr key={r.uai}>
+                    <td>{r.uai}</td>
                     <td>{r.nom_lycee || "—"}</td>
                     <td>{r.ville || "—"}</td>
                     <td>{r.academie || "—"}</td>
                     <td style={{textAlign:"right"}}>{r.nb}</td>
-                    <td style={{textAlign:"right"}}>{r.ips != null ? r.ips : "—"}</td>
                   </tr>
                 ))}
               </tbody>
@@ -462,66 +390,6 @@ export default function Dashboard() {
           <p className="muted" style={{marginTop:8}}>
             {tableData.length} lycées affichés.
           </p>
-        </div>
-      </div>
-
-      {/* Statistiques globales */}
-      <div className="grid grid-2" style={{marginTop: 16}}>
-        <div className="card">
-          <h2>Statistiques globales d'usage</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Indicateur</th>
-                <th style={{textAlign:"right"}}>Valeur</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Nombre total d'usages</td>
-                <td style={{textAlign:"right"}}>{globalStats.totalUsages.toLocaleString("fr-FR")}</td>
-              </tr>
-              <tr>
-                <td>Nombre total de lycées</td>
-                <td style={{textAlign:"right"}}>{globalStats.totalLycees.toLocaleString("fr-FR")}</td>
-              </tr>
-              <tr>
-                <td>Lycées publics</td>
-                <td style={{textAlign:"right"}}>{globalStats.lyceesPublic.toLocaleString("fr-FR")}</td>
-              </tr>
-              <tr>
-                <td>Lycées privés</td>
-                <td style={{textAlign:"right"}}>{globalStats.lyceesPrivate.toLocaleString("fr-FR")}</td>
-              </tr>
-              <tr>
-                <td>Usages 2023-2024</td>
-                <td style={{textAlign:"right"}}>{globalStats.usages2023_2024.toLocaleString("fr-FR")}</td>
-              </tr>
-              <tr>
-                <td>Usages 2024-2025</td>
-                <td style={{textAlign:"right"}}>{globalStats.usages2024_2025.toLocaleString("fr-FR")}</td>
-              </tr>
-              <tr>
-                <td>Usages 2025-2026</td>
-                <td style={{textAlign:"right"}}>{globalStats.usages2025_2026.toLocaleString("fr-FR")}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div className="card">
-          <h2>Distribution des IPS des lycées</h2>
-          <div style={{height: 320}}>
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={ipsHistogram}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="range" label={{ value: "IPS", position: "insideBottom", offset: -5 }} />
-                <YAxis allowDecimals={false} label={{ value: "Nombre de lycées", angle: -90, position: "insideLeft" }} />
-                <Tooltip />
-                <Bar dataKey="count" name="Lycées" fill="#10b981" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
         </div>
       </div>
     </div>
