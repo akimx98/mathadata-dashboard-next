@@ -16,6 +16,8 @@ type UsageRow = {
   mathadata_id?: string;   // g.parentNid (10 activités)
   mathadata_title?: string; // Nom de l'activité
   uai?: string;
+  student?: string;        // Hash anonyme de l'élève
+  teacher?: string;        // Hash anonyme de l'enseignant
 };
 
 type AnnuaireRow = {
@@ -115,7 +117,9 @@ export default function Dashboard() {
           activity_id: r.activity_id ?? (r as any).nid ?? undefined,
           mathadata_id: r.mathadata_id ?? (r as any).parentNid ?? undefined,
           mathadata_title: r.mathadata_title ?? (r as any).mathadata_title ?? undefined,
-          uai: r.uai?.toString().trim()
+          uai: r.uai?.toString().trim(),
+          student: r.student ?? undefined,
+          teacher: r.teacher ?? undefined
         }));
         setUsageRows(rows);
         console.log("[usages] Lignes chargées:", rows.length);
@@ -236,6 +240,38 @@ export default function Dashboard() {
   // --- Agrégat par UAI & jointure annuaire ---
   const annMap = useMemo(() => new Map(annuaire.map(a => [a.uai, a])), [annuaire]);
   
+  // VERSION GLOBALE : Pour les stats globales et distribution IPS
+  const usageByUaiGlobal = useMemo(() => {
+    const m = groupCount(rowsWithDate, r => (r.uai || "").trim() || null);
+    return Array.from(m.entries())
+      .filter(([uai]) => uai && uai.toLowerCase() !== "null") // Filtrer les UAI vides/null (insensible à la casse)
+      .map(([uai, nb]) => {
+        const meta = annMap.get(uai);
+        
+        // Collecter les activités uniques pour cet UAI (sur toutes les données)
+        const activitiesSet = new Set<string>();
+        rowsWithDate.forEach(r => {
+          if ((r.uai || "").trim() === uai && r.mathadata_id) {
+            const activityName = getActivityName(r.mathadata_id, r.mathadata_title);
+            activitiesSet.add(activityName);
+          }
+        });
+        const activitesList = Array.from(activitiesSet).sort();
+        
+        return {
+          uai, nb,
+          nom_lycee: meta?.nom ?? "",
+          ville: meta?.commune ?? "",
+          academie: meta?.academie ?? "",
+          ips: meta?.ips,
+          activites: activitesList,
+          latitude: meta ? Number(meta.latitude) : NaN,
+          longitude: meta ? Number(meta.longitude) : NaN,
+        };
+      });
+  }, [rowsWithDate, annMap]);
+  
+  // VERSION FILTRÉE : Pour la carte et le tableau (selon activité sélectionnée)
   const usageByUai = useMemo(() => {
     const m = groupCount(filtered, r => (r.uai || "").trim() || null);
     return Array.from(m.entries())
@@ -243,7 +279,7 @@ export default function Dashboard() {
       .map(([uai, nb]) => {
         const meta = annMap.get(uai);
         
-        // Collecter les activités uniques pour cet UAI
+        // Collecter les activités uniques pour cet UAI (selon filtre)
         const activitiesSet = new Set<string>();
         filtered.forEach(r => {
           if ((r.uai || "").trim() === uai && r.mathadata_id) {
@@ -313,15 +349,17 @@ export default function Dashboard() {
   // Statistiques globales
   const globalStats = useMemo(() => {
     const totalUsages = rowsWithDate.length;
-    const totalEtablissements = usageByUai.length;
+    const totalEtablissements = usageByUaiGlobal.length;
     
     let nombreLycees = 0;
     let nombreColleges = 0;
-    let nombrePublics = 0;
-    let nombrePrives = 0;
     let nombreInconnus = 0;
     
-    for (const point of usageByUai) {
+    // Pour compter les profs uniques par secteur
+    const profsPublics = new Set<string>();
+    const profsPrives = new Set<string>();
+    
+    for (const point of usageByUaiGlobal) {
       const info = annMap.get(point.uai);
       
       if (!info) {
@@ -335,14 +373,27 @@ export default function Dashboard() {
       } else if (info.type_etablissement === "college") {
         nombreColleges++;
       }
+    }
+    
+    // Compter les profs uniques par secteur
+    for (const r of rowsWithDate) {
+      if (!r.teacher) continue;
       
-      // Compter par secteur
-      if (info.secteur === "Public") {
-        nombrePublics++;
+      const uai = (r.uai || "").trim().toUpperCase();
+      const info = annMap.get(uai);
+      
+      // Si UAI est NULL ou absent de l'annuaire → privé
+      if (!info || uai === "NULL") {
+        profsPrives.add(r.teacher);
+      } else if (info.secteur === "Public") {
+        profsPublics.add(r.teacher);
       } else if (info.secteur === "Privé") {
-        nombrePrives++;
+        profsPrives.add(r.teacher);
       }
     }
+    
+    const nombreProfsPublics = profsPublics.size;
+    const nombreProfsPrives = profsPrives.size;
     
     // Usages par année scolaire (15 août → 14 août)
     const usages2023_2024 = rowsWithDate.filter(r => {
@@ -358,25 +409,30 @@ export default function Dashboard() {
       return d >= new Date(2025,7,15) && d < new Date(2026,7,15);
     }).length;
     
+    // Calcul des élèves uniques
+    const uniqueStudents = new Set(rowsWithDate.map(r => r.student).filter(Boolean));
+    const totalElevesUniques = uniqueStudents.size;
+    
     return {
       totalUsages,
       totalEtablissements,
+      totalElevesUniques,
       nombreLycees,
       nombreColleges,
-      nombrePublics,
-      nombrePrives,
+      nombreProfsPublics,
+      nombreProfsPrives,
       nombreInconnus,
       usages2023_2024,
       usages2024_2025,
       usages2025_2026,
     };
-  }, [rowsWithDate, usageByUai, annMap]);
+  }, [rowsWithDate, usageByUaiGlobal, annMap]);
 
-  // Histogramme IPS des lycées avec au moins un usage
+  // Histogramme IPS des lycées avec au moins un usage (GLOBAL)
   const ipsHistogram = useMemo(() => {
     // Récupérer tous les IPS des lycées avec au moins un usage
     const ipsValues: number[] = [];
-    for (const point of usageByUai) {
+    for (const point of usageByUaiGlobal) {
       const ipsVal = point.ips;
       if (ipsVal != null) {
         const ipsNum = typeof ipsVal === 'string' ? parseFloat(ipsVal) : ipsVal;
@@ -402,7 +458,38 @@ export default function Dashboard() {
         const bStart = parseInt(b.range.split('-')[0]);
         return aStart - bStart;
       });
-  }, [usageByUai]);
+  }, [usageByUaiGlobal]);
+
+  // Histogramme du nombre d'activités différentes par élève
+  const activitiesPerStudent = useMemo(() => {
+    // Map: student -> Set d'activités uniques
+    const studentActivities = new Map<string, Set<string>>();
+    
+    for (const r of rowsWithDate) {
+      if (!r.student || !r.mathadata_id) continue;
+      
+      if (!studentActivities.has(r.student)) {
+        studentActivities.set(r.student, new Set());
+      }
+      studentActivities.get(r.student)!.add(r.mathadata_id);
+    }
+    
+    // Compter combien d'élèves ont fait 1, 2, 3... activités
+    const distribution = new Map<number, number>();
+    for (const activities of studentActivities.values()) {
+      const count = activities.size;
+      distribution.set(count, (distribution.get(count) || 0) + 1);
+    }
+    
+    // Convertir en tableau trié
+    return Array.from(distribution.entries())
+      .map(([nbActivites, nbEleves]) => ({
+        nbActivites: `${nbActivites} activité${nbActivites > 1 ? 's' : ''}`,
+        nbEleves,
+        nbActivitesNum: nbActivites  // Pour le tri
+      }))
+      .sort((a, b) => a.nbActivitesNum - b.nbActivitesNum);
+  }, [rowsWithDate]);
 
   // Usages par académie
   const usageByAcademie = useMemo(() => {
@@ -624,6 +711,10 @@ export default function Dashboard() {
                 <td style={{textAlign:"right"}}>{globalStats.totalUsages.toLocaleString("fr-FR")}</td>
               </tr>
               <tr>
+                <td><strong>Nombre d'élèves uniques</strong></td>
+                <td style={{textAlign:"right"}}><strong>{globalStats.totalElevesUniques.toLocaleString("fr-FR")}</strong></td>
+              </tr>
+              <tr>
                 <td>Nombre de lycées</td>
                 <td style={{textAlign:"right"}}>{globalStats.nombreLycees.toLocaleString("fr-FR")}</td>
               </tr>
@@ -632,16 +723,12 @@ export default function Dashboard() {
                 <td style={{textAlign:"right"}}>{globalStats.nombreColleges.toLocaleString("fr-FR")}</td>
               </tr>
               <tr>
-                <td>Établissements publics</td>
-                <td style={{textAlign:"right"}}>{globalStats.nombrePublics.toLocaleString("fr-FR")}</td>
+                <td>Profs Publics</td>
+                <td style={{textAlign:"right"}}>{globalStats.nombreProfsPublics.toLocaleString("fr-FR")}</td>
               </tr>
               <tr>
-                <td>Établissements privés</td>
-                <td style={{textAlign:"right"}}>{globalStats.nombrePrives.toLocaleString("fr-FR")}</td>
-              </tr>
-              <tr>
-                <td>Établissements absents de l'annuaire</td>
-                <td style={{textAlign:"right"}}>{globalStats.nombreInconnus.toLocaleString("fr-FR")}</td>
+                <td>Profs Privés</td>
+                <td style={{textAlign:"right"}}>{globalStats.nombreProfsPrives.toLocaleString("fr-FR")}</td>
               </tr>
               <tr>
                 <td>Usages 2023-2024</td>
@@ -672,6 +759,25 @@ export default function Dashboard() {
               </BarChart>
             </ResponsiveContainer>
           </div>
+        </div>
+      </div>
+
+      {/* Nouvelle section: Engagement des élèves */}
+      <div className="card" style={{marginTop: 16}}>
+        <h2>Nombre d'activités différentes utilisées par élève</h2>
+        <p className="muted" style={{marginTop: 0, marginBottom: 16}}>
+          Distribution du nombre d'activités MathAData différentes testées par chaque élève
+        </p>
+        <div style={{height: 300}}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={activitiesPerStudent}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="nbActivites" />
+              <YAxis allowDecimals={false} label={{ value: "Nombre d'élèves", angle: -90, position: "insideLeft" }} />
+              <Tooltip />
+              <Bar dataKey="nbEleves" name="Élèves" fill="#8b5cf6" />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
       </div>
 
