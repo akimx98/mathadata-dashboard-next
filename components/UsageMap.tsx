@@ -16,6 +16,7 @@ export type Point = {
 
 export interface UsageMapProps {
   points: Point[];
+  onPointClick?: (uai: string) => void;
 }
 
 function scaleRadius(count: number, min: number, max: number) {
@@ -24,7 +25,7 @@ function scaleRadius(count: number, min: number, max: number) {
   return 6 + t * 18; // 6..24 px
 }
 
-export default function UsageMap({ points }: UsageMapProps) {
+export default function UsageMap({ points, onPointClick }: UsageMapProps) {
   const valid = points.filter(p => Number.isFinite(p.latitude) && Number.isFinite(p.longitude));
   const max = valid.reduce((m, p) => Math.max(m, p.nb), 0);
 
@@ -40,6 +41,13 @@ export default function UsageMap({ points }: UsageMapProps) {
           center={[p.latitude, p.longitude]}
           radius={scaleRadius(p.nb, 0, max)}
           pathOptions={{ fillOpacity: 0.5 }}
+          eventHandlers={{
+            click: () => {
+              if (onPointClick) {
+                onPointClick(p.uai);
+              }
+            }
+          }}
         >
           <LeafletTooltip>
             <div>

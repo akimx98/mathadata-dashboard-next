@@ -41,6 +41,7 @@ h2 { color: #334155; font-size: 1.25rem; margin-bottom: 1rem; }
   border-radius: 12px; 
   padding: 20px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Empêche le contenu de dépasser */
 }
 
 /* Desktop: grille 2x2 à partir de 768px */
@@ -48,6 +49,11 @@ h2 { color: #334155; font-size: 1.25rem; margin-bottom: 1rem; }
   .grid-2 { grid-template-columns: 1fr 1fr; }
 }
 .map { height: 520px; border-radius: 12px; overflow: hidden; }
+
+/* Mobile: carte plus petite */
+@media (max-width: 767px) {
+  .map { height: 350px; }
+}
 table { width: 100%; border-collapse: collapse; }
 th, td { padding: 10px 12px; border-bottom: 1px solid #e2e8f0; }
 th { 

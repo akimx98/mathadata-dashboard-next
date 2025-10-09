@@ -93,7 +93,7 @@ export default function Dashboard() {
   const [annuaire, setAnnuaire] = useState<AnnuaireRow[]>([]);
   const [activityFilter, setActivityFilter] = useState<string>("__ALL__");
   const [search, setSearch] = useState("");
-  const [sortKey, setSortKey] = useState<"nb" | "nom_lycee" | "ville" | "academie">("nb");
+  const [sortKey, setSortKey] = useState<"nb" | "nom_lycee" | "ville" | "academie" | "ips">("nb");
   const [sortAsc, setSortAsc] = useState(false);
 
   // Chargement CSV
@@ -242,12 +242,24 @@ export default function Dashboard() {
       .filter(([uai]) => uai && uai.toLowerCase() !== "null") // Filtrer les UAI vides/null (insensible à la casse)
       .map(([uai, nb]) => {
         const meta = annMap.get(uai);
+        
+        // Collecter les activités uniques pour cet UAI
+        const activitiesSet = new Set<string>();
+        filtered.forEach(r => {
+          if ((r.uai || "").trim() === uai && r.mathadata_id) {
+            const activityName = getActivityName(r.mathadata_id, r.mathadata_title);
+            activitiesSet.add(activityName);
+          }
+        });
+        const activitesList = Array.from(activitiesSet).sort();
+        
         return {
           uai, nb,
           nom_lycee: meta?.nom ?? "",   // ← au lieu de meta?.nom_lycee
           ville: meta?.commune ?? "",   // ← au lieu de meta?.ville
           academie: meta?.academie ?? "",
           ips: meta?.ips,
+          activites: activitesList,
           latitude: meta ? Number(meta.latitude) : NaN,
           longitude: meta ? Number(meta.longitude) : NaN,
         };
@@ -256,6 +268,9 @@ export default function Dashboard() {
 
   // --- Tableau interactif ---
   const [q, setQ] = useState("");
+  const [selectedUai, setSelectedUai] = useState<string | null>(null);
+  const [selectedAcademie, setSelectedAcademie] = useState<string | null>(null);
+  
   const tableData = useMemo(() => {
     const query = (q || "").trim().toLowerCase();
     let arr = usageByUai.filter(r =>
@@ -267,8 +282,21 @@ export default function Dashboard() {
     );
     arr.sort((a, b) => {
       const k = sortKey;
-      const va = k === "nb" ? a.nb : (a[k] || "");
-      const vb = k === "nb" ? b.nb : (b[k] || "");
+      let va: number | string;
+      let vb: number | string;
+      
+      if (k === "nb") {
+        va = a.nb;
+        vb = b.nb;
+      } else if (k === "ips") {
+        // Pour l'IPS, convertir en nombre ou utiliser -Infinity si absent
+        va = a.ips != null ? (typeof a.ips === 'string' ? parseFloat(a.ips) : a.ips) : -Infinity;
+        vb = b.ips != null ? (typeof b.ips === 'string' ? parseFloat(b.ips) : b.ips) : -Infinity;
+      } else {
+        va = (a[k] || "");
+        vb = (b[k] || "");
+      }
+      
       if (va < vb) return sortAsc ? -1 : 1;
       if (va > vb) return sortAsc ? 1 : -1;
       return 0;
@@ -376,6 +404,82 @@ export default function Dashboard() {
       });
   }, [usageByUai]);
 
+  // Usages par académie
+  const usageByAcademie = useMemo(() => {
+    const map = new Map<string, number>();
+    for (const r of rowsWithDate) {
+      const info = annMap.get((r.uai || "").trim());
+      const academie = info?.academie || "Inconnue";
+      map.set(academie, (map.get(academie) || 0) + 1);
+    }
+    return Array.from(map.entries())
+      .map(([academie, count]) => ({ academie, count }))
+      .sort((a, b) => b.count - a.count); // Tri décroissant par nombre d'usages
+  }, [rowsWithDate, annMap]);
+
+  // Détails des activités pour un établissement sélectionné
+  const getActivityDetailsForUai = (uai: string) => {
+    const activitiesMap = new Map<string, { count: number; lastDate: Date | null }>();
+    
+    rowsWithDate.forEach(r => {
+      if ((r.uai || "").trim() === uai && r.mathadata_id) {
+        const activityName = getActivityName(r.mathadata_id, r.mathadata_title);
+        const existing = activitiesMap.get(activityName);
+        const currentDate = r._date;
+        
+        if (existing) {
+          existing.count += 1;
+          if (!existing.lastDate || (currentDate && currentDate > existing.lastDate)) {
+            existing.lastDate = currentDate;
+          }
+        } else {
+          activitiesMap.set(activityName, { count: 1, lastDate: currentDate });
+        }
+      }
+    });
+    
+    return Array.from(activitiesMap.entries())
+      .map(([activity, data]) => ({
+        activity,
+        count: data.count,
+        lastDate: data.lastDate
+      }))
+      .sort((a, b) => b.count - a.count);
+  };
+
+  // Évolution mensuelle pour une académie spécifique
+  const getMonthlyDataForAcademie = (academie: string) => {
+    const filteredByAcademie = rowsWithDate.filter(r => {
+      const info = annMap.get((r.uai || "").trim());
+      return (info?.academie || "Inconnue") === academie;
+    });
+    
+    const m = groupCount(filteredByAcademie, r => fmtMonth(r._date));
+    
+    // Trouver les dates min/max globales (toutes académies)
+    if (rowsWithDate.length === 0) return [];
+    
+    const allDates = rowsWithDate.map(r => r._date);
+    const minDate = new Date(Math.min(...allDates.map(d => d.getTime())));
+    const maxDate = new Date(Math.max(...allDates.map(d => d.getTime())));
+    
+    // Générer tous les mois entre min et max
+    const allMonths: string[] = [];
+    const current = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
+    const end = new Date(maxDate.getFullYear(), maxDate.getMonth(), 1);
+    
+    while (current <= end) {
+      allMonths.push(fmtMonth(current));
+      current.setMonth(current.getMonth() + 1);
+    }
+    
+    // Créer le résultat avec 0 pour les mois sans données
+    return allMonths.map(month => ({
+      month,
+      count: m.get(month) || 0
+    }));
+  };
+
   return (
     <div className="container">
       <h1>Tableau de bord — Données d'usage Capytale</h1>
@@ -440,7 +544,7 @@ export default function Dashboard() {
         <div className="card">
           <h2>Carte des usages (cercles ∝ nb)</h2>
           <div className="map">
-            <UsageMap points={usageByUai} />
+            <UsageMap points={usageByUai} onPointClick={(uai) => setSelectedUai(uai)} />
           </div>
         </div>
 
@@ -458,24 +562,36 @@ export default function Dashboard() {
               <option value="nom_lycee">Trier par lycée</option>
               <option value="ville">Trier par ville</option>
               <option value="academie">Trier par académie</option>
+              <option value="ips">Trier par IPS</option>
             </select>
             <button onClick={()=>setSortAsc(s=>!s)}>{sortAsc ? "↑" : "↓"}</button>
           </div>
-          <div style={{maxHeight: 420, overflow: "auto"}}>
-            <table>
+          <div style={{maxHeight: 420, overflowY: "auto", overflowX: "auto"}}>
+            <table style={{width: "100%"}}>
               <thead>
                 <tr>
-                  <th>Établissement</th>
-                  <th>Ville</th>
-                  <th>Académie</th>
-                  <th style={{textAlign:"right"}}>Usages</th>
-                  <th style={{textAlign:"right"}}>IPS</th>
+                  <th style={{minWidth: "150px"}}>Établissement</th>
+                  <th style={{minWidth: "100px"}}>Ville</th>
+                  <th style={{minWidth: "100px"}}>Académie</th>
+                  <th style={{textAlign:"right", minWidth: "80px"}}>Usages</th>
+                  <th style={{textAlign:"right", minWidth: "60px"}}>IPS</th>
                 </tr>
               </thead>
               <tbody>
                 {tableData.map(r => (
                   <tr key={r.uai}>
-                    <td>{r.nom_lycee || "—"}</td>
+                    <td>
+                      <span 
+                        style={{
+                          color: "#3b82f6", 
+                          cursor: "pointer", 
+                          textDecoration: "underline"
+                        }}
+                        onClick={() => setSelectedUai(r.uai)}
+                      >
+                        {r.nom_lycee || "—"}
+                      </span>
+                    </td>
                     <td>{r.ville || "—"}</td>
                     <td>{r.academie || "—"}</td>
                     <td style={{textAlign:"right"}}>{r.nb}</td>
@@ -558,6 +674,200 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* Usages par académie */}
+      <div className="card" style={{marginTop: 16}}>
+        <h2>Usages par académie</h2>
+        <div style={{height: 400}}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={usageByAcademie} layout="horizontal">
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="academie" angle={-45} textAnchor="end" height={120} interval={0} />
+              <YAxis allowDecimals={false} />
+              <Tooltip />
+              <Bar 
+                dataKey="count" 
+                name="Nombre d'usages" 
+                fill="#f59e0b"
+                onClick={(data: any) => {
+                  if (data && data.academie) {
+                    setSelectedAcademie(data.academie);
+                  }
+                }}
+                cursor="pointer"
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+
+      {/* Modal détails activités par établissement */}
+      {selectedUai && (() => {
+        const etablissement = usageByUai.find(e => e.uai === selectedUai);
+        const activityDetails = getActivityDetailsForUai(selectedUai);
+        
+        return (
+          <div 
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 1000,
+              padding: "20px"
+            }}
+            onClick={() => setSelectedUai(null)}
+          >
+            <div 
+              className="card"
+              style={{
+                maxWidth: "700px",
+                width: "100%",
+                maxHeight: "80vh",
+                overflow: "auto"
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "16px"}}>
+                <div>
+                  <h2 style={{marginBottom: "4px"}}>{etablissement?.nom_lycee || "Établissement"}</h2>
+                  <p className="muted" style={{marginTop: 0}}>
+                    {etablissement?.ville && `${etablissement.ville} • `}
+                    {etablissement?.academie && `${etablissement.academie} • `}
+                    UAI: {selectedUai}
+                  </p>
+                </div>
+                <button 
+                  onClick={() => setSelectedUai(null)}
+                  style={{
+                    fontSize: "1.5rem",
+                    padding: "4px 12px",
+                    lineHeight: 1
+                  }}
+                >
+                  ×
+                </button>
+              </div>
+              
+              <h3 style={{fontSize: "1rem", marginBottom: "12px", color: "#475569"}}>
+                Détail des activités utilisées ({activityDetails.length})
+              </h3>
+              
+              <table style={{width: "100%"}}>
+                <thead>
+                  <tr>
+                    <th>Activité</th>
+                    <th style={{textAlign:"right"}}>Usages</th>
+                    <th style={{textAlign:"right"}}>Dernier usage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {activityDetails.map(detail => (
+                    <tr key={detail.activity}>
+                      <td>{detail.activity}</td>
+                      <td style={{textAlign:"right"}}>{detail.count}</td>
+                      <td style={{textAlign:"right"}}>
+                        {detail.lastDate 
+                          ? detail.lastDate.toLocaleDateString("fr-FR", {
+                              year: "numeric",
+                              month: "short",
+                              day: "numeric"
+                            })
+                          : "—"
+                        }
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* Modal évolution temporelle par académie */}
+      {selectedAcademie && (() => {
+        const monthlyData = getMonthlyDataForAcademie(selectedAcademie);
+        const totalUsagesAcademie = monthlyData.reduce((sum, d) => sum + d.count, 0);
+        
+        return (
+          <div 
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 1000,
+              padding: "20px"
+            }}
+            onClick={() => setSelectedAcademie(null)}
+          >
+            <div 
+              className="card"
+              style={{
+                maxWidth: "900px",
+                width: "100%",
+                maxHeight: "80vh",
+                overflow: "auto"
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "16px"}}>
+                <div>
+                  <h2 style={{marginBottom: "4px"}}>Académie de {selectedAcademie}</h2>
+                  <p className="muted" style={{marginTop: 0}}>
+                    Total des usages : {totalUsagesAcademie.toLocaleString("fr-FR")}
+                  </p>
+                </div>
+                <button 
+                  onClick={() => setSelectedAcademie(null)}
+                  style={{
+                    fontSize: "1.5rem",
+                    padding: "4px 12px",
+                    lineHeight: 1
+                  }}
+                >
+                  ×
+                </button>
+              </div>
+              
+              <h3 style={{fontSize: "1rem", marginBottom: "12px", color: "#475569"}}>
+                Évolution mensuelle des usages
+              </h3>
+              
+              <div style={{height: 400, marginTop: "20px"}}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={monthlyData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="month" angle={-45} textAnchor="end" height={80} />
+                    <YAxis allowDecimals={false} />
+                    <Tooltip />
+                    <Legend />
+                    <Line 
+                      type="monotone" 
+                      dataKey="count" 
+                      name="Usages mensuels" 
+                      stroke="#f59e0b"
+                      strokeWidth={2}
+                      dot={{ fill: "#f59e0b", r: 4 }}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }
