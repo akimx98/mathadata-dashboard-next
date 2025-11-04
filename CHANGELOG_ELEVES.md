@@ -68,7 +68,7 @@ D'après l'analyse des données :
 - Pas d'impact significatif sur le temps de chargement
 - Tout reste calculé en mémoire côté client
 
-## 🚀 Prochaines évolutions possibles
+##  Prochaines évolutions possibles
 
 1. **Filtre par nombre d'activités** :
    - Permettre de filtrer les élèves ayant fait 1, 2, ou 3+ activités

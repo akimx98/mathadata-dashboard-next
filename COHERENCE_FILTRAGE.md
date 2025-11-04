@@ -161,7 +161,7 @@ const usageByUaiFiltered = useMemo(() => {
 
 ---
 
-## 🚀 **SOLUTION RAPIDE (Quick Fix)**
+##  **SOLUTION RAPIDE (Quick Fix)**
 
 Ajouter un **indicateur visuel** pour clarifier ce qui est filtré :
 

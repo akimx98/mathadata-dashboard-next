@@ -15,9 +15,13 @@ type UsageRow = {
   activity_id?: string;    // g.nid si présent
   mathadata_id?: string;   // g.parentNid (10 activités)
   mathadata_title?: string; // Nom de l'activité
-  uai?: string;
-  student?: string;        // Hash anonyme de l'élève
+  student?: string;        // Hash anonyme de l'élève/utilisateur
+  Role?: string;           // "student" ou "teacher" - distingue les vrais élèves des profs qui testent
+  uai_el?: string;         // UAI de l'établissement de l'élève
   teacher?: string;        // Hash anonyme de l'enseignant
+  uai_teach?: string;      // UAI de l'établissement du prof
+  // Ancienne colonne pour compatibilité temporaire
+  uai?: string;
 };
 
 type AnnuaireRow = {
@@ -95,13 +99,13 @@ export default function Dashboard() {
   const [annuaire, setAnnuaire] = useState<AnnuaireRow[]>([]);
   const [activityFilter, setActivityFilter] = useState<string>("__ALL__");
   const [search, setSearch] = useState("");
-  const [sortKey, setSortKey] = useState<"nb" | "nom_lycee" | "ville" | "academie" | "ips">("nb");
+  const [sortKey, setSortKey] = useState<"nb" | "nom_lycee" | "ville" | "academie" | "ips" | "nbSeances" | "nbEleves" | "nbProfsEnseignant" | "nbProfsTestant">("nbSeances");
   const [sortAsc, setSortAsc] = useState(false);
 
   // Chargement CSV
   useEffect(() => {
     console.log("[DEBUG] Début chargement des CSVs...");
-    Papa.parse<UsageRow>("/data/mathadata_2025-10-08.csv", {
+    Papa.parse<UsageRow>("/data/mathadata-V2.csv", {
       download: true, 
       header: true, 
       skipEmptyLines: true, 
@@ -117,14 +121,22 @@ export default function Dashboard() {
           activity_id: r.activity_id ?? (r as any).nid ?? undefined,
           mathadata_id: r.mathadata_id ?? (r as any).parentNid ?? undefined,
           mathadata_title: r.mathadata_title ?? (r as any).mathadata_title ?? undefined,
-          uai: r.uai?.toString().trim(),
           student: r.student ?? undefined,
-          teacher: r.teacher ?? undefined
+          Role: r.Role ?? undefined,
+          uai_el: r.uai_el?.toString().trim(),
+          teacher: r.teacher ?? undefined,
+          uai_teach: r.uai_teach?.toString().trim(),
+          // Pour compatibilité, on garde uai_el comme UAI par défaut
+          uai: r.uai_el?.toString().trim()
         }));
         setUsageRows(rows);
         console.log("[usages] Lignes chargées:", rows.length);
         console.log("[usages] Avec mathadata_id:", rows.filter(r => r.mathadata_id).length);
         console.log("[usages] Avec created:", rows.filter(r => r.created).length);
+        console.log("[usages] Role distribution:", 
+          "students:", rows.filter(r => r.Role === "student").length,
+          "teachers:", rows.filter(r => r.Role === "teacher").length
+        );
         console.log("[usages] Premier exemple:", rows[0]);
         
         // Liste des activités uniques avec leurs titres pour faciliter la configuration
@@ -241,8 +253,9 @@ export default function Dashboard() {
   const annMap = useMemo(() => new Map(annuaire.map(a => [a.uai, a])), [annuaire]);
   
   // VERSION GLOBALE : Pour les stats globales et distribution IPS
+  // Utilise uai_el (établissement de l'élève) pour localiser les usages
   const usageByUaiGlobal = useMemo(() => {
-    const m = groupCount(rowsWithDate, r => (r.uai || "").trim() || null);
+    const m = groupCount(rowsWithDate, r => (r.uai_el || r.uai || "").trim() || null);
     return Array.from(m.entries())
       .filter(([uai]) => uai && uai.toLowerCase() !== "null") // Filtrer les UAI vides/null (insensible à la casse)
       .map(([uai, nb]) => {
@@ -251,7 +264,8 @@ export default function Dashboard() {
         // Collecter les activités uniques pour cet UAI (sur toutes les données)
         const activitiesSet = new Set<string>();
         rowsWithDate.forEach(r => {
-          if ((r.uai || "").trim() === uai && r.mathadata_id) {
+          const rowUai = (r.uai_el || r.uai || "").trim();
+          if (rowUai === uai && r.mathadata_id) {
             const activityName = getActivityName(r.mathadata_id, r.mathadata_title);
             activitiesSet.add(activityName);
           }
@@ -271,23 +285,129 @@ export default function Dashboard() {
       });
   }, [rowsWithDate, annMap]);
   
+  // Calculer les statistiques détaillées pour un établissement (utilisé pour le tableau principal)
+  const getEtablissementStats = (uai: string) => {
+    // 1. Récupérer toutes les sessions pour cet UAI (élèves uniquement)
+    const studentSessions = rowsWithDate
+      .filter(r => {
+        const rowUai = (r.uai_el || r.uai || "").trim();
+        return rowUai === uai && r.Role === "student" && r.mathadata_id && r.teacher && r.student && r._date;
+      })
+      .map(r => ({
+        student: r.student!,
+        teacher: r.teacher!,
+        mathadata_id: r.mathadata_id!,
+        created: r._date!.getTime(),
+      }));
+    
+    // 2. Compter les élèves uniques
+    const uniqueStudents = new Set(studentSessions.map(s => s.student));
+    const nbEleves = uniqueStudents.size;
+    
+    // 3. Compter les séances (clustering temporel par prof+activité)
+    type GroupKey = string;
+    type SessionType = typeof studentSessions[number];
+    const groups = new Map<GroupKey, SessionType[]>();
+    
+    studentSessions.forEach(session => {
+      const key = `${session.teacher}|${session.mathadata_id}`;
+      if (!groups.has(key)) {
+        groups.set(key, []);
+      }
+      groups.get(key)!.push(session);
+    });
+    
+    let nbSeances = 0;
+    const TWO_HOURS_MS = 2 * 60 * 60 * 1000;
+    
+    groups.forEach(sessions => {
+      const sorted = sessions.sort((a, b) => a.created - b.created);
+      let currentClusterStart = 0;
+      
+      sorted.forEach(session => {
+        if (currentClusterStart === 0 || session.created - currentClusterStart > TWO_HOURS_MS) {
+          nbSeances++;
+          currentClusterStart = session.created;
+        }
+      });
+    });
+    
+    // 4. Compter les profs ayant enseigné (prof dont uai_teach = uai avec des élèves)
+    const profsEnseignant = new Set<string>();
+    rowsWithDate.forEach(r => {
+      const uaiTeach = (r.uai_teach || "").trim();
+      const uaiEl = (r.uai_el || "").trim();
+      if (uaiTeach === uai && uaiEl === uai && r.Role === "student" && r.teacher) {
+        profsEnseignant.add(r.teacher);
+      }
+    });
+    
+    // 5. Compter les profs testant uniquement (prof avec uai_teach = uai mais sans élèves de ce uai)
+    const profsTestant = new Set<string>();
+    const profsTeachingActivities = new Set<string>(); // "prof|activity"
+    
+    // D'abord, collecter les profs qui ont donné aux élèves
+    rowsWithDate.forEach(r => {
+      const uaiTeach = (r.uai_teach || "").trim();
+      const uaiEl = (r.uai_el || "").trim();
+      if (uaiTeach === uai && uaiEl === uai && r.Role === "student" && r.teacher && r.mathadata_id) {
+        profsTeachingActivities.add(`${r.teacher}|${r.mathadata_id}`);
+      }
+    });
+    
+    // Ensuite, trouver les profs qui testent sans donner
+    rowsWithDate.forEach(r => {
+      const uaiTeach = (r.uai_teach || "").trim();
+      if (uaiTeach === uai && r.Role === "teacher" && r.teacher && r.mathadata_id) {
+        const key = `${r.teacher}|${r.mathadata_id}`;
+        if (!profsTeachingActivities.has(key)) {
+          profsTestant.add(r.teacher);
+        }
+      }
+    });
+    
+    return {
+      nbSeances,
+      nbEleves,
+      nbProfsEnseignant: profsEnseignant.size,
+      nbProfsTestant: profsTestant.size,
+    };
+  };
+  
   // VERSION FILTRÉE : Pour la carte et le tableau (selon activité sélectionnée)
+  // Utilise uai_el (établissement de l'élève) pour localiser les usages
   const usageByUai = useMemo(() => {
-    const m = groupCount(filtered, r => (r.uai || "").trim() || null);
+    const m = groupCount(filtered, r => (r.uai_el || r.uai || "").trim() || null);
     return Array.from(m.entries())
       .filter(([uai]) => uai && uai.toLowerCase() !== "null") // Filtrer les UAI vides/null (insensible à la casse)
       .map(([uai, nb]) => {
         const meta = annMap.get(uai);
         
+        // Compter les usages profs vs élèves pour cet UAI
+        let teacherUsages = 0;
+        let studentUsages = 0;
+        
+        filtered.forEach(r => {
+          const rowUai = (r.uai_el || r.uai || "").trim();
+          if (rowUai === uai) {
+            if (r.Role === "teacher") teacherUsages++;
+            else if (r.Role === "student") studentUsages++;
+          }
+        });
+        
         // Collecter les activités uniques pour cet UAI (selon filtre)
         const activitiesSet = new Set<string>();
         filtered.forEach(r => {
-          if ((r.uai || "").trim() === uai && r.mathadata_id) {
+          const rowUai = (r.uai_el || r.uai || "").trim();
+          if (rowUai === uai && r.mathadata_id) {
             const activityName = getActivityName(r.mathadata_id, r.mathadata_title);
             activitiesSet.add(activityName);
           }
         });
         const activitesList = Array.from(activitiesSet).sort();
+        
+        // Calculer les statistiques détaillées
+        const stats = getEtablissementStats(uai);
         
         return {
           uai, nb,
@@ -298,6 +418,14 @@ export default function Dashboard() {
           activites: activitesList,
           latitude: meta ? Number(meta.latitude) : NaN,
           longitude: meta ? Number(meta.longitude) : NaN,
+          teacherUsages,
+          studentUsages,
+          hasStudents: studentUsages > 0,
+          // Nouvelles statistiques
+          nbSeances: stats.nbSeances,
+          nbEleves: stats.nbEleves,
+          nbProfsEnseignant: stats.nbProfsEnseignant,
+          nbProfsTestant: stats.nbProfsTestant,
         };
       });
   }, [filtered, annMap]);
@@ -306,6 +434,7 @@ export default function Dashboard() {
   const [q, setQ] = useState("");
   const [selectedUai, setSelectedUai] = useState<string | null>(null);
   const [selectedAcademie, setSelectedAcademie] = useState<string | null>(null);
+  const [selectedSeance, setSelectedSeance] = useState<number | null>(null); // index de la séance dans classActivityDetails
   
   const tableData = useMemo(() => {
     const query = (q || "").trim().toLowerCase();
@@ -324,6 +453,18 @@ export default function Dashboard() {
       if (k === "nb") {
         va = a.nb;
         vb = b.nb;
+      } else if (k === "nbSeances") {
+        va = a.nbSeances || 0;
+        vb = b.nbSeances || 0;
+      } else if (k === "nbEleves") {
+        va = a.nbEleves || 0;
+        vb = b.nbEleves || 0;
+      } else if (k === "nbProfsEnseignant") {
+        va = a.nbProfsEnseignant || 0;
+        vb = b.nbProfsEnseignant || 0;
+      } else if (k === "nbProfsTestant") {
+        va = a.nbProfsTestant || 0;
+        vb = b.nbProfsTestant || 0;
       } else if (k === "ips") {
         // Pour l'IPS, convertir en nombre ou utiliser -Infinity si absent
         va = a.ips != null ? (typeof a.ips === 'string' ? parseFloat(a.ips) : a.ips) : -Infinity;
@@ -379,7 +520,8 @@ export default function Dashboard() {
     for (const r of rowsWithDate) {
       if (!r.teacher) continue;
       
-      const uai = (r.uai || "").trim().toUpperCase();
+      // Utiliser uai_teach (UAI de l'établissement du prof)
+      const uai = (r.uai_teach || "").trim().toUpperCase();
       const info = annMap.get(uai);
       
       // Si UAI est NULL ou absent de l'annuaire → privé
@@ -409,8 +551,13 @@ export default function Dashboard() {
       return d >= new Date(2025,7,15) && d < new Date(2026,7,15);
     }).length;
     
-    // Calcul des élèves uniques
-    const uniqueStudents = new Set(rowsWithDate.map(r => r.student).filter(Boolean));
+    // Calcul des élèves uniques (exclure les profs qui testent)
+    const uniqueStudents = new Set(
+      rowsWithDate
+        .filter(r => r.Role === "student") // Ne compter que les vrais élèves
+        .map(r => r.student)
+        .filter(Boolean)
+    );
     const totalElevesUniques = uniqueStudents.size;
     
     return {
@@ -460,13 +607,14 @@ export default function Dashboard() {
       });
   }, [usageByUaiGlobal]);
 
-  // Histogramme du nombre d'activités différentes par élève
+  // Histogramme du nombre d'activités différentes par élève (VRAIS ÉLÈVES uniquement)
   const activitiesPerStudent = useMemo(() => {
     // Map: student -> Set d'activités uniques
     const studentActivities = new Map<string, Set<string>>();
     
     for (const r of rowsWithDate) {
-      if (!r.student || !r.mathadata_id) continue;
+      // Ne compter que les vrais élèves (Role === "student")
+      if (r.Role !== "student" || !r.student || !r.mathadata_id) continue;
       
       if (!studentActivities.has(r.student)) {
         studentActivities.set(r.student, new Set());
@@ -491,11 +639,12 @@ export default function Dashboard() {
       .sort((a, b) => a.nbActivitesNum - b.nbActivitesNum);
   }, [rowsWithDate]);
 
-  // Usages par académie
+  // Usages par académie (basé sur l'établissement de l'élève)
   const usageByAcademie = useMemo(() => {
     const map = new Map<string, number>();
     for (const r of rowsWithDate) {
-      const info = annMap.get((r.uai || "").trim());
+      const uai = (r.uai_el || r.uai || "").trim();
+      const info = annMap.get(uai);
       const academie = info?.academie || "Inconnue";
       map.set(academie, (map.get(academie) || 0) + 1);
     }
@@ -506,21 +655,34 @@ export default function Dashboard() {
 
   // Détails des activités pour un établissement sélectionné
   const getActivityDetailsForUai = (uai: string) => {
-    const activitiesMap = new Map<string, { count: number; lastDate: Date | null }>();
+    const activitiesMap = new Map<string, { 
+      studentCount: number; 
+      teacherCount: number; 
+      lastDate: Date | null 
+    }>();
     
     rowsWithDate.forEach(r => {
-      if ((r.uai || "").trim() === uai && r.mathadata_id) {
+      const rowUai = (r.uai_el || r.uai || "").trim();
+      if (rowUai === uai && r.mathadata_id) {
         const activityName = getActivityName(r.mathadata_id, r.mathadata_title);
         const existing = activitiesMap.get(activityName);
         const currentDate = r._date;
         
         if (existing) {
-          existing.count += 1;
+          if (r.Role === "student") {
+            existing.studentCount += 1;
+          } else if (r.Role === "teacher") {
+            existing.teacherCount += 1;
+          }
           if (!existing.lastDate || (currentDate && currentDate > existing.lastDate)) {
             existing.lastDate = currentDate;
           }
         } else {
-          activitiesMap.set(activityName, { count: 1, lastDate: currentDate });
+          activitiesMap.set(activityName, { 
+            studentCount: r.Role === "student" ? 1 : 0,
+            teacherCount: r.Role === "teacher" ? 1 : 0,
+            lastDate: currentDate 
+          });
         }
       }
     });
@@ -528,16 +690,240 @@ export default function Dashboard() {
     return Array.from(activitiesMap.entries())
       .map(([activity, data]) => ({
         activity,
-        count: data.count,
+        studentCount: data.studentCount,
+        teacherCount: data.teacherCount,
+        totalCount: data.studentCount + data.teacherCount,
         lastDate: data.lastDate
       }))
-      .sort((a, b) => b.count - a.count);
+      .sort((a, b) => b.totalCount - a.totalCount);
+  };
+
+  // Nouvelle fonction : usages par classe-activité GROUPÉS PAR PROFESSEUR
+  // Une classe = groupe d'élèves avec même prof + même activité + sessions créées le même jour à < 2h d'intervalle
+  const getClassActivityDetailsForUai = (uai: string) => {
+    // 1. Récupérer toutes les sessions élèves pour cet UAI
+    const studentSessions = rowsWithDate
+      .filter(r => {
+        const rowUai = (r.uai_el || r.uai || "").trim();
+        return rowUai === uai && r.Role === "student" && r.mathadata_id && r.teacher && r.student && r._date;
+      })
+      .map(r => ({
+        student: r.student!,
+        teacher: r.teacher!,
+        mathadata_id: r.mathadata_id!,
+        mathadata_title: r.mathadata_title || "",
+        created: r._date!.getTime(), // timestamp en ms
+        changed: r.changed ? parseMaybeEpoch(r.changed)?.getTime() || r._date!.getTime() : r._date!.getTime(),
+      }));
+    
+    // 2. Grouper par (teacher, mathadata_id)
+    type GroupKey = string; // "teacher|mathadata_id"
+    type SessionType = typeof studentSessions[number];
+    const groups = new Map<GroupKey, SessionType[]>();
+    
+    studentSessions.forEach(session => {
+      const key = `${session.teacher}|${session.mathadata_id}`;
+      if (!groups.has(key)) {
+        groups.set(key, []);
+      }
+      groups.get(key)!.push(session);
+    });
+    
+    // 3. Pour chaque groupe, détecter les classes (fenêtre temporelle de 2h)
+    type SeanceType = {
+      activityName: string;
+      studentCount: number;
+      creationDate: string;
+      avgWorkTimeMinutes: number;
+      sessions: SessionType[];
+      teacher: string;
+    };
+    
+    const allSeances: SeanceType[] = [];
+    
+    groups.forEach((sessions, key) => {
+      const teacher = sessions[0].teacher;
+      
+      // Trier par date de création
+      const sorted = sessions.sort((a, b) => a.created - b.created);
+      
+      // Algorithme de clustering temporel : fenêtre de 2h (7200000 ms)
+      const TWO_HOURS_MS = 2 * 60 * 60 * 1000;
+      const clusters: SessionType[][] = [];
+      
+      let currentCluster: SessionType[] = [];
+      let clusterStartTime = 0;
+      
+      sorted.forEach(session => {
+        if (currentCluster.length === 0) {
+          // Première session du cluster
+          currentCluster.push(session);
+          clusterStartTime = session.created;
+        } else {
+          const timeSinceClusterStart = session.created - clusterStartTime;
+          if (timeSinceClusterStart <= TWO_HOURS_MS) {
+            // Dans la fenêtre de 2h
+            currentCluster.push(session);
+          } else {
+            // Nouvelle classe détectée
+            clusters.push([...currentCluster]);
+            currentCluster = [session];
+            clusterStartTime = session.created;
+          }
+        }
+      });
+      
+      // Ajouter le dernier cluster
+      if (currentCluster.length > 0) {
+        clusters.push(currentCluster);
+      }
+      
+      // 4. Pour chaque cluster, créer une entrée "séance"
+      clusters.forEach(cluster => {
+        const activityName = getActivityName(cluster[0].mathadata_id, cluster[0].mathadata_title);
+        const studentCount = cluster.length;
+        const creationDate = new Date(cluster[0].created).toLocaleDateString('fr-FR');
+        
+        // Calculer le temps moyen de travail (changed - created) en minutes
+        const workTimes = cluster.map(s => (s.changed - s.created) / 1000 / 60); // en minutes
+        const avgWorkTimeMinutes = workTimes.reduce((sum, t) => sum + t, 0) / workTimes.length;
+        
+        allSeances.push({
+          activityName,
+          studentCount,
+          creationDate,
+          avgWorkTimeMinutes: Math.round(avgWorkTimeMinutes),
+          sessions: cluster,
+          teacher,
+        });
+      });
+    });
+    
+    // 5. Grouper les séances par professeur
+    const seancesByProf = new Map<string, SeanceType[]>();
+    allSeances.forEach(seance => {
+      if (!seancesByProf.has(seance.teacher)) {
+        seancesByProf.set(seance.teacher, []);
+      }
+      seancesByProf.get(seance.teacher)!.push(seance);
+    });
+    
+    // 6. Trier les séances de chaque prof par date décroissante
+    seancesByProf.forEach(seances => {
+      seances.sort((a, b) => {
+        const dateA = new Date(a.creationDate.split('/').reverse().join('-'));
+        const dateB = new Date(b.creationDate.split('/').reverse().join('-'));
+        return dateB.getTime() - dateA.getTime();
+      });
+    });
+    
+    // 7. Convertir en tableau et trier par nombre total de séances (prof le plus actif d'abord)
+    return Array.from(seancesByProf.entries())
+      .map(([teacher, seances]) => ({ teacher, seances }))
+      .sort((a, b) => b.seances.length - a.seances.length);
+  };
+
+  // Analyse détaillée d'une séance (classe)
+  type SessionType = {
+    student: string;
+    teacher: string;
+    mathadata_id: string;
+    mathadata_title: string;
+    created: number;
+    changed: number;
+  };
+  
+  const analyzeSeance = (sessions: SessionType[]) => {
+    if (sessions.length === 0) return null;
+    
+    const TWO_HOURS_MS = 2 * 60 * 60 * 1000;
+    
+    // 1. Élèves ayant continué après 2h
+    const continueApres2h = sessions.filter(s => (s.changed - s.created) > TWO_HOURS_MS).length;
+    
+    // 2. Élèves travaillant à domicile (soir après 18h ou weekend)
+    const workingAtHome = sessions.filter(s => {
+      const changedDate = new Date(s.changed);
+      const createdDate = new Date(s.created);
+      
+      // Si changed est le même jour que created et avant 18h, pas à domicile
+      if (changedDate.toDateString() === createdDate.toDateString()) {
+        return changedDate.getHours() >= 18; // Après 18h le même jour
+      }
+      
+      // Si changé un autre jour
+      const dayOfWeek = changedDate.getDay(); // 0=dimanche, 6=samedi
+      const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+      const isEvening = changedDate.getHours() >= 18 || changedDate.getHours() < 8;
+      
+      return isWeekend || isEvening;
+    }).length;
+    
+    // 3. Détecter une 2ème séance en classe
+    // = plusieurs élèves modifiant leurs sessions dans une fenêtre de 2h
+    // et au moins 2h après la séance initiale
+    
+    // Récupérer toutes les timestamps de modification (après la séance initiale)
+    const seanceInitialEnd = Math.max(...sessions.map(s => s.created)) + TWO_HOURS_MS;
+    const modificationsApres = sessions
+      .filter(s => s.changed > seanceInitialEnd)
+      .map(s => ({ student: s.student, timestamp: s.changed }))
+      .sort((a, b) => a.timestamp - b.timestamp);
+    
+    // Chercher des groupes de modifications dans une fenêtre de 2h
+    let deuxiemeSeance = false;
+    let deuxiemeSeanceSize = 0;
+    let deuxiemeSeanceDate: Date | null = null;
+    
+    if (modificationsApres.length >= 2) {
+      // Algorithme de clustering sur les modifications
+      let currentGroup: typeof modificationsApres = [];
+      let groupStartTime = 0;
+      
+      modificationsApres.forEach(modif => {
+        if (currentGroup.length === 0) {
+          currentGroup.push(modif);
+          groupStartTime = modif.timestamp;
+        } else {
+          const timeSinceGroupStart = modif.timestamp - groupStartTime;
+          if (timeSinceGroupStart <= TWO_HOURS_MS) {
+            currentGroup.push(modif);
+          } else {
+            // Groupe terminé, vérifier s'il constitue une 2ème séance
+            if (currentGroup.length >= 2 && currentGroup.length > deuxiemeSeanceSize) {
+              deuxiemeSeance = true;
+              deuxiemeSeanceSize = currentGroup.length;
+              deuxiemeSeanceDate = new Date(currentGroup[0].timestamp);
+            }
+            currentGroup = [modif];
+            groupStartTime = modif.timestamp;
+          }
+        }
+      });
+      
+      // Vérifier le dernier groupe
+      if (currentGroup.length >= 2 && currentGroup.length > deuxiemeSeanceSize) {
+        deuxiemeSeance = true;
+        deuxiemeSeanceSize = currentGroup.length;
+        deuxiemeSeanceDate = new Date(currentGroup[0].timestamp);
+      }
+    }
+    
+    return {
+      totalStudents: sessions.length,
+      continueApres2h,
+      workingAtHome,
+      deuxiemeSeance,
+      deuxiemeSeanceSize,
+      deuxiemeSeanceDate,
+    };
   };
 
   // Évolution mensuelle pour une académie spécifique
   const getMonthlyDataForAcademie = (academie: string) => {
     const filteredByAcademie = rowsWithDate.filter(r => {
-      const info = annMap.get((r.uai || "").trim());
+      const uai = (r.uai_el || r.uai || "").trim();
+      const info = annMap.get(uai);
       return (info?.academie || "Inconnue") === academie;
     });
     
@@ -630,6 +1016,26 @@ export default function Dashboard() {
       <div className="grid grid-2" style={{marginTop: 16}}>
         <div className="card">
           <h2>Carte des usages (cercles ∝ nb)</h2>
+          <div style={{marginBottom: 12, display: "flex", gap: 16, fontSize: "0.875rem"}}>
+            <div style={{display: "flex", alignItems: "center", gap: 6}}>
+              <div style={{
+                width: 12, 
+                height: 12, 
+                borderRadius: "50%", 
+                backgroundColor: "#10b981"
+              }}></div>
+              <span>Usages élèves</span>
+            </div>
+            <div style={{display: "flex", alignItems: "center", gap: 6}}>
+              <div style={{
+                width: 12, 
+                height: 12, 
+                borderRadius: "50%", 
+                backgroundColor: "#ef4444"
+              }}></div>
+              <span>Tests profs uniquement</span>
+            </div>
+          </div>
           <div className="map">
             <UsageMap points={usageByUai} onPointClick={(uai) => setSelectedUai(uai)} />
           </div>
@@ -645,7 +1051,10 @@ export default function Dashboard() {
               style={{flex:1}}
             />
             <select value={sortKey} onChange={(e)=>setSortKey(e.target.value as any)}>
-              <option value="nb">Trier par usages</option>
+              <option value="nbSeances">Trier par séances</option>
+              <option value="nbEleves">Trier par élèves</option>
+              <option value="nbProfsEnseignant">Trier par profs enseignants</option>
+              <option value="nbProfsTestant">Trier par profs testant</option>
               <option value="nom_lycee">Trier par lycée</option>
               <option value="ville">Trier par ville</option>
               <option value="academie">Trier par académie</option>
@@ -660,7 +1069,10 @@ export default function Dashboard() {
                   <th style={{minWidth: "150px"}}>Établissement</th>
                   <th style={{minWidth: "100px"}}>Ville</th>
                   <th style={{minWidth: "100px"}}>Académie</th>
-                  <th style={{textAlign:"right", minWidth: "80px"}}>Usages</th>
+                  <th style={{textAlign:"center", minWidth: "80px"}}>Séances</th>
+                  <th style={{textAlign:"center", minWidth: "80px"}}>Élèves</th>
+                  <th style={{textAlign:"center", minWidth: "80px"}}>Profs ens.</th>
+                  <th style={{textAlign:"center", minWidth: "80px"}}>Profs test</th>
                   <th style={{textAlign:"right", minWidth: "60px"}}>IPS</th>
                 </tr>
               </thead>
@@ -670,9 +1082,10 @@ export default function Dashboard() {
                     <td>
                       <span 
                         style={{
-                          color: "#3b82f6", 
+                          color: r.hasStudents ? "#10b981" : "#ef4444",
                           cursor: "pointer", 
-                          textDecoration: "underline"
+                          textDecoration: "underline",
+                          fontWeight: r.hasStudents ? "600" : "normal"
                         }}
                         onClick={() => setSelectedUai(r.uai)}
                       >
@@ -681,7 +1094,16 @@ export default function Dashboard() {
                     </td>
                     <td>{r.ville || "—"}</td>
                     <td>{r.academie || "—"}</td>
-                    <td style={{textAlign:"right"}}>{r.nb}</td>
+                    <td style={{textAlign:"center"}}>{r.nbSeances}</td>
+                    <td style={{textAlign:"center", color: "#10b981", fontWeight: r.nbEleves > 0 ? "600" : "normal"}}>
+                      {r.nbEleves}
+                    </td>
+                    <td style={{textAlign:"center", color: "#3b82f6", fontWeight: r.nbProfsEnseignant > 0 ? "600" : "normal"}}>
+                      {r.nbProfsEnseignant}
+                    </td>
+                    <td style={{textAlign:"center", color: "#ef4444", fontWeight: r.nbProfsTestant > 0 ? "600" : "normal"}}>
+                      {r.nbProfsTestant}
+                    </td>
                     <td style={{textAlign:"right"}}>{r.ips != null ? r.ips : "—"}</td>
                   </tr>
                 ))}
@@ -811,6 +1233,7 @@ export default function Dashboard() {
       {selectedUai && (() => {
         const etablissement = usageByUai.find(e => e.uai === selectedUai);
         const activityDetails = getActivityDetailsForUai(selectedUai);
+        const classActivityDetails = getClassActivityDetailsForUai(selectedUai);
         
         return (
           <div 
@@ -832,7 +1255,7 @@ export default function Dashboard() {
             <div 
               className="card"
               style={{
-                maxWidth: "700px",
+                maxWidth: "800px",
                 width: "100%",
                 maxHeight: "80vh",
                 overflow: "auto"
@@ -860,15 +1283,106 @@ export default function Dashboard() {
                 </button>
               </div>
               
+              {/* Nouveau tableau : Usages par classe-activité GROUPÉS PAR PROFESSEUR */}
+              <h3 style={{fontSize: "1rem", marginBottom: "12px", color: "#475569", marginTop: "24px"}}>
+                📚 Séances par professeur ({classActivityDetails.reduce((sum, prof) => sum + prof.seances.length, 0)} séances, {classActivityDetails.length} {classActivityDetails.length > 1 ? 'profs' : 'prof'})
+              </h3>
+              <p className="muted" style={{marginTop: 0, marginBottom: "12px", fontSize: "0.875rem"}}>
+                Une séance = groupe d'élèves avec même prof + même activité + sessions créées le même jour à moins de 2h d'intervalle
+              </p>
+              
+              {classActivityDetails.length > 0 ? (
+                <div style={{marginBottom: "32px"}}>
+                  {classActivityDetails.map((profData, profIdx) => {
+                    // Calculer l'index global de chaque séance pour le click
+                    const seanceStartIndex = classActivityDetails
+                      .slice(0, profIdx)
+                      .reduce((sum, p) => sum + p.seances.length, 0);
+                    
+                    return (
+                      <div key={profIdx} style={{marginBottom: "24px"}}>
+                        {/* En-tête professeur */}
+                        <div style={{
+                          backgroundColor: "#f8fafc",
+                          padding: "12px 16px",
+                          borderRadius: "8px 8px 0 0",
+                          borderBottom: "2px solid #e2e8f0",
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center"
+                        }}>
+                          <div>
+                            <strong style={{color: "#334155"}}>Prof {String.fromCharCode(65 + profIdx)}</strong>
+                            <span style={{color: "#64748b", marginLeft: "12px", fontSize: "0.875rem"}}>
+                              {profData.seances.length} séance{profData.seances.length > 1 ? 's' : ''}
+                            </span>
+                          </div>
+                          <span style={{fontSize: "0.75rem", color: "#94a3b8"}}>
+                            {profData.teacher.substring(0, 8)}...
+                          </span>
+                        </div>
+                        
+                        {/* Tableau des séances de ce prof */}
+                        <table style={{width: "100%", marginBottom: 0}}>
+                          <thead style={{backgroundColor: "#f8fafc"}}>
+                            <tr>
+                              <th style={{textAlign: "left", padding: "8px 16px"}}>Activité</th>
+                              <th style={{textAlign:"center", padding: "8px"}}>Nb élèves</th>
+                              <th style={{textAlign:"center", padding: "8px"}}>Date</th>
+                              <th style={{textAlign:"right", padding: "8px 16px"}}>Temps moyen</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {profData.seances.map((seance, seanceIdx) => {
+                              const globalIdx = seanceStartIndex + seanceIdx;
+                              return (
+                                <tr 
+                                  key={seanceIdx}
+                                  onClick={() => setSelectedSeance(globalIdx)}
+                                  style={{
+                                    cursor: "pointer",
+                                    transition: "background-color 0.2s",
+                                    borderBottom: seanceIdx < profData.seances.length - 1 ? "1px solid #f1f5f9" : "none"
+                                  }}
+                                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#f1f5f9"}
+                                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
+                                >
+                                  <td style={{padding: "8px 16px"}}>{seance.activityName}</td>
+                                  <td style={{textAlign:"center", fontWeight: "600", padding: "8px"}}>{seance.studentCount}</td>
+                                  <td style={{textAlign:"center", padding: "8px"}}>{seance.creationDate}</td>
+                                  <td style={{textAlign:"right", padding: "8px 16px"}}>
+                                    {seance.avgWorkTimeMinutes < 60 
+                                      ? `${seance.avgWorkTimeMinutes} min`
+                                      : seance.avgWorkTimeMinutes < 1440
+                                        ? `${Math.floor(seance.avgWorkTimeMinutes / 60)}h${seance.avgWorkTimeMinutes % 60 > 0 ? (seance.avgWorkTimeMinutes % 60).toString().padStart(2, '0') : ''}`
+                                        : `${Math.floor(seance.avgWorkTimeMinutes / 1440)}j ${Math.floor((seance.avgWorkTimeMinutes % 1440) / 60)}h`
+                                    }
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <p className="muted" style={{marginBottom: "32px"}}>Aucun usage élève détecté pour cet établissement.</p>
+              )}
+              
+              {/* Tableau existant : total des usages par activité */}
               <h3 style={{fontSize: "1rem", marginBottom: "12px", color: "#475569"}}>
-                Détail des activités utilisées ({activityDetails.length})
+                📊 Total des activités utilisées ({activityDetails.length})
               </h3>
               
               <table style={{width: "100%"}}>
                 <thead>
                   <tr>
                     <th>Activité</th>
-                    <th style={{textAlign:"right"}}>Usages</th>
+                    <th style={{textAlign:"right", color: "#10b981"}}>Élèves</th>
+                    <th style={{textAlign:"right", color: "#ef4444"}}>Profs</th>
+                    <th style={{textAlign:"right"}}>Total</th>
                     <th style={{textAlign:"right"}}>Dernier usage</th>
                   </tr>
                 </thead>
@@ -876,7 +1390,15 @@ export default function Dashboard() {
                   {activityDetails.map(detail => (
                     <tr key={detail.activity}>
                       <td>{detail.activity}</td>
-                      <td style={{textAlign:"right"}}>{detail.count}</td>
+                      <td style={{textAlign:"right", color: "#10b981", fontWeight: detail.studentCount > 0 ? "600" : "normal"}}>
+                        {detail.studentCount}
+                      </td>
+                      <td style={{textAlign:"right", color: "#ef4444", fontWeight: detail.teacherCount > 0 ? "600" : "normal"}}>
+                        {detail.teacherCount}
+                      </td>
+                      <td style={{textAlign:"right", fontWeight: "600"}}>
+                        {detail.totalCount}
+                      </td>
                       <td style={{textAlign:"right"}}>
                         {detail.lastDate 
                           ? detail.lastDate.toLocaleDateString("fr-FR", {
@@ -891,6 +1413,187 @@ export default function Dashboard() {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* Modal détails d'une séance */}
+      {selectedUai && selectedSeance !== null && (() => {
+        const etablissement = usageByUai.find(e => e.uai === selectedUai);
+        const classActivityDetails = getClassActivityDetailsForUai(selectedUai);
+        
+        // Convertir l'index global en vraie séance
+        let currentIndex = 0;
+        let foundSeance = null;
+        for (const profData of classActivityDetails) {
+          for (const seance of profData.seances) {
+            if (currentIndex === selectedSeance) {
+              foundSeance = seance;
+              break;
+            }
+            currentIndex++;
+          }
+          if (foundSeance) break;
+        }
+        
+        if (!foundSeance) return null;
+        
+        const analysis = analyzeSeance(foundSeance.sessions);
+        if (!analysis) return null;
+        
+        return (
+          <div 
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.7)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 1100,
+              padding: "20px"
+            }}
+            onClick={() => setSelectedSeance(null)}
+          >
+            <div 
+              className="card"
+              style={{
+                maxWidth: "700px",
+                width: "100%",
+                maxHeight: "80vh",
+                overflow: "auto"
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "16px"}}>
+                <div>
+                  <h2 style={{marginBottom: "4px"}}>Détails de la séance</h2>
+                  <p className="muted" style={{marginTop: 0}}>
+                    {foundSeance.activityName} • {foundSeance.creationDate} • {etablissement?.nom_lycee}
+                  </p>
+                </div>
+                <button 
+                  onClick={() => setSelectedSeance(null)}
+                  style={{
+                    fontSize: "1.5rem",
+                    padding: "4px 12px",
+                    lineHeight: 1
+                  }}
+                >
+                  ×
+                </button>
+              </div>
+              
+              <div style={{display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "24px"}}>
+                <div className="card" style={{padding: "16px", backgroundColor: "#f8fafc"}}>
+                  <div style={{fontSize: "2rem", fontWeight: "700", color: "#0ea5e9"}}>
+                    {analysis.totalStudents}
+                  </div>
+                  <div style={{fontSize: "0.875rem", color: "#64748b", marginTop: "4px"}}>
+                    Élèves total
+                  </div>
+                </div>
+                
+                <div className="card" style={{padding: "16px", backgroundColor: "#f8fafc"}}>
+                  <div style={{fontSize: "2rem", fontWeight: "700", color: "#8b5cf6"}}>
+                    {foundSeance.avgWorkTimeMinutes < 60 
+                      ? `${foundSeance.avgWorkTimeMinutes} min`
+                      : foundSeance.avgWorkTimeMinutes < 1440
+                        ? `${Math.floor(foundSeance.avgWorkTimeMinutes / 60)}h${foundSeance.avgWorkTimeMinutes % 60 > 0 ? (foundSeance.avgWorkTimeMinutes % 60).toString().padStart(2, '0') : ''}`
+                        : `${Math.floor(foundSeance.avgWorkTimeMinutes / 1440)}j ${Math.floor((foundSeance.avgWorkTimeMinutes % 1440) / 60)}h`
+                    }
+                  </div>
+                  <div style={{fontSize: "0.875rem", color: "#64748b", marginTop: "4px"}}>
+                    Temps moyen de travail
+                  </div>
+                </div>
+              </div>
+              
+              <h3 style={{fontSize: "1rem", marginBottom: "16px", color: "#475569"}}>
+                📊 Continuité du travail
+              </h3>
+              
+              <div style={{marginBottom: "24px"}}>
+                <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px"}}>
+                  <span>Élèves ayant continué après la séance ({'>'}2h)</span>
+                  <strong style={{fontSize: "1.25rem", color: "#10b981"}}>
+                    {analysis.continueApres2h}
+                  </strong>
+                </div>
+                <div style={{
+                  height: "8px",
+                  backgroundColor: "#e2e8f0",
+                  borderRadius: "4px",
+                  overflow: "hidden",
+                  marginBottom: "16px"
+                }}>
+                  <div style={{
+                    width: `${(analysis.continueApres2h / analysis.totalStudents) * 100}%`,
+                    height: "100%",
+                    backgroundColor: "#10b981",
+                    transition: "width 0.3s"
+                  }} />
+                </div>
+                
+                <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px"}}>
+                  <span>Élèves travaillant à domicile (soir/weekend)</span>
+                  <strong style={{fontSize: "1.25rem", color: "#f59e0b"}}>
+                    {analysis.workingAtHome}
+                  </strong>
+                </div>
+                <div style={{
+                  height: "8px",
+                  backgroundColor: "#e2e8f0",
+                  borderRadius: "4px",
+                  overflow: "hidden"
+                }}>
+                  <div style={{
+                    width: `${(analysis.workingAtHome / analysis.totalStudents) * 100}%`,
+                    height: "100%",
+                    backgroundColor: "#f59e0b",
+                    transition: "width 0.3s"
+                  }} />
+                </div>
+              </div>
+              
+              <h3 style={{fontSize: "1rem", marginBottom: "16px", color: "#475569"}}>
+                🎓 Détection d'une 2ème séance en classe
+              </h3>
+              
+              {analysis.deuxiemeSeance ? (
+                <div className="card" style={{padding: "16px", backgroundColor: "#dbeafe", border: "1px solid #3b82f6"}}>
+                  <div style={{display: "flex", alignItems: "center", gap: "12px"}}>
+                    <div style={{fontSize: "2rem"}}>✅</div>
+                    <div>
+                      <div style={{fontWeight: "600", color: "#1e40af", marginBottom: "4px"}}>
+                        2ème séance détectée !
+                      </div>
+                      <div style={{fontSize: "0.875rem", color: "#1e40af"}}>
+                        {analysis.deuxiemeSeanceSize} élèves ont retravaillé ensemble
+                        {analysis.deuxiemeSeanceDate && ` le ${analysis.deuxiemeSeanceDate.toLocaleDateString('fr-FR')}`}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="card" style={{padding: "16px", backgroundColor: "#f1f5f9"}}>
+                  <div style={{display: "flex", alignItems: "center", gap: "12px"}}>
+                    <div style={{fontSize: "2rem"}}>ℹ️</div>
+                    <div>
+                      <div style={{fontWeight: "600", color: "#64748b", marginBottom: "4px"}}>
+                        Pas de 2ème séance détectée
+                      </div>
+                      <div style={{fontSize: "0.875rem", color: "#64748b"}}>
+                        Aucun groupe d'élèves n'a retravaillé ensemble après la séance initiale
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         );

@@ -12,6 +12,9 @@ export type Point = {
   ips?: string | number;
   latitude: number;
   longitude: number;
+  teacherUsages?: number;
+  studentUsages?: number;
+  hasStudents?: boolean;
 };
 
 export interface UsageMapProps {
@@ -35,30 +38,46 @@ export default function UsageMap({ points, onPointClick }: UsageMapProps) {
         attribution='© OpenStreetMap contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {valid.map(p => (
-        <CircleMarker
-          key={p.uai}
-          center={[p.latitude, p.longitude]}
-          radius={scaleRadius(p.nb, 0, max)}
-          pathOptions={{ fillOpacity: 0.5 }}
-          eventHandlers={{
-            click: () => {
-              if (onPointClick) {
-                onPointClick(p.uai);
+      {valid.map(p => {
+        // Déterminer la couleur : vert si élèves, rouge si uniquement profs
+        const color = p.hasStudents ? "#10b981" : "#ef4444";
+        
+        return (
+          <CircleMarker
+            key={p.uai}
+            center={[p.latitude, p.longitude]}
+            radius={scaleRadius(p.nb, 0, max)}
+            pathOptions={{ 
+              fillColor: color,
+              color: color,
+              fillOpacity: 0.6,
+              weight: 2
+            }}
+            eventHandlers={{
+              click: () => {
+                if (onPointClick) {
+                  onPointClick(p.uai);
+                }
               }
-            }
-          }}
-        >
-          <LeafletTooltip>
-            <div>
-              <strong>{p.nom_lycee || p.uai}</strong><br />
-              {p.ville} — {p.academie}<br />
-              Usages : {p.nb}<br />
-              IPS : {p.ips != null ? p.ips : "—"}
-            </div>
-          </LeafletTooltip>
-        </CircleMarker>
-      ))}
+            }}
+          >
+            <LeafletTooltip>
+              <div>
+                <strong>{p.nom_lycee || p.uai}</strong><br />
+                {p.ville} — {p.academie}<br />
+                Usages : {p.nb}<br />
+                {p.teacherUsages !== undefined && p.studentUsages !== undefined && (
+                  <>
+                    <span style={{color: "#ef4444"}}>Profs: {p.teacherUsages}</span> • <span style={{color: "#10b981"}}>Élèves: {p.studentUsages}</span><br />
+                  </>
+                )}
+                IPS : {p.ips != null ? p.ips : "—"}
+              </div>
+            </LeafletTooltip>
+          </CircleMarker>
+        );
+      })}
     </MapContainer>
   );
 }
+

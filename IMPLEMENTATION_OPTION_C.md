@@ -145,7 +145,7 @@ const usageByAcademie = useMemo(() => {
 - Les dépendances des `useMemo` ont été correctement mises à jour
 - Aucun warning TypeScript
 
-## 🚀 Améliorations futures possibles
+##  Améliorations futures possibles
 
 1. **Indicateurs visuels** : Ajouter des badges 🔍 pour indiquer les sections filtrées
 2. **Tooltip explicatif** : Expliquer que les stats restent globales
