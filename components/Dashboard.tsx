@@ -318,51 +318,36 @@ export default function Dashboard() {
     });
     
     let nbSeances = 0;
-    const TWO_HOURS_MS = 2 * 60 * 60 * 1000;
+    const ONE_HOUR_MS = 60 * 60 * 1000;
     
     groups.forEach(sessions => {
       const sorted = sessions.sort((a, b) => a.created - b.created);
       let currentClusterStart = 0;
       
       sorted.forEach(session => {
-        if (currentClusterStart === 0 || session.created - currentClusterStart > TWO_HOURS_MS) {
+        if (currentClusterStart === 0 || session.created - currentClusterStart > ONE_HOUR_MS) {
           nbSeances++;
           currentClusterStart = session.created;
         }
       });
     });
     
-    // 4. Compter les profs ayant enseigné (prof dont uai_teach = uai avec des élèves)
+    // 4. Compter les profs ayant enseigné (profs avec des sessions élèves dans cet établissement)
     const profsEnseignant = new Set<string>();
     rowsWithDate.forEach(r => {
-      const uaiTeach = (r.uai_teach || "").trim();
-      const uaiEl = (r.uai_el || "").trim();
-      if (uaiTeach === uai && uaiEl === uai && r.Role === "student" && r.teacher) {
+      const rowUai = (r.uai_el || r.uai || "").trim();
+      if (rowUai === uai && r.Role === "student" && r.teacher) {
         profsEnseignant.add(r.teacher);
       }
     });
     
-    // 5. Compter les profs testant uniquement (prof avec uai_teach = uai mais sans élèves de ce uai)
+    // 5. Compter les profs testant (profs avec des sessions Role="teacher" dans cet établissement)
+    // On utilise uai_teach pour identifier où le prof a testé
     const profsTestant = new Set<string>();
-    const profsTeachingActivities = new Set<string>(); // "prof|activity"
-    
-    // D'abord, collecter les profs qui ont donné aux élèves
     rowsWithDate.forEach(r => {
       const uaiTeach = (r.uai_teach || "").trim();
-      const uaiEl = (r.uai_el || "").trim();
-      if (uaiTeach === uai && uaiEl === uai && r.Role === "student" && r.teacher && r.mathadata_id) {
-        profsTeachingActivities.add(`${r.teacher}|${r.mathadata_id}`);
-      }
-    });
-    
-    // Ensuite, trouver les profs qui testent sans donner
-    rowsWithDate.forEach(r => {
-      const uaiTeach = (r.uai_teach || "").trim();
-      if (uaiTeach === uai && r.Role === "teacher" && r.teacher && r.mathadata_id) {
-        const key = `${r.teacher}|${r.mathadata_id}`;
-        if (!profsTeachingActivities.has(key)) {
-          profsTestant.add(r.teacher);
-        }
+      if (uaiTeach === uai && r.Role === "teacher" && r.teacher) {
+        profsTestant.add(r.teacher);
       }
     });
     
@@ -435,6 +420,7 @@ export default function Dashboard() {
   const [selectedUai, setSelectedUai] = useState<string | null>(null);
   const [selectedAcademie, setSelectedAcademie] = useState<string | null>(null);
   const [selectedSeance, setSelectedSeance] = useState<number | null>(null); // index de la séance dans classActivityDetails
+  const [selectedSeancesCount, setSelectedSeancesCount] = useState<number | null>(null); // pour le modal des profs par nb de séances
   
   const tableData = useMemo(() => {
     const query = (q || "").trim().toLowerCase();
@@ -560,6 +546,176 @@ export default function Dashboard() {
     );
     const totalElevesUniques = uniqueStudents.size;
     
+    // Calcul des séances globales
+    // 1. Récupérer toutes les sessions étudiants
+    const studentSessions = rowsWithDate
+      .filter(r => r.Role === "student" && r.mathadata_id && r.teacher && r.student && r._date)
+      .map(r => ({
+        student: r.student!,
+        teacher: r.teacher!,
+        mathadata_id: r.mathadata_id!,
+        mathadata_title: r.mathadata_title || "",
+        uai: (r.uai_el || r.uai || "").trim(),
+        created: r._date!.getTime(),
+        changed: r.changed ? parseMaybeEpoch(r.changed)?.getTime() || r._date!.getTime() : r._date!.getTime(),
+      }));
+    
+    // 2. Grouper par (uai, teacher, mathadata_id)
+    type SessionType = typeof studentSessions[number];
+    const groups = new Map<string, SessionType[]>();
+    
+    studentSessions.forEach(session => {
+      const key = `${session.uai}|${session.teacher}|${session.mathadata_id}`;
+      if (!groups.has(key)) {
+        groups.set(key, []);
+      }
+      groups.get(key)!.push(session);
+    });
+    
+    // 3. Pour chaque groupe, détecter les séances (clustering temporel 1h)
+    const ONE_HOUR_MS = 60 * 60 * 1000;
+    let totalSeances = 0;
+    let totalDeuxiemeSeances = 0;
+    let totalElevesInSeances = 0;
+    let totalDureeSeances = 0; // en minutes
+    
+    groups.forEach(sessions => {
+      // Trier par date de création
+      const sorted = sessions.sort((a, b) => a.created - b.created);
+      
+      // Clustering temporel
+      const clusters: SessionType[][] = [];
+      let currentCluster: SessionType[] = [];
+      let clusterStartTime = 0;
+      
+      sorted.forEach(session => {
+        if (currentCluster.length === 0) {
+          currentCluster.push(session);
+          clusterStartTime = session.created;
+        } else {
+          const timeSinceClusterStart = session.created - clusterStartTime;
+          if (timeSinceClusterStart <= ONE_HOUR_MS) {
+            currentCluster.push(session);
+          } else {
+            clusters.push([...currentCluster]);
+            currentCluster = [session];
+            clusterStartTime = session.created;
+          }
+        }
+      });
+      
+      if (currentCluster.length > 0) {
+        clusters.push(currentCluster);
+      }
+      
+      // Pour chaque séance (cluster)
+      clusters.forEach(cluster => {
+        totalSeances++;
+        totalElevesInSeances += cluster.length;
+        
+        // Calculer durée moyenne de cette séance
+        const workTimes = cluster.map(s => (s.changed - s.created) / 1000 / 60); // en minutes
+        const avgWorkTime = workTimes.reduce((sum, t) => sum + t, 0) / workTimes.length;
+        totalDureeSeances += avgWorkTime;
+        
+        // Détecter 2ème séance
+        const seanceInitialEnd = Math.max(...cluster.map(s => s.created)) + ONE_HOUR_MS;
+        const modificationsApres = cluster
+          .filter(s => s.changed > seanceInitialEnd)
+          .map(s => ({ student: s.student, timestamp: s.changed }))
+          .sort((a, b) => a.timestamp - b.timestamp);
+        
+        if (modificationsApres.length >= 2) {
+          let currentGroup: typeof modificationsApres = [];
+          let groupStartTime = 0;
+          let has2ndeSeance = false;
+          
+          modificationsApres.forEach(modif => {
+            if (currentGroup.length === 0) {
+              currentGroup.push(modif);
+              groupStartTime = modif.timestamp;
+            } else {
+              const timeSinceGroupStart = modif.timestamp - groupStartTime;
+              if (timeSinceGroupStart <= ONE_HOUR_MS) {
+                currentGroup.push(modif);
+              } else {
+                if (currentGroup.length >= 2) {
+                  has2ndeSeance = true;
+                }
+                currentGroup = [modif];
+                groupStartTime = modif.timestamp;
+              }
+            }
+          });
+          
+          if (currentGroup.length >= 2) {
+            has2ndeSeance = true;
+          }
+          
+          if (has2ndeSeance) {
+            totalDeuxiemeSeances++;
+          }
+        }
+      });
+    });
+    
+    const moyenneElevesParSeance = totalSeances > 0 ? totalElevesInSeances / totalSeances : 0;
+    const dureeMoyenneSeance = totalSeances > 0 ? totalDureeSeances / totalSeances : 0;
+    const pourcentage2eSeance = totalSeances > 0 ? (totalDeuxiemeSeances / totalSeances) * 100 : 0;
+    
+    // Analyse du comportement des enseignants (test vs enseignement)
+    const teacherBehavior = new Map<string, { hasTeacherSessions: boolean; hasStudentSessions: boolean; firstTeacherSession?: number; firstStudentSession?: number }>();
+    
+    for (const r of rowsWithDate) {
+      if (!r.teacher) continue;
+      
+      const teacher = r.teacher;
+      if (!teacherBehavior.has(teacher)) {
+        teacherBehavior.set(teacher, { 
+          hasTeacherSessions: false, 
+          hasStudentSessions: false 
+        });
+      }
+      
+      const behavior = teacherBehavior.get(teacher)!;
+      const timestamp = r._date!.getTime();
+      
+      if (r.Role === "teacher") {
+        behavior.hasTeacherSessions = true;
+        if (!behavior.firstTeacherSession || timestamp < behavior.firstTeacherSession) {
+          behavior.firstTeacherSession = timestamp;
+        }
+      } else if (r.Role === "student") {
+        behavior.hasStudentSessions = true;
+        if (!behavior.firstStudentSession || timestamp < behavior.firstStudentSession) {
+          behavior.firstStudentSession = timestamp;
+        }
+      }
+    }
+    
+    let profsTestedThenTaught = 0;
+    let profsTaughtWithoutTesting = 0;
+    let profsTestedButNeverTaught = 0;
+    
+    for (const [_teacher, behavior] of teacherBehavior) {
+      if (behavior.hasTeacherSessions && behavior.hasStudentSessions) {
+        // Le prof a à la fois testé et enseigné
+        if (behavior.firstTeacherSession! < behavior.firstStudentSession!) {
+          // Test avant enseignement
+          profsTestedThenTaught++;
+        } else {
+          // Enseignement avant test (ou en même temps) → compter comme "enseigné sans tester"
+          profsTaughtWithoutTesting++;
+        }
+      } else if (behavior.hasStudentSessions && !behavior.hasTeacherSessions) {
+        // A enseigné sans jamais tester
+        profsTaughtWithoutTesting++;
+      } else if (behavior.hasTeacherSessions && !behavior.hasStudentSessions) {
+        // A testé mais jamais enseigné
+        profsTestedButNeverTaught++;
+      }
+    }
+    
     return {
       totalUsages,
       totalEtablissements,
@@ -572,6 +728,14 @@ export default function Dashboard() {
       usages2023_2024,
       usages2024_2025,
       usages2025_2026,
+      totalSeances,
+      totalDeuxiemeSeances,
+      pourcentage2eSeance,
+      moyenneElevesParSeance,
+      dureeMoyenneSeance,
+      profsTestedThenTaught,
+      profsTaughtWithoutTesting,
+      profsTestedButNeverTaught,
     };
   }, [rowsWithDate, usageByUaiGlobal, annMap]);
 
@@ -639,6 +803,152 @@ export default function Dashboard() {
       .sort((a, b) => a.nbActivitesNum - b.nbActivitesNum);
   }, [rowsWithDate]);
 
+  // Nombre de séances par professeur
+  const seancesPerTeacher = useMemo(() => {
+    // Map: teacher -> tableau de séances
+    const teacherSeances = new Map<string, Array<{ 
+      date: string; 
+      dateObj: Date;
+      activity: string; 
+      activityName: string;
+      students: Set<string>;
+      uai: string;
+    }>>();
+    
+    // Collecter toutes les sessions d'élèves
+    const studentSessions = rowsWithDate.filter(r => 
+      r.Role === "student" && r.mathadata_id && r.teacher && r.student && r._date
+    );
+    
+    // Grouper par (teacher, mathadata_id, date)
+    const seanceGroups = new Map<string, typeof studentSessions>();
+    
+    for (const session of studentSessions) {
+      const dateStr = session._date!.toLocaleDateString('fr-FR');
+      const key = `${session.teacher}|${session.mathadata_id}|${dateStr}`;
+      
+      if (!seanceGroups.has(key)) {
+        seanceGroups.set(key, []);
+      }
+      seanceGroups.get(key)!.push(session);
+    }
+    
+    // Pour chaque groupe, appliquer le clustering 1h pour détecter les vraies séances
+    for (const [key, sessions] of seanceGroups.entries()) {
+      const [teacher, activity] = key.split('|');
+      
+      // Trier par timestamp
+      const sorted = sessions.slice().sort((a, b) => {
+        const aTime = typeof a.created === 'number' ? a.created : parseInt(a.created as string, 10);
+        const bTime = typeof b.created === 'number' ? b.created : parseInt(b.created as string, 10);
+        return aTime - bTime;
+      });
+      
+      // Clustering avec fenêtre d'1h
+      const ONE_HOUR_MS = 3600000;
+      const clusters: typeof sorted[] = [];
+      let currentCluster: typeof sorted = [];
+      let clusterStartTime: number | null = null;
+      
+      for (const session of sorted) {
+        const sessionTime = typeof session.created === 'number' 
+          ? session.created * 1000 
+          : parseInt(session.created as string, 10) * 1000;
+        
+        if (clusterStartTime === null) {
+          clusterStartTime = sessionTime;
+          currentCluster = [session];
+        } else {
+          const elapsed = sessionTime - clusterStartTime;
+          
+          if (elapsed <= ONE_HOUR_MS) {
+            currentCluster.push(session);
+          } else {
+            // Nouvelle séance
+            clusters.push(currentCluster);
+            currentCluster = [session];
+            clusterStartTime = sessionTime;
+          }
+        }
+      }
+      
+      if (currentCluster.length > 0) {
+        clusters.push(currentCluster);
+      }
+      
+      // Ajouter chaque cluster comme une séance
+      for (const cluster of clusters) {
+        const dateStr = cluster[0]._date!.toLocaleDateString('fr-FR');
+        const dateObj = cluster[0]._date!;
+        const students = new Set(cluster.map(s => s.student!));
+        const activityName = getActivityName(activity, cluster[0].mathadata_title || "");
+        const uai = (cluster[0].uai_el || cluster[0].uai || "").trim();
+        
+        if (!teacherSeances.has(teacher)) {
+          teacherSeances.set(teacher, []);
+        }
+        teacherSeances.get(teacher)!.push({
+          date: dateStr,
+          dateObj,
+          activity,
+          activityName,
+          students,
+          uai
+        });
+      }
+    }
+    
+    // Compter la distribution
+    const distribution = new Map<number, number>();
+    for (const seances of teacherSeances.values()) {
+      const count = seances.length;
+      distribution.set(count, (distribution.get(count) || 0) + 1);
+    }
+    
+    // Convertir en tableau trié avec les détails
+    return {
+      chart: Array.from(distribution.entries())
+        .map(([nbSeances, nbProfs]) => ({
+          nbSeances: `${nbSeances} séance${nbSeances > 1 ? 's' : ''}`,
+          nbProfs,
+          nbSeancesNum: nbSeances
+        }))
+        .sort((a, b) => a.nbSeancesNum - b.nbSeancesNum),
+      teacherSeances // Garder les détails pour le modal
+    };
+  }, [rowsWithDate]);
+
+  // Obtenir les détails des professeurs pour un nombre de séances donné
+  const getTeacherDetailsForSeanceCount = (nbSeances: number) => {
+    const teachers: Array<{
+      teacher: string;
+      seances: typeof seancesPerTeacher.teacherSeances extends Map<string, infer T> ? T : never;
+      lycees: Set<string>;
+      activites: Set<string>;
+      firstDate: Date;
+      lastDate: Date;
+    }> = [];
+    
+    for (const [teacher, seances] of seancesPerTeacher.teacherSeances.entries()) {
+      if (seances.length === nbSeances) {
+        const lycees = new Set(seances.map(s => s.uai));
+        const activites = new Set(seances.map(s => s.activityName));
+        const dates = seances.map(s => s.dateObj).sort((a, b) => a.getTime() - b.getTime());
+        
+        teachers.push({
+          teacher,
+          seances,
+          lycees,
+          activites,
+          firstDate: dates[0],
+          lastDate: dates[dates.length - 1]
+        });
+      }
+    }
+    
+    return teachers;
+  };
+
   // Usages par académie (basé sur l'établissement de l'élève)
   const usageByAcademie = useMemo(() => {
     const map = new Map<string, number>();
@@ -699,7 +1009,7 @@ export default function Dashboard() {
   };
 
   // Nouvelle fonction : usages par classe-activité GROUPÉS PAR PROFESSEUR
-  // Une classe = groupe d'élèves avec même prof + même activité + sessions créées le même jour à < 2h d'intervalle
+  // Une classe = groupe d'élèves avec même prof + même activité + sessions créées le même jour à < 1h d'intervalle
   const getClassActivityDetailsForUai = (uai: string) => {
     // 1. Récupérer toutes les sessions élèves pour cet UAI
     const studentSessions = rowsWithDate
@@ -729,7 +1039,7 @@ export default function Dashboard() {
       groups.get(key)!.push(session);
     });
     
-    // 3. Pour chaque groupe, détecter les classes (fenêtre temporelle de 2h)
+    // 3. Pour chaque groupe, détecter les classes (fenêtre temporelle de 1h)
     type SeanceType = {
       activityName: string;
       studentCount: number;
@@ -747,8 +1057,8 @@ export default function Dashboard() {
       // Trier par date de création
       const sorted = sessions.sort((a, b) => a.created - b.created);
       
-      // Algorithme de clustering temporel : fenêtre de 2h (7200000 ms)
-      const TWO_HOURS_MS = 2 * 60 * 60 * 1000;
+      // Algorithme de clustering temporel : fenêtre de 1h (3600000 ms)
+      const ONE_HOUR_MS = 60 * 60 * 1000;
       const clusters: SessionType[][] = [];
       
       let currentCluster: SessionType[] = [];
@@ -761,8 +1071,8 @@ export default function Dashboard() {
           clusterStartTime = session.created;
         } else {
           const timeSinceClusterStart = session.created - clusterStartTime;
-          if (timeSinceClusterStart <= TWO_HOURS_MS) {
-            // Dans la fenêtre de 2h
+          if (timeSinceClusterStart <= ONE_HOUR_MS) {
+            // Dans la fenêtre de 1h
             currentCluster.push(session);
           } else {
             // Nouvelle classe détectée
@@ -833,13 +1143,62 @@ export default function Dashboard() {
     changed: number;
   };
   
+  // Fonction pour obtenir les usages des professeurs
+  const getTeacherUsagesForUai = (uai: string) => {
+    const teacherSessions = rowsWithDate
+      .filter(r => {
+        const uaiTeach = (r.uai_teach || "").trim();
+        return uaiTeach === uai && r.Role === "teacher" && r.teacher && r.mathadata_id && r.created && r.changed;
+      })
+      .map(r => ({
+        teacher: r.teacher!,
+        mathadata_id: r.mathadata_id!,
+        mathadata_title: r.mathadata_title || "",
+        created: typeof r.created === 'number' ? r.created : parseInt(r.created as string, 10),
+        changed: typeof r.changed === 'number' ? r.changed : parseInt(r.changed as string, 10)
+      }));
+    
+    // Grouper par professeur
+    const byTeacher = new Map<string, typeof teacherSessions>();
+    teacherSessions.forEach(session => {
+      const existing = byTeacher.get(session.teacher);
+      if (existing) {
+        existing.push(session);
+      } else {
+        byTeacher.set(session.teacher, [session]);
+      }
+    });
+    
+    // Pour chaque professeur, créer la liste des tests
+    return Array.from(byTeacher.entries()).map(([teacher, sessions]) => {
+      const tests = sessions.map(s => {
+        const workTimeMinutes = Math.round((s.changed - s.created) / 60);
+        return {
+          activityName: getActivityName(s.mathadata_id, s.mathadata_title),
+          activityId: s.mathadata_id,
+          createdDate: new Date(s.created * 1000),
+          changedDate: new Date(s.changed * 1000),
+          workTimeMinutes
+        };
+      });
+      
+      // Trier par date de création
+      tests.sort((a, b) => a.createdDate.getTime() - b.createdDate.getTime());
+      
+      return {
+        teacher,
+        tests
+      };
+    });
+  };
+  
   const analyzeSeance = (sessions: SessionType[]) => {
     if (sessions.length === 0) return null;
     
-    const TWO_HOURS_MS = 2 * 60 * 60 * 1000;
+    const ONE_HOUR_MS = 60 * 60 * 1000;
     
-    // 1. Élèves ayant continué après 2h
-    const continueApres2h = sessions.filter(s => (s.changed - s.created) > TWO_HOURS_MS).length;
+    // 1. Élèves ayant continué après 1h
+    const continueApres2h = sessions.filter(s => (s.changed - s.created) > ONE_HOUR_MS).length;
     
     // 2. Élèves travaillant à domicile (soir après 18h ou weekend)
     const workingAtHome = sessions.filter(s => {
@@ -860,17 +1219,17 @@ export default function Dashboard() {
     }).length;
     
     // 3. Détecter une 2ème séance en classe
-    // = plusieurs élèves modifiant leurs sessions dans une fenêtre de 2h
-    // et au moins 2h après la séance initiale
+    // = plusieurs élèves modifiant leurs sessions dans une fenêtre de 1h
+    // et au moins 1h après la séance initiale
     
     // Récupérer toutes les timestamps de modification (après la séance initiale)
-    const seanceInitialEnd = Math.max(...sessions.map(s => s.created)) + TWO_HOURS_MS;
+    const seanceInitialEnd = Math.max(...sessions.map(s => s.created)) + ONE_HOUR_MS;
     const modificationsApres = sessions
       .filter(s => s.changed > seanceInitialEnd)
       .map(s => ({ student: s.student, timestamp: s.changed }))
       .sort((a, b) => a.timestamp - b.timestamp);
     
-    // Chercher des groupes de modifications dans une fenêtre de 2h
+    // Chercher des groupes de modifications dans une fenêtre de 1h
     let deuxiemeSeance = false;
     let deuxiemeSeanceSize = 0;
     let deuxiemeSeanceDate: Date | null = null;
@@ -886,7 +1245,7 @@ export default function Dashboard() {
           groupStartTime = modif.timestamp;
         } else {
           const timeSinceGroupStart = modif.timestamp - groupStartTime;
-          if (timeSinceGroupStart <= TWO_HOURS_MS) {
+          if (timeSinceGroupStart <= ONE_HOUR_MS) {
             currentGroup.push(modif);
           } else {
             // Groupe terminé, vérifier s'il constitue une 2ème séance
@@ -918,6 +1277,201 @@ export default function Dashboard() {
       deuxiemeSeanceDate,
     };
   };
+
+  // Indicateurs de succès par activité
+  const activitySuccessMetrics = useMemo(() => {
+    const metrics = new Map<string, {
+      activityId: string;
+      activityName: string;
+      // Adoption
+      nbLycees: number;
+      nbSeances: number;
+      nbProfs: number;
+      nbElevesUniques: number;
+      // Engagement
+      tailleClasseMoyenne: number;
+      nbReprise: number; // Nb élèves qui continuent >1h
+      nbTravailMaison: number; // Nb élèves qui travaillent soir/weekend
+      nbDeuxiemeSeance: number; // Nb séances avec 2ème session
+      tauxReprise: number; // % élèves qui continuent >1h
+      tauxTravailMaison: number; // % élèves qui travaillent soir/weekend
+      tauxDeuxiemeSeance: number; // % séances avec 2ème session
+      // Fidélisation
+      seancesParProf: number;
+      // Adoption après test
+      nbProfsTestedThenTaught: number; // Nb profs qui ont testé puis enseigné
+      nbProfsTested: number; // Nb profs qui ont testé (avec ou sans enseignement après)
+      tauxUsageApresTest: number; // % profs qui ont enseigné après avoir testé
+    }>();
+    
+    // Collecter toutes les sessions élèves
+    const studentSessions = rowsWithDate.filter(r => 
+      r.Role === "student" && r.mathadata_id && r.teacher && r.student && r._date && r.created && r.changed
+    );
+    
+    // Grouper par activité
+    const byActivity = new Map<string, typeof studentSessions>();
+    studentSessions.forEach(session => {
+      const activityId = session.mathadata_id!;
+      if (!byActivity.has(activityId)) {
+        byActivity.set(activityId, []);
+      }
+      byActivity.get(activityId)!.push(session);
+    });
+    
+    // Pour chaque activité, calculer les métriques
+    for (const [activityId, sessions] of byActivity.entries()) {
+      const activityName = getActivityName(activityId, sessions[0].mathadata_title || "");
+      
+      // Lycées uniques
+      const lycees = new Set(sessions.map(s => (s.uai_el || s.uai || "").trim()));
+      
+      // Profs uniques
+      const profs = new Set(sessions.map(s => s.teacher));
+      
+      // Élèves uniques
+      const eleves = new Set(sessions.map(s => s.student));
+      
+      // Détecter les séances avec clustering 1h
+      const seanceGroups = new Map<string, typeof sessions>();
+      
+      for (const session of sessions) {
+        const uai = (session.uai_el || session.uai || "").trim();
+        const key = `${uai}|${session.teacher}|${activityId}`;
+        
+        if (!seanceGroups.has(key)) {
+          seanceGroups.set(key, []);
+        }
+        seanceGroups.get(key)!.push(session);
+      }
+      
+      // Appliquer clustering 1h sur chaque groupe
+      const seances: Array<typeof sessions> = [];
+      
+      for (const [, groupSessions] of seanceGroups.entries()) {
+        const sorted = groupSessions.slice().sort((a, b) => {
+          const aTime = typeof a.created === 'number' ? a.created : parseInt(a.created as string, 10);
+          const bTime = typeof b.created === 'number' ? b.created : parseInt(b.created as string, 10);
+          return aTime - bTime;
+        });
+        
+        const ONE_HOUR_MS = 3600000;
+        const clusters: typeof sorted[] = [];
+        let currentCluster: typeof sorted = [];
+        let clusterStartTime: number | null = null;
+        
+        for (const session of sorted) {
+          const sessionTime = typeof session.created === 'number' 
+            ? session.created * 1000 
+            : parseInt(session.created as string, 10) * 1000;
+          
+          if (clusterStartTime === null) {
+            clusterStartTime = sessionTime;
+            currentCluster = [session];
+          } else {
+            const elapsed = sessionTime - clusterStartTime;
+            
+            if (elapsed <= ONE_HOUR_MS) {
+              currentCluster.push(session);
+            } else {
+              clusters.push(currentCluster);
+              currentCluster = [session];
+              clusterStartTime = sessionTime;
+            }
+          }
+        }
+        
+        if (currentCluster.length > 0) {
+          clusters.push(currentCluster);
+        }
+        
+        seances.push(...clusters);
+      }
+      
+      const nbSeances = seances.length;
+      
+      // Taille moyenne des classes
+      const tailleClasseMoyenne = nbSeances > 0 
+        ? Math.round(seances.reduce((sum, s) => sum + s.length, 0) / nbSeances)
+        : 0;
+      
+      // Analyser chaque séance pour les métriques d'engagement
+      let totalContinueApres2h = 0;
+      let totalWorkingAtHome = 0;
+      let totalDeuxiemeSeance = 0;
+      
+      for (const seance of seances) {
+        const analysis = analyzeSeance(seance.map(s => ({
+          student: s.student!,
+          teacher: s.teacher!,
+          mathadata_id: s.mathadata_id!,
+          mathadata_title: s.mathadata_title || "",
+          created: (typeof s.created === 'number' ? s.created : parseInt(s.created as string, 10)) * 1000,
+          changed: (typeof s.changed === 'number' ? s.changed : parseInt(s.changed as string, 10)) * 1000
+        })));
+        
+        if (analysis) {
+          totalContinueApres2h += analysis.continueApres2h;
+          totalWorkingAtHome += analysis.workingAtHome;
+          if (analysis.deuxiemeSeance) totalDeuxiemeSeance++;
+        }
+      }
+      
+      const totalEleves = seances.reduce((sum, s) => sum + s.length, 0);
+      const tauxReprise = totalEleves > 0 ? Math.round((totalContinueApres2h / totalEleves) * 100) : 0;
+      const tauxTravailMaison = totalEleves > 0 ? Math.round((totalWorkingAtHome / totalEleves) * 100) : 0;
+      const tauxDeuxiemeSeance = nbSeances > 0 ? Math.round((totalDeuxiemeSeance / nbSeances) * 100) : 0;
+      
+      // Séances par prof
+      const seancesParProf = profs.size > 0 ? Math.round((nbSeances / profs.size) * 10) / 10 : 0;
+      
+      // Calculer le taux d'usage après test
+      // 1. Trouver les profs qui ont testé cette activité (Role="teacher")
+      const profsWhoTested = new Set<string>();
+      const profsTestedThenTaught = new Set<string>();
+      
+      rowsWithDate.forEach(r => {
+        if (r.mathadata_id === activityId && r.Role === "teacher" && r.teacher) {
+          profsWhoTested.add(r.teacher);
+        }
+      });
+      
+      // 2. Parmi ces profs, trouver ceux qui ont ensuite enseigné (Role="student")
+      profsWhoTested.forEach(teacher => {
+        const hasTeaching = sessions.some(s => s.teacher === teacher);
+        if (hasTeaching) {
+          profsTestedThenTaught.add(teacher);
+        }
+      });
+      
+      const nbProfsTested = profsWhoTested.size;
+      const nbProfsTestedThenTaught = profsTestedThenTaught.size;
+      const tauxUsageApresTest = nbProfsTested > 0 ? Math.round((nbProfsTestedThenTaught / nbProfsTested) * 100) : 0;
+      
+      metrics.set(activityId, {
+        activityId,
+        activityName,
+        nbLycees: lycees.size,
+        nbSeances,
+        nbProfs: profs.size,
+        nbElevesUniques: eleves.size,
+        tailleClasseMoyenne,
+        nbReprise: totalContinueApres2h,
+        nbTravailMaison: totalWorkingAtHome,
+        nbDeuxiemeSeance: totalDeuxiemeSeance,
+        tauxReprise,
+        tauxTravailMaison,
+        tauxDeuxiemeSeance,
+        seancesParProf,
+        nbProfsTestedThenTaught,
+        nbProfsTested,
+        tauxUsageApresTest
+      });
+    }
+    
+    return Array.from(metrics.values())
+      .sort((a, b) => b.nbSeances - a.nbSeances); // Trier par nb de séances
+  }, [rowsWithDate]);
 
   // Évolution mensuelle pour une académie spécifique
   const getMonthlyDataForAcademie = (academie: string) => {
@@ -1008,6 +1562,166 @@ export default function Dashboard() {
                 <Bar dataKey="count" name="Nombre d'usages" fill="#3b82f6" />
               </BarChart>
             </ResponsiveContainer>
+          </div>
+        </div>
+      </div>
+
+      {/* Nouveau tableau : Indicateurs de succès par activité */}
+      <div className="card" style={{marginTop: 16}}>
+        <h2>📈 Indicateurs de succès des activités en classe</h2>
+        <p className="muted" style={{marginTop: 0, marginBottom: 16}}>
+          Métriques détaillées pour évaluer l'adoption, l'engagement et la fidélisation de chaque activité
+        </p>
+        
+        <div style={{overflowX: "auto"}}>
+          <table style={{width: "100%", fontSize: "0.875rem"}}>
+            <thead style={{backgroundColor: "#f8fafc"}}>
+              <tr>
+                <th style={{textAlign: "left", padding: "12px", position: "sticky", left: 0, backgroundColor: "#f8fafc", zIndex: 10}}>
+                  Activité
+                </th>
+                <th style={{textAlign: "center", padding: "8px", borderLeft: "2px solid #e2e8f0"}}>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🏫 Lycées</div>
+                  <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Adoption</div>
+                </th>
+                <th style={{textAlign: "center", padding: "8px"}}>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>📚 Séances</div>
+                  <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>En classe</div>
+                </th>
+                <th style={{textAlign: "center", padding: "8px"}}>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>👨‍🏫 Profs</div>
+                  <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Uniques</div>
+                </th>
+                <th style={{textAlign: "center", padding: "8px"}}>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🎓 Élèves</div>
+                  <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Uniques</div>
+                </th>
+                <th style={{textAlign: "center", padding: "8px", borderLeft: "2px solid #e2e8f0"}}>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>👥 Taille</div>
+                  <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Classe moy.</div>
+                </th>
+                <th style={{textAlign: "center", padding: "8px"}}>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🔄 Reprise</div>
+                  <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>{'>'}1h après</div>
+                </th>
+                <th style={{textAlign: "center", padding: "8px"}}>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🏠 Maison</div>
+                  <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Soir/weekend</div>
+                </th>
+                <th style={{textAlign: "center", padding: "8px"}}>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🔁 2ème séance</div>
+                  <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Collective</div>
+                </th>
+                <th style={{textAlign: "center", padding: "8px", borderLeft: "2px solid #e2e8f0"}}>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🔄 Récurrence</div>
+                  <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Séance/prof</div>
+                </th>
+                <th style={{textAlign: "center", padding: "8px"}}>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🧪 Usage après test</div>
+                  <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Test → Classe</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {activitySuccessMetrics.map((metric, idx) => {
+                // Couleurs pour les taux
+                const getColor = (value: number, thresholds: [number, number]) => {
+                  if (value >= thresholds[1]) return "#10b981"; // Vert
+                  if (value >= thresholds[0]) return "#f59e0b"; // Orange
+                  return "#ef4444"; // Rouge
+                };
+                
+                return (
+                  <tr 
+                    key={idx}
+                    style={{
+                      backgroundColor: idx % 2 === 0 ? "#fff" : "#f8fafc",
+                      borderBottom: "1px solid #e2e8f0"
+                    }}
+                  >
+                    <td style={{padding: "12px", fontWeight: "500", position: "sticky", left: 0, backgroundColor: idx % 2 === 0 ? "#fff" : "#f8fafc", zIndex: 9}}>
+                      {metric.activityName}
+                    </td>
+                    <td style={{textAlign: "center", padding: "8px", borderLeft: "2px solid #f1f5f9", fontWeight: "600"}}>
+                      {metric.nbLycees}
+                    </td>
+                    <td style={{textAlign: "center", padding: "8px", fontWeight: "600", color: "#3b82f6"}}>
+                      {metric.nbSeances}
+                    </td>
+                    <td style={{textAlign: "center", padding: "8px", fontWeight: "600"}}>
+                      {metric.nbProfs}
+                    </td>
+                    <td style={{textAlign: "center", padding: "8px", fontWeight: "600"}}>
+                      {metric.nbElevesUniques}
+                    </td>
+                    <td style={{textAlign: "center", padding: "8px", borderLeft: "2px solid #f1f5f9", fontWeight: "600"}}>
+                      {metric.tailleClasseMoyenne}
+                    </td>
+                    <td style={{textAlign: "center", padding: "8px", fontWeight: "600", color: getColor(metric.tauxReprise, [20, 40])}}>
+                      {metric.tauxReprise}%
+                      {" "}
+                      <span style={{color: "#94a3b8", fontSize: "0.75rem", fontWeight: "normal"}}>
+                        ({metric.nbReprise})
+                      </span>
+                    </td>
+                    <td style={{textAlign: "center", padding: "8px", fontWeight: "600", color: getColor(metric.tauxTravailMaison, [10, 25])}}>
+                      {metric.tauxTravailMaison}%
+                      {" "}
+                      <span style={{color: "#94a3b8", fontSize: "0.75rem", fontWeight: "normal"}}>
+                        ({metric.nbTravailMaison})
+                      </span>
+                    </td>
+                    <td style={{textAlign: "center", padding: "8px", fontWeight: "600", color: getColor(metric.tauxDeuxiemeSeance, [15, 30])}}>
+                      {metric.tauxDeuxiemeSeance}%
+                      {" "}
+                      <span style={{color: "#94a3b8", fontSize: "0.75rem", fontWeight: "normal"}}>
+                        ({metric.nbDeuxiemeSeance})
+                      </span>
+                    </td>
+                    <td style={{textAlign: "center", padding: "8px", borderLeft: "2px solid #f1f5f9", fontWeight: "600", color: getColor(Math.round(metric.seancesParProf * 10), [20, 40])}}>
+                      {metric.seancesParProf}
+                    </td>
+                    <td style={{textAlign: "center", padding: "8px", fontWeight: "600"}}>
+                      {metric.nbProfsTested > 0 ? (
+                        <>
+                          <span style={{color: getColor(metric.tauxUsageApresTest, [50, 75])}}>
+                            {metric.tauxUsageApresTest}%
+                          </span>
+                          {" "}
+                          <span style={{color: "#94a3b8", fontSize: "0.75rem", fontWeight: "normal"}}>
+                            ({metric.nbProfsTestedThenTaught}/{metric.nbProfsTested})
+                          </span>
+                        </>
+                      ) : (
+                        <span style={{color: "#cbd5e1", fontSize: "0.875rem"}}>—</span>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        
+        {/* Légende */}
+        <div style={{marginTop: "20px", padding: "16px", backgroundColor: "#f8fafc", borderRadius: "8px", fontSize: "0.875rem"}}>
+          <h4 style={{margin: "0 0 12px 0", fontSize: "0.875rem", color: "#475569"}}>📖 Guide de lecture</h4>
+          <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "12px"}}>
+            <div>
+              <strong>Adoption :</strong> Nombre de lycées et professeurs utilisant l'activité
+            </div>
+            <div>
+              <strong>Engagement :</strong> Taille des classes, taux de reprise ({'>'}1h), travail à domicile
+            </div>
+            <div>
+              <strong>Fidélisation :</strong> Nombre moyen de séances par prof (récurrence)
+            </div>
+            <div>
+              <strong>Usage après test :</strong> % de profs qui ont enseigné l'activité après l'avoir testée
+            </div>
+            <div>
+              <strong>Codes couleur :</strong> <span style={{color: "#10b981"}}>■ Excellent</span> <span style={{color: "#f59e0b"}}>■ Bon</span> <span style={{color: "#ef4444"}}>■ Faible</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1137,20 +1851,22 @@ export default function Dashboard() {
                 <td style={{textAlign:"right"}}><strong>{globalStats.totalElevesUniques.toLocaleString("fr-FR")}</strong></td>
               </tr>
               <tr>
-                <td>Nombre de lycées</td>
-                <td style={{textAlign:"right"}}>{globalStats.nombreLycees.toLocaleString("fr-FR")}</td>
+                <td><strong>Nombre total de séances</strong></td>
+                <td style={{textAlign:"right"}}><strong>{globalStats.totalSeances.toLocaleString("fr-FR")}</strong></td>
               </tr>
               <tr>
-                <td>Nombre de collèges</td>
-                <td style={{textAlign:"right"}}>{globalStats.nombreColleges.toLocaleString("fr-FR")}</td>
+                <td>Nombre de 2e séance</td>
+                <td style={{textAlign:"right"}}>
+                  {globalStats.totalDeuxiemeSeances.toLocaleString("fr-FR")}
+                  {" "}
+                  <span style={{color: "#64748b", fontSize: "0.875rem"}}>
+                    ({globalStats.pourcentage2eSeance.toFixed(1)}%)
+                  </span>
+                </td>
               </tr>
               <tr>
-                <td>Profs Publics</td>
-                <td style={{textAlign:"right"}}>{globalStats.nombreProfsPublics.toLocaleString("fr-FR")}</td>
-              </tr>
-              <tr>
-                <td>Profs Privés</td>
-                <td style={{textAlign:"right"}}>{globalStats.nombreProfsPrives.toLocaleString("fr-FR")}</td>
+                <td>Nombre moyen élèves par séance</td>
+                <td style={{textAlign:"right"}}>{globalStats.moyenneElevesParSeance.toFixed(1)}</td>
               </tr>
               <tr>
                 <td>Usages 2023-2024</td>
@@ -1164,42 +1880,134 @@ export default function Dashboard() {
                 <td>Usages 2025-2026</td>
                 <td style={{textAlign:"right"}}>{globalStats.usages2025_2026.toLocaleString("fr-FR")}</td>
               </tr>
+              <tr style={{borderTop: "2px solid #e2e8f0"}}>
+                <td><strong>Profs ont testé puis enseigné</strong></td>
+                <td style={{textAlign:"right", color: "#10b981", fontWeight: "600"}}>
+                  {globalStats.profsTestedThenTaught.toLocaleString("fr-FR")}
+                  {" "}
+                  <span style={{color: "#64748b", fontSize: "0.875rem", fontWeight: "normal"}}>
+                    ({((globalStats.profsTestedThenTaught / (globalStats.profsTestedThenTaught + globalStats.profsTaughtWithoutTesting + globalStats.profsTestedButNeverTaught)) * 100).toFixed(1)}%)
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>Profs ont enseigné sans tester</td>
+                <td style={{textAlign:"right", color: "#f59e0b"}}>
+                  {globalStats.profsTaughtWithoutTesting.toLocaleString("fr-FR")}
+                  {" "}
+                  <span style={{color: "#64748b", fontSize: "0.875rem"}}>
+                    ({((globalStats.profsTaughtWithoutTesting / (globalStats.profsTestedThenTaught + globalStats.profsTaughtWithoutTesting + globalStats.profsTestedButNeverTaught)) * 100).toFixed(1)}%)
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>Profs ont testé mais pas enseigné</td>
+                <td style={{textAlign:"right", color: "#ef4444"}}>
+                  {globalStats.profsTestedButNeverTaught.toLocaleString("fr-FR")}
+                  {" "}
+                  <span style={{color: "#64748b", fontSize: "0.875rem"}}>
+                    ({((globalStats.profsTestedButNeverTaught / (globalStats.profsTestedThenTaught + globalStats.profsTaughtWithoutTesting + globalStats.profsTestedButNeverTaught)) * 100).toFixed(1)}%)
+                  </span>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
 
-        <div className="card">
-          <h2>Distribution des IPS des lycées</h2>
-          <div style={{height: 320}}>
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={ipsHistogram}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="range" label={{ value: "IPS", position: "insideBottom", offset: -5 }} />
-                <YAxis allowDecimals={false} label={{ value: "Nombre de lycées", angle: -90, position: "insideLeft" }} />
-                <Tooltip />
-                <Bar dataKey="count" name="Lycées" fill="#10b981" />
-              </BarChart>
-            </ResponsiveContainer>
+        <div style={{display: "flex", flexDirection: "column", gap: 16}}>
+          <div className="card">
+            <h2>Statistiques établissement</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Indicateur</th>
+                  <th style={{textAlign:"right"}}>Valeur</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nombre de lycées</td>
+                  <td style={{textAlign:"right"}}>{globalStats.nombreLycees.toLocaleString("fr-FR")}</td>
+                </tr>
+                <tr>
+                  <td>Nombre de collèges</td>
+                  <td style={{textAlign:"right"}}>{globalStats.nombreColleges.toLocaleString("fr-FR")}</td>
+                </tr>
+                <tr>
+                  <td>Profs Publics</td>
+                  <td style={{textAlign:"right"}}>{globalStats.nombreProfsPublics.toLocaleString("fr-FR")}</td>
+                </tr>
+                <tr>
+                  <td>Profs Privés</td>
+                  <td style={{textAlign:"right"}}>{globalStats.nombreProfsPrives.toLocaleString("fr-FR")}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div className="card">
+            <h2>Distribution des IPS des lycées</h2>
+            <div style={{height: 240}}>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={ipsHistogram}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="range" label={{ value: "IPS", position: "insideBottom", offset: -5 }} />
+                  <YAxis allowDecimals={false} label={{ value: "Nombre de lycées", angle: -90, position: "insideLeft" }} />
+                  <Tooltip />
+                  <Bar dataKey="count" name="Lycées" fill="#10b981" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Nouvelle section: Engagement des élèves */}
-      <div className="card" style={{marginTop: 16}}>
-        <h2>Nombre d'activités différentes utilisées par élève</h2>
-        <p className="muted" style={{marginTop: 0, marginBottom: 16}}>
-          Distribution du nombre d'activités MathAData différentes testées par chaque élève
-        </p>
-        <div style={{height: 300}}>
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={activitiesPerStudent}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="nbActivites" />
-              <YAxis allowDecimals={false} label={{ value: "Nombre d'élèves", angle: -90, position: "insideLeft" }} />
-              <Tooltip />
-              <Bar dataKey="nbEleves" name="Élèves" fill="#8b5cf6" />
-            </BarChart>
-          </ResponsiveContainer>
+      {/* Nouvelle section: Engagement des élèves et professeurs */}
+      <div className="grid grid-2" style={{marginTop: 16, gap: 16}}>
+        <div className="card">
+          <h2>Nombre d'activités différentes utilisées par élève</h2>
+          <p className="muted" style={{marginTop: 0, marginBottom: 16}}>
+            Distribution du nombre d'activités MathAData différentes testées par chaque élève
+          </p>
+          <div style={{height: 300}}>
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={activitiesPerStudent}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="nbActivites" />
+                <YAxis allowDecimals={false} label={{ value: "Nombre d'élèves", angle: -90, position: "insideLeft" }} />
+                <Tooltip />
+                <Bar dataKey="nbEleves" name="Élèves" fill="#8b5cf6" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        <div className="card">
+          <h2>Nombre de séances par professeur</h2>
+          <p className="muted" style={{marginTop: 0, marginBottom: 16}}>
+            Distribution du nombre de séances avec élèves animées par chaque professeur
+          </p>
+          <div style={{height: 300}}>
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={seancesPerTeacher.chart}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="nbSeances" />
+                <YAxis allowDecimals={false} label={{ value: "Nombre de profs", angle: -90, position: "insideLeft" }} />
+                <Tooltip />
+                <Bar 
+                  dataKey="nbProfs" 
+                  name="Professeurs" 
+                  fill="#10b981"
+                  onClick={(data: any) => {
+                    if (data && data.nbSeancesNum) {
+                      setSelectedSeancesCount(data.nbSeancesNum);
+                    }
+                  }}
+                  cursor="pointer"
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
 
@@ -1234,6 +2042,28 @@ export default function Dashboard() {
         const etablissement = usageByUai.find(e => e.uai === selectedUai);
         const activityDetails = getActivityDetailsForUai(selectedUai);
         const classActivityDetails = getClassActivityDetailsForUai(selectedUai);
+        const teacherUsages = getTeacherUsagesForUai(selectedUai);
+        
+        // Créer un mapping teacher -> lettre (A, B, C...)
+        // D'abord les profs qui enseignent, puis les profs qui testent uniquement
+        const teacherToLetter = new Map<string, string>();
+        let letterIndex = 0;
+        
+        // 1. Attribuer des lettres aux profs qui enseignent (dans l'ordre d'apparition)
+        classActivityDetails.forEach(profData => {
+          if (!teacherToLetter.has(profData.teacher)) {
+            teacherToLetter.set(profData.teacher, String.fromCharCode(65 + letterIndex));
+            letterIndex++;
+          }
+        });
+        
+        // 2. Attribuer des lettres aux profs qui testent uniquement (pas déjà dans classActivityDetails)
+        teacherUsages.forEach(profData => {
+          if (!teacherToLetter.has(profData.teacher)) {
+            teacherToLetter.set(profData.teacher, String.fromCharCode(65 + letterIndex));
+            letterIndex++;
+          }
+        });
         
         return (
           <div 
@@ -1288,7 +2118,7 @@ export default function Dashboard() {
                 📚 Séances par professeur ({classActivityDetails.reduce((sum, prof) => sum + prof.seances.length, 0)} séances, {classActivityDetails.length} {classActivityDetails.length > 1 ? 'profs' : 'prof'})
               </h3>
               <p className="muted" style={{marginTop: 0, marginBottom: "12px", fontSize: "0.875rem"}}>
-                Une séance = groupe d'élèves avec même prof + même activité + sessions créées le même jour à moins de 2h d'intervalle
+                Une séance = groupe d'élèves avec même prof + même activité + sessions créées le même jour à moins de 1h d'intervalle
               </p>
               
               {classActivityDetails.length > 0 ? (
@@ -1312,7 +2142,7 @@ export default function Dashboard() {
                           alignItems: "center"
                         }}>
                           <div>
-                            <strong style={{color: "#334155"}}>Prof {String.fromCharCode(65 + profIdx)}</strong>
+                            <strong style={{color: "#334155"}}>Prof {teacherToLetter.get(profData.teacher)}</strong>
                             <span style={{color: "#64748b", marginLeft: "12px", fontSize: "0.875rem"}}>
                               {profData.seances.length} séance{profData.seances.length > 1 ? 's' : ''}
                             </span>
@@ -1323,18 +2153,23 @@ export default function Dashboard() {
                         </div>
                         
                         {/* Tableau des séances de ce prof */}
-                        <table style={{width: "100%", marginBottom: 0}}>
+                        <table style={{width: "100%", marginBottom: 0, fontSize: "0.875rem"}}>
                           <thead style={{backgroundColor: "#f8fafc"}}>
                             <tr>
-                              <th style={{textAlign: "left", padding: "8px 16px"}}>Activité</th>
-                              <th style={{textAlign:"center", padding: "8px"}}>Nb élèves</th>
-                              <th style={{textAlign:"center", padding: "8px"}}>Date</th>
-                              <th style={{textAlign:"right", padding: "8px 16px"}}>Temps moyen</th>
+                              <th style={{textAlign: "left", padding: "8px 12px", minWidth: "120px"}}>Activité</th>
+                              <th style={{textAlign:"center", padding: "8px", width: "80px"}}>Nb élèves</th>
+                              <th style={{textAlign:"center", padding: "8px", minWidth: "80px"}}>Date</th>
+                              <th style={{textAlign:"center", padding: "8px", width: "90px"}}>Temps moyen</th>
+                              <th style={{textAlign:"center", padding: "8px", width: "90px"}}>Travail après (&gt;1h)</th>
+                              <th style={{textAlign:"center", padding: "8px", width: "90px"}}>Travail maison</th>
+                              <th style={{textAlign:"center", padding: "8px", width: "80px"}}>2e séance</th>
                             </tr>
                           </thead>
                           <tbody>
                             {profData.seances.map((seance, seanceIdx) => {
                               const globalIdx = seanceStartIndex + seanceIdx;
+                              const analysis = analyzeSeance(seance.sessions);
+                              
                               return (
                                 <tr 
                                   key={seanceIdx}
@@ -1347,16 +2182,41 @@ export default function Dashboard() {
                                   onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#f1f5f9"}
                                   onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
                                 >
-                                  <td style={{padding: "8px 16px"}}>{seance.activityName}</td>
+                                  <td style={{padding: "8px 12px"}}>{seance.activityName}</td>
                                   <td style={{textAlign:"center", fontWeight: "600", padding: "8px"}}>{seance.studentCount}</td>
-                                  <td style={{textAlign:"center", padding: "8px"}}>{seance.creationDate}</td>
-                                  <td style={{textAlign:"right", padding: "8px 16px"}}>
+                                  <td style={{textAlign:"center", padding: "8px", whiteSpace: "nowrap"}}>{seance.creationDate}</td>
+                                  <td style={{textAlign:"center", padding: "8px", whiteSpace: "nowrap"}}>
                                     {seance.avgWorkTimeMinutes < 60 
                                       ? `${seance.avgWorkTimeMinutes} min`
                                       : seance.avgWorkTimeMinutes < 1440
                                         ? `${Math.floor(seance.avgWorkTimeMinutes / 60)}h${seance.avgWorkTimeMinutes % 60 > 0 ? (seance.avgWorkTimeMinutes % 60).toString().padStart(2, '0') : ''}`
                                         : `${Math.floor(seance.avgWorkTimeMinutes / 1440)}j ${Math.floor((seance.avgWorkTimeMinutes % 1440) / 60)}h`
                                     }
+                                  </td>
+                                  <td style={{
+                                    textAlign:"center", 
+                                    padding: "8px",
+                                    color: analysis && analysis.continueApres2h > 0 ? "#10b981" : "#94a3b8"
+                                  }}>
+                                    {analysis ? analysis.continueApres2h : 0}
+                                  </td>
+                                  <td style={{
+                                    textAlign:"center", 
+                                    padding: "8px",
+                                    color: analysis && analysis.workingAtHome > 0 ? "#f59e0b" : "#94a3b8"
+                                  }}>
+                                    {analysis ? analysis.workingAtHome : 0}
+                                  </td>
+                                  <td style={{
+                                    textAlign:"center", 
+                                    padding: "8px",
+                                    fontWeight: "600"
+                                  }}>
+                                    {analysis && analysis.deuxiemeSeance ? (
+                                      <span style={{color: "#3b82f6"}}>✓ Oui</span>
+                                    ) : (
+                                      <span style={{color: "#94a3b8"}}>Non</span>
+                                    )}
                                   </td>
                                 </tr>
                               );
@@ -1369,6 +2229,116 @@ export default function Dashboard() {
                 </div>
               ) : (
                 <p className="muted" style={{marginBottom: "32px"}}>Aucun usage élève détecté pour cet établissement.</p>
+              )}
+              
+              {/* Nouveau tableau : Usages professeurs (tests) */}
+              {teacherUsages.length > 0 && (
+                <>
+                  <h3 style={{fontSize: "1rem", marginBottom: "12px", color: "#475569", marginTop: "24px"}}>
+                    👨‍🏫 Tests enseignants ({teacherUsages.reduce((sum, prof) => sum + prof.tests.length, 0)} sessions, {teacherUsages.length} {teacherUsages.length > 1 ? 'profs' : 'prof'})
+                  </h3>
+                  <p className="muted" style={{marginTop: 0, marginBottom: "12px", fontSize: "0.875rem"}}>
+                    Activités testées par les professeurs (sans élèves)
+                  </p>
+                  
+                  <div style={{marginBottom: "32px"}}>
+                    {teacherUsages.map((profData, profIdx) => (
+                      <div key={profIdx} style={{marginBottom: "24px"}}>
+                        {/* En-tête professeur */}
+                        <div style={{
+                          backgroundColor: "#fef3c7",
+                          padding: "12px 16px",
+                          borderRadius: "8px 8px 0 0",
+                          borderBottom: "2px solid #fbbf24",
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center"
+                        }}>
+                          <div>
+                            <strong style={{color: "#92400e"}}>Prof {teacherToLetter.get(profData.teacher)}</strong>
+                            <span style={{color: "#b45309", marginLeft: "12px", fontSize: "0.875rem"}}>
+                              {profData.tests.length} test{profData.tests.length > 1 ? 's' : ''}
+                            </span>
+                          </div>
+                          <span style={{fontSize: "0.75rem", color: "#d97706"}}>
+                            {profData.teacher.substring(0, 8)}...
+                          </span>
+                        </div>
+                        
+                        {/* Tableau des tests de ce prof */}
+                        <table style={{width: "100%", marginBottom: 0, fontSize: "0.875rem", border: "1px solid #fbbf24", borderTop: "none"}}>
+                          <thead style={{backgroundColor: "#fef3c7"}}>
+                            <tr>
+                              <th style={{textAlign: "left", padding: "8px 12px", minWidth: "200px"}}>Activité</th>
+                              <th style={{textAlign:"center", padding: "8px", minWidth: "120px"}}>Date de création</th>
+                              <th style={{textAlign:"center", padding: "8px", minWidth: "120px"}}>Date de modification</th>
+                              <th style={{textAlign:"center", padding: "8px", width: "120px"}}>Durée de travail</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {profData.tests.map((test, testIdx) => {
+                              const formatDuration = (minutes: number) => {
+                                if (minutes === 0) return "0 min";
+                                if (minutes < 60) return `${minutes} min`;
+                                if (minutes < 1440) {
+                                  const hours = Math.floor(minutes / 60);
+                                  const mins = minutes % 60;
+                                  return `${hours}h${mins > 0 ? mins.toString().padStart(2, '0') : ''}`;
+                                }
+                                const days = Math.floor(minutes / 1440);
+                                const hours = Math.floor((minutes % 1440) / 60);
+                                return `${days}j ${hours}h`;
+                              };
+                              
+                              return (
+                                <tr 
+                                  key={testIdx}
+                                  style={{
+                                    borderBottom: testIdx < profData.tests.length - 1 ? "1px solid #fef3c7" : "none",
+                                    backgroundColor: testIdx % 2 === 0 ? "#fffbeb" : "transparent"
+                                  }}
+                                >
+                                  <td style={{padding: "8px 12px"}}>{test.activityName}</td>
+                                  <td style={{textAlign:"center", padding: "8px", whiteSpace: "nowrap"}}>
+                                    {test.createdDate.toLocaleDateString('fr-FR', {
+                                      day: '2-digit',
+                                      month: '2-digit',
+                                      year: 'numeric'
+                                    })} {test.createdDate.toLocaleTimeString('fr-FR', {
+                                      hour: '2-digit',
+                                      minute: '2-digit'
+                                    })}
+                                  </td>
+                                  <td style={{textAlign:"center", padding: "8px", whiteSpace: "nowrap"}}>
+                                    {test.changedDate.toLocaleDateString('fr-FR', {
+                                      day: '2-digit',
+                                      month: '2-digit',
+                                      year: 'numeric'
+                                    })} {test.changedDate.toLocaleTimeString('fr-FR', {
+                                      hour: '2-digit',
+                                      minute: '2-digit'
+                                    })}
+                                  </td>
+                                  <td style={{
+                                    textAlign:"center", 
+                                    padding: "8px",
+                                    whiteSpace: "nowrap",
+                                    fontWeight: "600",
+                                    color: test.workTimeMinutes === 0 ? "#94a3b8" : 
+                                           test.workTimeMinutes < 60 ? "#10b981" :
+                                           test.workTimeMinutes < 1440 ? "#f59e0b" : "#ef4444"
+                                  }}>
+                                    {formatDuration(test.workTimeMinutes)}
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                    ))}
+                  </div>
+                </>
               )}
               
               {/* Tableau existant : total des usages par activité */}
@@ -1519,7 +2489,7 @@ export default function Dashboard() {
               
               <div style={{marginBottom: "24px"}}>
                 <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px"}}>
-                  <span>Élèves ayant continué après la séance ({'>'}2h)</span>
+                  <span>Élèves ayant continué après la séance ({'>'}1h)</span>
                   <strong style={{fontSize: "1.25rem", color: "#10b981"}}>
                     {analysis.continueApres2h}
                   </strong>
@@ -1673,6 +2643,228 @@ export default function Dashboard() {
                   </LineChart>
                 </ResponsiveContainer>
               </div>
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* Modal détails professeurs par nombre de séances */}
+      {selectedSeancesCount !== null && (() => {
+        const teacherDetails = getTeacherDetailsForSeanceCount(selectedSeancesCount);
+        
+        return (
+          <div 
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(0,0,0,0.5)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              zIndex: 1002,
+              padding: "20px"
+            }}
+            onClick={() => setSelectedSeancesCount(null)}
+          >
+            <div 
+              className="card"
+              style={{
+                maxWidth: "1200px",
+                width: "100%",
+                maxHeight: "90vh",
+                overflow: "auto"
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "16px"}}>
+                <div>
+                  <h2 style={{marginBottom: "4px"}}>
+                    Professeurs avec {selectedSeancesCount} séance{selectedSeancesCount > 1 ? 's' : ''}
+                  </h2>
+                  <p className="muted" style={{marginTop: 0}}>
+                    {teacherDetails.length} professeur{teacherDetails.length > 1 ? 's' : ''} concerné{teacherDetails.length > 1 ? 's' : ''}
+                  </p>
+                </div>
+                <button 
+                  onClick={() => setSelectedSeancesCount(null)}
+                  style={{
+                    fontSize: "1.5rem",
+                    padding: "4px 12px",
+                    lineHeight: 1
+                  }}
+                >
+                  ×
+                </button>
+              </div>
+              
+              {teacherDetails.map((profData, profIdx) => {
+                const etablissements = Array.from(profData.lycees).map(uai => {
+                  const info = annMap.get(uai);
+                  return info ? `${info.nom} (${uai})` : uai;
+                });
+                
+                const dureeJours = Math.round((profData.lastDate.getTime() - profData.firstDate.getTime()) / (1000 * 60 * 60 * 24));
+                const annees = new Set(profData.seances.map(s => s.dateObj.getFullYear()));
+                
+                return (
+                  <div 
+                    key={profIdx} 
+                    style={{
+                      marginBottom: "32px",
+                      padding: "20px",
+                      backgroundColor: "#f8fafc",
+                      borderRadius: "8px",
+                      border: "1px solid #e2e8f0"
+                    }}
+                  >
+                    {/* En-tête professeur */}
+                    <div style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "start",
+                      marginBottom: "16px",
+                      paddingBottom: "12px",
+                      borderBottom: "2px solid #cbd5e1"
+                    }}>
+                      <div>
+                        <h3 style={{margin: 0, color: "#0f172a"}}>
+                          Prof {String.fromCharCode(65 + profIdx)}
+                        </h3>
+                        <span style={{fontSize: "0.75rem", color: "#64748b"}}>
+                          {profData.teacher.substring(0, 16)}...
+                        </span>
+                      </div>
+                      <div style={{textAlign: "right"}}>
+                        <div style={{fontSize: "0.875rem", color: "#64748b"}}>
+                          Timeline: <strong style={{color: "#0f172a"}}>
+                            {profData.firstDate.toLocaleDateString('fr-FR')} → {profData.lastDate.toLocaleDateString('fr-FR')}
+                          </strong>
+                        </div>
+                        <div style={{fontSize: "0.875rem", color: "#64748b", marginTop: "4px"}}>
+                          Durée: <strong style={{color: "#0f172a"}}>{dureeJours} jour{dureeJours > 1 ? 's' : ''}</strong>
+                          {annees.size > 1 && ` • ${annees.size} années`}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Statistiques */}
+                    <div style={{
+                      display: "grid",
+                      gridTemplateColumns: "repeat(3, 1fr)",
+                      gap: "16px",
+                      marginBottom: "20px"
+                    }}>
+                      <div className="card" style={{padding: "12px", backgroundColor: "#fff"}}>
+                        <div style={{fontSize: "1.5rem", fontWeight: "700", color: "#3b82f6"}}>
+                          {profData.lycees.size}
+                        </div>
+                        <div style={{fontSize: "0.75rem", color: "#64748b", marginTop: "4px"}}>
+                          Lycée{profData.lycees.size > 1 ? 's' : ''}
+                        </div>
+                      </div>
+                      
+                      <div className="card" style={{padding: "12px", backgroundColor: "#fff"}}>
+                        <div style={{fontSize: "1.5rem", fontWeight: "700", color: "#8b5cf6"}}>
+                          {profData.activites.size}
+                        </div>
+                        <div style={{fontSize: "0.75rem", color: "#64748b", marginTop: "4px"}}>
+                          Activité{profData.activites.size > 1 ? 's' : ''}
+                        </div>
+                      </div>
+                      
+                      <div className="card" style={{padding: "12px", backgroundColor: "#fff"}}>
+                        <div style={{fontSize: "1.5rem", fontWeight: "700", color: "#10b981"}}>
+                          {profData.seances.reduce((sum, s) => sum + s.students.size, 0)}
+                        </div>
+                        <div style={{fontSize: "0.75rem", color: "#64748b", marginTop: "4px"}}>
+                          Élèves total
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Liste des lycées */}
+                    <div style={{marginBottom: "16px"}}>
+                      <h4 style={{fontSize: "0.875rem", color: "#475569", marginBottom: "8px"}}>
+                        🏫 Lycées ({profData.lycees.size})
+                      </h4>
+                      <div style={{
+                        fontSize: "0.875rem",
+                        color: "#334155",
+                        backgroundColor: "#fff",
+                        padding: "12px",
+                        borderRadius: "6px",
+                        border: "1px solid #e2e8f0"
+                      }}>
+                        {etablissements.join(' • ')}
+                      </div>
+                    </div>
+                    
+                    {/* Liste des activités */}
+                    <div style={{marginBottom: "16px"}}>
+                      <h4 style={{fontSize: "0.875rem", color: "#475569", marginBottom: "8px"}}>
+                        📚 Activités utilisées ({profData.activites.size})
+                      </h4>
+                      <div style={{
+                        fontSize: "0.875rem",
+                        color: "#334155",
+                        backgroundColor: "#fff",
+                        padding: "12px",
+                        borderRadius: "6px",
+                        border: "1px solid #e2e8f0"
+                      }}>
+                        {Array.from(profData.activites).join(' • ')}
+                      </div>
+                    </div>
+                    
+                    {/* Timeline des séances */}
+                    <div>
+                      <h4 style={{fontSize: "0.875rem", color: "#475569", marginBottom: "8px"}}>
+                        📅 Timeline des {selectedSeancesCount} séances
+                      </h4>
+                      <table style={{width: "100%", fontSize: "0.875rem"}}>
+                        <thead style={{backgroundColor: "#fff"}}>
+                          <tr>
+                            <th style={{textAlign: "left", padding: "8px"}}>Date</th>
+                            <th style={{textAlign: "left", padding: "8px"}}>Activité</th>
+                            <th style={{textAlign: "center", padding: "8px"}}>Nb élèves</th>
+                            <th style={{textAlign: "left", padding: "8px"}}>Lycée</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {profData.seances
+                            .sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime())
+                            .map((seance, idx) => {
+                              const etablissement = annMap.get(seance.uai);
+                              return (
+                                <tr 
+                                  key={idx}
+                                  style={{
+                                    backgroundColor: idx % 2 === 0 ? "#fff" : "#f8fafc",
+                                    borderBottom: "1px solid #e2e8f0"
+                                  }}
+                                >
+                                  <td style={{padding: "8px", whiteSpace: "nowrap"}}>
+                                    {seance.dateObj.toLocaleDateString('fr-FR')}
+                                  </td>
+                                  <td style={{padding: "8px"}}>{seance.activityName}</td>
+                                  <td style={{textAlign: "center", padding: "8px", fontWeight: "600"}}>
+                                    {seance.students.size}
+                                  </td>
+                                  <td style={{padding: "8px", fontSize: "0.8rem"}}>
+                                    {etablissement?.nom || seance.uai}
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         );
