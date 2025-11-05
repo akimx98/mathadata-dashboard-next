@@ -1626,9 +1626,9 @@ export default function Dashboard() {
               {activitySuccessMetrics.map((metric, idx) => {
                 // Couleurs pour les taux
                 const getColor = (value: number, thresholds: [number, number]) => {
-                  if (value >= thresholds[1]) return "#10b981"; // Vert
+                  if (value >= thresholds[1]) return "#34d399"; // Vert
                   if (value >= thresholds[0]) return "#f59e0b"; // Orange
-                  return "#ef4444"; // Rouge
+                  return "#f87171"; // Rouge
                 };
                 
                 return (
@@ -1720,7 +1720,7 @@ export default function Dashboard() {
               <strong>Usage après test :</strong> % de profs qui ont enseigné l'activité après l'avoir testée
             </div>
             <div>
-              <strong>Codes couleur :</strong> <span style={{color: "#10b981"}}>■ Excellent</span> <span style={{color: "#f59e0b"}}>■ Bon</span> <span style={{color: "#ef4444"}}>■ Faible</span>
+              <strong>Codes couleur :</strong> <span style={{color: "#34d399"}}>■ Excellent</span> <span style={{color: "#f59e0b"}}>■ Bon</span> <span style={{color: "#f87171"}}>■ Faible</span>
             </div>
           </div>
         </div>
@@ -1736,7 +1736,7 @@ export default function Dashboard() {
                 width: 12, 
                 height: 12, 
                 borderRadius: "50%", 
-                backgroundColor: "#10b981"
+                backgroundColor: "#3b82f6"
               }}></div>
               <span>Usages élèves</span>
             </div>
@@ -1745,7 +1745,7 @@ export default function Dashboard() {
                 width: 12, 
                 height: 12, 
                 borderRadius: "50%", 
-                backgroundColor: "#ef4444"
+                backgroundColor: "#f59e0b"
               }}></div>
               <span>Tests profs uniquement</span>
             </div>
@@ -1796,7 +1796,7 @@ export default function Dashboard() {
                     <td>
                       <span 
                         style={{
-                          color: r.hasStudents ? "#10b981" : "#ef4444",
+                          color: r.hasStudents ? "#3b82f6" : "#f59e0b",
                           cursor: "pointer", 
                           textDecoration: "underline",
                           fontWeight: r.hasStudents ? "600" : "normal"
@@ -1809,13 +1809,13 @@ export default function Dashboard() {
                     <td>{r.ville || "—"}</td>
                     <td>{r.academie || "—"}</td>
                     <td style={{textAlign:"center"}}>{r.nbSeances}</td>
-                    <td style={{textAlign:"center", color: "#10b981", fontWeight: r.nbEleves > 0 ? "600" : "normal"}}>
+                    <td style={{textAlign:"center", color: "#3b82f6", fontWeight: r.nbEleves > 0 ? "600" : "normal"}}>
                       {r.nbEleves}
                     </td>
                     <td style={{textAlign:"center", color: "#3b82f6", fontWeight: r.nbProfsEnseignant > 0 ? "600" : "normal"}}>
                       {r.nbProfsEnseignant}
                     </td>
-                    <td style={{textAlign:"center", color: "#ef4444", fontWeight: r.nbProfsTestant > 0 ? "600" : "normal"}}>
+                    <td style={{textAlign:"center", color: "#f59e0b", fontWeight: r.nbProfsTestant > 0 ? "600" : "normal"}}>
                       {r.nbProfsTestant}
                     </td>
                     <td style={{textAlign:"right"}}>{r.ips != null ? r.ips : "—"}</td>
@@ -1882,7 +1882,7 @@ export default function Dashboard() {
               </tr>
               <tr style={{borderTop: "2px solid #e2e8f0"}}>
                 <td><strong>Profs ont testé puis enseigné</strong></td>
-                <td style={{textAlign:"right", color: "#10b981", fontWeight: "600"}}>
+                <td style={{textAlign:"right", color: "#34d399", fontWeight: "600"}}>
                   {globalStats.profsTestedThenTaught.toLocaleString("fr-FR")}
                   {" "}
                   <span style={{color: "#64748b", fontSize: "0.875rem", fontWeight: "normal"}}>
@@ -1902,7 +1902,7 @@ export default function Dashboard() {
               </tr>
               <tr>
                 <td>Profs ont testé mais pas enseigné</td>
-                <td style={{textAlign:"right", color: "#ef4444"}}>
+                <td style={{textAlign:"right", color: "#f87171"}}>
                   {globalStats.profsTestedButNeverTaught.toLocaleString("fr-FR")}
                   {" "}
                   <span style={{color: "#64748b", fontSize: "0.875rem"}}>
@@ -1954,7 +1954,7 @@ export default function Dashboard() {
                   <XAxis dataKey="range" label={{ value: "IPS", position: "insideBottom", offset: -5 }} />
                   <YAxis allowDecimals={false} label={{ value: "Nombre de lycées", angle: -90, position: "insideLeft" }} />
                   <Tooltip />
-                  <Bar dataKey="count" name="Lycées" fill="#10b981" />
+                  <Bar dataKey="count" name="Lycées" fill="#34d399" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -1997,7 +1997,7 @@ export default function Dashboard() {
                 <Bar 
                   dataKey="nbProfs" 
                   name="Professeurs" 
-                  fill="#10b981"
+                  fill="#34d399"
                   onClick={(data: any) => {
                     if (data && data.nbSeancesNum) {
                       setSelectedSeancesCount(data.nbSeancesNum);
@@ -2196,7 +2196,7 @@ export default function Dashboard() {
                                   <td style={{
                                     textAlign:"center", 
                                     padding: "8px",
-                                    color: analysis && analysis.continueApres2h > 0 ? "#10b981" : "#94a3b8"
+                                    color: analysis && analysis.continueApres2h > 0 ? "#34d399" : "#94a3b8"
                                   }}>
                                     {analysis ? analysis.continueApres2h : 0}
                                   </td>
@@ -2325,8 +2325,8 @@ export default function Dashboard() {
                                     whiteSpace: "nowrap",
                                     fontWeight: "600",
                                     color: test.workTimeMinutes === 0 ? "#94a3b8" : 
-                                           test.workTimeMinutes < 60 ? "#10b981" :
-                                           test.workTimeMinutes < 1440 ? "#f59e0b" : "#ef4444"
+                                           test.workTimeMinutes < 60 ? "#34d399" :
+                                           test.workTimeMinutes < 1440 ? "#f59e0b" : "#f87171"
                                   }}>
                                     {formatDuration(test.workTimeMinutes)}
                                   </td>
@@ -2350,8 +2350,8 @@ export default function Dashboard() {
                 <thead>
                   <tr>
                     <th>Activité</th>
-                    <th style={{textAlign:"right", color: "#10b981"}}>Élèves</th>
-                    <th style={{textAlign:"right", color: "#ef4444"}}>Profs</th>
+                    <th style={{textAlign:"right", color: "#34d399"}}>Élèves</th>
+                    <th style={{textAlign:"right", color: "#f87171"}}>Profs</th>
                     <th style={{textAlign:"right"}}>Total</th>
                     <th style={{textAlign:"right"}}>Dernier usage</th>
                   </tr>
@@ -2360,10 +2360,10 @@ export default function Dashboard() {
                   {activityDetails.map(detail => (
                     <tr key={detail.activity}>
                       <td>{detail.activity}</td>
-                      <td style={{textAlign:"right", color: "#10b981", fontWeight: detail.studentCount > 0 ? "600" : "normal"}}>
+                      <td style={{textAlign:"right", color: "#3b82f6", fontWeight: detail.studentCount > 0 ? "600" : "normal"}}>
                         {detail.studentCount}
                       </td>
-                      <td style={{textAlign:"right", color: "#ef4444", fontWeight: detail.teacherCount > 0 ? "600" : "normal"}}>
+                      <td style={{textAlign:"right", color: "#f59e0b", fontWeight: detail.teacherCount > 0 ? "600" : "normal"}}>
                         {detail.teacherCount}
                       </td>
                       <td style={{textAlign:"right", fontWeight: "600"}}>

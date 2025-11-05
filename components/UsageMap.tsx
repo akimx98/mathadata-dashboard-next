@@ -39,8 +39,8 @@ export default function UsageMap({ points, onPointClick }: UsageMapProps) {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {valid.map(p => {
-        // Déterminer la couleur : vert si élèves, rouge si uniquement profs
-        const color = p.hasStudents ? "#10b981" : "#ef4444";
+        // Déterminer la couleur : bleu si élèves, orange si uniquement profs
+        const color = p.hasStudents ? "#3b82f6" : "#f59e0b";
         
         return (
           <CircleMarker
@@ -68,7 +68,7 @@ export default function UsageMap({ points, onPointClick }: UsageMapProps) {
                 Usages : {p.nb}<br />
                 {p.teacherUsages !== undefined && p.studentUsages !== undefined && (
                   <>
-                    <span style={{color: "#ef4444"}}>Profs: {p.teacherUsages}</span> • <span style={{color: "#10b981"}}>Élèves: {p.studentUsages}</span><br />
+                    <span style={{color: "#f59e0b"}}>Profs: {p.teacherUsages}</span> • <span style={{color: "#3b82f6"}}>Élèves: {p.studentUsages}</span><br />
                   </>
                 )}
                 IPS : {p.ips != null ? p.ips : "—"}
