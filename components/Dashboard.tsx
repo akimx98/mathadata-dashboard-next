@@ -2564,6 +2564,92 @@ export default function Dashboard() {
                   </div>
                 </div>
               )}
+              
+              {/* Tableau détaillé des sessions élèves */}
+              <h3 style={{fontSize: "1rem", marginBottom: "16px", marginTop: "24px", color: "#475569"}}>
+                📋 Détail des sessions élèves ({foundSeance.sessions.length})
+              </h3>
+              
+              <div style={{overflowX: "auto", marginBottom: "16px"}}>
+                <table style={{width: "100%", fontSize: "0.875rem"}}>
+                  <thead style={{backgroundColor: "#f8fafc"}}>
+                    <tr>
+                      <th style={{textAlign: "left", padding: "8px 12px", minWidth: "60px"}}>#</th>
+                      <th style={{textAlign: "left", padding: "8px 12px", minWidth: "120px"}}>Élève</th>
+                      <th style={{textAlign: "center", padding: "8px", minWidth: "120px"}}>Création</th>
+                      <th style={{textAlign: "center", padding: "8px", minWidth: "120px"}}>Dernier enregistrement</th>
+                      <th style={{textAlign: "center", padding: "8px", minWidth: "100px"}}>Temps de travail</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {foundSeance.sessions
+                      .sort((a, b) => a.created - b.created)
+                      .map((session, idx) => {
+                        const createdDate = new Date(session.created);
+                        const changedDate = new Date(session.changed);
+                        const workTimeMinutes = Math.round((session.changed - session.created) / (1000 * 60));
+                        
+                        const formatDuration = (minutes: number) => {
+                          if (minutes === 0) return "0 min";
+                          if (minutes < 60) return `${minutes} min`;
+                          if (minutes < 1440) {
+                            const hours = Math.floor(minutes / 60);
+                            const mins = minutes % 60;
+                            return `${hours}h${mins > 0 ? mins.toString().padStart(2, '0') : ''}`;
+                          }
+                          const days = Math.floor(minutes / 1440);
+                          const hours = Math.floor((minutes % 1440) / 60);
+                          return `${days}j ${hours}h`;
+                        };
+                        
+                        return (
+                          <tr 
+                            key={idx}
+                            style={{
+                              backgroundColor: idx % 2 === 0 ? "#fff" : "#f8fafc",
+                              borderBottom: "1px solid #e2e8f0"
+                            }}
+                          >
+                            <td style={{padding: "8px 12px", color: "#64748b"}}>
+                              {idx + 1}
+                            </td>
+                            <td style={{padding: "8px 12px", fontFamily: "monospace", fontSize: "0.8rem"}}>
+                              {session.student.substring(0, 12)}...
+                            </td>
+                            <td style={{textAlign: "center", padding: "8px", whiteSpace: "nowrap"}}>
+                              <div>{createdDate.toLocaleDateString('fr-FR')}</div>
+                              <div style={{fontSize: "0.75rem", color: "#64748b"}}>
+                                {createdDate.toLocaleTimeString('fr-FR', {
+                                  hour: '2-digit',
+                                  minute: '2-digit'
+                                })}
+                              </div>
+                            </td>
+                            <td style={{textAlign: "center", padding: "8px", whiteSpace: "nowrap"}}>
+                              <div>{changedDate.toLocaleDateString('fr-FR')}</div>
+                              <div style={{fontSize: "0.75rem", color: "#64748b"}}>
+                                {changedDate.toLocaleTimeString('fr-FR', {
+                                  hour: '2-digit',
+                                  minute: '2-digit'
+                                })}
+                              </div>
+                            </td>
+                            <td style={{
+                              textAlign: "center", 
+                              padding: "8px",
+                              fontWeight: "600",
+                              color: workTimeMinutes === 0 ? "#94a3b8" : 
+                                     workTimeMinutes < 60 ? "#3b82f6" :
+                                     workTimeMinutes < 1440 ? "#f59e0b" : "#f87171"
+                            }}>
+                              {formatDuration(workTimeMinutes)}
+                            </td>
+                          </tr>
+                        );
+                      })}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         );
