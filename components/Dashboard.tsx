@@ -452,9 +452,27 @@ export default function Dashboard() {
         va = a.nbProfsTestant || 0;
         vb = b.nbProfsTestant || 0;
       } else if (k === "ips") {
-        // Pour l'IPS, convertir en nombre ou utiliser -Infinity si absent
-        va = a.ips != null ? (typeof a.ips === 'string' ? parseFloat(a.ips) : a.ips) : -Infinity;
-        vb = b.ips != null ? (typeof b.ips === 'string' ? parseFloat(b.ips) : b.ips) : -Infinity;
+        // Pour l'IPS, convertir en nombre en gérant tous les cas
+        let ipsA: number | null = null;
+        let ipsB: number | null = null;
+        
+        if (a.ips != null && a.ips !== undefined && a.ips !== '') {
+          const parsed = typeof a.ips === 'string' ? parseFloat(a.ips) : Number(a.ips);
+          if (!isNaN(parsed)) ipsA = parsed;
+        }
+        
+        if (b.ips != null && b.ips !== undefined && b.ips !== '') {
+          const parsed = typeof b.ips === 'string' ? parseFloat(b.ips) : Number(b.ips);
+          if (!isNaN(parsed)) ipsB = parsed;
+        }
+        
+        // Gérer les valeurs null : les mettre toujours à la fin
+        if (ipsA === null && ipsB === null) return 0;
+        if (ipsA === null) return 1; // null va toujours à la fin
+        if (ipsB === null) return -1; // null va toujours à la fin
+        
+        // Comparer les nombres
+        return sortAsc ? (ipsA - ipsB) : (ipsB - ipsA);
       } else {
         va = (a[k] || "");
         vb = (b[k] || "");
@@ -2099,6 +2117,7 @@ export default function Dashboard() {
                     {etablissement?.ville && `${etablissement.ville} • `}
                     {etablissement?.academie && `${etablissement.academie} • `}
                     UAI: {selectedUai}
+                    {etablissement?.ips != null && ` • IPS: ${etablissement.ips}`}
                   </p>
                 </div>
                 <button 
