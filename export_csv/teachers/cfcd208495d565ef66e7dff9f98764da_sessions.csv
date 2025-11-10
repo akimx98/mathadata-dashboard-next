@@ -1,0 +1,26 @@
+session_number,activity_id,activity_name,uai,school_name,date,timestamp,time_pattern,nb_students,avg_work_duration_minutes,continuation_rate,home_work_rate,had_second_session,second_session_date,second_session_students,tested_first,days_between_test_and_teaching,is_same_students_as_previous,overlap_rate
+1,2548348,Intro � l'IA : classification de chiffres 2 et 7,0590117G,Inconnu,2024-05-16,2024-05-16T05:53:20.000Z,night_weekday,3,6776,0.33,0,no,,0,no,-263,,
+2,2548348,Intro � l'IA : classification de chiffres 2 et 7,0590117G,Inconnu,2024-05-23,2024-05-23T06:10:40.000Z,morning_weekday,1,44,0,0,no,,0,no,-255,no,0
+3,2548348,Intro � l'IA : classification de chiffres 2 et 7,0590117G,Inconnu,2024-05-30,2024-05-30T06:08:27.000Z,morning_weekday,1,42,0,0,no,,0,no,-248,no,0
+4,2548348,Intro � l'IA : classification de chiffres 2 et 7,0590117G,Inconnu,2024-06-06,2024-06-06T06:06:46.000Z,morning_weekday,1,0,0,0,no,,0,no,-241,no,0
+5,2548348,Intro � l'IA : classification de chiffres 2 et 7,0951104J,Inconnu,2024-06-05,2024-06-05T11:34:35.000Z,lunch_weekday,3,35,0,0,no,,0,no,-242,no,0
+6,2548348,Intro � l'IA : classification de chiffres 2 et 7,0590101P,Inconnu,2025-03-03,2025-03-03T14:47:56.000Z,afternoon_weekday,7,6,0,0,no,,0,yes,29,no,0
+7,2548348,Intro � l'IA : classification de chiffres 2 et 7,NULL,Inconnu,2025-03-03,2025-03-03T14:56:46.000Z,afternoon_weekday,3,0,0,0,no,,0,yes,29,no,0
+8,2548348,Intro � l'IA : classification de chiffres 2 et 7,NULL,Inconnu,2025-03-24,2025-03-24T09:37:45.000Z,morning_weekday,18,38,0,0,no,,0,yes,50,no,0
+9,2548348,Intro � l'IA : classification de chiffres 2 et 7,NULL,Inconnu,2025-03-24,2025-03-24T11:33:06.000Z,lunch_weekday,16,35,0.06,0,no,,0,yes,50,no,0
+10,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,0590093F,Inconnu,2025-03-28,2025-03-28T08:38:43.000Z,morning_weekday,13,31,0,0,no,,0,no,,,
+11,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0750657G,Inconnu,2024-05-27,2024-05-27T15:58:04.000Z,afternoon_weekday,1,68,1,1,no,,0,no,,,
+12,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0590117G,Inconnu,2024-10-16,2024-10-16T07:03:41.000Z,morning_weekday,1,0,0,0,no,,0,no,,no,0
+13,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0590117G,Inconnu,2024-10-16,2024-10-16T09:06:07.000Z,morning_weekday,15,37,0,0,no,,0,no,,no,0
+14,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0590117G,Inconnu,2024-12-06,2024-12-06T07:06:11.000Z,morning_weekday,11,0,0,0,no,,0,no,,no,0
+15,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,NULL,Inconnu,2025-02-08,2025-02-08T14:27:52.000Z,afternoon_weekend,2,0,0,0,no,,0,no,,no,0
+16,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,NULL,Inconnu,2025-02-08,2025-02-08T15:40:44.000Z,afternoon_weekend,8,37,0,0,no,,0,no,,no,0
+17,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,NULL,Inconnu,2025-03-03,2025-03-03T13:39:38.000Z,afternoon_weekday,3,15,0,0,no,,0,no,,no,0
+18,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,NULL,Inconnu,2025-04-16,2025-04-16T11:32:03.000Z,lunch_weekday,1,0,0,0,no,,0,no,,no,0
+19,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0590101P,Inconnu,2025-02-24,2025-02-24T13:36:22.000Z,afternoon_weekday,12,37,0,0,no,,0,no,,no,0
+20,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0590101P,Inconnu,2025-03-03,2025-03-03T13:37:56.000Z,afternoon_weekday,13,32,0,0,no,,0,no,,no,0
+21,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0590093F,Inconnu,2025-03-28,2025-03-28T09:59:31.000Z,morning_weekday,15,31,0,0,no,,0,no,,no,0
+22,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0590093F,Inconnu,2025-04-24,2025-04-24T08:42:24.000Z,morning_weekday,37,11,0,0,no,,0,no,,no,0
+23,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0590093F,Inconnu,2025-04-24,2025-04-24T09:42:25.000Z,morning_weekday,4,9,0,0,no,,0,no,,no,0
+24,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,NULL,Inconnu,2025-03-25,2025-03-25T12:24:14.000Z,lunch_weekday,23,137,0.91,0.04,no,,0,no,0,,
+25,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,0620140R,Inconnu,2025-06-06,2025-06-06T12:05:08.000Z,afternoon_weekday,4,55,0.75,0,yes,2025-06-06T13:16:41.000Z,3,no,,,

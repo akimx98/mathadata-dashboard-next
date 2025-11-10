@@ -1,0 +1,52 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-05-22T14:30:00.000Z,2025-05-22,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,7f3acf93cb5d5803d228162f0b7a184c,0341794R,Inconnu,49
+2025-05-22T14:30:10.000Z,2025-05-22,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,13c6b06a5133c4946d746716edb36c5a,0341794R,Inconnu,39
+2025-05-22T14:30:25.000Z,2025-05-22,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,05ca54aff534f2ad3dd8c792ca703ba5,0341794R,Inconnu,40
+2025-05-22T14:30:29.000Z,2025-05-22,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,b715617ac16970b180e2361b6ec9a054,0341794R,Inconnu,33
+2025-05-22T14:31:18.000Z,2025-05-22,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,466bbc35359c2bff2fc12b67b2047b19,0341794R,Inconnu,0
+2025-05-22T14:32:16.000Z,2025-05-22,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,19ffcd3dacd90507ac988ef514c4bb2a,0341794R,Inconnu,32
+2025-05-22T14:32:21.000Z,2025-05-22,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,e77fd6d78ac29e39ac6d854b5402d25f,0341794R,Inconnu,45
+2025-05-22T14:32:57.000Z,2025-05-22,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,0d50d2e5cc2d8d134678ea223e1c2dd6,0341794R,Inconnu,45
+2025-05-22T14:33:58.000Z,2025-05-22,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,34638528802e3f099e1850dde81253e5,0341794R,Inconnu,41
+2025-05-22T14:41:08.000Z,2025-05-22,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,5353ea97003752f49047c98e2e164c4c,0341794R,Inconnu,0
+2025-05-22T14:41:46.000Z,2025-05-22,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,bf08649401dbcaba16e21db62e07664a,0341794R,Inconnu,0
+2025-05-22T14:59:54.000Z,2025-05-22,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,f071598c472ee319d5f02838bb0dc627,0341794R,Inconnu,25
+2025-05-22T15:06:33.000Z,2025-05-22,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,19ffcd3dacd90507ac988ef514c4bb2a,0341794R,Inconnu,19
+2025-05-22T15:06:54.000Z,2025-05-22,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,466bbc35359c2bff2fc12b67b2047b19,0341794R,Inconnu,18
+2025-05-22T15:06:56.000Z,2025-05-22,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,b715617ac16970b180e2361b6ec9a054,0341794R,Inconnu,18
+2025-05-22T15:10:23.000Z,2025-05-22,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,13c6b06a5133c4946d746716edb36c5a,0341794R,Inconnu,15
+2025-05-22T15:11:52.000Z,2025-05-22,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,05ca54aff534f2ad3dd8c792ca703ba5,0341794R,Inconnu,14
+2025-05-22T15:16:34.000Z,2025-05-22,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,34638528802e3f099e1850dde81253e5,0341794R,Inconnu,9
+2025-05-22T15:18:18.000Z,2025-05-22,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,0d50d2e5cc2d8d134678ea223e1c2dd6,0341794R,Inconnu,7
+2025-05-22T15:19:55.000Z,2025-05-22,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,7f3acf93cb5d5803d228162f0b7a184c,0341794R,Inconnu,6
+2025-05-23T13:13:31.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,d6ab3d09d27710f94b9735a7eb6703ec,0341794R,Inconnu,0
+2025-05-23T13:13:32.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,0851fda373742f8f83909825fe005f7c,0341794R,Inconnu,0
+2025-05-23T13:14:26.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,0377bf6ebd9bacfbe96a492c532f0e3b,0341794R,Inconnu,0
+2025-05-23T13:14:46.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,721c5853d83df81cf4da16b7085d7051,0341794R,Inconnu,11
+2025-05-23T13:15:05.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,d975ab9c732251afa1f9b296bcd6145f,0340039H,Inconnu,26
+2025-05-23T13:15:23.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,85d0a6a0e329295a04e62be5797a4b33,0341794R,Inconnu,0
+2025-05-23T13:15:32.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,dc19c9bfc0e9d879d3f5d448b3f87f3c,0341794R,Inconnu,17
+2025-05-23T13:17:02.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,12c8dc9324c08e13ff5a6b9cf275945f,0341794R,Inconnu,0
+2025-05-23T13:18:09.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,c76f5536866d7e6e9fabf9e3c23f6783,0341794R,Inconnu,0
+2025-05-23T13:20:22.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,025e18c7e6734468111ef356b73110cc,0341794R,Inconnu,20
+2025-05-23T13:24:03.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,2700d8797560a0db8e11c6d156f21e57,0341794R,Inconnu,0
+2025-05-23T13:25:58.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,335e91e794e85b2be14d08ac9da8fe0d,0341794R,Inconnu,0
+2025-05-23T13:27:58.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,5027122cc9e98eb672a7508ea5b5d50d,0341794R,Inconnu,0
+2025-05-23T13:29:42.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,20ca75cf9c56d176579014bd520f5fe2,0341794R,Inconnu,0
+2025-05-23T13:31:30.000Z,2025-05-23,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,abd3eeca6dad057c381539aa2e85078d,0341794R,Inconnu,0
+2025-05-26T08:47:54.000Z,2025-05-26,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,a59012ac193e546807b6de94bbcaff9c,0341794R,Inconnu,0
+2025-05-26T08:48:10.000Z,2025-05-26,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,087ca964b6e9a486a663c0f95acd1805,0341794R,Inconnu,0
+2025-05-26T08:48:21.000Z,2025-05-26,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,44fcde9291d9b6df4eb4794fb7f7d63a,0341794R,Inconnu,21
+2025-05-26T08:49:10.000Z,2025-05-26,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,fdf59fbc4558e5ed36989a961dc99b04,0341794R,Inconnu,11
+2025-05-26T08:49:19.000Z,2025-05-26,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,cbd3eeb069c8e8447a99842061fa5fa1,0341794R,Inconnu,25
+2025-05-26T08:50:19.000Z,2025-05-26,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,7ea6ecc086448d9c3795f3aa4d21a56d,0341794R,Inconnu,0
+2025-05-26T08:50:56.000Z,2025-05-26,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,03ba22e473f7cae036382e25efba018d,0341794R,Inconnu,21
+2025-05-26T08:51:32.000Z,2025-05-26,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,f977bf3b35d95f735ff6a6ae3905453b,0341794R,Inconnu,0
+2025-05-26T08:51:36.000Z,2025-05-26,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,9612d7b3ee9ef59c3d085f4787d8b90c,0341794R,Inconnu,29
+2025-05-26T08:51:47.000Z,2025-05-26,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,4b0e47c8f2486f3cc7ef2724ead46105,0341794R,Inconnu,0
+2025-05-26T08:54:37.000Z,2025-05-26,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,0770e4cbc11f0a57f8c315ef6fc9f83d,0341794R,Inconnu,0
+2025-05-26T08:55:09.000Z,2025-05-26,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,b4b3de3c9c6bc79394e2bdb4e532d5d3,0341794R,Inconnu,0
+2025-05-26T09:10:12.000Z,2025-05-26,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,44fcde9291d9b6df4eb4794fb7f7d63a,0341794R,Inconnu,0
+2025-05-26T09:10:58.000Z,2025-05-26,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,68ada2bc73dd73dbf98ec5668ed3dbd1,0341794R,Inconnu,0
+2025-05-26T09:12:28.000Z,2025-05-26,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,68ada2bc73dd73dbf98ec5668ed3dbd1,0341794R,Inconnu,0
+2025-05-26T09:15:40.000Z,2025-05-26,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,cbd3eeb069c8e8447a99842061fa5fa1,0341794R,Inconnu,7

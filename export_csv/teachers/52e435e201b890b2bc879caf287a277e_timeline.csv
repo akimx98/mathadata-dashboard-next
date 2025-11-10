@@ -1,0 +1,10 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-01-09T12:57:57.000Z,2025-01-09,teaching,5197770,"MathAData in english - Geometry, vectors - MNIST image classification challenge",32925129e7d09907c321c4e670af451f,NULL,Inconnu,47
+2025-01-09T12:58:12.000Z,2025-01-09,teaching,5197770,"MathAData in english - Geometry, vectors - MNIST image classification challenge",503d6ab6e85058b47a551fe144d295d2,NULL,Inconnu,48
+2025-01-09T12:58:14.000Z,2025-01-09,teaching,5197770,"MathAData in english - Geometry, vectors - MNIST image classification challenge",b9a02c132921cd834a1e3716230d28e5,NULL,Inconnu,47
+2025-01-09T12:58:35.000Z,2025-01-09,teaching,5197770,"MathAData in english - Geometry, vectors - MNIST image classification challenge",48f145bd7d10e7d777990184543f64b6,NULL,Inconnu,47
+2025-01-09T12:59:47.000Z,2025-01-09,teaching,5197770,"MathAData in english - Geometry, vectors - MNIST image classification challenge",f7b7dc3178a39f4d4cfd40eb6311c3f8,NULL,Inconnu,0
+2025-01-09T13:00:11.000Z,2025-01-09,teaching,5197770,"MathAData in english - Geometry, vectors - MNIST image classification challenge",dbcf042169c720beefbe308d1efd35ac,NULL,Inconnu,46
+2025-01-09T13:00:15.000Z,2025-01-09,teaching,5197770,"MathAData in english - Geometry, vectors - MNIST image classification challenge",2855e89c9c1ab21a030b745205e868d7,NULL,Inconnu,45
+2025-01-09T13:07:03.000Z,2025-01-09,teaching,5197770,"MathAData in english - Geometry, vectors - MNIST image classification challenge",96a1d62ba9104085cb6f8891bb1c698f,NULL,Inconnu,0
+2025-01-09T13:09:30.000Z,2025-01-09,teaching,5197770,"MathAData in english - Geometry, vectors - MNIST image classification challenge",3bb12c9b48824f73620623b67d03b357,NULL,Inconnu,36

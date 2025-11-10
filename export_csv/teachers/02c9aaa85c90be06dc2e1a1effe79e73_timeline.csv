@@ -1,0 +1,45 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-06-03T06:59:28.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,006ce65b21243446c36c6105893102e2,0680010S,Inconnu,37
+2025-06-03T06:59:41.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,ae73c0e56d55dd35666c6bfa4d457dac,0680010S,Inconnu,45
+2025-06-03T06:59:45.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,4a320148e01a20fc549ee53fb3c62f24,0680010S,Inconnu,44
+2025-06-03T06:59:55.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,5069c8336df46b076401443efa4a8bf6,0680010S,Inconnu,9
+2025-06-03T07:00:02.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,af7d74e6cb72612060cf3b0f5dde31d3,0680010S,Inconnu,45
+2025-06-03T07:01:02.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,125218dc526d2445e9ac3806f073586b,0680010S,Inconnu,44
+2025-06-03T07:01:15.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,09afb20c72ba7df9530f50721610dde3,0680010S,Inconnu,0
+2025-06-03T07:03:03.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,a914044507225f2469a4412e69b0d075,0680010S,Inconnu,39
+2025-06-03T07:03:18.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,79d4fa0312beeb1eb7a91b75adeabd8d,0680010S,Inconnu,0
+2025-06-03T07:03:32.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,b27e9762a9ee06fa7a949d9e465f70b7,0680010S,Inconnu,0
+2025-06-03T07:12:47.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,7741d36dc6ddd6413cf1dfde1dcbf4fa,0680010S,Inconnu,32
+2025-06-03T07:12:48.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,4d28ba4eef7971cce83b94aafd52600a,0680010S,Inconnu,157
+2025-06-03T09:05:17.000Z,2025-06-03,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,02c9aaa85c90be06dc2e1a1effe79e73,0680010S,Inconnu,46
+2025-06-03T09:05:46.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,c351943d8b37ae6298c91e93b0a92afe,0680010S,Inconnu,44
+2025-06-03T09:05:50.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,5a12cc8795441c8211b82e25b4ef1820,0680010S,Inconnu,0
+2025-06-03T09:05:54.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,7ce2b3ca079314a79c9c2d2d8b5d600f,0680010S,Inconnu,44
+2025-06-03T09:06:12.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,de807ce8714b20b982ca9c841f6c224d,0680010S,Inconnu,42
+2025-06-03T09:06:24.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,e2cf725f7723f022390d5ce9c56c19b9,0680010S,Inconnu,0
+2025-06-03T09:07:39.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,77354c1761de9f76cbeab77fa891e713,0680010S,Inconnu,0
+2025-06-03T09:07:41.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,727d877e898e090323a98034d5c227e3,0680010S,Inconnu,0
+2025-06-03T09:08:20.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,792be914a2d35b260d19b7db785d95e5,0680010S,Inconnu,0
+2025-06-03T09:13:33.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,4840941c55b0013b43dc0f949f4dcc82,0680010S,Inconnu,0
+2025-06-03T09:15:53.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,1d3f425b1e00387164b466d84e12a26d,0680010S,Inconnu,0
+2025-06-05T14:00:00.000Z,2025-06-05,test,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,02c9aaa85c90be06dc2e1a1effe79e73,0680010S,Inconnu,5734
+2025-06-10T12:01:48.000Z,2025-06-10,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,7ce2b3ca079314a79c9c2d2d8b5d600f,0680010S,Inconnu,0
+2025-06-10T12:02:13.000Z,2025-06-10,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,c351943d8b37ae6298c91e93b0a92afe,0680010S,Inconnu,12
+2025-06-10T12:02:17.000Z,2025-06-10,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,7741d36dc6ddd6413cf1dfde1dcbf4fa,0680010S,Inconnu,0
+2025-06-10T12:02:25.000Z,2025-06-10,test,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,02c9aaa85c90be06dc2e1a1effe79e73,0680010S,Inconnu,102
+2025-06-10T12:02:34.000Z,2025-06-10,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,7741d36dc6ddd6413cf1dfde1dcbf4fa,0680010S,Inconnu,0
+2025-06-10T12:03:10.000Z,2025-06-10,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,de807ce8714b20b982ca9c841f6c224d,0680010S,Inconnu,20
+2025-06-10T12:03:37.000Z,2025-06-10,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,c351943d8b37ae6298c91e93b0a92afe,0680010S,Inconnu,0
+2025-06-10T12:03:41.000Z,2025-06-10,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,4d28ba4eef7971cce83b94aafd52600a,0680010S,Inconnu,0
+2025-06-10T12:03:54.000Z,2025-06-10,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,ae73c0e56d55dd35666c6bfa4d457dac,0680010S,Inconnu,0
+2025-06-10T12:04:03.000Z,2025-06-10,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,006ce65b21243446c36c6105893102e2,0680010S,Inconnu,0
+2025-06-10T12:05:01.000Z,2025-06-10,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,7ce2b3ca079314a79c9c2d2d8b5d600f,0680010S,Inconnu,37
+2025-06-10T12:06:35.000Z,2025-06-10,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,ae73c0e56d55dd35666c6bfa4d457dac,0680010S,Inconnu,0
+2025-06-10T12:07:09.000Z,2025-06-10,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,5a12cc8795441c8211b82e25b4ef1820,0680010S,Inconnu,0
+2025-06-10T12:12:34.000Z,2025-06-10,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,79d4fa0312beeb1eb7a91b75adeabd8d,0680010S,Inconnu,0
+2025-06-10T12:20:05.000Z,2025-06-10,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,79d4fa0312beeb1eb7a91b75adeabd8d,0680010S,Inconnu,0
+2025-06-10T12:21:00.000Z,2025-06-10,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,b27e9762a9ee06fa7a949d9e465f70b7,0680010S,Inconnu,0
+2025-06-10T12:37:02.000Z,2025-06-10,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,125218dc526d2445e9ac3806f073586b,0680010S,Inconnu,0
+2025-06-10T12:40:02.000Z,2025-06-10,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,af7d74e6cb72612060cf3b0f5dde31d3,0680010S,Inconnu,0
+2025-06-15T07:45:03.000Z,2025-06-15,test,4388355,Mathadata - Sc�ance Python - Classification d'image MNIST,02c9aaa85c90be06dc2e1a1effe79e73,0680010S,Inconnu,3
+2025-06-15T07:53:45.000Z,2025-06-15,test,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,02c9aaa85c90be06dc2e1a1effe79e73,0680010S,Inconnu,25

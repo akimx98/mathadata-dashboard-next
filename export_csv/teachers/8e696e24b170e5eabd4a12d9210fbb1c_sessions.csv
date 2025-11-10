@@ -1,0 +1,2 @@
+session_number,activity_id,activity_name,uai,school_name,date,timestamp,time_pattern,nb_students,avg_work_duration_minutes,continuation_rate,home_work_rate,had_second_session,second_session_date,second_session_students,tested_first,days_between_test_and_teaching,is_same_students_as_previous,overlap_rate
+1,2548348,Intro � l'IA : classification de chiffres 2 et 7,0590073J,Inconnu,2024-12-16,2024-12-16T08:31:44.000Z,morning_weekday,25,26820,0.72,0.52,yes,2025-01-10T10:27:08.000Z,2,yes,6,,

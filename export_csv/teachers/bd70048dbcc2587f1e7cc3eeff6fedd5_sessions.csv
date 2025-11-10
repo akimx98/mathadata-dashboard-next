@@ -1,0 +1,5 @@
+session_number,activity_id,activity_name,uai,school_name,date,timestamp,time_pattern,nb_students,avg_work_duration_minutes,continuation_rate,home_work_rate,had_second_session,second_session_date,second_session_students,tested_first,days_between_test_and_teaching,is_same_students_as_previous,overlap_rate
+1,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0340039H,Inconnu,2025-10-07,2025-10-07T08:21:34.000Z,morning_weekday,28,2165,0.32,0.32,yes,2025-10-12T18:57:44.000Z,3,no,,,
+2,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0340039H,Inconnu,2025-10-12,2025-10-12T10:29:27.000Z,lunch_weekend,1,0,0,0,no,,0,no,,no,0
+3,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0340039H,Inconnu,2025-10-12,2025-10-12T14:50:18.000Z,afternoon_weekend,2,23,0,0,no,,0,no,,no,0
+4,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0340039H,Inconnu,2025-10-12,2025-10-12T16:59:54.000Z,evening_weekend,1,0,0,1,no,,0,no,,no,0

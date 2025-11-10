@@ -1,0 +1,219 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2024-05-16T05:53:20.000Z,2024-05-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,550671a2b1035847393fe96d9a7715f6,0590117G,Inconnu,20220
+2024-05-16T05:59:17.000Z,2024-05-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,f37ed94fafd1d410356906baa3405b3a,0590117G,Inconnu,55
+2024-05-16T06:03:23.000Z,2024-05-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,87e663a89e333b33210b0f4ca1c69906,0590117G,Inconnu,52
+2024-05-23T06:10:40.000Z,2024-05-23,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,a7f74cf289b0a9991c6d22d595f6d06b,0590117G,Inconnu,44
+2024-05-27T15:58:04.000Z,2024-05-27,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0b657ef04b82a6d69359b3bc0b3682df,0750657G,Inconnu,68
+2024-05-30T06:08:27.000Z,2024-05-30,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,f48cedd6a69101030e93d4ef60f48fd0,0590117G,Inconnu,42
+2024-06-05T11:34:35.000Z,2024-06-05,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,ababeac851733744f60d8d93547c6491,0951104J,Inconnu,53
+2024-06-05T11:35:07.000Z,2024-06-05,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,71d1f52f00e7850d7165acd8a8822e3a,0951104J,Inconnu,50
+2024-06-05T11:37:47.000Z,2024-06-05,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,b860e7cb225526106e2905c598f66188,0951104J,Inconnu,2
+2024-06-06T06:06:46.000Z,2024-06-06,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,778b3627a4d323209f019fcf7ae5d832,0590117G,Inconnu,0
+2024-10-16T07:03:41.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,1856d7cbd12bf58bc3d053c6b5fb23c3,0590117G,Inconnu,0
+2024-10-16T09:06:07.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,f8c1bc1ba426534e4987b7b82917c9cb,0590117G,Inconnu,48
+2024-10-16T09:07:09.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,65b8301a5e30bf42df7ff754d2a1691a,0590117G,Inconnu,36
+2024-10-16T09:07:13.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,492904e267a0cb34ec94f8eb9d9cec09,0590117G,Inconnu,46
+2024-10-16T09:08:38.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,7017fe8633ddfb88c2795fd523f14f89,0590117G,Inconnu,45
+2024-10-16T09:09:05.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,e98985411e74834ab3a36815799baf50,0590117G,Inconnu,45
+2024-10-16T09:09:29.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,b3d42b1a5fe7afa136b728754e098c08,0590117G,Inconnu,43
+2024-10-16T09:09:46.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,b4de7540d0d454a26e8bd25f70a91c43,0590117G,Inconnu,44
+2024-10-16T09:10:50.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,352fc0a194b530c29565a7b8e608a5ed,0590117G,Inconnu,0
+2024-10-16T09:11:03.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,f50590e8e68d727dd14b48860b076e2d,0590117G,Inconnu,43
+2024-10-16T09:11:35.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,248de32d1b3ff4698409d1704cecc9e1,0590117G,Inconnu,42
+2024-10-16T09:11:53.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,a66f96d93409f473f3d4484c6f868845,0590117G,Inconnu,42
+2024-10-16T09:12:21.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,15ee0b4f393b9219fa4de46d709d6ba8,0590117G,Inconnu,42
+2024-10-16T09:13:30.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,082172cd9e20bc90fc5fe1365d86afb6,0590117G,Inconnu,0
+2024-10-16T09:14:05.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,fb28b0510a6adf82d428cea519bd3cf3,0590117G,Inconnu,40
+2024-10-16T09:16:40.000Z,2024-10-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,49560f65f95d8eba73b8b2ccdcc9e0b8,0590117G,Inconnu,37
+2024-12-06T07:06:11.000Z,2024-12-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,c73a1d10fa290d232ba8187afbde8289,0590117G,Inconnu,0
+2024-12-06T07:07:10.000Z,2024-12-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,61475c0fe28a1ce0adb38eda806dc0e6,0590117G,Inconnu,0
+2024-12-06T07:07:46.000Z,2024-12-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,1cc8cc06741e92dff4b6593042f86220,0590117G,Inconnu,0
+2024-12-06T07:08:01.000Z,2024-12-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,71a1e81618ef3c6fa7b341ade175d989,0590117G,Inconnu,0
+2024-12-06T07:09:56.000Z,2024-12-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,bdc9ab81f003e258b7362dbb6d6d7a11,0590117G,Inconnu,0
+2024-12-06T07:09:58.000Z,2024-12-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,fe51b2dbb2a2a1bcd8d8c8710773010a,0590117G,Inconnu,0
+2024-12-06T07:10:07.000Z,2024-12-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,1fab765c782ac0e06bd60918b59b629d,0590117G,Inconnu,0
+2024-12-06T07:10:26.000Z,2024-12-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,6951522dae95d34cadeefa69ba864ec0,0590117G,Inconnu,0
+2024-12-06T07:11:11.000Z,2024-12-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,ae2621e06e63118931d44ae0d7db3cbe,0590117G,Inconnu,0
+2024-12-06T07:11:16.000Z,2024-12-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,ce589d1849d2efc7ebb24738886d13fb,0590117G,Inconnu,0
+2024-12-06T07:11:36.000Z,2024-12-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,de4ab6f907b730a97e9b04f4b391abc0,0590117G,Inconnu,0
+2025-02-02T18:01:54.000Z,2025-02-02,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,a6c3c194825eca7051d5ad637170b388,NULL,Inconnu,0
+2025-02-08T14:27:52.000Z,2025-02-08,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,8b40cd398bbf973ef063c5155394c11c,NULL,Inconnu,0
+2025-02-08T14:28:04.000Z,2025-02-08,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,28821974fac2c8d6a7acf1c434305166,NULL,Inconnu,0
+2025-02-08T15:40:44.000Z,2025-02-08,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,135726035882bb8276e40fdd2232ef52,NULL,Inconnu,43
+2025-02-08T15:41:25.000Z,2025-02-08,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,411847a4b05c5ca803737daa073e135d,NULL,Inconnu,42
+2025-02-08T15:41:25.000Z,2025-02-08,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,eefddc1426339038a20b01311c371c4b,NULL,Inconnu,47
+2025-02-08T15:41:28.000Z,2025-02-08,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,75b64cf5e77e5a1276fba5047a992cef,NULL,Inconnu,51
+2025-02-08T15:42:35.000Z,2025-02-08,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,4d645e9af41d81647f7cdccf03b80d9b,NULL,Inconnu,41
+2025-02-08T15:44:41.000Z,2025-02-08,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,77474edc802249e954c8b61566117c9e,NULL,Inconnu,39
+2025-02-08T15:46:20.000Z,2025-02-08,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,9ee710822a9c54bf07edfc9f99106b3d,NULL,Inconnu,0
+2025-02-08T15:52:43.000Z,2025-02-08,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,49e3e76f85e227388639766ffbbea1ba,NULL,Inconnu,32
+2025-02-24T13:36:22.000Z,2025-02-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,7fbbd53cb78bb7a35525d6918c6b5704,0590101P,Inconnu,49
+2025-02-24T13:36:24.000Z,2025-02-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,5e04709b144c74edcce3d8befa6a7cd4,0590101P,Inconnu,52
+2025-02-24T13:36:25.000Z,2025-02-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,bf5fb5794c15b90f7534fd78bcd53e75,0590101P,Inconnu,52
+2025-02-24T13:36:25.000Z,2025-02-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,eec2091c49874de6b81d4297f0b79d09,0590101P,Inconnu,52
+2025-02-24T13:36:25.000Z,2025-02-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,b9ab6021aa8ef4a09517efeb8a1422fd,0590101P,Inconnu,0
+2025-02-24T13:36:31.000Z,2025-02-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,fa701b743e515bf8750a047cbf248c24,0590101P,Inconnu,52
+2025-02-24T13:36:33.000Z,2025-02-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,fc9f59579708178eef3fdf5abd39fde0,0590101P,Inconnu,53
+2025-02-24T13:36:56.000Z,2025-02-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,7b57832a7d1a3f6732f9aac484b5c366,0590101P,Inconnu,51
+2025-02-24T13:37:00.000Z,2025-02-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,816009002368e613a924acb5c51ae476,0590101P,Inconnu,0
+2025-02-24T13:37:02.000Z,2025-02-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,cf9584b430eb2c19d313b3193bc06fea,0590101P,Inconnu,51
+2025-02-24T13:37:05.000Z,2025-02-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,9d158a79ad4a428a7c915928d0956652,0590101P,Inconnu,0
+2025-02-24T13:37:12.000Z,2025-02-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,21674f91acf1ccbb89c6e4d659f0b6a3,0590101P,Inconnu,33
+2025-03-03T13:37:56.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,8944059cebda6633e2844686101ae130,0590101P,Inconnu,0
+2025-03-03T13:38:01.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,05058929cf79709d74eff854d68cc227,0590101P,Inconnu,51
+2025-03-03T13:38:01.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,a602d0b1b80308a3151ec679ef8f9515,0590101P,Inconnu,50
+2025-03-03T13:38:01.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,79408f75d84aec1c2ba8f493882df66c,0590101P,Inconnu,51
+2025-03-03T13:38:02.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,9b2cdf5871503653e109b6e02de643aa,0590101P,Inconnu,13
+2025-03-03T13:38:02.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,06e2d5ff668dced118c0130189c0b770,0590101P,Inconnu,52
+2025-03-03T13:38:07.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,a10a34fa2f5da821c9b0c825a08d9b6c,0590101P,Inconnu,50
+2025-03-03T13:38:12.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,cc4142a69bb9d0b2e82c93efb91bef21,0590101P,Inconnu,21
+2025-03-03T13:38:15.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,b651131788efca0f036a27d376c07dce,0590101P,Inconnu,0
+2025-03-03T13:38:16.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,d0a0cef9305aae444f8071cb7e4194db,0590101P,Inconnu,46
+2025-03-03T13:38:39.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,7be3e2398578ed4f5304b4cf6c95401b,0590101P,Inconnu,0
+2025-03-03T13:39:38.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,030d04fc4486dd687dfcdcd4d208d22c,NULL,Inconnu,11
+2025-03-03T13:39:39.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,09e841a094e88a4fea0c28271f18bbff,NULL,Inconnu,35
+2025-03-03T13:40:05.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,aa1b150d5213b719eb1d15923c37e58d,0590101P,Inconnu,28
+2025-03-03T13:40:07.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,bc7bd057fd1eeeafeac07df149210581,0590101P,Inconnu,48
+2025-03-03T13:44:43.000Z,2025-03-03,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,d75e4062f83318ad44b0b1a040367954,NULL,Inconnu,0
+2025-03-03T14:47:56.000Z,2025-03-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,08140cbbfe81ba30503c5c1c7b9f47ca,0590101P,Inconnu,19
+2025-03-03T14:48:11.000Z,2025-03-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,860a0376badecfccfccbc0535382ecac,0590101P,Inconnu,0
+2025-03-03T14:48:16.000Z,2025-03-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,04f80d7a1b7eec2023f981e2d89d0104,0590101P,Inconnu,0
+2025-03-03T14:48:19.000Z,2025-03-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,29728acd9583afd854cedeb896977bf7,0590101P,Inconnu,23
+2025-03-03T14:48:24.000Z,2025-03-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,6a87e489a8992facfda780b15dd9fe55,0590101P,Inconnu,0
+2025-03-03T14:48:54.000Z,2025-03-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,47f89553b13533d254796a36d914bd70,0590101P,Inconnu,0
+2025-03-03T14:48:56.000Z,2025-03-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,5b7b1876fa22ff3684129bccc3dd00a0,0590101P,Inconnu,0
+2025-03-03T14:56:46.000Z,2025-03-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,3d0b0525720d943f4ef7d4f3dfa9d0e7,NULL,Inconnu,0
+2025-03-03T14:57:59.000Z,2025-03-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,f95f2adf396290b7e01a282f1eb49081,NULL,Inconnu,0
+2025-03-03T14:59:15.000Z,2025-03-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,d41091a0aa780e4ba4f1da254902c53b,NULL,Inconnu,0
+2025-03-24T09:37:45.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,5bf6f2e023cdeae908bff07acb14a2f1,NULL,Inconnu,58
+2025-03-24T09:37:47.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,4f43924e23d66c42d4df59e36f3978d3,NULL,Inconnu,45
+2025-03-24T09:37:55.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,10d5213a08f40a4aa2865b8c52d2c0a2,NULL,Inconnu,28
+2025-03-24T09:37:58.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,cffe5d3ac625417f2c9a1c97696c1558,NULL,Inconnu,42
+2025-03-24T09:38:00.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,fe5cd14ef98fc07a3da445cde8db6716,NULL,Inconnu,42
+2025-03-24T09:38:05.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,78b93406be1543ea183d4e310f0e9f2c,NULL,Inconnu,42
+2025-03-24T09:38:06.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,dd5ee952459d9e7e7ff0a041d56a752d,NULL,Inconnu,42
+2025-03-24T09:38:15.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,41adeaad873f313757e4da588bbe766c,NULL,Inconnu,46
+2025-03-24T09:38:19.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,24e979175db49cbc142aadfdea9c00eb,NULL,Inconnu,42
+2025-03-24T09:38:46.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,e04ae202323a946c2551c59185cd5c24,NULL,Inconnu,51
+2025-03-24T09:38:53.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,cb804f36fbe26e8847b811df4fade588,NULL,Inconnu,42
+2025-03-24T09:39:06.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,d1817334782e21e8f6131860019fe589,NULL,Inconnu,59
+2025-03-24T09:39:20.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,6c7e233a265931c5adee022a03718dbe,NULL,Inconnu,0
+2025-03-24T09:41:50.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,476b1723d68a708f850af5b76a3aa190,NULL,Inconnu,21
+2025-03-24T09:44:23.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,082c9fe789c51d2293cb9f61f12a7d10,NULL,Inconnu,39
+2025-03-24T09:44:52.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,e62837c98fbfadd0e4fd3480c4c17dad,NULL,Inconnu,37
+2025-03-24T09:44:57.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,773cbcdb36f6cf45c806ef65b1ce3d4b,NULL,Inconnu,52
+2025-03-24T10:06:37.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,f0d616ad272cc8bd1f19828336aaa0f2,NULL,Inconnu,0
+2025-03-24T11:33:06.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,3fe00ae36e7d32b8eb029bbc19ba6b03,NULL,Inconnu,29
+2025-03-24T11:33:26.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,be3dab612103dd323c5fc2123511af92,NULL,Inconnu,40
+2025-03-24T11:33:46.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,f0b6926b12435e3b8af79a639b5c5f8d,NULL,Inconnu,39
+2025-03-24T11:34:09.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,684d0a00fe6cd76323bc9fff183a50a6,NULL,Inconnu,40
+2025-03-24T11:34:12.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,1b232cb55bf992578b6bc9b01f0f9446,NULL,Inconnu,39
+2025-03-24T11:34:21.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,35074b490f8acde12ed49b367e48ed34,NULL,Inconnu,40
+2025-03-24T11:34:51.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,10c80917842a6863e76512f49d7ddcc2,NULL,Inconnu,0
+2025-03-24T11:36:55.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,8b2924b62ba10323b0bd7efd6a96d458,NULL,Inconnu,60
+2025-03-24T11:36:56.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,66e4c2799bd852cb6a8ab60b752cc394,NULL,Inconnu,38
+2025-03-24T11:37:00.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,e7d16a01f9484f8cc1813f5707893846,NULL,Inconnu,36
+2025-03-24T11:37:18.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,f58839064fa9d59d7a823602183ec938,NULL,Inconnu,36
+2025-03-24T11:37:28.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,1941919deb79f5279264250ca58002d5,NULL,Inconnu,36
+2025-03-24T11:37:39.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,37d9ab2c289ff43c5dc806e42e7edb8b,NULL,Inconnu,35
+2025-03-24T11:37:50.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,4b4201e416817ad703a7ee44cab712be,NULL,Inconnu,35
+2025-03-24T11:38:07.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,2d0b508daf1a2e1eca3aa728a429f6e0,NULL,Inconnu,35
+2025-03-24T11:55:48.000Z,2025-03-24,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,f0925413b5cd415d177e1ceea7077b53,NULL,Inconnu,29
+2025-03-25T12:24:14.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,d0a0a204b9708404520a4f8a49fb5d7b,NULL,Inconnu,1122
+2025-03-25T12:24:14.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,9ed81b645062b7fc4dc4aa006b7b3af3,NULL,Inconnu,96
+2025-03-25T12:27:08.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,938a82135a9ebec05ad2c4c18d87d0cf,NULL,Inconnu,91
+2025-03-25T12:29:26.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,da987fe078d73ffd0b0cf09906db279b,NULL,Inconnu,91
+2025-03-25T12:30:42.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,f194e0d2483bedf24dff43675a6a5b27,NULL,Inconnu,83
+2025-03-25T12:30:55.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,771b3669173e19bf4c4e0d692e39dec1,NULL,Inconnu,89
+2025-03-25T12:30:56.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,148d7ae953531bb98ca35acd8c9ffbb0,NULL,Inconnu,90
+2025-03-25T12:31:00.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,cfc2037376fa958fb4a3ac5f2c62f0e4,NULL,Inconnu,90
+2025-03-25T12:31:03.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,cd9429f940468b2d53f1d5d9b6a23a2d,NULL,Inconnu,76
+2025-03-25T12:31:13.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,533f63285ee1f4e4678645deabcb2c22,NULL,Inconnu,311
+2025-03-25T12:31:19.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,25b1cc77d135a0ea8e5768cdbec86666,NULL,Inconnu,89
+2025-03-25T12:31:25.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,12055986633454227d7c2f645f9e13a8,NULL,Inconnu,85
+2025-03-25T12:31:28.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,911aad2d51b1ecf5b25bf474dfec865f,NULL,Inconnu,81
+2025-03-25T12:31:29.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,26cdb7faafaf9b2ad2969a3a0a444065,NULL,Inconnu,86
+2025-03-25T12:31:31.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,999d2ea0ea62faef26dba6fc2982e0b0,NULL,Inconnu,89
+2025-03-25T12:31:33.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,6ef6f381f6b4ba0f29bf8904d2ceab4c,NULL,Inconnu,89
+2025-03-25T12:32:11.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,1bc0d74041c1540a242b4c521060e126,NULL,Inconnu,87
+2025-03-25T12:33:24.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,60eb03bcc1576281db8c1070445923c5,NULL,Inconnu,83
+2025-03-25T12:33:25.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,ac29e6209011ddc72a1bca8b735a795e,NULL,Inconnu,87
+2025-03-25T12:33:41.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,48f4853fdf05ef41c7cd25bd77e0a5db,NULL,Inconnu,85
+2025-03-25T12:34:42.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,a92e709718561ed84a6dfd147c27b960,NULL,Inconnu,83
+2025-03-25T12:37:09.000Z,2025-03-25,test,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,f146ceb95a087eb597a1168f684eeedd,NULL,Inconnu,1193
+2025-03-25T13:12:38.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,631bb97b1246c8500f8d36ecf83ef981,NULL,Inconnu,47
+2025-03-25T13:17:53.000Z,2025-03-25,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,a270a36d0963a56470c33d0dbacddecd,NULL,Inconnu,23
+2025-03-28T08:38:43.000Z,2025-03-28,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,1d5c73c5c9cd478b231d43836e5803ea,0590093F,Inconnu,42
+2025-03-28T08:38:48.000Z,2025-03-28,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,ee907cfdd343c146a02c7c1cc4e208c4,0590093F,Inconnu,42
+2025-03-28T08:38:49.000Z,2025-03-28,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,f264f16c33f424bf3e976dab404d68ce,0590093F,Inconnu,42
+2025-03-28T08:39:00.000Z,2025-03-28,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,ac980f7b5c4eef7567ce6ee8f65590e2,0590093F,Inconnu,0
+2025-03-28T08:39:02.000Z,2025-03-28,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,cdfed6f1e12e0b9e55dafb778e54b85b,0590093F,Inconnu,42
+2025-03-28T08:39:09.000Z,2025-03-28,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,3b0cccf50d99130ae1ae395be8b6867a,0590093F,Inconnu,41
+2025-03-28T08:39:19.000Z,2025-03-28,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,91773beb5a4fd37c65efe4b5eba86fb7,0590093F,Inconnu,41
+2025-03-28T08:39:44.000Z,2025-03-28,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,85a5400637872425d7df761c9b8ec490,0590093F,Inconnu,41
+2025-03-28T08:40:30.000Z,2025-03-28,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,17a309a3e27c853c4cda02d04c5f4bc3,0590093F,Inconnu,0
+2025-03-28T08:40:36.000Z,2025-03-28,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,b78c9b4a750aebe0c05f314f6df47948,0590093F,Inconnu,41
+2025-03-28T08:40:41.000Z,2025-03-28,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,7f78f7acc77a19c9f4a0d83becfa0842,0590093F,Inconnu,40
+2025-03-28T08:40:56.000Z,2025-03-28,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,3a7b4eb14e74360856d38995ca4e7ae8,0590093F,Inconnu,36
+2025-03-28T08:51:32.000Z,2025-03-28,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,2b7dc1a7f1d232a907f260f0c3af1ee4,0590093F,Inconnu,0
+2025-03-28T09:59:31.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,a6855d54be66445249f0cc15a38111c7,0590093F,Inconnu,32
+2025-03-28T09:59:32.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,3bb1c08d3cce3e753ba4926aaeb76f3d,0590093F,Inconnu,31
+2025-03-28T09:59:33.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,cf355202f5703cac0163a1d5d14594af,0590093F,Inconnu,32
+2025-03-28T09:59:34.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,6e8a76ead1eba6788c5008304144dc66,0590093F,Inconnu,32
+2025-03-28T09:59:34.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,18b986c115bdaca140d594ec959cc706,0590093F,Inconnu,32
+2025-03-28T09:59:34.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,23c1806708ef00d4b8654c34160d97ff,0590093F,Inconnu,31
+2025-03-28T09:59:35.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,d9c9dbea35fc5acb13fced5b8347b708,0590093F,Inconnu,32
+2025-03-28T09:59:37.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,452e0f75148ae2070e2c7a1a8d18a0c4,0590093F,Inconnu,31
+2025-03-28T09:59:38.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,833e39d15a82ac040e51c572de3c0290,0590093F,Inconnu,32
+2025-03-28T09:59:38.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,acc2cd4a6b1a2ba74d526dd45d6b805f,0590093F,Inconnu,32
+2025-03-28T09:59:38.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,27302912195159c173535ac3b1ec981c,0590093F,Inconnu,31
+2025-03-28T09:59:43.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,5187954e7b62557e024efc63d686a98e,0590093F,Inconnu,32
+2025-03-28T09:59:45.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,019dc1e8e01ac84532dc67dc404ebaf3,0590093F,Inconnu,27
+2025-03-28T10:00:09.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,4d877d8059706fb634a6a3376ef827e5,0590093F,Inconnu,32
+2025-03-28T10:00:14.000Z,2025-03-28,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,d7f179e36183980d1b0d84c49b603ba7,0590093F,Inconnu,31
+2025-04-16T11:32:03.000Z,2025-04-16,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,d394deff7c8e0f41aefa5796de5b7e29,NULL,Inconnu,0
+2025-04-24T08:42:24.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,ddd0c871684b2177a1ad2e204974a0d7,0590093F,Inconnu,0
+2025-04-24T08:42:37.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,9b51717b7ac837d1910415da86a3e6f9,0590093F,Inconnu,0
+2025-04-24T08:42:42.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,88d3a5ac2f4fbe4297f7a7bf376c62f5,0590093F,Inconnu,0
+2025-04-24T08:42:47.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,e2299188e8ae4ed0fadda8018c686ec7,0590093F,Inconnu,0
+2025-04-24T08:43:23.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,6d85d825061e20917b6bd97c2ff6b6b1,0590093F,Inconnu,0
+2025-04-24T08:43:50.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,a6ea75bbffcb0806bb2fc55f188a77a2,0590093F,Inconnu,3
+2025-04-24T08:43:51.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,86f09933478a37f5717b073ee80c5677,0590093F,Inconnu,0
+2025-04-24T08:44:00.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,5df7310d4d371f9f9e4a4e61580c01d6,0590093F,Inconnu,0
+2025-04-24T08:44:01.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,16d40ff33e61080baac3236a6be22ff6,0590093F,Inconnu,0
+2025-04-24T08:44:13.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,a705f64ff0dc18963faf91c310d5fa22,0590093F,Inconnu,0
+2025-04-24T08:44:32.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,e776ab215428dcefd168e540056b58aa,0590093F,Inconnu,0
+2025-04-24T08:45:43.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,ba3ea1a0543904cd4463c506888f4f24,0590093F,Inconnu,0
+2025-04-24T08:47:42.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,b8cbce5ec0a06e9926d332c4da62c43f,0590093F,Inconnu,0
+2025-04-24T08:55:58.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,88d3a5ac2f4fbe4297f7a7bf376c62f5,0590093F,Inconnu,36
+2025-04-24T08:56:30.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,ca93c24492293e52e27b452986dfb5ac,0590093F,Inconnu,36
+2025-04-24T08:57:18.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,e2299188e8ae4ed0fadda8018c686ec7,0590093F,Inconnu,35
+2025-04-24T08:57:23.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,e776ab215428dcefd168e540056b58aa,0590093F,Inconnu,0
+2025-04-24T08:57:23.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,86f09933478a37f5717b073ee80c5677,0590093F,Inconnu,35
+2025-04-24T08:57:27.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,a705f64ff0dc18963faf91c310d5fa22,0590093F,Inconnu,0
+2025-04-24T08:57:28.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,9b51717b7ac837d1910415da86a3e6f9,0590093F,Inconnu,0
+2025-04-24T08:57:56.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,5df7310d4d371f9f9e4a4e61580c01d6,0590093F,Inconnu,34
+2025-04-24T08:58:04.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,16d40ff33e61080baac3236a6be22ff6,0590093F,Inconnu,34
+2025-04-24T08:58:21.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,ddd0c871684b2177a1ad2e204974a0d7,0590093F,Inconnu,34
+2025-04-24T08:58:21.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,6d85d825061e20917b6bd97c2ff6b6b1,0590093F,Inconnu,34
+2025-04-24T08:58:49.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,b8cbce5ec0a06e9926d332c4da62c43f,0590093F,Inconnu,33
+2025-04-24T08:59:56.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,ba3ea1a0543904cd4463c506888f4f24,0590093F,Inconnu,0
+2025-04-24T09:01:18.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,a6ea75bbffcb0806bb2fc55f188a77a2,0590093F,Inconnu,10
+2025-04-24T09:41:59.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,467226efc4c4862f93ec29e2bfde66e9,0590093F,Inconnu,0
+2025-04-24T09:41:59.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,dd2b22528cd951b5d4d81f5f0f6ba0a7,0590093F,Inconnu,42
+2025-04-24T09:42:09.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,c35a09715e5f6b1281e4c731cd54eb93,0590093F,Inconnu,0
+2025-04-24T09:42:09.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,60a049db2ec71ac8141e9e5949b4f0a5,0590093F,Inconnu,0
+2025-04-24T09:42:09.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,c14b1b3cdbd82b54b1ed45dcdbbe79b4,0590093F,Inconnu,0
+2025-04-24T09:42:10.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,dd7478809d17130afe73911ce1ac0dea,0590093F,Inconnu,0
+2025-04-24T09:42:12.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,1fb613c42bb228381bf9b87864b3bd1a,0590093F,Inconnu,0
+2025-04-24T09:42:13.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,1487ff678934ef1b0e3a77aba46241c8,0590093F,Inconnu,38
+2025-04-24T09:42:20.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,7314847b4eb9be488e8fda7538330787,0590093F,Inconnu,0
+2025-04-24T09:42:20.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,77ddc86b8fae2371382c52d1480bc2dc,0590093F,Inconnu,0
+2025-04-24T09:42:25.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,e9297034d2df97e7e8ce74bb0244749b,0590093F,Inconnu,0
+2025-04-24T09:42:25.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,a176bf18f4cb1b5d0c5a73728c9a776d,0590093F,Inconnu,0
+2025-04-24T09:42:29.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,db1c2348c788fa7e9a59981abe91fd64,0590093F,Inconnu,0
+2025-04-24T09:48:41.000Z,2025-04-24,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,f20700ddf7ad0611fef59e72a21ca88a,0590093F,Inconnu,36
+2025-06-06T12:05:08.000Z,2025-06-06,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,091bb5cc7cdca3ee1a7b4e746a017699,0620140R,Inconnu,75
+2025-06-06T12:05:13.000Z,2025-06-06,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,39e16c529b8be3e5bf89e4e6942a8637,0620140R,Inconnu,71
+2025-06-06T12:05:31.000Z,2025-06-06,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,ba4b199075c75421f040d15505ac41b6,0620140R,Inconnu,73
+2025-06-06T12:08:31.000Z,2025-06-06,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,5cf7e37246ad01ac927249020df15f5c,0620140R,Inconnu,0

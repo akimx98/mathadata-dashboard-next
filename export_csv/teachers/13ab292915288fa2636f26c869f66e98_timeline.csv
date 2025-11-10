@@ -1,0 +1,14 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2024-04-16T09:28:47.000Z,2024-04-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,2626ffc923e0fbe3607eabe807cbe001,0800010B,Inconnu,28993
+2024-04-16T09:28:52.000Z,2024-04-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,84119593ae536c260263c07f147ca34c,0800010B,Inconnu,30165
+2024-04-16T09:28:55.000Z,2024-04-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,fb919f75850fcb9bd1b492f8c1734d1e,0800010B,Inconnu,30164
+2024-04-16T09:28:59.000Z,2024-04-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,efe6e4f2d09a34d1bd36d7ac423fb097,0800010B,Inconnu,30223
+2024-04-16T09:29:08.000Z,2024-04-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,6e767d64983f55f36c2f59c8e361776a,0800010B,Inconnu,29001
+2024-04-16T09:29:37.000Z,2024-04-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,dfb35e0678252675cdfd3e4f7cc45806,0800010B,Inconnu,30166
+2024-04-16T09:29:38.000Z,2024-04-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,48d4c3fd610e88afd707bf74b1eb5664,0800010B,Inconnu,30183
+2024-04-16T09:29:58.000Z,2024-04-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,07e83330e632e894a0265d0dad69514a,0800010B,Inconnu,30164
+2024-04-16T09:30:40.000Z,2024-04-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,fa218d74a92817394d78962875c828a7,0800010B,Inconnu,22
+2024-04-16T09:33:53.000Z,2024-04-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,3dcc4ac8260b44ea50b3cb3d3a8f92b6,0800010B,Inconnu,28996
+2024-04-16T09:34:59.000Z,2024-04-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,b23d1cd397465661e433118548e243fa,0800010B,Inconnu,30171
+2024-04-16T09:35:38.000Z,2024-04-16,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,cbad65cae5977d9c2e8855cfcb7f7d20,0800010B,Inconnu,30157
+2024-05-06T12:31:03.000Z,2024-05-06,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,13ab292915288fa2636f26c869f66e98,0800010B,Inconnu,19

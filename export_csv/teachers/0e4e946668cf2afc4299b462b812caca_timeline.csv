@@ -1,0 +1,3 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2024-03-07T11:27:18.000Z,2024-03-07,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,0e4e946668cf2afc4299b462b812caca,0930834B,Inconnu,0
+2025-03-19T16:35:14.000Z,2025-03-19,test,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,0e4e946668cf2afc4299b462b812caca,0930834B,Inconnu,0

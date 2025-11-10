@@ -1,0 +1,4 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-04-11T06:53:48.000Z,2025-04-11,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,f5d89c753c7d616b9af393f86dcebca1,0771512A,Inconnu,0
+2025-04-29T08:49:34.000Z,2025-04-29,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,89840ccfa4e29fd01bee97148cd25073,0771512A,Inconnu,701
+2025-04-29T08:49:34.000Z,2025-04-29,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,f5a488c78cc08200bd4d8d52341c2a92,0771512A,Inconnu,0

@@ -1,0 +1,6 @@
+session_number,activity_id,activity_name,uai,school_name,date,timestamp,time_pattern,nb_students,avg_work_duration_minutes,continuation_rate,home_work_rate,had_second_session,second_session_date,second_session_students,tested_first,days_between_test_and_teaching,is_same_students_as_previous,overlap_rate
+1,2548348,Intro � l'IA : classification de chiffres 2 et 7,0782539L,Inconnu,2024-06-25,2024-06-25T12:40:22.000Z,afternoon_weekday,1,44,0,0,no,,0,no,,,
+2,2548348,Intro � l'IA : classification de chiffres 2 et 7,0932638M,Inconnu,2024-06-25,2024-06-25T12:40:23.000Z,afternoon_weekday,1,54,0,0,no,,0,no,,no,0
+3,2548348,Intro � l'IA : classification de chiffres 2 et 7,0952284S,Inconnu,2024-06-25,2024-06-25T12:41:25.000Z,afternoon_weekday,1,0,0,0,no,,0,no,,no,0
+4,2548348,Intro � l'IA : classification de chiffres 2 et 7,0920137Z,Inconnu,2024-06-25,2024-06-25T12:41:28.000Z,afternoon_weekday,1,0,0,0,no,,0,no,,no,0
+5,2548348,Intro � l'IA : classification de chiffres 2 et 7,0750668U,Inconnu,2024-06-25,2024-06-25T13:32:49.000Z,afternoon_weekday,1,44,0,0,no,,0,no,,no,0

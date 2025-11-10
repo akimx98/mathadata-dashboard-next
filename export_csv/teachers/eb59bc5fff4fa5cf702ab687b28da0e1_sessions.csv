@@ -1,0 +1,7 @@
+session_number,activity_id,activity_name,uai,school_name,date,timestamp,time_pattern,nb_students,avg_work_duration_minutes,continuation_rate,home_work_rate,had_second_session,second_session_date,second_session_students,tested_first,days_between_test_and_teaching,is_same_students_as_previous,overlap_rate
+1,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,0624141P,Inconnu,2025-05-28,2025-05-28T06:10:48.000Z,morning_weekday,14,35,0,0,no,,0,yes,1,,
+2,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,0624141P,Inconnu,2025-05-28,2025-05-28T08:20:25.000Z,morning_weekday,18,3,0,0,no,,0,yes,1,no,0
+3,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0620088J,Inconnu,2025-02-25,2025-02-25T08:19:50.000Z,morning_weekday,1,0,0,0,no,,0,no,-10,,
+4,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0624141P,Inconnu,2025-02-26,2025-02-26T07:09:39.000Z,morning_weekday,24,1790,0.5,0.04,yes,2025-02-28T09:22:32.000Z,10,no,-9,no,0
+5,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,0624141P,Inconnu,2025-06-08,2025-06-08T16:22:57.000Z,evening_weekend,1,62,1,1,no,,0,yes,0,,
+6,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,0624141P,Inconnu,2025-06-10,2025-06-10T06:26:41.000Z,morning_weekday,1,13,0,0,no,,0,yes,2,no,0

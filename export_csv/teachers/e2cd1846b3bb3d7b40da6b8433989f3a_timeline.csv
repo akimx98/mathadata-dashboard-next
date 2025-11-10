@@ -1,0 +1,32 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-02-27T14:11:03.000Z,2025-02-27,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,3b4fe65aebfe96ef2bf7a1fde3b9ada8,0590121L,Inconnu,5439
+2025-02-27T14:11:09.000Z,2025-02-27,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,c06e737d7a70942aa0a466393bbb7dac,0590121L,Inconnu,7267
+2025-02-27T14:11:15.000Z,2025-02-27,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,7985c4eb146c1a0a9dcb69d6eba67eb0,0590121L,Inconnu,32
+2025-02-27T14:11:16.000Z,2025-02-27,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,1c4711ecb6381471cfc13e2e3981a356,0590121L,Inconnu,32
+2025-02-27T14:11:20.000Z,2025-02-27,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,75b881c0d13dbcd8c915f9252b8b87ac,0590121L,Inconnu,34
+2025-02-27T14:12:22.000Z,2025-02-27,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,b692ff5e1bae7ab1474e0b77719a1153,0590121L,Inconnu,33
+2025-02-27T14:12:47.000Z,2025-02-27,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,e26e4767dce2cd71295d5ea4178ae57a,0590121L,Inconnu,32
+2025-02-27T14:14:18.000Z,2025-02-27,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,547610ad4a4ec6d77313b7932fedab12,0590121L,Inconnu,31
+2025-02-27T14:14:26.000Z,2025-02-27,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,2afa1a47b32dcf54bc37592fedd332b4,0590121L,Inconnu,30
+2025-02-27T15:43:56.000Z,2025-02-27,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,73c829d0efbbc67519a4ecb16ef609b7,0590121L,Inconnu,6
+2025-03-06T13:32:53.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,3b4fe65aebfe96ef2bf7a1fde3b9ada8,0590121L,Inconnu,56
+2025-03-06T13:35:37.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,7985c4eb146c1a0a9dcb69d6eba67eb0,0590121L,Inconnu,58
+2025-03-06T13:35:38.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,c06e737d7a70942aa0a466393bbb7dac,0590121L,Inconnu,52
+2025-03-06T13:35:42.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,2afa1a47b32dcf54bc37592fedd332b4,0590121L,Inconnu,53
+2025-03-06T13:35:45.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,b8631a0e78e5b5b7d4d3f22535ec8b21,0590121L,Inconnu,53
+2025-03-06T13:35:46.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,1c4711ecb6381471cfc13e2e3981a356,0590121L,Inconnu,52
+2025-03-06T13:35:50.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,b992523468499d8ab7a4a6bc5cc8f678,0590121L,Inconnu,53
+2025-03-06T13:35:55.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,73c829d0efbbc67519a4ecb16ef609b7,0590121L,Inconnu,52
+2025-03-06T13:35:56.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,75b881c0d13dbcd8c915f9252b8b87ac,0590121L,Inconnu,52
+2025-03-06T13:35:58.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,b692ff5e1bae7ab1474e0b77719a1153,0590121L,Inconnu,52
+2025-03-06T13:36:13.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,1287ae6fde0a3126d56d2cb57c390a7a,0590121L,Inconnu,53
+2025-03-06T13:36:40.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,15a7bcc60251005bf533aaedbd537a4e,0590121L,Inconnu,51
+2025-03-06T13:37:04.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,e26e4767dce2cd71295d5ea4178ae57a,0590121L,Inconnu,50
+2025-03-06T13:37:18.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,5e62ee2412f6c3e80257997afdb5efaf,0590121L,Inconnu,50
+2025-03-06T13:39:28.000Z,2025-03-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,547610ad4a4ec6d77313b7932fedab12,0590121L,Inconnu,48
+2025-06-02T12:03:56.000Z,2025-06-02,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,de7a830bd3da118d89f061c769e0f8e8,0590121L,Inconnu,47
+2025-06-02T12:10:17.000Z,2025-06-02,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,b29db75064f03d259ed91649d50156b2,0590121L,Inconnu,42
+2025-06-02T13:07:59.000Z,2025-06-02,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,bb9a7c9629e1993344ace10e224b5339,0590121L,Inconnu,37
+2025-06-02T13:08:42.000Z,2025-06-02,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,211560dee20b7cf364d2eb0b582d574a,0590121L,Inconnu,37
+2025-06-02T13:14:02.000Z,2025-06-02,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,31fb59e401441147d8a25cbf2180ce3b,0590121L,Inconnu,0
+2025-06-02T13:14:54.000Z,2025-06-02,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,0b3ad03c12e0096ca22a5b1ec3ec4a8c,0590121L,Inconnu,29

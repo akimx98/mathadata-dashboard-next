@@ -1,0 +1,35 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2024-12-13T14:17:52.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,8ec1b7be5d1ad2baaac04489c0b0eb32,0590117G,Inconnu,32
+2024-12-13T14:18:24.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,d4d7471def12300185c29215bf590856,0590117G,Inconnu,0
+2024-12-13T14:18:58.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,bc860fd2887f394f9baa5d6013fe6a27,0590117G,Inconnu,0
+2024-12-13T14:20:59.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,eb3c2a740b8029f42a163f84196eee93,0590117G,Inconnu,30
+2024-12-13T14:22:40.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,279d9566100dc7f8b97f9789378a16b7,0590117G,Inconnu,28
+2024-12-13T14:23:06.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,8a0c4b73a3b9ca5a4b3b14dc67f99a1a,0590117G,Inconnu,27
+2024-12-13T14:23:36.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,1691b75741b6645f66da32af35a073e2,0590117G,Inconnu,26
+2024-12-13T14:23:55.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,c178906ec59831c8f20e10ee6e1f3f06,0590117G,Inconnu,27
+2024-12-13T14:23:56.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,d6db61c3e304867e8bc4da8be181a362,0590117G,Inconnu,27
+2024-12-13T14:24:00.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,6d4d3bb18d708439cd7b091d30003152,0590117G,Inconnu,27
+2024-12-13T14:24:00.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,70dadb714bb22096c61c5e7f77974c8e,0590117G,Inconnu,27
+2024-12-13T14:24:09.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,0d5883eecdcb1de8ca408884df0ef412,0590117G,Inconnu,27
+2024-12-13T14:24:09.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,b27f4e2371758c70a84eba02126b6bfa,0590117G,Inconnu,27
+2024-12-13T14:24:10.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,dba6f6718a8df80358065821b227d904,0590117G,Inconnu,0
+2024-12-13T14:24:13.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,398994620065b16fb8301db7c18ec723,0590117G,Inconnu,0
+2024-12-13T14:24:19.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,807987839291a38044d308ff42898e51,0590117G,Inconnu,0
+2024-12-13T14:24:19.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,68528d8e685d43e5ffbeddb0df551baa,0590117G,Inconnu,26
+2024-12-13T14:24:43.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,4fb6df22febba53dac5a1a4dd0688847,0590117G,Inconnu,0
+2024-12-13T14:24:50.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,b75858fe3175042dcfe872536770fc01,0590117G,Inconnu,2657
+2024-12-13T14:24:51.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,12dc145ad0e910bcf7dab9801c5d8145,0590117G,Inconnu,25
+2024-12-13T14:25:36.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,11fe8c6d51172d420408100c948414c3,0590117G,Inconnu,10
+2024-12-13T14:25:43.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,b7e9c244368984ee7010b4a3bd4ea8a4,0590117G,Inconnu,0
+2024-12-13T14:27:07.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,d4549e085eec32594003d7cdb0f94183,0590117G,Inconnu,0
+2024-12-13T14:27:18.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,bc02d190b26e5f514a78c69ffc45e54e,0590117G,Inconnu,19
+2024-12-13T14:27:21.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,97761e3f782e1fcaa04412a1adcccb14,0590117G,Inconnu,22
+2024-12-13T14:27:21.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,bc4e0f68af939700ccea56ab069b3fb1,0590117G,Inconnu,0
+2024-12-13T14:27:54.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,a8bac66ca92ebd4ed215e98f703daf79,0590117G,Inconnu,0
+2024-12-13T14:27:57.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,a304f3419ae15674cb875c83f6da746e,0590117G,Inconnu,0
+2024-12-13T14:30:01.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,638e32709cc9b965339cbd1138cbdf46,0590117G,Inconnu,0
+2024-12-13T14:30:23.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,e032fe850d8db353e4a87b1f358a0bc1,0590117G,Inconnu,4
+2024-12-13T14:32:38.000Z,2024-12-13,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,48c809608bb540e301d8d63c1c0760e9,0590117G,Inconnu,0
+2025-05-23T13:20:57.000Z,2025-05-23,test,6659633,MathAData- G�om�trie du plan (milieu et distance) pour la classification d'images de chiffres - 2nde,c0f83d11c5318938a003c0a00dcded64,0590117G,Inconnu,0
+2025-05-23T13:26:26.000Z,2025-05-23,teaching,6659633,MathAData- G�om�trie du plan (milieu et distance) pour la classification d'images de chiffres - 2nde,8a0c4b73a3b9ca5a4b3b14dc67f99a1a,0590117G,Inconnu,0
+2025-05-23T13:26:27.000Z,2025-05-23,teaching,6659633,MathAData- G�om�trie du plan (milieu et distance) pour la classification d'images de chiffres - 2nde,1691b75741b6645f66da32af35a073e2,0590117G,Inconnu,0

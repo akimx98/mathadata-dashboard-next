@@ -422,6 +422,16 @@ export default function Dashboard() {
   const [selectedSeance, setSelectedSeance] = useState<number | null>(null); // index de la séance dans classActivityDetails
   const [selectedSeancesCount, setSelectedSeancesCount] = useState<number | null>(null); // pour le modal des profs par nb de séances
   const [mapModalOpen, setMapModalOpen] = useState(false);
+  const [showAcademyBorders, setShowAcademyBorders] = useState(false);
+  const [officialAcademyStats, setOfficialAcademyStats] = useState<any>(null);
+  
+  // Charger les statistiques officielles des académies
+  useEffect(() => {
+    fetch('/data/academies_stats.json')
+      .then(res => res.json())
+      .then(data => setOfficialAcademyStats(data))
+      .catch(err => console.error("Erreur chargement stats académies:", err));
+  }, []);
   
   const tableData = useMemo(() => {
     const query = (q || "").trim().toLowerCase();
@@ -1780,28 +1790,47 @@ export default function Dashboard() {
               ⤢
             </button>
           </div>
-          <div style={{marginBottom: 12, display: "flex", gap: 16, fontSize: "0.875rem"}}>
-            <div style={{display: "flex", alignItems: "center", gap: 6}}>
-              <div style={{
-                width: 12, 
-                height: 12, 
-                borderRadius: "50%", 
-                backgroundColor: "#3b82f6"
-              }}></div>
-              <span>Usages élèves</span>
+          <div style={{marginBottom: 12, display: "flex", flexDirection: "column", gap: 8}}>
+            <div style={{display: "flex", gap: 16, fontSize: "0.875rem"}}>
+              <div style={{display: "flex", alignItems: "center", gap: 6}}>
+                <div style={{
+                  width: 12, 
+                  height: 12, 
+                  borderRadius: "50%", 
+                  backgroundColor: "#3b82f6"
+                }}></div>
+                <span>Usages élèves</span>
+              </div>
+              <div style={{display: "flex", alignItems: "center", gap: 6}}>
+                <div style={{
+                  width: 12, 
+                  height: 12, 
+                  borderRadius: "50%", 
+                  backgroundColor: "#f59e0b"
+                }}></div>
+                <span>Tests profs uniquement</span>
+              </div>
             </div>
-            <div style={{display: "flex", alignItems: "center", gap: 6}}>
-              <div style={{
-                width: 12, 
-                height: 12, 
-                borderRadius: "50%", 
-                backgroundColor: "#f59e0b"
-              }}></div>
-              <span>Tests profs uniquement</span>
+            <div style={{display: "flex", alignItems: "center", gap: 6, fontSize: "0.875rem"}}>
+              <input 
+                type="checkbox" 
+                id="showAcademyBorders"
+                checked={showAcademyBorders}
+                onChange={(e) => setShowAcademyBorders(e.target.checked)}
+                style={{cursor: "pointer"}}
+              />
+              <label htmlFor="showAcademyBorders" style={{cursor: "pointer", color: "#64748b"}}>
+                Afficher les limites des académies
+              </label>
             </div>
           </div>
           <div className="map">
-            <UsageMap points={usageByUai} onPointClick={(uai) => setSelectedUai(uai)} />
+            <UsageMap 
+              points={usageByUai} 
+              onPointClick={(uai) => setSelectedUai(uai)} 
+              onAcademyClick={(academie) => setSelectedAcademie(academie)}
+              showAcademyBorders={showAcademyBorders} 
+            />
           </div>
         </div>
 
@@ -2711,6 +2740,15 @@ export default function Dashboard() {
         const monthlyData = getMonthlyDataForAcademie(selectedAcademie);
         const totalUsagesAcademie = monthlyData.reduce((sum, d) => sum + d.count, 0);
         
+        // Calculer le nombre de lycées dans cette académie
+        const lyceesAcademie = usageByUai.filter(u => u.academie === selectedAcademie);
+        const nbLycees = lyceesAcademie.length;
+        const nbUsages = lyceesAcademie.reduce((sum, u) => sum + u.nb, 0);
+        const nbEleves = lyceesAcademie.reduce((sum, u) => sum + (u.nbEleves || 0), 0);
+        
+        // Récupérer les statistiques officielles
+        const officialStats = officialAcademyStats?.[selectedAcademie];
+        
         return (
           <div 
             style={{
@@ -2739,11 +2777,56 @@ export default function Dashboard() {
               onClick={(e) => e.stopPropagation()}
             >
               <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "16px"}}>
-                <div>
-                  <h2 style={{marginBottom: "4px"}}>Académie de {selectedAcademie}</h2>
-                  <p className="muted" style={{marginTop: 0}}>
-                    Total des usages : {totalUsagesAcademie.toLocaleString("fr-FR")}
-                  </p>
+                <div style={{flex: 1}}>
+                  <h2 style={{marginBottom: "8px"}}>Académie de {selectedAcademie}</h2>
+                  
+                  {/* Statistiques officielles */}
+                  {officialStats && (
+                    <div style={{
+                      padding: "12px",
+                      backgroundColor: "#f8fafc",
+                      borderRadius: "6px",
+                      marginBottom: "12px",
+                      fontSize: "0.875rem"
+                    }}>
+                      <div style={{display: "flex", gap: "24px", flexWrap: "wrap"}}>
+                        <div>
+                          <span className="muted">Total lycées :</span>{" "}
+                          <strong>{officialStats.nb_lycees}</strong>
+                        </div>
+                        <div>
+                          <span className="muted">Total élèves :</span>{" "}
+                          <strong>{officialStats.nb_eleves_total.toLocaleString("fr-FR")}</strong>
+                        </div>
+                        <div style={{fontSize: "0.8rem", color: "#64748b"}}>
+                          (dont {officialStats.nb_eleves_gt.toLocaleString("fr-FR")} en GT, {officialStats.nb_eleves_pro.toLocaleString("fr-FR")} en Pro)
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Statistiques MathAData */}
+                  <div style={{display: "flex", gap: "24px", fontSize: "0.875rem", marginTop: 0, flexWrap: "wrap"}}>
+                    <div>
+                      <span className="muted">Lycées utilisant MathAData :</span>{" "}
+                      <strong style={{color: "#3b82f6"}}>{nbLycees}</strong>
+                      {officialStats && (
+                        <span style={{color: "#64748b", fontSize: "0.8rem", marginLeft: "4px"}}>
+                          ({((nbLycees / officialStats.nb_lycees) * 100).toFixed(1)}%)
+                        </span>
+                      )}
+                    </div>
+                    <div>
+                      <span className="muted">Total usages :</span>{" "}
+                      <strong>{totalUsagesAcademie.toLocaleString("fr-FR")}</strong>
+                    </div>
+                    {nbEleves > 0 && (
+                      <div>
+                        <span className="muted">Élèves uniques :</span>{" "}
+                        <strong style={{color: "#3b82f6"}}>{nbEleves.toLocaleString("fr-FR")}</strong>
+                      </div>
+                    )}
+                  </div>
                 </div>
                 <button 
                   onClick={() => setSelectedAcademie(null)}
@@ -3039,24 +3122,38 @@ export default function Dashboard() {
             <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "16px"}}>
               <div>
                 <h2 style={{marginBottom: "4px"}}>Carte des usages (cercles ∝ nb)</h2>
-                <div style={{display: "flex", gap: 16, fontSize: "0.875rem", marginTop: 8}}>
-                  <div style={{display: "flex", alignItems: "center", gap: 6}}>
-                    <div style={{
-                      width: 12, 
-                      height: 12, 
-                      borderRadius: "50%", 
-                      backgroundColor: "#3b82f6"
-                    }}></div>
-                    <span>Usages élèves</span>
+                <div style={{display: "flex", flexDirection: "column", gap: 8}}>
+                  <div style={{display: "flex", gap: 16, fontSize: "0.875rem", marginTop: 8}}>
+                    <div style={{display: "flex", alignItems: "center", gap: 6}}>
+                      <div style={{
+                        width: 12, 
+                        height: 12, 
+                        borderRadius: "50%", 
+                        backgroundColor: "#3b82f6"
+                      }}></div>
+                      <span>Usages élèves</span>
+                    </div>
+                    <div style={{display: "flex", alignItems: "center", gap: 6}}>
+                      <div style={{
+                        width: 12, 
+                        height: 12, 
+                        borderRadius: "50%", 
+                        backgroundColor: "#f59e0b"
+                      }}></div>
+                      <span>Tests profs uniquement</span>
+                    </div>
                   </div>
-                  <div style={{display: "flex", alignItems: "center", gap: 6}}>
-                    <div style={{
-                      width: 12, 
-                      height: 12, 
-                      borderRadius: "50%", 
-                      backgroundColor: "#f59e0b"
-                    }}></div>
-                    <span>Tests profs uniquement</span>
+                  <div style={{display: "flex", alignItems: "center", gap: 6, fontSize: "0.875rem"}}>
+                    <input 
+                      type="checkbox" 
+                      id="showAcademyBordersModal"
+                      checked={showAcademyBorders}
+                      onChange={(e) => setShowAcademyBorders(e.target.checked)}
+                      style={{cursor: "pointer"}}
+                    />
+                    <label htmlFor="showAcademyBordersModal" style={{cursor: "pointer", color: "#64748b"}}>
+                      Afficher les limites des académies
+                    </label>
                   </div>
                 </div>
               </div>
@@ -3073,10 +3170,18 @@ export default function Dashboard() {
             </div>
             
             <div style={{flex: 1, minHeight: 0}}>
-              <UsageMap points={usageByUai} onPointClick={(uai) => {
-                setSelectedUai(uai);
-                setMapModalOpen(false);
-              }} />
+              <UsageMap 
+                points={usageByUai} 
+                onPointClick={(uai) => {
+                  setSelectedUai(uai);
+                  setMapModalOpen(false);
+                }} 
+                onAcademyClick={(academie) => {
+                  setSelectedAcademie(academie);
+                  setMapModalOpen(false);
+                }}
+                showAcademyBorders={showAcademyBorders} 
+              />
             </div>
           </div>
         </div>

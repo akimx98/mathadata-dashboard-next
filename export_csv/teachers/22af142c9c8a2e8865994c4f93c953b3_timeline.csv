@@ -1,0 +1,22 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-05-20T06:06:36.000Z,2025-05-20,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,dbf08461d156487d0761a41e09960e26,9840002E,Inconnu,730
+2025-05-20T06:20:48.000Z,2025-05-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,dbf08461d156487d0761a41e09960e26,9840002E,Inconnu,22486
+2025-05-20T18:18:03.000Z,2025-05-20,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,d1659f3dfb5788e2b77fac402dcb6ac9,9840002E,Inconnu,2
+2025-05-21T20:13:45.000Z,2025-05-21,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,719bfa3a7db502649b729fe4471234bc,9840002E,Inconnu,41
+2025-05-21T20:15:19.000Z,2025-05-21,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,42f0ad365bef4c459c6148e9c3e36421,9840002E,Inconnu,45
+2025-05-21T20:15:25.000Z,2025-05-21,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,f6337a5ab8bb26bd49d305be713897ce,9840002E,Inconnu,39
+2025-05-21T20:15:51.000Z,2025-05-21,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,cec7f081b49a1661480c00c41d13635d,9840002E,Inconnu,0
+2025-05-21T20:16:53.000Z,2025-05-21,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,ad579300fb107e7ddb75034d59cbf8b9,9840002E,Inconnu,69
+2025-05-21T20:18:09.000Z,2025-05-21,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,609fdbf01522cfbd52cdd4354b7e8fb8,9840002E,Inconnu,1629
+2025-05-21T20:18:22.000Z,2025-05-21,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,f94edee1da1e3dd9a21c8c2677ae852c,9840002E,Inconnu,50
+2025-05-21T20:19:27.000Z,2025-05-21,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,01439e4d694b2388b86c0631732bbdb4,9840002E,Inconnu,42
+2025-05-21T20:19:39.000Z,2025-05-21,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,07bb5172542cc7cf8f6c679e80c962f6,9840002E,Inconnu,46
+2025-05-21T20:20:08.000Z,2025-05-21,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,983a95a94b894592bf52db15f54da6ae,9840002E,Inconnu,39
+2025-05-21T20:21:00.000Z,2025-05-21,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,832334138a014fb521ff7cc3e6bcaebf,9840002E,Inconnu,47
+2025-05-21T20:28:05.000Z,2025-05-21,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,18fb8024f0e6c31813f5f118e62e920f,9840002E,Inconnu,0
+2025-05-22T23:25:05.000Z,2025-05-22,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,f94edee1da1e3dd9a21c8c2677ae852c,9840002E,Inconnu,15
+2025-06-04T20:13:55.000Z,2025-06-04,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,26d82a603bf81630784e71fa9fa095a7,9840002E,Inconnu,0
+2025-06-04T20:19:27.000Z,2025-06-04,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,3d2888d22a255312c3040a46626fa2e9,9840002E,Inconnu,46
+2025-06-04T20:20:16.000Z,2025-06-04,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,3d2888d22a255312c3040a46626fa2e9,9840002E,Inconnu,0
+2025-06-04T20:22:46.000Z,2025-06-04,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,ea003302cf303d265746ecc664cfc0b6,9840002E,Inconnu,23
+2025-09-25T17:37:04.000Z,2025-09-25,test,6944347,MathAData - Statistiques pour surveiller la sant� de foetus - 2nde,22af142c9c8a2e8865994c4f93c953b3,9840002E,Inconnu,0

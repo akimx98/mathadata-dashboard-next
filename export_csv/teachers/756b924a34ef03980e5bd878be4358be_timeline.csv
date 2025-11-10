@@ -1,0 +1,27 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2024-12-18T11:28:34.000Z,2024-12-18,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0d9a6a2f41334b59664b4a741dfe740f,NULL,Inconnu,0
+2024-12-19T10:39:06.000Z,2024-12-19,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,7e9705c251e29c3f5d34df1147f37a61,NULL,Inconnu,0
+2024-12-20T09:43:11.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,88e2a801496b58ee9a4442fb5fe3e23d,NULL,Inconnu,24
+2024-12-20T09:43:14.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,e6255dd7a53daa6815a8482ca2403bac,NULL,Inconnu,45
+2024-12-20T09:43:18.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,56c11de4be819f0431af1f477ac19169,NULL,Inconnu,15
+2024-12-20T09:43:24.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,ac3ea5740ce5c627a1d37554448a9a7f,NULL,Inconnu,45
+2024-12-20T09:43:24.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,691dc3a1014ce2b89d85071d68dd290a,NULL,Inconnu,0
+2024-12-20T09:43:26.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,a8bcb738c93d8b9899451c53fe61ea48,NULL,Inconnu,45
+2024-12-20T09:43:32.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,ae16b38212286046120c9b15ad38de67,NULL,Inconnu,0
+2024-12-20T09:43:48.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,57a5c5d69b05e4ce261659ea77ce612e,NULL,Inconnu,47
+2024-12-20T09:43:51.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,e3cbb1abbccc02b37a59e1ae55df2175,NULL,Inconnu,0
+2024-12-20T09:44:43.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,a0f573563518ba64732cb737e129c178,NULL,Inconnu,20
+2024-12-20T09:53:26.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0618005e709e7bef5c15a1453e585204,NULL,Inconnu,0
+2024-12-20T09:54:53.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,b8ba0a1c711dc02435ab1e3de493ffa9,NULL,Inconnu,15
+2024-12-20T09:54:58.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,75d5568c17e375157a071199335ff99a,NULL,Inconnu,11
+2024-12-20T09:55:20.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,b0c1ae0d63a9ccf57c0e57897f2cd122,NULL,Inconnu,0
+2024-12-20T09:55:53.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,00d3d4b09d6a1ea7f7d55802fcb888d1,NULL,Inconnu,0
+2024-12-20T09:55:54.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,34fb38db76d987b5b3d0a730368ee2d8,NULL,Inconnu,32
+2024-12-20T09:56:07.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,2c2a1df7d843ca18dfd6a5ee61d553f7,NULL,Inconnu,32
+2024-12-20T09:56:08.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,e246d6711024dccbb8a0587ff4ff4e71,NULL,Inconnu,0
+2024-12-20T09:56:37.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,248e1c8e480bcbcdefde63cab4c6dc54,NULL,Inconnu,0
+2024-12-20T09:56:42.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,cfa7990a29dcca6c51046507233433d1,NULL,Inconnu,0
+2024-12-20T09:59:14.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,52968975e510a5a5b75890e89d266c9f,NULL,Inconnu,26
+2024-12-20T09:59:31.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,6a08c23a8959a00e79b57abbb70a978c,NULL,Inconnu,0
+2024-12-20T10:01:33.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,cbaea56d5be364e4e940ea92fa985102,NULL,Inconnu,0
+2024-12-20T10:14:05.000Z,2024-12-20,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,19fa5433601dcaccac14abf8bdcaecda,NULL,Inconnu,7

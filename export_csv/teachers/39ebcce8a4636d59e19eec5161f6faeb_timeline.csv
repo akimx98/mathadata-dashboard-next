@@ -1,0 +1,3 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2024-06-11T09:15:28.000Z,2024-06-11,test,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,39ebcce8a4636d59e19eec5161f6faeb,0342066L,Inconnu,404
+2024-06-11T16:00:19.000Z,2024-06-11,test,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,39ebcce8a4636d59e19eec5161f6faeb,0342066L,Inconnu,0

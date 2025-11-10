@@ -1,0 +1,7 @@
+session_number,activity_id,activity_name,uai,school_name,date,timestamp,time_pattern,nb_students,avg_work_duration_minutes,continuation_rate,home_work_rate,had_second_session,second_session_date,second_session_students,tested_first,days_between_test_and_teaching,is_same_students_as_previous,overlap_rate
+1,2548348,Intro � l'IA : classification de chiffres 2 et 7,0341794R,Inconnu,2025-05-22,2025-05-22T14:30:00.000Z,afternoon_weekday,11,29,0,0,no,,0,no,0,,
+2,2548348,Intro � l'IA : classification de chiffres 2 et 7,0341794R,Inconnu,2025-05-26,2025-05-26T08:47:54.000Z,morning_weekday,13,8,0,0,no,,0,yes,4,no,0
+3,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,0341794R,Inconnu,2025-05-22,2025-05-22T15:06:33.000Z,afternoon_weekday,8,13,0,0,no,,0,no,,,
+4,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,0341794R,Inconnu,2025-05-23,2025-05-23T13:13:31.000Z,afternoon_weekday,14,3,0,0,no,,0,no,,no,0
+5,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,0341794R,Inconnu,2025-05-26,2025-05-26T09:10:12.000Z,morning_weekday,3,2,0,0,no,,0,no,,no,0
+6,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,0340039H,Inconnu,2025-05-23,2025-05-23T13:15:05.000Z,afternoon_weekday,1,26,0,0,no,,0,no,,no,0

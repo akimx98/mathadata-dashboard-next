@@ -1,0 +1,7 @@
+session_number,activity_id,activity_name,uai,school_name,date,timestamp,time_pattern,nb_students,avg_work_duration_minutes,continuation_rate,home_work_rate,had_second_session,second_session_date,second_session_students,tested_first,days_between_test_and_teaching,is_same_students_as_previous,overlap_rate
+1,2548348,Intro � l'IA : classification de chiffres 2 et 7,0590110Z,Inconnu,2024-05-06,2024-05-06T12:35:10.000Z,afternoon_weekday,4,60,0.5,0,yes,2024-05-06T13:52:20.000Z,2,yes,33,,
+2,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0590110Z,Inconnu,2024-05-28,2024-05-28T08:47:32.000Z,morning_weekday,4,19,0,0,no,,0,no,-146,,
+3,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0590110Z,Inconnu,2025-03-20,2025-03-20T07:59:09.000Z,morning_weekday,26,3660,0.31,0.12,no,,0,yes,150,no,0
+4,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0590110Z,Inconnu,2025-04-02,2025-04-02T07:34:23.000Z,morning_weekday,1,0,0,0,no,,0,yes,163,no,0
+5,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0590110Z,Inconnu,2025-04-02,2025-04-02T14:02:15.000Z,afternoon_weekday,1,0,0,0,no,,0,yes,163,no,0
+6,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0590110Z,Inconnu,2025-04-02,2025-04-02T18:41:16.000Z,evening_weekday,1,75,1,1,no,,0,yes,163,no,0

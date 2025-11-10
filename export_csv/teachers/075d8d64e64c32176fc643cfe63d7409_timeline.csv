@@ -1,0 +1,6 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2024-06-25T12:40:22.000Z,2024-06-25,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,1869f0b6ace7f22fdc10e53743ab7d4a,0782539L,Inconnu,44
+2024-06-25T12:40:23.000Z,2024-06-25,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,b1fbcb489e7d3b93a3e8b25cd7e8a268,0932638M,Inconnu,54
+2024-06-25T12:41:25.000Z,2024-06-25,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,bde99a6a72e6161017d3bb9f563eddcd,0952284S,Inconnu,0
+2024-06-25T12:41:28.000Z,2024-06-25,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,2579c6c019c216a1d6353cd1f987f1d8,0920137Z,Inconnu,0
+2024-06-25T13:32:49.000Z,2024-06-25,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,7efbe44f5cc3bc11a17b24d1aa9a1ecc,0750668U,Inconnu,44

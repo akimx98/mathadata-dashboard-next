@@ -1,0 +1,6 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-06-06T12:36:00.000Z,2025-06-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,485efb3988d41c46d2d700458ca8147b,NULL,Inconnu,30
+2025-06-06T12:36:05.000Z,2025-06-06,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,5f16dd2dd359f678e8b50aa3368353d1,NULL,Inconnu,0
+2025-06-06T12:36:53.000Z,2025-06-06,teaching,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,5f16dd2dd359f678e8b50aa3368353d1,NULL,Inconnu,0
+2025-06-06T12:41:41.000Z,2025-06-06,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,1cd15f2547c82d26f11ef71031a7b5b7,NULL,Inconnu,15
+2025-06-06T13:02:24.000Z,2025-06-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,1cd15f2547c82d26f11ef71031a7b5b7,NULL,Inconnu,13

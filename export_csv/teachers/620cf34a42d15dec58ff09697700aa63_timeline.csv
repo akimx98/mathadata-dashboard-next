@@ -1,0 +1,15 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-05-24T15:48:46.000Z,2025-05-24,test,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,620cf34a42d15dec58ff09697700aa63,0130010R,Inconnu,859
+2025-05-27T07:05:03.000Z,2025-05-27,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,edf64645ed29faa9832bb1ab57404ff3,0130010R,Inconnu,45
+2025-05-27T07:05:13.000Z,2025-05-27,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,fc7eb37c29d916cfb04705814b3eb05f,0130010R,Inconnu,36
+2025-05-27T09:08:30.000Z,2025-05-27,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,d6f7e186674a4f0535b775570f51a589,0130010R,Inconnu,46
+2025-05-27T09:08:33.000Z,2025-05-27,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,166113deb00cf60aeeede5f83a0825a3,0130010R,Inconnu,46
+2025-05-27T09:09:30.000Z,2025-05-27,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,5b6c0ea5c3a27e0ddc1612edbd6b9687,0130010R,Inconnu,45
+2025-05-27T09:11:20.000Z,2025-05-27,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,81f7adb3029517767040bd63a2ba6a3a,0130010R,Inconnu,43
+2025-06-06T06:53:28.000Z,2025-06-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,7ed150e8fb3faff4de1d7996e66e8b32,0130010R,Inconnu,57
+2025-06-06T06:53:31.000Z,2025-06-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,d4a08b28f132ff985d7f36c1b5f65416,0130010R,Inconnu,54
+2025-06-06T06:54:01.000Z,2025-06-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,93fad955de221a90a1c8ce36f5cae8c8,0130010R,Inconnu,55
+2025-06-06T07:04:22.000Z,2025-06-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,d2eace68b8863bacada14dd0b8157d8b,0130010R,Inconnu,45
+2025-06-06T09:24:21.000Z,2025-06-06,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,116de8660ce8daf7d7e18d39863a3501,0130010R,Inconnu,0
+2025-06-10T09:03:41.000Z,2025-06-10,test,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,620cf34a42d15dec58ff09697700aa63,0130010R,Inconnu,48
+2025-06-10T09:54:00.000Z,2025-06-10,test,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,620cf34a42d15dec58ff09697700aa63,0130010R,Inconnu,0

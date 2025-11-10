@@ -1,0 +1,6 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-02-22T14:32:43.000Z,2025-02-22,test,4388355,Mathadata - Sc�ance Python - Classification d'image MNIST,4a00ec743cd160ce59b375e9d7e4696a,0601863Z,Inconnu,0
+2025-02-22T14:36:16.000Z,2025-02-22,test,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,4a00ec743cd160ce59b375e9d7e4696a,0601863Z,Inconnu,11270
+2025-02-22T14:47:39.000Z,2025-02-22,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,4a00ec743cd160ce59b375e9d7e4696a,0601863Z,Inconnu,0
+2025-02-22T16:43:28.000Z,2025-02-22,test,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,4a00ec743cd160ce59b375e9d7e4696a,0601863Z,Inconnu,0
+2025-03-20T12:22:28.000Z,2025-03-20,test,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,4a00ec743cd160ce59b375e9d7e4696a,0601863Z,Inconnu,36

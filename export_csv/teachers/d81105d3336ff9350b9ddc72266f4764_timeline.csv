@@ -1,0 +1,19 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-06-03T22:26:23.000Z,2025-06-03,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,d81105d3336ff9350b9ddc72266f4764,9840002E,Inconnu,0
+2025-06-03T23:21:53.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,08c1a42536736e0e94348e53e467df28,9840002E,Inconnu,0
+2025-06-03T23:21:53.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,5aadee3ab7066cf50879e03a96212e42,9840002E,Inconnu,12
+2025-06-03T23:21:55.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,ab73ac425f7243dc6bdf23b3061d40e7,9840002E,Inconnu,35
+2025-06-03T23:21:59.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,12d1e1ff5a085436dff62ed4c606645a,9840002E,Inconnu,51
+2025-06-03T23:22:01.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,ceac04ebb7ed5d7fe9289d6ddb614075,9840002E,Inconnu,0
+2025-06-03T23:22:02.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,2025ed0f2d2b11892675d49dcb507eb8,9840002E,Inconnu,2
+2025-06-03T23:22:07.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,eab8fbdcf81ad032b7f8c17e8f111574,9840002E,Inconnu,0
+2025-06-03T23:22:10.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,52e003caa11cb941c018842e8229d2c8,9840002E,Inconnu,0
+2025-06-03T23:22:11.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,d1d3fdf8d8c21fe858cfd193163156a7,9840002E,Inconnu,0
+2025-06-03T23:22:16.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,2819d53b395dde89bbff32cd2aaf1a61,9840002E,Inconnu,0
+2025-06-03T23:22:20.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,a8b6f812e2b2a06d99800e0ad728f1b7,9840002E,Inconnu,10
+2025-06-03T23:22:23.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,7b85ec7480b441da5c5166f441af8ba4,9840002E,Inconnu,13
+2025-06-03T23:22:38.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,a7ddbe2883b7e7057c77a516f8f6bccc,9840002E,Inconnu,8
+2025-06-03T23:22:43.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,367e9b4807be7c8b9c13db9b12b11a67,9840002E,Inconnu,0
+2025-06-03T23:23:15.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,3476849b1669c454a9847f33ec875ea0,9840002E,Inconnu,0
+2025-06-03T23:23:16.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,f19677154886908a4f198be16869aafa,9840002E,Inconnu,15
+2025-06-03T23:23:34.000Z,2025-06-03,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,33d5dc7719d0206e98b906c3484d1ffd,9840002E,Inconnu,0

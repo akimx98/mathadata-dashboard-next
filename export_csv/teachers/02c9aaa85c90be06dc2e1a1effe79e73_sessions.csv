@@ -1,0 +1,5 @@
+session_number,activity_id,activity_name,uai,school_name,date,timestamp,time_pattern,nb_students,avg_work_duration_minutes,continuation_rate,home_work_rate,had_second_session,second_session_date,second_session_students,tested_first,days_between_test_and_teaching,is_same_students_as_previous,overlap_rate
+1,2548348,Intro � l'IA : classification de chiffres 2 et 7,0680010S,Inconnu,2025-06-03,2025-06-03T06:59:28.000Z,morning_weekday,12,38,0.08,0,no,,0,no,0,,
+2,2548348,Intro � l'IA : classification de chiffres 2 et 7,0680010S,Inconnu,2025-06-03,2025-06-03T09:05:46.000Z,morning_weekday,10,13,0,0,no,,0,yes,0,no,0
+3,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,0680010S,Inconnu,2025-06-10,2025-06-10T12:01:48.000Z,afternoon_weekday,11,3,0,0,no,,0,no,0,,
+4,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,0680010S,Inconnu,2025-06-10,2025-06-10T12:02:34.000Z,afternoon_weekday,6,6,0,0,no,,0,yes,5,,

@@ -1,0 +1,11 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2024-11-21T16:29:33.000Z,2024-11-21,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,352b06df5c53b8c36a067864d84b74f4,0250010A,Inconnu,23
+2024-11-21T16:29:35.000Z,2024-11-21,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,d49da3d813e8fd5395f57b663bb27915,0250010A,Inconnu,23
+2024-11-21T16:33:42.000Z,2024-11-21,teaching,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,f2354f94d81d25c571359fa80a0a31ff,0250010A,Inconnu,21
+2025-05-22T14:09:33.000Z,2025-05-22,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,d7b35d9751b54c63c884bafdeeab3c70,0250010A,Inconnu,0
+2025-05-22T14:09:33.000Z,2025-05-22,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,e07b3cd3e9bf9bacb96a1bb5357773dd,0250010A,Inconnu,0
+2025-05-22T14:09:34.000Z,2025-05-22,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,664ae136837e82c247580dcd12177c0f,0250010A,Inconnu,0
+2025-05-22T14:09:35.000Z,2025-05-22,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,6283d536ab37f2f04019333ff1f3a4e2,0250010A,Inconnu,0
+2025-05-22T14:09:48.000Z,2025-05-22,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,97118dd48755aa853b714cdd86f16308,0250010A,Inconnu,0
+2025-05-22T14:10:45.000Z,2025-05-22,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,2d9b4999f5eafb5806e3976bd860c9fe,0250010A,Inconnu,1
+2025-05-22T14:11:04.000Z,2025-05-22,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,1d85fc57bb45d0faa152e11f9f19b61a,0250010A,Inconnu,0

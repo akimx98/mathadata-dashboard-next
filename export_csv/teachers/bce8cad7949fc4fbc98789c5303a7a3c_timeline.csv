@@ -1,0 +1,4 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-03-18T16:55:19.000Z,2025-03-18,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,bce8cad7949fc4fbc98789c5303a7a3c,0601863Z,Inconnu,13226
+2025-03-19T19:09:02.000Z,2025-03-19,test,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,bce8cad7949fc4fbc98789c5303a7a3c,0601863Z,Inconnu,21
+2025-03-20T08:54:59.000Z,2025-03-20,test,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,bce8cad7949fc4fbc98789c5303a7a3c,0601863Z,Inconnu,10841

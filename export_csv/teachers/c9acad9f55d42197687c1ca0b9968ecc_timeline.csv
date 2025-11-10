@@ -1,0 +1,18 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2024-04-02T10:20:28.000Z,2024-04-02,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,54c4480d03c18ec528e46527d7882af8,NULL,Inconnu,116
+2024-04-02T10:30:47.000Z,2024-04-02,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,40174d861a013f0794307d2ed31caee6,NULL,Inconnu,31
+2024-04-04T06:18:58.000Z,2024-04-04,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,524e78fc31a165928156f9dd3171961f,NULL,Inconnu,0
+2024-04-04T06:22:33.000Z,2024-04-04,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,08b762d0c7caea233cee3e5ec16f5beb,NULL,Inconnu,0
+2024-04-04T07:09:39.000Z,2024-04-04,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,6dd9ce1e38ea75f89709ffaba0b2f369,NULL,Inconnu,0
+2024-04-04T07:11:17.000Z,2024-04-04,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,e9d621e63f75b967f4b026d49cc7e6b4,NULL,Inconnu,1
+2024-04-04T12:15:44.000Z,2024-04-04,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,0b77a7a42430dceb66d3c938b039ecd1,NULL,Inconnu,0
+2024-04-04T12:16:45.000Z,2024-04-04,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,acede8cc7313e4a25fe2da257f5d83dc,NULL,Inconnu,0
+2024-04-04T12:18:47.000Z,2024-04-04,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,a5c6e78db67eff715afeac98de4a9b3c,NULL,Inconnu,0
+2024-04-05T08:24:39.000Z,2024-04-05,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,688a9b2efc66c1a3ce81994b1e1ffafe,NULL,Inconnu,94
+2024-04-05T08:34:10.000Z,2024-04-05,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,027beb31a74d4b84eec20483c4704257,NULL,Inconnu,0
+2024-04-05T08:36:38.000Z,2024-04-05,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,bdf16addf29f404c5a1bb06fcc7c9ea8,NULL,Inconnu,1
+2024-04-05T08:41:00.000Z,2024-04-05,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,f478341fcac230a2800f0f43b24b8029,NULL,Inconnu,28
+2024-07-04T09:28:17.000Z,2024-07-04,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,c9acad9f55d42197687c1ca0b9968ecc,NULL,Inconnu,0
+2024-07-04T09:28:29.000Z,2024-07-04,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,cda841747bee71b547af63e5a1ed9732,NULL,Inconnu,0
+2024-07-04T09:28:33.000Z,2024-07-04,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,eeddd750a15094e4e1def01bde34113a,NULL,Inconnu,0
+2024-07-04T09:29:02.000Z,2024-07-04,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,a49a65e17ed9a407604050af7c2d4fa9,NULL,Inconnu,0

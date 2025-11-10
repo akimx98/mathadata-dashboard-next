@@ -1,0 +1,51 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-04-08T15:23:34.000Z,2025-04-08,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,150966db5f8e60735a6a9dd6e6d3518f,0690023A,Inconnu,8311
+2025-04-08T15:46:50.000Z,2025-04-08,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,b45d302022d84ccc52249e2ba224b159,0690023A,Inconnu,0
+2025-04-08T15:47:28.000Z,2025-04-08,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,8c18907baed21e1d9a712ae4a288a197,0690023A,Inconnu,0
+2025-04-08T15:47:33.000Z,2025-04-08,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,bcedbddc25d242bb2cfebb28bb08931a,0690023A,Inconnu,8259
+2025-04-08T15:47:37.000Z,2025-04-08,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,38a112760896f2d3f46270a35ec1a21b,0690023A,Inconnu,0
+2025-04-08T15:48:24.000Z,2025-04-08,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,375528152d0aef69d4e51284d3c1aee2,0690023A,Inconnu,13
+2025-04-08T15:49:25.000Z,2025-04-08,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,9d90378e468f0384498969c16ebb5e28,0690023A,Inconnu,13
+2025-04-08T15:49:47.000Z,2025-04-08,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,7def7f5fea6d1c68fedd1fb4c0219f9d,0690023A,Inconnu,0
+2025-04-08T15:51:41.000Z,2025-04-08,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,f248a5f3a0c86e2bc7f0c0ca837f16de,0690023A,Inconnu,0
+2025-04-08T15:52:18.000Z,2025-04-08,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,ea9fc1b2ff93a2e437fb80decb68c065,0690023A,Inconnu,10
+2025-04-08T15:55:38.000Z,2025-04-08,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,96e1d7462c2bfe716ad10d019117c8b8,0690023A,Inconnu,6
+2025-04-08T15:55:55.000Z,2025-04-08,teaching,3534169,Mathadata - Challenge IA MNIST  - BTS/NSI : Calcul du meilleur pixel,b0d96e47d2d7f963b53c284f2d330990,0690023A,Inconnu,0
+2025-04-14T09:10:38.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,c47ee826942b423f602c76ef99875386,0690023A,Inconnu,42
+2025-04-14T09:10:41.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,539d683c754cdcd254a6d92f02752660,0690023A,Inconnu,27581
+2025-04-14T09:10:45.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,f248a5f3a0c86e2bc7f0c0ca837f16de,0690023A,Inconnu,39
+2025-04-14T09:11:08.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,c8b2d5915197c214d399890485fe1275,0690023A,Inconnu,39
+2025-04-14T09:11:19.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,ab62391a5df3aa8d84de485b4c218c49,0690023A,Inconnu,39
+2025-04-14T09:11:21.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,c40184a1bcc66ffcbc74b62ffbb08be2,0690023A,Inconnu,13311
+2025-04-14T09:11:37.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,2f55565bc62f72ffb0cdeb1e66d6b5b9,0690023A,Inconnu,44
+2025-04-14T09:11:57.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,c0b5c7fc6775ed713c8667eead19a85a,0690023A,Inconnu,43
+2025-04-14T09:12:05.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,38a112760896f2d3f46270a35ec1a21b,0690023A,Inconnu,29100
+2025-04-14T09:12:20.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,2faf1edd4fabe40e33853986b4fc6ada,0690023A,Inconnu,38
+2025-04-14T09:12:20.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,67490b31814984171138e0c70bf8147e,0690023A,Inconnu,31
+2025-04-14T09:12:34.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,5e65de2d6f69f1b06dd7024d2bfe05b5,0690023A,Inconnu,40
+2025-04-14T09:12:34.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,c7fcd0592ed00aa9c063ff9c7471488a,0690023A,Inconnu,23162
+2025-04-14T09:12:39.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,ad877f75f31f3c7f7f506dba616477d8,0690023A,Inconnu,0
+2025-04-14T09:12:44.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,150966db5f8e60735a6a9dd6e6d3518f,0690023A,Inconnu,32016
+2025-04-14T09:12:49.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,b30bc5f27ad9ca6fcf0bc039d1e86d90,0690023A,Inconnu,0
+2025-04-14T09:13:02.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,a1f6900b64fb29dfc241132fd160679c,0690023A,Inconnu,29375
+2025-04-14T09:14:55.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,1baa235f949d29190d85c84ae3fdbcf1,0690023A,Inconnu,39
+2025-04-14T09:15:18.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,03004571b0f37556808375021d4e9c47,0690023A,Inconnu,39
+2025-04-14T09:25:57.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,bcedbddc25d242bb2cfebb28bb08931a,0690023A,Inconnu,22
+2025-04-14T09:27:02.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,bdbfb31e0d0e1917282d88ca2c046d24,0690023A,Inconnu,0
+2025-04-14T09:29:25.000Z,2025-04-14,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,a3d65661e34e75181ab6d5345c778b55,0690023A,Inconnu,26
+2025-04-17T07:36:32.000Z,2025-04-17,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,9d90378e468f0384498969c16ebb5e28,0690023A,Inconnu,18910
+2025-04-18T07:32:37.000Z,2025-04-18,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,f05b3b2c7268d65226830df065d99c67,0690023A,Inconnu,0
+2025-04-18T07:32:45.000Z,2025-04-18,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,8da843b9e19a6c7244de42984d12ed57,0690023A,Inconnu,0
+2025-04-18T07:33:48.000Z,2025-04-18,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,4cd2c3b790695b2bccf2d792b3672c51,0690023A,Inconnu,0
+2025-04-18T07:34:05.000Z,2025-04-18,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,edd8d0ed433e0659ad29b9c73e5909b7,0690023A,Inconnu,21
+2025-04-18T07:34:06.000Z,2025-04-18,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,867253845097f47e3001b05b97ef053e,0690023A,Inconnu,0
+2025-04-18T07:34:06.000Z,2025-04-18,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,d4a01f9e29905cb78fd647601130ab2a,0690023A,Inconnu,21
+2025-04-18T07:35:26.000Z,2025-04-18,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,ea95de08542db1d94fe393abd1a5ce8d,0690023A,Inconnu,0
+2025-04-20T09:17:04.000Z,2025-04-20,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,19ceaaa1c04e51a422dbd1c4a956b9a0,0690023A,Inconnu,119
+2025-04-20T09:46:09.000Z,2025-04-20,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,e381463014cb6ebd35e2344da9d4e2d4,0690023A,Inconnu,1685
+2025-04-20T14:32:48.000Z,2025-04-20,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,3c12034f18e99467770de60d8f6f0e09,0690023A,Inconnu,21
+2025-04-28T13:37:26.000Z,2025-04-28,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,60e66392a3ad99c2165b4892ed1dcf11,0690023A,Inconnu,8461
+2025-05-02T14:21:22.000Z,2025-05-02,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,67a37e81105fe85a39249cd36adf7a59,0690023A,Inconnu,0
+2025-05-04T11:33:13.000Z,2025-05-04,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,98cd942e7f70c31b5a9a61dcfbfb25a3,0690023A,Inconnu,0
+2025-05-04T15:02:26.000Z,2025-05-04,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,2150072203eb9103853ee2154c54ac03,0690023A,Inconnu,127
+2025-05-04T15:18:16.000Z,2025-05-04,teaching,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,965410a5883e61ea1fae8f508a0150c1,0690023A,Inconnu,32

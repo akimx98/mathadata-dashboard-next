@@ -1,0 +1,3 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-03-13T10:17:41.000Z,2025-03-13,test,2548348,Intro � l'IA : classification de chiffres 2 et 7,8694959cf2d53e57681d8fdc472468d6,0622803K,Inconnu,164
+2025-03-17T07:08:31.000Z,2025-03-17,test,5862412,MathAData - Droite et produit scalaire pour la classification d'images - 1ere,8694959cf2d53e57681d8fdc472468d6,0622803K,Inconnu,0

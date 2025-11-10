@@ -1,0 +1,9 @@
+session_number,activity_id,activity_name,uai,school_name,date,timestamp,time_pattern,nb_students,avg_work_duration_minutes,continuation_rate,home_work_rate,had_second_session,second_session_date,second_session_students,tested_first,days_between_test_and_teaching,is_same_students_as_previous,overlap_rate
+1,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,9840002E,Inconnu,2025-05-20,2025-05-20T06:06:36.000Z,morning_weekday,1,730,1,1,no,,0,no,,,
+2,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,9840002E,Inconnu,2025-05-20,2025-05-20T18:18:03.000Z,evening_weekday,1,2,0,1,no,,0,no,,no,0
+3,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,9840002E,Inconnu,2025-05-21,2025-05-21T20:13:45.000Z,night_weekday,4,37,0.25,1,no,,0,no,,no,0
+4,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,9840002E,Inconnu,2025-05-22,2025-05-22T23:25:05.000Z,night_weekday,1,15,0,0,no,,0,no,,no,0
+5,3515488,MathAData - G�om�trie du plan (�quation r�duite de droite) pour la classification d'images de chiffres - 2nde,9840002E,Inconnu,2025-06-04,2025-06-04T20:19:27.000Z,night_weekday,2,35,0,1,no,,0,no,,no,0
+6,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,9840002E,Inconnu,2025-05-20,2025-05-20T06:20:48.000Z,morning_weekday,1,22486,1,1,no,,0,no,,,
+7,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,9840002E,Inconnu,2025-05-21,2025-05-21T20:15:19.000Z,night_weekday,8,237,0.13,1,no,,0,no,,no,0
+8,3518185,MathAData - Statistiques pour la classification d'images de chiffres- 2nde,9840002E,Inconnu,2025-06-04,2025-06-04T20:13:55.000Z,night_weekday,2,0,0,1,no,,0,no,,no,0

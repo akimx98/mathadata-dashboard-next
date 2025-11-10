@@ -1,0 +1,3 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2024-04-04T06:39:17.000Z,2024-04-04,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,5a539663a50ceb3ef3a4b815c04162a1,0951723G,Inconnu,0
+2024-04-04T06:40:31.000Z,2024-04-04,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,63ca0fdd571a720aba043be65691cf99,0951723G,Inconnu,45

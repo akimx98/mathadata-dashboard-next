@@ -1,0 +1,19 @@
+timestamp,date,event_type,activity_id,activity_title,student_id,uai,school_name,work_duration_minutes
+2025-05-09T07:08:28.000Z,2025-05-09,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,e4cbabacb1557f095de250c0fbca137d,0310047H,Inconnu,8
+2025-05-09T07:08:28.000Z,2025-05-09,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,3f76e45c939bfb47aca40d678af5395d,0310047H,Inconnu,21
+2025-05-09T07:08:49.000Z,2025-05-09,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,1f34a38687f19ac0e1f07c586df4b90d,0310047H,Inconnu,20
+2025-05-09T07:08:53.000Z,2025-05-09,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,c0c5685a055a0294b52b38746f51fcb6,0310047H,Inconnu,15106
+2025-05-09T07:09:17.000Z,2025-05-09,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,437bc6b60c1fc0ad1c015271dbdd2eb7,0310047H,Inconnu,0
+2025-05-09T07:09:30.000Z,2025-05-09,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,76ae1d3d90337194efe6d589d0cc98e8,0310047H,Inconnu,31
+2025-05-09T07:09:33.000Z,2025-05-09,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,1ab1e933b3329148318b591fb74a4e3f,0310047H,Inconnu,9
+2025-05-09T07:28:32.000Z,2025-05-09,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,c810da2b99418dd1b0cf5bee7784e37c,0310047H,Inconnu,32
+2025-05-09T07:29:47.000Z,2025-05-09,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,1f34a38687f19ac0e1f07c586df4b90d,0310047H,Inconnu,32
+2025-05-09T07:29:50.000Z,2025-05-09,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,e4cbabacb1557f095de250c0fbca137d,0310047H,Inconnu,32
+2025-05-09T07:30:17.000Z,2025-05-09,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,3f76e45c939bfb47aca40d678af5395d,0310047H,Inconnu,30
+2025-05-09T07:30:35.000Z,2025-05-09,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,1ab1e933b3329148318b591fb74a4e3f,0310047H,Inconnu,29
+2025-05-09T07:37:17.000Z,2025-05-09,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,f737da98914845c3380320cdf768892e,0310047H,Inconnu,23
+2025-05-09T07:40:37.000Z,2025-05-09,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,76ae1d3d90337194efe6d589d0cc98e8,0310047H,Inconnu,20
+2025-05-09T07:42:00.000Z,2025-05-09,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,c0c5685a055a0294b52b38746f51fcb6,0310047H,Inconnu,18
+2025-05-09T07:45:35.000Z,2025-05-09,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,adc4c08ded9e9f014b962e473a2421cf,0310047H,Inconnu,15
+2025-05-09T07:49:29.000Z,2025-05-09,teaching,2548348,Intro � l'IA : classification de chiffres 2 et 7,d3f289f6d4222511fe09f3e2df469738,0310047H,Inconnu,11
+2025-05-09T07:52:20.000Z,2025-05-09,teaching,5909323,Challenge IA Lyc�e (V2) : codez un r�seau de neurone pour la classification d'images,c810da2b99418dd1b0cf5bee7784e37c,0310047H,Inconnu,0
