@@ -421,6 +421,7 @@ export default function Dashboard() {
   const [selectedAcademie, setSelectedAcademie] = useState<string | null>(null);
   const [selectedSeance, setSelectedSeance] = useState<number | null>(null); // index de la séance dans classActivityDetails
   const [selectedSeancesCount, setSelectedSeancesCount] = useState<number | null>(null); // pour le modal des profs par nb de séances
+  const [mapModalOpen, setMapModalOpen] = useState(false);
   
   const tableData = useMemo(() => {
     const query = (q || "").trim().toLowerCase();
@@ -1747,7 +1748,38 @@ export default function Dashboard() {
       {/* Carte + Tableau */}
       <div className="grid grid-2" style={{marginTop: 16}}>
         <div className="card">
-          <h2>Carte des usages (cercles ∝ nb)</h2>
+          <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12}}>
+            <h2 style={{margin: 0}}>Carte des usages (cercles ∝ nb)</h2>
+            <button 
+              onClick={() => setMapModalOpen(true)}
+              title="Voir en plein écran"
+              style={{
+                padding: "6px",
+                fontSize: "1.2rem",
+                cursor: "pointer",
+                backgroundColor: "transparent",
+                color: "#64748b",
+                border: "1px solid #e2e8f0",
+                borderRadius: "6px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                transition: "all 0.2s"
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#f1f5f9";
+                e.currentTarget.style.color = "#3b82f6";
+                e.currentTarget.style.borderColor = "#3b82f6";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = "#64748b";
+                e.currentTarget.style.borderColor = "#e2e8f0";
+              }}
+            >
+              ⤢
+            </button>
+          </div>
           <div style={{marginBottom: 12, display: "flex", gap: 16, fontSize: "0.875rem"}}>
             <div style={{display: "flex", alignItems: "center", gap: 6}}>
               <div style={{
@@ -2974,6 +3006,81 @@ export default function Dashboard() {
           </div>
         );
       })()}
+
+      {/* Modal carte en grand */}
+      {mapModalOpen && (
+        <div 
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 1000,
+            padding: "20px"
+          }}
+          onClick={() => setMapModalOpen(false)}
+        >
+          <div 
+            className="card"
+            style={{
+              width: "95vw",
+              height: "90vh",
+              maxWidth: "1800px",
+              display: "flex",
+              flexDirection: "column"
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", marginBottom: "16px"}}>
+              <div>
+                <h2 style={{marginBottom: "4px"}}>Carte des usages (cercles ∝ nb)</h2>
+                <div style={{display: "flex", gap: 16, fontSize: "0.875rem", marginTop: 8}}>
+                  <div style={{display: "flex", alignItems: "center", gap: 6}}>
+                    <div style={{
+                      width: 12, 
+                      height: 12, 
+                      borderRadius: "50%", 
+                      backgroundColor: "#3b82f6"
+                    }}></div>
+                    <span>Usages élèves</span>
+                  </div>
+                  <div style={{display: "flex", alignItems: "center", gap: 6}}>
+                    <div style={{
+                      width: 12, 
+                      height: 12, 
+                      borderRadius: "50%", 
+                      backgroundColor: "#f59e0b"
+                    }}></div>
+                    <span>Tests profs uniquement</span>
+                  </div>
+                </div>
+              </div>
+              <button 
+                onClick={() => setMapModalOpen(false)}
+                style={{
+                  fontSize: "1.5rem",
+                  padding: "4px 12px",
+                  lineHeight: 1
+                }}
+              >
+                ×
+              </button>
+            </div>
+            
+            <div style={{flex: 1, minHeight: 0}}>
+              <UsageMap points={usageByUai} onPointClick={(uai) => {
+                setSelectedUai(uai);
+                setMapModalOpen(false);
+              }} />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
