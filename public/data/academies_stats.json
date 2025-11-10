@@ -1,308 +1,240 @@
 {
   "Aix-Marseille": {
     "nb_colleges": 303,
-    "nb_lycees_gt": 50,
-    "nb_lycees_pro": 80,
-    "nb_lycees_total": 214,
-    "nb_eleves_gt": 432226,
-    "nb_eleves_pro": 172626,
-    "nb_eleves_total": 604852
+    "nb_lycees_gt": 118,
+    "nb_eleves_lycees_gt": 72635,
+    "nb_lycees_pro": 100,
+    "nb_eleves_lycees_pro": 29537
   },
   "Amiens": {
-    "nb_colleges": 231,
-    "nb_lycees_gt": 51,
-    "nb_lycees_pro": 70,
-    "nb_lycees_total": 150,
-    "nb_eleves_gt": 264305,
-    "nb_eleves_pro": 129703,
-    "nb_eleves_total": 394008
+    "nb_colleges": 228,
+    "nb_lycees_gt": 69,
+    "nb_eleves_lycees_gt": 43015,
+    "nb_lycees_pro": 71,
+    "nb_eleves_lycees_pro": 22070
   },
   "Besançon": {
     "nb_colleges": 147,
-    "nb_lycees_gt": 23,
-    "nb_lycees_pro": 46,
-    "nb_lycees_total": 95,
-    "nb_eleves_gt": 150640,
-    "nb_eleves_pro": 66350,
-    "nb_eleves_total": 216990
+    "nb_lycees_gt": 35,
+    "nb_eleves_lycees_gt": 24385,
+    "nb_lycees_pro": 48,
+    "nb_eleves_lycees_pro": 11140
   },
   "Bordeaux": {
     "nb_colleges": 401,
-    "nb_lycees_gt": 51,
-    "nb_lycees_pro": 116,
-    "nb_lycees_total": 251,
-    "nb_eleves_gt": 461620,
-    "nb_eleves_pro": 176990,
-    "nb_eleves_total": 638610
+    "nb_lycees_gt": 116,
+    "nb_eleves_lycees_gt": 76565,
+    "nb_lycees_pro": 110,
+    "nb_eleves_lycees_pro": 30183
   },
   "Clermont-Ferrand": {
     "nb_colleges": 190,
-    "nb_lycees_gt": 19,
-    "nb_lycees_pro": 41,
-    "nb_lycees_total": 108,
-    "nb_eleves_gt": 164818,
-    "nb_eleves_pro": 69509,
-    "nb_eleves_total": 234327
+    "nb_lycees_gt": 53,
+    "nb_eleves_lycees_gt": 26456,
+    "nb_lycees_pro": 46,
+    "nb_eleves_lycees_pro": 11749
   },
   "Corse": {
     "nb_colleges": 32,
-    "nb_lycees_gt": 6,
-    "nb_lycees_pro": 6,
-    "nb_lycees_total": 20,
-    "nb_eleves_gt": 39459,
-    "nb_eleves_pro": 12715,
-    "nb_eleves_total": 52174
+    "nb_lycees_gt": 12,
+    "nb_eleves_lycees_gt": 6697,
+    "nb_lycees_pro": 9,
+    "nb_eleves_lycees_pro": 2207
   },
   "Créteil": {
     "nb_colleges": 478,
-    "nb_lycees_gt": 61,
-    "nb_lycees_pro": 54,
-    "nb_lycees_total": 269,
-    "nb_eleves_gt": 712200,
-    "nb_eleves_pro": 282448,
-    "nb_eleves_total": 994648
+    "nb_lycees_gt": 181,
+    "nb_eleves_lycees_gt": 120411,
+    "nb_lycees_pro": 142,
+    "nb_eleves_lycees_pro": 50220
   },
   "Dijon": {
     "nb_colleges": 199,
-    "nb_lycees_gt": 27,
-    "nb_lycees_pro": 31,
-    "nb_lycees_total": 118,
-    "nb_eleves_gt": 202274,
-    "nb_eleves_pro": 79703,
-    "nb_eleves_total": 281977
+    "nb_lycees_gt": 60,
+    "nb_eleves_lycees_gt": 32552,
+    "nb_lycees_pro": 56,
+    "nb_eleves_lycees_pro": 13295
   },
   "Grenoble": {
     "nb_colleges": 358,
-    "nb_lycees_gt": 38,
-    "nb_lycees_pro": 85,
-    "nb_lycees_total": 234,
-    "nb_eleves_gt": 498606,
-    "nb_eleves_pro": 174364,
-    "nb_eleves_total": 672970
+    "nb_lycees_gt": 120,
+    "nb_eleves_lycees_gt": 82627,
+    "nb_lycees_pro": 118,
+    "nb_eleves_lycees_pro": 29423
   },
   "Guadeloupe": {
     "nb_colleges": 62,
-    "nb_lycees_gt": 16,
-    "nb_lycees_pro": 19,
-    "nb_lycees_total": 46,
-    "nb_eleves_gt": 70177,
-    "nb_eleves_pro": 40985,
-    "nb_eleves_total": 111162
+    "nb_lycees_gt": 23,
+    "nb_eleves_lycees_gt": 10868,
+    "nb_lycees_pro": 20,
+    "nb_eleves_lycees_pro": 6183
   },
   "Guyane": {
     "nb_colleges": 41,
-    "nb_lycees_gt": 3,
-    "nb_lycees_pro": 4,
-    "nb_lycees_total": 24,
-    "nb_eleves_gt": 43914,
-    "nb_eleves_pro": 44554,
-    "nb_eleves_total": 88468
+    "nb_lycees_gt": 15,
+    "nb_eleves_lycees_gt": 7366,
+    "nb_lycees_pro": 16,
+    "nb_eleves_lycees_pro": 8028
   },
   "La Réunion": {
     "nb_colleges": 95,
-    "nb_lycees_gt": 21,
-    "nb_lycees_pro": 18,
-    "nb_lycees_total": 60,
-    "nb_eleves_gt": 152449,
-    "nb_eleves_pro": 95327,
-    "nb_eleves_total": 247776
+    "nb_lycees_gt": 34,
+    "nb_eleves_lycees_gt": 24903,
+    "nb_lycees_pro": 35,
+    "nb_eleves_lycees_pro": 16102
   },
   "Lille": {
-    "nb_colleges": 451,
-    "nb_lycees_gt": 66,
-    "nb_lycees_pro": 106,
-    "nb_lycees_total": 277,
-    "nb_eleves_gt": 579923,
-    "nb_eleves_pro": 299547,
-    "nb_eleves_total": 879470
+    "nb_colleges": 449,
+    "nb_lycees_gt": 147,
+    "nb_eleves_lycees_gt": 93992,
+    "nb_lycees_pro": 144,
+    "nb_eleves_lycees_pro": 50622
   },
   "Limoges": {
     "nb_colleges": 93,
-    "nb_lycees_gt": 12,
-    "nb_lycees_pro": 27,
-    "nb_lycees_total": 64,
-    "nb_eleves_gt": 86146,
-    "nb_eleves_pro": 33609,
-    "nb_eleves_total": 119755
+    "nb_lycees_gt": 26,
+    "nb_eleves_lycees_gt": 13899,
+    "nb_lycees_pro": 32,
+    "nb_eleves_lycees_pro": 5766
   },
   "Lyon": {
-    "nb_colleges": 346,
-    "nb_lycees_gt": 77,
-    "nb_lycees_pro": 105,
-    "nb_lycees_total": 250,
-    "nb_eleves_gt": 495722,
-    "nb_eleves_pro": 174439,
-    "nb_eleves_total": 670161
+    "nb_colleges": 344,
+    "nb_lycees_gt": 124,
+    "nb_eleves_lycees_gt": 82598,
+    "nb_lycees_pro": 108,
+    "nb_eleves_lycees_pro": 30306
   },
   "Martinique": {
     "nb_colleges": 59,
-    "nb_lycees_gt": 16,
-    "nb_lycees_pro": 13,
-    "nb_lycees_total": 38,
-    "nb_eleves_gt": 51553,
-    "nb_eleves_pro": 31111,
-    "nb_eleves_total": 82664
+    "nb_lycees_gt": 19,
+    "nb_eleves_lycees_gt": 8052,
+    "nb_lycees_pro": 20,
+    "nb_eleves_lycees_pro": 5120
   },
   "Mayotte": {
     "nb_colleges": 25,
-    "nb_lycees_gt": 1,
-    "nb_lycees_pro": 2,
-    "nb_lycees_total": 15,
-    "nb_eleves_gt": 74345,
-    "nb_eleves_pro": 37491,
-    "nb_eleves_total": 111836
+    "nb_lycees_gt": 10,
+    "nb_eleves_lycees_gt": 12962,
+    "nb_lycees_pro": 16,
+    "nb_eleves_lycees_pro": 6884
   },
   "Montpellier": {
-    "nb_colleges": 295,
-    "nb_lycees_gt": 36,
-    "nb_lycees_pro": 65,
-    "nb_lycees_total": 179,
-    "nb_eleves_gt": 382648,
-    "nb_eleves_pro": 155523,
-    "nb_eleves_total": 538171
+    "nb_colleges": 294,
+    "nb_lycees_gt": 85,
+    "nb_eleves_lycees_gt": 63857,
+    "nb_lycees_pro": 80,
+    "nb_eleves_lycees_pro": 26985
   },
   "Nancy-Metz": {
     "nb_colleges": 262,
-    "nb_lycees_gt": 39,
-    "nb_lycees_pro": 64,
-    "nb_lycees_total": 168,
-    "nb_eleves_gt": 301666,
-    "nb_eleves_pro": 143266,
-    "nb_eleves_total": 444932
+    "nb_lycees_gt": 85,
+    "nb_eleves_lycees_gt": 48223,
+    "nb_lycees_pro": 91,
+    "nb_eleves_lycees_pro": 24291
   },
   "Nantes": {
     "nb_colleges": 439,
-    "nb_lycees_gt": 65,
-    "nb_lycees_pro": 112,
-    "nb_lycees_total": 271,
-    "nb_eleves_gt": 535214,
-    "nb_eleves_pro": 195759,
-    "nb_eleves_total": 730973
+    "nb_lycees_gt": 140,
+    "nb_eleves_lycees_gt": 88059,
+    "nb_lycees_pro": 106,
+    "nb_eleves_lycees_pro": 33125
   },
   "Nice": {
     "nb_colleges": 197,
-    "nb_lycees_gt": 41,
-    "nb_lycees_pro": 41,
-    "nb_lycees_total": 124,
-    "nb_eleves_gt": 295077,
-    "nb_eleves_pro": 103981,
-    "nb_eleves_total": 399058
+    "nb_lycees_gt": 63,
+    "nb_eleves_lycees_gt": 49945,
+    "nb_lycees_pro": 44,
+    "nb_eleves_lycees_pro": 17903
   },
   "Normandie": {
     "nb_colleges": 394,
-    "nb_lycees_gt": 62,
-    "nb_lycees_pro": 87,
-    "nb_lycees_total": 238,
-    "nb_eleves_gt": 449818,
-    "nb_eleves_pro": 184642,
-    "nb_eleves_total": 634460
+    "nb_lycees_gt": 70,
+    "nb_eleves_lycees_gt": 43006,
+    "nb_lycees_pro": 59,
+    "nb_eleves_lycees_pro": 18234
   },
-  "Nouvelle Calédonie": {
+  "Nouvelle-Calédonie": {
     "nb_colleges": 62,
-    "nb_lycees_gt": 6,
-    "nb_lycees_pro": 16,
-    "nb_lycees_total": 29,
-    "nb_eleves_gt": 37643,
-    "nb_eleves_pro": 34400,
-    "nb_eleves_total": 72043
+    "nb_lycees_gt": 11,
+    "nb_eleves_lycees_gt": 5843,
+    "nb_lycees_pro": 17,
+    "nb_eleves_lycees_pro": 5389
   },
   "Orléans-Tours": {
     "nb_colleges": 297,
-    "nb_lycees_gt": 48,
-    "nb_lycees_pro": 71,
-    "nb_lycees_total": 162,
-    "nb_eleves_gt": 344188,
-    "nb_eleves_pro": 136708,
-    "nb_eleves_total": 480896
+    "nb_lycees_gt": 75,
+    "nb_eleves_lycees_gt": 55499,
+    "nb_lycees_pro": 77,
+    "nb_eleves_lycees_pro": 23358
   },
   "Paris": {
-    "nb_colleges": 218,
-    "nb_lycees_gt": 51,
-    "nb_lycees_pro": 39,
-    "nb_lycees_total": 214,
-    "nb_eleves_gt": 350253,
-    "nb_eleves_pro": 85211,
-    "nb_eleves_total": 435464
+    "nb_colleges": 214,
+    "nb_lycees_gt": 123,
+    "nb_eleves_lycees_gt": 57466,
+    "nb_lycees_pro": 58,
+    "nb_eleves_lycees_pro": 14176
   },
   "Poitiers": {
     "nb_colleges": 225,
-    "nb_lycees_gt": 43,
-    "nb_lycees_pro": 50,
-    "nb_lycees_total": 128,
-    "nb_eleves_gt": 225750,
-    "nb_eleves_pro": 81158,
-    "nb_eleves_total": 306908
+    "nb_lycees_gt": 56,
+    "nb_eleves_lycees_gt": 36700,
+    "nb_lycees_pro": 54,
+    "nb_eleves_lycees_pro": 13587
   },
   "Polynésie Française": {
     "nb_colleges": 35,
-    "nb_lycees_gt": 3,
-    "nb_lycees_pro": 8,
-    "nb_lycees_total": 21,
-    "nb_eleves_gt": 37142,
-    "nb_eleves_pro": 32661,
-    "nb_eleves_total": 69803
+    "nb_lycees_gt": 16,
+    "nb_eleves_lycees_gt": 6085,
+    "nb_lycees_pro": 22,
+    "nb_eleves_lycees_pro": 5349
   },
   "Reims": {
     "nb_colleges": 160,
-    "nb_lycees_gt": 16,
-    "nb_lycees_pro": 29,
-    "nb_lycees_total": 93,
-    "nb_eleves_gt": 170957,
-    "nb_eleves_pro": 79968,
-    "nb_eleves_total": 250925
+    "nb_lycees_gt": 51,
+    "nb_eleves_lycees_gt": 27623,
+    "nb_lycees_pro": 49,
+    "nb_eleves_lycees_pro": 13565
   },
   "Rennes": {
     "nb_colleges": 402,
-    "nb_lycees_gt": 70,
-    "nb_lycees_pro": 103,
-    "nb_lycees_total": 245,
-    "nb_eleves_gt": 479094,
-    "nb_eleves_pro": 175141,
-    "nb_eleves_total": 654235
+    "nb_lycees_gt": 124,
+    "nb_eleves_lycees_gt": 77746,
+    "nb_lycees_pro": 102,
+    "nb_eleves_lycees_pro": 29779
   },
-  "Saint Pierre et Miquelon": {
+  "Saint-Pierre-et-Miquelon": {
     "nb_colleges": 3,
-    "nb_lycees_gt": 0,
-    "nb_lycees_pro": 0,
-    "nb_lycees_total": 1,
-    "nb_eleves_gt": 745,
-    "nb_eleves_pro": 558,
-    "nb_eleves_total": 1303
+    "nb_lycees_gt": 1,
+    "nb_eleves_lycees_gt": 112,
+    "nb_lycees_pro": 1,
+    "nb_eleves_lycees_pro": 99
   },
   "Strasbourg": {
     "nb_colleges": 193,
-    "nb_lycees_gt": 31,
-    "nb_lycees_pro": 29,
-    "nb_lycees_total": 116,
-    "nb_eleves_gt": 257570,
-    "nb_eleves_pro": 99649,
-    "nb_eleves_total": 357219
+    "nb_lycees_gt": 68,
+    "nb_eleves_lycees_gt": 42920,
+    "nb_lycees_pro": 51,
+    "nb_eleves_lycees_pro": 16714
   },
   "Toulouse": {
-    "nb_colleges": 364,
-    "nb_lycees_gt": 52,
-    "nb_lycees_pro": 97,
-    "nb_lycees_total": 245,
-    "nb_eleves_gt": 410470,
-    "nb_eleves_pro": 152006,
-    "nb_eleves_total": 562476
+    "nb_colleges": 363,
+    "nb_lycees_gt": 118,
+    "nb_eleves_lycees_gt": 68111,
+    "nb_lycees_pro": 109,
+    "nb_eleves_lycees_pro": 26322
   },
   "Versailles": {
     "nb_colleges": 599,
-    "nb_lycees_gt": 136,
-    "nb_lycees_pro": 55,
-    "nb_lycees_total": 323,
-    "nb_eleves_gt": 990635,
-    "nb_eleves_pro": 292003,
-    "nb_eleves_total": 1282638
+    "nb_lycees_gt": 208,
+    "nb_eleves_lycees_gt": 168198,
+    "nb_lycees_pro": 143,
+    "nb_eleves_lycees_pro": 50927
   },
-  "Wallis et Futuna": {
+  "Wallis-et-Futuna": {
     "nb_colleges": 6,
-    "nb_lycees_gt": 1,
-    "nb_lycees_pro": 1,
-    "nb_lycees_total": 2,
-    "nb_eleves_gt": 1654,
-    "nb_eleves_pro": 1366,
-    "nb_eleves_total": 3020
+    "nb_lycees_gt": 2,
+    "nb_eleves_lycees_gt": 261,
+    "nb_lycees_pro": 2,
+    "nb_eleves_lycees_pro": 234
   }
 }

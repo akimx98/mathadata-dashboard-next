@@ -2748,14 +2748,27 @@ export default function Dashboard() {
 
       {/* Modal évolution temporelle par académie */}
       {selectedAcademie && (() => {
+        console.log("Modal académie ouvert pour:", selectedAcademie);
         const monthlyData = getMonthlyDataForAcademie(selectedAcademie);
         const totalUsagesAcademie = monthlyData.reduce((sum, d) => sum + d.count, 0);
         
-        // Calculer le nombre de lycées dans cette académie
-        const lyceesAcademie = usageByUai.filter(u => u.academie === selectedAcademie);
+        // Calculer le nombre de lycées dans cette académie (utiliser les données globales, pas filtrées)
+        const lyceesAcademie = usageByUaiGlobal.filter(u => u.academie === selectedAcademie);
         const nbLycees = lyceesAcademie.length;
         const nbUsages = lyceesAcademie.reduce((sum, u) => sum + u.nb, 0);
-        const nbEleves = lyceesAcademie.reduce((sum, u) => sum + (u.nbEleves || 0), 0);
+        
+        // Calculer le nombre d'élèves pour cette académie depuis les données globales
+        const nbEleves = Array.from(
+          new Set(
+            rowsWithDate
+              .filter(r => {
+                const uai = (r.uai_el || r.uai || "").trim();
+                const meta = annMap.get(uai);
+                return meta?.academie === selectedAcademie && r.Role === "student" && r.student;
+              })
+              .map(r => r.student!)
+          )
+        ).length;
         
         // Récupérer les statistiques officielles
         const officialStats = officialAcademyStats?.[selectedAcademie];
@@ -2805,9 +2818,9 @@ export default function Dashboard() {
                       </div>
                       <div style={{paddingLeft: "8px"}}>
                         <span className="muted">Élèves lycées GT :</span>{" "}
-                        <strong>{officialStats.nb_eleves_gt.toLocaleString("fr-FR")}</strong>
+                        <strong>{officialStats.nb_eleves_lycees_gt.toLocaleString("fr-FR")}</strong>
                         <span style={{fontSize: "0.8rem", color: "#64748b", marginLeft: "8px"}}>
-                          ({officialStats.nb_eleves_pro.toLocaleString("fr-FR")} en Pro)
+                          ({officialStats.nb_eleves_lycees_pro.toLocaleString("fr-FR")} en Pro)
                         </span>
                       </div>
                     </div>
@@ -2834,7 +2847,7 @@ export default function Dashboard() {
                         <strong style={{color: "#3b82f6"}}>{nbEleves.toLocaleString("fr-FR")}</strong>
                         {officialStats && (
                           <span style={{color: "#64748b", fontSize: "0.8rem", marginLeft: "4px"}}>
-                            ({((nbEleves / officialStats.nb_eleves_gt) * 100).toFixed(1)}%)
+                            ({((nbEleves / officialStats.nb_eleves_lycees_gt) * 100).toFixed(1)}%)
                           </span>
                         )}
                       </div>
