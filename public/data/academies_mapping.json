@@ -1,0 +1,10 @@
+{
+  "note": "Mapping entre les noms d'académies dans différentes sources",
+  "geojson_to_api": {
+    "Académie de Caen": "Normandie",
+    "Académie de Rouen": "Normandie"
+  },
+  "api_name": "Normandie",
+  "geojson_names": ["Académie de Caen", "Académie de Rouen"],
+  "info": "Depuis le 1er janvier 2020, les académies de Caen et Rouen ont fusionné pour former l'académie de Normandie"
+}

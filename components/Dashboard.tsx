@@ -8,6 +8,17 @@ import {
   BarChart, Bar
 } from "recharts";
 import type { UsageMapProps } from "@/components/UsageMap";
+
+// Fonction pour normaliser les noms d'académies (gérer la fusion Caen/Rouen -> Normandie depuis 2020)
+function normalizeAcademyName(name: string | undefined): string {
+  if (!name) return "";
+  const normalized = name.trim();
+  // Gérer la fusion des académies de Caen et Rouen en Normandie (janvier 2020)
+  if (normalized === "Caen" || normalized === "Rouen") {
+    return "Normandie";
+  }
+  return normalized;
+}
 type UsageRow = {
   assignment_id?: string;
   created?: string | number;
@@ -166,7 +177,7 @@ export default function Dashboard() {
             nom: String(r.nom ?? ""),
             type_etablissement: String(r.type_etablissement ?? ""),
             commune: String(r.commune ?? ""),
-            academie: String(r.academie ?? ""),
+            academie: normalizeAcademyName(String(r.academie ?? "")),
             departement: String(r.departement ?? ""),
             secteur: String(r.secteur ?? ""),
             ips: r.ips,
@@ -1820,7 +1831,7 @@ export default function Dashboard() {
                 style={{cursor: "pointer"}}
               />
               <label htmlFor="showAcademyBorders" style={{cursor: "pointer", color: "#64748b"}}>
-                Afficher les limites des académies
+                Vue par académies
               </label>
             </div>
           </div>
@@ -2789,18 +2800,15 @@ export default function Dashboard() {
                       marginBottom: "12px",
                       fontSize: "0.875rem"
                     }}>
-                      <div style={{display: "flex", gap: "24px", flexWrap: "wrap"}}>
-                        <div>
-                          <span className="muted">Total lycées :</span>{" "}
-                          <strong>{officialStats.nb_lycees}</strong>
-                        </div>
-                        <div>
-                          <span className="muted">Total élèves :</span>{" "}
-                          <strong>{officialStats.nb_eleves_total.toLocaleString("fr-FR")}</strong>
-                        </div>
-                        <div style={{fontSize: "0.8rem", color: "#64748b"}}>
-                          (dont {officialStats.nb_eleves_gt.toLocaleString("fr-FR")} en GT, {officialStats.nb_eleves_pro.toLocaleString("fr-FR")} en Pro)
-                        </div>
+                      <div style={{fontWeight: 600, marginBottom: "8px", color: "#1e293b"}}>
+                        🏫 Établissements de l'académie : {officialStats.nb_colleges} collège{officialStats.nb_colleges > 1 ? 's' : ''} · {officialStats.nb_lycees_gt} lycée{officialStats.nb_lycees_gt > 1 ? 's' : ''} GT · {officialStats.nb_lycees_pro} lycée{officialStats.nb_lycees_pro > 1 ? 's' : ''} Pro
+                      </div>
+                      <div style={{paddingLeft: "8px"}}>
+                        <span className="muted">Élèves lycées GT :</span>{" "}
+                        <strong>{officialStats.nb_eleves_gt.toLocaleString("fr-FR")}</strong>
+                        <span style={{fontSize: "0.8rem", color: "#64748b", marginLeft: "8px"}}>
+                          ({officialStats.nb_eleves_pro.toLocaleString("fr-FR")} en Pro)
+                        </span>
                       </div>
                     </div>
                   )}
@@ -2808,11 +2816,11 @@ export default function Dashboard() {
                   {/* Statistiques MathAData */}
                   <div style={{display: "flex", gap: "24px", fontSize: "0.875rem", marginTop: 0, flexWrap: "wrap"}}>
                     <div>
-                      <span className="muted">Lycées utilisant MathAData :</span>{" "}
+                      <span className="muted">Lycées GT utilisant MathAData :</span>{" "}
                       <strong style={{color: "#3b82f6"}}>{nbLycees}</strong>
                       {officialStats && (
                         <span style={{color: "#64748b", fontSize: "0.8rem", marginLeft: "4px"}}>
-                          ({((nbLycees / officialStats.nb_lycees) * 100).toFixed(1)}%)
+                          ({((nbLycees / officialStats.nb_lycees_gt) * 100).toFixed(1)}%)
                         </span>
                       )}
                     </div>
@@ -2824,6 +2832,11 @@ export default function Dashboard() {
                       <div>
                         <span className="muted">Élèves uniques :</span>{" "}
                         <strong style={{color: "#3b82f6"}}>{nbEleves.toLocaleString("fr-FR")}</strong>
+                        {officialStats && (
+                          <span style={{color: "#64748b", fontSize: "0.8rem", marginLeft: "4px"}}>
+                            ({((nbEleves / officialStats.nb_eleves_gt) * 100).toFixed(1)}%)
+                          </span>
+                        )}
                       </div>
                     )}
                   </div>
@@ -3152,7 +3165,7 @@ export default function Dashboard() {
                       style={{cursor: "pointer"}}
                     />
                     <label htmlFor="showAcademyBordersModal" style={{cursor: "pointer", color: "#64748b"}}>
-                      Afficher les limites des académies
+                      Vue par académies
                     </label>
                   </div>
                 </div>

@@ -118,7 +118,13 @@ export default function UsageMap({ points, onPointClick, onAcademyClick, showAca
             
             // Extraire le nom court de l'académie pour matcher avec les stats
             // Ex: "Académie d'Aix-Marseille" -> "Aix-Marseille"
-            const academyShortName = name.replace(/^Académie (d'|de |des |du )/i, '');
+            let academyShortName = name.replace(/^Académie (d'|de |des |du |de la )/i, '');
+            
+            // Gérer la fusion Caen/Rouen -> Normandie (depuis 2020)
+            if (academyShortName === "Caen" || academyShortName === "Rouen") {
+              academyShortName = "Normandie";
+            }
+            
             const usageStats = academyStats[academyShortName];
             const official = officialStats?.[academyShortName];
             
@@ -128,13 +134,15 @@ export default function UsageMap({ points, onPointClick, onAcademyClick, showAca
                 ${vacances && vacances !== '' ? `<span style="color: #64748b;">Zone de vacances : ${vacances}</span><br/>` : ''}
                 ${official ? `
                   <div style="margin-top: 6px; padding-top: 6px; border-top: 1px solid #e2e8f0;">
-                    <div style="color: #1e293b; font-weight: 600;">🏫 ${official.nb_lycees} lycée${official.nb_lycees > 1 ? 's' : ''} au total</div>
-                    <div style="color: #64748b; font-size: 0.8rem;">▸ ${official.nb_eleves_total.toLocaleString('fr-FR')} élèves</div>
+                    <div style="color: #1e293b; font-weight: 600; margin-bottom: 4px;">
+                      🏫 ${official.nb_colleges} collège${official.nb_colleges > 1 ? 's' : ''} · ${official.nb_lycees_gt} lycée${official.nb_lycees_gt > 1 ? 's' : ''} GT · ${official.nb_lycees_pro} lycée${official.nb_lycees_pro > 1 ? 's' : ''} Pro
+                    </div>
+                    <div style="color: #64748b; font-size: 0.8rem;">👥 ${official.nb_eleves_gt.toLocaleString('fr-FR')} élèves lycées GT</div>
                     ${usageStats ? `
                       <div style="margin-top: 4px; padding-top: 4px; border-top: 1px dashed #e2e8f0;">
-                        <div style="color: #3b82f6;">📊 ${usageStats.nbLycees} utilisant MathAData (${((usageStats.nbLycees / official.nb_lycees) * 100).toFixed(1)}%)</div>
-                        <div style="color: #64748b; font-size: 0.8rem;">▸ ${usageStats.nbUsages.toLocaleString('fr-FR')} usages</div>
-                        ${usageStats.nbElevesUniques > 0 ? `<div style="color: #64748b; font-size: 0.8rem;">▸ ${usageStats.nbElevesUniques.toLocaleString('fr-FR')} sessions élèves</div>` : ''}
+                        <div style="color: #3b82f6;">📊 ${usageStats.nbLycees} lycées GT utilisant MathAData (${((usageStats.nbLycees / official.nb_lycees_gt) * 100).toFixed(1)}%)</div>
+                        <div style="color: #64748b; font-size: 0.8rem; padding-left: 8px;">▸ ${usageStats.nbUsages.toLocaleString('fr-FR')} usages</div>
+                        ${usageStats.nbElevesUniques > 0 ? `<div style="color: #64748b; font-size: 0.8rem; padding-left: 8px;">▸ ${usageStats.nbElevesUniques.toLocaleString('fr-FR')} sessions élèves (${((usageStats.nbElevesUniques / official.nb_eleves_gt) * 100).toFixed(1)}%)</div>` : ''}
                       </div>
                     ` : ''}
                   </div>
