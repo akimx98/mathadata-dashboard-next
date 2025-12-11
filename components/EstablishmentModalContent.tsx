@@ -117,7 +117,7 @@ export default function EstablishmentModalContent({
       
       {/* Séances par professeur */}
       <h3 style={{fontSize: "1rem", marginBottom: "12px", color: "#475569", marginTop: "24px"}}>
-        📚 Séances par professeur ({classActivityDetails.reduce((sum, prof) => sum + prof.seances.length, 0)} séances, {classActivityDetails.length} {classActivityDetails.length > 1 ? 'profs' : 'prof'})
+        Séances par professeur ({classActivityDetails.reduce((sum, prof) => sum + prof.seances.length, 0)} séances, {classActivityDetails.length} {classActivityDetails.length > 1 ? 'profs' : 'prof'})
       </h3>
       <p className="muted" style={{marginTop: 0, marginBottom: "12px", fontSize: "0.875rem"}}>
         Une séance = groupe d'élèves avec même prof + même activité + sessions créées le même jour à moins de 1h d'intervalle
@@ -232,7 +232,7 @@ export default function EstablishmentModalContent({
       {teacherUsages.length > 0 && (
         <>
           <h3 style={{fontSize: "1rem", marginBottom: "12px", color: "#475569", marginTop: "24px"}}>
-            👨‍🏫 Tests enseignants ({teacherUsages.reduce((sum, prof) => sum + prof.tests.length, 0)} sessions, {teacherUsages.length} {teacherUsages.length > 1 ? 'profs' : 'prof'})
+            Tests enseignants ({teacherUsages.reduce((sum, prof) => sum + prof.tests.length, 0)} sessions, {teacherUsages.length} {teacherUsages.length > 1 ? 'profs' : 'prof'})
           </h3>
           <p className="muted" style={{marginTop: 0, marginBottom: "12px", fontSize: "0.875rem"}}>
             Activités testées par les professeurs (sans élèves)
@@ -325,7 +325,7 @@ export default function EstablishmentModalContent({
       
       {/* Total des activités utilisées */}
       <h3 style={{fontSize: "1rem", marginBottom: "12px", color: "#475569"}}>
-        📊 Total des activités utilisées ({activityDetails.length})
+        Total des activités utilisées ({activityDetails.length})
       </h3>
       
       <table style={{width: "100%"}}>

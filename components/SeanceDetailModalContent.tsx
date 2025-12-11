@@ -101,7 +101,7 @@ export default function SeanceDetailModalContent({
       </div>
       
       <h3 style={{fontSize: "1rem", marginBottom: "16px", color: "#475569"}}>
-        📊 Continuité du travail
+        Continuité du travail
       </h3>
       
       <div style={{marginBottom: "24px"}}>
@@ -148,13 +148,12 @@ export default function SeanceDetailModalContent({
       </div>
       
       <h3 style={{fontSize: "1rem", marginBottom: "16px", color: "#475569"}}>
-        🎓 Détection d'une 2ème séance en classe
+        Détection d'une 2ème séance en classe
       </h3>
       
       {analysis.deuxiemeSeance ? (
         <div className="card" style={{padding: "16px", backgroundColor: "#dbeafe", border: "1px solid #3b82f6"}}>
           <div style={{display: "flex", alignItems: "center", gap: "12px"}}>
-            <div style={{fontSize: "2rem"}}>✅</div>
             <div>
               <div style={{fontWeight: "600", color: "#1e40af", marginBottom: "4px"}}>
                 2ème séance détectée !
@@ -169,7 +168,6 @@ export default function SeanceDetailModalContent({
       ) : (
         <div className="card" style={{padding: "16px", backgroundColor: "#f1f5f9"}}>
           <div style={{display: "flex", alignItems: "center", gap: "12px"}}>
-            <div style={{fontSize: "2rem"}}>ℹ️</div>
             <div>
               <div style={{fontWeight: "600", color: "#64748b", marginBottom: "4px"}}>
                 Pas de 2ème séance détectée
@@ -184,7 +182,7 @@ export default function SeanceDetailModalContent({
       
       {/* Tableau détaillé des sessions élèves */}
       <h3 style={{fontSize: "1rem", marginBottom: "16px", marginTop: "24px", color: "#475569"}}>
-        📋 Détail des sessions élèves ({foundSeance.sessions.length})
+        Détail des sessions élèves ({foundSeance.sessions.length})
       </h3>
       
       <div style={{overflowX: "auto", marginBottom: "16px"}}>

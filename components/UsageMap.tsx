@@ -146,12 +146,12 @@ export default function UsageMap({ points, onPointClick, onAcademyClick, showAca
                 ${official ? `
                   <div style="margin-top: 6px; padding-top: 6px; border-top: 1px solid #e2e8f0;">
                     <div style="color: #1e293b; font-weight: 600; margin-bottom: 4px;">
-                      🏫 ${official.nb_colleges} collège${official.nb_colleges > 1 ? 's' : ''} · ${official.nb_lycees_gt} lycée${official.nb_lycees_gt > 1 ? 's' : ''} GT · ${official.nb_lycees_pro} lycée${official.nb_lycees_pro > 1 ? 's' : ''} Pro
+                      ${official.nb_colleges} collège${official.nb_colleges > 1 ? 's' : ''} · ${official.nb_lycees_gt} lycée${official.nb_lycees_gt > 1 ? 's' : ''} GT · ${official.nb_lycees_pro} lycée${official.nb_lycees_pro > 1 ? 's' : ''} Pro
                     </div>
                     <div style="color: #64748b; font-size: 0.8rem;">👥 ${official.nb_eleves_lycees_gt.toLocaleString('fr-FR')} élèves lycées GT</div>
                     ${usageStats ? `
                       <div style="margin-top: 4px; padding-top: 4px; border-top: 1px dashed #e2e8f0;">
-                        <div style="color: #3b82f6;">📊 ${usageStats.nbLycees} lycées GT utilisant MathAData (${((usageStats.nbLycees / official.nb_lycees_gt) * 100).toFixed(1)}%)</div>
+                        <div style="color: #3b82f6;">${usageStats.nbLycees} lycées GT utilisant MathAData (${((usageStats.nbLycees / official.nb_lycees_gt) * 100).toFixed(1)}%)</div>
                         <div style="color: #64748b; font-size: 0.8rem; padding-left: 8px;">▸ ${usageStats.nbUsages.toLocaleString('fr-FR')} usages</div>
                         ${usageStats.nbElevesUniques > 0 ? `<div style="color: #64748b; font-size: 0.8rem; padding-left: 8px;">▸ ${usageStats.nbElevesUniques.toLocaleString('fr-FR')} sessions élèves (${((usageStats.nbElevesUniques / official.nb_eleves_lycees_gt) * 100).toFixed(1)}%)</div>` : ''}
                       </div>
@@ -159,7 +159,7 @@ export default function UsageMap({ points, onPointClick, onAcademyClick, showAca
                   </div>
                 ` : usageStats ? `
                   <div style="margin-top: 6px; padding-top: 6px; border-top: 1px solid #e2e8f0;">
-                    <div style="color: #3b82f6;">📚 ${usageStats.nbLycees} lycée${usageStats.nbLycees > 1 ? 's' : ''} utilisant MathAData</div>
+                    <div style="color: #3b82f6;">${usageStats.nbLycees} lycée${usageStats.nbLycees > 1 ? 's' : ''} utilisant MathAData</div>
                     <div style="color: #64748b; font-size: 0.8rem;">▸ ${usageStats.nbUsages.toLocaleString('fr-FR')} usages</div>
                     ${usageStats.nbElevesUniques > 0 ? `<div style="color: #64748b; font-size: 0.8rem;">▸ ${usageStats.nbElevesUniques.toLocaleString('fr-FR')} sessions élèves</div>` : ''}
                   </div>

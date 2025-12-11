@@ -1851,7 +1851,7 @@ export default function Dashboard() {
 
       {/* Nouveau tableau : Indicateurs de succès par activité */}
       <div className="card" style={{marginTop: 16}}>
-        <h2>📈 Indicateurs de succès des activités en classe</h2>
+        <h2>Indicateurs de succès des activités en classe</h2>
         <p className="muted" style={{marginTop: 0, marginBottom: 16}}>
           Métriques détaillées pour évaluer l'adoption, l'engagement et la fidélisation de chaque activité
         </p>
@@ -2085,7 +2085,7 @@ export default function Dashboard() {
                   e.currentTarget.style.opacity = "1";
                 }}
               >
-                {isPlaying ? "⏸ Pause" : "▶ La conquête du monde"}
+                {isPlaying ? "Pause" : "La conquête du monde"}
               </button>
             </div>
             <span style={{fontSize: "0.875rem", color: "#64748b"}}>
@@ -2894,7 +2894,7 @@ export default function Dashboard() {
                       fontSize: "0.875rem"
                     }}>
                       <div style={{fontWeight: 600, marginBottom: "8px", color: "#1e293b"}}>
-                        🏫 Établissements de l'académie : {officialStats.nb_colleges} collège{officialStats.nb_colleges > 1 ? 's' : ''} · {officialStats.nb_lycees_gt} lycée{officialStats.nb_lycees_gt > 1 ? 's' : ''} GT · {officialStats.nb_lycees_pro} lycée{officialStats.nb_lycees_pro > 1 ? 's' : ''} Pro
+                        Établissements de l'académie : {officialStats.nb_colleges} collège{officialStats.nb_colleges > 1 ? 's' : ''} · {officialStats.nb_lycees_gt} lycée{officialStats.nb_lycees_gt > 1 ? 's' : ''} GT · {officialStats.nb_lycees_pro} lycée{officialStats.nb_lycees_pro > 1 ? 's' : ''} Pro
                       </div>
                       <div style={{paddingLeft: "8px"}}>
                         <span className="muted">Élèves lycées GT :</span>{" "}

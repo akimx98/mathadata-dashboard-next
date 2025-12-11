@@ -146,7 +146,7 @@ export default function TeachersBySeanceModalContent({
             {/* Liste des lycées */}
             <div style={{marginBottom: "16px"}}>
               <h4 style={{fontSize: "0.875rem", color: "#475569", marginBottom: "8px"}}>
-                🏫 Lycées ({profData.lycees.size})
+                Lycées ({profData.lycees.size})
               </h4>
               <div style={{
                 fontSize: "0.875rem",
@@ -163,7 +163,7 @@ export default function TeachersBySeanceModalContent({
             {/* Liste des activités */}
             <div style={{marginBottom: "16px"}}>
               <h4 style={{fontSize: "0.875rem", color: "#475569", marginBottom: "8px"}}>
-                📚 Activités utilisées ({profData.activites.size})
+                Activités utilisées ({profData.activites.size})
               </h4>
               <div style={{
                 fontSize: "0.875rem",
@@ -180,7 +180,7 @@ export default function TeachersBySeanceModalContent({
             {/* Timeline des séances */}
             <div>
               <h4 style={{fontSize: "0.875rem", color: "#475569", marginBottom: "8px"}}>
-                📅 Timeline des {selectedSeancesCount} séances
+                Timeline des {selectedSeancesCount} séances
               </h4>
               <table style={{width: "100%", fontSize: "0.875rem"}}>
                 <thead style={{backgroundColor: "#fff"}}>
