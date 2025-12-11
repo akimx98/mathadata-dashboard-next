@@ -24,6 +24,7 @@ export interface UsageMapProps {
   onPointClick?: (uai: string) => void;
   onAcademyClick?: (academie: string) => void;
   showAcademyBorders?: boolean;
+  maxUsage?: number; // Maximum absolu pour fixer la taille des cercles
 }
 
 function scaleRadius(count: number, min: number, max: number) {
@@ -32,9 +33,9 @@ function scaleRadius(count: number, min: number, max: number) {
   return 6 + t * 18; // 6..24 px
 }
 
-export default function UsageMap({ points, onPointClick, onAcademyClick, showAcademyBorders = false }: UsageMapProps) {
+export default function UsageMap({ points, onPointClick, onAcademyClick, showAcademyBorders = false, maxUsage }: UsageMapProps) {
   const valid = points.filter(p => Number.isFinite(p.latitude) && Number.isFinite(p.longitude));
-  const max = valid.reduce((m, p) => Math.max(m, p.nb), 0);
+  const max = maxUsage ?? valid.reduce((m, p) => Math.max(m, p.nb), 0);
   const [academyGeoJSON, setAcademyGeoJSON] = useState<any>(null);
   const [officialStats, setOfficialStats] = useState<any>(null);
   const geoJsonRef = useRef<L.GeoJSON | null>(null);
