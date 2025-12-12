@@ -1801,7 +1801,7 @@ export default function Dashboard() {
           paddingBottom: 8,
           borderBottom: "3px solid #94a3b8"
         }}>
-          📈 Évolution globale (toutes périodes)
+          Évolution globale (toutes périodes)
         </h2>
       </div>
 
@@ -1864,43 +1864,43 @@ export default function Dashboard() {
                   Activité
                 </th>
                 <th style={{textAlign: "center", padding: "8px", borderLeft: "2px solid #e2e8f0"}}>
-                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🏫 Lycées</div>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>Lycées</div>
                   <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Adoption</div>
                 </th>
                 <th style={{textAlign: "center", padding: "8px"}}>
-                  <div style={{fontWeight: "600", marginBottom: "4px"}}>📚 Séances</div>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>Séances</div>
                   <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>En classe</div>
                 </th>
                 <th style={{textAlign: "center", padding: "8px"}}>
-                  <div style={{fontWeight: "600", marginBottom: "4px"}}>👨‍🏫 Profs</div>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>Profs</div>
                   <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Uniques</div>
                 </th>
                 <th style={{textAlign: "center", padding: "8px"}}>
-                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🎓 Élèves</div>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>Élèves</div>
                   <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Uniques</div>
                 </th>
                 <th style={{textAlign: "center", padding: "8px", borderLeft: "2px solid #e2e8f0"}}>
-                  <div style={{fontWeight: "600", marginBottom: "4px"}}>👥 Taille</div>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>Taille</div>
                   <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Classe moy.</div>
                 </th>
                 <th style={{textAlign: "center", padding: "8px"}}>
-                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🔄 Reprise</div>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>Reprise</div>
                   <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>{'>'}1h après</div>
                 </th>
                 <th style={{textAlign: "center", padding: "8px"}}>
-                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🏠 Maison</div>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>Maison</div>
                   <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Soir/weekend</div>
                 </th>
                 <th style={{textAlign: "center", padding: "8px"}}>
-                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🔁 2ème séance</div>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>2ème séance</div>
                   <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Collective</div>
                 </th>
                 <th style={{textAlign: "center", padding: "8px", borderLeft: "2px solid #e2e8f0"}}>
-                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🔄 Récurrence</div>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>Récurrence</div>
                   <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Séance/prof</div>
                 </th>
                 <th style={{textAlign: "center", padding: "8px"}}>
-                  <div style={{fontWeight: "600", marginBottom: "4px"}}>🧪 Usage après test</div>
+                  <div style={{fontWeight: "600", marginBottom: "4px"}}>Usage après test</div>
                   <div style={{fontSize: "0.75rem", fontWeight: "normal", color: "#64748b"}}>Test → Classe</div>
                 </th>
               </tr>
@@ -1988,7 +1988,7 @@ export default function Dashboard() {
         
         {/* Légende */}
         <div style={{marginTop: "20px", padding: "16px", backgroundColor: "#f8fafc", borderRadius: "8px", fontSize: "0.875rem"}}>
-          <h4 style={{margin: "0 0 12px 0", fontSize: "0.875rem", color: "#475569"}}>📖 Guide de lecture</h4>
+          <h4 style={{margin: "0 0 12px 0", fontSize: "0.875rem", color: "#475569"}}>Guide de lecture</h4>
           <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "12px"}}>
             <div>
               <strong>Adoption :</strong> Nombre de lycées et professeurs utilisant l'activité
@@ -2022,7 +2022,7 @@ export default function Dashboard() {
           alignItems: "center",
           gap: 12
         }}>
-          📊 Analyse de la période
+          Analyse de la période
           {(dateRangeStart || dateRangeEnd) && (
             <span style={{
               fontSize: "1rem",
@@ -2045,7 +2045,7 @@ export default function Dashboard() {
           <div style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16}}>
             <div style={{display: "flex", alignItems: "center", gap: 12}}>
               <span style={{fontSize: "0.875rem", fontWeight: "600", color: "#475569"}}>
-                📅 Période d'analyse
+                Période d'analyse
               </span>
               {/* Bouton Play/Pause */}
               <button
@@ -2322,7 +2322,7 @@ export default function Dashboard() {
           
           {/* Aide */}
           <div style={{marginTop: 20, fontSize: "0.75rem", color: "#94a3b8", textAlign: "center"}}>
-            💡 Cliquez sur les points pour déplacer le début ou la fin de la période
+            Cliquez sur les points pour déplacer le début ou la fin de la période
           </div>
         </div>
       </div>

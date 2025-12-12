@@ -210,7 +210,7 @@ export default function EstablishmentModalContent({
                             fontWeight: "600"
                           }}>
                             {analysis && analysis.deuxiemeSeance ? (
-                              <span style={{color: "#3b82f6"}}>✓ Oui</span>
+                              <span style={{color: "#3b82f6"}}>Oui</span>
                             ) : (
                               <span style={{color: "#94a3b8"}}>Non</span>
                             )}
