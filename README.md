@@ -73,7 +73,7 @@ Ouvrir [http://localhost:3000](http://localhost:3000)
 ## 📁 Structure des données
 
 ### Source
-Fichier CSV : `public/data/mathadata-V2.csv` (2106 lignes, délimiteur `;`)
+Fichier CSV : `public/data/Mathadata20260210.csv` (3012 lignes, délimiteur `,`)
 
 ### Colonnes principales
 - `student` : ID anonymisé de l'élève/prof
@@ -210,4 +210,3 @@ Pour reprendre le développement :
 ## 📄 Licence
 
 Projet interne MathAData
-

@@ -13,6 +13,8 @@ import EstablishmentModalContent from "@/components/EstablishmentModalContent";
 import SeanceDetailModalContent from "@/components/SeanceDetailModalContent";
 import TeachersBySeanceModalContent from "@/components/TeachersBySeanceModalContent";
 
+const USAGES_CSV_URL = "/data/Mathadata20260210.csv";
+
 // Fonction pour normaliser les noms d'académies (gérer la fusion Caen/Rouen -> Normandie depuis 2020)
 function normalizeAcademyName(name: string | undefined): string {
   if (!name) return "";
@@ -125,12 +127,17 @@ export default function Dashboard() {
   // Chargement CSV
   useEffect(() => {
     console.log("[DEBUG] Début chargement des CSVs...");
-    Papa.parse<UsageRow>("/data/mathadata-V2.csv", {
+    Papa.parse<UsageRow>(USAGES_CSV_URL, {
       download: true, 
       header: true, 
-      skipEmptyLines: true, 
-      delimiter: ";",  // ← Fichier CSV avec point-virgule comme délimiteur
+      skipEmptyLines: true,
+      transformHeader: (header) => header.trim().replace(/^"+|"+$/g, ""),
+      transform: (value) => {
+        const v = String(value ?? "").trim();
+        return v === "NULL" ? "" : v;
+      },
       complete: (res) => {
+        console.log("[usages] Source:", USAGES_CSV_URL);
         console.log("[usages] Parse complete. Errors:", res.errors.length, "Data rows:", res.data.length);
         if (res.errors.length > 0) {
           console.error("[usages] Parse errors:", res.errors.slice(0, 5));
@@ -3170,4 +3177,3 @@ export default function Dashboard() {
     </div>
   );
 }
-

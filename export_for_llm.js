@@ -9,29 +9,60 @@
 
 const fs = require('fs');
 const path = require('path');
+const Papa = require('papaparse');
 
 // Configuration
 const DATA_DIR = path.join(__dirname, 'public', 'data');
-const CSV_FILE = path.join(DATA_DIR, 'mathadata-V2.csv');
 const ANNUAIRE_FILE = path.join(DATA_DIR, 'annuaire_etablissements.csv');
 const OUTPUT_FILE = path.join(__dirname, 'mathadata_llm_export.json');
 
 // Constantes
 const ONE_HOUR_MS = 3600000;
 
-// Parse CSV simple
-function parseCSV(content, delimiter = ';') {
-  const lines = content.trim().split('\n');
-  const headers = lines[0].split(delimiter).map(h => h.replace(/"/g, '').trim());
-  
-  return lines.slice(1).map(line => {
-    const values = line.split(delimiter);
-    const row = {};
-    headers.forEach((header, i) => {
-      row[header] = values[i] ? values[i].replace(/"/g, '').trim() : '';
-    });
-    return row;
+function findLatestUsageCsv(dataDir) {
+  const files = fs.readdirSync(dataDir);
+  const dated = [];
+
+  for (const file of files) {
+    const m = /^(?:Mathadata|mathadata)(\d{8})\.csv$/.exec(file);
+    if (m) dated.push({ file, yyyymmdd: m[1] });
+  }
+
+  dated.sort((a, b) => a.yyyymmdd.localeCompare(b.yyyymmdd));
+  if (dated.length > 0) return path.join(dataDir, dated[dated.length - 1].file);
+
+  const fallback = path.join(dataDir, 'mathadata-V2.csv');
+  return fallback;
+}
+
+const CSV_FILE = findLatestUsageCsv(DATA_DIR);
+
+function detectDelimiter(content) {
+  const sample = content.slice(0, 4096);
+  const semicolons = (sample.match(/;/g) || []).length;
+  const commas = (sample.match(/,/g) || []).length;
+  return semicolons > commas ? ';' : ',';
+}
+
+// Parse CSV robuste (gère ; et , + guillemets)
+function parseCSV(content) {
+  const delimiter = detectDelimiter(content);
+  const res = Papa.parse(content, {
+    header: true,
+    skipEmptyLines: true,
+    delimiter,
+    transformHeader: (header) => String(header ?? '').trim().replace(/^"+|"+$/g, ''),
+    transform: (value) => {
+      const v = String(value ?? '').trim();
+      return v === 'NULL' ? '' : v;
+    },
   });
+
+  if (res.errors && res.errors.length > 0) {
+    console.warn('[parseCSV] Erreurs détectées (extraits):', res.errors.slice(0, 5));
+  }
+
+  return res.data;
 }
 
 // Parse date/timestamp
