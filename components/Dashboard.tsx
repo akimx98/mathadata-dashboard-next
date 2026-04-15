@@ -119,6 +119,7 @@ export default function Dashboard() {
   const [search, setSearch] = useState("");
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [extractionDate, setExtractionDate] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [sortKey, setSortKey] = useState<"nb" | "nom_lycee" | "ville" | "academie" | "ips" | "nbSeances" | "nbEleves" | "nbProfsEnseignant" | "nbProfsTestant">("nbSeances");
   const [sortAsc, setSortAsc] = useState(false);
   
@@ -163,6 +164,7 @@ export default function Dashboard() {
         }));
         setUsageRows(rows);
         if (savedDate) setExtractionDate(savedDate);
+        setIsLoading(false);
         console.log("[usages] Lignes chargées:", rows.length);
         console.log("[usages] Avec mathadata_id:", rows.filter(r => r.mathadata_id).length);
         console.log("[usages] Avec created:", rows.filter(r => r.created).length);
@@ -207,8 +209,12 @@ export default function Dashboard() {
               uai: r.uai_el?.toString().trim()
             }));
             setUsageRows(rows);
+            setIsLoading(false);
           },
-          error: (err) => console.error("[usages] Erreur fallback:", err),
+          error: (err) => {
+            console.error("[usages] Erreur fallback:", err);
+            setIsLoading(false);
+          },
         });
       });
     Papa.parse("/data/annuaire_etablissements.csv", {
@@ -1897,6 +1903,21 @@ export default function Dashboard() {
         </button>
       </div>
 
+      {isLoading && (
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "80px 20px",
+          color: "#64748b",
+        }}>
+          <div style={{ fontSize: "2.5rem", marginBottom: 16 }}>⏳</div>
+          <p style={{ fontSize: "1.1rem", fontWeight: 600, margin: 0 }}>Chargement des données…</p>
+        </div>
+      )}
+
+      {!isLoading && <>
       {/* Section : Données globales (toujours) */}
       <div style={{marginBottom: 32}}>
         <h2 style={{
@@ -3273,6 +3294,7 @@ export default function Dashboard() {
           </div>
         </div>
       )}
+      </>}
       <CsvUploadModal
         isOpen={showUploadModal}
         onClose={() => setShowUploadModal(false)}

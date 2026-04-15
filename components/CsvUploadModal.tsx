@@ -19,7 +19,7 @@ export interface CsvUploadResult {
 interface CsvUploadModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onConfirm: (result: CsvUploadResult) => void;
+  onConfirm: (result: CsvUploadResult) => Promise<void> | void;
   currentRows: Record<string, any>[];
 }
 
@@ -42,6 +42,7 @@ export default function CsvUploadModal({
     common: number;
   } | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
 
   const reset = useCallback(() => {
     setStep("upload");
@@ -50,6 +51,7 @@ export default function CsvUploadModal({
     setParsedRows([]);
     setConflictInfo(null);
     setIsProcessing(false);
+    setIsUploading(false);
     if (fileInputRef.current) fileInputRef.current.value = "";
   }, []);
 
@@ -159,22 +161,27 @@ export default function CsvUploadModal({
     setStep("confirm");
   };
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
     if (!extractionDate) {
       setError("Veuillez entrer la date d'extraction.");
       return;
     }
     setError(null);
+    setIsUploading(true);
     const mode = step === "confirm" && conflictInfo && conflictInfo.existingOnly > 0
       ? "merge" // We got here via merge path
       : "replace";
-    onConfirm({
-      rows: parsedRows,
-      csvText: Papa.unparse(parsedRows),
-      extractionDate,
-      mode,
-    });
-    reset();
+    try {
+      await onConfirm({
+        rows: parsedRows,
+        csvText: Papa.unparse(parsedRows),
+        extractionDate,
+        mode,
+      });
+      reset();
+    } catch {
+      setIsUploading(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -207,8 +214,37 @@ export default function CsvUploadModal({
           maxHeight: "80vh",
           overflow: "auto",
           boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
+          position: "relative" as const,
         }}
       >
+        {/* Uploading overlay */}
+        {isUploading && (
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: "rgba(255,255,255,0.9)",
+              borderRadius: 12,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 10,
+            }}
+          >
+            <div style={{ fontSize: "2rem", marginBottom: 12 }}>⏳</div>
+            <p style={{ color: "#334155", fontWeight: 600, fontSize: "1.1rem", margin: 0 }}>
+              Envoi des données en cours…
+            </p>
+            <p style={{ color: "#64748b", fontSize: "0.9rem", marginTop: 8 }}>
+              Veuillez patienter
+            </p>
+          </div>
+        )}
+
         {/* Header */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
           <h2 style={{ margin: 0, fontSize: "1.3rem", color: "#0f172a" }}>
@@ -406,19 +442,20 @@ export default function CsvUploadModal({
 
             <button
               onClick={handleConfirm}
+              disabled={isUploading}
               style={{
                 width: "100%",
                 padding: "12px",
                 borderRadius: 8,
                 border: "none",
-                background: "#3b82f6",
+                background: isUploading ? "#94a3b8" : "#3b82f6",
                 color: "white",
                 fontWeight: 700,
                 fontSize: "1rem",
-                cursor: "pointer",
+                cursor: isUploading ? "not-allowed" : "pointer",
               }}
             >
-              Charger les données
+              {isUploading ? "Envoi en cours…" : "Charger les données"}
             </button>
           </div>
         )}
