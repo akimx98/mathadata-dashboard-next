@@ -30,10 +30,11 @@ async function blobGet(name: string): Promise<string | null> {
     const { blobs } = await list({ prefix: name, limit: 1 });
     const match = blobs.find(b => b.pathname === name);
     if (!match) return null;
-    const res = await fetch(match.url);
+    const res = await fetch(match.url, { cache: "no-store" });
     if (!res.ok) return null;
     return await res.text();
-  } catch {
+  } catch (err) {
+    console.error(`[blobGet] Error fetching ${name}:`, err);
     return null;
   }
 }
