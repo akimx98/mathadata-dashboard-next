@@ -15,6 +15,9 @@ const DEFAULT_CSV = path.join(process.cwd(), "public", "data", "Mathadata2026021
 
 const useBlob = () => !!process.env.BLOB_READ_WRITE_TOKEN;
 
+// Force dynamic — disable Next.js route caching
+export const dynamic = "force-dynamic";
+
 function ensureStorageDir() {
   if (!fs.existsSync(STORAGE_DIR)) {
     fs.mkdirSync(STORAGE_DIR, { recursive: true });
