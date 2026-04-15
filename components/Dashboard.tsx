@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import Papa from "papaparse";
 import {
@@ -12,6 +12,7 @@ import { Modal } from "@/components/Modal";
 import EstablishmentModalContent from "@/components/EstablishmentModalContent";
 import SeanceDetailModalContent from "@/components/SeanceDetailModalContent";
 import TeachersBySeanceModalContent from "@/components/TeachersBySeanceModalContent";
+import CsvUploadModal, { CsvUploadResult } from "@/components/CsvUploadModal";
 
 const USAGES_CSV_URL = "/data/Mathadata20260210.csv";
 
@@ -116,6 +117,8 @@ export default function Dashboard() {
   const [annuaire, setAnnuaire] = useState<AnnuaireRow[]>([]);
   const [activityFilter, setActivityFilter] = useState<string>("__ALL__");
   const [search, setSearch] = useState("");
+  const [showUploadModal, setShowUploadModal] = useState(false);
+  const [extractionDate, setExtractionDate] = useState<string | null>(null);
   const [sortKey, setSortKey] = useState<"nb" | "nom_lycee" | "ville" | "academie" | "ips" | "nbSeances" | "nbEleves" | "nbProfsEnseignant" | "nbProfsTestant">("nbSeances");
   const [sortAsc, setSortAsc] = useState(false);
   
@@ -127,22 +130,25 @@ export default function Dashboard() {
   // Chargement CSV
   useEffect(() => {
     console.log("[DEBUG] Début chargement des CSVs...");
-    Papa.parse<UsageRow>(USAGES_CSV_URL, {
-      download: true, 
-      header: true, 
-      skipEmptyLines: true,
-      transformHeader: (header) => header.trim().replace(/^"+|"+$/g, ""),
-      transform: (value) => {
-        const v = String(value ?? "").trim();
-        return v === "NULL" ? "" : v;
-      },
-      complete: (res) => {
-        console.log("[usages] Source:", USAGES_CSV_URL);
-        console.log("[usages] Parse complete. Errors:", res.errors.length, "Data rows:", res.data.length);
-        if (res.errors.length > 0) {
-          console.error("[usages] Parse errors:", res.errors.slice(0, 5));
+
+    // Charger les données d'usage via l'API (persisté côté serveur)
+    fetch("/api/csv")
+      .then(res => res.json())
+      .then(({ csv, extractionDate: savedDate }) => {
+        const parsed = Papa.parse<UsageRow>(csv, {
+          header: true,
+          skipEmptyLines: true,
+          transformHeader: (header) => header.trim().replace(/^"+|"+$/g, ""),
+          transform: (value) => {
+            const v = String(value ?? "").trim();
+            return v === "NULL" ? "" : v;
+          },
+        });
+        console.log("[usages] Parse complete. Errors:", parsed.errors.length, "Data rows:", parsed.data.length);
+        if (parsed.errors.length > 0) {
+          console.error("[usages] Parse errors:", parsed.errors.slice(0, 5));
         }
-        const rows = res.data.map(r => ({
+        const rows = parsed.data.map(r => ({
           assignment_id: r.assignment_id ?? (r as any).id ?? undefined,
           created: r.created, changed: r.changed,
           activity_id: r.activity_id ?? (r as any).nid ?? undefined,
@@ -153,10 +159,10 @@ export default function Dashboard() {
           uai_el: r.uai_el?.toString().trim(),
           teacher: r.teacher ?? undefined,
           uai_teach: r.uai_teach?.toString().trim(),
-          // Pour compatibilité, on garde uai_el comme UAI par défaut
           uai: r.uai_el?.toString().trim()
         }));
         setUsageRows(rows);
+        if (savedDate) setExtractionDate(savedDate);
         console.log("[usages] Lignes chargées:", rows.length);
         console.log("[usages] Avec mathadata_id:", rows.filter(r => r.mathadata_id).length);
         console.log("[usages] Avec created:", rows.filter(r => r.created).length);
@@ -166,7 +172,6 @@ export default function Dashboard() {
         );
         console.log("[usages] Premier exemple:", rows[0]);
         
-        // Liste des activités uniques avec leurs titres pour faciliter la configuration
         const activities = new Map<string, string>();
         rows.forEach(r => {
           if (r.mathadata_id && r.mathadata_title && !activities.has(r.mathadata_id)) {
@@ -174,11 +179,38 @@ export default function Dashboard() {
           }
         });
         console.log("[usages] Activités trouvées:", Array.from(activities.entries()));
-      },
-      error: (err) => {
-        console.error("[usages] Erreur de chargement:", err);
-      }
-    });
+      })
+      .catch(err => {
+        console.error("[usages] Erreur de chargement API, fallback CSV statique:", err);
+        // Fallback: charger le CSV statique directement
+        Papa.parse<UsageRow>(USAGES_CSV_URL, {
+          download: true,
+          header: true,
+          skipEmptyLines: true,
+          transformHeader: (header) => header.trim().replace(/^"+|"+$/g, ""),
+          transform: (value) => {
+            const v = String(value ?? "").trim();
+            return v === "NULL" ? "" : v;
+          },
+          complete: (res) => {
+            const rows = res.data.map(r => ({
+              assignment_id: r.assignment_id ?? (r as any).id ?? undefined,
+              created: r.created, changed: r.changed,
+              activity_id: r.activity_id ?? (r as any).nid ?? undefined,
+              mathadata_id: r.mathadata_id ?? (r as any).parentNid ?? undefined,
+              mathadata_title: r.mathadata_title ?? undefined,
+              student: r.student ?? undefined,
+              Role: r.Role ?? undefined,
+              uai_el: r.uai_el?.toString().trim(),
+              teacher: r.teacher ?? undefined,
+              uai_teach: r.uai_teach?.toString().trim(),
+              uai: r.uai_el?.toString().trim()
+            }));
+            setUsageRows(rows);
+          },
+          error: (err) => console.error("[usages] Erreur fallback:", err),
+        });
+      });
     Papa.parse("/data/annuaire_etablissements.csv", {
         download: true,
         header: true,
@@ -1794,9 +1826,75 @@ export default function Dashboard() {
     return getMonthlyDataFiltered(r => r.mathadata_id === activityId);
   };
 
+  const handleCsvUpload = useCallback((result: CsvUploadResult) => {
+    const rows = result.rows.map((r: any) => ({
+      assignment_id: r.assignment_id ?? r.id ?? undefined,
+      created: r.created, changed: r.changed,
+      activity_id: r.activity_id ?? r.nid ?? undefined,
+      mathadata_id: r.mathadata_id ?? r.parentNid ?? undefined,
+      mathadata_title: r.mathadata_title ?? undefined,
+      student: r.student ?? undefined,
+      Role: r.Role ?? undefined,
+      uai_el: r.uai_el?.toString().trim(),
+      teacher: r.teacher ?? undefined,
+      uai_teach: r.uai_teach?.toString().trim(),
+      uai: r.uai_el?.toString().trim(),
+    }));
+
+    // Persister côté serveur
+    fetch("/api/csv", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        csv: result.csvText,
+        extractionDate: result.extractionDate,
+      }),
+    })
+      .then(res => {
+        if (!res.ok) throw new Error("Erreur serveur");
+        return res.json();
+      })
+      .then(data => {
+        console.log(`[CSV Upload] Sauvegardé sur le serveur: ${data.lines} lignes`);
+      })
+      .catch(err => {
+        console.error("[CSV Upload] Erreur de sauvegarde:", err);
+      });
+
+    setUsageRows(rows);
+    setExtractionDate(result.extractionDate);
+    setShowUploadModal(false);
+    console.log(`[CSV Upload] ${rows.length} lignes chargées (mode: ${result.mode}, date: ${result.extractionDate})`);
+  }, []);
+
   return (
     <div className="container">
-      <h1>Tableau de bord — Données d'usage Capytale</h1>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
+        <div>
+          <h1 style={{ margin: 0 }}>Tableau de bord — Données d'usage Capytale</h1>
+          {extractionDate && (
+            <p style={{ margin: "4px 0 0", fontSize: "0.85rem", color: "#64748b" }}>
+              Données extraites le {new Date(extractionDate + "T00:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}
+            </p>
+          )}
+        </div>
+        <button
+          onClick={() => setShowUploadModal(true)}
+          style={{
+            padding: "8px 16px",
+            borderRadius: 8,
+            border: "1px solid #cbd5e1",
+            background: "#f8fafc",
+            color: "#334155",
+            fontWeight: 600,
+            cursor: "pointer",
+            fontSize: "0.9rem",
+            whiteSpace: "nowrap",
+          }}
+        >
+          📁 Importer CSV
+        </button>
+      </div>
 
       {/* Section : Données globales (toujours) */}
       <div style={{marginBottom: 32}}>
@@ -3174,6 +3272,12 @@ export default function Dashboard() {
           </div>
         </div>
       )}
+      <CsvUploadModal
+        isOpen={showUploadModal}
+        onClose={() => setShowUploadModal(false)}
+        onConfirm={handleCsvUpload}
+        currentRows={usageRows}
+      />
     </div>
   );
 }
