@@ -1826,7 +1826,7 @@ export default function Dashboard() {
     return getMonthlyDataFiltered(r => r.mathadata_id === activityId);
   };
 
-  const handleCsvUpload = useCallback((result: CsvUploadResult) => {
+  const handleCsvUpload = useCallback(async (result: CsvUploadResult) => {
     const rows = result.rows.map((r: any) => ({
       assignment_id: r.assignment_id ?? r.id ?? undefined,
       created: r.created, changed: r.changed,
@@ -1841,25 +1841,26 @@ export default function Dashboard() {
       uai: r.uai_el?.toString().trim(),
     }));
 
-    // Persister côté serveur
-    fetch("/api/csv", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        csv: result.csvText,
-        extractionDate: result.extractionDate,
-      }),
-    })
-      .then(res => {
-        if (!res.ok) throw new Error("Erreur serveur");
-        return res.json();
-      })
-      .then(data => {
-        console.log(`[CSV Upload] Sauvegardé sur le serveur: ${data.lines} lignes`);
-      })
-      .catch(err => {
-        console.error("[CSV Upload] Erreur de sauvegarde:", err);
+    // Persister côté serveur — on attend la réponse
+    try {
+      const res = await fetch("/api/csv", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          csv: result.csvText,
+          extractionDate: result.extractionDate,
+        }),
       });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || `HTTP ${res.status}`);
+      }
+      const data = await res.json();
+      console.log(`[CSV Upload] Sauvegardé sur le serveur: ${data.lines} lignes`);
+    } catch (err) {
+      console.error("[CSV Upload] Erreur de sauvegarde:", err);
+      alert(`Erreur lors de la sauvegarde sur le serveur : ${err instanceof Error ? err.message : err}\n\nLes données sont affichées mais ne seront pas persistées au refresh.`);
+    }
 
     setUsageRows(rows);
     setExtractionDate(result.extractionDate);

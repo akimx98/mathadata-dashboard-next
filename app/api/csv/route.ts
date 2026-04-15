@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { put, list, head } from "@vercel/blob";
+import { put, del, list } from "@vercel/blob";
 import fs from "fs";
 import path from "path";
 
@@ -30,7 +30,9 @@ async function blobGet(name: string): Promise<string | null> {
     const { blobs } = await list({ prefix: name, limit: 1 });
     const match = blobs.find(b => b.pathname === name);
     if (!match) return null;
-    const res = await fetch(match.url, { cache: "no-store" });
+    // Cache-bust: add timestamp to avoid CDN serving stale content
+    const bustUrl = match.url + (match.url.includes("?") ? "&" : "?") + `_t=${Date.now()}`;
+    const res = await fetch(bustUrl, { cache: "no-store" });
     if (!res.ok) return null;
     return await res.text();
   } catch (err) {
@@ -40,7 +42,17 @@ async function blobGet(name: string): Promise<string | null> {
 }
 
 async function blobPut(name: string, content: string): Promise<void> {
-  await put(name, content, { access: "public", addRandomSuffix: false });
+  // Delete old blob first to avoid CDN stale cache issues
+  try {
+    const { blobs } = await list({ prefix: name, limit: 1 });
+    const match = blobs.find(b => b.pathname === name);
+    if (match) await del(match.url);
+  } catch { /* ignore delete errors */ }
+  await put(name, content, {
+    access: "public",
+    addRandomSuffix: false,
+    cacheControlMaxAge: 0,
+  });
 }
 
 /**
@@ -110,8 +122,14 @@ export async function POST(request: NextRequest) {
 
   if (useBlob()) {
     // --- Vercel Blob ---
-    await blobPut(BLOB_CSV_KEY, body.csv);
-    await blobPut(BLOB_META_KEY, metaJson);
+    try {
+      await blobPut(BLOB_CSV_KEY, body.csv);
+      await blobPut(BLOB_META_KEY, metaJson);
+      console.log(`[POST /api/csv] Blob write OK: ${body.csv.length} bytes, date=${body.extractionDate}`);
+    } catch (err) {
+      console.error("[POST /api/csv] Blob write failed:", err);
+      return NextResponse.json({ error: "Erreur d'écriture Blob", details: String(err) }, { status: 500 });
+    }
   } else {
     // --- Local filesystem ---
     ensureStorageDir();
