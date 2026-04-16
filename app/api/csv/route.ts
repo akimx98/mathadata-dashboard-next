@@ -60,7 +60,10 @@ async function blobPut(name: string, content: string): Promise<void> {
  * Returns the current CSV content + metadata.
  * Falls back to the default CSV if no upload has been done.
  */
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const format = searchParams.get("format");
+
   let csvContent: string | null = null;
   let metadata: { extractionDate: string | null } = { extractionDate: null };
 
@@ -85,6 +88,17 @@ export async function GET() {
   // Fallback to default CSV
   if (!csvContent) {
     csvContent = fs.readFileSync(DEFAULT_CSV, "utf-8");
+  }
+
+  // ?format=raw → download as .csv file
+  if (format === "raw") {
+    const date = metadata.extractionDate || "unknown";
+    return new Response(csvContent, {
+      headers: {
+        "Content-Type": "text/csv; charset=utf-8",
+        "Content-Disposition": `attachment; filename="Mathadata_${date}.csv"`,
+      },
+    });
   }
 
   return NextResponse.json({
