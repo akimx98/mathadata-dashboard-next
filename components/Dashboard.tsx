@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import Papa from "papaparse";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
-  BarChart, Bar
+  BarChart, Bar, ComposedChart
 } from "recharts";
 import type { UsageMapProps } from "@/components/UsageMap";
 import { Modal } from "@/components/Modal";
@@ -389,6 +389,15 @@ export default function Dashboard() {
 
   // --- Agrégat par UAI & jointure annuaire ---
   const annMap = useMemo(() => new Map(annuaire.map(a => [a.uai, a])), [annuaire]);
+
+  const getAcademyForUsageRow = (r: UsageRow) => {
+    const uai = (
+      r.Role === "teacher"
+        ? r.uai_teach || r.uai_el || r.uai || ""
+        : r.uai_el || r.uai || ""
+    ).trim();
+    return annMap.get(uai)?.academie || "Inconnue";
+  };
   
   // Calculer les statistiques détaillées pour un établissement (utilisé pour le tableau principal - VERSION FILTRÉE)
   const getEtablissementStatsFiltered = (uai: string) => {
@@ -1032,11 +1041,14 @@ export default function Dashboard() {
         profsTestedButNeverTaught++;
       }
     }
+
+    const totalProfsUniques = teacherBehavior.size;
     
     return {
       totalUsages,
       totalEtablissements,
       totalElevesUniques,
+      totalProfsUniques,
       nombreLycees,
       nombreColleges,
       nombreProfsPublics,
@@ -1266,13 +1278,11 @@ export default function Dashboard() {
     return teachers;
   };
 
-  // Usages par académie (basé sur l'établissement de l'élève) - FILTRÉ PAR PÉRIODE
+  // Usages par académie : établissement enseignant pour les tests, établissement élève pour la classe.
   const usageByAcademie = useMemo(() => {
     const map = new Map<string, number>();
     for (const r of rowsFilteredByDate) {
-      const uai = (r.uai_el || r.uai || "").trim();
-      const info = annMap.get(uai);
-      const academie = info?.academie || "Inconnue";
+      const academie = getAcademyForUsageRow(r);
       map.set(academie, (map.get(academie) || 0) + 1);
     }
     return Array.from(map.entries())
@@ -1795,6 +1805,16 @@ export default function Dashboard() {
   const getMonthlyDataFiltered = (filterFn: (r: UsageRow & { _date: Date }) => boolean) => {
     const filteredData = rowsWithDate.filter(filterFn);
     const m = groupCount(filteredData, r => fmtMonth(r._date));
+    const teachersByMonth = new Map<string, Set<string>>();
+
+    for (const r of filteredData) {
+      if (!r.teacher) continue;
+      const month = fmtMonth(r._date);
+      if (!teachersByMonth.has(month)) {
+        teachersByMonth.set(month, new Set());
+      }
+      teachersByMonth.get(month)!.add(r.teacher);
+    }
     
     // Trouver les dates min/max globales
     if (rowsWithDate.length === 0) return [];
@@ -1816,16 +1836,13 @@ export default function Dashboard() {
     // Créer le résultat avec 0 pour les mois sans données
     return allMonths.map(month => ({
       month,
-      count: m.get(month) || 0
+      count: m.get(month) || 0,
+      uniqueTeachers: teachersByMonth.get(month)?.size || 0
     }));
   };
 
   const getMonthlyDataForAcademie = (academie: string) => {
-    return getMonthlyDataFiltered(r => {
-      const uai = (r.uai_el || r.uai || "").trim();
-      const info = annMap.get(uai);
-      return (info?.academie || "Inconnue") === academie;
-    });
+    return getMonthlyDataFiltered(r => getAcademyForUsageRow(r) === academie);
   };
 
   const getMonthlyDataForActivity = (activityId: string) => {
@@ -2718,6 +2735,10 @@ export default function Dashboard() {
                 <td style={{textAlign:"right"}}>{globalStats.usages2025_2026.toLocaleString("fr-FR")}</td>
               </tr>
               <tr style={{borderTop: "2px solid #e2e8f0"}}>
+                <td><strong>Nombre total de profs uniques</strong></td>
+                <td style={{textAlign:"right"}}><strong>{globalStats.totalProfsUniques.toLocaleString("fr-FR")}</strong></td>
+              </tr>
+              <tr>
                 <td><strong>Profs ont testé puis enseigné</strong></td>
                 <td style={{textAlign:"right", color: "#34d399", fontWeight: "600"}}>
                   {globalStats.profsTestedThenTaught.toLocaleString("fr-FR")}
@@ -2987,6 +3008,7 @@ export default function Dashboard() {
           console.log("Modal académie ouvert pour:", selectedAcademie);
           const monthlyData = getMonthlyDataForAcademie(selectedAcademie);
           const totalUsagesAcademie = monthlyData.reduce((sum, d) => sum + d.count, 0);
+          const academyRows = rowsWithDate.filter(r => getAcademyForUsageRow(r) === selectedAcademie);
           
           // Calculer le nombre de lycées dans cette académie (utiliser les données globales, pas filtrées)
           const lyceesAcademie = usageByUaiGlobal.filter(u => u.academie === selectedAcademie);
@@ -2996,15 +3018,26 @@ export default function Dashboard() {
           // Calculer le nombre d'élèves pour cette académie depuis les données globales
           const nbEleves = Array.from(
             new Set(
-              rowsWithDate
-                .filter(r => {
-                  const uai = (r.uai_el || r.uai || "").trim();
-                  const meta = annMap.get(uai);
-                  return meta?.academie === selectedAcademie && r.Role === "student" && r.student;
-                })
+              academyRows
+                .filter(r => r.Role === "student" && r.student)
                 .map(r => r.student!)
             )
           ).length;
+
+          const profsEnClasse = new Set(
+            academyRows
+              .filter(r => r.Role === "student" && r.teacher)
+              .map(r => r.teacher!)
+          );
+          const profsAyantTeste = new Set(
+            academyRows
+              .filter(r => r.Role === "teacher" && r.teacher)
+              .map(r => r.teacher!)
+          );
+          const profsTestUniquement = new Set(
+            Array.from(profsAyantTeste).filter(teacher => !profsEnClasse.has(teacher))
+          );
+          const profsUniques = new Set([...profsEnClasse, ...profsAyantTeste]);
           
           // Récupérer les statistiques officielles
           const officialStats = officialAcademyStats?.[selectedAcademie];
@@ -3059,6 +3092,13 @@ export default function Dashboard() {
                         )}
                       </div>
                     )}
+                    <div>
+                      <span className="muted">Profs uniques :</span>{" "}
+                      <strong style={{color: "#3b82f6"}}>{profsUniques.size.toLocaleString("fr-FR")}</strong>
+                      <span style={{color: "#64748b", fontSize: "0.8rem", marginLeft: "4px"}}>
+                        ({profsEnClasse.size.toLocaleString("fr-FR")} en classe · {profsTestUniquement.size.toLocaleString("fr-FR")} test uniquement)
+                      </span>
+                    </div>
                   </div>
               
               <h3 style={{fontSize: "1rem", marginBottom: "12px", color: "#475569"}}>
@@ -3067,13 +3107,29 @@ export default function Dashboard() {
               
               <div style={{height: 400, marginTop: "20px"}}>
                 <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={monthlyData}>
+                  <ComposedChart data={monthlyData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="month" angle={-45} textAnchor="end" height={80} />
-                    <YAxis allowDecimals={false} />
+                    <YAxis yAxisId="usages" allowDecimals={false} />
+                    <YAxis
+                      yAxisId="profs"
+                      orientation="right"
+                      allowDecimals={false}
+                      tick={{fill: "#94a3b8", fontSize: 11}}
+                      axisLine={{stroke: "#cbd5e1"}}
+                    />
                     <Tooltip />
                     <Legend />
+                    <Bar
+                      yAxisId="profs"
+                      dataKey="uniqueTeachers"
+                      name="Profs uniques mensuels"
+                      fill="#cbd5e1"
+                      fillOpacity={0.55}
+                      barSize={12}
+                    />
                     <Line 
+                      yAxisId="usages"
                       type="monotone" 
                       dataKey="count" 
                       name="Usages mensuels" 
@@ -3081,7 +3137,7 @@ export default function Dashboard() {
                       strokeWidth={2}
                       dot={{ fill: "#f59e0b", r: 4 }}
                     />
-                  </LineChart>
+                  </ComposedChart>
                 </ResponsiveContainer>
               </div>
             </>
