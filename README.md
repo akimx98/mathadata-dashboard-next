@@ -70,6 +70,22 @@ npm start
 
 Ouvrir [http://localhost:3000](http://localhost:3000)
 
+### Synchronisation Capytale
+
+Le bouton **Charger les données les plus récentes** appelle Capytale depuis le serveur,
+normalise le CSV puis le stocke dans Vercel Blob. L'import manuel reste disponible pour
+afficher un ancien export CSV.
+
+Configurer la variable suivante en local dans `.env.local` et dans les variables
+d'environnement du projet Vercel :
+
+```bash
+CAPYTALE_MATHADATA_TOKEN=...
+```
+
+L'URL peut être remplacée avec `CAPYTALE_MATHADATA_URL`; sinon le endpoint MathAData
+Capytale est utilisé par défaut. Le jeton n'est jamais envoyé au navigateur.
+
 ## 📁 Structure des données
 
 ### Source

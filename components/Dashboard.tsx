@@ -55,6 +55,8 @@ type AnnuaireRow = {
   longitude: string | number;
 };
 
+type CsvSource = "capytale" | "manual" | "default";
+
 // Noms courts personnalisés pour les activités (à modifier selon vos besoins)
 const ACTIVITY_SHORT_NAMES: Record<string, string> = {
   "2548348": "Intro IA",
@@ -67,6 +69,8 @@ const ACTIVITY_SHORT_NAMES: Record<string, string> = {
   "5909323": "Challenge lycée",
   "6659633": "Milieu Distance MNIST",
   "6944347": "Stats Foetus",
+  "8790616": "Équation cartésienne 2nde",
+  "9747648": "Prototype équation réduite 2nde",
 };
 
 // Carte Leaflet sans SSR
@@ -101,6 +105,46 @@ const getActivityName = (id: string | undefined, fullTitle?: string): string => 
   return ACTIVITY_SHORT_NAMES[id] || fullTitle || `Activité ${id}`;
 };
 
+const normalizeUsageHeader = (header: string) => {
+  const normalized = header
+    .trim()
+    .replace(/^"+|"+$/g, "")
+    .replace(/\s+/g, "_")
+    .toLowerCase();
+  return normalized === "role" ? "Role" : normalized;
+};
+
+const parseUsageCsv = (csv: string): UsageRow[] => {
+  const parsed = Papa.parse<Record<string, unknown>>(csv, {
+    header: true,
+    skipEmptyLines: true,
+    transformHeader: normalizeUsageHeader,
+    transform: value => {
+      const normalized = String(value ?? "").trim();
+      return normalized === "NULL" ? "" : normalized;
+    },
+  });
+
+  if (parsed.errors.length > 0) {
+    throw new Error(`CSV invalide : ${parsed.errors[0].message}`);
+  }
+
+  return parsed.data.map(row => ({
+    assignment_id: String(row.assignment_id ?? row.id ?? "") || undefined,
+    created: row.created as string | number | undefined,
+    changed: row.changed as string | number | undefined,
+    activity_id: String(row.activity_id ?? row.nid ?? "") || undefined,
+    mathadata_id: String(row.mathadata_id ?? row.parentnid ?? "") || undefined,
+    mathadata_title: String(row.mathadata_title ?? "") || undefined,
+    student: String(row.student ?? "") || undefined,
+    Role: String(row.Role ?? row.role ?? "") || undefined,
+    uai_el: String(row.uai_el ?? "").trim() || undefined,
+    teacher: String(row.teacher ?? "") || undefined,
+    uai_teach: String(row.uai_teach ?? "").trim() || undefined,
+    uai: String(row.uai_el ?? "").trim() || undefined,
+  }));
+};
+
 const fmtMonth = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
 const groupCount = <T,>(arr: T[], keyFn: (x: T) => string | null) => {
   const m = new Map<string, number>();
@@ -112,6 +156,82 @@ const groupCount = <T,>(arr: T[], keyFn: (x: T) => string | null) => {
   return m;
 };
 
+type MonthlyUsageData = {
+  month: string;
+  count: number;
+};
+
+type GlobalMonthlyMetric = "usages" | "students" | "teachers" | "establishments";
+
+const GLOBAL_MONTHLY_METRICS: Record<
+  GlobalMonthlyMetric,
+  { label: string; lineName: string }
+> = {
+  usages: {
+    label: "Total usages du mois",
+    lineName: "Usages constatés",
+  },
+  students: {
+    label: "Nombre d'élèves uniques du mois",
+    lineName: "Élèves uniques constatés",
+  },
+  teachers: {
+    label: "Nombre de profs uniques du mois",
+    lineName: "Profs uniques constatés",
+  },
+  establishments: {
+    label: "Nombre d'établissements actifs du mois",
+    lineName: "Établissements actifs constatés",
+  },
+};
+
+const addCurrentMonthProjection = <T extends MonthlyUsageData>(
+  data: T[],
+  extractionDate: string | null
+) => {
+  const result = data.map(item => ({
+    ...item,
+    projectedCount: null as number | null,
+  }));
+  if (result.length === 0) return result;
+
+  const now = new Date();
+  const referenceDate = extractionDate
+    ? new Date(`${extractionDate}T12:00:00`)
+    : now;
+
+  if (
+    Number.isNaN(referenceDate.getTime()) ||
+    referenceDate.getFullYear() !== now.getFullYear() ||
+    referenceDate.getMonth() !== now.getMonth()
+  ) {
+    return result;
+  }
+
+  const currentMonth = fmtMonth(referenceDate);
+  const currentMonthIndex = result.findIndex(item => item.month === currentMonth);
+  if (currentMonthIndex === -1) return result;
+
+  const daysInMonth = new Date(
+    referenceDate.getFullYear(),
+    referenceDate.getMonth() + 1,
+    0
+  ).getDate();
+  const elapsedDays = Math.max(1, Math.min(referenceDate.getDate(), daysInMonth));
+  if (elapsedDays >= daysInMonth) return result;
+
+  const currentCount = result[currentMonthIndex].count;
+  const projectedCount = Math.round(currentCount * daysInMonth / elapsedDays);
+
+  // Le mois précédent sert uniquement de point d'ancrage à la ligne pointillée.
+  if (currentMonthIndex > 0) {
+    result[currentMonthIndex - 1].projectedCount = result[currentMonthIndex - 1].count;
+  }
+  result[currentMonthIndex].projectedCount = projectedCount;
+
+  return result;
+};
+
 export default function Dashboard() {
   const [usageRows, setUsageRows] = useState<UsageRow[]>([]);
   const [annuaire, setAnnuaire] = useState<AnnuaireRow[]>([]);
@@ -119,7 +239,11 @@ export default function Dashboard() {
   const [search, setSearch] = useState("");
   const [showUploadModal, setShowUploadModal] = useState(false);
   const [extractionDate, setExtractionDate] = useState<string | null>(null);
+  const [csvSource, setCsvSource] = useState<CsvSource>("default");
   const [isLoading, setIsLoading] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [refreshError, setRefreshError] = useState<string | null>(null);
+  const [globalMonthlyMetric, setGlobalMonthlyMetric] = useState<GlobalMonthlyMetric>("usages");
   const [sortKey, setSortKey] = useState<"nb" | "nom_lycee" | "ville" | "academie" | "ips" | "nbSeances" | "nbEleves" | "nbProfsEnseignant" | "nbProfsTestant">("nbSeances");
   const [sortAsc, setSortAsc] = useState(false);
   
@@ -134,36 +258,16 @@ export default function Dashboard() {
 
     // Charger les données d'usage via l'API (persisté côté serveur)
     fetch("/api/csv")
-      .then(res => res.json())
-      .then(({ csv, extractionDate: savedDate }) => {
-        const parsed = Papa.parse<UsageRow>(csv, {
-          header: true,
-          skipEmptyLines: true,
-          transformHeader: (header) => header.trim().replace(/^"+|"+$/g, ""),
-          transform: (value) => {
-            const v = String(value ?? "").trim();
-            return v === "NULL" ? "" : v;
-          },
-        });
-        console.log("[usages] Parse complete. Errors:", parsed.errors.length, "Data rows:", parsed.data.length);
-        if (parsed.errors.length > 0) {
-          console.error("[usages] Parse errors:", parsed.errors.slice(0, 5));
-        }
-        const rows = parsed.data.map(r => ({
-          assignment_id: r.assignment_id ?? (r as any).id ?? undefined,
-          created: r.created, changed: r.changed,
-          activity_id: r.activity_id ?? (r as any).nid ?? undefined,
-          mathadata_id: r.mathadata_id ?? (r as any).parentNid ?? undefined,
-          mathadata_title: r.mathadata_title ?? (r as any).mathadata_title ?? undefined,
-          student: r.student ?? undefined,
-          Role: r.Role ?? undefined,
-          uai_el: r.uai_el?.toString().trim(),
-          teacher: r.teacher ?? undefined,
-          uai_teach: r.uai_teach?.toString().trim(),
-          uai: r.uai_el?.toString().trim()
-        }));
+      .then(async res => {
+        const payload = await res.json();
+        if (!res.ok) throw new Error(payload.error || `HTTP ${res.status}`);
+        return payload;
+      })
+      .then(({ csv, extractionDate: savedDate, source }) => {
+        const rows = parseUsageCsv(csv);
         setUsageRows(rows);
         if (savedDate) setExtractionDate(savedDate);
+        setCsvSource(source || "manual");
         setIsLoading(false);
         console.log("[usages] Lignes chargées:", rows.length);
         console.log("[usages] Avec mathadata_id:", rows.filter(r => r.mathadata_id).length);
@@ -185,37 +289,22 @@ export default function Dashboard() {
       .catch(err => {
         console.error("[usages] Erreur de chargement API, fallback CSV statique:", err);
         // Fallback: charger le CSV statique directement
-        Papa.parse<UsageRow>(USAGES_CSV_URL, {
-          download: true,
-          header: true,
-          skipEmptyLines: true,
-          transformHeader: (header) => header.trim().replace(/^"+|"+$/g, ""),
-          transform: (value) => {
-            const v = String(value ?? "").trim();
-            return v === "NULL" ? "" : v;
-          },
-          complete: (res) => {
-            const rows = res.data.map(r => ({
-              assignment_id: r.assignment_id ?? (r as any).id ?? undefined,
-              created: r.created, changed: r.changed,
-              activity_id: r.activity_id ?? (r as any).nid ?? undefined,
-              mathadata_id: r.mathadata_id ?? (r as any).parentNid ?? undefined,
-              mathadata_title: r.mathadata_title ?? undefined,
-              student: r.student ?? undefined,
-              Role: r.Role ?? undefined,
-              uai_el: r.uai_el?.toString().trim(),
-              teacher: r.teacher ?? undefined,
-              uai_teach: r.uai_teach?.toString().trim(),
-              uai: r.uai_el?.toString().trim()
-            }));
+        fetch(USAGES_CSV_URL)
+          .then(async res => {
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            return res.text();
+          })
+          .then(csv => {
+            const rows = parseUsageCsv(csv);
             setUsageRows(rows);
+            setCsvSource("default");
             setIsLoading(false);
-          },
-          error: (err) => {
+          })
+          .catch(err => {
             console.error("[usages] Erreur fallback:", err);
+            setRefreshError("Impossible de charger les données enregistrées.");
             setIsLoading(false);
-          },
-        });
+          });
       });
     Papa.parse("/data/annuaire_etablissements.csv", {
         download: true,
@@ -359,17 +448,52 @@ export default function Dashboard() {
 
   // --- Séries temporelles mensuelles (toutes activités) ---
   const monthlyAll = useMemo(() => {
-    const m = groupCount(rowsWithDate, r => fmtMonth(r._date));
-    const result = Array.from(m.entries())
-      .sort(([a],[b]) => a.localeCompare(b))
-      .map(([month, count]) => ({ month, count }));
+    const usagesByMonth = new Map<string, number>();
+    const studentsByMonth = new Map<string, Set<string>>();
+    const teachersByMonth = new Map<string, Set<string>>();
+    const establishmentsByMonth = new Map<string, Set<string>>();
+
+    for (const row of rowsWithDate) {
+      const month = fmtMonth(row._date);
+      usagesByMonth.set(month, (usagesByMonth.get(month) || 0) + 1);
+
+      if (row.Role === "student" && row.student) {
+        if (!studentsByMonth.has(month)) studentsByMonth.set(month, new Set());
+        studentsByMonth.get(month)!.add(row.student);
+      }
+
+      if (row.teacher) {
+        if (!teachersByMonth.has(month)) teachersByMonth.set(month, new Set());
+        teachersByMonth.get(month)!.add(row.teacher);
+      }
+
+      const uai = (
+        row.Role === "teacher"
+          ? row.uai_teach || row.uai_el || row.uai || ""
+          : row.uai_el || row.uai || ""
+      ).trim();
+      if (uai && uai.toLowerCase() !== "null") {
+        if (!establishmentsByMonth.has(month)) establishmentsByMonth.set(month, new Set());
+        establishmentsByMonth.get(month)!.add(uai);
+      }
+    }
+
+    const result = Array.from(usagesByMonth.keys())
+      .sort((a, b) => a.localeCompare(b))
+      .map(month => {
+        let count = usagesByMonth.get(month) || 0;
+        if (globalMonthlyMetric === "students") count = studentsByMonth.get(month)?.size || 0;
+        if (globalMonthlyMetric === "teachers") count = teachersByMonth.get(month)?.size || 0;
+        if (globalMonthlyMetric === "establishments") count = establishmentsByMonth.get(month)?.size || 0;
+        return { month, count };
+      });
     console.log("[monthlyAll] Points de données:", result.length);
     if (result.length > 0) {
       console.log("[monthlyAll] Premier mois:", result[0]);
       console.log("[monthlyAll] Dernier mois:", result[result.length - 1]);
     }
-    return result;
-  }, [rowsWithDate]);
+    return addCurrentMonthProjection(result, extractionDate);
+  }, [rowsWithDate, extractionDate, globalMonthlyMetric]);
 
   // Usages totaux par activité
   const usageByActivity = useMemo(() => {
@@ -1834,11 +1958,13 @@ export default function Dashboard() {
     }
     
     // Créer le résultat avec 0 pour les mois sans données
-    return allMonths.map(month => ({
+    const result = allMonths.map(month => ({
       month,
       count: m.get(month) || 0,
       uniqueTeachers: teachersByMonth.get(month)?.size || 0
     }));
+
+    return addCurrentMonthProjection(result, extractionDate);
   };
 
   const getMonthlyDataForAcademie = (academie: string) => {
@@ -1849,20 +1975,40 @@ export default function Dashboard() {
     return getMonthlyDataFiltered(r => r.mathadata_id === activityId);
   };
 
+  const handleRefreshFromCapytale = useCallback(async () => {
+    setIsRefreshing(true);
+    setRefreshError(null);
+
+    try {
+      const response = await fetch("/api/csv", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ source: "capytale" }),
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(payload.details || payload.error || `HTTP ${response.status}`);
+      }
+
+      const rows = parseUsageCsv(payload.csv);
+      setUsageRows(rows);
+      setExtractionDate(payload.extractionDate);
+      setCsvSource("capytale");
+      console.log(`[Capytale] ${rows.length} lignes synchronisées`);
+    } catch (err) {
+      console.error("[Capytale] Erreur de synchronisation:", err);
+      setRefreshError(
+        err instanceof Error
+          ? err.message
+          : "Impossible de récupérer les données les plus récentes."
+      );
+    } finally {
+      setIsRefreshing(false);
+    }
+  }, []);
+
   const handleCsvUpload = useCallback(async (result: CsvUploadResult) => {
-    const rows = result.rows.map((r: any) => ({
-      assignment_id: r.assignment_id ?? r.id ?? undefined,
-      created: r.created, changed: r.changed,
-      activity_id: r.activity_id ?? r.nid ?? undefined,
-      mathadata_id: r.mathadata_id ?? r.parentNid ?? undefined,
-      mathadata_title: r.mathadata_title ?? undefined,
-      student: r.student ?? undefined,
-      Role: r.Role ?? undefined,
-      uai_el: r.uai_el?.toString().trim(),
-      teacher: r.teacher ?? undefined,
-      uai_teach: r.uai_teach?.toString().trim(),
-      uai: r.uai_el?.toString().trim(),
-    }));
+    const rows = parseUsageCsv(result.csvText);
 
     // Persister côté serveur — on attend la réponse
     try {
@@ -1887,6 +2033,8 @@ export default function Dashboard() {
 
     setUsageRows(rows);
     setExtractionDate(result.extractionDate);
+    setCsvSource("manual");
+    setRefreshError(null);
     setShowUploadModal(false);
     console.log(`[CSV Upload] ${rows.length} lignes chargées (mode: ${result.mode}, date: ${result.extractionDate})`);
   }, []);
@@ -1899,26 +2047,66 @@ export default function Dashboard() {
           {extractionDate && (
             <p style={{ margin: "4px 0 0", fontSize: "0.85rem", color: "#64748b" }}>
               Données extraites le {new Date(extractionDate + "T00:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}
+              {" · "}
+              {csvSource === "capytale"
+                ? "source Capytale"
+                : csvSource === "manual"
+                  ? "CSV importé"
+                  : "jeu de données par défaut"}
             </p>
           )}
         </div>
-        <button
-          onClick={() => setShowUploadModal(true)}
-          style={{
-            padding: "8px 16px",
-            borderRadius: 8,
-            border: "1px solid #cbd5e1",
-            background: "#f8fafc",
-            color: "#334155",
-            fontWeight: 600,
-            cursor: "pointer",
-            fontSize: "0.9rem",
-            whiteSpace: "nowrap",
-          }}
-        >
-          📁 Importer CSV
-        </button>
+        <div style={{display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "flex-end"}}>
+          <button
+            onClick={handleRefreshFromCapytale}
+            disabled={isRefreshing}
+            style={{
+              padding: "8px 16px",
+              borderRadius: 8,
+              border: "1px solid #2563eb",
+              background: isRefreshing ? "#93c5fd" : "#2563eb",
+              color: "white",
+              fontWeight: 600,
+              cursor: isRefreshing ? "wait" : "pointer",
+              fontSize: "0.9rem",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {isRefreshing ? "Chargement en cours…" : "Charger les données les plus récentes"}
+          </button>
+          <button
+            onClick={() => setShowUploadModal(true)}
+            disabled={isRefreshing}
+            style={{
+              padding: "8px 16px",
+              borderRadius: 8,
+              border: "1px solid #cbd5e1",
+              background: "#f8fafc",
+              color: "#334155",
+              fontWeight: 600,
+              cursor: isRefreshing ? "not-allowed" : "pointer",
+              fontSize: "0.9rem",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Afficher un CSV historique
+          </button>
+        </div>
       </div>
+
+      {refreshError && (
+        <div style={{
+          marginTop: 12,
+          padding: "10px 12px",
+          borderRadius: 8,
+          border: "1px solid #fca5a5",
+          background: "#fef2f2",
+          color: "#b91c1c",
+          fontSize: "0.875rem",
+        }}>
+          Données actuelles conservées. Échec du chargement Capytale : {refreshError}
+        </div>
+      )}
 
       {isLoading && (
         <div style={{
@@ -1952,7 +2140,36 @@ export default function Dashboard() {
       {/* Graphiques */}
       <div className="grid grid-2">
         <div className="card">
-          <h2>Évolution mensuelle — toutes activités</h2>
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 12,
+            flexWrap: "wrap",
+            marginBottom: 12
+          }}>
+            <h2 style={{margin: 0}}>Évolution mensuelle — toutes activités</h2>
+            <select
+              value={globalMonthlyMetric}
+              onChange={(event) => setGlobalMonthlyMetric(event.target.value as GlobalMonthlyMetric)}
+              aria-label="Indicateur mensuel affiché"
+              style={{
+                padding: "6px 10px",
+                borderRadius: 6,
+                border: "1px solid #cbd5e1",
+                background: "#fff",
+                color: "#334155",
+                fontSize: "0.875rem",
+                cursor: "pointer",
+              }}
+            >
+              {Object.entries(GLOBAL_MONTHLY_METRICS).map(([value, metric]) => (
+                <option key={value} value={value}>
+                  {metric.label}
+                </option>
+              ))}
+            </select>
+          </div>
           <div style={{height: 300}}>
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={monthlyAll}>
@@ -1961,10 +2178,34 @@ export default function Dashboard() {
                 <YAxis allowDecimals={false} />
                 <Tooltip />
                 <Legend />
-                <Line type="monotone" dataKey="count" name="Usages" dot={false} />
+                <Line
+                  type="monotone"
+                  dataKey="count"
+                  name={GLOBAL_MONTHLY_METRICS[globalMonthlyMetric].lineName}
+                  stroke="#3b82f6"
+                  strokeWidth={2}
+                  dot={false}
+                />
+                {monthlyAll.some(item => item.projectedCount !== null) && (
+                  <Line
+                    type="monotone"
+                    dataKey="projectedCount"
+                    name={`Projection — ${GLOBAL_MONTHLY_METRICS[globalMonthlyMetric].label.toLowerCase()}`}
+                    stroke="#3b82f6"
+                    strokeWidth={2}
+                    strokeDasharray="6 4"
+                    connectNulls
+                    dot={false}
+                  />
+                )}
               </LineChart>
             </ResponsiveContainer>
           </div>
+          {globalMonthlyMetric !== "usages" && monthlyAll.some(item => item.projectedCount !== null) && (
+            <p className="muted" style={{fontSize: "0.75rem", margin: "4px 0 0"}}>
+              Projection linéaire indicative : les identifiants déjà observés peuvent réapparaître avant la fin du mois.
+            </p>
+          )}
         </div>
 
         <div className="card">
@@ -3132,11 +3373,24 @@ export default function Dashboard() {
                       yAxisId="usages"
                       type="monotone" 
                       dataKey="count" 
-                      name="Usages mensuels" 
+                      name="Usages mensuels constatés"
                       stroke="#f59e0b"
                       strokeWidth={2}
                       dot={{ fill: "#f59e0b", r: 4 }}
                     />
+                    {monthlyData.some(item => item.projectedCount !== null) && (
+                      <Line
+                        yAxisId="usages"
+                        type="monotone"
+                        dataKey="projectedCount"
+                        name="Projection du mois en cours"
+                        stroke="#f59e0b"
+                        strokeWidth={2}
+                        strokeDasharray="6 4"
+                        connectNulls
+                        dot={false}
+                      />
+                    )}
                   </ComposedChart>
                 </ResponsiveContainer>
               </div>
@@ -3224,11 +3478,23 @@ export default function Dashboard() {
                     <Line 
                       type="monotone" 
                       dataKey="count" 
-                      name="Usages mensuels" 
+                      name="Usages mensuels constatés"
                       stroke="#3b82f6"
                       strokeWidth={2}
                       dot={{ fill: "#3b82f6", r: 4 }}
                     />
+                    {monthlyData.some(item => item.projectedCount !== null) && (
+                      <Line
+                        type="monotone"
+                        dataKey="projectedCount"
+                        name="Projection du mois en cours"
+                        stroke="#3b82f6"
+                        strokeWidth={2}
+                        strokeDasharray="6 4"
+                        connectNulls
+                        dot={false}
+                      />
+                    )}
                   </LineChart>
                 </ResponsiveContainer>
               </div>

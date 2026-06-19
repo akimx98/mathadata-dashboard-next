@@ -9,6 +9,15 @@ const EXPECTED_COLUMNS = [
   "teacher", "uai_teach", "mathadata_id", "mathadata_title"
 ];
 
+const normalizeHeader = (header: string) => {
+  const normalized = header
+    .trim()
+    .replace(/^"+|"+$/g, "")
+    .replace(/\s+/g, "_")
+    .toLowerCase();
+  return normalized === "role" ? "Role" : normalized;
+};
+
 export interface CsvUploadResult {
   rows: Record<string, any>[];
   csvText: string;
@@ -61,8 +70,8 @@ export default function CsvUploadModal({
   };
 
   const validateColumns = (headers: string[]): string | null => {
-    const trimmed = headers.map(h => h.trim().replace(/^"+|"+$/g, ""));
-    const missing = EXPECTED_COLUMNS.filter(c => !trimmed.includes(c));
+    const normalized = headers.map(normalizeHeader);
+    const missing = EXPECTED_COLUMNS.filter(c => !normalized.includes(c));
     if (missing.length > 0) {
       return `Colonnes manquantes : ${missing.join(", ")}`;
     }
@@ -84,7 +93,7 @@ export default function CsvUploadModal({
     Papa.parse(file, {
       header: true,
       skipEmptyLines: true,
-      transformHeader: (header) => header.trim().replace(/^"+|"+$/g, ""),
+      transformHeader: normalizeHeader,
       transform: (value) => {
         const v = String(value ?? "").trim();
         return v === "NULL" ? "" : v;
@@ -248,7 +257,7 @@ export default function CsvUploadModal({
         {/* Header */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
           <h2 style={{ margin: 0, fontSize: "1.3rem", color: "#0f172a" }}>
-            📁 Importer un nouveau CSV
+            Afficher un CSV historique
           </h2>
           <button
             onClick={handleClose}
@@ -286,8 +295,8 @@ export default function CsvUploadModal({
         {step === "upload" && (
           <div>
             <p style={{ color: "#475569", marginBottom: 16, fontSize: "0.95rem" }}>
-              Sélectionnez un fichier CSV avec les données d'usage à jour.
-              Les colonnes doivent correspondre au format attendu.
+              Sélectionnez un ancien export CSV pour l'afficher à la place des données courantes.
+              Le fichier restera disponible après rechargement de la page.
             </p>
             <div
               style={{
