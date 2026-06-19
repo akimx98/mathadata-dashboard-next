@@ -86,15 +86,21 @@ CAPYTALE_MATHADATA_TOKEN=...
 L'URL peut être remplacée avec `CAPYTALE_MATHADATA_URL`; sinon le endpoint MathAData
 Capytale est utilisé par défaut. Le jeton n'est jamais envoyé au navigateur.
 
+La structure et le sens métier du CSV source sont décrits dans
+[DONNEES_BRUTES_CAPYTALE.md](DONNEES_BRUTES_CAPYTALE.md).
+
 ## 📁 Structure des données
 
 ### Source
-Fichier CSV : `public/data/Mathadata20260210.csv` (3012 lignes, délimiteur `,`)
+
+Source principale : API CSV Capytale MathAData. Le fichier
+`public/data/Mathadata20260210.csv` sert uniquement de fallback si aucune donnée
+persistée n'est disponible.
 
 ### Colonnes principales
 - `student` : ID anonymisé de l'élève/prof
 - `teacher` : ID anonymisé du professeur
-- `Role` : "student" (usage classe) ou "teacher" (test prof)
+- `role` / `Role` : "student" (usage classe) ou "teacher" (test prof)
 - `mathadata_id` : Identifiant de l'activité
 - `uai` / `uai_el` : UAI de l'établissement de l'élève
 - `uai_teach` : UAI de l'établissement du professeur
