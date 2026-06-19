@@ -161,7 +161,12 @@ type MonthlyUsageData = {
   count: number;
 };
 
-type GlobalMonthlyMetric = "usages" | "students" | "teachers" | "establishments";
+type GlobalMonthlyMetric =
+  | "usages"
+  | "activities"
+  | "students"
+  | "teachers"
+  | "establishments";
 
 const GLOBAL_MONTHLY_METRICS: Record<
   GlobalMonthlyMetric,
@@ -169,6 +174,10 @@ const GLOBAL_MONTHLY_METRICS: Record<
 > = {
   usages: {
     label: "Total usages du mois",
+    lineName: "Usages constatés",
+  },
+  activities: {
+    label: "Usages du mois par activité",
     lineName: "Usages constatés",
   },
   students: {
@@ -183,6 +192,42 @@ const GLOBAL_MONTHLY_METRICS: Record<
     label: "Nombre d'établissements actifs du mois",
     lineName: "Établissements actifs constatés",
   },
+};
+
+const ACTIVITY_COLORS = [
+  "#2563eb",
+  "#f59e0b",
+  "#10b981",
+  "#8b5cf6",
+  "#ef4444",
+  "#06b6d4",
+  "#ec4899",
+  "#84cc16",
+  "#f97316",
+  "#6366f1",
+  "#14b8a6",
+  "#a855f7",
+];
+
+const ACTIVITY_COLOR_BY_ID: Record<string, string> = {
+  "2548348": ACTIVITY_COLORS[0],
+  "3515488": ACTIVITY_COLORS[1],
+  "3518185": ACTIVITY_COLORS[2],
+  "3534169": ACTIVITY_COLORS[3],
+  "4388355": ACTIVITY_COLORS[4],
+  "5197770": ACTIVITY_COLORS[5],
+  "5862412": ACTIVITY_COLORS[6],
+  "5909323": ACTIVITY_COLORS[7],
+  "6659633": ACTIVITY_COLORS[8],
+  "6944347": ACTIVITY_COLORS[9],
+  "8790616": ACTIVITY_COLORS[10],
+  "9747648": ACTIVITY_COLORS[11],
+};
+
+const getStableActivityColor = (id: string) => {
+  if (ACTIVITY_COLOR_BY_ID[id]) return ACTIVITY_COLOR_BY_ID[id];
+  const hash = Array.from(id).reduce((sum, character) => sum + character.charCodeAt(0), 0);
+  return ACTIVITY_COLORS[hash % ACTIVITY_COLORS.length];
 };
 
 const addCurrentMonthProjection = <T extends MonthlyUsageData>(
@@ -494,6 +539,110 @@ export default function Dashboard() {
     }
     return addCurrentMonthProjection(result, extractionDate);
   }, [rowsWithDate, extractionDate, globalMonthlyMetric]);
+
+  const monthlyActivityBreakdown = useMemo(() => {
+    const activityIds = Array.from(
+      new Set(rowsWithDate.map(row => row.mathadata_id).filter(Boolean) as string[])
+    ).sort((a, b) => {
+      const numericDifference = Number(a) - Number(b);
+      return Number.isNaN(numericDifference) ? a.localeCompare(b) : numericDifference;
+    });
+
+    const activitySeries = activityIds.map(id => ({
+      id,
+      dataKey: `activity_${id}`,
+      name: activityTitles.get(id) || getActivityName(id),
+      color: getStableActivityColor(id),
+    }));
+
+    const rowsByMonth = new Map<string, Record<string, number>>();
+    for (const row of rowsWithDate) {
+      if (!row.mathadata_id) continue;
+      const month = fmtMonth(row._date);
+      if (!rowsByMonth.has(month)) rowsByMonth.set(month, {});
+      const monthData = rowsByMonth.get(month)!;
+      const dataKey = `activity_${row.mathadata_id}`;
+      monthData[dataKey] = (monthData[dataKey] || 0) + 1;
+    }
+
+    const monthlyData = Array.from(rowsByMonth.entries())
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([month, activityCounts]) => ({
+        month,
+        ...activityCounts,
+        count: Object.values(activityCounts).reduce((sum, count) => sum + count, 0),
+      }));
+
+    return {
+      activities: activitySeries,
+      data: monthlyData,
+    };
+  }, [rowsWithDate, activityTitles]);
+
+  const renderActivityTooltip = ({
+    active,
+    label,
+    payload,
+  }: any) => {
+    if (!active || !payload?.length) return null;
+    const point = payload[0]?.payload;
+    if (!point) return null;
+
+    const total = Number(point.count || 0);
+    const details = monthlyActivityBreakdown.activities
+      .map(activity => ({
+        ...activity,
+        count: Number(point[activity.dataKey] || 0),
+      }))
+      .filter(activity => activity.count > 0);
+
+    return (
+      <div style={{
+        background: "white",
+        border: "1px solid #cbd5e1",
+        borderRadius: 8,
+        padding: "10px 12px",
+        boxShadow: "0 8px 24px rgba(15, 23, 42, 0.12)",
+        minWidth: 260,
+        maxWidth: 380,
+      }}>
+        <div style={{fontWeight: 700, marginBottom: 6}}>{label}</div>
+        <div style={{fontSize: "0.875rem", marginBottom: 8}}>
+          Total : <strong>{total.toLocaleString("fr-FR")} usages</strong>
+        </div>
+        <div style={{display: "flex", flexDirection: "column", gap: 4}}>
+          {details.map(activity => (
+            <div
+              key={activity.id}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "10px minmax(0, 1fr) auto",
+                alignItems: "center",
+                gap: 7,
+                fontSize: "0.8rem",
+              }}
+            >
+              <span style={{
+                width: 9,
+                height: 9,
+                borderRadius: 2,
+                background: activity.color,
+              }} />
+              <span>{activity.name}</span>
+              <strong>
+                {activity.count.toLocaleString("fr-FR")}
+                {total > 0 && (
+                  <span style={{color: "#64748b", fontWeight: 400}}>
+                    {" "}({((activity.count / total) * 100).toFixed(1)}%)
+                  </span>
+                )}
+              </strong>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   // Usages totaux par activité
   const usageByActivity = useMemo(() => {
@@ -2172,36 +2321,78 @@ export default function Dashboard() {
           </div>
           <div style={{height: 300}}>
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={monthlyAll}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="month" />
-                <YAxis allowDecimals={false} />
-                <Tooltip />
-                <Legend />
-                <Line
-                  type="monotone"
-                  dataKey="count"
-                  name={GLOBAL_MONTHLY_METRICS[globalMonthlyMetric].lineName}
-                  stroke="#3b82f6"
-                  strokeWidth={2}
-                  dot={false}
-                />
-                {monthlyAll.some(item => item.projectedCount !== null) && (
+              {globalMonthlyMetric === "activities" ? (
+                <ComposedChart data={monthlyActivityBreakdown.data} barCategoryGap="20%">
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="month" />
+                  <YAxis allowDecimals={false} />
+                  <Tooltip content={renderActivityTooltip} />
+                  {monthlyActivityBreakdown.activities.map(activity => (
+                    <Bar
+                      key={activity.id}
+                      dataKey={activity.dataKey}
+                      name={activity.name}
+                      stackId="activities"
+                      fill={activity.color}
+                    />
+                  ))}
+                </ComposedChart>
+              ) : (
+                <LineChart data={monthlyAll}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="month" />
+                  <YAxis allowDecimals={false} />
+                  <Tooltip />
+                  <Legend />
                   <Line
                     type="monotone"
-                    dataKey="projectedCount"
-                    name={`Projection — ${GLOBAL_MONTHLY_METRICS[globalMonthlyMetric].label.toLowerCase()}`}
+                    dataKey="count"
+                    name={GLOBAL_MONTHLY_METRICS[globalMonthlyMetric].lineName}
                     stroke="#3b82f6"
                     strokeWidth={2}
-                    strokeDasharray="6 4"
-                    connectNulls
                     dot={false}
                   />
-                )}
-              </LineChart>
+                  {monthlyAll.some(item => item.projectedCount !== null) && (
+                    <Line
+                      type="monotone"
+                      dataKey="projectedCount"
+                      name={`Projection — ${GLOBAL_MONTHLY_METRICS[globalMonthlyMetric].label.toLowerCase()}`}
+                      stroke="#3b82f6"
+                      strokeWidth={2}
+                      strokeDasharray="6 4"
+                      connectNulls
+                      dot={false}
+                    />
+                  )}
+                </LineChart>
+              )}
             </ResponsiveContainer>
           </div>
-          {globalMonthlyMetric !== "usages" && monthlyAll.some(item => item.projectedCount !== null) && (
+          {globalMonthlyMetric === "activities" && (
+            <div style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "5px 12px",
+              marginTop: 8,
+              fontSize: "0.72rem",
+              color: "#475569",
+            }}>
+              {monthlyActivityBreakdown.activities.map(activity => (
+                <span key={activity.id} style={{display: "inline-flex", alignItems: "center", gap: 4}}>
+                  <span style={{
+                    width: 9,
+                    height: 9,
+                    borderRadius: 2,
+                    background: activity.color,
+                  }} />
+                  {activity.name}
+                </span>
+              ))}
+            </div>
+          )}
+          {globalMonthlyMetric !== "usages" &&
+            globalMonthlyMetric !== "activities" &&
+            monthlyAll.some(item => item.projectedCount !== null) && (
             <p className="muted" style={{fontSize: "0.75rem", margin: "4px 0 0"}}>
               Projection linéaire indicative : les identifiants déjà observés peuvent réapparaître avant la fin du mois.
             </p>
