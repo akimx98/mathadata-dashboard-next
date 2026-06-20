@@ -1,22 +1,26 @@
 # Enquête sur les usages de MathAData
 ### Ce que les données Capytale révèlent du déploiement réel en classe
 
-> **Données** : extraction Capytale du **19 juin 2026** — 7 353 affectations, **261 professeurs**, **5 854 élèves uniques**, **12 activités**, **182 établissements localisés**, **24 académies**, **52 départements**. Période : décembre 2023 → juin 2026.
+> **Données** : extraction Capytale du **19 juin 2026** — 7 353 affectations, **401 enseignants engagés** (dont 261 distributeurs), **5 854 élèves uniques**, **12 activités**, **24 académies**, **52 départements**. Période : décembre 2023 → juin 2026.
 > **Méthode et définitions** : [DEFINITIONS.md](DEFINITIONS.md). Tous les chiffres proviennent de `data/facts.json`, recalculés et **vérifiés par trois recomputations indépendantes** (voir §11). Pipeline reproductible : `build_canonical.py` → `compute_facts.py` → `make_charts.py`.
 
 ---
 
 ## 0. Synthèse en une page
 
-En 2025-2026, MathAData a franchi le seuil qui sépare une **expérimentation pilote** d'un **outil diffusé nationalement**. Le volume d'usages élèves a **plus que doublé** (2 181 → 4 479, **+105 %**) *alors même que l'année scolaire n'était pas terminée* à l'extraction. Quatre vérités structurantes ressortent des données :
+En 2025-2026, MathAData a franchi le seuil qui sépare une **expérimentation pilote** d'un **outil diffusé nationalement**. Le volume d'usages élèves a **plus que doublé** (2 181 → 4 479, **+105 %**) *alors même que l'année scolaire n'était pas terminée* à l'extraction. Six vérités structurantes ressortent des données :
 
-1. **C'est un outil de lycée, public, de seconde.** 97 % des professeurs enseignent en lycée, **98 % dans le public**, et l'essentiel du catalogue cible la 2nde. Le collège est quasi absent (7 professeurs). Le contenu fait le public.
+1. **C'est un outil de lycée, public, de seconde.** En usage classe, 97 % des enseignants sont en lycée, **98 % dans le public**, et l'essentiel du catalogue cible la 2nde. Le collège ne décolle pas *en classe* (≈ 5 collèges avec de vrais élèves) — même si l'**intérêt** y existe via la formation (§2).
 
-2. **L'adoption est directe et solitaire.** Les **deux tiers** des professeurs donnent l'activité à leurs élèves *sans trace de test préalable*, et **80 % des établissements n'ont qu'un seul professeur utilisateur**. MathAData se diffuse pour l'instant prof par prof, peu par contagion entre collègues.
+2. **L'entonnoir : beaucoup d'essais, peu de classes.** **401 enseignants** ont mis la main sur MathAData ; **224 (56 %) l'ont donné à leurs propres élèves** ; **177 ont seulement testé** — dont **140 vus uniquement en formation**. La formation remplit le haut de l'entonnoir, mais la conversion formation → classe est encore **très faible (~4 %)**.
 
-3. **La croissance est extensive, pas intensive.** **83 % des professeurs qui enseignent en 2025-2026 sont entièrement nouveaux**, et ils génèrent **74 % du volume** de l'année. L'effet net des professeurs déjà présents est quasi nul. La machine à *recruter* fonctionne ; la machine à *faire revenir* est à construire (rétention inter-annuelle de **30 %**).
+3. **L'adoption en classe est directe et solitaire.** Les **deux tiers** des profs qui enseignent donnent l'activité *sans trace de test personnel préalable*, et **80 % des établissements n'ont qu'un seul professeur utilisateur**. MathAData se diffuse prof par prof, peu par contagion entre collègues.
 
-4. **Le moteur du contenu, ce sont les statistiques et la géométrie « programme ».** La croissance 2025-2026 est portée par les statistiques (+1 340 usages) et la géométrie analytique (+1 236), tandis que l'activité historique « Intro à l'IA » **recule** (−485). MathAData réussit sa mue d'un gadget « IA » vers un outil arrimé au programme de seconde.
+4. **La croissance est extensive, pas intensive.** **83 % des professeurs qui enseignent en 2025-2026 sont entièrement nouveaux**, et ils génèrent **74 % du volume** de l'année. L'effet net des professeurs déjà présents est quasi nul. La machine à *recruter* fonctionne ; la machine à *faire revenir* est à construire (rétention inter-annuelle de **30 %**).
+
+5. **Le moteur du contenu, ce sont les statistiques et la géométrie « programme ».** La croissance 2025-2026 est portée par les statistiques (+1 340 usages) et la géométrie analytique (+1 236), tandis que l'activité historique « Intro à l'IA » **recule** (−485). MathAData réussit sa mue d'un gadget « IA » vers un outil arrimé au programme de seconde.
+
+6. **Un tiers des profs entrent par Capytale, pas par le site.** 32 % des enseignants découvrent MathAData via l'ancienne activité « Intro à l'IA » (absente de mathadata.fr) et **63 n'utilisent qu'elle** — sans jamais voir le catalogue. Canal d'acquisition gratuit, mais aussi fuite à colmater.
 
 Le défi n'est donc pas d'attirer — c'est de **transformer l'essai** : faire revenir les professeurs d'une année sur l'autre, et faire passer un second collègue à l'acte dans les 80 % d'établissements encore mono-utilisateurs.
 
@@ -40,6 +44,10 @@ Le déploiement est en outre **quasi exclusivement public** : **222** professeur
 
 La cause est lisible dans le **catalogue** : sur 12 activités, la grande majorité du volume porte sur des contenus **2nde** (statistiques, équations de droite, géométrie repérée), avec une extension récente vers la **1ère** (produit scalaire). Tant que les activités s'ancrent dans le programme de seconde générale, l'usage reste au lycée — et le collège, faute de contenu dédié, reste à la porte.
 
+> **Et le collège ? Distinguer l'intérêt (formation) et l'usage (classe).** Sur la carte du dashboard apparaissent de nombreux collèges — surtout autour de **Dunkerque** — qui semblent avoir « testé une fois sans enseigner ». Vérification faite, ce sont bien de **vrais professeurs de collège** : on en compte **47 « engagés »** (qui ont cloné l'activité), mais ils l'ont fait **en formation** (ils restent `role=teacher`, géolocalisés à leur collège via `uai_el` — voir §2 et §11). Le cas emblématique : le **6 juin 2025**, une **journée de formation du réseau dunkerquois** animée depuis le **lycée des Flandres (Hazebrouck)** a touché ~35 collèges en une fois.
+>
+> Mais **l'usage en classe, lui, ne décolle pas** : **seuls ~5 collèges ont de vrais élèves**. Autrement dit, **l'intérêt collège est réel (formation), l'adoption classe quasi nulle** — faute d'activité pensée pour ses programmes. C'est un signal précieux : la donnée distingue déjà *qui a été formé* de *qui a enseigné*.
+
 ### 1.2 Trois activités portent les trois quarts de l'usage
 
 | Activité | Niveau | Usages élèves (cumul) |
@@ -57,6 +65,10 @@ La cause est lisible dans le **catalogue** : sur 12 activités, la grande majori
 
 Les **trois premières activités = ~73 %** de tous les usages élèves. L'activité historique « Intro à l'IA : chiffres 2 et 7 » reste 2e en cumul, mais elle est **en recul** (§4) : la dynamique est désormais portée par les contenus statistiques et géométriques.
 
+Ce palmarès n'est pas qu'une affaire de qualité pédagogique — il reflète aussi l'**architecture d'accès** :
+- **« Statistiques – classification de chiffres »** est la **vitrine** de mathadata.fr : première activité présentée et **la seule accessible sans compte**. C'est la porte d'entrée naturelle, ce qui explique une partie de sa domination (et de son fort taux de conversion, §2.2).
+- **« Intro à l'IA : chiffres 2 et 7 »** est au contraire une **ancienne activité, non mise en avant et absente du site** : on ne peut la trouver **que** via Capytale. Sa persistance n'est donc pas anodine — elle trace une population de professeurs qui découvrent MathAData **directement sur Capytale**, sans passer par le site (voir §1.4).
+
 ### 1.3 La « classe » type : un demi-groupe de 17 en salle info
 
 En regroupant les clones élèves par professeur, activité et proximité temporelle (fenêtre 3 h), on reconstitue **~700 séances** (738 dans le paramétrage de référence ; 613 si l'on exclut les clones sans établissement — voir §11). Toutes ne sont pas des classes : ~220 séances ne comptent qu'un élève (tests, élèves isolés). Mais **~290 séances réunissent ≥10 élèves**, et leur **taille médiane est de 17** (moyenne 19, quartiles 13–25) — *un résultat stable quelle que soit la méthode de regroupement.*
@@ -68,9 +80,42 @@ C'est exactement la signature d'un **TP en salle informatique en demi-groupe** :
 
 Le demi-groupe est donc le **mode d'usage dominant**. Par activité, statistiques (médiane 17), Intro IA (16) et équation de droite (15) sont des activités de demi-groupe ; seules « Géométrie repérée » (médiane **25**) et « Droite & produit scalaire » (20) montent vers la classe entière.
 
+### 1.4 Deux portes d'entrée : le site-vitrine et le « Capytale-direct »
+
+Puisque « Intro à l'IA » n'existe **que** sur Capytale, son usage est un **traceur** d'un canal d'acquisition parallèle au site. Le constat est net :
+
+- **83 professeurs sur 261 (32 %) sont *entrés* par « Intro à l'IA »** — c'est leur toute première activité dans l'ordre chronologique, quasi à égalité avec la vitrine Statistiques (78).
+- **63 professeurs n'utilisent *que* « Intro à l'IA »** et rien d'autre ; ils ont porté ~1 070 usages élèves (et 55 d'entre eux ont bien enseigné).
+- Parmi tous ceux qui touchent « Intro à l'IA », **seuls 16 % touchent aussi la vitrine** Statistiques.
+
+Autrement dit, **près d'un tiers des professeurs découvrent MathAData directement via Capytale**, sans passer par mathadata.fr — et **ne voient donc jamais le catalogue** (santé, géométrie, challenges…). C'est à la fois un **canal d'acquisition gratuit** (le référencement Capytale travaille pour le projet) et une **fuite** : ces enseignants restent captifs d'une activité ancienne qu'on ne souhaite pas mettre en avant. Les rediriger vers le site — par exemple un bandeau « Découvrez les autres activités sur mathadata.fr » dans « Intro à l'IA » — est un levier à coût quasi nul.
+
 ---
 
-## 2. Patterns d'usage : tester ou plonger ?
+## 2. Patterns d'usage : l'entonnoir de l'engagement
+
+### 2.0 401 engagés, 224 en classe, 177 testeurs
+
+Le point de départ a été corrigé en cours d'enquête (voir §11). Dans Capytale, **`role` est le *type* de compte** : un professeur reste `role=teacher` même quand il **clone l'activité en formation** (il devient alors le « clone-owner » dans la colonne `student`, géolocalisé à son établissement via `uai_el`, le formateur figurant dans `teacher`). Conséquence : la vraie population enseignante n'est pas 261 (les seuls *distributeurs*) mais **401 comptes engagés**.
+
+```
+401 professeurs ont mis la main sur MathAData
+        │
+        ├── 224 (56 %) l'ont donné à LEURS élèves      → adoption en classe
+        │
+        └── 177 (44 %) ont SEULEMENT testé
+                 ├── 140 vus uniquement EN FORMATION (stagiaires)
+                 └──  37 distributeurs ayant testé sans jamais enseigner
+```
+
+Deux enseignements forts :
+
+- **La formation est un puissant haut d'entonnoir… à faible rendement.** Sur les **148 comptes vus en formation**, seuls **6 (≈ 4 %) ont ensuite enseigné** à leurs propres élèves. La majorité reste « formée mais pas passée à l'acte ». *(À tempérer : beaucoup de formations sont récentes ; le délai de conversion sera mesurable avec le calendrier officiel.)*
+- **La formation explique l'intérêt collège** : sur les 140 stagiaires, **40 sont en collège**, 27 en lycée, 73 sans établissement renseigné. C'est cohérent avec ce que montre la carte (§1.1) — des profs de collège formés, mais qui n'enseignent pas (encore) à leurs classes.
+
+Ce haut d'entonnoir est animé par une douzaine de **formateurs** identifiables dans la donnée : **`dda7f8a1`** (lycée des Flandres, Hazebrouck — **37 stagiaires** sur 34 établissements), `6a44e026` (28), `2f6f9511` (15, n'enseigne pas lui-même), `cace46c6` (12)… À eux seuls, les formateurs portent **~39 % des lignes de test**. Ce sont les opérateurs des formations — que les données officielles à venir permettront de nommer et dater.
+
+### 2.1 Tester ou plonger ? (parmi ceux qui enseignent)
 
 Selon qu'une activité a été clonée comme « test enseignant » (`role=teacher`) avant — ou jamais — d'être donnée aux élèves, on distingue trois trajectoires :
 
@@ -78,13 +123,15 @@ Selon qu'une activité a été clonée comme « test enseignant » (`role=teache
 |---|---:|---:|
 | **Enseigné sans test préalable** (plongée directe) | **172** | **66 %** |
 | **Testé puis enseigné** (la voie « manuel ») | 52 | 20 % |
-| **Testé, jamais enseigné** (non converti) | 37 | 14 % |
+| **Testé, jamais enseigné** (parmi les distributeurs) | 37 | 14 % |
+
+*(Lecture parmi les **261 comptes distributeurs**. Le « testé jamais enseigné » global est de **177** une fois ajoutés les 140 stagiaires de formation — §2.0.)*
 
 Résultat contre-intuitif et central : **les deux tiers des professeurs lancent MathAData en classe sans test personnel enregistré**. Parmi les **224 professeurs ayant effectivement enseigné, seuls 52 (23 %)** ont laissé une trace de test avant leur première classe.
 
 > **Précaution de lecture.** « Test » = un clone explicitement `role=teacher`. Un enseignant peut s'approprier une activité (la lire, la projeter, l'essayer via le code qu'il partagera) sans produire ce clone. Le chiffre mêle donc de vraies adoptions « à froid » et une appropriation informelle invisible. Dans les deux cas, le message est le même : **le parcours « test → classe » n'est pas le parcours dominant**. Beaucoup de professeurs font confiance à l'activité — recommandée par un pair, une formation, l'équipe — et la lancent directement.
 
-### 2.1 Quand on teste, on enseigne… le jour même
+### 2.2 Quand on teste, on enseigne… le jour même
 
 Pour les 52 professeurs « testé puis enseigné », le délai test → première classe est **très court** :
 
@@ -94,7 +141,7 @@ Pour les 52 professeurs « testé puis enseigné », le délai test → premièr
 
 Le « test », quand il a lieu, fonctionne donc comme une **mise en place de séance** (la veille, le jour même) bien plus que comme une longue évaluation préalable. Une petite queue (10 profs) revient enseigner > 30 jours après — parfois **une année scolaire entière** après leur test initial.
 
-### 2.2 La conversion test → classe dépend de l'activité
+### 2.3 La conversion test → classe dépend de l'activité
 
 Quand un professeur *teste* une activité, ira-t-il jusqu'en classe ? Le taux varie fortement :
 
@@ -107,7 +154,12 @@ Quand un professeur *teste* une activité, ira-t-il jusqu'en classe ? Le taux va
 | Géométrie repérée (milieu/distance) | 9 | 56 % |
 | **Équation réduite de droite** | 39 | **49 %** 🔴 |
 
-L'activité phare (statistiques) **convertit excellemment (74 %)**. À l'inverse, **« Équation réduite de droite » est la moins convertie (49 %)** malgré un grand nombre de testeurs. Interprétation : les activités **signature « IA / données »** apportent une valeur différenciante qui motive le passage en classe, alors que l'équation de droite a un **substitut pédagogique évident** sans MathAData — et se trouve en concurrence avec les autres variantes géométrie (cartésienne, produit scalaire) qui fragmentent les testeurs.
+Ce classement doit toutefois se lire à la lumière de **deux biais d'architecture** — pas seulement de la valeur pédagogique :
+
+- **Statistiques** est la **vitrine sans compte** du site (§1.2) : elle attire des professeurs déjà décidés, d'où une conversion élevée (**74 %**). C'est aussi l'activité la plus utilisée en formation : **62 % de ses clones-tests proviennent de formateurs/animateurs**.
+- **« Équation réduite de droite »** est elle aussi très utilisée **en formation** : **58 % de ses clones-tests viennent des formateurs**. Beaucoup de profs la clonent pour **apprendre l'outil** plus que pour déployer ce chapitre. Elle est **2ᵉ en nombre de clones-tests (96, ~2,5 par testeur)** mais seulement **3ᵉ en testeurs uniques (39)** — « beaucoup de manipulation, peu de déploiement ». Sa conversion basse (**49 %**) **ne traduit donc pas une faiblesse pédagogique**, mais son **rôle de support de formation**.
+
+À l'opposé, **« Intro à l'IA »** (canal Capytale-direct, §1.4) n'a que **25 %** de tests issus de formateurs : ses testeurs sont surtout des profs isolés trouvant l'outil seuls. La conversion mesurée dépend ainsi autant du **rôle de l'activité** (vitrine / formation / découverte spontanée) que de sa qualité. Les **données de formation à venir** permettront de mesurer directement cet effet (voir §2.0 et §5).
 
 ---
 
@@ -197,16 +249,28 @@ Deux causes se conjuguent : les **chapitres** (statistiques, géométrie analyti
 
 ---
 
-## 5. Les testeurs non convertis : qui reste sur le quai ?
+## 5. Les testeurs non convertis : le grand réservoir de la formation
 
-37 professeurs ont testé sans jamais enseigner. Mais ce chiffre brut est trompeur : **23 d'entre eux n'ont testé qu'en 2025-2026** — des testeurs *récents* qui peuvent encore basculer en classe. Les **vrais non-adoptants** (testé en 2024-2025 ou avant, jamais enseigné) ne sont que **14**.
+C'est ici que la correction du §2.0 change le plus l'image. **177 enseignants ont testé sans jamais enseigner à leurs élèves** — bien plus que les 37 que voyait ma première lecture (limitée aux distributeurs). La différence, ce sont les **140 stagiaires de formation**, invisibles tant qu'on ne lisait pas la colonne `student` des lignes test.
 
-L'hypothèse initiale — « les non-convertis seraient surtout des professeurs de collège » — **est démentie** : les 14 vrais non-adoptants sont **11 lycées, 3 inconnus, 0 collège**, et 100 % public — un profil identique à la base. Le collège est marginal *partout*, pas spécifiquement chez les non-convertis.
+| Sous-population « testé sans enseigner » (177) | Effectif |
+|---|---:|
+| **Stagiaires de formation** (vus uniquement via un formateur) | **140** |
+| dont en **collège** | 40 |
+| dont en lycée | 27 |
+| dont établissement inconnu | 73 |
+| **Distributeurs ayant testé sans élèves** | 37 |
 
-Deux enseignements plus fins :
+Deux lectures complémentaires :
 
-- **Ce ne sont pas des essais bâclés** : les vrais non-adoptants ont une **médiane de 2 tests** (vs 1 pour les convertis), l'un a même testé 7 activités. Ils ont **exploré sérieusement** puis ne sont pas passés à l'acte — c'est un **échec d'activation**, pas un manque d'essai.
-- L'activité **« Équation réduite de droite »** y est sur-représentée (testée par 23 des 37 « testé seulement »), cohérent avec son faible taux de conversion (§2.2). C'est l'activité à retravailler en priorité.
+- **Le vivier de formation est énorme et peu converti.** Sur les **148 comptes vus en formation, ~6 (4 %) ont enseigné** ensuite à leurs propres élèves (§2.0). C'est *le* point de fuite : on forme beaucoup, on convertit peu — du moins à ce stade (formations souvent récentes).
+- **Parmi les distributeurs**, l'hypothèse « non-convertis = surtout collège » est **démentie** : les 14 *vrais* non-adoptants (testé en 2024-25 ou avant, jamais enseigné) sont **11 lycées, 3 inconnus, 0 collège**, 100 % public. Ce ne sont pas des essais bâclés (médiane **2 tests**, l'un a testé 7 activités) : c'est un **échec d'activation**, pas un manque d'essai. Le collège, lui, est sur-représenté côté **stagiaires** (40), pas côté distributeurs — ce qui colle au récit « intérêt collège via formation, pas en classe » (§1.1).
+
+**Géographiquement**, ces testeurs isolés se concentrent là où l'animation est active : **Montpellier (6), Paris (5), Lille (5)**, Créteil (3). On les trouve souvent **seuls dans leur lycée** (établissement mono-prof), éparpillés — à Dunkerque (Auguste Angellier), Lille (César Baggio), Aulnay-sous-Bois (Voillaume), Saint-Martin-d'Hères (Pablo Neruda)… Le cas le plus parlant est le **lycée Jean Jaurès (Saint-Clément-de-Rivière, Montpellier)** : *deux* collègues y ont testé, à deux ans d'écart, **sans qu'aucun n'enseigne jamais** — la curiosité se transmet, l'adoption non.
+
+> **Hypothèse à tester avec les données de formation (à venir).** Ce profil — testeur isolé, souvent sur « Équation réduite », dans les académies à forte animation (Lille, Bordeaux, Montpellier) — ressemble fortement à celui d'un **enseignant passé par une formation** qui a créé un compte, exploré l'outil, mais n'a pas (encore) franchi le pas. Les dates et lieux de formation permettront de confirmer ce lien et surtout de mesurer **quelles formations convertissent réellement en usage classe, comment, et après combien de temps.**
+>
+> **Un avant-goût est déjà lisible dans les données.** La journée du **6 juin 2025** dans le dunkerquois — un animateur (lycée des Flandres, Hazebrouck) qui clone l'activité pour **~35 collèges en une fois** (§1.1) — est une **empreinte de formation** brute. Avec le calendrier officiel des formations, on pourra repérer systématiquement ces pics, puis suivre si les participants reviennent ensuite enseigner avec leurs propres élèves.
 
 ---
 
@@ -214,11 +278,11 @@ Deux enseignements plus fins :
 
 L'usage est-il porté par une poignée de super-utilisateurs ? **Moins qu'on ne le craindrait.**
 
-- Le **top 10 des professeurs** concentre **21 %** des élèves uniques ; le top 20, environ un tiers.
-- **Coefficient de Gini** des élèves/prof : **0,49** parmi les professeurs enseignants (0,56 si l'on inclut les 37 testeurs sans élève) — une inégalité réelle mais **loin d'un monopole**.
+- Le **top 10 des professeurs** concentre **21 %** des élèves uniques (17 % une fois retirés les comptes hub/formateur) ; le top 20, environ un tiers.
+- **Coefficient de Gini** des élèves/prof : **0,49** parmi les professeurs enseignants — une inégalité réelle mais **loin d'un monopole**.
 - Le professeur médian (parmi les enseignants) anime **2 séances** ; seuls **9 professeurs** ont animé 10 séances ou plus.
 
-Le plus gros compte (**404 élèves**, 7 activités, actif les trois années, à **Haubourdin** près de Lille) est un **compte pionnier historique** (identifiant séquentiel « 0 ») : à lire comme le **foyer d'origine** du projet, pas comme une adoption organique ordinaire. Même en l'incluant, la concentration reste modérée — signe d'une base d'usage qui s'est **élargie et déconcentrée** depuis les débuts lillois (cf. §7).
+**Le « plus gros prof » n'en est pas un — c'est un hub.** Le compte n°1 (identifiant séquentiel « 0 ») affiche 404 élèves, mais ils sont **répartis sur 14 établissements** (Haubourdin, Lille, Orsay, Toulouse, **Papeete**, Guéret, Calais, Massy…) : **seulement 56 à Haubourdin**. C'est le **compte-maître du réseau pilote** (le fondateur), pas un professeur local hyperactif. Une fois ce hub et les formateurs mis de côté, le plus gros enseignant *organique* est bien plus modeste — d'où une concentration réelle **encore plus faible** qu'affichée : la base s'est largement **déconcentrée** depuis les débuts lillois (cf. §7).
 
 À côté du pionnier, de **vrais power users organiques** émergent : à Bègles, un professeur porte **140 élèves** dès sa première année (le plus gros porteur non-pionnier), preuve qu'un nouvel entrant peut immédiatement déployer à grande échelle.
 
@@ -290,7 +354,9 @@ L'écart (**+3,4 points**) est réel mais **modéré** : MathAData n'est **pas**
 
 ## 11. Robustesse, vérification et limites
 
-**Vérification.** Les KPI ont été **recalculés par trois agents indépendants** directement depuis le CSV brut + l'annuaire. Concordance confirmée sur : volumes par année (150/2 181/4 479 élèves), 261 profs, **5 854 élèves uniques**, répartition lycée/collège (219/7), secteur (222/4), **IPS (110,4 vs 107,0)**, top 10 = 21 %, rétention 30 %, distribution des années d'enseignement, et 404 élèves pour le pionnier.
+**Une correction majeure en cours d'enquête.** La première version comptait **261 professeurs** (les seuls *distributeurs*, colonne `teacher`). Or `role` est le **type de compte** : un prof **en formation** reste `role=teacher` et n'apparaît que dans la colonne `student` des lignes test. En intégrant cette couche, la population enseignante réelle est de **401 comptes engagés** (224 ont enseigné, 177 ont seulement testé dont 140 stagiaires). **Les chiffres élèves, eux, sont confirmés intacts** : `role=student` = vrais élèves (0 compte-prof parmi les 5 854).
+
+**Vérification.** Les KPI élèves/croissance/géo ont été **recalculés par trois agents indépendants** depuis le CSV brut + l'annuaire. Concordance confirmée : volumes par année (150/2 181/4 479 élèves), **5 854 élèves uniques**, secteur/type, **IPS (110,4 vs 107,0)**, rétention 30 %, distribution des années d'enseignement.
 
 **Le seul écart** porte sur le **comptage des séances** : 738 (en conservant tous les clones, y compris ceux sans établissement) vs 613 (en excluant les clones non localisés). Les deux convergent sur l'essentiel : **taille médiane de classe = 17** et **~260-300 vraies classes (≥10)** — invariants à la méthode. Le nombre de séances est donc un **ordre de grandeur** (~600-740), pas une valeur exacte.
 
@@ -299,6 +365,9 @@ L'écart (**+3,4 points**) est réel mais **modéré** : MathAData n'est **pas**
 - Le **« test »** mesuré est un clone enregistré, pas l'appropriation réelle (cf. §2).
 - Les **séances** et les **classes** sont des reconstructions par clustering temporel, pas des données natives.
 - 195 lignes « rôle vide » proviennent d'un **unique compte de démonstration**, exclu de toute l'analyse. Un **compte pionnier** (id « 0 », 404 élèves) est conservé mais systématiquement signalé.
+- **`uai_el` vs `uai_teach` sur les lignes de test.** Sur un clone `role=teacher`, `uai_el` ne désigne pas l'établissement du prof mais peut pointer un **établissement-cible** (ex. le collège visé lors d'une formation). La carte du dashboard géolocalisant par `uai_el`, des **« points fantômes »** apparaissent (45 collèges référencés, mais 40 sans aucun élève — une empreinte de formation, pas une adoption ; §1.1). Pour classer un **professeur**, cette enquête privilégie `uai_teach` (son établissement de rattachement), ce qui donne une lecture différente — et complémentaire — de la carte.
+- Une douzaine de **comptes formateurs/animateurs** (dont `dda7f8a1`, lycée des Flandres) portent **~39 % des lignes de test** : les comptages de *tests* par activité reflètent largement l'activité de formation, pas seulement l'exploration spontanée.
+- Le **compte « 0 »** est un **hub fondateur** (404 élèves sur 14 établissements) : il fausse les vues *par professeur* et *par établissement* (pas les totaux ni la géographie par `uai_el`). Traité à part.
 - Les identifiants sont **pseudonymisés et sensibles** ; aucune ré-identification n'a été tentée.
 
 ---
@@ -307,11 +376,41 @@ L'écart (**+3,4 points**) est réel mais **modéré** : MathAData n'est **pas**
 
 1. **Faire de la rétention la priorité n°1.** Le point faible n'est pas l'acquisition (excellente) mais le retour d'une année sur l'autre (**30 %**). Cibler dès la rentrée les **62 professeurs de 2024-2025 qui n'ont pas réenseigné**, avec une relance et les nouveautés du catalogue.
 2. **Activer la contagion intra-établissement.** **80 % des établissements n'ont qu'un prof**, et le frein n'est pas l'essai raté mais l'absence de second prof. Outiller le prof-pionnier pour embarquer un collègue (kit « présenter MathAData en réunion de cabinet ») démultiplie sans coût d'acquisition. Le lancement conjoint (Bègles) et la diffusion échelonnée (Calais) prouvent que ça marche.
-3. **Retravailler la conversion d'« Équation réduite de droite ».** Forte curiosité (39 testeurs) mais conversion la plus basse (49 %) : lever le frein de mise en classe (fiche de déroulé, durée, prérequis) ou différencier sa valeur ajoutée face au cours classique.
+3. **Récupérer les profs « Capytale-direct ».** Un tiers des enseignants entrent par « Intro à l'IA » et **63 ne voient jamais le reste du catalogue**. Un simple bandeau « Découvrez les autres activités sur mathadata.fr » dans l'activité historique peut convertir ce trafic gratuit en découverte du catalogue — levier à coût quasi nul, fort potentiel.
 4. **Concentrer l'accompagnement sur janvier-juin**, où se joue ~80 % de l'activité, et préparer la **montée en charge de mai**.
 5. **Capitaliser sur le modèle « un gros lycée = un foyer ».** Identifier et accompagner les établissements-grappes émergents (Bègles, Calais, Nantes, Limoges) comme têtes de pont académiques.
-6. **Assumer — ou corriger — la cible.** Tant que le catalogue est « 2nde/1ère générale », MathAData restera un outil de lycée public. Pour exister au collège, il faut un **contenu collège dédié** ; sinon, autant assumer le positionnement lycée dans la communication.
+6. **Convertir le vivier de la formation — l'angle mort n°1.** **140 profs formés n'ont jamais enseigné à leurs élèves** (conversion ~4 %). C'est le plus gros gisement d'usage dormant, et il est **collège-friendly** (40 d'entre eux). Une relance systématique post-formation (« passez à votre première classe » : kit + créneau de support à J+15) peut activer ce stock. À industrialiser dès que les **données de formation** seront croisées (voir ci-dessous).
+7. **Assumer — ou corriger — la cible.** Tant que le catalogue est « 2nde/1ère générale », MathAData restera un outil de lycée public. Pour exister au collège, il faut un **contenu collège dédié** ; sinon, autant assumer le positionnement lycée dans la communication.
+
+> **Prochaine étape analytique.** Les **données de formation** (dates, lieux, nombre de profs formés par lycée) permettront de relier l'amont (qui a été formé, quand, où) à l'aval mesuré ici (qui a testé, qui a enseigné, quand). On pourra alors répondre aux vraies questions de pilotage : **quelles formations ont généré de l'usage réel, avec quel délai, et quel taux de conversion** — et distinguer les testeurs isolés « en attente d'activation » des abandons.
 
 ---
 
-*Rapport établi le 19 juin 2026 — données Capytale `capytale_fresh_20260619.csv` (7 353 lignes) + annuaire (12 455 établissements). Graphiques dans `charts/`. Pipeline reproductible et vérifié (3 recomputations indépendantes).*
+## Annexe — Galerie d'études de cas
+
+Rien ne vaut le zoom sur des situations réelles pour sentir la diversité des usages. Neuf profils contrastés (établissements et profs pseudonymisés) :
+
+### Les moteurs
+
+- **🟢 Lycée Vaclav Havel — Bègles (Bordeaux)** · *lancement conjoint le plus puissant.* **3 profs démarrent ensemble** en 2025-2026 (mars-mai), sans aucun pionnier antérieur : **283 élèves**, dont **un seul prof à 140 élèves** (le plus gros porteur non-pionnier du dispositif). À lui seul, ce lycée propulse Bordeaux au 3ᵉ rang national. Adoption d'équipe, directe, sans phase de test.
+- **🟢 Lycée Léonard de Vinci — Calais (Lille)** · *diffusion échelonnée, le plus gros foyer collégial.* Un noyau de 3 profs en 2024-2025 entraîne **3 collègues** l'année suivante → **6 profs, ~297 élèves, 21 séances**. Devenu **auto-portant**, sans le pionnier historique. La preuve que la tache d'huile interne fonctionne… quand elle s'amorce.
+- **🟢 Lycée Louis Pasteur — Lille** · *diffusion lente mais continue.* Un pionnier dès 2023-2024, **+1 collègue par an** : **4 profs, 161 élèves sur 3 ans**. Le modèle d'enracinement durable.
+
+### Les solos
+
+- **🔵 Lycée Ampère — Lyon 2e** · *solo intense pur.* **Un seul prof**, 110 élèves, **47 séances**, 4 activités, sur 2 ans — densité d'usage exceptionnelle, mais **zéro diffusion** : aucun collègue n'a suivi. L'établissement reste mono-prof malgré une activité massive.
+- **🔵 Lycée de Haubourdin (Lille) — compte pionnier «  0  »** · *solo historique.* **404 élèves sur 3 ans** portés par un seul prof (94 % des élèves de l'établissement) ; **un seul collègue** l'a rejoint, en mai 2026 (27 élèves). L'intensité individuelle ne crée pas mécaniquement de diffusion.
+
+### Les angles morts
+
+- **🟠 Lycée parisien (Paris 5e) — « Capytale-direct »** · *engagé mais hors-site.* 63 élèves sur 2 ans… **uniquement sur « Intro à l'IA »**. Un prof fidèle qui n'a jamais vu le catalogue mathadata.fr — l'archétype des **63 profs captifs** de l'activité historique (§1.4).
+- **🔴 Lycée Jean Jaurès — Saint-Clément-de-Rivière (Montpellier)** · *stagnation à deux.* **Deux** collègues ont testé, à deux ans d'écart, **sans qu'aucun n'enseigne jamais**. La curiosité s'est transmise, l'adoption non — le profil-type du **testeur isolé** (§5), candidat n°1 à une relance post-formation.
+
+### Les marges qui marchent
+
+- **🟢 Lycée Paul Gauguin — Papeete (Polynésie)** · *l'équipe d'outre-mer.* **4 profs**, diffusion **par paires chaque année** (76 élèves). La dynamique collégiale n'est ni un effet métropolitain ni lillois.
+- **🟢 Collège César Franck — Paris 2e** · *le collège qui y arrive.* 23 élèves, 4 séances, comportement « enseigné puis testé ». Le meilleur cas collège — petit mais réel, là où l'on n'attendait presque personne.
+
+---
+
+*Rapport établi le 19 juin 2026 — données Capytale `capytale_fresh_20260619.csv` (7 353 lignes) + annuaire (12 455 établissements). Graphiques dans `charts/`. Pipeline reproductible et vérifié (3 recomputations indépendantes). Précisions de contexte (vitrine sans compte, « Intro à l'IA » hors-site, « Équation réduite » en formation) intégrées le 20 juin 2026.*

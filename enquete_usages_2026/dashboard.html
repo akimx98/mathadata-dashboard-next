@@ -43,6 +43,15 @@
   .stat .v.teal{color:var(--teal)} .stat .v.ind{color:var(--accent)}
   .stat .k{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.3}
 
+  /* funnel */
+  .funnel{display:flex;align-items:stretch;gap:10px;margin:8px 0 4px;flex-wrap:wrap}
+  .fstep{flex:1;min-width:160px;background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:12px;padding:15px 17px}
+  .fstep.ok{border-top-color:var(--teal)} .fstep.warn{border-top-color:var(--rose)}
+  .fstep .fv{font-family:var(--font-mono);font-size:30px;font-weight:700;line-height:1}
+  .fstep .fk{font-size:13px;color:var(--muted);margin-top:7px;line-height:1.35}
+  .farrow{display:flex;align-items:center;font-family:var(--font-mono);color:var(--grey);font-size:22px}
+  @media(max-width:860px){.farrow{display:none}}
+
   /* hero chart */
   .herochart{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 18px 12px;margin-top:6px;
     box-shadow:0 6px 24px -16px rgba(22,33,62,.4)}
@@ -88,6 +97,10 @@
   .case{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:12px;padding:16px 18px}
   .case.echelon{border-left-color:var(--accent)}
   .case.limit{border-left-color:var(--rose)}
+  .case.solo{border-left-color:var(--amber)}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+  .gallery-ttl{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:600;margin:26px 0 2px}
+  @media(max-width:860px){.gallery{grid-template-columns:1fr}}
   .case .tag{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
   .case h4{margin:5px 0 4px;font-size:15.5px}
   .case .meta{font-family:var(--font-mono);font-size:12px;color:var(--teal);margin-bottom:8px}
@@ -139,9 +152,9 @@
   </div>
 
   <div class="statbar">
-    <div class="stat"><div class="v ind">261</div><div class="k">professeurs utilisateurs</div></div>
+    <div class="stat"><div class="v ind">401</div><div class="k">enseignants engagés — 224 en classe</div></div>
     <div class="stat"><div class="v teal">5 854</div><div class="k">élèves uniques touchés</div></div>
-    <div class="stat"><div class="v">97 %</div><div class="k">enseignent en lycée — 98 % public</div></div>
+    <div class="stat"><div class="v">97 %</div><div class="k">des profs en classe sont en lycée — 98 % public</div></div>
     <div class="stat"><div class="v teal">×2,1</div><div class="k">usages élèves vs 2024-2025</div></div>
   </div>
 </header>
@@ -149,7 +162,7 @@
 <section>
   <div class="sechead"><span class="secnum">00</span><h2>Quatre vérités structurantes</h2></div>
   <div class="truths" style="margin-top:14px">
-    <div class="truth" data-n="1"><h3>Un outil de lycée, public, de 2nde</h3><p>219 profs lycée pour 7 collège ; 222 publics pour 4 privés. Le catalogue cible la seconde — le contenu fait le public.</p></div>
+    <div class="truth" data-n="1"><h3>Un outil de lycée, public, de 2nde</h3><p>En classe : 97 % lycée, 98 % public, cible 2nde. Le collège intéresse (47 profs formés) mais ne décolle pas en classe (~5 collèges).</p></div>
     <div class="truth" data-n="2"><h3>Adoption directe et solitaire</h3><p>⅔ des profs lancent en classe sans test enregistré. 80 % des établissements n'ont qu'un seul prof utilisateur.</p></div>
     <div class="truth" data-n="3"><h3>Croissance extensive</h3><p>83 % des profs de 2025-26 sont nouveaux et font 74 % du volume. La rétention inter-annuelle n'est que de 30 %.</p></div>
     <div class="truth" data-n="4"><h3>Le moteur : stats &amp; géométrie</h3><p>Statistiques (+1 340) et géométrie (+1 236) portent la hausse ; l'« Intro à l'IA » historique recule (−485).</p></div>
@@ -172,19 +185,29 @@
     </div>
     <div class="card">
       <div class="chart-ttl">Trois activités portent les ¾ de l'usage</div>
-      <div class="chart-sub">usages élèves cumulés par activité (top 8)</div>
+      <div class="chart-sub">usages élèves cumulés par activité (top 8) · Stat = vitrine du site</div>
       <figure id="actChart"></figure>
     </div>
   </div>
+  <div class="callout"><b>Deux portes d'entrée.</b> « Statistiques » est la <b>vitrine</b> du site (seule activité accessible sans compte). Mais <b>32 % des profs entrent par « Intro à l'IA »</b> — une activité ancienne, absente de mathadata.fr, trouvable uniquement via Capytale : <b>63 profs n'utilisent qu'elle</b> et ne voient jamais le reste du catalogue. Canal d'acquisition gratuit… et fuite à colmater.</div>
 </section>
 
 <section>
-  <div class="sechead"><span class="secnum">02</span><h2>Tester… ou plonger ?</h2></div>
-  <p class="sub">Les deux tiers des professeurs donnent l'activité aux élèves <b>sans trace de test personnel</b>. Quand le test a lieu, il fonctionne comme une mise en place de séance : <b>médiane 2,3 jours</b> avant la première classe, 38 % le jour même.</p>
+  <div class="sechead"><span class="secnum">02</span><h2>L'entonnoir de l'engagement</h2></div>
+  <p class="sub">Dans Capytale, le rôle = le <b>type de compte</b> : un prof <b>en formation</b> reste « teacher » et n'apparaît que dans la colonne élève des lignes test. En l'intégrant, la vraie population enseignante n'est pas 261 (les distributeurs) mais <b>401 engagés</b>.</p>
+  <div class="funnel">
+    <div class="fstep"><div class="fv">401</div><div class="fk">engagés — ont cloné l'activité</div></div>
+    <div class="farrow">→</div>
+    <div class="fstep ok"><div class="fv">224</div><div class="fk">ont enseigné à leurs élèves (56 %)</div></div>
+    <div class="farrow">→</div>
+    <div class="fstep warn"><div class="fv">177</div><div class="fk">ont seulement testé — dont 140 en formation</div></div>
+  </div>
+  <div class="callout"><b>La formation : gros haut d'entonnoir, faible rendement.</b> Sur ~148 comptes vus en formation, seuls <b>~4 % ont ensuite enseigné</b> à leurs propres élèves. C'est aussi là que se cache l'intérêt collège : <b>40 des 140 stagiaires</b> sont des profs de collège (§03). Une douzaine de <b>formateurs</b> (dont le lycée des Flandres, Hazebrouck) portent ~39 % des tests.</div>
+  <p class="sub" style="margin-top:24px">Côté <b>profs qui enseignent</b> : les deux tiers donnent l'activité <b>sans test préalable</b> ; quand le test a lieu, c'est une mise en place de séance (médiane <b>2,3 jours</b>, 38 % le jour même).</p>
   <div class="grid2">
     <div class="card">
-      <div class="chart-ttl">Comment les 261 profs abordent l'outil</div>
-      <div class="chart-sub">trajectoire d'entrée (hors compte de démo)</div>
+      <div class="chart-ttl">Comment les 261 distributeurs abordent l'outil</div>
+      <div class="chart-sub">trajectoire d'entrée (profs ayant un compte distributeur)</div>
       <figure id="behaviorChart"></figure>
     </div>
     <div class="card">
@@ -193,7 +216,7 @@
       <figure id="convChart"></figure>
     </div>
   </div>
-  <div class="callout">Les activités <b>signature « IA / données »</b> convertissent le mieux (statistiques&nbsp;: 74 %). « Équation réduite de droite » est la moins convertie (49 %)&nbsp;: une activité géométrique au substitut pédagogique évident, en concurrence avec les autres variantes — c'est aussi celle qu'on retrouve le plus chez les testeurs non convertis.</div>
+  <div class="callout"><b>Attention aux biais d'architecture.</b> « Statistiques » est la <b>vitrine sans compte</b> → elle attire des profs décidés (74 %). « Équation réduite de droite » sert surtout en <b>formation</b> : <b>58 % de ses tests viennent des formateurs</b> (vs 25 % pour « Intro IA », trouvée seule). On la clone pour apprendre l'outil, pas pour déployer ce chapitre — sa conversion basse (49 %) reflète ce <b>rôle de formation</b>, pas une faiblesse pédagogique.</div>
 </section>
 
 <section>
@@ -235,6 +258,42 @@
       </div>
     </div>
   </div>
+
+  <div class="gallery-ttl">Zoom — cinq autres profils contrastés</div>
+  <div class="gallery">
+    <div class="case solo">
+      <div class="tag">Solo intense pur</div>
+      <h4>Ampère · Lyon 2e</h4>
+      <div class="meta">1 prof · 110 élèves · 47 séances</div>
+      <p>Densité d'usage exceptionnelle (4 activités, 2 ans) mais zéro diffusion : l'établissement reste mono-prof. Le plus gros utilisateur solo du panel.</p>
+    </div>
+    <div class="case">
+      <div class="tag">Équipe d'outre-mer</div>
+      <h4>Paul Gauguin · Papeete</h4>
+      <div class="meta">4 profs · 76 élèves · par paires</div>
+      <p>Diffusion à deux profs chaque année. La dynamique d'équipe n'est ni un effet métropolitain ni lillois — elle marche aussi en Polynésie.</p>
+    </div>
+    <div class="case limit">
+      <div class="tag">Stagnation à deux</div>
+      <h4>Jean Jaurès · St-Clément (Montpellier)</h4>
+      <div class="meta">2 profs testent · 0 enseigne</div>
+      <p>Deux collègues ont testé, à 2 ans d'écart, sans qu'aucun n'enseigne jamais. La curiosité se transmet, l'adoption non — le testeur isolé type, candidat à une relance.</p>
+    </div>
+    <div class="case solo">
+      <div class="tag">Capytale-direct captif</div>
+      <h4>Lycée parisien · Paris 5e</h4>
+      <div class="meta">63 élèves · 2 ans · « Intro IA » seule</div>
+      <p>Un prof fidèle… qui n'utilise que l'activité historique et n'a jamais vu le catalogue du site. L'archétype des 63 profs « hors-site ».</p>
+    </div>
+    <div class="case">
+      <div class="tag">Le collège qui y arrive</div>
+      <h4>Collège César Franck · Paris 2e</h4>
+      <div class="meta">23 élèves · 4 séances</div>
+      <p>Le meilleur cas collège : petit mais réel. Sur 7 profs dont l'établissement est un collège, 6 ont enseigné — mais l'usage collège reste marginal (≈ 5 collèges avec de vrais élèves).</p>
+    </div>
+  </div>
+
+  <div class="callout"><b>Collège : intérêt en formation, pas en classe.</b> La carte montre de nombreux collèges autour de <b>Dunkerque</b> ayant « testé une fois ». Ce sont de <b>vrais profs de collège</b> — <b>47 engagés</b> — mais <b>en formation</b> : le 6 juin 2025, une journée du réseau dunkerquois (animée depuis le lycée des Flandres, Hazebrouck) a touché ~35 collèges d'un coup. En classe, en revanche, seuls <b>~5 collèges</b> ont de vrais élèves. La carte géolocalise par le code « élève » (<span class="mono">uai_el</span>), d'où l'effet de masse. C'est une <b>empreinte de formation</b> — précieuse pour la suite.</div>
 </section>
 
 <section>
@@ -309,15 +368,17 @@
   <div class="recs">
     <div class="rec"><div><b>Faire de la rétention la priorité.</b><span>Le point faible n'est pas l'acquisition mais le retour : relancer dès la rentrée les 62 profs de 2024-25 qui n'ont pas réenseigné.</span></div></div>
     <div class="rec"><div><b>Activer la contagion intra-établissement.</b><span>80 % des établissements n'ont qu'un prof. Outiller le pionnier pour embarquer un collègue (Bègles et Calais prouvent que ça marche).</span></div></div>
-    <div class="rec"><div><b>Retravailler « Équation réduite de droite ».</b><span>Forte curiosité (39 testeurs) mais conversion la plus basse (49 %) : lever le frein de mise en classe.</span></div></div>
+    <div class="rec"><div><b>Récupérer les profs « Capytale-direct ».</b><span>Un tiers entrent par « Intro à l'IA » et 63 ne voient jamais le catalogue : un bandeau « Découvrez mathadata.fr » dans l'activité historique = trafic gratuit à convertir.</span></div></div>
+    <div class="rec"><div><b>Convertir le vivier de la formation (angle mort n°1).</b><span>140 profs formés n'ont jamais enseigné à leurs élèves (conversion ~4 %), dont 40 en collège. Relance systématique post-formation « passez à votre 1ère classe » (kit + support à J+15).</span></div></div>
     <div class="rec"><div><b>Concentrer l'accompagnement sur janvier-juin.</b><span>~80 % de l'activité s'y joue, avec un pic en mai à préparer.</span></div></div>
     <div class="rec"><div><b>Assumer — ou corriger — la cible.</b><span>Sans contenu collège dédié, MathAData reste un outil de lycée public. À assumer dans la communication, ou à investir explicitement.</span></div></div>
   </div>
+  <div class="callout" style="margin-top:18px"><b>Prochaine étape.</b> Les données de <b>formation</b> (dates, lieux, nombre de profs formés par lycée) permettront de relier l'amont (qui a été formé, quand, où) à l'aval mesuré ici — et de répondre à la vraie question de pilotage : <b>quelles formations génèrent de l'usage réel, comment, et après combien de temps.</b></div>
 </section>
 
 <footer>
   <div><b>Source</b> · API statistique Capytale (<span style="color:var(--text)">capytale_fresh_20260619.csv</span>, 7 353 lignes) croisée à l'annuaire de 12 455 établissements.</div>
-  <div class="note">KPI vérifiés par 3 recomputations indépendantes. Un usage = 1 affectation clonée (≠ un élève, ≠ une séance). Séances = reconstruction par regroupement temporel (~600-740 ; médiane de classe 17, invariante). 2025-2026 incomplète au 19 juin : la croissance affichée est un plancher. Compte de démonstration (195 lignes) exclu ; compte pionnier signalé. Identifiants pseudonymisés — aucune ré-identification.</div>
+  <div class="note">Modèle de comptes : <span class="mono">role</span> = type de compte (un prof en formation reste « teacher », dans la colonne élève des lignes test) → population enseignante = 401 engagés (261 distributeurs + 140 stagiaires). <span class="mono">role=student</span> = vrais élèves (5 854, non contaminés). KPI élèves/croissance/géo vérifiés par 3 recomputations indépendantes. Un usage = 1 affectation clonée (≠ un élève, ≠ une séance). Séances = reconstruction (~600-740 ; médiane de classe 17, invariante). 2025-2026 incomplète au 19 juin : croissance = plancher. Compte de démo (195 lignes) exclu ; hub fondateur (404 élèves sur 14 établissements) signalé. Identifiants pseudonymisés — aucune ré-identification. MàJ 20 juin 2026.</div>
 </footer>
 </div>
 

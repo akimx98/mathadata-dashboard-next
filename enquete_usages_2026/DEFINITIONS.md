@@ -28,6 +28,16 @@
 - **Établissement du prof** : `uai_teach` modal non vide, sinon `uai_el` modal de ses élèves. Type/secteur/académie/IPS via annuaire (99,7 % de correspondance).
 - **IPS** : indice de position sociale (lycées). Baseline national lycées : moyenne 107,0 / médiane 105,7.
 
+## Modèle des comptes (ajout du 20 juin 2026 — important)
+- **`role` = TYPE du compte Capytale**, pas la position dans la chaîne : compte enseignant → `role=teacher` ; compte élève → `role=student`. Vérifié : sur 6810 lignes élèves, `student==teacher` 0 fois et 0 id élève n'est un id prof ; sur les lignes test, `student==teacher` 51 %.
+- **Conséquence** : un prof **en formation** clone le code du formateur mais reste `role=teacher`. Son id va dans la colonne **`student`** (clone-owner), son établissement dans **`uai_el`**, le **formateur** dans `teacher`. Les profs-stagiaires n'apparaissent donc **jamais** comme `role=student`.
+- **`role=student` = vrais élèves** (population propre, ~5854). Les KPI élèves ne sont pas contaminés.
+- **Population enseignante « engagée »** = `distinct(colonne teacher)` ∪ `distinct(student sur lignes role=teacher)` (hors démo) = **401** comptes. Mes anciens « 261 profs » ne comptaient que les **distributeurs** (col teacher).
+- **Entonnoir d'engagement** : 401 engagés → **224 ont enseigné** à leurs propres élèves (≥1 ligne role=student avec teacher=eux) → **177 ont seulement testé** = 37 distributeurs-testeurs + **140 stagiaires** (vus uniquement comme clone-owner d'une formation).
+- **Formateur/animateur** = compte qui distribue des clones-test à ≥3 autres comptes-profs (lignes role=teacher, teacher=lui, student≠lui). 12 identifiés ; ils portent ~39 % des lignes de test.
+- **Établissement d'un compte** : si enseigné/auto-testé → `uai_teach` modal (son établissement) ; si stagiaire seul → `uai_el` modal de ses clones de formation.
+- **Hub fondateur** : `cfcd2084` (id « 0 ») = 404 élèves répartis sur **14 établissements** (56 à Haubourdin) ; à traiter comme compte-maître du réseau pilote, pas comme un prof local.
+
 ## Caveats interprétatifs
 - « Test » = clone `role=teacher` capturé. Un prof peut s'approprier une activité sans cloner (donc « enseigné sans test » sur-estime peut-être l'adoption directe).
 - 2025-2026 est **incomplète** (extraction au 19 juin) : comparaisons inter-années à pondérer, mais l'essentiel de l'année est couvert.
