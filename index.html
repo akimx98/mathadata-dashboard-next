@@ -7,7 +7,7 @@
 <style>
   :root{
     --ground:#F2F5FB; --paper:#FFFFFF; --text:#16213E; --muted:#5b6b8c;
-    --accent:#4338CA; --accent-soft:#ECECFB; --teal:#0E9488; --teal-soft:#E0F2F0;
+    --indigo:#4338CA; --indigo-soft:#ECECFB; --teal:#0E9488; --amber:#C2410C;
     --line:#D8DEEC; --grid:#dde4f1; --grid2:#c9d3e8;
     --font-body:-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --font-mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
@@ -24,38 +24,57 @@
     background-size:22px 22px,22px 22px,110px 110px,110px 110px;
     min-height:100vh;
   }
-  .wrap{max-width:880px;margin:0 auto;padding:0 22px}
-  header{padding:72px 0 26px}
-  .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px}
+  header{padding:72px 0 22px}
+  .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--indigo);font-weight:600}
   h1{font-size:clamp(32px,6vw,56px);line-height:1.04;letter-spacing:-.022em;font-weight:800;margin:18px 0 14px;max-width:18ch}
-  .lede{font-size:clamp(17px,2.2vw,21px);color:var(--muted);max-width:60ch;margin:0 0 6px}
-  .cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:14px 0 10px}
-  @media(max-width:720px){.cards{grid-template-columns:1fr}}
+  .lede{font-size:clamp(17px,2.2vw,21px);color:var(--muted);max-width:62ch;margin:0}
+
   a.card{display:block;text-decoration:none;color:inherit;background:var(--paper);border:1px solid var(--line);
-    border-top:4px solid var(--accent);border-radius:16px;padding:24px 24px 22px;
-    box-shadow:0 1px 0 rgba(22,33,62,.04);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
-  a.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px -20px rgba(22,33,62,.5);border-top-color:var(--teal)}
-  a.card.v2{border-top-color:var(--teal)}
-  a.card.v2:hover{border-top-color:var(--accent)}
-  .tag{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
-  a.card.v2 .tag{color:var(--teal)}
-  .card h2{font-size:22px;line-height:1.15;letter-spacing:-.015em;margin:9px 0 8px}
-  .card p{font-size:14.5px;color:var(--muted);margin:0 0 16px}
-  .go{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--accent)}
-  a.card.v2 .go{color:var(--teal)}
+    border-radius:16px;box-shadow:0 1px 0 rgba(22,33,62,.04);
+    transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+  a.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px -22px rgba(22,33,62,.5)}
+  .tag{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+  .card h2{line-height:1.15;letter-spacing:-.015em;margin:9px 0 8px}
+  .card p{color:var(--muted);margin:0 0 16px}
+  .go{font-family:var(--font-mono);font-size:13px;font-weight:600}
+
+  /* featured (typologie) */
+  .feature{border-top:4px solid var(--amber);padding:26px 26px 24px;margin:30px 0 18px}
+  .feature .tag{color:var(--amber)}
+  .feature h2{font-size:26px}
+  .feature p{font-size:15.5px;max-width:66ch}
+  .feature .go{color:var(--amber)}
+
+  /* two volets */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:720px){.duo{grid-template-columns:1fr}}
+  .duo .card{padding:24px 24px 22px}
+  .v1{border-top:4px solid var(--indigo)} .v1 .tag{color:var(--indigo)} .v1 .go{color:var(--indigo)}
+  .v2{border-top:4px solid var(--teal)} .v2 .tag{color:var(--teal)} .v2 .go{color:var(--teal)}
+  .duo .card h2{font-size:21px}
+  .duo .card p{font-size:14.5px}
+
   footer{padding:30px 0 60px;color:var(--muted);font-size:12.5px;font-family:var(--font-mono);
-    border-top:1px solid var(--line);margin-top:24px}
+    border-top:1px solid var(--line);margin-top:26px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <span class="eyebrow">MathAData · données Capytale</span>
+    <span class="eyebrow">MathAData · données Capytale &amp; mathadata.fr</span>
     <h1>Enquête sur les usages de MathAData</h1>
-    <p class="lede">Deux lectures complémentaires du déploiement réel, à partir des données Capytale (extraction juin 2026).</p>
+    <p class="lede">Trois lectures complémentaires du déploiement réel, à partir des données d'usage (extraction juin 2026).</p>
   </header>
 
-  <div class="cards">
+  <a class="card feature" href="typologie.html">
+    <div class="tag">Vue d'ensemble · typologie</div>
+    <h2>Cinq façons d'enseigner</h2>
+    <p>La synthèse transversale : la carte des usages, cinq profils d'enseignants, où le pipeline fuit, et ce que les données complètes corrigent. Le meilleur point d'entrée.</p>
+    <span class="go">Ouvrir la typologie →</span>
+  </a>
+
+  <div class="duo">
     <a class="card v1" href="volet1.html">
       <div class="tag">Volet 1</div>
       <h2>Du pilote au déploiement national</h2>
@@ -71,7 +90,7 @@
   </div>
 
   <footer>
-    Source · API statistique Capytale (extraction 19 juin 2026) croisée à l'annuaire des établissements.
+    Source · données Capytale (extraction 19 juin 2026) &amp; mathadata.fr, croisées à l'annuaire des établissements.
     Identifiants pseudonymisés — aucune ré-identification. Profils désignés par établissement/commune.
   </footer>
 </div>
