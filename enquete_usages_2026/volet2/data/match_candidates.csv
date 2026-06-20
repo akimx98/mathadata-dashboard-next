@@ -1,0 +1,47 @@
+site_code,cap_acc,conf,uai,commune,academie,etab,statut,ftype
+S0017,f071598c,A,0341794R,Lattes,Montpellier,"Lycée polyvalent Jean-François Champollion, Lycée des métiers de la communication et des usages du numérique",forme,presentiel
+S0008,ea95de08,A,0690023A,Lyon 2e  Arrondissement,Lyon,Lycée général et technologique Ampère,nouveau,
+S0032,ca7e3ee8,A,0920136Y,Clichy,Versailles,Lycée polyvalent Newton-Enrea,nouveau,
+S0012,fb754ee4,A,0590119J,Lille,Lille,Lycée général et technologique Faidherbe,nouveau,
+S0037,6e6dcb21,A,0300052U,Le Vigan,Montpellier,Lycée polyvalent André Chamson,forme,presentiel
+S0039,52955071,A,0660004W,Céret,Montpellier,"Lycée polyvalent Déodat de Séverac - Lycée des métiers du transport, de la logistique et des gestions associées",nouveau,
+S0031,39ec84a9,A,0340002T,Agde,Montpellier,Lycée polyvalent Auguste Loubatières,forme,presentiel
+S0004,fa18eaf5,A,0590093F,Haubourdin,Lille,Lycée polyvalent Beaupré - Lycée des Métiers de la Plasturgie,forme,webdecouv
+S0010,e5fafbf1,A,0441552Y,Nantes,Nantes,Lycée Polyvalent les Bourdonnières,forme,webdecouv
+S0041,f66ac633,A,0781949V,Guyancourt,Versailles,Lycée général et technologique de Villaroy,forme,presentiel
+S0040,abba6fc3,A,0910626L,Orsay,Versailles,Lycée général et technologique Blaise Pascal,forme,presentiel
+S0023,d662ebf3,A,0752248L,Paris  2e  Arrondissement,Paris,Collège César Franck,forme,presentiel
+S0043,d6483ab5,A,0333583R,Créon,Bordeaux,Lycée polyvalent Robert Badinter,forme,presentiel
+S0016,0fe5083a,A,0590102R,Hazebrouck,Lille,Lycée Professionnel des Monts de Flandre,forme,presentiel
+S0033,b50dc3cc,A,0781898P,Poissy,Versailles,Lycée général et technologique Charles de Gaulle,nouveau,
+S0042,912c3958,A,0911913K,Gif-sur-Yvette,Versailles,Lycée général et technologique Vallée de Chevreuse,nouveau,
+S0006,11b8c4b8,A,0791062A,Niort,Poitiers,Lycée général et technologique Venise Verte,nouveau,
+S0028,984e73b4,A,0590198V,Dunkerque,Lille,Lycée professionnel Georges Guynemer,forme,presentiel
+S0014,2d9371d5,A,0950650R,Sarcelles,Versailles,Lycée polyvalent Jean-Jacques Rousseau,forme,webdecouv
+S0009,e2ffe6e3,A,0910626L,Orsay,Versailles,Lycée général et technologique Blaise Pascal,forme,webdecouv
+S0020,15e0a8c9,A,0590117G,Lille,Lille,Lycée général et technologique Louis Pasteur,forme,webdecouv
+S0005,132c6db4,A,0592921E,Roubaix,Lille,Lycée général et technologique privé Saint Rémi,forme,webdecouv
+S0019,390f1cd9,A,0590102R,Hazebrouck,Lille,Lycée Professionnel des Monts de Flandre,forme,presentiel
+S0024,0e21504b,A,0750703G,Paris 16e  Arrondissement,Paris,Lycée général Molière,nouveau,
+S0015,0d0c104b,A,0597005U,Estaires,Lille,Lycée polyvalent du Val de Lys,forme,presentiel
+S0018,92a09a69,A,0940126B,Alfortville,Créteil,Lycée polyvalent Maximilien Perret,nouveau,
+S0001,4a00ec74,A,0601863Z,Compiègne,Amiens,Lycée polyvalent Charles de Gaulle - Lycée des métiers de la restauration et du tourisme,nouveau,
+S0022,b6c1c84e,A,0624141P,Calais,Lille,Lycée polyvalent Léonard de Vinci,forme,webdecouv
+S0011,a6c3c194,A,0590101P,Hazebrouck,Lille,Lycée général et technologique des Flandres,forme,webdecouv
+S0036,ff70766a,B,0320002D,Auch,Toulouse,Lycée général et technologique Pardailhan,nouveau,
+S0013,d7c56ea0,B,0641941M,Ciboure,Bordeaux,Collège privé Piarres Larzabal,forme,webdecouv
+S0003,620cf34a,B,0130010R,Arles,Aix-Marseille,Lycée polyvalent Montmajour,nouveau,
+S0007,b76f966a,B,0281047L,Chartres,Orléans-Tours,Lycée général et technologique Fulbert,nouveau,
+S0035,ad5da9c9,B,0623328F,Hénin-Beaumont,Lille,Lycée Professionnel Henri Senez - Lycée des Métiers,nouveau,
+S0025,30d0ba9b,B,0352760K,La Mézière,Rennes,Collège Germaine Tillion,forme,presentiel
+S0002,366967b7,B,0590064Z,Douai,Lille,Lycée général et technologique Jean-Baptiste Corot,forme,webdecouv
+S0026,922a7fd3,B,0020034B,Laon,Amiens,Lycée polyvalent Pierre Méchain,nouveau,
+S0045,83e0de8c,B,0212045J,Beaune,Dijon,Lycée polyvalent Marey,forme,presentiel
+S0038,798dd1bf,B,0301722J,Villeneuve-lès-Avignon,Montpellier,Lycée général et technologique Jean Vilar,forme,presentiel
+S0030,339d7266,B,0930833A,Aulnay-sous-Bois,Créteil,Lycée enseignement général et technologique Jean Zay,nouveau,
+S0029,b7f35275,B,0910727W,Massy,Versailles,"Lycée polyvalent Parc de Vilgenis, lycée des métiers du numérique, de l'industrie et des services",forme,webdecouv
+S0027,910a32e8,B,0770930T,Meaux,Créteil,Lycée général et technologique Henri Moissan,forme,webdecouv
+S0034,1f8a6ace,B,0120006S,Decazeville,Toulouse,Lycée polyvalent La Découverte,forme,webdecouv
+S0044,c3fd7907,B,0140013N,Caen,Normandie,Lycée général et technologique Malherbe,nouveau,
+S0021,a0f97ba8,B,0762601P,Neufchâtel-en-Bray,Normandie,Lycée polyvalent Georges Brassens,nouveau,
+S0000,cfda2dd6,B,0350028R,Rennes,Rennes,Lycée général et technologique Bréquigny,forme,presentiel

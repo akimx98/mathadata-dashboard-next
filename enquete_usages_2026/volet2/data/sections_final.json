@@ -1,0 +1,1466 @@
+{
+ "exec_synthesis": "Tout est confirmé. Voici la synthèse finale.\n\n---\n\n# Du site à la classe — Pipeline complet et effet des formations (mathadata.fr × Capytale)\n## Synthèse du Volet 2 de l'enquête usages 2026\n\n---\n\n## 1. Résumé exécutif\n\n- **Un entonnoir qui se rétrécit à chaque marche.** mathadata.fr compte **2 724 comptes** ; **1 003 (37 %) restent « newsletter only »** et ne deviennent jamais comptes complets (1re fuite, immédiate). Des **1 721 comptes complets**, **337 (12,4 % du total) cliquent vers Capytale**, et seuls **224 enseignants** finissent par mener le TP devant des élèves (volet 1), pour **5 854 élèves** touchés. La conversion compte→classe de bout en bout est de l'ordre de **8 %**.\n\n- **Le funnel vrai est plus dense que le funnel « toutes dates ».** Le tracking des clics ne démarre que le **27 nov. 2025** : sur la cohorte trackable (1 006 comptes), **66 % deviennent actifs**, **58 % consultent un module**, **58 % téléchargent une ressource** et **27 % cliquent vers Capytale** — contre 47 / 40 / 41 / 20 % toutes dates. Le clic Capytale est la marche la plus sous-capturée par la fenêtre de tracking.\n\n- **Se former double l'intention.** Les formés cliquent vers Capytale **2,6× plus** que les non-formés (**23,5 % vs 9,0 %**) et téléchargent **2,6× plus de ressources** (5,28 vs 2,05 clics/personne). Effet réel, mais à lire avec deux biais : la **récence** (formés sur-représentés dans la fenêtre de tracking) et l'**endogénéité** (on forme des profs ou des établissements déjà acquis).\n\n- **Présentiel et webinaire ne convertissent pas au même endroit.** Le **présentiel** maximise l'entrée dans l'outil (**26,0 % de clic Capytale, 44,8 % d'actifs**) ; le **webinaire** maximise l'aboutissement en classe (**31,4 % d'établissements à usage élève effectif, contre 23,6 % en présentiel et 17,8 % chez les non-formés**) et l'approfondissement (**22 ressources distinctes/personne** chez ses consultants, vs 11 en présentiel). Le webinaire ratisse moins large mais touche des profils auto-sélectionnés qui vont plus loin.\n\n- **L'endogénéité du présentiel est mesurable.** Sur **154 établissements** formés en présentiel, seuls **27 (17,5 %)** montrent un usage Capytale et **17 (11 %)** un usage *postérieur* à la formation. Et **10 des 27 établissements à usage utilisaient déjà Capytale avant la formation** : une partie du « taux de conversion » du présentiel est un terrain déjà conquis. Quand l'usage suit, il vient vite (**médiane ≈ 2 semaines**) : le présentiel déclenche un test rapide ou rien.\n\n- **Deux portes d'entrée disjointes.** Sur **174 établissements** à usage classe Capytale, **77 (44,3 %) n'ont aucun compte site déclarant cet UAI** : ce sont des entrées **Capytale-directes** (via l'ENT, contournant le site ; borne basse). Symétriquement, sur **618 établissements** présents côté site, **511 (82,7 %) n'ont aucune empreinte classe Capytale** : l'intention site ne devient pas une classe pour la grande majorité. Les deux populations ne se recouvrent presque pas.\n\n- **La porte Capytale-directe est un héritage pré-site.** L'activité **Intro à l'IA (2548348)**, absente du site (3 clics), marque **42 des 77 UAI directs** (seule activité dans 28). Ces établissements sont plus **anciens et plus petits** (19,0 élèves/UAI vs 35,7 pour les UAI présents des deux côtés) ; 34 sur 77 n'ont aucun usage en 2025-2026. C'est la trace des profs précurseurs entrés avant l'essor du site.\n\n- **Le réservoir site-only n'est pas un cimetière, mais un sursis.** **380 des 511 UAI site-only (74 %)** ont leur compte le plus récent daté de 2026 ; **142 des 159** établissements site-only formés l'ont été en 2026 ; **148** comptent un compte ayant cliqué vers Capytale sans classe retrouvée. L'IPS moyen (111,0) est strictement comparable aux UAI actifs des deux côtés (111,6) : **la non-conversion n'est pas un effet de milieu social, mais de temps.**\n\n- **La conversion « jusqu'à la classe » se lit en trimestres.** Les cohortes **mûres** (formées avant déc. 2025, > 6 mois de recul) convertissent à **46,5 %** d'établissements à usage élève, contre **22,0 %** pour les cohortes récentes (janv.–juin 2026). Ces dernières remonteront mécaniquement à la rentrée : lire leur rendement au présent revient à le sous-estimer.\n\n- **Le dispositif croît par recrutement, pas (encore) par fidélisation.** Rétention prof 2024-25 → 2025-26 de **29,5 %** ; **81,5 % des enseignants 2025-26 sont nouveaux** ; 192 profs n'ont enseigné qu'une seule année (28 deux ans, 4 trois ans). La prochaine bataille est la ré-utilisation en année N+1, mieux portée par l'établissement que par l'individu.\n\n- **L'acquisition est massivement organique, l'emailing entretient.** **66,7 % des sessions référencées** viennent d'un moteur de recherche (Google en tête) ; les campagnes Brevo ne pèsent que **6,1 %** des sessions mais touchent 117 utilisateurs : canal de relance, pas d'acquisition. Le flux inverse **Capytale → site** (254 sessions, 30 utilisateurs) est la signature visible de la porte Capytale-directe.\n\n- **L'usage est concentré là où la notoriété est diffuse.** La marque rayonne nationalement (Versailles 168 comptes, Lille 151, Paris 141), mais **Lille capte 26 % des élèves Capytale** et le trio Lille-Versailles-Paris en concentre **47 %**. Former beaucoup ne garantit pas l'usage : **Montpellier** a le plus gros contingent de formés (79) pour seulement **3,9 élèves/formé**, cinq fois moins que Lille (20,2). Ce qui compte n'est pas le nombre de formés mais qu'un établissement bascule.\n\n---\n\n## 2. Titre du rapport et ordre des sections recommandé\n\n**Titre retenu :** *Du site à la classe — Reconstituer le pipeline enseignant de MathAData (mathadata.fr × Capytale) et mesurer l'effet des formations*\n\n**Ordre recommandé** (du panorama au détail, du robuste au bonus) :\n\n1. **Le pipeline complet, de la notoriété à la classe** — pose l'entonnoir, le garde-fou tracking, le cadrage intention vs aboutissement, les deux portes. C'est la clé de lecture de tout le reste.\n2. **Effet des formations sur l'usage (présentiel vs webinaire)** — le cœur analytique, l'effet le plus important et le plus demandé.\n3. **Temporalité, cohortes et rétention** — replace l'effet formation dans le temps (maturité des cohortes), explique pourquoi les taux récents sont planchers.\n4. **Les deux portes : site-first vs Capytale-direct** — approfondit le non-recouvrement et la nature des deux populations.\n5. **Géographie croisée et canaux de découverte** — où la notoriété devient usage, et par quels canaux les profs arrivent.\n6. **Ressources et contenus : ce que les profs consultent** — la matière de l'intention (préparation), le décrochage par séance.\n7. **Collège : réconciliation site × Capytale** — un cas verticalisé (intérêt sans aboutissement) qui illustre la limite d'offre.\n8. **Appariement individuel (bonus) et études de cas pipeline** — le grain individuel, en dernier, explicitement signalé comme illustratif à confiance signalée.\n\nRationale : commencer par le cadrage (section 1) évite que le lecteur confonde intention site et usage classe partout ensuite ; la temporalité (3) doit précéder les sections fines pour que tout taux récent soit lu comme « non encore mûr ».\n\n---\n\n## 3. Insights transverses (croisements entre sections)\n\n1. **Le webinaire convertit mieux en classe précisément parce que ses anciennes cohortes sont mûres — un artefact de maturité, pas (seulement) de format.** La section 2 montre l'avantage webinaire sur l'aboutissement (31,4 % vs 23,6 %), la section 5 montre que ses convertis sont d'anciennes cohortes (clics historiques sous-capturés), et la section *temporalité* montre que les cohortes mûres convertissent à 46,5 % vs 22 %. Croisés, ces trois faits suggèrent qu'une part de la supériorité « jusqu'à la classe » du webinaire tient à ce que ses gros bataillons (webinaires janv.–nov. 2025) ont eu le temps de déployer, là où le présentiel récent (pics 2026) n'a pas encore eu de créneau. À recul égal, l'écart se réduirait probablement.\n\n2. **L'inversion intention/aboutissement présentiel↔webinaire reproduit, à l'échelle des formats, l'inversion notoriété/usage de la géographie.** Présentiel = beaucoup de clics, peu de classes ; webinaire = peu de clics, beaucoup de classes. Montpellier = beaucoup de formés, peu d'élèves ; Lille = peu de formés, beaucoup d'élèves. Dans les deux cas, le volume d'entrée dans le funnel est décorrélé de l'aboutissement. Le facteur commun n'est ni le format ni l'académie : c'est **l'auto-sélection d'un noyau déjà décidé** vs le ratissage large d'indécis.\n\n3. **Le pic d'inscriptions de janvier 2026 (975 comptes) et la chute de conversion des cohortes récentes sont le même phénomène vu de deux bouts.** 784 de ces 975 comptes sont newsletter-only ; les cohortes formées 2026 affichent 22 % de conversion classe. Le pic de communication hivernal remplit le haut du funnel d'une population qui, par construction temporelle, ne peut pas encore avoir déployé (TP de fin d'année, pic de séances en mai). **Le « creux » de conversion 2026 est mécaniquement programmé par la saisonnalité croisée inscription/usage.**\n\n4. **La porte Capytale-directe et le faible flux Capytale→site disent que la découverte spontanée se fait sur Capytale, pas sur le site.** 44,3 % des UAI à usage classe n'ont aucun compte site ; le flux inverse Capytale→site n'est que de 30 utilisateurs ; et côté contenus, l'Intro à l'IA (invisible sur le site, 3 clics) marque 42 UAI directs. Le site n'est donc pas le point d'entrée du bouche-à-oreille pédagogique : **il est un canal de préparation et de relance pour qui connaît déjà MathAData, l'entrée « froide » passant par le catalogue Capytale et le réseau de pairs.** L'appariement individuel le confirme : 11 des 46 paires ont cloné sur Capytale *avant* de cliquer depuis le site, 7 *avant* d'avoir un compte.\n\n5. **Le funnel est piloté par la formation, pas par la découverte — la signature est dans les activités.** L'Équation réduite (3515488), pivot des formations, talonne la vitrine Stat en utilisateurs distincts cliquant vers Capytale (122 vs 116) malgré beaucoup moins de clics bruts : public resserré mais décidé. Côté collège, 30 % des clics portent sur l'Équation réduite et 41 % sur la vitrine. **Le contenu réellement poussé en classe est celui montré en formation, pas celui qui ranke en organique** — ce qui explique que l'acquisition organique massive (66,7 %) ne se traduise pas proportionnellement en usage.\n\n6. **Le collège est la démonstration verticale de l'« intérêt sans aboutissement » : un funnel qui s'effondre à la dernière marche par défaut d'offre, pas de demande.** Plus formé que le lycée (56,6 % vs 37,9 %), sur-représenté en présentiel (39 % des étabs), concentré à Montpellier (48/145) — mais **1 seul UAI collège sur 128 aboutit à des élèves**, et les clics collège évitent le catalogue 2nde (5 % vs 39 % au lycée). Le non-passage en classe n'est pas un déficit d'engagement : c'est l'absence de TP calés 6e-3e. Le collège est donc, à ce stade, un **canal de prescription** dont le ROI doit se mesurer comme tel, pas un canal de classe.\n\n7. **La profondeur de consultation des formés (et a fortiori des webinaire) ne mesure pas un effet de la formation — c'est de l'auto-sélection.** Les formés consultent 15,0 clics/prof vs 8,8 (non-formés), les webinaire 22,1. Mais la même population webinaire affiche moins de clics Capytale et moins de déclaration d'UAI : c'est un profil d'individus isolés et motivés qui rapatrient le catalogue, pas un effet causal du format à distance. **Tout écart de profondeur entre formés et non-formés doit être lu comme corrélation, jamais comme rendement de la formation.**\n\n8. **La rétention au grain établissement est la vraie réserve de croissance, pas la rétention prof.** Rétention prof à 29,5 %, mais l'usage migre entre collègues d'un même UAI (deux comptes Capytale appariés sur un même établissement à Orsay et Hazebrouck ; bascule par réseau local à Montpellier et Lille). **Capitaliser sur l'établissement déjà converti rapporte davantage que ré-engager le prof individuel** — d'autant que 380 UAI site-only sont en sursis de déploiement, pas en abandon.\n\n---\n\n## 4. Recommandations opérationnelles\n\n1. **Relancer le réservoir site-only en sursis (cible : ~148 établissements à intention non aboutie).** 148 UAI site-only comptent un compte ayant cliqué vers Capytale sans classe retrouvée, et 380 ont un compte créé en 2026 (IPS comparable aux convertis : aucun frein de milieu). Action : séquence de relance ciblée à la **rentrée de septembre** (et non en cours d'année), au moment du créneau de déploiement, avec le **guide de connexion Capytale** mis en avant (74 % de ses lecteurs cliquent ensuite vers Capytale — c'est le marqueur de passage à l'acte le plus fiable du funnel).\n\n2. **Arbitrer l'allocation des formations présentielles : sortir des terrains déjà conquis.** 10 des 27 établissements présentiels à usage utilisaient déjà Capytale avant la formation, et le rendement « jusqu'à la classe » du présentiel reste modeste (11 % des étabs). Action : prioriser le présentiel sur des **établissements vierges d'usage Capytale** (mesurable a priori via l'historique UAI), et combiner les deux formats — présentiel pour amorcer largement, webinaire pour approfondir le noyau motivé — plutôt que les opposer.\n\n3. **Ouvrir (ou assumer de fermer) la porte collège.** Le collège est sur-formé mais ne convertit pas faute de TP calés 6e-3e (5 % des clics collège sur le catalogue 2nde). Deux options exclusives : soit **produire 2-3 activités explicitement collège** (proportionnalité, statistiques 4e/3e, repérage) pour transformer l'intérêt existant ; soit **assumer le collège comme canal de prescription** et cesser de mesurer son ROI à l'aune de la conversion élève. Décision à prendre, car le statu quo gaspille un contingent de formés réel (Montpellier en tête).\n\n4. **Capitaliser sur la porte Capytale-directe et le réseau de pairs plutôt que sur le seul SEO.** L'acquisition « froide » passe par Capytale et le bouche-à-oreille, pas par le site (44 % des UAI à usage sans compte site ; flux Capytale→site marginal). Action : soigner la **fiche catalogue Capytale** (point d'entrée réel des découvreurs), y placer un lien de retour vers les ressources site, et réactiver l'**Intro à l'IA** si elle reste un point d'entrée vivant — ou la référencer enfin sur le site pour la réintégrer au funnel mesurable.\n\n5. **Instrumenter la conversion au bon grain et au bon moment.** La fenêtre de tracking ouverte au 27 nov. 2025 rend tout taux de clic Capytale antérieur sous-capturé : ne jamais comparer cohortes mûres et récentes sur le clic. Action : piloter l'effet formation sur le **proxy établissement-historique-complet** (pct_uai_capytale_usage, non biaisé) et **ré-évaluer les cohortes 2026 à la rentrée**, où leur conversion réelle deviendra lisible.\n\n---\n\n## 5. Drapeaux qualité-données et limites (à afficher honnêtement)\n\n- **Aucun identifiant commun entre les deux mondes.** Comptes Capytale = ENT anonymes (MD5), comptes site = nominatifs. **L'appariement individuel est inféré (UAI + activité + timing), jamais certifié** : 46 paires seulement (16,4 % des cliqueurs site à UAI connu), dont 29 de confiance A. Le grain robuste reste l'**établissement (UAI)** et la **cohorte de formation** ; l'individuel est un bonus illustratif. Deux UAI portent deux comptes Capytale appariés (attribution prof ambiguë).\n\n- **Fenêtre de tracking au 27 nov. 2025.** Les clics ressources et vues de module ne sont captés qu'à partir de cette date : tout taux de clic Capytale antérieur est **sous-capturé**, pas absent. Les comparaisons entre cohortes mûres et récentes sur le clic sont invalides. La conversion au grain établissement sur l'historique Capytale complet (2023-2026) **n'est, elle, pas biaisée** — c'est le socle de toutes les affirmations « jusqu'à la classe ».\n\n- **Endogénéité des formations.** On forme souvent des profs ou des établissements déjà acquis (10/27 établissements présentiels à usage utilisaient déjà Capytale avant). Tous les écarts formés/non-formés et webinaire/présentiel mêlent effet causal, **auto-sélection** et **récence**. Aucun chiffre du rapport ne doit être lu comme un effet causal net ; la mesure causale propre exigerait de neutraliser l'usage préexistant, ce que les cohortes récentes ne permettent pas encore.\n\n- **Incohérence arithmétique sur « comptes complets → formés ».** Le « 37 % des comptes complets formés » (638/1721) est **invalide** : 188 des 638 formés sont flaggés newsletter_only et n'appartiennent donc pas aux 1 721 comptes complets. Chiffres propres retenus : **formés = 23,4 % du total (638/2 724)** ; formés parmi comptes complets = 450/1 721 = 26,1 %. La narration de l'entonnoir ne doit pas enchaîner 1003 → 1721 → 638 (double-compte de 188 personnes).\n\n- **Définitions hétérogènes des deux portes.** La porte « Capytale-direct » (77) s'appuie sur les 174 UAI de `uai_teach` ; la porte « site-only » (511) sur une empreinte plus large (UAI teach OU él). Chaque chiffre est juste isolément mais les deux ne reposent pas sur la même définition d'empreinte ; comparabilité à manier avec prudence. La borne haute de la porte directe (grain `uai_el`) est de 166 UAI.\n\n- **`clicked_capytale = 337` est une définition intermédiaire non documentée.** Selon la source : events resourceType=capytale = 306 ; url~capytale = 325 ; rss /web/b/ = 341 ; union = 360. Tous les taux restent dans la fourchette ~19-21 % ; le 19,6 % publié est défendable mais la définition mériterait d'être figée et explicitée.\n\n- **9 comptes `exclude_from_analytics` non retirés.** facts_cross et la table de travail comptent 2 724 sans appliquer l'exclusion demandée. Impact sur les taux négligeable (< 0,5 pt) mais à harmoniser pour la cohérence (ex. Lille 66 formés au lieu de 64).\n\n- **Bug `norm_acad` sur les académies à nom composé.** Aix-Marseille, Orléans-Tours, Nancy-Metz, Polynésie, Clermont, La Réunion sont scindées en doublons par la normalisation. Les parts globales sont à peine affectées, mais les chiffres par académie de ces lignes sont à recoller avant toute publication détaillée.\n\n- **« 5 057 élèves rattachés à une académie » est un artefact de la coupe top-25** (total réel 5 081) : à ne pas présenter comme un total. Le ratio « 11,1 élèves par formé » ne divise que par les formés à académie propre (~454) ; borne basse tous formés ≈ 8.\n\n- **Précisions de libellé sur les volumes Capytale.** Les « élèves touchés 150 → 2 181 → 4 479 » sont des **lignes/affectations** (clones distribués), pas des élèves distincts (146 / 1 943 / 3 783). La croissance n'est pas un doublement constant (premier saut ~×14 de montée en charge, puis ×2). Le nombre de « classes » se reconstruit par regroupement activité×date, jamais par comptage d'`assignment_id`.\n\n- **« Usage élève » = au moins une classe réelle, pas un usage intense.** La métrique `pct_uai_capytale_usage` compte les établissements ayant ≥ 1 vrai élève (role=student), pas un usage important. À formuler « usage élève effectif » pour lever l'ambiguïté.\n\n- **Le total des séances datées est 294, pas 348** (348 = lignes role=teacher, sans rapport). Août nul, septembre 3. À corriger dans la prose temporalité.\n\n- **Sous-captures « identifié » vs « total » dans les contenus.** Les 12 840 clics ressources incluent 5 197 clics anonymes ; seuls 7 643 sont attribuables aux 712 profs identifiés. Idem vidéos (1 566 ouvertures anonymes sur 1 858 ; vidéo « Utiliser notebook Capytale » = 68 ouvertures, dont 16 identifiées). Ne pas laisser croire que « 497 profs » et « 4 675 clics » partagent le même univers d'attribution.\n\n- **Borne basse / borne haute à toujours signaler.** Capytale-direct : 77 (basse) à 166 (haute). Site-only : 511 est une borne haute (46 appariements inférés montrent des liens cachés ; la part « jamais arrivée en classe » est inférieure). Le collège « 1 sur 60 présentiel » et « 1 sur 128 site » **désignent le même établissement** (Paris 0752248L) — un seul signal, pas deux preuves indépendantes.\n\n- **`facts_cross.json` à corriger en amont** : `two_doors.site_uai_with_capytale_usage = 93` est incohérent (511 + 93 ≠ 618) ; la valeur correcte est **107**. Le 82,7 % publié reste juste.",
+ "sections": [
+  {
+   "theme": "pipeline_funnel",
+   "title": "Le pipeline complet, de la notoriete a la classe",
+   "prose": "## Un entonnoir qui se rétrécit fortement à chaque marche\n\nReconstituer le trajet d'un enseignant — entendre parler de MathAData, créer un compte, se former, tester sur Capytale, puis enseigner à des élèves — fait apparaître un entonnoir net. Le site mathadata.fr compte **2 724 comptes**. La première fuite est immédiate : **1 003 comptes (37 %) restent « newsletter only »**, jamais convertis en compte complet. Restent **1 721 comptes complets (63,2 %)**. Parmi eux, **638 sont formés (23,4 % du total de départ, 37 % des comptes complets)**, **337 ont cliqué vers Capytale (12,4 % du total)**, et côté Capytale **224 enseignants ont effectivement mené le TP devant des élèves** (volet 1), pour **5 854 élèves touchés**. Chaque marche divise grossièrement le flux : la conversion compte→classe de bout en bout est de l'ordre de **8 %**.\n\nCette lecture « toutes dates » sous-estime cependant l'usage du site, car le tracking des clics et vues de modules ne démarre que le **27 novembre 2025** (garde-fou). Sur la **cohorte trackable** (1 006 comptes créés après cette date), le funnel site est bien plus dense : **66,4 % deviennent actifs**, **57,7 % consultent un module**, **58,4 % téléchargent une ressource** et **27,4 % cliquent vers Capytale** — contre respectivement 46,7 %, 40,3 %, 41,3 % et 19,6 % sur l'ensemble. Le clic Capytale, lui, est largement sous-capturé avant fin novembre : c'est la marche la plus pénalisée par la fenêtre de tracking.\n\n## Intention (site) versus aboutissement (classe) : deux mesures à ne pas confondre\n\nTout ce qui se passe sur le site relève de l'**intention** (consulter, télécharger, cliquer vers Capytale). L'**usage réel** ne se lit que côté Capytale, et seul le grain établissement (UAI) y est robuste, car l'historique Capytale complet (2023–2026) n'est pas biaisé par la fenêtre de tracking. C'est pourquoi le proxy « arrivé en classe » retenu est *pct_uai_capytale_usage* : la part des comptes (à UAI connu) dont l'établissement présente un usage élève avéré.\n\nLes délais montrent une bascule très rapide quand elle a lieu : la médiane compte→premier module, compte→première ressource et compte→clic Capytale est de **0 jour** (l'action se fait le jour de l'inscription), mais le **9e décile dépasse 170 jours** : soit l'enseignant agit tout de suite, soit il revient seulement à la séquence pédagogique suivante. La séquence compte/formation confirme deux portes d'entrée : sur les dates exploitables, **235 comptes sont créés le jour même de la formation**, **180 après** (la formation a déclenché le compte) et **71 avant** (déjà intéressé, le compte précède la formation).\n\n## L'effet formation : réel sur l'intention, plus net en webinaire sur l'aboutissement\n\nSe former multiplie l'engagement. Les formés cliquent vers Capytale **2,6 fois plus** que les non-formés (**23,5 % contre 9,0 %**) et téléchargent **2,6 fois plus de ressources** (5,28 vs 2,05 clics ressource en moyenne). Surtout, distinguer les types de formation est instructif. Le **présentiel** maximise l'intention immédiate (**26,0 % de clic Capytale**), mais le **webinaire** débouche davantage sur un usage en classe (**31,4 % d'établissements avec usage élève, contre 23,6 % en présentiel** et 17,8 % chez les non-formés) et génère le plus de téléchargements de ressources (**7,04** en moyenne). Lecture prudente : les webinaires touchent souvent des profs déjà motivés et auto-sélectionnés ; le présentiel ratisse plus large (formations d'établissement entières), d'où une dilution. La cohorte des établissements ayant reçu une formation présentielle le confirme : sur **154 établissements**, seuls **27 (17,5 %)** montrent un usage Capytale, et **17 (11 %)** un usage postérieur à la formation.\n\n## La porte Capytale-directe : une part importante échappe au site\n\nLe pipeline n'est pas linéaire. Au grain établissement, sur **174 UAI** ayant un usage Capytale enseignant, **77 (44,3 %) n'ont aucun compte site déclarant cet UAI** : ce sont des entrées « Capytale-directes », via l'ENT, sans passer par mathadata.fr (borne basse, car un prof peut avoir un compte sans renseigner l'UAI). À l'inverse, sur **618 UAI déclarés côté site, 82,7 % n'ont aucune empreinte Capytale élève** : l'intention site ne se transforme pas en classe pour la grande majorité. L'activité « Équation réduite » (3515488), pivot des formations, est la plus cliquée (122 utilisateurs), devant la vitrine « Stat classification » (116) — signature claire d'un funnel piloté par la formation plus que par la découverte spontanée.",
+   "key_stats": [
+    {
+     "label": "Conversion compte→classe (bout-en-bout)",
+     "value": "~8 %",
+     "source": "224 enseignants ayant enseigné (facts_teachers.json) / 2724 comptes (facts_cross.overview). 224/2724=8,2%"
+    },
+    {
+     "label": "Comptes restés newsletter-only (1re fuite)",
+     "value": "1 003 / 2 724 (37 %)",
+     "source": "facts_cross.overview.newsletter_only / accounts_total"
+    },
+    {
+     "label": "Comptes complets → formés",
+     "value": "638 / 1 721 (37,1 %)",
+     "source": "facts_cross.overview.formed_total / full_accounts"
+    },
+    {
+     "label": "Clic Capytale, cohorte trackable vs toutes dates",
+     "value": "27,4 % vs 19,6 %",
+     "source": "facts_cross.site_funnel.trackable_cohort.capytale_rate vs all_full_accounts.capytale_rate ; tracking depuis 2025-11-27"
+    },
+    {
+     "label": "Lift formation sur le clic Capytale",
+     "value": "x2,6 (23,5 % vs 9,0 %)",
+     "source": "facts_cross.formation_effect : forme_all.pct_clicked_cap / nouveau.pct_clicked_cap = 23,5/9,0"
+    },
+    {
+     "label": "Aboutissement en classe : webinaire > présentiel",
+     "value": "31,4 % vs 23,6 % (vs 17,8 % non-formés)",
+     "source": "facts_cross.formation_effect.*.pct_uai_capytale_usage (proxy UAI usage élève, historique Capytale complet)"
+    },
+    {
+     "label": "Médiane compte→1re action",
+     "value": "0 jour (P90 > 170 j)",
+     "source": "facts_cross.delays_days : to_module/to_resource/to_capytale p50=0, p90 174-195 j"
+    },
+    {
+     "label": "Entrées Capytale-directes (sans compte site)",
+     "value": "77 / 174 UAI (44,3 %)",
+     "source": "facts_cross.two_doors : capytale_uai_no_site_account / capytale_uai_teach"
+    },
+    {
+     "label": "UAI site sans empreinte classe Capytale",
+     "value": "511 / 618 (82,7 %)",
+     "source": "facts_cross.two_doors : site_uai_no_capytale_footprint / site_uai_total"
+    },
+    {
+     "label": "Établissements formés en présentiel avec usage Capytale",
+     "value": "27 / 154 (17,5 %) ; 17 postérieurs (11 %)",
+     "source": "facts_cross.presentiel_etabs"
+    }
+   ],
+   "case_studies": [
+    {
+     "title": "La porte du site puis la classe (présentiel, Lattes)",
+     "narrative": "Compte site formé en présentiel (académie de Montpellier, lycée polyvalent à Lattes, UAI 0341794R) apparié avec confiance élevée à un compte Capytale enseignant. Trajet complet observé : compte → formation présentielle → clic vers Capytale → usage élève dans l'établissement. Cas-type du pipeline « par le site » qui aboutit en classe."
+    },
+    {
+     "title": "La porte Capytale-directe (Lyon 2e)",
+     "narrative": "Établissement de l'académie de Lyon (lycée général et technologique, UAI 0690023A) avec usage Capytale enseignant avéré, mais dont le compte site associé est de statut « nouveau » (non formé). Illustre les 44 % d'UAI qui arrivent à l'usage par l'ENT/Capytale sans s'appuyer sur la formation — pipeline court-circuité."
+    },
+    {
+     "title": "Cohorte de formation à fort taux d'aboutissement (janv. 2025, webinaire)",
+     "narrative": "Cohorte webinaire de janvier 2025 : 37 formés, 19 à UAI connu, dont 7 établissements (36,8 %) avec usage élève et 10 clics Capytale. Contraste avec la cohorte présentielle de sept. 2025 (53 formés, 0 établissement avec usage observé) : le présentiel de masse en rentrée se traduit moins vite en classe que le webinaire auto-sélectionné."
+    }
+   ],
+   "data_quality_flags": [
+    "Garde-fou tracking : clics/modules/clics-Capytale captés seulement depuis le 27 nov 2025. Les taux 'toutes dates' du funnel site sous-estiment l'usage des comptes antérieurs ; la cohorte trackable (post-27/11, n=1006) est la mesure propre. Le clic Capytale est la marche la plus pénalisée.",
+    "La marche '224 ont enseigné / 5854 élèves' provient du volet 1 (côté Capytale, anonyme) et N'EST PAS un sous-ensemble strict des 337 cliqueurs site : les deux mondes n'ont pas d'identifiant commun. La conversion bout-en-bout ~8% (224/2724) mélange donc deux sources et est une approximation de cadrage, pas un chaînage individuel.",
+    "Appariement individuel site↔Capytale inféré (UAI+activité+timing) et partiel : 46 matches validés, dont seulement 16,4% des cliqueurs site à UAI connu appariés (match_validation.json). Les études de cas individuelles sont à confiance signalée ; privilégier le grain établissement et cohorte.",
+    "two_doors borne basse : 'Capytale-direct' (77 UAI sans compte site) surestime potentiellement la porte directe car un prof peut avoir un compte sans déclarer son UAI. Inversement les 82,7% d'UAI site sans empreinte peuvent masquer un usage sous un autre UAI.",
+    "Effet formation possiblement confondu par auto-sélection : les inscrits webinaire sont souvent déjà motivés, le présentiel ratisse des établissements entiers (dilution). Le différentiel webinaire>présentiel sur l'aboutissement classe est un signal, pas une preuve causale.",
+    "Sentinelle bidon de date de formation ('1984-01-01') et 152 comptes sans date propre dans la séquence compte/formation : les sous-totaux same_day/before/after portent sur les dates exploitables uniquement.",
+    "Comptes à exclure déjà retirés en amont (démo c81e728d, exclude_from_analytics=9) selon la méthodo ; non re-vérifié dans ce recalcul."
+   ],
+   "chart_specs": [
+    {
+     "title": "Entonnoir complet : de la notoriété à la classe (toutes dates)",
+     "kind": "funnel",
+     "data": "[{\"etape\":\"Comptes créés\",\"n\":2724,\"pct_total\":100.0},{\"etape\":\"Comptes complets\",\"n\":1721,\"pct_total\":63.2},{\"etape\":\"Formés\",\"n\":638,\"pct_total\":23.4},{\"etape\":\"Clic vers Capytale\",\"n\":337,\"pct_total\":12.4},{\"etape\":\"Ont enseigné (Capytale, v1)\",\"n\":224,\"pct_total\":8.2}]"
+    },
+    {
+     "title": "Effet formation par type : intention (clic Capytale) vs aboutissement (usage classe UAI)",
+     "kind": "grouped",
+     "data": "[{\"groupe\":\"Non formés\",\"clic_capytale_pct\":9.0,\"usage_classe_uai_pct\":17.8},{\"groupe\":\"Formés présentiel\",\"clic_capytale_pct\":26.0,\"usage_classe_uai_pct\":23.6},{\"groupe\":\"Formés webinaire\",\"clic_capytale_pct\":20.4,\"usage_classe_uai_pct\":31.4}]"
+    },
+    {
+     "title": "Funnel site : cohorte trackable (post-27/11) vs toutes dates",
+     "kind": "grouped",
+     "data": "[{\"etape\":\"Actif\",\"toutes_dates_pct\":46.7,\"trackable_pct\":66.4},{\"etape\":\"Module vu\",\"toutes_dates_pct\":40.3,\"trackable_pct\":57.7},{\"etape\":\"Ressource téléchargée\",\"toutes_dates_pct\":41.3,\"trackable_pct\":58.4},{\"etape\":\"Clic Capytale\",\"toutes_dates_pct\":19.6,\"trackable_pct\":27.4}]"
+    }
+   ],
+   "verdict": "corrections_mineures",
+   "corrections": [
+    "INCOHERENCE ARITHMETIQUE sur 'Comptes complets -> formés = 638/1721 (37,1%)'. Le numérateur 638 (statut forme/mentor) inclut 188 comptes flaggés newsletter_only=true, qui sont DANS le bucket des 1003 newsletter-only, PAS dans les 1721 comptes complets. Seuls 450 des 638 formés sont des comptes complets. Le ratio 638/1721 mélange donc un numérateur partiellement hors-denominateur. Chiffres propres : formés parmi comptes complets = 450/1721 = 26,1% ; ou formés / total = 638/2724 = 23,4%. Le '37% des comptes complets' du funnel est invalide ; le '23,4% du total' est correct. La même incohérence affecte la narration de l'entonnoir (1003 fuite -> 1721 -> 638 formés double-compte 188 personnes).",
+    "INCOHERENCE INTERNE dans two_doors (non chiffrée comme erreur mais à signaler) : la moitié 'Capytale-direct' utilise comme empreinte Capytale les 174 UAI distincts de uai_teach, tandis que la moitié 'site sans empreinte' utilise une empreinte plus large (279 UAI = tout UAI apparaissant côté Capytale, teach OU él). Chaque chiffre publié se reproduit isolément, mais les deux portes ne reposent pas sur la même définition d'empreinte, ce qui nuit à la comparabilité.",
+    "NUANCE sur le total 2724 : le README indique 9 comptes exclude_from_analytics à exclure. facts_cross et toutes les affirmations utilisent 2724 (sans exclusion). Impact négligeable sur les taux mais à harmoniser.",
+    "PRECISION 'clicked_capytale=337' : la valeur dépend de la définition (events resourceType=capytale=306 ; events url~capytale=325 ; rss capytale=341 ; union events+rss=360). La table de travail fige 337 via une définition intermédiaire non documentée. Tous les chiffres restent dans la fourchette ~19-21% ; le 19,6% publié est défendable mais la définition mériterait d'être explicitée."
+   ],
+   "checks": [
+    {
+     "claim": "Conversion compte->classe (bout-en-bout) ~8% (224/2724)",
+     "recomputed": "224/2724 = 8,2%",
+     "agree": true,
+     "note": "Arithmétique correcte. 224 vient de facts_teachers.json (volet 1). Proxy de bout-en-bout mêlant deux sources sans identifiant commun : à lire comme ordre de grandeur, pas comme taux individuel chaîné."
+    },
+    {
+     "claim": "Comptes restés newsletter-only 1003/2724 (37%)",
+     "recomputed": "1003/2724 = 36,8% (arrondi 37%)",
+     "agree": true,
+     "note": "Recompté directement depuis users.json (champ newsletter_only=true). Exact."
+    },
+    {
+     "claim": "Comptes complets -> formés 638/1721 (37,1%)",
+     "recomputed": "638 formés au total dont 188 sont newsletter_only ; formés parmi comptes complets = 450/1721 = 26,1%. Le 638/1721 = 37,1% est arithmétiquement incohérent (numérateur hors dénominateur).",
+     "agree": false,
+     "note": "Le calcul 638/1721 donne bien 37,1% mais mélange les populations. Chiffre propre : 26,1% (parmi complets) ou 23,4% (sur total)."
+    },
+    {
+     "claim": "Clic Capytale cohorte trackable 27,4% vs toutes dates 19,6%",
+     "recomputed": "Trackable (créés >=2025-11-27) : 276/1007 = 27,4%. Toutes dates : 337/1721 = 19,6%.",
+     "agree": true,
+     "note": "Reproduit exactement avec la table de travail. Mon recomptage brut donne 276/1007 et 18,9-20,9% selon la définition de clic Capytale ; cohérent. Le garde-fou fenêtre de tracking est correctement signalé."
+    },
+    {
+     "claim": "Lift formation sur clic Capytale x2,6 (23,5% vs 9,0%)",
+     "recomputed": "formés 23,5% (150/638), non-formés 9,0% (188/2086) ; ratio = 2,61",
+     "agree": true,
+     "note": "Reproduit exactement. Correlation, pas causalité : endogénéité (les profs motivés se forment ET cliquent davantage). La prose le reconnaît implicitement."
+    },
+    {
+     "claim": "Aboutissement classe : webinaire 31,4% > présentiel 23,6% > non-formés 17,8% (pct_uai_capytale_usage)",
+     "recomputed": "non-formés 86/484=17,8% ; formés 83/319=26,0% ; présentiel 51/216=23,6% ; webinaire 32/102=31,4%",
+     "agree": true,
+     "note": "Reproduit exactement via jointure UAI<->usage élève Capytale (role=student, hors démo). ATTENTION : webinaire repose sur n=102 UAI seulement (32 étabs) vs 216 présentiel ; l'écart web>pres est fragile et établissement-niveau (proxy, pas individuel). Sentinelle '1984-01-01' n'affecte pas ce calcul (basé sur UAI, pas date)."
+    },
+    {
+     "claim": "Médiane compte->1re action 0 jour (P90 > 170j)",
+     "recomputed": "médianes to_module/to_resource/to_capytale = 0,0 j ; P90 mes recomptages 188-209 j (facts : 174-195 j)",
+     "agree": true,
+     "note": "Médiane 0 confirmée. P90 légèrement supérieur dans mon recomptage (définitions de clic légèrement différentes) mais tous > 170 j. La bimodalité (action immédiate ou retour tardif) tient."
+    },
+    {
+     "claim": "Entrées Capytale-directes 77/174 UAI (44,3%)",
+     "recomputed": "174 UAI uai_teach distincts (hors démo) ; 97 avec compte site, 77 sans = 44,3%",
+     "agree": true,
+     "note": "Reproduit exactement avec empreinte = uai_teach. Borne basse correctement signalée (un prof peut avoir un compte sans déclarer l'UAI)."
+    },
+    {
+     "claim": "UAI site sans empreinte classe Capytale 511/618 (82,7%)",
+     "recomputed": "618 UAI site (exact) ; avec empreinte Capytale (tout UAI apparaissant côté Capytale, teach ou él) = 107 ; sans = 511 = 82,7%",
+     "agree": true,
+     "note": "Reproduit exactement MAIS avec une empreinte (279 UAI) plus large que celle de la porte Capytale-directe (174). Incohérence de définition entre les deux moitiés de two_doors signalée en correction."
+    },
+    {
+     "claim": "Étabs formés présentiel avec usage Capytale 27/154 (17,5%) ; 17 postérieurs (11%)",
+     "recomputed": "154 UAI présentiel-formés distincts ; 27 any_usage = 17,5% ; 17 usage_after = 11,0% ; 1554 élèves",
+     "agree": true,
+     "note": "Reproduit exactement depuis presentiel_etabs.csv et confirmé par recomptage indépendant des UAI présentiel (154 distincts depuis la table de travail)."
+    }
+   ]
+  },
+  {
+   "theme": "effet_formation",
+   "title": "Effet des formations sur l usage (presentiel vs webinaire)",
+   "prose": "## Une formation déplace nettement l'usage, mais pas de la même manière selon le format\n\nLes comptes formés se distinguent fortement des non-formés sur tous les indicateurs de funnel. Parmi les 2 086 comptes non formés, 9,0 % ont cliqué sur une activité Capytale et 26,0 % ont une activité quelconque sur le site ; chez les 638 formés, ces taux montent à 23,5 % et 41,1 %. L'écart est réel — un facteur 2,6 sur le clic Capytale — mais il faut le lire avec prudence : une partie tient à la **récence** (les formés récents sont sur-représentés dans la fenêtre de tracking ouverte le 27 nov. 2025) et à l'**endogénéité** (on forme souvent des profs ou des établissements déjà acquis).\n\n**Le présentiel convertit vers le clic, le webinaire vers l'engagement profond.** Le présentiel domine sur l'entrée dans l'outil : 26,0 % de clics Capytale et 44,9 % d'actifs (contre 20,4 % et 36,3 % pour le webinaire). Mais le webinaire produit un profil d'usage beaucoup plus intense côté ressources : 7,04 clics ressources par personne en moyenne contre 4,01 en présentiel, et surtout, parmi ceux qui cliquent au moins une ressource, le webinaire atteint **22,1 ressources consultées en moyenne (médiane 10)** contre 10,6 en présentiel et 8,8 chez les non-formés. Le webinaire touche moins de monde mais sélectionne des profs auto-motivés qui creusent le catalogue. C'est cohérent avec le fait qu'il recrute des profs plus dispersés : seuls 37,8 % des formés-webinaire déclarent un UAI, contre 59,2 % en présentiel — le webinaire agrège des individus isolés, le présentiel des établissements ciblés.\n\n**L'aboutissement « jusqu'à la classe » est l'indicateur le plus robuste**, car il s'appuie sur l'historique Capytale complet 2023-2026 et non sur la fenêtre de tracking. Ici le classement s'inverse : 31,4 % des comptes-webinaire à UAI connu sont dans un établissement à usage élève élevé, contre seulement 23,6 % en présentiel (et 17,8 % chez les non-formés). Le webinaire, en sélectionnant des profs déjà engagés, atterrit plus souvent dans des établissements où des élèves utilisent réellement le TP.\n\n**L'endogénéité du présentiel est mesurable et substantielle.** Sur les 154 établissements ayant reçu une formation présentielle (1 554 élèves potentiels), seuls 27 (17,5 %) ont un quelconque usage Capytale et 17 (11,0 %) un usage *postérieur* à la formation. Surtout, en reconstruisant la première trace Capytale de chaque établissement (clones profs et classes élèves), **9 des 32 établissements avec usage — soit 37 % — utilisaient déjà Capytale avant la formation**. La formation présentielle est donc partiellement allouée à des terrains déjà conquis, ce qui gonfle mécaniquement le taux de conversion brut. Quand l'usage suit effectivement la formation, il vient vite : **délai médian de l'ordre de 2 semaines** (p25 ≈ 0 j, p75 ≈ 50 j) entre le mois de formation et la première séance Capytale dans l'établissement. La formation présentielle n'amorce pas une adoption lente : soit elle déclenche un test rapide, soit elle ne déclenche rien.\n\n**La part de récence est forte et déforme la lecture brute.** Dans la cohorte trackable (comptes créés après le 27 nov. 2025), le présentiel passe à 27,7 % de clics Capytale (contre 15,7 % pour les comptes présentiel antérieurs) : l'effet apparent grossit avec la fraîcheur de la fenêtre. Le webinaire fait l'inverse (15,9 % en cohorte trackable contre 29,5 % avant) car ses meilleurs convertis sont d'anciennes cohortes (webinaires de janv.-nov. 2025) dont les clics historiques préexistent au tracking — un signal sous-capturé, pas absent.\n\n**Rendement réel de chaque format.** Le présentiel est l'outil d'amorçage : large couverture, conversion rapide quand elle a lieu, mais un tiers de l'effet affiché est de l'auto-sélection d'établissements déjà acquis et un rendement « jusqu'à la classe » modeste (11 % des établissements). Le webinaire est l'outil d'approfondissement : il rate la marge des indécis (moins de clics, moins d'UAI), mais ceux qu'il touche vont le plus loin (22 ressources/personne, 31 % en établissement à usage élève). Les deux formats sont complémentaires plutôt que substituables ; la mesure honnête de leur effet causal exigerait de neutraliser l'usage pré-existant, ce que les cohortes 2026-05/06 (récentes, sans temps écoulé) ne permettent pas encore de trancher.",
+   "key_stats": [
+    {
+     "label": "Clic Capytale : non-formés vs formés",
+     "value": "9,0 % → 23,5 %",
+     "source": "facts_cross.formation_effect.pct_clicked_cap (nouveau n=2086, forme_all n=638) ; recalculé identique sur payload_users_work.csv",
+     "note": "facteur 2,6 ; biaisé par récence + endogénéité"
+    },
+    {
+     "label": "Actifs sur le site : présentiel vs webinaire",
+     "value": "44,9 % vs 36,3 %",
+     "source": "facts_cross.formation_effect.pct_active ; recompute payload_users_work.csv (présentiel 365, webdecouv 270)",
+     "note": "présentiel domine l'entrée dans l'usage"
+    },
+    {
+     "label": "Intensité ressources parmi les cliqueurs ressources",
+     "value": "webinaire 22,1 vs présentiel 10,6 vs non-formé 8,8",
+     "source": "recompute payload_users_work.csv : moyenne n_res_clicks restreinte aux clicked_res=True (webdecouv n=86, médiane 10)",
+     "note": "contraste d'engagement profond du webinaire"
+    },
+    {
+     "label": "Aboutissement « jusqu'à la classe » (usage élève élevé)",
+     "value": "webinaire 31,4 % > présentiel 23,6 % > non-formé 17,8 %",
+     "source": "facts_cross.formation_effect.pct_uai_capytale_usage (historique complet, non biaisé tracking)",
+     "note": "indicateur le plus robuste ; classement inversé vs le clic"
+    },
+    {
+     "label": "Déclaration d'UAI (dispersion géographique)",
+     "value": "présentiel 59,2 % vs webinaire 37,8 %",
+     "source": "recompute payload_users_work.csv : part de uai non vide par groupe",
+     "note": "webinaire = profs isolés, présentiel = établissements ciblés"
+    },
+    {
+     "label": "Endogénéité du présentiel",
+     "value": "37 % des établissements à usage utilisaient déjà Capytale AVANT la formation",
+     "source": "effet_formation_delay.py : 9/27 etabs (presentiel_etabs.csv croisé first_dt de capytale_by_uai_teach/el)",
+     "note": "any_usage 17,5 % mais usage_after_formation seulement 11,0 %"
+    },
+    {
+     "label": "Délai formation → 1re séance Capytale (établissement)",
+     "value": "médiane ≈ 14 j (p25≈-2, p75≈50)",
+     "source": "effet_formation_delay.py : 23 etabs présentiel avec usage post-formation, formation_month mi-mois vs min(first_dt)",
+     "note": "adoption rapide ou nulle, pas progressive"
+    },
+    {
+     "label": "Effet de récence (cohorte trackable)",
+     "value": "présentiel 27,7 % de clic Capytale (vs 15,7 % avant tracking)",
+     "source": "effet_formation_recency.py : split createdAt au 2025-11-27 sur payload_users_work.csv",
+     "note": "webinaire inversé (15,9 % vs 29,5 %) : ses convertis sont d'anciennes cohortes sous-capturées"
+    },
+    {
+     "label": "Couverture présentiel au grain établissement",
+     "value": "154 établissements, 1 554 élèves potentiels, 11,0 % avec usage post-formation",
+     "source": "facts_cross.presentiel_etabs + recompute pupils",
+     "note": "1 011 élèves dans les 17 etabs à usage post-formation"
+    },
+    {
+     "label": "Clics Capytale moyens par personne",
+     "value": "non-formé 0,17 / présentiel 0,71 / webinaire 0,80",
+     "source": "facts_cross.formation_effect.mean_cap_clicks ; recompute identique",
+     "note": "sous-capturé pour les comptes pré-tracking"
+    }
+   ],
+   "case_studies": [
+    {
+     "title": "Présentiel sur terrain déjà acquis (Calais, Lille, oct. 2024)",
+     "narrative": "Lycée de Calais (UAI 0624141P, acad. Lille, ~276 élèves), formation présentielle en oct. 2024 : usage Capytale présent et postérieur. Mais plusieurs établissements de la même vague oct. 2024 (Lille 0590117G) montrent un usage Capytale antérieur à la formation — illustration directe de l'allocation des formations vers des terrains déjà actifs, qui gonfle la conversion brute du présentiel."
+    },
+    {
+     "title": "Établissement-relais : formation présentielle suivie d'un usage élève massif (Guyancourt, mai 2026)",
+     "narrative": "Lycée de Guyancourt (UAI 0781949V, acad. Versailles), 7 profs formés en présentiel en mai 2026, usage_after_formation=True, 16 élèves Capytale recensés peu après. Cas de figure du présentiel « réussi » : une équipe entière formée sur site, conversion rapide vers la classe dans le mois suivant."
+    },
+    {
+     "title": "Webinaire : engagement ressources sans UAI déclaré",
+     "narrative": "Sur 270 formés-webinaire, 168 ne déclarent aucun établissement ; pourtant le profil de ceux qui cliquent une ressource atteint une médiane de 10 et un maximum de 187 consultations. Profil type du webinaire : prof isolé, non rattaché à un établissement identifié dans nos données, mais explorant intensément le catalogue — un engagement individuel fort que le grain établissement ne capte pas."
+    },
+    {
+     "title": "Cohorte présentiel janv. 2026 : beaucoup d'UAI, peu d'aboutissement immédiat",
+     "narrative": "La cohorte présentiel de janv. 2026 (n=51, 42 avec UAI, 23 cliqueurs Capytale) n'affiche que 14,3 % d'établissements à usage élève — délai trop court depuis la formation pour observer la mise en classe. À comparer aux cohortes anciennes (oct. 2024 : 66,7 %) où le temps écoulé a permis l'aboutissement. La récence déprime mécaniquement le taux d'aboutissement des cohortes 2026."
+    }
+   ],
+   "data_quality_flags": [
+    "Tracking des clics/modules/ressources démarré le 27 nov. 2025 : les indicateurs pct_active, pct_clicked_cap et mean_res_clicks sous-estiment l'usage des comptes formés avant cette date. Seul pct_uai_capytale_usage (historique Capytale complet 2023-2026) est non biaisé.",
+    "Endogénéité non corrigée : les formations présentielles sont allouées en partie à des établissements déjà utilisateurs (37 % des etabs présentiel à usage utilisaient Capytale avant la formation). Les taux de conversion bruts du présentiel surestiment donc l'effet causal.",
+    "Délai formation→usage : le mois de formation est ramené au 15 du mois (proxy mi-mois) faute de date exacte fiable ; la première trace Capytale combine clones profs (uai_teach) et classes élèves (uai_el). Médiane ≈ 14 j à interpréter à ±2 semaines.",
+    "Appariement individuel site↔Capytale inféré et partiel : seuls 46 matches validés (16,4 % des cliqueurs à UAI). Les analyses individuelles sont des bonus à confiance signalée ; le grain établissement et cohorte est privilégié.",
+    "2 comptes de type de formation inconnu et 9 comptes exclus (exclude_from_analytics) écartés. Démo Capytale (c81e728d) et hub fondateur Haubourdin (cfcd2084) exclus de l'usage par convention amont.",
+    "Effet de récence asymétrique : le webinaire affiche un taux de clic plus élevé AVANT le tracking (29,5 %) qu'après (15,9 %) car ses meilleurs convertis sont d'anciennes cohortes (2025) dont les clics historiques précèdent la fenêtre de capture — signal réel mais sous-mesuré, à ne pas lire comme une perte d'efficacité.",
+    "Cohortes présentiel 2026-05/06 trop récentes pour observer l'aboutissement en classe (délai non écoulé) : leurs faibles taux pct ne sont pas comparables aux cohortes 2024-2025."
+   ],
+   "chart_specs": [
+    {
+     "title": "Funnel par statut de formation : clic Capytale, actif, aboutissement classe",
+     "kind": "grouped",
+     "data": "{\"categories\":[\"Non-formés\",\"Présentiel\",\"Webinaire\"],\"series\":[{\"name\":\"% clic Capytale\",\"values\":[9.0,26.0,20.4]},{\"name\":\"% actifs site\",\"values\":[26.0,44.9,36.3]},{\"name\":\"% étab. à usage élève (historique)\",\"values\":[17.8,23.6,31.4]}],\"note\":\"clic & actif biaisés par tracking ; usage élève non biaisé\"}"
+    },
+    {
+     "title": "Intensité de consultation des ressources (parmi les cliqueurs ressources)",
+     "kind": "bars",
+     "data": "{\"categories\":[\"Non-formés\",\"Présentiel\",\"Webinaire\"],\"values\":[8.8,10.6,22.1],\"unit\":\"ressources moy. / cliqueur\",\"medians\":[4,5,10],\"note\":\"le webinaire sélectionne des profs qui creusent le catalogue\"}"
+    },
+    {
+     "title": "Endogénéité du présentiel : où en est l'usage des 154 étab. formés",
+     "kind": "funnel",
+     "data": "{\"steps\":[{\"label\":\"Établissements formés (présentiel)\",\"value\":154},{\"label\":\"Avec un usage Capytale (any)\",\"value\":27},{\"label\":\"dont usage APRÈS la formation\",\"value\":17},{\"label\":\"usage PRÉ-existant (endogène)\",\"value\":10}],\"note\":\"37% des étab. à usage utilisaient déjà Capytale avant la formation\"}"
+    },
+    {
+     "title": "Effet de récence : clic Capytale avant vs après ouverture du tracking (27 nov. 2025)",
+     "kind": "grouped",
+     "data": "{\"categories\":[\"Non-formés\",\"Présentiel\",\"Webinaire\"],\"series\":[{\"name\":\"Comptes pré-tracking (% clic)\",\"values\":[3.7,15.7,29.5]},{\"name\":\"Cohorte trackable (% clic)\",\"values\":[11.8,27.7,15.9]}],\"note\":\"présentiel et non-formés gonflés par la récence ; webinaire inversé (anciens convertis sous-capturés)\"}"
+    }
+   ],
+   "verdict": "corrections_mineures",
+   "corrections": [
+    "Affirmation 6 (endogeneite) : la source dit '9/27 etabs' mais le 37 % se calcule comme 10/27 (presentiel_etabs : 27 any_usage - 17 usage_after = 10 pre-existants). Le 9 provient d'une methode differente (reconstruction teach|el sur 32 etabs). Remplacer '9/27' par '10/27' pour coherence, ou expliciter qu'il s'agit de deux calculs distincts (et que la version teach|el donne 9/32 = 28 %, pas 37 %).",
+    "Le qualificatif 'usage ELEVE' (affirmation 4 et prose) est trompeur : la metrique pct_uai_capytale_usage compte les etablissements ayant AU MOINS un eleve reel sur Capytale (uai_el present dans role=student), pas un usage 'eleve' au sens d'intense. Reformuler en 'usage eleve effectif' / 'au moins une classe reelle' pour eviter l'ambiguite (eleve = pupil vs eleve = important).",
+    "Les 9 comptes exclude_from_analytics sont presents dans payload_users_work.csv (verifie : 9 ids presents, tous inactifs). Impact negligeable sur les taux (au plus +0,5 pt apres retrait, ex. presentiel actif 44,9->45,2 %, webinaire 36,3->36,8 %), mais la table de travail n'applique donc pas l'exclusion demandee par la consigne. A signaler/corriger en amont meme si sans effet materiel ici.",
+    "n_cap_clicks dans le work CSV (337 cliqueurs / 826 clics) sous-compte legerement vs le brut consultation_rss filtre '/web/b/' (341 cliqueurs / 859 clics) et nettement vs 'capytale' tout court (363 / 992). Choix definitionnel defendable (bridge web/b uniquement) mais a documenter ; ne change pas les ratios entre groupes (clic Capytale recalcule du brut : nouveau 9,0 %, presentiel 26,6 %, webinaire 21,1 %)."
+   ],
+   "checks": [
+    {
+     "claim": "Clic Capytale : non-formes 9,0 % -> formes 23,5 % (facteur 2,6)",
+     "recomputed": "Sur payload_users_work.csv : nouveau 9,0 % (187/2086), forme 23,5 % (150/638). Reconstruit depuis le brut consultation_rss (filtre file contenant 'capytale' + '/web/b/') : nouveau 9,0 %, presentiel 26,6 %, webdecouv 21,1 % -> agrege formes ~23-24 %. Apres retrait des 9 exclude_from_analytics : forme 23,8 %. Ratio ~2,6 confirme.",
+     "agree": true,
+     "note": "Confirme depuis le brut. La note de l'analyste signale correctement les biais recence + endogeneite."
+    },
+    {
+     "claim": "Actifs sur le site : presentiel 44,9 % vs webinaire 36,3 %",
+     "recomputed": "Work CSV : presentiel 44,9 % (164/365), webdecouv 36,3 % (98/270). Apres exclusion des 9 comptes : 45,2 % vs 36,8 % (ecart inchange).",
+     "agree": true,
+     "note": "Robuste. Note : ces taux subissent le biais de fenetre de tracking (actif depuis 27 nov 2025), mais l'ecart presentiel>webinaire tient."
+    },
+    {
+     "claim": "Intensite ressources parmi cliqueurs ressources : webinaire 22,1 vs presentiel 10,6 vs non-forme 8,8 (mediane web 10)",
+     "recomputed": "Restreint a clicked_res=True : nouveau n=488 moy 8,8 med 4 ; presentiel n=138 moy 10,6 med 5 ; webdecouv n=86 moy 22,1 med 10. Identique apres exclusion des 9.",
+     "agree": true,
+     "note": "Confirme. Le contraste est reel mais sur petit n (86 webinaire) et tributaire de la fenetre de tracking ; a presenter comme descriptif, pas causal."
+    },
+    {
+     "claim": "Aboutissement jusqu'a la classe : webinaire 31,4 % > presentiel 23,6 % > non-forme 17,8 %",
+     "recomputed": "Reconstruit INDEPENDAMMENT depuis le brut Capytale (cap_uai_used = uai_el des lignes role=student, demo exclu) croise avec la colonne uai du work CSV : nouveau 17,8 % (parmi 484 a UAI), presentiel 23,6 % (216), webdecouv 31,4 % (102). Robuste au retrait des 9 exclus (web reste 31,4 %).",
+     "agree": true,
+     "note": "Indicateur le plus solide : assis sur l'historique Capytale complet 2023-2026, non biaise par le tracking. Classement bien inverse vs le clic. Reserve : 'usage ELEVE' est en fait 'au moins un eleve reel' (n_pupils>=1), pas un seuil eleve ; le label sur-vend legerement."
+    },
+    {
+     "claim": "Declaration d'UAI : presentiel 59,2 % vs webinaire 37,8 %",
+     "recomputed": "Work CSV : presentiel 59,2 % (216/365), webdecouv 37,8 % (102/270). Apres exclusion des 9 : 59,0 % vs 38,3 %.",
+     "agree": true,
+     "note": "Confirme."
+    },
+    {
+     "claim": "Endogeneite du presentiel : 37 % des etabs a usage utilisaient deja Capytale AVANT la formation (9/27 etabs)",
+     "recomputed": "37 % est correct mais provient de presentiel_etabs.csv : (any_capytale_usage=27) - (usage_after=17) = 10 pre-existants -> 10/27 = 37,0 %. Le '9/27' de la source est ERRONE : le 9 vient d'un AUTRE calcul (effet_formation_delay.py reconstruit 32 etabs via teach|el, dont 9 avant). Deux denominateurs differents melanges.",
+     "agree": true,
+     "note": "Valeur (37 %) juste, mais sa justification '9/27' est incoherente. Devrait etre '10/27'. A corriger pour ne pas semer la confusion entre les deux methodes (flag presentiel_etabs vs reconstruction teach|el)."
+    },
+    {
+     "claim": "Delai formation -> 1re seance Capytale : mediane ~14 j (p25=-2, p75=50)",
+     "recomputed": "effet_formation_delay.py reproduit : n=23 etabs presentiel avec usage post-formation (slack -30j), mediane 14 j, p25=-2, p75=50, min=-17, max=134.",
+     "agree": true,
+     "note": "Reproduit exactement. Mais 'formation_month + 15 j' (mi-mois) est une approximation grossiere : la vraie date de formation est au jour pres dans trainedDateFormation. La mediane 14 j est donc a +/-15 j pres. Adoption rapide-ou-nulle : interpretation raisonnable."
+    },
+    {
+     "claim": "Effet de recence : presentiel 27,7 % de clic Capytale (trackable) vs 15,7 % (pre-tracking) ; webinaire inverse 15,9 % vs 29,5 %",
+     "recomputed": "effet_formation_recency.py reproduit sur work CSV (split createdAt au 2025-11-27) : presentiel trackable 27,7 % (n=314) vs pre 15,7 % (n=51) ; webdecouv trackable 15,9 % (n=182) vs pre 29,5 % (n=88).",
+     "agree": true,
+     "note": "Reproduit. Attention : n=51 (presentiel pre-tracking) est tres faible -> 15,7 % = ~8 comptes, intervalle large. L'inversion webinaire est interessante mais l'explication ('convertis = anciennes cohortes sous-capturees') reste une hypothese, pas une preuve."
+    },
+    {
+     "claim": "Couverture presentiel : 154 etabs, 1 554 eleves potentiels, 11,0 % avec usage post-formation, 1 011 eleves dans les 17 etabs a usage",
+     "recomputed": "presentiel_etabs.csv : 154 lignes, somme pupils=1554, usage_after_formation=True : 17/154 = 11,0 %, somme pupils de ces 17 = 1011. Tout confirme.",
+     "agree": true,
+     "note": "Confirme. Le 'usage post-formation' utilise une fenetre fu>=fd-7j ; legerement permissif mais raisonnable."
+    },
+    {
+     "claim": "Clics Capytale moyens par personne : non-forme 0,17 / presentiel 0,71 / webinaire 0,80",
+     "recomputed": "Work CSV : nouveau 0,17, presentiel 0,71, webdecouv 0,80 (apres exclusion : 0,17/0,71/0,81).",
+     "agree": true,
+     "note": "Confirme. Comme note, fortement sous-capture pour les comptes pre-tracking."
+    }
+   ]
+  },
+  {
+   "theme": "deux_portes",
+   "title": "Les deux portes : site-first vs Capytale-direct",
+   "prose": "## Deux populations qui ne se recouvrent presque pas\n\nLe rapprochement site / Capytale au grain etablissement (UAI) revele deux mondes largement disjoints. Sur les **174 etablissements** ayant un usage classe Capytale documente (grain `uai_teach`), **97 (55,7 %)** abritent au moins un compte site declarant ce meme UAI, mais **77 (44,3 %)** n'en ont aucun : c'est la porte **Capytale-direct**. Symetriquement, sur les **618 etablissements** representes par un compte site, seuls **107 (17,3 %)** laissent une trace Capytale, et **511 (82,7 %)** n'en laissent aucune : c'est la porte **site-only**. Les deux chiffres collent exactement a `facts_cross.json`. Ces populations ne se contredisent pas : ce sont les deux extremites d'un meme tuyau ou peu de profs sont visibles des deux cotes a la fois.\n\n### La porte Capytale-directe : l'empreinte de l'ancienne activite Intro-IA\n\nLa signature de cette population est nette. L'activite **Intro a l'IA (2548348)**, absente du site (2 clics seulement, cf. `capytale_clicks_by_activity`), est presente dans **42 des 77** etablissements Capytale-directs et constitue la **seule** activite dans 28 d'entre eux. Elle rassemble **983 eleves** de cette porte. Or sur le site, plus personne ne la trouve : c'est donc un marqueur quasi-pur d'entree par Capytale, souvent par bouche-a-oreille ou par le catalogue Capytale lui-meme, en contournant mathadata.fr. Les plus grosses classes directes confirment le motif : un etablissement de Polynesie (76 eleves), un autre de l'academie de Lille (60 eleves, deux annees), tous centres sur l'Intro-IA et/ou la Stat classification. Cette porte est aussi plus **ancienne et plus petite** par UAI : 34 des 77 etablissements n'ont aucun usage en 2025-2026 (usage purement historique 2023-2025), et la classe moyenne y est de **19,0 eleves** contre **35,7** pour les etablissements presents des deux cotes. Autrement dit, la porte Capytale-directe capte un heritage : des profs precurseurs entres avant l'essor du site, dont une part s'est essoufflee.\n\n### La porte site-only : un reservoir tres recent, pas encore arrive en classe\n\nLes 511 etablissements site-only ne sont pas un cimetiere de comptes inertes : ils sont surtout **trop neufs pour avoir deja deploye**. **380 sur 511 (74 %)** ont leur compte le plus recent date de 2026, et cote formation, **142 des 159** etablissements site-only formes l'ont ete en 2026 (pics janvier, mars, juin). Le signal d'intention est fort : **148** de ces etablissements comptent au moins un compte ayant **clique vers Capytale depuis le site** sans qu'on retrouve la classe correspondante, et **379** sont actifs sur le site. Le delai mediane site -> classe etant nul mais le p90 a ~174 jours (`delays_days`), une fraction substantielle de ces 511 est en sursis de deploiement plutot qu'en abandon. La composition reste massivement metropolitaine (0 hors_lycee, 0 etranger dans le sous-ensemble a UAI valide), **339 lycees / 124 colleges**, IPS moyen **111,0** strictement comparable aux etablissements actifs des deux cotes (**111,6**) : la non-conversion n'est donc pas un effet de milieu social. Les formes representent **181 / 511** (35 %), les nouveaux **330** : beaucoup de comptes spontanes n'ayant pas encore franchi le pas, et une cohorte formee recente qui n'a pas eu le temps.\n\n### Bornes des deux portes\n\nCapytale-direct est une **borne basse** a 77 : un prof peut avoir un compte sans declarer son UAI. En elargissant au grain `uai_el` (etablissements eleves), la porte directe monte a **166 UAI**, borne haute. Site-only est borne haute a 511 sous l'hypothese que l'absence de trace = absence d'usage ; mais les **46 appariements infères** (`match_validation`, dont 29 de confiance A) montrent que des liens existent sous le radar : la part reellement « jamais arrivee en classe » est inferieure a 511. Aucun des 77 UAI directs n'apparait dans les appariements, ce qui renforce leur statut de vraie porte alternative.",
+   "key_stats": [
+    {
+     "label": "Etablissements Capytale-direct (usage classe, aucun compte site)",
+     "value": "77 / 174 (44,3 %)",
+     "source": "capytale_by_uai_teach moins UAI declares dans payload_users_work ; identique a facts_cross.two_doors.pct_capytale_direct",
+     "note": "Borne basse : un prof peut avoir un compte sans declarer son UAI"
+    },
+    {
+     "label": "Etablissements site-only (compte site, aucune trace Capytale)",
+     "value": "511 / 618 (82,7 %)",
+     "source": "UAI site moins (uai_teach union uai_el) ; identique a facts_cross.two_doors.pct_site_uai_no_footprint",
+     "note": "Borne haute : 46 appariements infères montrent des liens caches"
+    },
+    {
+     "label": "Intro-IA (act 2548348) dans la porte directe",
+     "value": "42 UAI sur 77, dont 28 exclusivement",
+     "source": "comptage des activites parsees dans capytale_by_uai_teach.acts sur l ensemble direct",
+     "note": "Activite hors-site (2 clics site) : marqueur de la porte Capytale-directe"
+    },
+    {
+     "label": "Eleves rattaches a l Intro-IA dans la porte directe",
+     "value": "983 eleves",
+     "source": "somme n_pupils des UAI directs touchant 2548348",
+     "note": "Heritage d entree pre-site"
+    },
+    {
+     "label": "Site-only au compte le plus recent date de 2026",
+     "value": "380 / 511 (74 %)",
+     "source": "max(acct_month) >= 2026-01 par UAI dans payload_users_work",
+     "note": "Non-conversion majoritairement = pas eu le temps, pas abandon"
+    },
+    {
+     "label": "Etablissements site-only formes, dont en 2026",
+     "value": "159 formes, 142 en 2026",
+     "source": "is_formed=True et fmonth par UAI site-only",
+     "note": "Cohorte formee trop recente pour avoir deploye"
+    },
+    {
+     "label": "Site-only avec clic Capytale depuis le site (intention, classe non retrouvee)",
+     "value": "148 / 511",
+     "source": "clicked_cap=True par UAI site-only dans payload_users_work",
+     "note": "Signal d intention fort, deploiement en sursis"
+    },
+    {
+     "label": "Taille de classe moyenne : directe vs deux-cotes",
+     "value": "19,0 vs 35,7 eleves",
+     "source": "n_pupils moyen sur 77 directs (1460 el.) vs 97 mixtes (3465 el.)",
+     "note": "La porte directe agrege des usages plus petits et plus anciens"
+    },
+    {
+     "label": "IPS moyen : site-only vs actifs deux-cotes",
+     "value": "111,0 vs 111,6",
+     "source": "moyenne etab_ips par UAI (436 vs 105 valeurs)",
+     "note": "La non-conversion n est pas un effet de milieu social"
+    },
+    {
+     "label": "Borne haute porte directe (grain eleves uai_el)",
+     "value": "166 UAI",
+     "source": "uai_el moins UAI declares site",
+     "note": "Encadrement 77 (basse) - 166 (haute)"
+    }
+   ],
+   "case_studies": [
+    {
+     "title": "Porte directe historique — Intro-IA seule, academie de Lille",
+     "narrative": "Etablissement de l academie de Lille (UAI 0590011S) : 60 eleves repartis sur deux annees scolaires (2024-2025 et 2025-2026), premiere seance des decembre 2024, uniquement sur Intro a l IA (2548348) puis Stat classification. Aucun compte mathadata.fr ne declare cet etablissement. Profil type d entree par Capytale, en amont de l essor du site, qui dure dans le temps sans passer par la porte web."
+    },
+    {
+     "title": "Porte directe outre-mer — Polynesie",
+     "narrative": "Etablissement de Polynesie francaise (UAI 9840002E) : 76 eleves, premiere seance juin 2025, trois activites (Intro-IA, Equation reduite, Stat classification). Aucune trace site. Coherent avec la geographie : la Polynesie affiche 139 eleves Capytale pour seulement 3 comptes site (facts_cross.geography), academie ou la porte directe domine nettement."
+    },
+    {
+     "title": "Site-first avere — lycee de Calais (forme webinaire)",
+     "narrative": "Lycee polyvalent de Calais, academie de Lille (compte S0022, forme par webinaire). Appariement de confiance A : compte site puis classe Capytale tres etoffee (277 eleves, six activites des fevrier 2025, dont Intro-IA, Equation reduite, Stat classification, Produit scalaire). Illustre le pipeline complet site -> formation -> deploiement large et diversifie."
+    },
+    {
+     "title": "Site-only recent en sursis — nouveau compte 2026",
+     "narrative": "Parmi les 511 site-only, profil dominant : compte cree en 2026, actif sur le site (consultation de modules et de ressources), au moins un clic vers Capytale, mais aucune classe Capytale encore retrouvee. Avec un delai p90 site->classe de ~174 jours, ces etablissements relevent du deploiement differe plutot que de l abandon."
+    }
+   ],
+   "data_quality_flags": [
+    "Les deux portes sont calculees au grain ETABLISSEMENT (UAI), robuste ; le grain individuel reste infere et n est pas utilise pour les comptages principaux.",
+    "Capytale-direct=77 est une BORNE BASSE (un prof peut avoir un compte sans declarer son UAI). Borne haute 166 au grain uai_el. Ecart a interpreter comme une fourchette, pas une valeur unique.",
+    "Site-only=511 est une BORNE HAUTE : 46 appariements infères (dont 29 confiance A) prouvent l existence de liens site-classe non visibles dans les UAI declares ; la vraie non-conversion est inferieure.",
+    "La recence du site-only (380/511 en 2026, 148 clics Capytale sans classe) reflete en partie la fenetre de tracking ouverte le 27 nov 2025 : l intention cliquee est sur-representee pour les comptes recents et sous-capturee avant. Le statut etablissement (usage Capytale historique 2023-2026) n est lui PAS biaise.",
+    "L activite Intro-IA (2548348) est hors-site : son abondance cote Capytale et son absence cote site (2 clics) la rendent diagnostique de la porte directe, mais elle ne peut pas servir de pont site->Capytale.",
+    "Comptes a exclure (demo c81e728d, hub fondateur Haubourdin cfcd2084, exclude_from_analytics) deja traites en amont dans les tables sources ; non re-verifie ici."
+   ],
+   "chart_specs": [
+    {
+     "title": "Les deux portes au grain etablissement",
+     "kind": "funnel",
+     "data": "[{\"label\":\"Capytale usage classe (uai_teach)\",\"total\":174,\"avec_compte_site\":97,\"sans_compte_site_DIRECT\":77},{\"label\":\"Comptes site (UAI)\",\"total\":618,\"avec_classe_capytale\":107,\"sans_classe_SITE_ONLY\":511}]"
+    },
+    {
+     "title": "Activites de la porte Capytale-directe (nb d etablissements, 77 UAI)",
+     "kind": "hbars",
+     "data": "[{\"act\":\"Intro IA (hors-site)\",\"uai\":42},{\"act\":\"Stat classification\",\"uai\":21},{\"act\":\"Equation reduite\",\"uai\":15},{\"act\":\"Challenge IA\",\"uai\":8},{\"act\":\"Stat sante foetus\",\"uai\":5},{\"act\":\"Droite produit scalaire\",\"uai\":4},{\"act\":\"Geometrie reperee\",\"uai\":2},{\"act\":\"Challenge BTS/NSI\",\"uai\":2}]"
+    },
+    {
+     "title": "Anatomie des 511 site-only : pourquoi pas encore en classe",
+     "kind": "bars",
+     "data": "[{\"segment\":\"Compte le plus recent en 2026\",\"uai\":380},{\"segment\":\"Actifs sur le site\",\"uai\":379},{\"segment\":\"Nouveaux (non formes)\",\"uai\":330},{\"segment\":\"Formes\",\"uai\":181},{\"segment\":\"Clic Capytale depuis le site (intention)\",\"uai\":148},{\"segment\":\"Formes en 2026\",\"uai\":142}]"
+    }
+   ],
+   "verdict": "solide",
+   "corrections": [
+    "facts_cross.json (champ two_doors.site_uai_with_capytale_usage = 93) est incoherent : 511 + 93 = 604 != 618. La valeur correcte est 107 (511 + 107 = 618), que la prose emploie d ailleurs. A corriger dans facts_cross.json ; le pourcentage 82,7 % et l affirmation #2 restent justes.",
+    "Libelle de l affirmation #4 a preciser : les 983 sont les eleves (distincts) des 42 etablissements directs touchant l Intro-IA, et non les eleves de l activite Intro-IA elle-meme (qui sont 697). Reformuler en 'eleves des etablissements dont l Intro-IA est presente' pour eviter la sur-lecture."
+   ],
+   "checks": [
+    {
+     "claim": "Etablissements Capytale-direct : 77 / 174 (44,3 %)",
+     "recomputed": "77 / 174 = 44,3 % (uai_teach distincts hors DEMO c81e728d ; moins UAI declares dans payload). mixte = 97.",
+     "agree": true,
+     "note": "Reproduit exactement depuis le CSV brut. DEMO bien exclu ; le HUB fondateur reste compte (n affecte pas le decompte d UAI)."
+    },
+    {
+     "claim": "Etablissements site-only : 511 / 618 (82,7 %)",
+     "recomputed": "511 / 618 = 82,7 %. Footprint Capytale = uai_teach UNION uai_el ; intersection avec site = 107 (97 via uai_teach, 106 via uai_el).",
+     "agree": true,
+     "note": "511/618 correct. ATTENTION : facts_cross.json contient une incoherence interne (site_uai_with_capytale_usage=93, alors que 511+93=604 != 618). La bonne valeur est 107 (511+107=618), que la prose utilise. Le champ 93 de facts_cross est errone, mais l affirmation chiffree #2 et le pourcentage sont justes."
+    },
+    {
+     "claim": "Intro-IA (2548348) : 42 UAI sur 77, dont 28 exclusivement",
+     "recomputed": "42 UAI directs touchent 2548348 ; 28 ont 2548348 comme seule activite.",
+     "agree": true,
+     "note": "Reproduit exactement. Intro-IA quasi-absente du site (2 clics) confirmee dans capytale_clicks_by_activity : marqueur valable de porte directe."
+    },
+    {
+     "claim": "Eleves rattaches a l Intro-IA dans la porte directe : 983 eleves",
+     "recomputed": "983 = somme des eleves DISTINCTS (dedup par id student) sur les 42 UAI directs touchant l Intro-IA, toutes activites confondues. Le comptage en lignes-eleves brutes donnerait 1064 ; les eleves distincts SUR les lignes Intro-IA specifiquement valent 697.",
+     "agree": true,
+     "note": "Le chiffre 983 est correct selon sa source declaree (somme n_pupils des UAI), mais le LIBELLE est trompeur : ce sont les eleves de ces etablissements, pas les eleves de l activite Intro-IA (qui sont 697). Sur-interpretation de formulation, pas d erreur de calcul."
+    },
+    {
+     "claim": "Site-only au compte le plus recent en 2026 : 380 / 511 (74 %)",
+     "recomputed": "380 / 511 = 74,4 % (max acct_month >= 2026-01 par UAI ; les 511 ont tous un acct_month).",
+     "agree": true,
+     "note": "Reproduit exactement."
+    },
+    {
+     "claim": "Site-only formes : 159, dont 142 en 2026",
+     "recomputed": "159 UAI site-only avec au moins un compte is_formed=True ET une fmonth connue (sentinelle 1984 exclue) ; 142 d entre eux avec une formation en 2026. NB : any-formed sans filtre date = 181 ; all-formed = 163.",
+     "agree": true,
+     "note": "159 correspond a is_formed + fmonth renseignee (source declaree), donc coherent. La distinction est sensible a la sentinelle bidon : 181 sans filtre, 159 avec date valide. Bien gere."
+    },
+    {
+     "claim": "Site-only avec clic Capytale depuis le site : 148 / 511",
+     "recomputed": "148 / 511 UAI site-only avec au moins un compte clicked_cap=True.",
+     "agree": true,
+     "note": "Reproduit exactement. Signal d intention valide ; biais fenetre de tracking (~27 nov 2025) sous-estime plutot qu il ne sur-estime, donc borne basse prudente."
+    },
+    {
+     "claim": "Taille de classe moyenne : directe 19,0 vs deux-cotes 35,7 (1460 vs 3465 eleves)",
+     "recomputed": "Avec eleves DISTINCTS : directe 1460/77 = 19,0 ; mixte (uai_teach inter site, 97 UAI) 3465/97 = 35,7. (Le comptage en lignes brutes donnerait 20,3 et 42,4.)",
+     "agree": true,
+     "note": "Reproduit exactement avec la definition eleves-distincts utilisee dans capytale_by_uai_teach.csv. Le comparatif oppose bien direct vs uai_teach-inter-site (mixte=97), coherent avec l affirmation."
+    },
+    {
+     "claim": "IPS moyen : site-only 111,0 vs actifs deux-cotes 111,6 (436 vs 105 valeurs)",
+     "recomputed": "site-only : 436 valeurs, moyenne 110,97 (~111,0). 'Actifs deux-cotes' = site_with_cap (107 UAI -> 105 IPS valides), moyenne 111,6.",
+     "agree": true,
+     "note": "Reproduit exactement. 'Deux-cotes' designe ici site_with_cap (107), pas le mixte uai_teach (97, qui donnerait 110,6 sur 96). Le n=105 confirme l identite du groupe. Conclusion 'non-conversion pas un effet de milieu social' soutenue par l ecart negligeable."
+    },
+    {
+     "claim": "Borne haute porte directe (grain uai_el) : 166 UAI",
+     "recomputed": "uai_el distincts hors DEMO = 272 ; moins UAI site = 166.",
+     "agree": true,
+     "note": "Reproduit exactement. Encadrement 77 (basse, uai_teach) - 166 (haute, uai_el) coherent et bien borne."
+    }
+   ]
+  },
+  {
+   "theme": "geo_canaux",
+   "title": "Geographie croisee et canaux de decouverte",
+   "prose": "## Une notoriete qui se diffuse largement, un usage qui se concentre\n\nLe croisement site x Capytale revele un decalage structurel entre la **carte de la notoriete** (comptes ouverts, enseignants formes) et la **carte de l'usage reel** (eleves equipes sur Capytale). Les comptes site se repartissent de facon relativement homogene sur le territoire — Versailles (168 comptes), Lille (151), Paris (141), Montpellier (114) dominent en presence declarative — mais les **5 057 eleves Capytale rattaches a une academie sont fortement concentres** : Lille en capte a elle seule 1 336, soit **26,4 %**, et le trio Lille-Versailles-Paris en represente **47,3 %**. La diffusion de la marque est nationale ; la transformation en usage de classe reste un phenomene local, porte par quelques hubs historiques.\n\nLe ratio **eleves par enseignant forme** est l'indicateur le plus parlant de cette divergence. En moyenne nationale il vaut 11,1, mais l'ecart entre academies est d'un facteur dix. A un extreme, **Lille (20,2), Creteil (23,7) et Toulouse (22,4)** : peu ou beaucoup de formes, mais chacun deploie le TP a grande echelle. A l'autre, **Montpellier** illustre le cas-type d'une presence forte sans aboutissement : 79 enseignants formes — le plus gros contingent de formes de toutes les academies — mais seulement 307 eleves, soit **3,9 eleves par forme**, cinq fois moins que Lille. Dijon affiche exactement le meme profil (20 formes, 3,9 eleves/forme). **Rennes** (27 formes, 48 eleves, 1,8 par forme) et **Aix-Marseille** (24 formes, 49 eleves, 2,0) ferment la marche : une activite de formation reelle qui ne descend quasiment pas jusqu'aux eleves. A l'inverse, des academies a faible presence site convertissent fort lorsqu'un etablissement s'empare du dispositif : Nantes (215 eleves pour 11 formes), Normandie, Lyon, Polynesie (139 eleves pour 2 formes seulement). Le signal de fond : **former beaucoup ne garantit pas l'usage ; ce qui compte est qu'un etablissement bascule.**\n\nLe cas **Etranger** est un marqueur net de la limite du modele : 67 comptes site, 13 formes, **zero eleve Capytale**. Capytale etant une plateforme de l'Education nationale (academie de Paris), les etablissements hors de France ne peuvent y deployer le TP ; leur engagement reste captif du site. Poitiers (30 comptes, 0 eleve) suggere un cas analogue de notoriete sans canal de deploiement local active.\n\n## Les canaux de decouverte : l'organique domine, l'emailing entretient\n\nCote acquisition, l'analyse des **referrers de session** (25 908 sessions, dont 14 253 avec referent identifiable) montre une notoriete tres majoritairement **organique** : 66,7 % des sessions referencees proviennent d'un moteur de recherche (Google en tete avec 7 509 sessions, puis Qwant, DuckDuckGo, Bing, Ecosia). Au grain **premier contact par utilisateur connecte** (927 utilisateurs), l'organique reste le canal dominant a **47,6 %**, devant le direct/inconnu (24,6 %). Les campagnes Brevo (domaines *sendibm*) ne pesent que **6,1 %** des sessions referencees et **8,5 %** des premiers contacts, mais touchent 117 utilisateurs identifies : l'emailing est moins un canal d'**acquisition** qu'un canal d'**entretien et de relance** de la communaute deja inscrite. YouTube (4,3 % des sessions referencees, 14 utilisateurs en premier contact) et les reseaux sociaux (1,5 %) restent marginaux comme portes d'entree.\n\nLe **flux inverse Capytale -> site** (referent *capytale2.ac-paris.fr*) represente 254 sessions et **30 utilisateurs connectes** : des enseignants qui decouvrent le TP sur Capytale puis remontent vers le site pour les ressources. C'est faible en volume mais qualitativement important — c'est la signature de la « porte Capytale-direct » documentee par facts_cross (44,3 % des UAI a usage Capytale n'ont aucun compte site). Le canal **institutionnel/messagerie** (messageries academiques, Magistere, apps.education, visio.education : 7,5 % des sessions referencees) est le proxy le plus proche du **bouche-a-oreille de formation** : ces referents trahissent des liens partages en formation ou entre collegues.\n\nUn contraste de profil ressort entre statuts : chez les enseignants **formes**, le premier contact « direct/inconnu » grimpe a **35,2 %** (contre 18,4 % chez les nouveaux), signe qu'ils arrivent souvent par un lien transmis en formation (saisie directe d'URL, lien non trace) plutot que par recherche spontanee. L'organique recule mecaniquement chez eux (41,6 % contre 51,0 %). Enfin, **36,4 % des sessions sont sur mobile** : une part de la consultation est nomade, ce qui plaide pour un site lisible sur petit ecran meme si le deploiement classe se fait sur poste.",
+   "key_stats": [
+    {
+     "label": "Concentration de l'usage : part des eleves Capytale dans l'academie de Lille",
+     "value": "26,4 %",
+     "source": "facts_cross.geography : 1336 eleves Lille / 5057 eleves rattaches a une academie",
+     "note": "Lille = hub historique (Haubourdin)"
+    },
+    {
+     "label": "Top 3 academies (Lille, Versailles, Paris) en part des eleves",
+     "value": "47,3 %",
+     "source": "(1336+626+428)/5057, facts_cross.geography",
+     "note": "diffusion nationale mais usage concentre"
+    },
+    {
+     "label": "Eleves par enseignant forme - moyenne nationale",
+     "value": "11,1",
+     "source": "5057 eleves / 455 formes a academie connue, facts_cross.geography",
+     "note": "varie d'un facteur 10 entre academies"
+    },
+    {
+     "label": "Montpellier : formes vs rendement",
+     "value": "79 formes, 3,9 eleves/forme",
+     "source": "facts_cross.geography : 307 eleves / 79 formes",
+     "note": "plus gros contingent de formes, rendement le plus faible des grosses academies"
+    },
+    {
+     "label": "Lille : rendement de formation",
+     "value": "20,2 eleves/forme",
+     "source": "facts_cross.geography : 1336 / 66",
+     "note": "5x le rendement de Montpellier"
+    },
+    {
+     "label": "Etranger : presence site sans usage classe",
+     "value": "67 comptes, 13 formes, 0 eleve",
+     "source": "facts_cross.geography academie='Étranger'",
+     "note": "Capytale inaccessible hors EN francaise"
+    },
+    {
+     "label": "Acquisition organique (recherche) - sessions referencees",
+     "value": "66,7 %",
+     "source": "geo_canaux_channels.py : 9501/14253 sessions avec referent classees moteur de recherche",
+     "note": "Google = 7509 sessions a lui seul"
+    },
+    {
+     "label": "Premier contact des utilisateurs connectes via l'organique",
+     "value": "47,6 %",
+     "source": "geo_canaux_status.py : 441/927 utilisateurs, referent le plus ancien",
+     "note": "vs 24,6 % direct/inconnu"
+    },
+    {
+     "label": "Emailing Brevo : part de l'acquisition vs portee",
+     "value": "6,1 % des sessions referencees, 117 utilisateurs",
+     "source": "geo_canaux_channels.py et comptage distinct users sendibm",
+     "note": "canal d'entretien plus que d'acquisition"
+    },
+    {
+     "label": "Premier contact 'direct/inconnu' : formes vs nouveaux",
+     "value": "35,2 % vs 18,4 %",
+     "source": "geo_canaux_status.py first-touch par statut",
+     "note": "signe de liens transmis en formation"
+    },
+    {
+     "label": "Flux inverse Capytale -> site",
+     "value": "254 sessions, 30 utilisateurs connectes",
+     "source": "geo_canaux_channels.py referent capytale2.ac-paris.fr",
+     "note": "signature de la porte Capytale-direct"
+    },
+    {
+     "label": "Part des sessions sur mobile",
+     "value": "36,4 %",
+     "source": "geo_canaux_channels.py deviceType : 9421/25908",
+     "note": "consultation nomade non negligeable"
+    }
+   ],
+   "case_studies": [
+    {
+     "title": "Montpellier : la formation sans la classe",
+     "narrative": "L'academie de Montpellier rassemble le plus gros contingent d'enseignants formes de tout le reseau (79), pour 114 comptes site. Mais l'usage Capytale n'y atteint que 307 eleves, soit 3,9 eleves par enseignant forme — cinq fois moins que Lille (20,2). Profil d'une academie ou l'effort de formation est intense mais peine a se transformer en deploiement de classe, possiblement faute d'un etablissement-locomotive. A surveiller pour un accompagnement post-formation cible."
+    },
+    {
+     "title": "Lille : le hub qui deploie",
+     "narrative": "Avec 1 336 eleves Capytale (26 % du total national) pour 66 formes et 151 comptes, l'academie de Lille — berceau historique du dispositif autour de Haubourdin — illustre l'effet de masse local : un noyau d'etablissements deploie le TP a grande echelle, generant un rendement de 20,2 eleves par enseignant forme. La notoriete y est ancienne et institutionnalisee."
+    },
+    {
+     "title": "L'Etranger : une notoriete captive du site",
+     "narrative": "67 comptes ouverts depuis l'etranger et 13 enseignants formes, mais aucun eleve sur Capytale : la plateforme etant adossee a l'academie de Paris, les etablissements hors Education nationale francaise ne peuvent y deployer le TP. Leur engagement reste bloque au stade site, sans canal de mise en classe. Poitiers (30 comptes, 0 eleve) presente un decalage analogue."
+    },
+    {
+     "title": "Le retour de Capytale vers le site",
+     "narrative": "Trente utilisateurs connectes sont arrives sur mathadata.fr en suivant un lien depuis capytale2.ac-paris.fr (254 sessions au total). Ce flux inverse — l'enseignant decouvre le TP sur Capytale puis remonte chercher les ressources sur le site — materialise la 'porte Capytale-direct' : 44 % des etablissements a usage Capytale n'ont aucun compte site declarant leur UAI."
+    }
+   ],
+   "data_quality_flags": [
+    "Fenetre de tracking : les sessions/referrers ne sont captures que depuis ~27 nov 2025 ; la mosaique des canaux reflete surtout les visiteurs recents et sous-estime l'acquisition des comptes anterieurs. En revanche, les chiffres geographiques d'usage Capytale (eleves par academie) reposent sur l'historique complet 2023-2026 et ne sont pas biaises.",
+    "Le total facts_cross.geography agrege a 5057 eleves, 1335 comptes et 455 formes : ces totaux sont INFERIEURS aux totaux globaux (5854 eleves volet1, 638 formes overview) car seule la fraction a academie/UAI connu est geolocalisee. Les ratios par academie sont robustes, les niveaux absolus sont des bornes basses.",
+    "Doublon de libelle academie corrige : 'Aix-Marseille' et 'AixMarseille' (et de meme la categorie etrangere) ont ete fusionnes manuellement dans geo_canaux_geo.py — Aix-Marseille consolide passe a 60 comptes / 24 formes / 49 eleves. A normaliser en amont dans facts_cross.",
+    "45 % des sessions ont un referrer nul (entree directe ou referent masque) ; les parts de canaux sont donc calculees deux fois : sur l'ensemble des sessions (mix brut) et sur les seules sessions a referent identifiable (signal d'acquisition net). Les deux sont rapportes pour eviter la sur-interpretation.",
+    "Le premier contact ('first-touch') par utilisateur ne couvre que 927 utilisateurs connectes ayant au moins une session ; les 1003 newsletter-only et les comptes jamais reconnectes depuis le debut du tracking sont absents. La classification 'institutionnel/messagerie' regroupe par heuristique d'hote (ac-*, magistere, apps.education...) et sert de proxy imparfait du bouche-a-oreille de formation."
+   ],
+   "chart_specs": [
+    {
+     "title": "Divergence presence site vs usage classe : eleves par enseignant forme (academies a >=5 formes)",
+     "kind": "hbars",
+     "data": "[{\"academie\":\"Creteil\",\"eleves_par_forme\":23.7,\"formes\":15,\"eleves\":355},{\"academie\":\"Toulouse\",\"eleves_par_forme\":22.4,\"formes\":9,\"eleves\":202},{\"academie\":\"Lille\",\"eleves_par_forme\":20.2,\"formes\":66,\"eleves\":1336},{\"academie\":\"Nantes\",\"eleves_par_forme\":19.5,\"formes\":11,\"eleves\":215},{\"academie\":\"Bordeaux\",\"eleves_par_forme\":12.4,\"formes\":34,\"eleves\":422},{\"academie\":\"Versailles\",\"eleves_par_forme\":12.3,\"formes\":51,\"eleves\":626},{\"academie\":\"Paris\",\"eleves_par_forme\":7.3,\"formes\":59,\"eleves\":428},{\"academie\":\"Amiens\",\"eleves_par_forme\":5.7,\"formes\":22,\"eleves\":126},{\"academie\":\"Montpellier\",\"eleves_par_forme\":3.9,\"formes\":79,\"eleves\":307},{\"academie\":\"Dijon\",\"eleves_par_forme\":3.9,\"formes\":20,\"eleves\":77},{\"academie\":\"Aix-Marseille\",\"eleves_par_forme\":2.0,\"formes\":24,\"eleves\":49},{\"academie\":\"Rennes\",\"eleves_par_forme\":1.8,\"formes\":27,\"eleves\":48}]"
+    },
+    {
+     "title": "Canaux de decouverte (sessions avec referent identifiable, n=14253)",
+     "kind": "bars",
+     "data": "[{\"canal\":\"organique (recherche)\",\"pct\":66.7,\"sessions\":9501},{\"canal\":\"interne mathadata.fr\",\"pct\":8.1,\"sessions\":1154},{\"canal\":\"institutionnel/messagerie\",\"pct\":7.5,\"sessions\":1064},{\"canal\":\"emailing Brevo\",\"pct\":6.1,\"sessions\":876},{\"canal\":\"youtube\",\"pct\":4.3,\"sessions\":616},{\"canal\":\"autres referents\",\"pct\":4.0,\"sessions\":572},{\"canal\":\"flux inverse Capytale\",\"pct\":1.8,\"sessions\":254},{\"canal\":\"reseaux sociaux\",\"pct\":1.5,\"sessions\":216}]"
+    },
+    {
+     "title": "Premier contact par statut : formes vs nouveaux (%)",
+     "kind": "grouped",
+     "data": "[{\"canal\":\"organique\",\"nouveau\":51.0,\"forme\":41.6},{\"canal\":\"direct/inconnu\",\"nouveau\":18.4,\"forme\":35.2},{\"canal\":\"emailing\",\"nouveau\":9.4,\"forme\":7.0},{\"canal\":\"interne\",\"nouveau\":8.7,\"forme\":9.1},{\"canal\":\"institutionnel\",\"nouveau\":5.1,\"forme\":5.0}]"
+    }
+   ],
+   "verdict": "corrections_mineures",
+   "corrections": [
+    "BUG norm_acad (compute_cross_facts.py l.13) : '.replace(\"-\",\" \")' ne neutralise pas les saisies collees comme 'AixMarseille'. Resultat : Aix-Marseille est scindee en deux lignes (5 formes/49 el. + 19 formes/0 el.) au lieu de 60 comptes/24 formes/49 el. Memes doublons hors top-25 pour Orleans-Tours, Nancy-Metz, Polynesie, Clermont, La Reunion. Corriger en supprimant aussi les espaces ou en mappant les variantes.",
+    "Le denominateur 'eleves rattaches a une academie' = 5057 est un artefact de la coupe top-25 de facts['geography'][:25]. Le total reel est 5081. Les parts (26,4 % / 47,3 %) sont a peine affectees mais le chiffre rond '5057' ne doit pas etre presente comme un total.",
+    "La table de travail payload_users_work.csv ne retire pas les comptes exclude_from_analytics dans le decompte des formes par academie (Lille 66 au lieu de 64). Honorer le flag pour coherence. Impact <1 pt.",
+    "'11,1 eleves par forme' divise les eleves nationaux par les seuls 454 formes a academie propre ; ~177 formes a academie en texte libre sont ecartes. A reformuler en 'eleves par forme (academie renseignee)' ; la borne basse (tous formes) est ~8.",
+    "Le first-touch 'direct/inconnu' (formes 35,2 % vs nouveaux 18,4 %) est confondu avec l'absence de referrer, elle-meme biaisee par la fenetre de tracking (~27 nov 2025) et l'anciennete des comptes. Attenuer l'interpretation causale 'liens transmis en formation'."
+   ],
+   "checks": [
+    {
+     "claim": "Part des eleves Capytale dans l'academie de Lille = 26,4 % (1336/5057)",
+     "recomputed": "Lille = 1336 eleves distincts (par uai_el via annuaire). Denominateur reel des eleves rattaches a une academie connue = 5081 (pas 5057). 1336/5081 = 26,3 %. Avec leur denominateur tronque (5057, somme du top-25 seulement) = 26,4 %.",
+     "agree": true,
+     "note": "Valeur correcte a 0,1 pt pres. Mais le denominateur 5057 est un artefact de la coupe top-25 du script (geography ne garde que 25 lignes) ; le total reel d'eleves rattaches a une academie est 5081. Sans incidence sur la conclusion."
+    },
+    {
+     "claim": "Top 3 (Lille+Versailles+Paris) = 47,3 % des eleves ((1336+626+428)/5057)",
+     "recomputed": "1336+626+428 = 2390. 2390/5081 = 47,0 % (denominateur reel). 2390/5057 = 47,3 % (leur denominateur tronque).",
+     "agree": true,
+     "note": "Correct a 0,3 pt pres. Meme reserve sur le denominateur 5057 vs 5081. Conclusion (concentration ~47 % sur 3 academies) robuste."
+    },
+    {
+     "claim": "Eleves par enseignant forme - moyenne nationale = 11,1 (5057/455)",
+     "recomputed": "Formes (statut forme/mentor, comptes exclus retires) avec academie reconnue = 454 ; eleves rattaches = 5081 -> 5081/454 = 11,2 ~ 11,1. MAIS il y a 631 formes au total ; ~177 ont saisi un texte libre (nom d'etablissement) au lieu d'une academie et sont ecartes du calcul. En divisant les eleves nationaux par TOUS les formes (631) le ratio tombe a ~8,0.",
+     "agree": true,
+     "note": "Le chiffre 11,1 est arithmetiquement reproductible mais denominateur-fragile : il rapporte les eleves nationaux au seul sous-ensemble des formes ayant une academie propre. A presenter comme 'eleves par forme a academie renseignee', pas comme moyenne nationale stricte. Borne basse plausible ~8."
+    },
+    {
+     "claim": "Montpellier : 79 formes, 3,9 eleves/forme (307/79)",
+     "recomputed": "Montpellier = 79 formes, 307 eleves -> 3,89 ~ 3,9. Reproduit exactement depuis les donnees brutes.",
+     "agree": true,
+     "note": "Exact. Plus gros contingent de formes et rendement parmi les plus faibles : confirme."
+    },
+    {
+     "claim": "Lille : 20,2 eleves/forme (1336/66)",
+     "recomputed": "Avec exclusion des comptes flagges exclude_from_analytics, Lille = 64 formes -> 1336/64 = 20,9. facts_cross utilise 66 (la table de travail ne retire pas les 2 comptes Lille exclus) -> 20,2.",
+     "agree": true,
+     "note": "Quasi correct. Petite fuite methodo : la table de travail payload_users_work.csv ne respecte pas exclude_from_analytics pour le decompte des formes (66 au lieu de 64). Effet negligeable (20,2 vs 20,9). Conclusion '5x Montpellier' tient."
+    },
+    {
+     "claim": "Etranger : 67 comptes, 13 formes, 0 eleve",
+     "recomputed": "Etranger = 67 comptes (aucun exclu), 13 formes, 0 eleve Capytale (aucun uai_el d'etablissement etranger). Reproduit exactement.",
+     "agree": true,
+     "note": "Exact. Interpretation (Capytale = plateforme EN, inaccessible hors France) correcte."
+    },
+    {
+     "claim": "Acquisition organique = 66,7 % des sessions referencees (9501/14253), Google = 7509",
+     "recomputed": "Sessions avec referrer = 14253 (confirme). Moteurs de recherche = 9523 (66,8 %) avec ma classification ; ecart de 22 sessions sur la frontiere (search.brave.com, google.fr). www.google.com exactement = 7509 (confirme).",
+     "agree": true,
+     "note": "Correct. Le '7509' est le seul host www.google.com ; en incluant google.fr/google.* on monte a 7756. Arrondi a 66,7-66,8 % : equivalent."
+    },
+    {
+     "claim": "Premier contact via organique = 47,6 % des utilisateurs connectes (441/927)",
+     "recomputed": "927 utilisateurs connectes avec >=1 session (comptes exclus retires). First-touch organique = 441 -> 47,6 %. Reproduit a l'identique.",
+     "agree": true,
+     "note": "Exact. direct/inconnu = 228/927 = 24,6 % confirme egalement."
+    },
+    {
+     "claim": "Brevo = 6,1 % des sessions referencees, 117 utilisateurs",
+     "recomputed": "sendibm = 876/14253 = 6,1 %. Utilisateurs connectes distincts avec referrer sendibm = 117. Reproduit a l'identique.",
+     "agree": true,
+     "note": "Exact."
+    },
+    {
+     "claim": "Premier contact direct/inconnu : formes 35,2 % vs nouveaux 18,4 %",
+     "recomputed": "Formes (341 connectes) : 120 direct/inconnu = 35,2 %. Nouveaux (586 connectes) : 108 = 18,4 %. Reproduit a l'identique.",
+     "agree": true,
+     "note": "Exact arithmetiquement. Reserve d'interpretation : 'direct/inconnu' = aucun referrer sur AUCUNE session, biaise par la fenetre de tracking (~27 nov 2025). Les formes ont des comptes plus anciens, donc plus de sessions hors fenetre ou le referrer n'a pu etre capte ; l'ecart 35 vs 18 peut refleter l'anciennete du compte autant que des 'liens transmis en formation'. Lien causal a presenter avec prudence."
+    },
+    {
+     "claim": "Flux inverse Capytale->site : 254 sessions, 30 utilisateurs connectes",
+     "recomputed": "capytale2.ac-paris.fr = 254 sessions referencees ; utilisateurs connectes distincts = 30. Reproduit a l'identique.",
+     "agree": true,
+     "note": "Exact."
+    },
+    {
+     "claim": "Sessions sur mobile = 36,4 % (9421/25908)",
+     "recomputed": "deviceType: desktop 16150, mobile 9421, tablet 337. 9421/25908 = 36,36 % -> 36,4 %. Reproduit a l'identique.",
+     "agree": true,
+     "note": "Exact."
+    },
+    {
+     "claim": "PROSE: Aix-Marseille (24 formes, 49 eleves, 2,0 par forme)",
+     "recomputed": "BUG DE NORMALISATION : facts_cross split l'academie en deux lignes - 'Aix-Marseille' (annuaire, accent/tiret) = 5 formes/49 eleves = 9,8 ; 'AixMarseille' (saisie site sans tiret) = 19 formes/0 eleve. Fusionnees : 24 formes / 49 eleves = 2,0. La prose donne le chiffre fusionne CORRECT (2,0) mais contredit silencieusement la ligne facts_cross qu'elle cite (qui dit 9,8).",
+     "agree": false,
+     "note": "Le 2,0 est la VRAIE valeur, mais facts_cross.geography est faux pour Aix-Marseille a cause de norm_acad qui ne collapse pas les espaces ('aix marseille' vs 'aixmarseille'). Memes splits possibles sur d'autres academies a saisie libre (Orleans-Tours, Nancy-Metz, Polynesie, Clermont apparaissent en doublons hors top-25). A corriger dans le script source."
+    }
+   ]
+  },
+  {
+   "theme": "temporel_retention",
+   "title": "Temporalite, cohortes et retention",
+   "prose": "## Une diffusion qui s'accelere mais reste tres saisonniere\n\nLa trajectoire de MathAData est nettement ascendante. Cote usage Capytale, les eleves touches passent de 150 (2023-2024) a 2 181 (2024-2025) puis 4 479 (2025-2026), soit un doublement annuel. Cote site, les creations de compte explosent en janvier 2026 : **975 comptes sur ce seul mois**, contre 298 en decembre 2025 et une centaine les mois ordinaires. Mais ce pic est trompeur : 784 de ces 975 comptes sont des inscriptions newsletter-only, et seuls 144 declarent un UAI. La saisonnalite est donc double. Les *inscriptions* suivent les temps forts de communication (decembre-janvier) ; l'*usage en classe*, lui, suit le calendrier pedagogique. Les seances Capytale culminent en mai (70 seances) et mars (51), creux total l'ete (2-3 en aout-septembre), et se concentrent en milieu de semaine (lundi-mardi : 135 des 348 seances datees, contre 9 le week-end). Le TP MathAData est un objet de fin d'annee scolaire, deploye une fois le programme avance.\n\n## La sequence compte / formation contredit le modele lineaire\n\nLe scenario implicite « le prof cree un compte, puis se forme, puis enseigne » ne tient pas. Sur les 638 formes, la sequence se repartit en 235 *meme jour*, 71 compte *avant* la formation, 180 compte *apres*, et 152 sans date exploitable. Surtout, les inscriptions le jour meme de la formation sont a **90 % issues de formations en presentiel (186 sur 206)** : le formateur fait creer le compte seance tenante. A l'inverse, parmi les profs dont le compte est posterieur a la formation (185 cas stricts), on retrouve davantage de webinaires. Autrement dit, il n'y a pas un pipeline mais deux portes d'entree temporelles : le presentiel genere une adhesion synchrone (compte + decouverte le meme jour), le webinaire une adhesion differee (le prof revient creer son compte plus tard, ou jamais).\n\n## La conversion « jusqu'a la classe » se mesure en trimestres\n\nC'est le resultat le plus important pour lire les cohortes. En regroupant les cohortes de formation par maturite, les cohortes **mures** (formees avant decembre 2025, soit plus de six mois de recul) affichent **46,5 % d'etablissements a usage eleve Capytale** (20 sur 43 a UAI connu), contre seulement **22,0 % pour les cohortes recentes** (2026-01 a 2026-06, 53 sur 241). Cet ecart n'est pas une baisse de qualite : c'est l'effet du recul. Un prof forme en mars n'a souvent pas encore eu de creneau pour deployer le TP avant la fin de l'annee. Les cohortes recentes 2026-03, 2026-04 et 2026-06 montrent des taux planchers (5,1 %, 4,5 %, 2,7 %) qui remonteront mecaniquement a la rentree. Lire ces cohortes au present revient a sous-estimer leur rendement final. A l'inverse, la cohorte presentiel mure convertit a 58,8 %, le meilleur taux observe.\n\n## Les formes re-utilisent, mais la base reste jeune\n\nLa retention multi-annee est la limite structurelle du dispositif a ce stade. Sur les enseignants ayant reellement enseigne, **192 n'ont enseigne qu'une seule annee scolaire, 28 deux ans, 4 trois ans**. Le taux de retention 2024-2025 vers 2025-2026 est de **29,5 %** (26 profs sur 88 reconduits), et **81,5 % des enseignants de 2025-2026 sont nouveaux**. Le dispositif croit donc par recrutement, pas (encore) par fidelisation : c'est normal pour un produit en phase d'expansion, mais cela signale que la prochaine bataille est la re-utilisation annee N+1. Les signaux positifs existent neanmoins : les profs qui restent diversifient leurs activites (le pionnier de Haubourdin couvre 7 activites sur 3 ans, 404 eleves), et la multi-activite progresse fortement (Geometrie reperee passe de 2 a 400 eleves en un an, Equation cartesienne de 0 a 300). La retention au grain *etablissement* est plus solide que la retention au grain prof, l'usage migrant souvent entre collegues d'un meme UAI.\n\n## Angles morts\n\nDeux biais doivent encadrer la lecture. Le tracking des clics ne demarre que le 27 novembre 2025 : les taux de clic Capytale des cohortes mures (12,7 %) sont sous-captures et non comparables aux cohortes recentes (35,9 %). Et la couverture UAI est tres inegale (43 UAI connus sur 213 profs mures, contre 241 sur 273 recents), ce qui rend le taux de conversion des cohortes mures plus volatil. La conversion au grain etablissement sur l'historique Capytale complet (2023-2026) reste, elle, non biaisee.",
+   "key_stats": [
+    {
+     "label": "Pic de creations de compte janvier 2026",
+     "value": "975 comptes",
+     "source": "payload_users_work.csv, count(acct_month=='2026-01'); dont 784 newsletter_only et 262 formes",
+     "note": "Pic de communication ; majoritairement newsletter, pas d'usage immediat"
+    },
+    {
+     "label": "Inscriptions le jour meme de la formation issues du presentiel",
+     "value": "186 / 206 (90%)",
+     "source": "payload_users_work.csv : same-day createdAt==fdate, ventile par ftype",
+     "note": "Le presentiel genere une adhesion synchrone ; le webinaire une adhesion differee"
+    },
+    {
+     "label": "Conversion 'jusqu'a la classe' des cohortes mures (formees avant 2025-12)",
+     "value": "46,5% (20/43 UAI connus)",
+     "source": "facts_cross.json formation_cohorts, agregation par maturite (temporal_retention_cohort.py)",
+     "note": "Plus de 6 mois de recul ; vs 22,0% pour cohortes recentes"
+    },
+    {
+     "label": "Conversion des cohortes recentes (2026-01 a 2026-06)",
+     "value": "22,0% (53/241 UAI connus)",
+     "source": "facts_cross.json formation_cohorts agrege",
+     "note": "Recul insuffisant : ces taux remonteront a la rentree"
+    },
+    {
+     "label": "Meilleur taux : presentiel mur",
+     "value": "58,8% (10/17)",
+     "source": "facts_cross.json, cohortes presentiel month<=2025-12",
+     "note": "Faible n mais coherent avec l'effet presentiel"
+    },
+    {
+     "label": "Taux de retention prof 2024-2025 -> 2025-2026",
+     "value": "29,5% (26/88)",
+     "source": "facts.json growth.retention",
+     "note": "81,5% des enseignants 2025-2026 sont nouveaux : croissance par recrutement"
+    },
+    {
+     "label": "Profs ayant enseigne plusieurs annees",
+     "value": "28 sur 2 ans, 4 sur 3 ans (vs 192 sur 1 an)",
+     "source": "facts.json temporal.n_sy_taught_dist",
+     "note": "Base encore jeune ; fidelisation a construire"
+    },
+    {
+     "label": "Saisonnalite des seances en classe",
+     "value": "pic mai (70) et mars (51), creux ete (2-3)",
+     "source": "facts.json temporal.classes_by_month",
+     "note": "TP de fin d'annee, decorrele du pic d'inscription hivernal"
+    },
+    {
+     "label": "Croissance des eleves touches",
+     "value": "150 -> 2181 -> 4479 (x2/an)",
+     "source": "facts.json growth.usages_by_sy",
+     "note": "Diffusion par expansion plus que par retention"
+    }
+   ],
+   "case_studies": [
+    {
+     "title": "Cohorte presentiel rentree 2024 (octobre, academie de Lille)",
+     "narrative": "Cohorte de 40 profs formes en presentiel en octobre 2024. Plus de 18 mois de recul : 5 sur 6 UAI connus presentent un usage eleve Capytale (66,7%), le taux de conversion le plus eleve des cohortes datees. Ce groupe illustre le rendement reel d'une formation presentiel une fois le temps de deploiement ecoule, et sert d'etalon pour projeter les cohortes 2026 encore immatures."
+    },
+    {
+     "title": "Etablissement pionnier multi-annees (lycee, Haubourdin)",
+     "narrative": "Compte fondateur (md5 cfcd2084) actif sur les trois annees scolaires 2023-2024 a 2025-2026, 404 eleves uniques, 48 seances, 7 activites distinctes. Cas extreme de retention et de diversification : montre que la fidelite, quand elle existe, s'accompagne d'un elargissement du repertoire d'activites. A traiter comme hub fondateur, non comme prof local representatif."
+    },
+    {
+     "title": "Cohorte presentiel mars-avril 2026 (effet recence)",
+     "narrative": "Profs formes en presentiel en mars (39) et avril (23) 2026, quasi tous a UAI connu mais taux d'usage classe planchers (5,1% et 4,5%). Non un echec mais un artefact temporel : la fin d'annee ne laisse pas de creneau pour deployer le TP. Vignette a suivre a la rentree 2026 pour mesurer la conversion differee."
+    }
+   ],
+   "data_quality_flags": [
+    "Tracking des clics/modules/events demarre le 27-11-2025 : les taux de clic Capytale des cohortes formees avant cette date (12,7%) sont sous-captures et NON comparables aux cohortes recentes (35,9%). Seul l'usage ELEVE Capytale (historique complet 2023-2026) est non biaise.",
+    "Couverture UAI tres inegale entre cohortes : 43 UAI connus sur 213 profs mures contre 241 sur 273 recents. Le taux de conversion des cohortes mures (46,5%) repose donc sur une petite base et est plus volatil ; il pourrait sur-representer les profs les plus engages (ceux qui ont renseigne leur UAI).",
+    "Recence : les cohortes 2026-03 a 2026-06 ont moins de 4 mois de recul ; leurs taux de conversion 'jusqu'a la classe' (2,7% a 14,3%) sont des bornes basses qui remonteront a la rentree. Ne pas les comparer en niveau aux cohortes mures.",
+    "Sequence compte/formation : 152 des 638 formes n'ont pas de date de formation exploitable (sentinelle 1984-01-01 cote webdecouv). La repartition same_day/avant/apres porte donc sur 486 cas, biaisee vers le presentiel mieux date.",
+    "Saisonnalite des seances calculee sur 348 seances Capytale datees (facts.json temporal) ; volume faible sur les mois de creux, lecture indicative.",
+    "Retention prof (29,5%) sous-estime la continuite reelle : l'appariement Capytale est anonyme et un prof changeant de compte ENT ou d'etablissement apparait comme nouveau. La retention au grain etablissement est plus fiable."
+   ],
+   "chart_specs": [
+    {
+     "title": "Creations de compte vs seances en classe par mois (deux saisonnalites)",
+     "kind": "grouped",
+     "data": "{\"x\":[\"2025-09\",\"2025-10\",\"2025-11\",\"2025-12\",\"2026-01\",\"2026-02\",\"2026-03\",\"2026-04\",\"2026-05\",\"2026-06\"],\"series\":[{\"name\":\"Comptes crees (site)\",\"values\":[165,101,75,298,975,84,131,160,104,87]},{\"name\":\"Seances Capytale (eleves, par mois calendaire toutes annees)\",\"values\":[3,4,6,14,29,27,51,43,70,47]}],\"note\":\"Comptes: payload_users_work.csv acct_month. Seances: facts.json temporal.classes_by_month (1..12 mappes). Pic inscription hiver vs pic usage printemps.\"}"
+    },
+    {
+     "title": "Conversion 'jusqu'a la classe' par maturite et type de formation",
+     "kind": "grouped",
+     "data": "{\"x\":[\"Presentiel\",\"Webinaire\"],\"series\":[{\"name\":\"Cohortes mures (>6 mois recul)\",\"values\":[58.8,38.5]},{\"name\":\"Cohortes recentes (2026)\",\"values\":[20.6,28.6]}],\"unit\":\"% etablissements a usage eleve Capytale (UAI connus)\",\"note\":\"facts_cross.json formation_cohorts agrege par maturite. Mures presentiel 10/17, web 10/26 ; recentes presentiel 41/199, web 12/42.\"}"
+    },
+    {
+     "title": "Retention des enseignants : nombre d'annees scolaires d'enseignement",
+     "kind": "bars",
+     "data": "{\"x\":[\"1 annee\",\"2 annees\",\"3 annees\"],\"values\":[192,28,4],\"note\":\"facts.json temporal.n_sy_taught_dist. Retention 2425->2526 = 29,5%, 81,5% de nouveaux en 2025-2026.\"}"
+    }
+   ],
+   "verdict": "corrections_mineures",
+   "corrections": [
+    "Prose, sequence compte/formation : la ventilation '235 meme jour / 71 avant / 180 apres / 152 sans date' est incorrecte. Recalcul depuis payload_users_work.csv (hors sentinelle 1984-01-01) : meme jour=206, avant=95, apres=185, sans date=152. Seul le 152 concorde. L'affirmation chiffree formelle (186/206=90% presentiel le jour meme) reste exacte ; corriger uniquement les trois autres nombres de la phrase.",
+    "Prose, saisonnalite : '135 des 348 seances datees' -> le total des seances datees est 294 (somme de classes_by_month et de classes_by_dow). Remplacer 348 par 294. Le ratio lun+mar=135 et week-end=9 sont corrects. (348 = nb de lignes role=teacher dans Capytale, sans rapport avec les seances.)",
+    "Prose/claim, creux d'ete : ecrire 'creux total l'ete' est exact mais '(2-3)' est imprecis : septembre=3, aout=0 (absent de la distribution). Preferer 'aout nul, septembre 3'.",
+    "Claim 'eleves touches 150->2181->4479' : ces valeurs sont des LIGNES eleve (clones distribues), pas des eleves DISTINCTS. Les eleves distincts sont 146/1943/3783. Si le libelle dit 'eleves touches', utiliser les distincts ou preciser explicitement 'lignes/affectations eleve'.",
+    "Glose '(x2/an)' : la croissance n'est pas un doublement constant. Premier saut ~x14 (montee en charge), second saut ~x2. Reformuler en 'forte montee initiale puis doublement'."
+   ],
+   "checks": [
+    {
+     "claim": "Pic de creations de compte janvier 2026 : 975 comptes, dont 784 newsletter_only et 262 formes",
+     "recomputed": "acct_month=='2026-01' : 975 comptes exactement. newsletter_only=True : 784. is_formed/statut=forme : 262. UAI renseigne : 144 (concorde avec la prose). Mois voisins : dec 2025=298, mois ordinaires ~75-160.",
+     "agree": true,
+     "note": "Confirme a l'unite pres depuis payload_users_work.csv."
+    },
+    {
+     "claim": "Inscriptions le jour meme de la formation issues du presentiel : 186/206 (90%)",
+     "recomputed": "Sur 638 formes : meme jour (createdAt.date==fdate.date, hors sentinelle 1984-01-01) = 206, dont presentiel 186, webdecouv 20 => 90,3%. Sequence complete recalculee : sameday 206, before 95, after 185, nodate 152.",
+     "agree": true,
+     "note": "Le 186/206 est exact. ATTENTION : la PROSE annonce une autre ventilation de sequence (235 meme jour / 71 avant / 180 apres / 152 sans date) qui ne correspond a aucune de mes definitions (meme jour=206 ; meme mois=259). Seul le 152 sans date concorde. Les chiffres 235/71/180 de la prose sont errones ou issus d'une definition non documentee ; mais l'affirmation chiffree verifiee (186/206) tient."
+    },
+    {
+     "claim": "Conversion 'jusqu'a la classe' des cohortes mures (<=2025-12) : 46,5% (20/43 UAI connus)",
+     "recomputed": "Reproduit a l'identique depuis le brut : cap_uai_used = set(uai_el des lignes role=student) = 173 UAI. Formes a UAI connu, fmonth<=2025-12 : 43 UAI ; presents dans cap_uai_used : 20 => 46,5%. Concorde aussi avec l'agregation de facts_cross.formation_cohorts.",
+     "agree": true,
+     "note": "Reproductible. Le 'mur vs recent' est une comparaison de maturite (recul), correctement presentee comme effet de fenetre, PAS comme causalite. Mon premier essai donnait 17/38 car j'imposais a tort des pupils distincts >0 et filtrais des dates ; la definition canonique (toute ligne eleve a cet uai_el) redonne 20/43."
+    },
+    {
+     "claim": "Conversion des cohortes recentes (2026-01 a 2026-06) : 22,0% (53/241 UAI connus)",
+     "recomputed": "Formes a UAI connu, fmonth>=2026-01 : 241 UAI ; dans cap_uai_used : 53 => 22,0%. Identique a facts_cross.",
+     "agree": true,
+     "note": "Exact. Caveat 'recul insuffisant' bien pose : ces denominateurs (notamment 2026-03 et 2026-06, 39/37 UAI sans usage) gonflent mecaniquement le n sans laisser le temps au deploiement."
+    },
+    {
+     "claim": "Meilleur taux : presentiel mur 58,8% (10/17)",
+     "recomputed": "Formes presentiel, UAI connu, fmonth<=2025-12 : 17 UAI, 10 avec usage eleve Capytale => 58,8%. Identique.",
+     "agree": true,
+     "note": "Exact. n faible (17) bien signale ; pas de sur-interpretation causale."
+    },
+    {
+     "claim": "Retention prof 2024-2025 -> 2025-2026 : 29,5% (26/88) ; 81,5% des profs 2025-2026 sont nouveaux",
+     "recomputed": "facts.json growth.retention : taught_2425=88, retained=26 => 29,5% ; new_in_2526=123 sur 151 => 81,5%.",
+     "agree": true,
+     "note": "Concorde avec facts.json (volet 1). Non recalcule independamment a partir des seances reconstruites (necessite la reconstruction de sessions) ; je m'appuie sur la source de verite volet 1 comme autorise."
+    },
+    {
+     "claim": "Profs ayant enseigne plusieurs annees : 28 sur 2 ans, 4 sur 3 ans (vs 192 sur 1 an)",
+     "recomputed": "facts.json temporal.n_sy_taught_dist = {'1':192,'2':28,'3':4}.",
+     "agree": true,
+     "note": "Concorde exactement avec facts.json."
+    },
+    {
+     "claim": "Saisonnalite des seances : pic mai (70) et mars (51), creux ete (2-3)",
+     "recomputed": "facts.json classes_by_month : mai=70, mars=51, avril=43, juin=47, fev=27, jan=29, dec=14, nov=6, oct=4, sep=3 ; aout absent (=0). Total seances datees=294. Jours : lun+mar=135, week-end=9.",
+     "agree": true,
+     "note": "Pic mai/mars exact ; creux ete : sep=3 mais aout=0 (pas '2-3'). ERREUR DE DENOMINATEUR DANS LA PROSE : '135 des 348 seances datees' est faux ; le total des seances datees est 294 (le 348 correspond au nb de lignes role=teacher dans Capytale, confusion probable). 135/294 et week-end=9 sont eux corrects."
+    },
+    {
+     "claim": "Croissance des eleves touches : 150 -> 2181 -> 4479 (x2/an)",
+     "recomputed": "facts.json usages_by_sy.student = 150/2181/4479. MAIS le script compte des LIGNES eleve (clones), pas des eleves DISTINCTS. Eleves distincts recalcules sur le meme fichier : 146/1943/3783.",
+     "agree": true,
+     "note": "Les chiffres 150/2181/4479 sont exacts comme reportes, mais ce sont des LIGNES (clones), pas des 'eleves touches' distincts (146/1943/3783). Nuance importante pour le libelle. De plus le '(x2/an)' est approximatif : le saut 2023-24->2024-25 est ~14x (rangs et distincts), seul le saut 2024-25->2025-26 est ~x2. La croissance est donc une montee en charge initiale puis un doublement, pas un doublement constant."
+    }
+   ]
+  },
+  {
+   "theme": "ressources_contenu",
+   "title": "Ressources et contenus : ce que les profs consultent",
+   "prose": "## Le PDF règne, et le « kit clé en main » structure la consultation\n\nSur les 12 840 clics de ressources journalisés (`consultation_rss`, comptes de test exclus, 712 utilisateurs identifiés), le **PDF représente 80,8 %** des clics (10 381). Les liens interactifs sont minoritaires : Capytale 9,6 % (1 228), Basthon 4,1 % (526), Overleaf 3,2 % (415), diapositives ODP éditables 1,9 % (238). Autrement dit, les profs téléchargent massivement des documents figés (énoncés, diapos, déroulés) avant de toucher au notebook. Ce ratio confirme que le site fonctionne d'abord comme une **bibliothèque de préparation**, et seulement ensuite comme une porte d'entrée vers la classe numérique.\n\nEn regroupant par fonction pédagogique, la hiérarchie est nette : **version élève** (4 675 clics, 497 profs) devance les **diapos élève** (2 417 clics, 507 profs), la **version prof** des notebooks (2 054, 324 profs), les **liens Capytale** (1 228, 337), les **diapos prof** (891, 287), Basthon (526), Overleaf (415), le **jeu de cartes MNIST** (277) et le **guide de connexion Capytale** (228, 96 profs). Le prof consulte donc d'abord ce qu'il distribuera à ses élèves, puis son propre déroulé.\n\n## Une activité phare écrase les autres : la vitrine Stat\n\nLa séquence **Statistiques (moyenne/histogramme, MNIST)** concentre l'essentiel de la consultation : 2 192 clics rien que sur ses fiches version élève, 1 584 vues de module, et 598 clics sur son lien Capytale (`/web/b/3518185`). C'est cohérent avec son statut de **vitrine** (seule activité accessible sans compte). L'**Équation réduite** (act. 3515488) arrive deuxième sur tous les fronts : 816 clics version élève, 862 vues de module, 237 clics Capytale. Viennent ensuite Stat santé fœtus, Droite/produit scalaire et Milieu/distance.\n\nDétail révélateur du lien site→Capytale : si l'on compte les utilisateurs distincts qui cliquent un lien Capytale depuis le site, **Équation réduite (122) talonne Stat (116)** alors qu'elle pèse beaucoup moins en clics bruts — signe d'un public plus resserré mais décidé, typique d'une activité poussée en **formation de profs**. À l'opposé, l'ancienne **Intro à l'IA (act. 2548348) est quasi invisible** côté site : 3 clics, 2 utilisateurs. Elle n'est pas référencée sur mathadata.fr et ne se trouve que via Capytale : sa « porte » n'existe pas dans le funnel site.\n\n## Le décrochage par séance : on prépare le début, rarement la fin\n\nEn suivant les fiches version élève de la séquence Stat MNIST par numéro de séance, on observe une **chute monotone** : 1 124 clics en séance 1 (Introduction), 312 en séance 2, puis 172, 182, 127, 143 et **132 en séance 7** — soit une rétention d'environ **12 %** entre la première et la dernière séance. Tous corpus confondus, la séance 1 capte 2 302 clics contre 134 pour la séance 7. Cela traduit soit un usage partiel (les profs ne mènent que les premières séances), soit une préparation anticipée concentrée sur l'entrée en matière.\n\n## Formés vs nouveaux : la formation crée des consultants assidus\n\nLes profs **formés consultent deux fois plus en profondeur** : 15,0 clics/utilisateur et 8,7 ressources distinctes en moyenne, contre 8,8 clics et 6,4 ressources pour les non-formés. La distinction par type de formation est frappante : les profs issus du **webinaire (webdecouv)** sont les plus boulimiques (22,1 clics/utilisateur, 12,1 ressources distinctes), bien au-delà du **présentiel** (10,6 clics, 6,5 ressources). Le webinaire, à distance, semble pousser à un rapatriement intensif des documents ; le présentiel, où le formateur montre tout, réduit ce besoin. Le mix de types reste proche (PDF ~76-83 % partout), mais la part Capytale est plus forte chez les formés (14,1 % vs 8,2 %), confirmant qu'ils vont plus loin vers la classe.\n\n## Le guide Capytale, marqueur de passage à l'acte\n\nLe **guide de connexion Capytale** (228 clics, 96 profs) est un signal de transition fort : **74 % de ses lecteurs cliquent aussi un lien Capytale**. Qui télécharge le mode d'emploi de connexion s'apprête à amener ses élèves sur la plateforme.\n\n## Vidéos : un contenu très consulté en anonyme\n\nLes vidéos sont massivement vues sans authentification (**1 566 ouvertures anonymes sur 1 858**, 153 visionneurs identifiés seulement). Les plus regardées sont « Les machines à trier des lettres à la Poste » (75), « Les mathématiques au cœur de l'IA » (47), « Les objectifs du projet » (44) et les vidéos de séance. La vidéo outil **« Utiliser les notebook Capytale »** n'enregistre que 16 ouvertures : la prise en main technique passe davantage par le guide PDF que par la vidéo.",
+   "key_stats": [
+    {
+     "label": "Clics ressources journalises (comptes de test exclus)",
+     "value": "12 840",
+     "source": "consultation_rss.json, exclude_from_analytics filtre ; 712 users identifies distincts",
+     "note": "PDF=10381, capytale=1228, basthon=526, overleaf=415, slides_odp=238"
+    },
+    {
+     "label": "Part du PDF dans les clics ressources",
+     "value": "80,8 %",
+     "source": "consultation_rss ctype : 10381/12840",
+     "note": "Le site est d'abord une bibliotheque de preparation"
+    },
+    {
+     "label": "Clics fiches 'version eleve' (top categorie)",
+     "value": "4 675 clics / 497 profs",
+     "source": "consultation_rss, file contient 'version_eleve'",
+     "note": "devant diapos eleve (2417), version prof (2054), liens Capytale (1228)"
+    },
+    {
+     "label": "Activite Stat (vitrine) - clics Capytale depuis le site",
+     "value": "598 clics / 116 profs",
+     "source": "consultation_rss capytale /web/b/3518185",
+     "note": "Equation reduite 2e : 237 clics mais 122 profs distincts (public resserre 'formation')"
+    },
+    {
+     "label": "Intro a l'IA (ancienne activite) cote site",
+     "value": "3 clics / 2 profs",
+     "source": "consultation_rss capytale /web/b/2548348",
+     "note": "non referencee sur le site ; porte Capytale inexistante dans le funnel"
+    },
+    {
+     "label": "Retention de consultation seance 1 -> seance 7 (Stat MNIST eleve)",
+     "value": "~12 %",
+     "source": "version_eleve 2NDE_STAT_moyenne_histogramme_MNIST : 1124 clics seance1, 132 seance7",
+     "note": "chute monotone ; preparation concentree sur l'entree en matiere"
+    },
+    {
+     "label": "Profondeur de consultation : formes vs nouveaux",
+     "value": "15,0 vs 8,8 clics/prof",
+     "source": "consultation_rss jointe statut users ; 224 formes vs 488 nouveaux",
+     "note": "ressources distinctes/prof : 8,7 (formes) vs 6,4 (nouveaux)"
+    },
+    {
+     "label": "Profondeur webinaire vs presentiel (formes)",
+     "value": "22,1 vs 10,6 clics/prof",
+     "source": "trainedTypeFormation : 86 webdecouv vs 138 presentiel parmi consultants identifies",
+     "note": "webdecouv = 12,1 ressources distinctes/prof, le double du presentiel (6,5)"
+    },
+    {
+     "label": "Guide connexion Capytale -> clic Capytale",
+     "value": "74 %",
+     "source": "consultation_rss : 71/96 lecteurs du guide cliquent aussi un lien Capytale",
+     "note": "marqueur de passage a l'acte vers la classe"
+    },
+    {
+     "label": "Videos : ouvertures anonymes",
+     "value": "1 566 / 1 858",
+     "source": "events video_view ; user null",
+     "note": "seulement 153 visionneurs identifies ; 'Utiliser notebook Capytale' = 16 ouvertures"
+    }
+   ],
+   "case_studies": [
+    {
+     "title": "Le webinaire produit des 'aspirateurs de ressources'",
+     "narrative": "Les 86 profs formes en webinaire (webdecouv) presents dans le journal de clics cumulent 1 901 clics, soit 22,1 clics et 12,1 ressources distinctes par personne en moyenne - plus du double des profs formes en presentiel (10,6 clics, 6,5 ressources). A distance, sans support physique du formateur, ces enseignants rapatrient systematiquement diapos eleve, fiches version eleve et deroules prof. Le presentiel, ou tout est montre en seance, genere une consultation plus parcimonieuse."
+    },
+    {
+     "title": "Equation reduite : l'activite 'de formation' au public resserre",
+     "narrative": "Cote site, l'Equation reduite genere 237 clics Capytale, bien moins que les 598 de la vitrine Stat ; pourtant elle reunit 122 profs distincts contre 116 pour Stat. Cette signature - peu de clics, beaucoup de profs - est celle d'une activite poussee en formation : chaque prof clique une fois, deliberement, apres l'avoir vue en seance. La repartition formes/nouveaux y est equilibree (62/60), conforme a une activite institutionnelle plutot qu'a une trouvaille de curieux."
+    },
+    {
+     "title": "Une sequence preparee au debut, rarement jusqu'au bout",
+     "narrative": "Sur la sequence Statistiques MNIST (version eleve), les fiches passent de 1 124 clics en seance 1 (Introduction) a 132 en seance 7 - une retention de 12 %. Le meme effet d'entonnoir s'observe toutes sequences confondues (2 302 clics en seance 1, 134 en seance 7). Soit les profs ne menent que les premieres seances, soit ils preparent d'abord l'entree en matiere et improvisent ou abandonnent la suite. Un signal a recouper avec l'usage Capytale reel en classe."
+    }
+   ],
+   "data_quality_flags": [
+    "Le tracking consultation_rss demarre le 27 nov 2025 : les profs anciens sont sous-captures cote site. Les 712 consultants identifies ne sont pas un denombrement complet des profs ayant prepare le TP.",
+    "Categorisation des fichiers faite par heuristique sur le chemin ('version_eleve','Diapo','Prof_Diapo','Guide_aide'...). Quelques fichiers rares (web/autre_pdf, 129 clics) ne sont pas finement classes.",
+    "consultation_rss et events.resource_download se recoupent (deux mecanismes de log pour le meme clic) : je n'ai PAS additionne les deux. Les analyses de detail s'appuient sur consultation_rss (source privilegiee du dashboard) ; events n'est utilise que pour le croisement par resourceType et videos.",
+    "Les 'clics Capytale par activite' cote site recalcules ici en utilisateurs distincts (Equation reduite 122, Stat 116, Intro-IA 2) concordent avec capytale_clicks_by_activity de facts_cross.json (122/116/2). Les comptes en clics bruts (Stat 598 > Equation 237) different car facts_cross compte les utilisateurs distincts, pas les clics : pas de contradiction, granularite differente, signalee.",
+    "Videos massivement anonymes (1566/1858 ouvertures sans user) : l'analyse 'qui regarde quoi' est tres partielle ; les comptages par titre melent anonymes et identifies. La duree de visionnage (watchDurationSeconds) est un temps modale ouverte, pas un temps reellement regarde (valeurs aberrantes : 'Objectifs du projet' moyenne 1389 s, onglet laisse ouvert).",
+    "Le decrochage par seance est mesure sur les clics de preparation, pas sur l'usage reel en classe (qui se mesure cote Capytale). Une faible consultation des dernieres seances n'implique pas necessairement leur non-utilisation."
+   ],
+   "chart_specs": [
+    {
+     "title": "Clics ressources par categorie pedagogique (consultation_rss, comptes test exclus)",
+     "kind": "hbars",
+     "data": "[{\"label\":\"Version eleve (fiches)\",\"clics\":4675,\"profs\":497},{\"label\":\"Diapos eleve\",\"clics\":2417,\"profs\":507},{\"label\":\"Version prof (deroule)\",\"clics\":2054,\"profs\":324},{\"label\":\"Liens Capytale\",\"clics\":1228,\"profs\":337},{\"label\":\"Diapos prof\",\"clics\":891,\"profs\":287},{\"label\":\"Basthon\",\"clics\":526,\"profs\":143},{\"label\":\"Overleaf\",\"clics\":415,\"profs\":146},{\"label\":\"Jeu de cartes MNIST\",\"clics\":277,\"profs\":45},{\"label\":\"Guide connexion Capytale\",\"clics\":228,\"profs\":96}]"
+    },
+    {
+     "title": "Decrochage de consultation par seance - Stat MNIST version eleve",
+     "kind": "line",
+     "data": "[{\"seance\":1,\"clics\":1124},{\"seance\":2,\"clics\":312},{\"seance\":3,\"clics\":172},{\"seance\":4,\"clics\":182},{\"seance\":5,\"clics\":127},{\"seance\":6,\"clics\":143},{\"seance\":7,\"clics\":132}]"
+    },
+    {
+     "title": "Profondeur de consultation : effet et type de formation (clics par prof)",
+     "kind": "bars",
+     "data": "[{\"groupe\":\"Nouveaux\",\"clics_par_prof\":8.8,\"ressources_distinctes\":6.4},{\"groupe\":\"Formes presentiel\",\"clics_par_prof\":10.6,\"ressources_distinctes\":6.5},{\"groupe\":\"Formes webinaire\",\"clics_par_prof\":22.1,\"ressources_distinctes\":12.1}]"
+    },
+    {
+     "title": "Liens Capytale depuis le site : profs distincts par activite",
+     "kind": "hbars",
+     "data": "[{\"activite\":\"Equation reduite\",\"profs\":122,\"clics\":237},{\"activite\":\"Stat classification (vitrine)\",\"profs\":116,\"clics\":598},{\"activite\":\"Stat sante foetus\",\"profs\":77,\"clics\":117},{\"activite\":\"Geometrie reperee\",\"profs\":60,\"clics\":103},{\"activite\":\"Droite produit scalaire\",\"profs\":58,\"clics\":102},{\"activite\":\"Eq cartesienne/vecteur\",\"profs\":45,\"clics\":68},{\"activite\":\"Intro a l'IA (ancienne)\",\"profs\":2,\"clics\":3}]"
+    }
+   ],
+   "verdict": "corrections_mineures",
+   "corrections": [
+    "Affirmation 1 (12 840 clics) : dissocier les denominateurs. 12 840 = clics totaux test exclu, INCLUANT 5 197 clics anonymes ; les '712 users identifies distincts' ne couvrent que 7 643 lignes nominatives. Reformuler en : '12 840 clics, dont 7 643 attribuables a 712 profs identifies'. Tous les sous-totaux par fonction (PDF, version_eleve, etc.) reposent sur le frame 12 840 (anonymes inclus) : a preciser, sinon le lecteur croit a tort que '497 profs' et '4 675 clics' partagent le meme univers d'attribution.",
+    "Affirmation 6 (retention) : remplacer 'chute monotone' par 'globalement decroissante' : s4 (182) > s3 (172) et s6 (143) > s5 (127). Le ~12 % final est correct.",
+    "Affirmation 10 (video notebook Capytale) : corriger '16 ouvertures' en '68 ouvertures (dont 16 par des profs identifies)'. Le 16 est le sous-ensemble identifie, pas le total.",
+    "Affirmations 7 et 8 (profondeur formes/nouveaux, webinaire/presentiel) : chiffres exacts mais endogenes. Ajouter une mise en garde explicite anti-causalite : les profs formes (et a fortiori les inscrits webinaire) sont auto-selectionnes parmi les plus engages ; la difference de profondeur de consultation ne mesure pas un effet de la formation.",
+    "Affirmation 9 (guide->Capytale) : le ratio ~74-75 % tient, mais les effectifs absolus dependent de la definition du 'guide' (201 clics / 89 lecteurs pour le seul Guide_Connexion_Capytale.pdf ; la prose annonce 228/96 en agregeant d'autres guides). Harmoniser la definition et noter qu'aucun ordre temporel guide->clic n'est verifie (correlation intra-prof, pas passage a l'acte demontre)."
+   ],
+   "checks": [
+    {
+     "claim": "Clics ressources journalises (comptes de test exclus) = 12 840 ; 712 users identifies distincts ; PDF=10381, capytale=1228, basthon=526, overleaf=415, slides_odp=238",
+     "recomputed": "12 840 lignes en filtrant exclude_from_analytics MAIS en GARDANT les clics anonymes (user=null, 5197). Breakdown exact reproduit : pdf 10381, capytale 1228, basthon 526, overleaf 415, odp 238. En revanche, '712 users identifies distincts' ne s'applique PAS a ces 12 840 lignes : les lignes avec user non-null = 7 643 seulement (dont 712 users distincts). Les 5197 clics anonymes n'ont aucun user identifie.",
+     "agree": false,
+     "note": "Incoherence de denominateur : 12 840 melange clics anonymes + nominatifs, alors que '712 identifies' decrit le sous-ensemble de 7 643 lignes nominatives. Le chiffre 12 840 est correct comme total (test exclu), mais l'etiquette '712 users identifies' lui est accolee a tort. A reformuler : 12 840 clics dont 7 643 attribues a 712 profs identifies."
+    },
+    {
+     "claim": "Part du PDF dans les clics ressources = 80,8 % (10381/12840)",
+     "recomputed": "10381/12840 = 80,85 %. Exact.",
+     "agree": true,
+     "note": "Confirme sur le frame 12 840 (test exclu, anonymes inclus). Conclusion 'bibliotheque de preparation' soutenue."
+    },
+    {
+     "claim": "Clics fiches 'version eleve' = 4 675 clics / 497 profs (devant diapos eleve 2417, version prof 2054, liens Capytale 1228)",
+     "recomputed": "version_eleve : 4675 clics / 497 profs. diapo eleve (hors prefixe Prof_) : 2417 / 507 profs. version_prof : 2054 / 324. capytale : 1228 / 337. diapo prof : 891 / 287. Tous exacts.",
+     "agree": true,
+     "note": "Hierarchie fonctionnelle reproduite exactement. Le decoupage diapo eleve/prof repose sur le prefixe 'Prof_' du nom de fichier, ce qui est coherent."
+    },
+    {
+     "claim": "Stat (vitrine, 3518185) : 598 clics / 116 profs ; Equation reduite (3515488) : 237 clics mais 122 profs distincts",
+     "recomputed": "3518185 : 598 clics / 116 profs. 3515488 : 237 clics / 122 profs. Exact. Le 'public resserre mais plus large en profs distincts' (122>116) est verifie.",
+     "agree": true,
+     "note": "L'interpretation 'public formation' pour l'equation reduite est plausible et coherente avec la note MEMORY (activite tres utilisee en formation), mais reste une inference, pas une preuve."
+    },
+    {
+     "claim": "Intro a l'IA (2548348) cote site = 3 clics / 2 profs",
+     "recomputed": "2548348 : 3 clics, 2 users distincts. Exact.",
+     "agree": true,
+     "note": "Quasi-absence cote site confirmee ; coherent avec l'absence de referencement sur mathadata.fr."
+    },
+    {
+     "claim": "Retention seance1->seance7 (version_eleve Stat MNIST) ~12 %, chute monotone (1124 -> 132)",
+     "recomputed": "seance1=1124, s2=312, s3=172, s4=182, s5=127, s6=143, s7=132. 132/1124 = 11,7 % ~ 12 %. Mais la chute N'EST PAS monotone : s4>s3 (182>172) et s6>s5 (143>127).",
+     "agree": true,
+     "note": "Le chiffre de retention ~12 % est correct. La qualification 'monotone' est inexacte (deux remontees locales) ; a corriger en 'globalement decroissante'."
+    },
+    {
+     "claim": "Profondeur formes vs nouveaux = 15,0 vs 8,8 clics/prof (224 formes vs 488 nouveaux) ; distinct 8,7 vs 6,4",
+     "recomputed": "formes (forme+mentor) n=224 : 15,0 clics/prof, 8,7 ressources distinctes. nouveaux n=488 : 8,8 clics/prof, 6,4 distinctes. Exact. 224+488=712 = total identifies.",
+     "agree": true,
+     "note": "Difference descriptive correcte. Attention : endogene (les formes sont des profs deja plus engages) ; ne pas lire comme effet causal de la formation."
+    },
+    {
+     "claim": "Profondeur webinaire vs presentiel (formes) = 22,1 vs 10,6 clics/prof (86 webdecouv vs 138 presentiel) ; distinct 12,1 vs 6,5",
+     "recomputed": "webdecouv n=86 : 22,1 clics/prof, 12,1 distinctes. presentiel n=138 : 10,6 clics/prof, 6,5 distinctes. Exact. 86+138=224.",
+     "agree": true,
+     "note": "Chiffres exacts. Forte endogeneite : les inscrits au webinaire sont sans doute des profs auto-selectionnes plus actifs en ligne ; difference a presenter comme correlationnelle, pas causale."
+    },
+    {
+     "claim": "Guide connexion Capytale -> clic Capytale = 74 % (71/96 lecteurs cliquent aussi un lien Capytale)",
+     "recomputed": "Sur le fichier exact Guide_Connexion_Capytale.pdf : 89 lecteurs identifies, dont 67 cliquent aussi un lien Capytale = 75,3 %. Le pourcentage (~74-75 %) est robuste mais les comptes absolus different (89 vs 96, 67 vs 71).",
+     "agree": true,
+     "note": "Le ratio est confirme a l'arrondi pres. L'ecart sur les effectifs (96 vs 89) vient probablement d'une definition plus large du 'guide' (le 228/96 de la prose inclut d'autres guides). Surtout : correlation, pas causalite (le lien guide->classe peut refleter un meme prof deja decide, sans ordre temporel verifie)."
+    },
+    {
+     "claim": "Videos : 1 566 ouvertures anonymes / 1 858 total ; 153 visionneurs identifies ; 'Utiliser notebook Capytale' = 16 ouvertures",
+     "recomputed": "video_view (test exclu) : 1858 total, 1566 anonymes, 153 users distincts identifies. Exact. MAIS 'Utiliser les notebook Capytale' = 68 ouvertures totales (video_view) ; 16 = seulement les ouvertures par users IDENTIFIES.",
+     "agree": false,
+     "note": "Les chiffres globaux (1566/1858, 153) sont exacts. Le sous-chiffre '16 ouvertures' est faux : 16 = ouvertures identifiees, total reel = 68. Meme confusion de denominateur que dans le titre (total vs identifies)."
+    }
+   ]
+  },
+  {
+   "theme": "appariement_bonus",
+   "title": "Appariement individuel (bonus) et etudes de cas pipeline",
+   "prose": "## Ce que l'appariement permet — et ce qu'il ne permet pas\n\nLes deux mondes n'ont aucun identifiant commun : les comptes Capytale sont des ENT anonymes (MD5), les comptes site sont nominatifs. L'appariement individuel est donc **infere**, jamais certifie, a partir de trois signaux convergents : meme UAI, meme activite, et timing rapproche entre un clic ressource sur le site et le clonage de l'activite sur Capytale. On obtient **46 paires** (source : `match_candidates.csv`), soit **16,4 %** des 280 cliqueurs site a UAI connu (`match_validation.json`). C'est un echantillon d'illustration, pas une mesure de population : le grain robuste reste l'etablissement et la cohorte de formation (volet 2 principal).\n\nSur ces 46 paires, **29 sont de confiance A** (timing clic→clone serre) et **17 de confiance B** (simple unicite UAI 1:1). La fiabilite n'est pas uniforme. D'abord, deux UAI portent **chacun deux comptes Capytale distincts apparies** (Orsay, lycee Blaise Pascal ; Hazebrouck, LP des Monts de Flandre). L'appariement etablissement reste juste, mais l'attribution a *tel* prof plutot que l'autre devient ambigue : on ne sait pas departager les deux collegues d'un meme lycee. Ensuite, et c'est le drapeau le plus important, **11 des 46 comptes ont clone leur premiere activite Capytale AVANT de cliquer sur Capytale depuis le site**, et **7 avant meme d'avoir cree leur compte site**. Autrement dit, pour un quart des paires, la fleche causale « site → classe » est en realite inversee : le prof etait deja sur Capytale, et le site est un canal de *retour* ou de re-decouverte, pas la porte d'entree. La sentinelle bidon de date de formation (`1984-01-01`) et le demarrage du tracking clics au 27 nov. 2025 ajoutent du bruit sur les dates anterieures.\n\n## Le funnel sur les 46 apparies\n\nSur ces comptes, la chaine va loin. **Les 46 ont teste** (≥1 clone enseignant). **31 (67 %) ont effectivement amene l'activite a une classe** (≥1 eleve role=student), pour **1 071 eleves** au total. Parmi ces 31, **18 ont reuse** (≥2 seances reconstruites comme lots activite×date), **10 ont diffuse ≥2 activites differentes**, et **3 sont actifs sur deux annees scolaires**. La seance type compte **13 eleves** (mediane), le plus gros lot d'une classe etant de **20 eleves** en mediane — coherent avec les demi-groupes de 2nde. Attention : un eleve = une ligne (chaque `assignment_id` est unique), donc le nombre de « classes » se reconstruit par regroupement activite×date, pas par comptage d'assignations.\n\n## Profil-type du prof qui va au bout\n\nLe contraste formation/usage se lit dans les paires. Cote **formes apparies** (28) : 19 ont atteint une classe, 753 eleves. Cote **non formes apparies** (18) : 12 classes, 318 eleves — preuve qu'un prof peut tres bien parcourir tout le pipeline **sans formation**, arrive par l'activite vitrine (Stat classification, seule accessible sans compte). Entre types de formation, le **webinaire** ressort comme le plus « productif en classe » dans cet echantillon (13 webdecouv apparies, 13 ont atteint une classe, 476 eleves), au-dela du presentiel (15 apparies, 6 classes, 277 eleves) ; mais l'effectif est faible et l'echantillon des apparies sur-represente les profils deja engages, donc ce signal doit rester subordonne au grain cohorte du volet principal.\n\nLe profil-type qui va au bout combine : un **clic ressource suivi d'un clic Capytale le meme jour** (12 des 29 paires A clonent le jour meme du clic site), une **activite ancree dans le programme de 2nde** (Equation reduite et Stat classification dominent), et une **diffusion en deux-trois seances de demi-groupe**. Les profils les plus complets melangent plusieurs activites sur deux annees, et ce sont souvent des comptes qui etaient deja sur Capytale avant de formaliser leur presence sur le site — le pipeline « du site a la classe » est, pour les plus engages, en realite un aller-retour. L'individuel reste un bonus illustratif a confiance signalee ; il confirme le scenario, il ne le mesure pas.",
+   "key_stats": [
+    {
+     "label": "Paires site↔Capytale apparies",
+     "value": "46",
+     "source": "match_candidates.csv (29 conf A timing clic→clone, 17 conf B UAI 1:1)",
+     "note": "= 16,4 % des 280 cliqueurs site a UAI connu (match_validation.json)"
+    },
+    {
+     "label": "Apparies ayant teste le TP (≥1 clone enseignant)",
+     "value": "46 / 46 (100 %)",
+     "source": "appariement_bonus_chains.py : role=teacher, student-prefix == cap_acc",
+     "note": "par construction, le clone est le signal d'appariement"
+    },
+    {
+     "label": "Apparies ayant atteint une classe (≥1 eleve)",
+     "value": "31 / 46 (67 %)",
+     "source": "appariement_bonus_batches.py : lignes role=student, teacher-prefix == cap_acc",
+     "note": "borne haute : l'echantillon apparie sur-represente les profils engages"
+    },
+    {
+     "label": "Eleves cumules derriere les 46 comptes apparies",
+     "value": "1 071",
+     "source": "somme des lignes role=student rattachees aux 46 prefixes Capytale",
+     "note": "vrais eleves, non contamines (role=student)"
+    },
+    {
+     "label": "Apparies en re-usage (≥2 seances activite×date)",
+     "value": "18 / 31 classes",
+     "source": "appariement_bonus_batches.py : regroupement (mathadata_id, date)",
+     "note": "10 diffusent ≥2 activites ; 3 actifs sur 2 annees scolaires"
+    },
+    {
+     "label": "Seance type / plus gros lot",
+     "value": "13 eleves (mediane) ; 20 (mediane des max)",
+     "source": "appariement_bonus_batches.py : tailles des lots activite×date",
+     "note": "coherent avec demi-groupes de 2nde"
+    },
+    {
+     "label": "Apparies dont le clone PRECEDE le clic Capytale du site",
+     "value": "11 / 46",
+     "source": "appariement_bonus_chains.py : clone_first < first_cap_click",
+     "note": "DRAPEAU : pour ~1/4 des paires la causalite site→classe est inversee"
+    },
+    {
+     "label": "Apparies sur Capytale avant creation du compte site",
+     "value": "7 / 46",
+     "source": "clone_first < createdAt",
+     "note": "le site est un canal de retour, pas la porte d'entree, pour ces cas"
+    },
+    {
+     "label": "Conf A clonant le jour meme du clic Capytale site",
+     "value": "12 / 29",
+     "source": "clone_first == first_cap_click[:10] sur les paires conf A",
+     "note": "signal d'immediatete le plus net du funnel site→Capytale"
+    },
+    {
+     "label": "UAI portant 2 comptes Capytale apparies distincts",
+     "value": "2 (Orsay, Hazebrouck)",
+     "source": "appariement_bonus_chains.py : Counter(uai) sur conf A",
+     "note": "DRAPEAU : attribution individuelle ambigue entre collegues d'un meme etab"
+    }
+   ],
+   "case_studies": [
+    {
+     "title": "Cas A — Presentiel converti vite (Le Vigan, Montpellier) : test le jour de la formation",
+     "narrative": "Compte S0037, lycee polyvalent Andre Chamson, Le Vigan (Montpellier), IPS 103,7. Conf A. Chaine quasi instantanee : compte site cree le 09/04/2026, jour de la formation presentielle (fdate 09/04/2026), un clic ressource et un clic Capytale dans la meme minute (09:12), puis clonage le jour meme de 'Equation reduite' (activite phare des formations). A date d'extraction, aucune classe encore lancee (0 eleve) : conversion enseignant immediate, diffusion eleves non encore observee — typique d'une formation de printemps dont les classes arriveront a la rentree. Illustre l'effet 'meme-jour' du presentiel sur l'amorcage."
+    },
+    {
+     "title": "Cas B — Webinaire alle au bout (Orsay, Versailles) : 3 activites, 65 eleves",
+     "narrative": "Compte S0009, lycee general Blaise Pascal, Orsay (Versailles), IPS tres eleve (150,9). Conf A, formation webdecouv. Pipeline complet et diversifie : clics ressources/modules nourris (45 clics ressources, 16 vues module), clic Capytale, puis trois clones distincts (Stat sante foetus, Intro a l'IA, Geometrie reperee) et une diffusion concentree en janvier 2026 — 65 eleves repartis sur cinq seances de 'Geometrie reperee' (lots de 1 a 35 sur 5 jours). DRAPEAU : cet UAI porte un second compte Capytale apparie (S0040, presentiel) ; l'etablissement est certain, l'attribution a ce prof precis l'est moins."
+    },
+    {
+     "title": "Cas C — Non forme arrive par l'activite vitrine (Poissy, Versailles) : 60 eleves, sans formation",
+     "narrative": "Compte S0042, lycee general Vallee de Chevreuse, Gif-sur-Yvette / etab Poissy (Versailles), IPS 145,1. Conf A, statut 'nouveau' (jamais forme). Entre par 'Equation reduite', deux clones, et diffuse 60 eleves sur cinq seances etalees de janvier a juin 2026 (lots de 11 a 26). DRAPEAU fort : le premier clone date du 13/01/2026, bien AVANT le clic Capytale site du 19/05/2026 — ce prof etait deja un utilisateur Capytale autonome ; le site n'a fait que confirmer un usage preexistant. Profil-type du prof productif que la formation n'a pas touche."
+    },
+    {
+     "title": "Cas D — College reuseur multi-annees (Douai, Lille) : 99 eleves sur deux ans",
+     "narrative": "Compte S0002, lycee Jean-Baptiste Corot, Douai (Lille), IPS 100,6, forme webdecouv. Conf B (UAI 1:1, fiabilite moindre). Le re-useur le plus dense de l'echantillon : 99 eleves, neuf seances reconstruites sur deux annees scolaires (2024-25 et 2025-26), alternant 'Stat classification' et 'Equation reduite' (lots de 5 a 26). Montre l'usage installe dans la duree. A noter : premier clone des 03/2025, anterieur au clic Capytale site (28/03/2026) — encore un cas ou le site documente un usage deja en place."
+    },
+    {
+     "title": "Cas E — Petit college, signal fragile (Ciboure, Bordeaux) : 3 eleves",
+     "narrative": "Compte S0013, college prive Piarres Larzabal, Ciboure (Bordeaux), IPS 124,1, forme webdecouv. Conf B. Chaine complete mais a tres faible volume : un clone 'Stat classification', trois eleves sur deux seances en octobre 2025. Cas-temoin de la limite de l'appariement individuel au college : effectifs minuscules, ou un faux positif (deux profs du meme petit etab) couterait cher relativement. A traiter comme indicatif."
+    }
+   ],
+   "data_quality_flags": [
+    "Appariement INFERE, pas certifie : aucun identifiant commun. 46 paires = echantillon d'illustration (16,4 % des cliqueurs a UAI connu), non representatif — sur-represente les profils deja engages. Ne pas extrapoler en taux de population.",
+    "Causalite parfois inversee : 11/46 comptes ont clone une activite Capytale AVANT de cliquer Capytale depuis le site, 7/46 avant meme la creation du compte site. Pour ~1/4 des paires, le site est un canal de retour, pas la porte d'entree — la lecture 'site → classe' ne tient pas pour ces cas (verifie : clone_first < first_cap_click / < createdAt).",
+    "Deux UAI (Orsay 0910626L, Hazebrouck 0590102R) portent chacun deux comptes Capytale apparies distincts : l'appariement etablissement est robuste, mais l'attribution individuelle entre collegues d'un meme etab est ambigue. Concerne les cas A/B Orsay et les paires Hazebrouck.",
+    "'Classe' reconstruite par regroupement (activite, date) : un eleve = une ligne (chaque assignment_id est unique), donc impossible de compter des classes via assignment_id. Le decompte de seances et de tailles est un proxy, pas une donnee native.",
+    "Conf B (17 paires) repose sur la seule unicite UAI 1:1, sans corroboration temporelle : risque de faux positif plus eleve, surtout sur petits etablissements (cas E). A signaler systematiquement.",
+    "Dates fragilisees par : sentinelle bidon de formation 1984-01-01 (non utilisee ici mais presente dans la source), et tracking clics site demarrant le 27/11/2025 (les clics anterieurs sont sous-captures, ce qui peut artificiellement faire paraitre un clone 'anterieur' au clic).",
+    "Recalcul des eleves apparies (1 071) coherent avec facts_cross.json sur la mecanique (role=student, exclusion demo c81e728d) ; ce total est specifique aux 46 prefixes apparies et ne doit pas etre confondu avec les 5 854 eleves du volet 1."
+   ],
+   "chart_specs": [
+    {
+     "title": "Funnel des 46 comptes apparies : du test a la classe au re-usage",
+     "kind": "funnel",
+     "data": "[{\"etape\":\"Apparies (clic site + clone Capytale)\",\"n\":46},{\"etape\":\"Ont teste le TP (clone enseignant)\",\"n\":46},{\"etape\":\"Ont atteint une classe (>=1 eleve)\",\"n\":31},{\"etape\":\"Ont reuse (>=2 seances)\",\"n\":18},{\"etape\":\"Ont diffuse >=2 activites\",\"n\":10}]"
+    },
+    {
+     "title": "Aboutissement en classe des apparies, par statut/type de formation",
+     "kind": "grouped",
+     "data": "[{\"groupe\":\"Non formes\",\"apparies\":18,\"ont_atteint_classe\":12,\"eleves\":318},{\"groupe\":\"Formes presentiel\",\"apparies\":15,\"ont_atteint_classe\":6,\"eleves\":277},{\"groupe\":\"Formes webinaire\",\"apparies\":13,\"ont_atteint_classe\":13,\"eleves\":476}]"
+    },
+    {
+     "title": "Fiabilite de l'appariement : sens reel de la chaine",
+     "kind": "hbars",
+     "data": "[{\"label\":\"Clone APRES clic Capytale site (sens attendu)\",\"n\":35},{\"label\":\"Clone AVANT clic Capytale site (sens inverse)\",\"n\":11},{\"label\":\"dont clone AVANT meme creation compte site\",\"n\":7},{\"label\":\"Conf A clone le jour meme du clic site\",\"n\":12}]"
+    }
+   ],
+   "verdict": "solide",
+   "corrections": [],
+   "checks": [
+    {
+     "claim": "46 paires site<->Capytale (29 conf A, 17 conf B), 16,4 % des 280 cliqueurs a UAI connu",
+     "recomputed": "match_candidates.csv = 46 lignes, 46 site_code distincts, 46 cap_acc distincts ; conf A=29, conf B=17 ; 46/280 = 16,4 %. Aucun cap_acc apparie ne coincide avec le compte demo (c81e728d) ni le hub fondateur (cfcd2084).",
+     "agree": true,
+     "note": "Echantillon d'illustration, pas une mesure de population : correctement presente comme tel. L'appariement reste infere (UAI+activite+timing), jamais certifie."
+    },
+    {
+     "claim": "46/46 ont teste (>=1 clone enseignant, role=teacher, student-prefix==cap_acc)",
+     "recomputed": "46/46. Vrai par construction : le clone est le signal meme de l'appariement.",
+     "agree": true,
+     "note": "Tautologique : ce n'est pas un resultat du funnel mais la definition de l'echantillon. A presenter comme tel, ce que la prose fait."
+    },
+    {
+     "claim": "31/46 (67 %) ont atteint une classe (>=1 ligne role=student, teacher-prefix==cap_acc)",
+     "recomputed": "31/46 = 67,4 %. Lignes role=student rattachees aux prefixes Capytale apparies.",
+     "agree": true,
+     "note": "Borne haute correctement signalee : l'echantillon apparie sur-represente les profils engages (un clone tracable suppose deja un usage actif)."
+    },
+    {
+     "claim": "1 071 eleves cumules derriere les 46 comptes (role=student)",
+     "recomputed": "Somme des lignes role=student rattachees = 1071. role=student => vrais eleves, non contamines par les profs-en-formation (qui sont role=teacher).",
+     "agree": true,
+     "note": "Un eleve = une ligne (assignment_id unique). Comptage propre."
+    },
+    {
+     "claim": "18/31 classes en re-usage (>=2 lots activite x date) ; 10 diffusent >=2 activites ; 3 actifs sur 2 annees scolaires",
+     "recomputed": "reuse >=2 batches: 18/31 ; multi-activites >=2: 10 ; multi-annees scolaires (Sep-Aoiut): 3.",
+     "agree": true,
+     "note": "Reconstruction de seances par regroupement (mathadata_id, jour) reproduite a l'identique."
+    },
+    {
+     "claim": "Seance type 13 eleves (mediane) ; 20 (mediane des max)",
+     "recomputed": "Mediane des tailles-types par classe (mediane interne) = 13 ; mediane des plus gros lots par classe = 20.",
+     "agree": true,
+     "note": "Coherent avec demi-groupes de 2nde. NB : la mediane sur l'ensemble des 103 lots pooles vaut 7, statistique differente ; le libelle de l'analyste (mediane des typiques / mediane des max) est interne-coherent et n'induit pas en erreur."
+    },
+    {
+     "claim": "11/46 ont clone leur 1re activite Capytale AVANT le clic Capytale depuis le site",
+     "recomputed": "11/46 a la granularite JOUR (comparaison de dates), prefixes S0001/02/08/09/11/13/27/33/36/42/44. A la granularite HORODATAGE complet j'obtiens 13/46 : S0031 et S0035 ont clone quelques heures AVANT le clic le MEME jour, ce que la comparaison par date ne capte pas.",
+     "agree": true,
+     "note": "Divergence purement de granularite, pas une erreur. Le choix JOUR est defendable (l'ordre intra-journee clone/clic est non significatif pour la causalite, et le bruit des dates sentinelles 1984 incite a la prudence). Le drapeau 'causalite site->classe inversee pour ~1/4 des paires' est juste et bien signale, voire un peu sous-estime (13/46 en horodatage fin)."
+    },
+    {
+     "claim": "7/46 ont clone sur Capytale avant la creation du compte site",
+     "recomputed": "7/46 a la granularite JOUR (S0011/30/33/36/42/44/45). En horodatage complet j'obtiens 10/46 : S0025, S0031, S0038 clonent plus tot le meme jour que leur createdAt.",
+     "agree": true,
+     "note": "Meme artefact de granularite que la claim 7. Le sens (le site est un canal de retour, pas la porte d'entree, pour ces cas) est correct et meme renforce en horodatage fin (10/46)."
+    },
+    {
+     "claim": "12/29 conf A clonent le jour meme du clic Capytale du site",
+     "recomputed": "12/29 (clone_first[:10] == first_cap_click[:10] sur conf A).",
+     "agree": true,
+     "note": "Signal d'immediatete net du funnel site->Capytale, reproduit exactement."
+    },
+    {
+     "claim": "2 UAI portent chacun 2 comptes Capytale apparies distincts (Orsay, Hazebrouck)",
+     "recomputed": "2 UAI a >1 compte apparie : 0910626L (acc abba6fc3, e2ffe6e3) et 0590102R (acc 0fe5083a, 390f1cd9), tous deux en conf A. Comptes Capytale distincts confirmes.",
+     "agree": true,
+     "note": "Communes (Orsay=Essonne 091, Hazebrouck=Nord 059) coherentes avec les codes UAI. Drapeau d'ambiguite d'attribution individuelle entre collegues d'un meme etab : justifie."
+    }
+   ]
+  },
+  {
+   "theme": "college",
+   "title": "College : reconciliation site x Capytale",
+   "prose": "Le volet 1 avait laissé une tension : le collège paraissait « marginal » côté KPI enseignant, tout en pesant lourd parmi les testeurs en formation et en générant des points fantômes côté `uai_el`. Le jeu nominatif mathadata.fr permet de trancher au grain établissement, avec un type d'établissement (`etab_type`) propre. La réponse est nette : **le collège est un public de formation et d'intérêt, pas un public de classe.**\n\n**Le collège existe bien comme public.** Sur les 2 724 comptes site, 145 sont rattachés à un collège (et 591 à un lycée ; 1 988 sans UAI exploitable). Ces 145 comptes collège sont **plus formés que les lycées** : 56,6 % sont « formés » contre 37,9 % pour les lycées, et leur formation est presque toujours en présentiel (71 présentiel, 11 webinaire sur 82 formés). Côté présentiel, le déséquilibre est encore plus frappant : la table `presentiel_etabs.csv` recense **60 collèges** pour 93 lycées — le collège représente 39 % des établissements touchés par une formation en établissement. Le collège n'est donc pas absent du dispositif de formation ; il y est sur-représenté par rapport à son poids dans l'usage réel.\n\n**Mais la conversion vers la classe est quasi nulle.** Sur les 128 UAI collège distincts déclarés côté site, **un seul** porte un usage élève Capytale réel (historique complet 2023‑2026, non biaisé par la fenêtre de tracking) : 23 élèves. Côté présentiel, même verdict : sur 60 collèges ayant accueilli une formation, **1 seul** présente un usage Capytale. À comparer aux lycées, qui concentrent ~3 592 des élèves Capytale typés (92 UAI lycée avec élèves, contre 1 collège). Le funnel collège s'effondre donc à la dernière marche : intérêt et formation présents, passage en classe absent.\n\n**Que regardent les profs de collège ?** Leurs clics Capytale (colonne `cap_acts`) se concentrent sur les deux activités « vitrine / data‑science générale » : Stat classification (41 % des clics collège vs 22 % côté lycée) et Équation réduite (30 %, l'activité phare des formations). À l'inverse, le bloc d'activités calé sur le programme de 2nde — droite et produit scalaire, géométrie repérée, équation cartésienne/vecteur — représente 39 % des clics lycée mais **seulement 5 % des clics collège**. Autrement dit, les enseignants de collège testent la partie « IA / statistique » transversale, séduisante en formation, mais ne trouvent pas de TP aligné sur leur programme (6e‑3e), là où le lycée dispose d'un catalogue 2nde directement réutilisable. C'est l'explication structurelle du non‑passage en classe : l'offre est pensée pour la 2nde, cible explicite du dispositif.\n\n**Profil et géographie.** Les collèges du panel sont à 89 % publics (129/145), avec un IPS moyen de 106 (vs 113,5 pour les lycées) — un public légèrement plus mixte socialement. La répartition académique trahit un effet animateur local : **Montpellier capte 48 des 145 comptes collège** (dont 37 formés), loin devant Paris (13), Versailles (11) et Aix‑Marseille (9). Cette concentration suggère qu'un ou des formateurs/ambassadeurs y ont mobilisé un réseau collège lors de formations présentielles, sans que cela se traduise (encore) en usage élève.\n\n**Lecture d'ensemble.** Sur 82 comptes collège formés, 62 n'ont jamais cliqué vers Capytale et seuls 20 l'ont fait — et de ces clics, un seul établissement aboutit à des élèves. Le collège illustre donc le scénario « intérêt sans aboutissement » : la formation y génère de la curiosité (souvent en présentiel, souvent via Montpellier), mais l'absence de TP calés 6e‑3e empêche la bascule vers la classe. Deux pistes en découlent : soit produire des activités explicitement collège (proportionnalité, statistiques de 4e/3e, repérage), soit assumer que le collège reste un canal de découverte/prescription et mesurer son ROI comme tel, sans attendre de conversion élève. Le cas unique de réussite (Collège César Franck, Paris 2e, formé en présentiel, Stat classification + Stat santé fœtus, 23 élèves en mai‑juin 2026) montre que la bascule est possible, mais reste à ce jour une exception isolée.",
+   "key_stats": [
+    {
+     "label": "Comptes site rattachés à un collège",
+     "value": "145",
+     "source": "payload_users_work.csv, etab_type=='college' (591 lycée, 1988 sans UAI)",
+     "note": "Type d'établissement dérivé de l'UAI déclaré côté site"
+    },
+    {
+     "label": "Taux de formés chez les comptes collège",
+     "value": "56,6 %",
+     "source": "82/145 is_formed=True ; vs 37,9 % (224/591) en lycée",
+     "note": "Le collège est PLUS formé que le lycée"
+    },
+    {
+     "label": "Comptes collège formés en présentiel vs webinaire",
+     "value": "71 présentiel / 11 webinaire",
+     "source": "payload_users_work.csv, college & is_formed & ftype",
+     "note": "La formation collège est massivement présentielle"
+    },
+    {
+     "label": "Collèges touchés par une formation présentielle",
+     "value": "60 (sur 153 étabs présentiel)",
+     "source": "presentiel_etabs.csv, etab_type=='college' (93 lycée)",
+     "note": "39 % des étabs présentiel sont des collèges"
+    },
+    {
+     "label": "Collèges présentiel avec un usage Capytale",
+     "value": "1 sur 60",
+     "source": "presentiel_etabs.csv any_capytale_usage=True & college",
+     "note": "Conversion présentiel collège quasi nulle"
+    },
+    {
+     "label": "UAI collège avec usage ÉLÈVE Capytale réel (historique complet)",
+     "value": "1 sur 128",
+     "source": "capytale_by_uai_el.csv n_pupils>0 croisé aux 128 UAI collège du site",
+     "note": "23 élèves ; non biaisé par la fenêtre de tracking 2025-11-27"
+    },
+    {
+     "label": "Élèves Capytale en collège vs lycée (UAI typés)",
+     "value": "23 vs 3 592",
+     "source": "capytale_by_uai_el.csv n_pupils, type mappé via comptes site",
+     "note": "1 UAI collège vs 92 UAI lycée avec élèves"
+    },
+    {
+     "label": "Part 'activités 2nde' (scalaire+géom repérée+vecteur) dans les clics",
+     "value": "5 % collège vs 39 % lycée",
+     "source": "cap_acts agrégés, college vs lycee",
+     "note": "Les collèges évitent le catalogue calé 2nde"
+    },
+    {
+     "label": "Part 'Stat classification' (vitrine) dans les clics collège",
+     "value": "41 % (vs 22 % lycée)",
+     "source": "cap_acts agrégés",
+     "note": "Les collèges restent sur la vitrine data-science transversale"
+    },
+    {
+     "label": "Concentration académique du collège",
+     "value": "Montpellier 48/145 (37 formés)",
+     "source": "payload_users_work.csv acad, college",
+     "note": "Effet animateur/ambassadeur local ; Paris 13, Versailles 11"
+    },
+    {
+     "label": "Comptes collège formés n'ayant jamais cliqué vers Capytale",
+     "value": "62 sur 82",
+     "source": "college & is_formed, clicked_cap!=True",
+     "note": "Intérêt sans même franchir le pas du test technique"
+    },
+    {
+     "label": "IPS moyen et secteur des collèges",
+     "value": "IPS 106 ; 89 % public",
+     "source": "etab_ips moyen (n=141), etab_secteur (129 public / 16 privé)",
+     "note": "Public un peu plus mixte que le lycée (IPS 113,5)"
+    }
+   ],
+   "case_studies": [
+    {
+     "title": "Collège César Franck (Paris 2e) — la seule bascule réussie",
+     "narrative": "Compte site formé en présentiel, rattaché à un collège parisien (UAI 0752248L). Après formation, l'enseignant clique vers deux activités (Stat classification puis Stat santé fœtus, 7 clics ressources). La trace Capytale confirme un usage élève réel : 23 élèves sur l'année 2025-2026, séances reconstruites entre fin mai et début juin 2026. C'est l'unique cas, sur 128 UAI collège du panel et 60 collèges formés en présentiel, où la chaîne site -> formation -> Capytale -> classe aboutit. Il prouve la faisabilité, mais reste statistiquement isolé."
+    },
+    {
+     "title": "Vague collège de Montpellier — l'intérêt qui ne convertit pas",
+     "narrative": "L'académie de Montpellier concentre 48 des 145 comptes collège (dont 37 formés), très au-dessus de son poids en usage élève. Le profil est typique d'une mobilisation par un animateur/ambassadeur local lors de formations en établissement : forte adhésion déclarée, clics concentrés sur Stat classification et Équation réduite (l'activité de formation), mais aucun usage élève Capytale détecté dans ces collèges. Cas d'école d'un public 'intérêt + formation' sans aboutissement classe."
+    },
+    {
+     "title": "Collèges appariés sans suite — Germaine Tillion (La Mézière) et Piarres Larzabal (Ciboure)",
+     "narrative": "Deux collèges figurent parmi les 46 appariements site x Capytale (confiance B) : un public formé en présentiel (Rennes) et un privé formé en webinaire (Bordeaux). L'appariement repose sur UAI + activité + timing et reste à confiance modérée ; surtout, aucun ne porte d'usage ÉLÈVE Capytale documenté côté uai_el. Ils illustrent que même les rares collèges 'connectés' aux deux mondes le sont au stade test/formateur, pas au stade classe."
+    }
+   ],
+   "data_quality_flags": [
+    "etab_type n'est renseigné que pour les comptes à UAI exploitable (736/2724) ; les 1988 comptes sans UAI ne sont pas typables — le collège réel pourrait être un peu sous-compté, mais le ratio collège/lycée (145/591) reste robuste.",
+    "Le typage college/lycee des UAI Capytale repose sur le mapping des comptes site : 80 UAI-élèves Capytale restent NaN (1466 élèves non typés). Le chiffre '1 collège avec élèves' porte donc sur les 128 UAI collège CONNUS du site ; un collège sans compte site et non typé pourrait échapper au comptage (borne basse).",
+    "cap_acts est séparé par des virgules (et non point-virgule) : un premier comptage erroné a été corrigé. Les parts d'activités sont calculées sur clics dépliés.",
+    "Les clics ressource/Capytale ne sont trackés que depuis le 2025-11-27 ; la mesure 'qui clique quoi' sous-capture les comptes antérieurs. En revanche l'usage ÉLÈVE Capytale (uai_el, historique 2023-2026) n'est PAS biaisé — c'est lui qui fonde le constat de non-conversion.",
+    "Les 3 collèges appariés (match_candidates) sont en confiance A/B et inférés (UAI+activité+timing), sans identifiant commun ; à traiter comme indicatif, pas comme preuve d'usage classe.",
+    "Cohérent avec facts_cross.json : presentiel_etabs y donne 27/154 étabs avec usage et 17 après formation, toutes catégories ; le présent découpage par type (1 collège sur 60) ne le contredit pas, il le ventile."
+   ],
+   "chart_specs": [
+    {
+     "title": "Collège vs Lycée : entonnoir formation -> classe",
+     "kind": "grouped",
+     "data": "{\"categories\":[\"Comptes site\",\"Formés\",\"Cliquent Capytale\",\"Étabs (UAI) avec élèves Capytale\"],\"series\":[{\"name\":\"Collège\",\"values\":[145,82,30,1]},{\"name\":\"Lycée\",\"values\":[591,224,234,92]}],\"note\":\"UAI collège avec élèves = 1 (23 élèves) ; lycée = 92 (3592 élèves)\"}"
+    },
+    {
+     "title": "Mix d'activités cliquées : collège vs lycée (% des clics)",
+     "kind": "stacked",
+     "data": "{\"groups\":[\"Collège\",\"Lycée\"],\"segments\":[{\"name\":\"Stat classification (vitrine)\",\"values\":[41,22]},{\"name\":\"Équation réduite (formation)\",\"values\":[30,25]},{\"name\":\"Stat santé fœtus\",\"values\":[24,14]},{\"name\":\"Bloc 2nde (scalaire/géom/vecteur)\",\"values\":[5,39]}],\"note\":\"Le bloc calé sur le programme de 2nde est quasi absent côté collège\"}"
+    },
+    {
+     "title": "Comptes collège par académie (top, et part formée)",
+     "kind": "hbars",
+     "data": "{\"items\":[{\"label\":\"Montpellier\",\"comptes\":48,\"formes\":37},{\"label\":\"Paris\",\"comptes\":13,\"formes\":12},{\"label\":\"Versailles\",\"comptes\":11,\"formes\":5},{\"label\":\"Aix-Marseille\",\"comptes\":9,\"formes\":8},{\"label\":\"Rennes\",\"comptes\":9,\"formes\":7},{\"label\":\"Bordeaux\",\"comptes\":8,\"formes\":3},{\"label\":\"Dijon\",\"comptes\":6,\"formes\":6}],\"note\":\"Montpellier domine largement : effet animateur/ambassadeur local\"}"
+    }
+   ],
+   "verdict": "solide",
+   "corrections": [
+    "Les douze affirmations chiffrées sont reproduites exactement depuis les données brutes (payload_users_work.csv, capytale_by_uai_el.csv, presentiel_etabs.csv). Aucune erreur de calcul.",
+    "Précision sur 'sur 153 étabs présentiel' : le fichier presentiel_etabs.csv contient 154 lignes ; 153 sont typées (60 collège + 93 lycée), la 154e étant un lycée français à l'étranger (AEFE Barcelone) sans type. Le '153' est donc le total typé, pas le total du fichier. À expliciter pour éviter toute ambiguïté, mais cela ne change ni les comptes ni le 39 %.",
+    "Cohérence forte non soulignée dans la prose : le SEUL collège présentiel avec usage (0752248L Paris) est le MÊME UAI que le seul collège avec usage élève réel (23 élèves). Les deux '1 sur N' désignent le même établissement — pas deux signaux indépendants. À dire pour ne pas laisser croire à deux preuves distinctes.",
+    "Garde-fou tracking à rappeler explicitement sur le 62/82 'jamais cliqué vers Capytale' : les clics ne sont captés que depuis ~27 nov 2025, donc ce ratio surestime l'inaction pour les comptes collège créés/formés avant cette date. En revanche le verdict de conversion classe (1 sur 128) repose sur l'historique Capytale complet et reste robuste.",
+    "La prose se termine sur un mot tronqué ('C'est l'explic') — à compléter."
+   ],
+   "checks": [
+    {
+     "claim": "Comptes site rattachés à un collège = 145 (591 lycée, 1988 sans UAI)",
+     "recomputed": "college=145, lycee=591, etab_type vide=1988 (total 2724)",
+     "agree": true,
+     "note": "Reproduit exactement depuis payload_users_work.csv."
+    },
+    {
+     "claim": "Taux de formés collège = 56,6 % (82/145) vs 37,9 % (224/591) lycée",
+     "recomputed": "college 82/145=56,6% ; lycee 224/591=37,9%",
+     "agree": true,
+     "note": "Exact. is_formed booleen."
+    },
+    {
+     "claim": "Collège formés : 71 présentiel / 11 webinaire",
+     "recomputed": "ftype parmi college&is_formed : presentiel=71, webdecouv=11 (total 82)",
+     "agree": true,
+     "note": "Exact, somme=82 formés."
+    },
+    {
+     "claim": "60 collèges sur 153 étabs présentiel (93 lycée), 39 %",
+     "recomputed": "presentiel_etabs.csv : 60 college, 93 lycee, 1 sans type (AEFE Barcelone). 154 lignes au total ; 60+93=153 typés. 60/154=39%",
+     "agree": true,
+     "note": "Le '153' = étabs typés (la 154e ligne est un lycée français à l'étranger non typé). 39% se vérifie sur 153 comme sur 154. Correct mais le dénominateur réel du fichier est 154."
+    },
+    {
+     "claim": "Collèges présentiel avec usage Capytale = 1 sur 60",
+     "recomputed": "any_capytale_usage=True parmi presentiel college : 1 (UAI 0752248L, Paris)",
+     "agree": true,
+     "note": "Confirmé."
+    },
+    {
+     "claim": "UAI collège avec usage ÉLÈVE réel = 1 sur 128 (23 élèves)",
+     "recomputed": "128 UAI collège distincts côté site ; 1 (0752248L) a n_pupils>0 dans capytale_by_uai_el.csv = 23 élèves",
+     "agree": true,
+     "note": "Historique complet, non biaisé fenêtre. C'est le MÊME UAI que le collège présentiel ci-dessus : aucun double-comptage, cohérent."
+    },
+    {
+     "claim": "Élèves Capytale collège vs lycée = 23 vs 3 592 (1 vs 92 UAI)",
+     "recomputed": "via mapping uai->type du site sur EL : college=23 (1 uai>0), lycee=3592 (92 uai>0)",
+     "agree": true,
+     "note": "Exact. Mapping de type seulement sur UAI connus côté site."
+    },
+    {
+     "claim": "Part activités 2nde (scalaire+géom repérée+vecteur) : 5 % collège vs 39 % lycée",
+     "recomputed": "clics agrégés cap_acts : college 2/37=5% ; lycee 138/356=39%",
+     "agree": true,
+     "note": "IDs 5862412,6659633,8790616. Exact."
+    },
+    {
+     "claim": "Part Stat classification (vitrine) clics collège = 41 % (vs 22 % lycée)",
+     "recomputed": "3518185 : college 15/37=41% ; lycee 77/356=22%",
+     "agree": true,
+     "note": "Exact."
+    },
+    {
+     "claim": "Concentration : Montpellier 48/145 (37 formés) ; Paris 13, Versailles 11",
+     "recomputed": "acad college : Montpellier=48 (37 formés), Paris=13, Versailles=11",
+     "agree": true,
+     "note": "Exact."
+    },
+    {
+     "claim": "Collège formés n'ayant jamais cliqué vers Capytale = 62 sur 82",
+     "recomputed": "college&is_formed&clicked_cap!=True : 62/82",
+     "agree": true,
+     "note": "Exact. Attention : clic vers Capytale sous-capturé hors fenêtre tracking (~27 nov 2025) — le 62/82 surestime le 'jamais franchi le pas' pour les comptes anciens."
+    },
+    {
+     "claim": "IPS moyen collège 106 ; 89 % public (129/16) vs lycée IPS 113,5",
+     "recomputed": "college IPS=106,0 (n=141) ; secteur 129 public/16 privé=89% ; lycee IPS=113,5",
+     "agree": true,
+     "note": "Exact. 'Plus mixte' est une interprétation de l'IPS plus bas, défendable."
+    }
+   ]
+  }
+ ]
+}
