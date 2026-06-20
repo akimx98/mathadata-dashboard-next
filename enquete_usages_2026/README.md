@@ -22,10 +22,10 @@ Reconstitue le **pipeline complet** (notoriété → compte → formation → Ca
 - Pipeline : `build_payload_canonical.py` → `compute_cross_facts.py` → `build_formation_cohorts.py` → `match_individuals.py` → `make_charts_volet2.py` (+ workflows). Source de vérité : `volet2/data/facts_cross.json` & `facts_formation.json`.
 
 ## [Commons — Typologie des profils](commons/) (`commons/`)
-Refonte **data-driven** de la sociologie des usages (prolonge et corrige `ANALYSE_PATTERNS_USAGE.md` du 4 nov. 2025). Clustering k-means (k=5) des 224 profs ayant enseigné → 5 archétypes (pionniers intensifs, fidèles pluriannuels, explorateurs, déployeurs classe-entière, petits groupes) ; rétention pluriannuelle (30 % année→année) ; segmentation amont des 2 715 comptes site.
+Refonte **data-driven et vérifiée** de la sociologie des usages (prolonge et corrige `ANALYSE_PATTERNS_USAGE.md` du 4 nov. 2025). Clustering k-means (k=5) des 224 profs ayant enseigné → 5 archétypes, puis **enquête croisée** (10 questions investiguées par agents + vérification adversariale) répondant à deux questions : *qui atteint la classe ?* et *pourquoi la plupart ne reviennent pas ?* Faits saillants : **paradoxe du déployeur** (atteint une vraie classe, 0/41 reviennent), rétention 31 % sur cohorte éligible, prédicteurs « dose année 1 », nuls confirmés (collectif intra-établissement, « effet formation » = artefact de composition).
 - Rapport : [`commons/TYPOLOGIE_PROFILS_2026.md`](commons/TYPOLOGIE_PROFILS_2026.md)
-- Page web : `commons/dashboard_typologie.html` → https://claude.ai/code/artifact/0b79ed9b-8e7e-4ecf-b7dc-f4f3aa86ea83
-- Source de vérité : `commons/data/facts_typologie.json` & `teachers_typologie.csv` (pseudonymisé). Graphiques : `commons/charts/`.
+- Page web (canonique) : `commons/dashboard_typologie.html` → https://akimx98.github.io/mathadata-dashboard-next/typologie.html · miroir artifact équipe : https://claude.ai/code/artifact/0b79ed9b-8e7e-4ecf-b7dc-f4f3aa86ea83
+- Pipeline : `build_master.py` (table maître) → `workflow_typologie.js` (enquête + vérif) → charts. Sources de vérité : `commons/data/facts_typologie.json`, `facts_investigation.json`, `master_teachers.csv` (pseudonymisé). Graphiques : `commons/charts/`.
 
 ## Entrées partagées (hors dépôt enquête)
 - `public/data/capytale_fresh_20260619.csv` — extraction usage Capytale (versionnée).

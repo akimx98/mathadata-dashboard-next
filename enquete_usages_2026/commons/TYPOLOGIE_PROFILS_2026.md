@@ -1,124 +1,162 @@
-# Typologie des profils d'usage MathAData (juin 2026)
-## Refonte data-driven de la sociologie des usages
+# Cinq façons d'enseigner — et pourquoi la plupart ne reviennent pas
+## Enquête sur les profils d'usage MathAData, croisés avec toutes les données
 
 **Date** : 20 juin 2026
-**Corpus** : 2 715 comptes site (amont, nominatif) · 401 comptes Capytale engagés dont 224 ont enseigné (aval, anonyme) · 5 854 élèves distincts touchés
-**Période** : déc. 2023 → juin 2026 (Capytale) · ouverture des comptes site jusqu'à juin 2026
-**Méthode** : segmentation k-means (k=5, silhouette 0,31) relabellisée en archétypes par règles transparentes, croisée avec le parcours amont.
+**Corpus** : 2 715 comptes site (amont, nominatif) · 401 comptes Capytale engagés dont 224 ont enseigné · 5 854 élèves distincts
+**Méthode** : clustering k-means (k=5) → 5 archétypes ; puis enquête croisée (10 questions, chacune testée puis **vérifiée de façon adversariale** par un second analyste indépendant) reliant les profils à la rétention, au parcours amont, à la formation, à la géographie et aux trajectoires pluriannuelles.
 
-> Cette note prolonge et **corrige** [`ANALYSE_PATTERNS_USAGE.md`](../../ANALYSE_PATTERNS_USAGE.md) (4 nov. 2025, 114 profs, données Capytale partielles). Trois choses ont changé : (1) le corpus Capytale est complet (224 profs ayant enseigné, pas 92) ; (2) on voit enfin la **rétention pluriannuelle** ; (3) on dispose de l'**amont nominatif** (site + type de formation). Là où l'ancienne note spéculait, on mesure.
+> Cette note prolonge et **corrige** [`ANALYSE_PATTERNS_USAGE.md`](../../ANALYSE_PATTERNS_USAGE.md) (4 nov. 2025). Elle ne se contente pas de décrire les profils : elle s'en sert comme **grille de lecture** pour répondre à deux questions — *qui atteint la classe ?* et *pourquoi la plupart ne reviennent-ils pas ?*
 
 ---
 
-## Ce que les données complètes invalident dans l'ancienne note
+## Les deux réponses, en bref
 
-| Affirmation de nov. 2025 | Verdict juin 2026 |
+**Qui atteint la classe ?** — Il n'existe **aucun prédicteur propre** : franchir la porte de la classe est verrouillé par un fait quasi définitionnel (être ou non « stagiaire »). 224 des 401 comptes engagés (56 %) enseignent. Parmi les vrais enseignants (non-stagiaires), **86 % atteignent une classe** ; le filtre est en amont, à la frontière stagiaire/testeur. L'écart apparent lycée (78 %) vs collège (13 %) est un artefact : les collèges sont à 87 % des stagiaires.
+
+**Pourquoi la plupart ne reviennent-ils pas ?** — Sur 101 enseignants ayant *pu* revenir, **31 % reviennent** l'année suivante. La cause n'est pas le profil (le lien profil→retour est tautologique) mais la **dose de la première année**. Le cœur du problème est le **paradoxe du déployeur** : les déployeurs atteignent une vraie classe — le signal même qui prédit le retour — et pourtant **0 sur 41 reviennent**. La perte n'est pas au premier contact, elle est à la **réengagement d'une année sur l'autre**.
+
+| Chiffre clé | Valeur |
 |---|---|
-| « Taille de classe moyenne : 8 élèves » → mystère central | **Artefact de données partielles.** Médiane réelle = **20 élèves**, moyenne 27. Les petits effectifs existent mais ne concernent qu'**un profil sur cinq** (21 % des profs, 3 % des élèves). |
-| « 53 % confiants / 39 % prudents / 19 % explorateurs » | Tendance confirmée mais recalée : **59 % enseignent sans test préalable**, 23 % testent d'abord, 17 % testent après avoir enseigné. |
-| Six profils construits à la main | **Cinq archétypes** émergent d'un clustering, et se recoupent largement — mais leurs poids changent (le « dormant » à 30 % était un artefact de la fenêtre d'observation courte). |
-| Rétention « impossible à établir » | Désormais mesurée : **30 % de rétention année→année**, cohorte 25-26 **nouvelle à 83 %**. |
+| Comptes engagés qui atteignent une vraie classe | 56 % (224/401) |
+| Profs éligibles qui reviennent l'année suivante | **31 % (31/101)** |
+| Déployeurs : ont atteint une classe entière / sont revenus | **44 % / 0 % (0/41)** |
+| Retour si ≥2 séances **et** un test en année 1 vs « one-shot » sans test | 62 % vs 19 % |
+| Réplication intra-cohorte (2024-25 seule) de cet écart | 56 % vs 12 % |
+| Masse critique locale (multi-prof vs solo) — **effet nul** | 30 % vs 31 % (p=0,87) |
+| « Effet formation » expliqué par la composition en profils | 54 %/27 % observés = 56 %/27 % prédits par le seul mix |
 
 ---
 
-## I. Le parcours en entonnoir : où sont les gens
+## I. Les cinq profils (la carte)
 
-Avant de typer les enseignants actifs, il faut situer la population. Le parcours va de la notoriété (compte site) jusqu'à la classe (Capytale), et il fuit massivement à chaque étape.
+Le clustering sépare nettement les 224 enseignants en cinq archétypes, sur les axes intensité × durabilité × largeur de catalogue.
 
-**Amont — 2 715 comptes site** (nominatif, mathadata.fr) se répartissent en cinq segments :
+| Archétype | n | % | Élèves¹ | Ce qui le définit |
+|---|---|---|---|---|
+| 🔴 Pionniers intensifs | 38 | 17 % | ~2 400 | 6+ séances, souvent 2 activités ; concentrent l'impact |
+| 🟢 Fidèles pluriannuels | 13 | 6 % | 474 | reviennent tous, plus sobres que les pionniers |
+| 🔵 Explorateurs multi-activités | 20 | 9 % | 534 | 2+ activités dès l'an 1, ne reviennent pas (encore) |
+| 🟠 Déployeurs classe-entière | 105 | 47 % | ~2 400 | une activité, une vraie classe, une fois |
+| ⚪ Petits groupes / léger | 48 | 21 % | 172 | ~4 élèves, une séance |
 
-| Segment | n | % | Lecture |
+<sub>¹ Somme des élèves uniques par prof ; le distinct global est 5 854.</sub>
+
+**La concentration est le premier fait** : 17 % de pionniers touchent autant d'élèves (~2 400) que les 47 % de déployeurs. L'impact repose sur une avant-garde.
+
+⚠️ **Attention** : pionniers et fidèles sont *définis* à partir de l'usage multi-années. Dire « les pionniers reviennent » est donc circulaire. Toute la suite s'attache à des prédicteurs **non circulaires**, mesurés sur la seule première année.
+
+---
+
+## II. Qui atteint la classe ?
+
+Sur 401 comptes engagés : 224 ont enseigné, 140 sont des stagiaires vus seulement en formation, 37 ont testé/distribué sans classe réelle.
+
+Le résultat est austère : **il n'y a pas de discriminant propre**. La frontière est définitionnelle.
+- Les **stagiaires ne franchissent presque jamais** le pas : 4 % seulement (6/148) atteignent leur propre classe.
+- L'auto-test n'est **pas** une porte d'entrée : 34 des 37 testeurs/distributeurs ont auto-testé et touché zéro élève.
+- Le type d'établissement ne discrimine **pas**, une fois les stagiaires retirés : parmi les non-stagiaires, lycée 87 % vs collège 83 % (n=6, indicatif), p=0,36. L'écart brut lycée/collège n'est qu'un reflet du fait que les collèges sont à 87 % des stagiaires.
+
+Côté amont, seuls **~27,5 % des comptes site traçables** atteignent un jour Capytale (proxy de la vraie classe) — le détail est dans le volet 2.
+
+**Conclusion honnête** : parmi les gens qui sont de vrais enseignants (pas des stagiaires), presque tous (86 %) atteignent une classe. Le goulot est en amont, et il est définitionnel ; il ne faut pas l'habiller en « effet établissement ».
+
+---
+
+## III. Pourquoi la plupart ne reviennent-ils pas ?
+
+### Le cadrage : 31 % de retour, mesuré proprement
+
+Sur 224 enseignants, seuls **101 ont *pu* revenir** : ceux entrés en 2023-24 ou 2024-25. Les 123 entrés en 2025-26 sont **censurés à droite** (ils n'ont pas encore eu d'année suivante) et sont exclus de tout taux de rétention. Sur les 101 éligibles, **31 reviennent (30,7 %)**.
+
+### Le paradoxe du déployeur (le cœur)
+
+Le lien profil→retour est spectaculaire mais **tautologique** : fidèles 13/13, pionniers 18/21, tous les autres **0/67**. Il ne *prouve* rien.
+
+Ce qu'il révèle, en revanche, est frappant : les **déployeurs** (le gros du peloton) atteignent une classe entière à un taux proche des pionniers (**44 % vs 52 %** des éligibles ont >20 élèves dès l'an 1) — et pourtant **0 sur 41 reviennent**. Atteindre une vraie classe **ne garantit pas** de revenir. Les deux échecs sont distincts : le premier contact (réussi par les déployeurs) et le réengagement année→année (raté). **Les déployeurs sont le plus gros gisement de « atteints puis perdus » — la cible de conversion n°1.**
+
+### Ce qui prédit vraiment le retour : la dose de la 1ʳᵉ année
+
+Débarrassé de la circularité, le signal est la **dose** mise dès la première année. Combiné : un prof qui a fait **≥2 séances ET un test** en année 1 revient à **62 % (13/21)** contre **19 % (6/32)** pour un « one-shot » jamais testé — et l'écart **survit dans la seule cohorte 2024-25 (56 % vs 12 %)**, donc ce n'est pas un artefact de cohorte.
+
+Les prédicteurs **propres** (mesurés sur la seule année 1) :
+
+| Signal année 1 | Retour | vs | Robustesse |
 |---|---|---|---|
-| A cliqué vers Capytale | 337 | 12 % | A franchi le pont vers la pratique. Le seul segment « chaud ». |
-| Explorateur ressources | 271 | 10 % | Consulte modules/ressources sans (encore) aller sur Capytale. |
-| Visiteur léger | 195 | 7 % | S'est connecté, a regardé, sans approfondir. |
-| Newsletter seul | 1 003 | 37 % | Inscrit à la lettre, jamais vraiment entré dans le site. |
-| Dormant | 909 | 34 % | Compte créé, aucune activité de suivi. |
+| ≥ 2 activités | 64 % (n=14) | 25 % | indicatif (petit n) |
+| Classe entière (>20 élèves) | 45 % | 22 % | p=0,03 |
+| ≥ 2 séances | 40 % | 20 % | p=0,045 |
+| Entrée en milieu d'année (déc-fév) | 53 % | 27 % (fin d'année) | robuste intra-cohorte |
 
-**71 % des comptes site sont froids** (newsletter-seul + dormant). C'est le vrai réservoir, mais c'est aussi le signe que la création de compte est un engagement très faible : elle ne présage pas de l'usage.
+Le flag le plus actionnable est **négatif** : un prof « one-shot » (1 séance) revient à **20 %**.
 
-**Aval — 401 comptes Capytale engagés** se répartissent en trois couches :
-- **224 ont enseigné** à leurs propres élèves (l'objet de la typologie ci-dessous) ;
-- **37 testeurs/distributeurs** ont manipulé une activité sans cohorte d'élèves réelle ;
-- **140 stagiaires-seuls** n'apparaissent qu'en formation (compte rôle « élève » dans un atelier), jamais devant leur classe.
+> ⚠️ **Correction méthodologique importante.** Le signal « a testé l'outil » (45 % vs 23 %) a été **écarté** : `n_tests` est un compteur de carrière, pas une mesure d'année 1 (sa moyenne passe de 0,5 à 2,9 entre profs à 1 an et à 2 ans). Les profs qui reviennent accumulent des tests *parce qu'ils enseignent une 2ᵉ année* — c'est circulaire.
 
-> ⚠️ Le pont individuel amont↔aval n'est fiable que pour **46 paires** (appariement inféré, volet 2). On ne peut donc pas coller un type de formation sur chacun des 224 profs : l'effet formation se lit au grain établissement/cohorte (volet 2), pas prof par prof.
+### Le timing : les essais de fin d'année sont le moteur du décrochage
 
----
+Entrer tard prédit le décrochage : milieu d'année (déc-fév) **53 %** vs fin d'année (mars-juin) **27 %**, juin étant le plus bas (**14 %**). Au sein de la cohorte 2024-25, l'avantage « avant mars » atteint la significativité (47,6 % vs 20,3 %, p=0,023). Une partie de l'effet est de la **dose** (les entrants précoces touchent plus d'élèves) — les deux sont entrelacés.
 
-## II. Cinq archétypes d'enseignants actifs (les 224)
+### Les profs durables sont « faits », pas « nés »
 
-Le clustering sépare les profs sur quatre axes : **intensité** (séances, élèves), **étalement dans le temps** (mono- vs pluriannuel), **largeur** (une activité vs plusieurs), **taille des groupes**. Cinq profils en sortent.
+Parmi les 32 pluriannuels : **25/32** ont eu un démarrage modeste (<5 séances en année 1), **20/32** ont agrandi leur classe en année 2, **15/32** ont ajouté une nouvelle activité. Quatre pionniers explosent de 1-10 séances (an 1) à 16-44 (an 2). **L'intensité est un résultat du fait de rester, pas une condition d'entrée.** Implication : ne pas pré-sélectionner les profs « intenses » — nourrir les entrants modestes qui montrent une 2ᵉ séance.
 
-| Archétype | n | % | Élèves¹ | Élèves médian/prof | Séances méd. | % testent | % pluriannuel |
-|---|---|---|---|---|---|---|---|
-| 🔴 **Pionniers intensifs** | 38 | 17 % | 2 406 | 54 | 6 | 55 % | 50 % |
-| 🟢 **Fidèles pluriannuels** | 13 | 6 % | 474 | 33 | 3 | 38 % | 100 % |
-| 🔵 **Explorateurs multi-activités** | 20 | 9 % | 534 | 24 | 3 | 45 % | 0 % |
-| 🟠 **Déployeurs classe-entière** | 105 | 47 % | 2 384 | 20 | 1 | 40 % | 0 % |
-| ⚪ **Petits groupes / usage léger** | 48 | 21 % | 172 | 4 | 1 | 29 % | 0 % |
+### Ce qui ne joue PAS (deux espoirs qui tombent)
 
-<sub>¹ Somme des élèves uniques par prof (un élève vu par deux profs compte deux fois) ; le total distinct global est 5 854.</sub>
+- **La masse critique locale est un vrai nul.** Solo 31 % vs multi-prof 30 % (sens inverse, p=0,87). Mettre plus de collègues dans l'établissement ne retient pas. *(L'ancienne note misait sur le collectif intra-établissement ; les données l'infirment.)*
+- **L'« effet formation » est un artefact de composition.** L'écart formé/non-formé (54 % vs 27 %) **s'explique entièrement** par le fait que les établissements formés contiennent plus de pionniers/fidèles (61,5 % vs 29,5 %). À profil égal, les formés reviennent même **légèrement moins** (87,5 % vs 92,3 %). Il ne faut pas créditer la formation d'une rétention qu'elle n'a pas produite. *(Repose sur 13 profs éligibles dans 8 établissements — données trop minces pour conclure dans un sens ou l'autre.)*
+- **L'activité d'entrée est une histoire de portée, pas d'activité.** Les entrants « Statistiques » reviennent plus (43 % vs 30 % pour « Intro IA »), mais ce n'est pas significatif (p=0,29) et l'écart s'effondre dès qu'on contrôle la portée de l'année 1 (Stats = 26 élèves médians vs 11 pour Intro IA). « Intro IA » est une rampe d'accès à faible enjeu ; « Statistiques » un déploiement classe entière — le canal, c'est la portée.
 
-**La concentration est le fait majeur.** Les 38 pionniers (17 % des profs) touchent autant d'élèves que les 105 déployeurs (47 %) : ~2 400 chacun. À l'autre bout, les 48 « petits groupes » (21 % des profs) ne touchent que 172 élèves (3 %). **L'impact n'est pas réparti uniformément — il repose sur une avant-garde.**
+### Géographie / animation
 
-### 🔴 Pionniers intensifs (17 %)
-6+ séances, souvent 2 activités, testent puis déploient, et **un sur deux revient l'année suivante**. Ce sont les power users : MathAData est une brique stable de leur enseignement. Ils concentrent l'impact et sont les candidats ambassadeurs/formateurs naturels. *L'ancienne note les estimait à 8 % ; ils sont deux fois plus nombreux dans le corpus complet.*
-
-### 🟢 Fidèles pluriannuels (6 %)
-Moins intenses sur une année donnée, mais **100 % reviennent d'une année sur l'autre**. C'est la pérennité sans l'intensité — l'intégration tranquille dans la progression annuelle. Petit groupe, mais le plus précieux pour la durabilité.
-
-### 🔵 Explorateurs multi-activités (9 %)
-Deux activités ou plus dès la première année, mais ne reviennent pas (encore). Curieux, balaient le catalogue ; le risque est qu'ils s'éparpillent sans s'installer. Cible de relance year-2.
-
-### 🟠 Déployeurs classe-entière (47 %)
-**Le gros du peloton.** Une activité, ~20 élèves (une vraie classe), 1 séance, une seule année. Usage opportuniste branché sur un chapitre précis. Ni test ni reprise : ils prennent l'activité « clé en main ». La question décisive les concernant : reviendront-ils ? (Aujourd'hui, non — voir §III.)
-
-### ⚪ Petits groupes / usage léger (21 %)
-~4 élèves, 1 séance. C'est ici — et seulement ici — que vit le « mystère des 8 élèves » de l'ancienne note : soutien, demi-groupe, club, ou simple essai en conditions réduites. Faible empreinte élève (3 %). Soit un usage de niche assumé, soit un déploiement avorté qui n'a jamais atteint la classe entière.
+**Lille** est la plus grande académie (45 profs) **et** la meilleure en rétention : 52 % (12/23) vs 23 % ailleurs (p=0,016), réparti sur 10 établissements distincts (pas une seule école) et parmi les académies les plus formées. Indice que **l'animation régionale** compte plus que le nombre de collègues dans un même bâtiment. *(Caveat : la concentration de cœur durable et l'avantage de rétention de Lille sont largement le même fait — le retour est quasi colinéaire au profil.)*
 
 ---
 
-## III. La rétention : croissance réelle, fuite massive
+## IV. Les croisements, classés
 
-C'est l'apport le plus net des données complètes. En croisant qui a enseigné en 2024-25 et en 2025-26 :
-
-| | Enseigné 25-26 | Pas enseigné 25-26 |
-|---|---|---|
-| **Enseigné 24-25** | 26 (fidèles) | 62 (décrochés) |
-| **Pas enseigné 24-25** | 125 (nouveaux) | 11 (anciens 23-24) |
-
-Deux chiffres :
-- **Rétention année→année = 30 %** : sur 88 profs actifs en 24-25, seuls 26 reviennent en 25-26. Les deux tiers décrochent.
-- **La cohorte 25-26 est nouvelle à 83 %** : 125 des 151 profs actifs cette année n'enseignaient pas l'an dernier.
-
-**Le dispositif croît par acquisition, pas par fidélisation.** Chaque année amène une vague de nouveaux déployeurs, mais la majorité ne revient pas. C'est cohérent avec le poids du profil « déployeur classe-entière » (mono-année par définition) et avec le faible cœur « fidèle » (6 %). Transformer des déployeurs en fidèles est le levier de croissance le plus rentable : on convertit un usage déjà acquis plutôt que d'en recruter un nouveau.
+1. **La dose de l'année 1 bat toutes les étiquettes** : ≥2 séances + un test → 62 % vs 19 % (one-shot), gap robuste intra-cohorte. Seul moteur non circulaire, transverse à tous les profils.
+2. **Le paradoxe du déployeur** : atteindre une classe entière (le signal qui prédit le retour) n'empêche pas 0/41 de décrocher. Premier contact ≠ rétention.
+3. **La formation est un artefact de composition, pas une cause** : ne pas lui créditer +26 pts qu'elle n'a pas produits.
+4. **La portée, pas le choix d'activité**, explique l'avantage « Statistiques ».
+5. **Timing et dose sont entrelacés** : les one-shot de fin d'année (juin 14 %) sont le moteur clair du décrochage.
+6. **La masse critique locale est un nul confirmé** ; l'avantage de Lille tient à l'animation régionale, pas au nombre de collègues.
+7. **Atteindre la classe est verrouillé par un fait définitionnel** (stagiaire), pas par le type d'établissement.
 
 ---
 
-## IV. Style d'adoption : confiance plutôt que prudence
+## V. Recommandations (chacune adossée à une preuve)
 
-Parmi les 224 : **133 (59 %) enseignent sans aucun test préalable**, 52 (23 %) testent puis enseignent, 39 (17 %) testent *après* avoir enseigné (vérification a posteriori). Le déploiement direct domine, ce qui plaide pour des activités « clé en main » robustes : la majorité ne répète pas avant de se lancer. Le test préalable est plus un trait de personnalité professionnelle qu'un prédicteur de réussite — il ne corrèle ni avec la taille de classe, ni avec la rétention.
-
----
-
-## V. Recommandations différenciées
-
-1. **Cultiver les pionniers (17 %, 40 % de l'impact).** Les documenter (études de cas), les mettre en réseau, leur ouvrir des activités avancées. Ce sont les ambassadeurs et formateurs naturels.
-2. **Convertir les déployeurs en fidèles.** C'est le levier #1 de croissance : 105 profs prennent une activité une fois et disparaissent. Une relance de rentrée ciblée (« vous aviez utilisé X l'an dernier, voici la suite ») attaque directement la rétention de 30 %.
-3. **Relancer les explorateurs en year-2.** Curieux mais volatils : un parcours progressif leur donne une raison de revenir.
-4. **Qualifier les « petits groupes ».** Distinguer le soutien assumé (à outiller) du déploiement avorté (à débloquer par la formation à la classe entière).
-5. **Ne pas surinvestir l'amont froid.** 71 % des comptes site sont dormants/newsletter : le compte n'est pas un engagement. L'effort marginal est mieux placé sur la conversion clic→classe (le segment « a cliqué vers Capytale », 12 %) que sur l'acquisition de comptes supplémentaires.
+1. **Convertir les déployeurs (cible n°1).** 105 profs atteignent une vraie classe puis disparaissent (0/41 reviennent). Une relance de rentrée ciblée — « vous aviez déployé X l'an dernier, voici la suite pour la même classe/le niveau au-dessus » — attaque exactement le point de rupture (réengagement), pas le premier contact.
+2. **Pousser la dose dès l'année 1.** Les leviers qui bougent la rétention : une 2ᵉ séance (40 % vs 20 %), une classe entière plutôt qu'un petit groupe (45 % vs 22 %), une 2ᵉ activité (64 % vs 25 %). Concevoir l'onboarding pour amener une seconde séance et un déploiement classe entière, pas un essai isolé.
+3. **Capter tôt dans l'année.** Les entrées de fin d'année (mars-juin, surtout juin 14 %) décrochent. Un cycle de promotion en septembre-décembre vaut mieux qu'un push de fin d'année.
+4. **Nourrir les entrants modestes, ne pas pré-trier les « intenses ».** Les durables sont faits, pas nés (25/32 ont démarré <5 séances). Le signal à suivre est « a fait une 2ᵉ séance », pas « a fait beaucoup d'emblée ».
+5. **Ne pas surinvestir le collectif intra-établissement ni créditer la formation d'une rétention non prouvée.** Réorienter vers l'animation régionale (modèle Lille) et vers la conversion individuelle des déployeurs.
 
 ---
 
-## VI. Limites
+## VI. Ce que cette enquête corrige
 
-- **Pont individuel ténu** : 46 paires amont↔aval fiables. La typologie aval (224) et la segmentation amont (2 715) sont deux photographies complémentaires, pas un parcours individuel reconstitué pour tous.
-- **Archétypes ≠ frontières étanches** : idéaux-types issus d'un k-means (silhouette 0,31, structure réelle mais souple). Les seuils de relabellisation sont documentés dans `commons/data/` et reproductibles.
-- **Anonymat Capytale** : les comportements sont inférés des logs (séances reconstruites), sans accès à l'intention. La rétention pluriannuelle dépend de la stabilité des identifiants de compte d'une année sur l'autre.
-- **« Élèves » au grain prof** : la somme par archétype (5 970) surcompte les élèves vus par plusieurs profs ; le distinct global reste 5 854.
+**Vs l'ancienne note (nov. 2025) :**
+- « 8 élèves de moyenne » = artefact de **grain séance** (médiane séance 5) ; au grain prof la classe médiane est **20**.
+- « Le collectif intra-établissement est l'avenir » → **nul confirmé**.
+- Rétention « impossible à établir » → **31 % proprement mesuré** (sur cohorte éligible).
+
+**Au sein de l'enquête elle-même** (vérification adversariale) :
+- Censure à droite corrigée : retenir les **101 éligibles**, pas les 224.
+- Tautologie profil→retour signalée ; bascule vers des prédicteurs **année-1 propres**.
+- Signal « test » écarté (compteur de carrière, circulaire).
+- « Effet formation » requalifié en **artefact de composition**.
+- Avantage « Statistiques » requalifié en **effet de portée**.
 
 ---
 
-**Sources de vérité** : `commons/data/facts_typologie.json`, `commons/data/teachers_typologie.csv` (pseudonymisé). Pipeline : clustering sur `volet1/data/teachers.csv` + segmentation amont sur le snapshot Payload (local, gitignore). Graphiques : `commons/charts/`.
+## VII. Limites & méthode
+
+- **Pont individuel ténu** : 46 paires amont↔aval fiables ; l'amont (2 715) et l'aval (224) restent deux photographies, pas un parcours individuel reconstitué pour tous.
+- **Petits n** : plusieurs cellules (≥2 activités n=14, formés n=13, déc-fév n=19) sont **indicatives** ; rien d'important ne repose sur n<10.
+- **Associations bivariées**, pas un modèle ajusté ; les mesures d'intensité sont corrélées entre elles.
+- **Anonymat Capytale** : comportements inférés des logs ; la rétention suppose des identifiants de compte stables d'une année sur l'autre. Fenêtre : 2023-24 → 2025-26 (3 années scolaires, dont une censurée pour la rétention).
+- **Reproductibilité** : `commons/build_master.py` (table maître), `commons/workflow_typologie.js` (enquête 10 questions + vérification), faits dans `commons/data/facts_typologie.json` & `facts_investigation.json` (PII-free).
+
+---
+
+**Sources de vérité** : `commons/data/master_teachers.csv` (pseudonymisé), `facts_typologie.json`, `facts_investigation.json`. Graphiques : `commons/charts/`. Page web : `commons/dashboard_typologie.html`.

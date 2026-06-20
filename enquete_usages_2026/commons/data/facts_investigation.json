@@ -1,0 +1,123 @@
+{
+ "eligible_n": 101,
+ "base_return": 30.7,
+ "pred": {
+  "y1_act_ge2": {
+   "hi": [
+    64,
+    14,
+    9
+   ],
+   "lo": [
+    25,
+    87,
+    22
+   ],
+   "label": "≥ 2 activités en année 1",
+   "lo_label": "1 seule activité",
+   "note": "indicatif (petit n)"
+  },
+  "y1_fullclass": {
+   "hi": [
+    45,
+    38,
+    17
+   ],
+   "lo": [
+    22,
+    63,
+    14
+   ],
+   "label": "Classe entière en année 1 (>20 élèves)",
+   "lo_label": "≤ 20 élèves",
+   "note": "p=0,03"
+  },
+  "y1_sess_ge2": {
+   "hi": [
+    40,
+    55,
+    22
+   ],
+   "lo": [
+    20,
+    46,
+    9
+   ],
+   "label": "≥ 2 séances en année 1",
+   "lo_label": "1 seule séance",
+   "note": "p=0,045"
+  },
+  "timing": {
+   "hi": [
+    53,
+    19,
+    10
+   ],
+   "lo": [
+    27,
+    79,
+    21
+   ],
+   "label": "Entrée milieu d'année (déc-fév)",
+   "lo_label": "Entrée fin d'année (mars-juin)",
+   "note": "robuste intra-cohorte"
+  }
+ },
+ "oneandone": [
+  20,
+  46,
+  9
+ ],
+ "deployeur": {
+  "n": 41,
+  "returned": 0,
+  "med_y1_el": 19.0
+ },
+ "multi_null": {
+  "solo": [
+   31,
+   51,
+   16
+  ],
+  "multi": [
+   30,
+   37,
+   11
+  ]
+ },
+ "formation_artifact": {
+  "formed": [
+   54,
+   13,
+   7
+  ],
+  "notformed": [
+   27,
+   88,
+   24
+  ]
+ },
+ "entry_act": {
+  "intro": {
+   "ret": 30,
+   "n": 57,
+   "med_y1_el": 11.0
+  },
+  "stat": {
+   "ret": 43,
+   "n": 21,
+   "med_y1_el": 26.0
+  }
+ },
+ "reach_split": {
+  "returner_med_y1el": 24.0,
+  "churner_med_y1el": 12.0
+ },
+ "reach_class": {
+  "engaged": 401,
+  "taught": 224,
+  "pct_taught": 55.9,
+  "nontrainee_reach": 86.2,
+  "trainee_reach": 4.1
+ }
+}
