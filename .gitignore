@@ -43,3 +43,8 @@ next-env.d.ts
 
 # uploaded CSV data
 /storage/
+
+# extractions Capytale de travail — non versionnées (cf. enquete_usages_2026/PUBLISH.md)
+/public/data/csv_from_metabase.csv
+/public/data/csv_from_metabase_raw.csv
+/public/data/usages-02042026.csv
