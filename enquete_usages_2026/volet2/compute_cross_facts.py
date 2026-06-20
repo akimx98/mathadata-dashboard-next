@@ -110,9 +110,10 @@ def grp_stats(df,label):
 facts['formation_effect']=dict(
   nouveau=grp_stats(N,'non formes'),
   forme_all=grp_stats(F,'formes (tous)'),
-  forme_presentiel=grp_stats(W[W['ftype']=='presentiel'],'formes presentiel'),
-  forme_webdecouv=grp_stats(W[W['ftype']=='webdecouv'],'formes webinaire'),
-  note="pct_uai_capytale_usage = part des comptes (a UAI connu) dont l'etablissement a un usage ELEVE Capytale sur tout l'historique 2023-2026 (non biaise par la fenetre de tracking). C'est le proxy d'aboutissement 'jusqu'a la classe'."
+  forme_presentiel=grp_stats(W[W['fcat']=='presentiel'],'formes presentiel'),
+  forme_webinaire=grp_stats(W[W['fcat']=='webinaire'],'formes webinaire (distanciel, vrai)'),
+  forme_ancienne_vague=grp_stats(W[W['fcat']=='ancienne_vague'],'anciens formes (avant 15/01/26, type inconnu)'),
+  note="Typage REEL via formation-codes (trainedFormation). 'webinaire' = webdecouv+webinaire genuine ; 'ancienne_vague' = 147 formes avant le systeme de codes (15/01/26), type/date inconnus, separes du webinaire (ils contaminaient l'ancien webdecouv). pct_uai_capytale_usage = part des comptes (a UAI connu) dont l'etablissement a un usage ELEVE effectif Capytale sur tout l'historique 2023-2026 (non biaise par la fenetre de tracking)."
 )
 
 # ---------- 4. DEUX PORTES ----------

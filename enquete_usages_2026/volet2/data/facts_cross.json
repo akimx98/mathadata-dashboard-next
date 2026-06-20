@@ -4,9 +4,9 @@
   "newsletter_only": 1003,
   "full_accounts": 1712,
   "formed_total": 631,
-  "formed_presentiel": 364,
-  "formed_webdecouv": 266,
-  "formed_type_unknown": 1,
+  "formed_presentiel": 363,
+  "formed_webdecouv": 0,
+  "formed_type_unknown": 268,
   "with_uai": 800,
   "clicked_capytale": 337,
   "tracking_start": "2025-11-27"
@@ -80,27 +80,38 @@
   },
   "forme_presentiel": {
    "label": "formes presentiel",
-   "n": 364,
+   "n": 363,
    "with_uai": 214,
-   "pct_clicked_cap": 26.1,
-   "pct_active": 45.1,
+   "pct_clicked_cap": 26.2,
+   "pct_active": 45.2,
    "pct_uai_capytale_usage": 23.4,
    "pct_uai_capytale_any": 26.6,
    "mean_cap_clicks": 0.71,
-   "mean_res_clicks": 4.02
+   "mean_res_clicks": 4.04
   },
-  "forme_webdecouv": {
-   "label": "formes webinaire",
-   "n": 266,
-   "with_uai": 102,
-   "pct_clicked_cap": 20.7,
-   "pct_active": 36.8,
-   "pct_uai_capytale_usage": 31.4,
-   "pct_uai_capytale_any": 34.3,
-   "mean_cap_clicks": 0.81,
-   "mean_res_clicks": 7.15
+  "forme_webinaire": {
+   "label": "formes webinaire (distanciel, vrai)",
+   "n": 121,
+   "with_uai": 68,
+   "pct_clicked_cap": 24.8,
+   "pct_active": 46.3,
+   "pct_uai_capytale_usage": 32.4,
+   "pct_uai_capytale_any": 36.8,
+   "mean_cap_clicks": 1.15,
+   "mean_res_clicks": 10.17
   },
-  "note": "pct_uai_capytale_usage = part des comptes (a UAI connu) dont l'etablissement a un usage ELEVE Capytale sur tout l'historique 2023-2026 (non biaise par la fenetre de tracking). C'est le proxy d'aboutissement 'jusqu'a la classe'."
+  "forme_ancienne_vague": {
+   "label": "anciens formes (avant 15/01/26, type inconnu)",
+   "n": 147,
+   "with_uai": 35,
+   "pct_clicked_cap": 17.0,
+   "pct_active": 28.6,
+   "pct_uai_capytale_usage": 28.6,
+   "pct_uai_capytale_any": 28.6,
+   "mean_cap_clicks": 0.52,
+   "mean_res_clicks": 4.56
+  },
+  "note": "Typage REEL via formation-codes (trainedFormation). 'webinaire' = webdecouv+webinaire genuine ; 'ancienne_vague' = 147 formes avant le systeme de codes (15/01/26), type/date inconnus, separes du webinaire (ils contaminaient l'ancien webdecouv). pct_uai_capytale_usage = part des comptes (a UAI connu) dont l'etablissement a un usage ELEVE effectif Capytale sur tout l'historique 2023-2026 (non biaise par la fenetre de tracking)."
  },
  "two_doors": {
   "capytale_uai_teach": 174,
@@ -127,7 +138,7 @@
   },
   {
    "month": "2025-01",
-   "type": "webdecouv",
+   "type": "webinaire",
    "n": 37,
    "with_uai": 19,
    "at_uai_used": 7,
@@ -145,7 +156,7 @@
   },
   {
    "month": "2025-05",
-   "type": "webdecouv",
+   "type": "webinaire",
    "n": 2,
    "with_uai": 0,
    "at_uai_used": 0,
@@ -172,7 +183,7 @@
   },
   {
    "month": "2025-10",
-   "type": "webdecouv",
+   "type": "webinaire",
    "n": 5,
    "with_uai": 3,
    "at_uai_used": 0,
@@ -190,7 +201,7 @@
   },
   {
    "month": "2025-11",
-   "type": "webdecouv",
+   "type": "webinaire",
    "n": 28,
    "with_uai": 4,
    "at_uai_used": 3,
@@ -208,7 +219,7 @@
   },
   {
    "month": "2026-01",
-   "type": "webdecouv",
+   "type": "webinaire",
    "n": 4,
    "with_uai": 4,
    "at_uai_used": 0,
@@ -226,7 +237,7 @@
   },
   {
    "month": "2026-02",
-   "type": "webdecouv",
+   "type": "webinaire",
    "n": 15,
    "with_uai": 15,
    "at_uai_used": 4,
@@ -244,7 +255,7 @@
   },
   {
    "month": "2026-03",
-   "type": "webdecouv",
+   "type": "webinaire",
    "n": 7,
    "with_uai": 7,
    "at_uai_used": 1,
@@ -262,7 +273,7 @@
   },
   {
    "month": "2026-04",
-   "type": "webdecouv",
+   "type": "webinaire",
    "n": 16,
    "with_uai": 9,
    "at_uai_used": 3,
@@ -280,7 +291,7 @@
   },
   {
    "month": "2026-05",
-   "type": "webdecouv",
+   "type": "webinaire",
    "n": 2,
    "with_uai": 2,
    "at_uai_used": 1,
@@ -298,7 +309,7 @@
   },
   {
    "month": "2026-06",
-   "type": "webdecouv",
+   "type": "webinaire",
    "n": 5,
    "with_uai": 5,
    "at_uai_used": 3,

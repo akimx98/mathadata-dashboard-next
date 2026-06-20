@@ -96,7 +96,7 @@ footer{padding:48px 0 70px;color:var(--faint);font-family:var(--mono);font-size:
     <p class="eyebrow">MathAData · Enquête usages · Volet 2</p>
     <h1>Du <span class="b">site</span><br>à la <span class="c">classe</span></h1>
     <p class="sub">Reconstituer le pipeline enseignant et mesurer l'effet des formations.</p>
-    <p class="thesis">Le pipeline existe, mais il <b>fuit à chaque marche</b> : sur 2 715 comptes ouverts, 8 % seulement débouchent sur une vraie classe. Se former double l'intention — pourtant 44 % des établissements qui utilisent le TP n'ont jamais ouvert de compte sur le site.</p>
+    <p class="thesis">Le pipeline existe, mais il <b>fuit à chaque marche</b> : 37 % des comptes ne dépassent jamais la newsletter, 12 % seulement cliquent jusqu'à Capytale. Et les deux mondes se recoupent mal — <b>44 % des profs qui font la classe n'ont jamais ouvert de compte sur le site</b>.</p>
     <div class="strip" id="strip"></div>
     <p class="meta">mathadata.fr (nominatif) × Capytale (anonyme) · extraction 20 juin 2026 · tracking clics depuis le 27 nov. 2025 · chiffres vérifiés (recalcul adversarial)</p>
   </div>
@@ -109,19 +109,19 @@ footer{padding:48px 0 70px;color:var(--faint);font-family:var(--mono);font-size:
     <figure class="reveal">
       <p class="figtitle">Le pipeline complet (grain compte / prof)</p>
       <div class="scroll"><svg id="c_funnel" width="1020" height="300" role="img" aria-label="Entonnoir du pipeline"></svg></div>
-      <p class="cap">Comptes & formés = mathadata.fr (intention, nominatif). « Ont enseigné / élèves » = Capytale (usage réel, Volet 1, anonyme) — pas un sous-ensemble strict, les deux mondes n'ont pas d'identifiant commun.</p>
+      <p class="cap"><b>Lecture.</b> <b>Compte créé</b> = toute inscription, y compris via le seul formulaire newsletter. <b>Compte complet</b> = compte avec mot de passe et profil (a fait plus que s'abonner). <b>Formé</b> = a validé un code de formation. Les 4 premières marches sont des sous-ensembles côté site (mathadata.fr, nominatif).<br>« Ont enseigné » bascule côté <b>Capytale</b> (usage réel, anonyme) : 224 comptes, dont <b>163 vraies classes (≥ 10 élèves)</b>, pour 5 854 élèves. Les deux mondes n'ont pas d'identifiant commun : rapporter 224 aux 2 715 (≈ 8 %) croise deux populations distinctes (44 % des profs enseignants n'ont aucun compte site) — ce n'est <b>pas</b> un taux de conversion.</p>
     </figure>
     <div class="grid2">
       <figure class="reveal">
         <p class="figtitle">Funnel site : ce que la fenêtre de tracking cachait</p>
         <div class="legend"><span><i style="background:var(--faint)"></i>toutes dates</span><span><i style="background:var(--site)"></i>cohorte trackable (post-27/11)</span></div>
         <div class="scroll"><svg id="c_track" width="480" height="260"></svg></div>
-        <p class="cap">Le clic Capytale est la marche la plus sous-capturée avant fin nov. 2025 (27 % vs 20 %).</p>
+        <p class="cap"><b>Lecture.</b> Le suivi des clics/visites n'a démarré que le <b>27 nov. 2025</b>. La <b>cohorte trackable</b> = les comptes créés <i>après</i> cette date, donc entièrement observés depuis le départ. « Toutes dates » inclut aussi les comptes anciens, dont l'activité d'avant n'a jamais été enregistrée — leur taux paraît donc faussement bas. À taux réels comparables, le clic Capytale est la marche la plus sous-capturée (27 % vs 20 %).</p>
       </figure>
       <figure class="reveal">
         <p class="figtitle">Compte créé avant / pendant / après la formation</p>
         <div class="scroll"><svg id="c_seq" width="480" height="260"></svg></div>
-        <p class="cap">90 % des inscriptions « le jour même » sont en présentiel : le formateur fait créer le compte en séance.</p>
+        <p class="cap"><b>Lecture.</b> Pour chaque prof formé, on compare la date de création de son compte à la date de sa formation : <b>avant</b> (déjà inscrit, la formation est venue ensuite), <b>le jour même</b> (inscription pendant la séance), <b>après</b> (la formation a déclenché l'inscription). 90 % des « jour même » sont en présentiel — le formateur fait créer le compte en séance.</p>
       </figure>
     </div>
   </div>
@@ -129,21 +129,30 @@ footer{padding:48px 0 70px;color:var(--faint);font-family:var(--mono);font-size:
 
 <section>
   <div class="wrap">
-    <div class="shead"><span class="snum">02</span><h2>L'effet des formations</h2></div>
-    <p class="lede">Se former <b>double l'intention</b> (×2,6 sur le clic Capytale). Mais présentiel et webinaire ne convertissent pas au même endroit du pipeline.</p>
+    <div class="shead"><span class="snum">02</span><h2>L'effet des formations : la concentration, pas le format</h2></div>
+    <p class="lede">Le clivage utile n'est pas présentiel/webinaire. C'est <b>former un collectif local</b> (plusieurs collègues d'un établissement) vs <b>ratisser des individus dispersés</b> — <b>59 % vs 10 %</b> des établissements aboutissent en classe (facteur ~6), même si la base reste petite.</p>
     <figure class="reveal">
-      <p class="figtitle">Intention (clic) vs aboutissement (classe), par type de formation</p>
+      <p class="figtitle">Aboutissement en classe selon la NATURE de la formation (% d'<b>établissements distincts</b> ayant une vraie classe ; n/N affiché)</p>
+      <div class="scroll"><svg id="c_nature" width="1020" height="250"></svg></div>
+      <p class="cap"><b>Lecture.</b> Chaque barre = part des <b>établissements distincts</b> (n/N) de la nature ayant au moins une vraie classe sur Capytale. <b>Établissement-ciblée</b> = formation dans un seul établissement, plusieurs collègues (Gif, Lille 2024, Montpellier, Amiens…) ; <b>masse</b> = journée ouverte, 1 prof dispersé (IREM, Labomaths) ; <b>pré-service</b> = stagiaires ENS/MEEF sans classe. Les deux premières sont du présentiel : c'est la <b>concentration</b>, pas le format, qui sépare (facteur ~6).<br><b>À lire avec prudence :</b> base petite (établissement-ciblée = 22 établissements seulement), classification par nature en partie subjective, et 2 cohortes à faible déclaration d'UAI (Lille 6/40, Amiens 1/19). Au grain <i>prof</i> (qui compte plusieurs collègues d'un même lycée), l'établissement-ciblée monte à 67 % — c'est surestimé ; le 59 % au grain établissement est plus juste. Les vrais succès sont néanmoins substantiels (cohorte Lille 2024 : 841 élèves).</p>
+    </figure>
+    <figure class="reveal">
+      <p class="figtitle">Effet par type réel de formation (typage corrigé via les codes)</p>
       <div class="legend">
         <span><i style="background:var(--site)"></i>% clic Capytale (intention)</span>
         <span><i style="background:var(--bridge)"></i>% actifs site</span>
         <span><i style="background:var(--classe)"></i>% établissement à usage élève (robuste)</span>
       </div>
       <div class="scroll"><svg id="c_form" width="1020" height="330"></svg></div>
-      <p class="cap">Le présentiel maximise l'entrée dans l'outil ; le webinaire l'aboutissement en classe (31 %) et l'approfondissement (7 ressources/pers). « Usage élève » = au moins une vraie classe. Clic & actif biaisés par le tracking ; usage élève fondé sur l'historique Capytale complet.</p>
+      <p class="cap"><b>Lecture.</b> Type <i>réel</i> de la formation, retrouvé via les codes de formation. <b>Ancienne vague</b> = formés avant la mise en place des codes (15/01/26), type et date réels inconnus. <b>% usage élève</b> = établissement avec ≥ 1 vraie classe (robuste, historique complet) ; <b>% clic</b> et <b>% actif</b> = activité sur le site (sous-estimés pour les comptes anciens, cf. tracking). Correction v1 : les 147 « anciens formés » étaient comptés à tort comme webinaire ; le vrai webinaire (32,4 %) subsiste sur petite base (68 profs).</p>
     </figure>
     <div class="callout leak reveal">
-      <div class="big">10 des 27 établissements « convertis » utilisaient déjà Capytale <em>avant</em> la formation présentielle.</div>
-      <p>Une partie du rendement affiché du présentiel est un terrain déjà conquis (endogénéité). Sur 152 établissements formés en présentiel, 17 % ont un usage Capytale, 11 % un usage postérieur à la formation. Quand l'usage suit, il vient vite : médiane ≈ 2 semaines.</p>
+      <div class="big">9 des 26 établissements présentiels « convertis » utilisaient déjà Capytale <em>avant</em> la formation. Et 20 % de l'effort présentiel vise du pré-service (0 % d'usage possible).</div>
+      <p>Endogénéité (vraies dates de formation) : ne pas créditer le présentiel d'environ un tiers de l'usage observé. Quand l'usage suit, il vient en ~27 jours (médiane). Les cohortes ENS_25 (52) et MEEF INSPÉ (13) — stagiaires sans classe — diluent la moyenne sans pouvoir aboutir cette année.</p>
+    </div>
+    <div class="callout site reveal">
+      <div class="big">L'intention déclarée ne prédit pas l'usage : <b>6 intentions sur 99</b> se réalisent en classe.</div>
+      <p>À la validation d'une formation, 29 profs sur 239 déclarent les modules qu'ils comptent utiliser. Mais <b>85 des 93 intentions non réalisées</b> émanent d'établissements n'ayant déclenché <b>aucun</b> TP : le goulot n'est pas le choix du module, c'est le <b>passage à l'acte en classe</b>. Signe que l'intention ne couvre même pas le réel : l'Intro à l'IA, absente du formulaire, est déclarée 0 fois — alors qu'elle est la 2ᵉ activité la plus utilisée sur Capytale.</p>
     </div>
   </div>
 </section>
@@ -156,19 +165,23 @@ footer{padding:48px 0 70px;color:var(--faint);font-family:var(--mono);font-size:
       <p class="figtitle">Deux saisonnalités décalées d'un trimestre</p>
       <div class="legend"><span><i style="background:var(--site)"></i>comptes créés (site)</span><span><i style="background:var(--classe)"></i>séances Capytale (par mois calendaire)</span></div>
       <div class="scroll"><svg id="c_season" width="1020" height="300"></svg></div>
-      <p class="cap">Pic d'inscription janvier (975 comptes, dont 784 newsletter). Pic de séances mai-mars. Le « creux » de conversion 2026 est mécaniquement programmé par ce décalage.</p>
+      <p class="cap"><b>Lecture.</b> Barres bleues = comptes créés par mois (site). Ligne terracotta = séances élèves par mois calendaire (Capytale, toutes années cumulées). Les deux ne sont pas à la même échelle — ce qui compte est le <b>décalage d'un trimestre</b> : pic d'inscriptions en janvier (975 comptes, dont 784 newsletter), pic de classes en mai-mars. Le « creux » de conversion 2026 est mécaniquement programmé par ce décalage.</p>
     </figure>
     <div class="grid2">
       <figure class="reveal">
         <p class="figtitle">Conversion « jusqu'à la classe » selon la maturité</p>
         <div class="scroll"><svg id="c_mature" width="480" height="240"></svg></div>
-        <p class="cap">Cohortes mûres (>6 mois) : 46 % d'établissements à usage élève. Cohortes 2026 : 22 % — elles remonteront à la rentrée.</p>
+        <p class="cap"><b>Lecture.</b> <b>Cohortes mûres</b> = formées il y a plus de 6 mois (ont eu le temps de déployer en classe) ; <b>récentes</b> = formées en 2026. Barre = % d'établissements à usage élève. Les récentes (22 %) ne sont pas un échec : elles n'ont pas encore eu leur créneau et remonteront à la rentrée (les mûres sont à 46 %).</p>
       </figure>
       <figure class="reveal">
         <p class="figtitle">Rétention : années scolaires enseignées par prof</p>
         <div class="scroll"><svg id="c_reten" width="480" height="240"></svg></div>
-        <p class="cap">Rétention prof 24-25→25-26 : 29,5 %. 81,5 % des profs 25-26 sont nouveaux. La croissance vient du recrutement, pas (encore) de la fidélisation.</p>
+        <p class="cap"><b>Lecture.</b> Parmi les profs ayant <i>enseigné</i> (côté Capytale), nombre d'années scolaires distinctes où ils l'ont fait : 1 année = essai unique, 2-3 = usage installé. Seuls 32 profs reviennent ≥ 2 ans. Rétention d'une année sur l'autre : 29,5 % ; 81,5 % des profs 25-26 sont nouveaux → croissance par recrutement, pas (encore) par fidélisation.</p>
       </figure>
+    </div>
+    <div class="callout bridge reveal">
+      <div class="big">La vraie réserve de croissance est l'<em>établissement</em>, pas le prof.</div>
+      <p>La rétention individuelle est faible (29,5 %), mais l'usage <b>migre entre collègues d'un même établissement</b> : c'est l'établissement, plus que le prof, qui porte la continuité. Capitaliser sur un établissement déjà converti — et relancer les <b>380 UAI site-only en sursis</b> — rapporte davantage que ré-engager un enseignant isolé. C'est aussi pourquoi les formations qui forment <i>plusieurs collègues d'un même lieu</i> (§02) aboutissent le mieux.</p>
     </div>
   </div>
 </section>
@@ -180,18 +193,18 @@ footer{padding:48px 0 70px;color:var(--faint);font-family:var(--mono);font-size:
     <figure class="reveal">
       <p class="figtitle">Deux portes, deux fuites (grain établissement / UAI)</p>
       <div class="scroll"><svg id="c_doors" width="1020" height="240"></svg></div>
-      <p class="cap">Capytale-direct = usage classe sans aucun compte site (borne basse 77, haute 166). Site-only = compte site sans trace classe. Les deux ne reposent pas tout à fait sur la même définition d'empreinte.</p>
+      <p class="cap"><b>Lecture.</b> <b>UAI</b> = identifiant d'un établissement. À gauche : les établissements qui font la classe sur Capytale, selon qu'un compte site y est rattaché (<b>site-first</b>) ou non (<b>Capytale-direct</b> = entrés par l'ENT sans passer par le site). À droite : les établissements ayant un compte site, selon qu'on retrouve (avec trace) ou non (<b>site-only</b>) une classe Capytale. Capytale-direct : borne basse 77, haute 166. Les deux moitiés n'utilisent pas exactement la même définition d'empreinte.</p>
     </figure>
     <div class="grid2">
       <figure class="reveal">
         <p class="figtitle">La porte directe : l'empreinte de l'Intro-IA (hors site)</p>
         <div class="scroll"><svg id="c_directacts" width="480" height="260"></svg></div>
-        <p class="cap">42 des 77 UAI directs portent l'Intro à l'IA (absente du site, 3 clics) — marqueur d'une entrée par le catalogue Capytale, en amont du site.</p>
+        <p class="cap"><b>Lecture.</b> Parmi les 77 établissements « Capytale-direct », nombre portant chaque activité. L'<b>Intro à l'IA</b> — ancienne activité absente du site (3 clics) — en marque plus de la moitié : sa seule porte d'accès est le catalogue Capytale, d'où une découverte en amont du site.</p>
       </figure>
       <figure class="reveal">
         <p class="figtitle">Les 509 site-only : un sursis, pas un cimetière</p>
         <div class="scroll"><svg id="c_siteonly" width="480" height="260"></svg></div>
-        <p class="cap">75 % ont un compte de 2026 ; IPS identique aux convertis (111 vs 112). La non-conversion est un effet de temps, pas de milieu social.</p>
+        <p class="cap"><b>Lecture.</b> Les 509 établissements présents sur le site mais sans classe Capytale retrouvée, décomposés par caractéristique (un même établissement peut compter dans plusieurs barres). 75 % ont un compte de 2026 (trop neufs pour avoir déployé), et leur <b>IPS</b> (indice de position sociale) est identique aux convertis (111 vs 112) : la non-conversion est un effet de <b>temps</b>, pas de milieu social.</p>
       </figure>
     </div>
   </div>
@@ -204,12 +217,12 @@ footer{padding:48px 0 70px;color:var(--faint);font-family:var(--mono);font-size:
     <figure class="reveal">
       <p class="figtitle">Élèves Capytale par enseignant formé, par académie</p>
       <div class="scroll"><svg id="c_geo" width="1020" height="380"></svg></div>
-      <p class="cap">Montpellier : plus gros contingent de formés (79) mais 3,9 élèves/formé — cinq fois moins que Lille (20,2). Niveaux = bornes basses (seule la fraction localisée).</p>
+      <p class="cap"><b>Lecture.</b> Pour chaque académie (≥ 5 formés), nombre d'élèves Capytale ÷ nombre d'enseignants formés = « combien d'élèves touchés par formé ». Vert = rendement élevé, rouge = faible. Montpellier forme le plus (79) mais ne convertit qu'à 3,9 élèves/formé — 5× moins que Lille (20,2). Niveaux = bornes basses (seule la part géolocalisée est comptée).</p>
     </figure>
     <figure class="reveal">
       <p class="figtitle">Canaux de découverte (sessions à référent identifiable)</p>
       <div class="scroll"><svg id="c_chan" width="1020" height="300"></svg></div>
-      <p class="cap">66,7 % d'acquisition organique. L'emailing Brevo (6,1 %) entretient, il n'acquiert pas. Le flux inverse Capytale→site (1,8 %) est la signature de la porte directe.</p>
+      <p class="cap"><b>Lecture.</b> Origine des visites ayant un référent identifiable (≈ 55 % des sessions). <b>Organique</b> = arrivée par un moteur de recherche (Google…). <b>Brevo</b> = e-mails/newsletter. <b>Institutionnel</b> = messageries et plateformes académiques (ac-*, Magistère…). <b>Flux inverse</b> = arrivée depuis Capytale. L'organique domine (67 %) ; l'emailing (6 %) entretient plus qu'il n'acquiert ; le flux inverse signale la porte directe.</p>
     </figure>
   </div>
 </section>
@@ -222,12 +235,12 @@ footer{padding:48px 0 70px;color:var(--faint);font-family:var(--mono);font-size:
       <figure class="reveal">
         <p class="figtitle">Clics ressources par catégorie pédagogique</p>
         <div class="scroll"><svg id="c_res" width="480" height="300"></svg></div>
-        <p class="cap">On télécharge d'abord ce qu'on distribuera aux élèves, puis son propre déroulé.</p>
+        <p class="cap"><b>Lecture.</b> Nombre de clics par type de ressource (journal des téléchargements). <b>Version élève</b> = fiches distribuées aux élèves ; <b>version prof</b> = déroulés et corrigés ; <b>diapos</b> = supports de cours ; <b>liens Capytale</b> = renvoi vers le TP en ligne. On télécharge d'abord ce qu'on distribuera aux élèves, puis son propre déroulé.</p>
       </figure>
       <figure class="reveal">
         <p class="figtitle">Décrochage de consultation par séance (Stat MNIST)</p>
         <div class="scroll"><svg id="c_decay" width="480" height="300"></svg></div>
-        <p class="cap">1 124 clics en séance 1, 132 en séance 7 (rétention ~12 %). Préparation concentrée sur l'entrée en matière.</p>
+        <p class="cap"><b>Lecture.</b> Clics sur les fiches élève de la séquence Statistiques, séance par séance (S1 = introduction → S7 = dernière). La chute (1 124 → 132, soit ~12 % de rétention) mesure une préparation concentrée sur l'entrée en matière — soit un usage partiel en classe, soit une préparation des dernières séances faite autrement.</p>
       </figure>
     </div>
     <div class="callout bridge reveal">
@@ -246,12 +259,12 @@ footer{padding:48px 0 70px;color:var(--faint);font-family:var(--mono);font-size:
         <p class="figtitle">Collège vs lycée : l'entonnoir s'effondre à la dernière marche</p>
         <div class="legend"><span><i style="background:var(--classe)"></i>collège</span><span><i style="background:var(--site)"></i>lycée</span></div>
         <div class="scroll"><svg id="c_coll" width="480" height="280"></svg></div>
-        <p class="cap">1 UAI collège avec élèves (23 élèves) contre 92 UAI lycée (3 592 élèves).</p>
+        <p class="cap"><b>Lecture.</b> Les 4 mêmes marches que l'entonnoir général, collège vs lycée (en nombre de comptes/établissements). <b>UAI avec élèves</b> = établissements ayant une vraie classe Capytale : <b>1 seul</b> collège (23 élèves) contre 92 lycées (3 592 élèves). Le collège tient jusqu'à la formation, puis décroche à la dernière marche.</p>
       </figure>
       <figure class="reveal">
         <p class="figtitle">Mix d'activités cliquées (% des clics)</p>
         <div class="scroll"><svg id="c_collmix" width="480" height="280"></svg></div>
-        <p class="cap">Le bloc calé sur le programme de 2nde = 39 % au lycée, 5 % au collège. Le non-passage est un défaut d'offre 6e-3e, pas de demande.</p>
+        <p class="cap"><b>Lecture.</b> Répartition (en %) des clics vers Capytale par activité, collège vs lycée. Le <b>bloc 2nde</b> = activités calées sur le programme de seconde (produit scalaire, géométrie repérée, vecteurs). Il pèse 39 % des clics au lycée mais 5 % au collège : les profs de collège testent la partie IA/stat transversale, faute de TP calés 6e-3e. Le non-passage en classe est un défaut d'<b>offre</b>, pas de demande.</p>
       </figure>
     </div>
     <div class="callout reveal">
@@ -269,12 +282,12 @@ footer{padding:48px 0 70px;color:var(--faint);font-family:var(--mono);font-size:
       <figure class="reveal">
         <p class="figtitle">Le funnel des 46 profs appariés</p>
         <div class="scroll"><svg id="c_match" width="480" height="240"></svg></div>
-        <p class="cap">67 % ont atteint une classe (1 071 élèves), 18 ont réutilisé. Échantillon sur-représentant les profils engagés.</p>
+        <p class="cap"><b>Lecture.</b> Parcours des 46 profs appariés site ↔ Capytale : ont testé → ont enseigné (≥ 1 élève) → ont réutilisé (≥ 2 séances) → ont diffusé ≥ 2 activités. 67 % atteignent une classe (1 071 élèves). Échantillon non représentatif : il sur-représente les profils déjà engagés (profs ayant cliqué Capytale depuis le site).</p>
       </figure>
       <figure class="reveal">
         <p class="figtitle">Fiabilité : le sens réel de la chaîne</p>
         <div class="scroll"><svg id="c_matchrel" width="480" height="240"></svg></div>
-        <p class="cap">11 paires sur 46 ont cloné sur Capytale AVANT de cliquer depuis le site (7 avant même le compte) : le site est alors un canal de retour.</p>
+        <p class="cap"><b>Lecture.</b> Sens temporel de la chaîne pour les 46 paires : le clone Capytale arrive-t-il <b>après</b> le clic site (sens attendu « site → classe ») ou <b>avant</b> ? 11 paires sur 46 clonent avant (7 avant même d'avoir créé le compte) : pour elles le site est un <b>canal de retour</b>, pas la porte d'entrée. Garde-fou clé sur la fiabilité de l'appariement.</p>
       </figure>
     </div>
     <div class="cases">
@@ -289,13 +302,14 @@ footer{padding:48px 0 70px;color:var(--faint);font-family:var(--mono);font-size:
 
 <section>
   <div class="wrap">
-    <div class="shead"><span class="snum">→</span><h2>Cinq leviers</h2></div>
+    <div class="shead"><span class="snum">→</span><h2>Six leviers</h2></div>
     <ul class="tight recs">
-      <li><b>Relancer les ~148 établissements site-only en sursis</b> (intention non aboutie) à la rentrée de septembre, avec le guide de connexion Capytale en avant.</li>
-      <li><b>Allouer le présentiel aux établissements vierges d'usage</b>, et combiner les formats : présentiel pour amorcer large, webinaire pour approfondir le noyau motivé.</li>
-      <li><b>Ouvrir — ou assumer de fermer — la porte collège</b> : produire 2-3 activités calées 6e-3e, ou traiter le collège comme canal de prescription et cesser d'en mesurer le ROI à l'aune de la conversion élève.</li>
-      <li><b>Capitaliser sur la porte Capytale-directe</b> : soigner la fiche catalogue Capytale, y placer un lien retour, référencer l'Intro-IA sur le site.</li>
-      <li><b>Piloter sur le bon proxy</b> (usage établissement, historique complet) et ré-évaluer les cohortes 2026 à la rentrée.</li>
+      <li><b>Prioriser les formations établissement-ciblées sur les journées de masse.</b> Le facteur ~6 (59 % vs 10 % des établissements) est le levier le plus net : former 3-4 collègues d'un même établissement autour d'un projet local convertit massivement mieux qu'une journée académique dispersée où chaque prof repart seul.</li>
+      <li><b>Traiter le pré-service comme un canal distinct, à horizon décalé.</b> ENS et MEEF/INSPÉ (20 % de l'effort présentiel, 0 % d'usage immédiat par construction) : les compter à part, avec un suivi à T+1 an, pas comme « présentiel raté ».</li>
+      <li><b>Déplacer le KPI de l'intention vers le passage à l'acte.</b> L'intention déclarée ne prédit rien (6/99). Suivre le délai formation → 1re séance (~27 j) et relancer à J+45 les profs dont l'établissement n'a rien déclenché ; rendre l'Intro à l'IA visible dans le formulaire.</li>
+      <li><b>Relancer les ~148 établissements site-only en sursis</b> à la rentrée de septembre (créneau de déploiement), avec le guide de connexion Capytale en avant (74 % de ses lecteurs cliquent ensuite vers Capytale).</li>
+      <li><b>Capitaliser sur la porte Capytale-directe et le réseau de pairs</b>, pas seulement le SEO : soigner la fiche catalogue Capytale, y placer un lien retour, référencer l'Intro-IA sur le site.</li>
+      <li><b>Ne pas attribuer l'usage présentiel à la formation sans correction d'endogénéité</b> (9/26 succès la précèdent) ; ré-évaluer les cohortes 2026 à la rentrée ; ouvrir ou assumer de fermer la porte collège (TP calés 6e-3e, ou canal de prescription).</li>
     </ul>
   </div>
 </section>
@@ -309,11 +323,12 @@ footer{padding:48px 0 70px;color:var(--faint);font-family:var(--mono);font-size:
 
 <script>
 const D={
-  strip:[["2 715","comptes site"],["631","formés (23 %)"],["337","clics → Capytale"],["8 %","arrivent en classe"]],
-  funnel:[["Comptes créés",2715,100],["Comptes complets",1712,63],["Formés",631,23],["Clic vers Capytale",337,12],["Ont enseigné · 5 854 élèves",224,8]],
+  strip:[["2 715","comptes site"],["631","formés (23 %)"],["337","clics → Capytale"],["5 854","élèves touchés (Capytale)"]],
+  funnel:[["Comptes créés",2715,100,""],["Comptes complets",1712,63,""],["Formés",631,23,""],["Clic vers Capytale",337,12,""],["Ont enseigné — dont 163 vraies classes",224,null,"Capytale · univers distinct"]],
   track:[["Actifs",46.7,66.4],["Module vu",40.3,57.8],["Ressource",41.3,58.6],["Clic Capytale",19.6,27.5]],
   seq:[["Avant",95],["Le jour même",206],["Après",185],["Sans date",152]],
-  form:{cats:["Non-formés","Présentiel","Webinaire"],s:[["clic",[9.0,26.0,20.4]],["actif",[26.0,45.1,36.3]],["usage",[17.8,23.6,31.4]]]},
+  form:{cats:["Non-formés","Présentiel","Webinaire","Anc. vague"],s:[["clic",[9.0,26.2,24.8,17.0]],["actif",[26.0,45.2,46.3,28.6]],["usage",[17.8,23.4,32.4,28.6]]]},
+  nature:[["Établissement-ciblée  13/22 étab.",59],["Distanciel / webinaire  18/61",30],["Ancienne vague  8/31",26],["Académique de masse  13/126",10],["Pré-service ENS/MEEF  0/5",0]],
   season:{x:["09","10","11","12","01","02","03","04","05","06"],comptes:[165,101,75,298,975,84,131,160,104,87],seances:[3,4,6,14,29,27,51,43,70,47]},
   mature:[["Mûres (>6 mois)",46.5],["Récentes (2026)",22.0],["Présentiel mûr",58.8]],
   reten:[["1 année",192],["2 années",28],["3 années",4]],
@@ -342,7 +357,8 @@ function drawFunnel(id){const o=svg(id);if(!o)return;const{s,w,h}=o;const d=D.fu
     s.appendChild(el('rect',{x:0,y:y+rowH*0.18,width:Math.max(bw,2),height:rowH*0.64,fill:cols[i],opacity:0.9-i*0.02,rx:2}));
     s.appendChild(txt(bw+12,y+rowH*0.5+5,r[1].toLocaleString('fr-FR'),{f:'"Helvetica Neue",Arial',s:20,w:800,c:C.ink}));
     s.appendChild(txt(bw+92,y+rowH*0.5+5,r[0],{s:13,c:C.ink2}));
-    s.appendChild(txt(bw+92,y+rowH*0.5+20,r[2]+' % du départ',{s:10,c:C.faint}));
+    const sub=(r[2]==null)?(r[3]||''):(r[2]+' % du départ');
+    s.appendChild(txt(bw+92,y+rowH*0.5+20,sub,{s:10,c:(r[2]==null?C.classe:C.faint)}));
   });
 }
 function drawGroupV(id,cats,series,colors,unit,maxv){const o=svg(id);if(!o)return;const{s,w,h}=o;
@@ -435,6 +451,7 @@ function render(){
   drawFunnel('c_funnel');
   drawHGroup2('c_track',D.track.map(d=>d[0]),D.track.map(d=>d[1]),D.track.map(d=>d[2]),C.faint,C.site,{padL:96});
   drawBarsV('c_seq',D.seq,(i)=>[C.bridge,C.site,C.amber,C.faint][i]);
+  drawHBars('c_nature',D.nature,(i,d)=>i===0?C.classe:(d[1]<15?C.leak:C.bridge),{padL:250,fmt:v=>v+' %'});
   drawGroupV('c_form',D.form.cats,[['clic',D.form.s[0][1]],['actif',D.form.s[1][1]],['usage',D.form.s[2][1]]],[C.site,C.bridge,C.classe],'%',60);
   drawSeason('c_season');
   drawBarsV('c_mature',D.mature,(i)=>[C.bridge,C.leak,C.classe][i],{padB:40});

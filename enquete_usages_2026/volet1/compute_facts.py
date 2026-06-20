@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Calcule l'ensemble des faits analytiques -> facts.json. Source unique de vérité chiffrée."""
 import pandas as pd, numpy as np, json
-D="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/data"
+D="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/volet1/data"
 BASE="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/public/data"
 
 df=pd.read_csv(f"{D}/usages_enriched.csv", dtype=str, keep_default_na=False)

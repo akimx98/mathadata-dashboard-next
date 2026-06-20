@@ -43,14 +43,19 @@
   .stat .v.teal{color:var(--teal)} .stat .v.ind{color:var(--accent)}
   .stat .k{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.3}
 
-  /* funnel */
-  .funnel{display:flex;align-items:stretch;gap:10px;margin:8px 0 4px;flex-wrap:wrap}
-  .fstep{flex:1;min-width:160px;background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:12px;padding:15px 17px}
+  /* funnel — répartition (partition en 2 branches), pas une chaîne séquentielle */
+  .funnel{margin:8px 0 4px}
+  .funnel .ftop{display:flex}
+  .fstep{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:12px;padding:15px 17px}
+  .ftop .fstep{flex:1}
   .fstep.ok{border-top-color:var(--teal)} .fstep.warn{border-top-color:var(--rose)}
   .fstep .fv{font-family:var(--font-mono);font-size:30px;font-weight:700;line-height:1}
   .fstep .fk{font-size:13px;color:var(--muted);margin-top:7px;line-height:1.35}
-  .farrow{display:flex;align-items:center;font-family:var(--font-mono);color:var(--grey);font-size:22px}
-  @media(max-width:860px){.farrow{display:none}}
+  .fstep .fk b{color:var(--text)}
+  .fcap{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);text-align:center;margin:9px 0 1px}
+  .fork{height:22px}.fork svg{display:block;width:100%;height:100%}
+  .fbottom{display:flex;gap:10px}.fbottom .fstep{flex:1;min-width:0}
+  @media(max-width:560px){.fbottom{flex-direction:column;gap:10px}.fork{display:none}}
 
   /* hero chart */
   .herochart{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 18px 12px;margin-top:6px;
@@ -78,7 +83,12 @@
   .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
 
   /* truths */
-  .truths{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .truths{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  /* metric cards (qualité d'usage) */
+  .metric .v{font-family:var(--font-mono);font-size:clamp(26px,3vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1;color:var(--accent)}
+  .metric .v.teal{color:var(--teal)}
+  .metric h3{font-size:15px;margin:11px 0 6px;letter-spacing:-.01em}
+  .metric p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.5}
   .truth{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;position:relative;overflow:hidden}
   .truth:before{content:attr(data-n);position:absolute;top:-14px;right:6px;font-family:var(--font-mono);font-size:62px;font-weight:800;color:var(--accent-soft);z-index:0}
   .truth h3{position:relative;z-index:1;font-size:16px;margin:0 0 7px;letter-spacing:-.01em}
@@ -144,7 +154,7 @@
     <span class="mono" style="font-size:12px;color:var(--muted)">· données Capytale · extraction 19 juin 2026</span>
   </div>
   <h1>MathAData passe du <em>pilote</em> au déploiement national</h1>
-  <p class="lede">Une lecture des <b>7 353 affectations</b> Capytale : qui utilise l'outil, comment il entre en classe, et ce qui porte une croissance des usages élèves de <b>+105 %</b> en un an — alors que l'année scolaire n'est même pas terminée.</p>
+  <p class="lede">Une lecture des <b>7 353 affectations</b> Capytale : qui utilise l'outil, comment il entre en classe, et ce qui porte une croissance des usages élèves de <b>+105 %</b> en un an.</p>
 
   <div class="herochart">
     <div class="ttl"><span>USAGES ÉLÈVES PAR MOIS — l'accélération de 2025-2026</span><span id="heroLegend"></span></div>
@@ -160,12 +170,14 @@
 </header>
 
 <section>
-  <div class="sechead"><span class="secnum">00</span><h2>Quatre vérités structurantes</h2></div>
+  <div class="sechead"><span class="secnum">00</span><h2>Six vérités structurantes</h2></div>
   <div class="truths" style="margin-top:14px">
     <div class="truth" data-n="1"><h3>Un outil de lycée, public, de 2nde</h3><p>En classe : 97 % lycée, 98 % public, cible 2nde. Le collège intéresse (47 profs formés) mais ne décolle pas en classe (~5 collèges).</p></div>
-    <div class="truth" data-n="2"><h3>Adoption directe et solitaire</h3><p>⅔ des profs lancent en classe sans test enregistré. 80 % des établissements n'ont qu'un seul prof utilisateur.</p></div>
-    <div class="truth" data-n="3"><h3>Croissance extensive</h3><p>83 % des profs de 2025-26 sont nouveaux et font 74 % du volume. La rétention inter-annuelle n'est que de 30 %.</p></div>
-    <div class="truth" data-n="4"><h3>Le moteur : stats &amp; géométrie</h3><p>Statistiques (+1 340) et géométrie (+1 236) portent la hausse ; l'« Intro à l'IA » historique recule (−485).</p></div>
+    <div class="truth" data-n="2"><h3>Beaucoup d'essais, peu de classes</h3><p>401 profs ont mis la main sur l'outil ; 224 (56 %) seulement l'ont donné à leurs élèves.</p></div>
+    <div class="truth" data-n="3"><h3>Adoption directe et solitaire</h3><p>⅔ des profs lancent en classe sans test enregistré. 80 % des établissements n'ont qu'un seul prof utilisateur.</p></div>
+    <div class="truth" data-n="4"><h3>Croissance extensive</h3><p>83 % des profs de 2025-26 sont nouveaux et font 74 % du volume. La rétention inter-annuelle n'est que de 30 %.</p></div>
+    <div class="truth" data-n="5"><h3>Le moteur : stats &amp; géométrie</h3><p>Statistiques (+1 340) et géométrie (+1 236) portent la hausse ; l'« Intro à l'IA » historique recule (−485).</p></div>
+    <div class="truth" data-n="6"><h3>Un tiers entrent par Capytale, pas par le site</h3><p>32 % découvrent MathAData via l'« Intro à l'IA » (absente du site) ; 63 n'utilisent qu'elle et ne voient jamais le catalogue.</p></div>
   </div>
 </section>
 
@@ -193,16 +205,33 @@
 </section>
 
 <section>
-  <div class="sechead"><span class="secnum">02</span><h2>L'entonnoir de l'engagement</h2></div>
+  <div class="sechead"><span class="secnum">02</span><h2>Au-delà du volume : un usage qui s'installe</h2></div>
+  <p class="sub">Les clones Capytale ne disent pas que <i>combien</i> d'élèves sont touchés : ils montrent <b>comment</b> l'activité est réellement utilisée. Le signal est positif — l'usage est profond, ancré en classe, et s'inscrit dans une progression.</p>
+  <div class="grid3">
+    <div class="card metric"><div class="v teal">51 h</div><h3>Les élèves y reviennent</h3><p><b>21,7 %</b> des copies-élèves sont rouvertes plus d'une heure après leur création (médiane <b>51 h</b> ; 461 après une semaine). L'activité n'est pas un one-shot — le travail se poursuit.</p></div>
+    <div class="card metric"><div class="v">7,4 %</div><h3>En classe, pas à la maison</h3><p>Seuls <b>7,4 %</b> des clones sont créés hors temps scolaire (4,1 % le week-end). MathAData s'utilise massivement <b>en séance</b>, avec le professeur.</p></div>
+    <div class="card metric"><div class="v teal">23 %</div><h3>Une progression cohérente</h3><p><b>52 profs sur 224</b> enseignent ≥ 2 activités. Le parcours-type <b>Statistiques → Géométrie</b> (18 profs) épouse le programme de 2nde.</p></div>
+  </div>
+  <div class="callout"><b>Le pattern de découverte.</b> 46 professeurs lancent une <b>mini-séance</b> (≤ 6 élèves — souvent leur propre compte-test) <b>avant</b> la vraie classe, quelques jours plus tard : on essaie à petite échelle, on déploie en grand (ex. 2 élèves le 19/05 → 41 le 23/05).</div>
+</section>
+
+<section>
+  <div class="sechead"><span class="secnum">03</span><h2>L'entonnoir de l'engagement</h2></div>
   <p class="sub">Dans Capytale, le rôle = le <b>type de compte</b> : un prof <b>en formation</b> reste « teacher » et n'apparaît que dans la colonne élève des lignes test. En l'intégrant, la vraie population enseignante n'est pas 261 (les distributeurs) mais <b>401 engagés</b>.</p>
   <div class="funnel">
-    <div class="fstep"><div class="fv">401</div><div class="fk">engagés — ont cloné l'activité</div></div>
-    <div class="farrow">→</div>
-    <div class="fstep ok"><div class="fv">224</div><div class="fk">ont enseigné à leurs élèves (56 %)</div></div>
-    <div class="farrow">→</div>
-    <div class="fstep warn"><div class="fv">177</div><div class="fk">ont seulement testé — dont 140 en formation</div></div>
+    <div class="ftop">
+      <div class="fstep"><div class="fv">401</div><div class="fk">enseignants engagés — ont cloné au moins une activité</div></div>
+    </div>
+    <div class="fcap">se répartissent en deux groupes <b>distincts</b> (224 + 177 = 401)</div>
+    <div class="fork" aria-hidden="true">
+      <svg viewBox="0 0 100 22" preserveAspectRatio="none"><path d="M50 0 V11 M25 11 H75 M25 11 V22 M75 11 V22" fill="none" stroke="var(--grey)" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+    </div>
+    <div class="fbottom">
+      <div class="fstep ok"><div class="fv">224</div><div class="fk">ont enseigné à leurs élèves — <b>56 %</b></div></div>
+      <div class="fstep warn"><div class="fv">177</div><div class="fk">ont <b>seulement testé</b>, sans jamais enseigner — <b>44 %</b> (dont 140 en formation)</div></div>
+    </div>
   </div>
-  <div class="callout"><b>La formation : gros haut d'entonnoir, faible rendement.</b> Sur ~148 comptes vus en formation, seuls <b>~4 % ont ensuite enseigné</b> à leurs propres élèves. C'est aussi là que se cache l'intérêt collège : <b>40 des 140 stagiaires</b> sont des profs de collège (§03). Une douzaine de <b>formateurs</b> (dont le lycée des Flandres, Hazebrouck) portent ~39 % des tests.</div>
+  <div class="callout"><b>La formation : gros haut d'entonnoir, faible rendement.</b> Sur ~148 comptes passés par une formation, seuls <b>6 (~4 %) ont ensuite enseigné</b> à leurs propres élèves. C'est aussi là que se cache l'intérêt collège : <b>40 des 140 stagiaires</b> sont des profs de collège (§04). Une douzaine de <b>formateurs</b> (dont le lycée des Flandres, Hazebrouck) portent ~39 % des tests.</div>
   <p class="sub" style="margin-top:24px">Côté <b>profs qui enseignent</b> : les deux tiers donnent l'activité <b>sans test préalable</b> ; quand le test a lieu, c'est une mise en place de séance (médiane <b>2,3 jours</b>, 38 % le jour même).</p>
   <div class="grid2">
     <div class="card">
@@ -220,7 +249,7 @@
 </section>
 
 <section>
-  <div class="sechead"><span class="secnum">03</span><h2>Une diffusion encore solitaire</h2></div>
+  <div class="sechead"><span class="secnum">04</span><h2>Une diffusion encore solitaire</h2></div>
   <p class="sub">MathAData se diffuse prof par prof, rarement par contagion entre collègues. <b>146 établissements sur 182 (80 %)</b> ne comptent qu'un seul utilisateur. Le frein n'est pas l'essai raté entre collègues (8 cas seulement) — c'est l'absence d'un second prof.</p>
   <div class="grid2" style="align-items:start">
     <div class="card">
@@ -297,7 +326,7 @@
 </section>
 
 <section>
-  <div class="sechead"><span class="secnum">04</span><h2>Le moteur de la croissance 2025-2026</h2></div>
+  <div class="sechead"><span class="secnum">05</span><h2>Le moteur de la croissance 2025-2026</h2></div>
   <p class="sub">La hausse n'est <b>pas</b> une intensification des profs en place — leur effet net est quasi nul. Elle vient d'un afflux de <b>nouveaux entrants</b>, et d'un catalogue qui mue vers le programme de seconde.</p>
   <div class="grid2">
     <div class="card">
@@ -315,10 +344,11 @@
       <figure id="themeChart"></figure>
     </div>
   </div>
+  <div class="callout"><b>Un outil de printemps.</b> ~80 % de l'activité élève se joue sur <b>janvier-juin</b> : les chapitres concernés (statistiques, géométrie analytique) se traitent après les fondamentaux d'automne, et beaucoup de profs découvrent l'outil en cours d'année. La courbe mensuelle culmine en <b>mai (&gt; 1 000 usages)</b> — c'est la fenêtre d'accompagnement à préparer.</div>
 </section>
 
 <section>
-  <div class="sechead"><span class="secnum">05</span><h2>Du foyer nordiste à la nation</h2></div>
+  <div class="sechead"><span class="secnum">06</span><h2>De Lille au reste de la France</h2></div>
   <p class="sub">L'histoire géographique se lit en trois temps : un démarrage dispersé, un foyer <b>Hauts-de-France</b> en 2024-25, puis une nationalisation. Lille reste 1ère mais se dilue — non par recul (Lille gagne des élèves) mais parce que la croissance se fait ailleurs.</p>
   <div class="grid2">
     <div class="card">
@@ -333,12 +363,13 @@
       <figure id="acadChart"></figure>
     </div>
   </div>
+  <div class="callout"><b>Le foyer nordiste n'est pas l'affaire d'un seul compte.</b> Le poids du pionnier historique s'efface dans le temps : <b>13,4 % des élèves en 2024-25 → 3,5 % en 2025-26</b> (dans le Nord : 40 % → 26 % → <b>0 %</b>). Et même recalculé <b>sans lui</b>, le pic Hauts-de-France 2024-25 reste massif (Nord 21,4 %, Lille 27,6 %) : la grappe locale s'est rendue <b>auto-portante</b> (relais comme Calais, 227 élèves, 7 profs).</div>
   <div class="callout"><b>Le modèle « un gros lycée = un foyer ».</b> En 2025-26, trois lycées (Bègles 283, Calais 227, Lille Pasteur 125) totalisent ~17 % du volume annuel. La croissance se reproduit par foyers-établissements, pas par dispersion fine.</div>
 </section>
 
 <section>
-  <div class="sechead"><span class="secnum">06</span><h2>Beaucoup d'éphémères, un petit noyau</h2></div>
-  <p class="sub">L'enjeu n°1 que révèlent les données : <b>transformer l'essai</b>. 86 % des profs n'ont (à ce jour) enseigné que sur une seule année scolaire, et seuls 30 % des enseignants de 2024-25 ont récidivé en 2025-26.</p>
+  <div class="sechead"><span class="secnum">07</span><h2>Beaucoup d'éphémères, un petit noyau</h2></div>
+  <p class="sub">L'enjeu n°1 que révèlent les données : <b>transformer l'essai</b>. 86 % des profs n'ont (à ce jour) enseigné que sur une seule année scolaire, et seuls 30 % des enseignants de 2024-25 ont récidivé en 2025-26. À l'inverse, un signe de fidélité : <b>27 « triplets »</b> (prof × activité × établissement) sont rejoués sur ≥ 2 ans — une même séance reconduite avec une nouvelle promo.</p>
   <div class="grid2">
     <div class="card">
       <div class="chart-ttl">Années scolaires d'enseignement par prof</div>
@@ -351,10 +382,11 @@
       <figure id="sessChart"></figure>
     </div>
   </div>
+  <div class="callout"><b>Pas de monopole : une concentration modérée.</b> Le top 10 des profs ne pèse que <b>21 % des élèves</b> (17 % une fois retiré le hub fondateur), coefficient de Gini <b>0,49</b> — une inégalité réelle, loin d'un monopole. Et le « plus gros prof » (404 élèves) n'en est pas un : c'est le <b>compte-maître du réseau pilote</b>, réparti sur 14 établissements (56 seulement à Haubourdin).</div>
 </section>
 
 <section>
-  <div class="sechead"><span class="secnum">07</span><h2>Un public légèrement favorisé, sans élitisme</h2></div>
+  <div class="sechead"><span class="secnum">08</span><h2>Un public légèrement favorisé, sans élitisme</h2></div>
   <p class="sub">L'IPS moyen des lycées utilisateurs (110,4) dépasse de <b>+3,4 points</b> la moyenne nationale (107,0) : un biais réel mais modéré. MathAData n'est pas réservé aux lycées d'élite.</p>
   <div class="card" style="max-width:640px">
     <div class="chart-ttl">IPS — lycées MathAData vs lycées de France</div>
@@ -364,14 +396,14 @@
 </section>
 
 <section>
-  <div class="sechead"><span class="secnum">08</span><h2>Ce que les données suggèrent de faire</h2></div>
+  <div class="sechead"><span class="secnum">09</span><h2>Ce que les données suggèrent de faire</h2></div>
   <div class="recs">
     <div class="rec"><div><b>Faire de la rétention la priorité.</b><span>Le point faible n'est pas l'acquisition mais le retour : relancer dès la rentrée les 62 profs de 2024-25 qui n'ont pas réenseigné.</span></div></div>
     <div class="rec"><div><b>Activer la contagion intra-établissement.</b><span>80 % des établissements n'ont qu'un prof. Outiller le pionnier pour embarquer un collègue (Bègles et Calais prouvent que ça marche).</span></div></div>
     <div class="rec"><div><b>Récupérer les profs « Capytale-direct ».</b><span>Un tiers entrent par « Intro à l'IA » et 63 ne voient jamais le catalogue : un bandeau « Découvrez mathadata.fr » dans l'activité historique = trafic gratuit à convertir.</span></div></div>
     <div class="rec"><div><b>Convertir le vivier de la formation (angle mort n°1).</b><span>140 profs formés n'ont jamais enseigné à leurs élèves (conversion ~4 %), dont 40 en collège. Relance systématique post-formation « passez à votre 1ère classe » (kit + support à J+15).</span></div></div>
     <div class="rec"><div><b>Concentrer l'accompagnement sur janvier-juin.</b><span>~80 % de l'activité s'y joue, avec un pic en mai à préparer.</span></div></div>
-    <div class="rec"><div><b>Assumer — ou corriger — la cible.</b><span>Sans contenu collège dédié, MathAData reste un outil de lycée public. À assumer dans la communication, ou à investir explicitement.</span></div></div>
+    <div class="rec"><div><b>Développer des ressources collège</b><span>Réelle attente collège, mais sans contenu dédié les profs ne peuvent passer à l'enseignement.</span></div></div>
   </div>
   <div class="callout" style="margin-top:18px"><b>Prochaine étape.</b> Les données de <b>formation</b> (dates, lieux, nombre de profs formés par lycée) permettront de relier l'amont (qui a été formé, quand, où) à l'aval mesuré ici — et de répondre à la vraie question de pilotage : <b>quelles formations génèrent de l'usage réel, comment, et après combien de temps.</b></div>
 </section>

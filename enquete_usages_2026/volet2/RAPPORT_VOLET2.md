@@ -24,15 +24,19 @@ Quatre garde-fous conditionnent toute interprétation :
 
 ## 1. Résumé exécutif
 
-- **Un entonnoir qui se rétrécit à chaque marche.** De **2 715 comptes**, **1 003 (37 %) restent « newsletter only »** et ne deviennent jamais comptes complets ; il reste **1 712 comptes complets**. **631 sont formés** (23 % du total), **337 (12 %) cliquent un jour vers Capytale**, et côté Capytale **224 enseignants** mènent réellement le TP devant des élèves (Volet 1), pour **5 854 élèves**. La conversion compte→classe de bout en bout est de l'ordre de **8 %**. La déperdition n'est pas à l'acquisition : elle est tout en bas, au passage en classe.
+- **Un entonnoir qui se rétrécit à chaque marche.** De **2 715 comptes**, **1 003 (37 %) restent « newsletter only »** et ne deviennent jamais comptes complets ; il reste **1 712 comptes complets**. **631 sont formés** (23 % du total) et **337 (12 %) cliquent un jour vers Capytale**. Côté Capytale, **224 comptes ont enseigné** — dont **163 de vraies classes (≥ 10 élèves)** — pour **5 854 élèves**. ⚠️ Ces 224 (Capytale, anonyme) **ne sont pas un sous-ensemble** des 2 715 (site, nominatif) — 44 % des profs qui enseignent n'ont aucun compte site : le rapport 224/2 715 (~8 %) est un **ordre de grandeur système, pas un taux de conversion**. Les fuites les mieux établies sont en haut (37 % newsletter-only) et au clic Capytale (12 %), et au grain établissement (83 % des UAI du site sans empreinte classe, cf. §5).
 
 - **Le funnel vrai est plus dense que le funnel « toutes dates ».** Sur la cohorte trackable (post-27 nov., 1 003 comptes), **66 % deviennent actifs, 58 % consultent un module, 58 % téléchargent une ressource, 27 % cliquent vers Capytale** — contre 47 / 40 / 41 / 20 % toutes dates. Le clic Capytale est la marche la plus pénalisée par la fenêtre de tracking.
 
-- **Se former double l'intention.** Les formés cliquent vers Capytale **2,6× plus** que les non-formés (**23,5 % vs 9,0 %**) et téléchargent **2,6× plus de ressources** (5,3 vs 2,1 clics/personne). Effet réel — mais mêlé de **récence** et d'**endogénéité** (on forme des profs et des établissements déjà acquis).
+- **Se former est associé à ~2,5× plus de clics vers Capytale** (formés vs non-formés) — effet réel mais mêlé de **récence**, d'**auto-sélection** et d'**endogénéité** (on forme des profs et des établissements déjà acquis).
 
-- **Présentiel et webinaire ne convertissent pas au même endroit.** Le **présentiel** maximise l'entrée dans l'outil (**26 % de clic Capytale, 45 % d'actifs**) ; le **webinaire** maximise l'aboutissement en classe (**31 % d'établissements à usage élève effectif, contre 24 % en présentiel et 18 % chez les non-formés**) et l'approfondissement (**22 ressources/personne** chez ses consultants, vs 11 en présentiel). Le présentiel amorce large, le webinaire approfondit un noyau auto-sélectionné.
+- **Ce n'est pas le format qui prédit l'aboutissement en classe, c'est la concentration.** Reclassées par *nature* et comptées au **grain établissement distinct**, les cohortes vont de **59 % (13/22 établissements)** pour une formation **établissement-ciblée** (plusieurs collègues d'un même lieu) à **10 % (13/126)** pour une formation **académique de masse** (IREM, journées, 1 prof dispersé) — un **facteur ~6**, alors que les deux sont du présentiel. Toutes les formations de masse sont quasi nulles (Narbonne 1/20, Nîmes 0/9), toutes les concentrées ont de vraies classes (Lille 2024 : 841 élèves). *Base petite (22 établissements), classification subjective → direction robuste, chiffre = ordre de grandeur. Au grain prof, l'établissement-ciblée monte à ~67 %, mais c'est surestimé (compte les collègues d'un même lycée plusieurs fois).* *(Correction v1 : « webinaire > présentiel » reposait sur 147 « anciens formés » comptés à tort comme webinaire.)*
 
-- **L'endogénéité du présentiel est mesurable.** Sur **152 établissements** formés en présentiel, seuls **26 (17 %)** montrent un usage Capytale et **17 (11 %)** un usage *postérieur* à la formation. Et **10 des 27 établissements à usage utilisaient déjà Capytale avant** la formation : une partie du « rendement » présentiel est un terrain déjà conquis. Quand l'usage suit, il vient vite (**médiane ≈ 2 semaines**) : le présentiel déclenche un test rapide, ou rien.
+- **Un cinquième de l'effort présentiel vise un public qui ne peut pas aboutir cette année.** **74 des 364 profs présentiels (20 %)** sont des **pré-service** (ENS_25 52 profs, MEEF INSPÉ 13) : sans classe ni élèves, **0 % d'usage** possible. À traiter comme canal à horizon décalé, pas comme « présentiel raté ».
+
+- **L'endogénéité reste une limite causale forte.** Avec les vraies dates de formation : sur 26 établissements présentiels à usage élève, **9 utilisaient déjà Capytale *avant*** la formation. Quand l'usage suit, il vient en **~27 jours** (médiane). Ne pas créditer le présentiel d'environ un tiers de l'usage observé.
+
+- **L'intention déclarée ne pilote pas l'usage.** 29 validations sur 239 déclarent un module ; **6 intentions sur 99** se réalisent — mais **85 des 93 non réalisées** émanent d'établissements n'ayant déclenché aucun TP. Le goulot est le **passage à l'acte en classe**, pas le choix du module.
 
 - **Deux portes d'entrée disjointes.** Sur **174 établissements** à usage classe Capytale, **77 (44 %) n'ont aucun compte site** déclarant cet UAI : entrées **Capytale-directes**, via l'ENT, contournant le site (borne basse ; borne haute 166). Symétriquement, sur **616 établissements** présents côté site, **509 (83 %) n'ont aucune empreinte classe Capytale**. Les deux populations se recouvrent peu.
 
@@ -52,7 +56,9 @@ Quatre garde-fous conditionnent toute interprétation :
 
 ## 2. Le pipeline complet, de la notoriété à la classe
 
-Reconstituer le trajet — entendre parler de MathAData, créer un compte, se former, tester sur Capytale, enseigner — fait apparaître un entonnoir net. mathadata.fr compte **2 715 comptes**. La **première fuite est immédiate** : 1 003 (37 %) restent « newsletter only », jamais convertis en compte complet. Restent **1 712 comptes complets**. Sur l'ensemble, **631 sont formés** (23 % du total) — dont 443 sont des comptes complets et 188 restés au statut newsletter-only ; on ne chaîne donc pas naïvement 1 712 → 631 (ce serait double-compter 188 personnes). **337 comptes (12 %) ont cliqué vers Capytale** ; et côté Capytale, **224 enseignants** ont mené le TP devant des élèves (Volet 1), pour **5 854 élèves**. Chaque marche divise grossièrement le flux : **conversion compte→classe de bout en bout ≈ 8 %**.
+Reconstituer le trajet — entendre parler de MathAData, créer un compte, se former, tester sur Capytale, enseigner — fait apparaître un entonnoir net. mathadata.fr compte **2 715 comptes**. La **première fuite est immédiate** : 1 003 (37 %) restent « newsletter only », jamais convertis en compte complet. Restent **1 712 comptes complets**. Sur l'ensemble, **631 sont formés** (23 % du total) — dont 443 sont des comptes complets et 188 restés au statut newsletter-only ; on ne chaîne donc pas naïvement 1 712 → 631 (ce serait double-compter 188 personnes). **337 comptes (12 %) ont cliqué vers Capytale.**
+
+**Changement d'univers — lire le bas de l'entonnoir avec prudence.** Côté Capytale (anonyme, autre population), **224 comptes ont enseigné** — dont **163 de vraies classes (≥ 10 élèves cumulés ; 16 n'ont eu qu'un seul élève)** — pour **5 854 élèves**. Ces 224 ne sont **pas** un sous-ensemble des 2 715 : les deux mondes n'ont **aucun identifiant commun**, et **44 % des profs qui enseignent n'ont aucun compte site** (porte Capytale-directe, §5). Rapporter 224 aux 2 715 (~8 %) **croise deux populations partiellement disjointes** : c'est un **ordre de grandeur système, pas un taux de conversion individuel**. Les seuls taux propres sont *intra-univers* : côté Capytale, 401 comptes engagés → 224 ont enseigné (**56 %**) ; côté site, 2 715 → 337 clics (**12 %**).
 
 Cette lecture « toutes dates » sous-estime le site, car le tracking ne démarre que le 27 novembre 2025. Sur la **cohorte trackable** (1 003 comptes), le funnel est bien plus dense : **66 % actifs, 58 % module vu, 59 % ressource téléchargée, 27 % clic Capytale** — contre 47 / 40 / 41 / 20 % sur l'ensemble. Le clic Capytale est la marche la plus pénalisée par la fenêtre.
 
@@ -60,35 +66,58 @@ Les **délais** montrent une bascule très rapide quand elle a lieu : médiane c
 
 | Marche de l'entonnoir | Effectif | % du total |
 |---|---:|---:|
-| Comptes créés | 2 715 | 100 % |
-| Comptes complets | 1 712 | 63 % |
-| Formés | 631 | 23 % |
-| Ont cliqué vers Capytale | 337 | 12 % |
-| Ont enseigné à des élèves *(Capytale, V1)* | 224 | 8 % |
-| Élèves touchés *(Capytale, V1)* | 5 854 | — |
+| Comptes créés *(site)* | 2 715 | 100 % |
+| Comptes complets *(site)* | 1 712 | 63 % |
+| Formés *(site)* | 631 | 23 % |
+| Ont cliqué vers Capytale *(site)* | 337 | 12 % |
+| *— changement d'univers : Capytale, anonyme —* | | |
+| Ont enseigné (≥ 1 élève) | 224 | n.c.\* |
+| dont vraie classe (≥ 10 élèves) | 163 | n.c.\* |
+| Élèves touchés | 5 854 | — |
+
+> \* *Population Capytale, distincte des comptes site (aucun identifiant commun ; 44 % des profs enseignants n'ont pas de compte site). Aucun « % du total des comptes site » n'est défini pour ces lignes — le ~8 % parfois cité (224/2 715) est un ordre de grandeur système, pas une conversion.*
 
 ---
 
-## 3. Effet des formations sur l'usage (présentiel vs webinaire)
+## 3. Effet des formations : ce n'est pas le format, c'est la concentration
 
-C'est le cœur analytique. Les comptes formés se distinguent fortement sur tous les indicateurs : 9,0 % de clic Capytale et 26,0 % d'activité site chez les non-formés ; **23,5 %** et **41,1 %** chez les formés — un facteur **2,6** sur le clic. Mais cet écart mêle effet causal, **récence** (formés sur-représentés dans la fenêtre de tracking) et **endogénéité** (on forme des acquis).
+> *Cette section a été refondue après le chargement des données de formation (`formation-codes` : 45 sessions datées, typées, labellisées ; `formation-redemptions` : 239 validations). On dispose désormais du **type réel** de chaque formation et des **cohortes exactes**, là où le Volet 2 v1 reposait sur un champ déclaratif bruité.*
 
-**Le présentiel convertit vers le clic, le webinaire vers l'engagement profond.** Le présentiel domine l'entrée dans l'outil (**26,0 % de clic, 45 % d'actifs**, contre 20,4 % et 36 % en webinaire). Mais le webinaire produit un usage bien plus intense côté ressources : **7,0 clics/personne contre 4,0**, et **22 ressources distinctes en moyenne chez ses consultants contre 11 en présentiel**. Cohérent avec son recrutement : seuls **38 % des webinaire déclarent un UAI contre 59 % en présentiel** — le webinaire agrège des individus isolés et motivés, le présentiel des établissements ciblés.
+**Une correction de fond d'abord.** Le Volet 2 v1 concluait « le webinaire convertit mieux que le présentiel (31 % vs 24 %) ». C'était un **artefact de typage** : 147 « anciens formés » (formés avant la mise en place du système de codes le 15/01/2026, type et date réels **inconnus**, regroupés dans deux codes à date factice) étaient comptés à tort comme `webdecouv`, gonflant le webinaire. Avec le **typage réel** (via `trainedFormation` → code), quatre catégories émergent :
 
-**L'aboutissement « jusqu'à la classe » inverse le classement** — et c'est l'indicateur le plus robuste, fondé sur l'historique Capytale complet : **31,4 % des webinaire** (à UAI connu) sont dans un établissement à usage élève effectif, contre **23,6 % en présentiel** et **17,8 % non-formés**. Le webinaire, en sélectionnant des profs déjà engagés, atterrit plus souvent là où des élèves utilisent réellement le TP. *(« Usage élève effectif » = au moins une vraie classe — au moins un élève `role=student` — pas un usage intense.)*
+| | Non-formés | Présentiel | Webinaire | Ancienne vague |
+|---|---:|---:|---:|---:|
+| Effectif | 2 084 | 364 | 121 | 147 |
+| % clic Capytale *(intention, biaisé tracking)* | 9,0 | **26,2** | 24,8 | 17,0 |
+| % actifs sur le site | 26,0 | 45,2 | 46,3 | 28,6 |
+| % établissement à usage élève *(robuste)* | 17,8 | 23,4 | **32,4** | 28,6 |
+| Ressources / personne *(moyenne)* | 2,1 | 4,0 | **10,2** | 4,6 |
 
-**L'endogénéité du présentiel est substantielle.** Sur **152 établissements** formés en présentiel, **26 (17 %)** ont un usage Capytale et **17 (11 %)** un usage *postérieur* à la formation. Surtout, **10 des 27 établissements à usage utilisaient déjà Capytale avant** : le présentiel est partiellement alloué à des terrains déjà conquis, ce qui gonfle le taux brut. Quand l'usage suit, il vient vite : **délai médian ≈ 2 semaines** entre la formation et la première séance.
+*« Usage élève effectif » = au moins une vraie classe (≥ 1 élève `role=student`), historique Capytale complet 2023-2026, non biaisé par la fenêtre de tracking. Le « % » porte sur les **profs formés à UAI renseigné**, pas sur des établissements distincts (au niveau établissement dédupliqué : 17,8 / 17,1 / 29,5 / 25,8 %). La formation reste associée à un clic Capytale ~2,5× supérieur (effet mêlé de causalité, récence et auto-sélection).*
 
-**Lecture honnête du rendement.** Le présentiel est l'outil d'**amorçage** (large couverture, conversion rapide ou nulle, un tiers de l'effet affiché = auto-sélection, rendement classe modeste à 11 %). Le webinaire est l'outil d'**approfondissement** (rate la marge des indécis, mais ceux qu'il touche vont le plus loin). Les deux sont **complémentaires, pas substituables**. Une part de l'avantage « classe » du webinaire tient aussi à ce que ses gros bataillons (janv.-nov. 2025) ont eu le temps de déployer, là où le présentiel récent (pics 2026) n'a pas encore eu son créneau — un effet de maturité, pas seulement de format.
+**Le vrai webinaire converti mieux subsiste — mais sur petite base et n'est pas le moteur.** Le webinaire *genuine* (121 profs, 68 profs-avec-UAI) atterrit en classe à 32,4 % et consulte le plus de ressources (10,2/personne) : il sélectionne des profs déjà décidés. Le présentiel (364) est plus large mais agrège des régimes opposés. Le format, à lui seul, n'explique pas grand-chose.
 
-| | Non-formés | Présentiel | Webinaire |
-|---|---:|---:|---:|
-| Effectif | 2 084 | 364 | 266 |
-| % clic Capytale *(intention, biaisé tracking)* | 9,0 | 26,0 | 20,4 |
-| % actifs sur le site | 26,0 | 45 | 36 |
-| % établissement à usage élève *(robuste)* | 17,8 | 23,6 | **31,4** |
-| Ressources/personne *(moyenne)* | 2,1 | 4,0 | **7,0** |
-| Déclaration d'UAI | — | 59 % | 38 % |
+**Le prédicteur d'aboutissement, c'est la *concentration* de la formation.** En reclassant les cohortes datées par **nature** — qui était dans la salle — et en comptant au **grain établissement distinct** (et non par prof, qui gonfle le taux en comptant plusieurs collègues d'un même lycée comme autant de succès) :
+
+| Nature de la cohorte | Cohortes | Profs | Étab. distincts | Avec classe | **%** |
+|---|---:|---:|---:|---:|---:|
+| **Établissement-ciblée** *(plusieurs collègues d'un même lieu)* | 6 | 113 | **22** | 13 | **59 %** |
+| Distanciel / webinaire | 17 | 121 | 61 | 18 | 30 % |
+| Ancienne vague | 2 | 145 | 31 | 8 | 26 % |
+| **Académique de masse** *(IREM, Labomaths, journées — 1 prof dispersé)* | 12 | 187 | **126** | 13 | **10 %** |
+| Pré-service *(ENS_25, MEEF INSPÉ)* | 2 | 65 | 5 | 0 | **0 %** |
+
+L'écart est d'un **facteur ~6** (59 % vs 10 %), alors que établissement-ciblée et masse sont **toutes deux du présentiel** : la moyenne présentielle agrégée (23,4 %) mélange ces deux régimes. *Toutes* les formations de masse sont quasi nulles (Narbonne 1/20, Nîmes 0/9, Labomaths Aix-Marseille 0/14, IREM Dijon 1/17), *toutes* les concentrées ont de vraies classes — et certaines massivement (la seule cohorte **Lille 2024** = 841 élèves : Pasteur Lille 309, Vinci Calais 410, Woillez Montreuil 122).
+
+> **À manier avec prudence.** (1) Le **grain compte** : au niveau prof, l'établissement-ciblée monte à ~67 % (Gif : 13 profs mais 3 établissements) — surestimé ; le **59 % (13/22) au grain établissement** est plus juste. (2) **Base petite** : 22 établissements seulement pour l'établissement-ciblée. (3) **Classification subjective** (mots-clés ; Calais-LP = 8 LP dispersés, plutôt « réseau »). (4) **Déclaration d'UAI faible** dans 2 cohortes (Lille 6/40 profs, Amiens 1/19) → le taux y repose sur une poignée. La **direction** (concentré ≫ dispersé) est robuste ; le chiffre exact est un **ordre de grandeur sur petite base**.
+
+**Un cinquième de l'effort présentiel vise un public qui ne peut pas aboutir cette année : le pré-service.** **74 des 364 profs présentiels (20 %)** sont des stagiaires. Les deux grosses cohortes pré-service — **ENS_25 (52 profs)** et **MEEF INSPÉ Paris (13)** — totalisent 65 stagiaires, ~5 établissements distincts et **0 % d'usage classe** : sans classe en responsabilité ni élèves, elles ne *peuvent* pas produire d'usage. Les compter comme « présentiel raté » est une erreur d'attribution — c'est un canal de diffusion à horizon décalé, pas d'usage immédiat. *(Nuance : une 3ᵉ cohorte INSPÉ « continue » convertit, elle, à 100 % sur 2 établissements ; le 0 % strict ne vaut que pour ENS + MEEF.)*
+
+**La maturité ne sauve pas les cohortes faibles.** Contre-intuitivement, les deux meilleures cohortes (Gif 32 j, Arpajon 39 j de recul) sont parmi les **plus récentes**, tandis que des cohortes mûres restent basses (Narbonne 88 j → 4 %, St-Brieuc 156 j → 12 %). Cohortes ≥ 60 j : ~20-23 % ; < 60 j : ~30-34 %. Ce n'est ni le format ni le temps écoulé qui prédit l'usage — c'est la nature.
+
+**L'endogénéité reste une limite causale forte.** Avec les vraies dates : sur 26 établissements présentiels à usage élève, **9 utilisaient déjà Capytale *avant* la formation**. La formation ne peut donc pas être créditée d'environ un tiers de l'usage présentiel observé. Quand l'usage suit, il vient en **~27 jours (médiane)**, pas en deux semaines. **Ne pas présenter le présentiel comme causal.**
+
+**Et l'intention déclarée ne pilote rien à court terme.** Sur 239 validations, seules **29 (12 %)** déclarent au moins un module (32 % « pas encore d'idée », 56 % vide), et **6 intentions sur 99** seulement se réalisent (même activité dans l'établissement). Mais le goulot n'est pas le choix du module : **85 des 93 intentions non réalisées émanent d'établissements n'ayant déclenché *aucun* TP Capytale**. Le blocage est le **passage à l'acte en classe**, pas la planification — d'autant que la validation se fait en séance (238/239 dans les 24 h de la formation). Détail parlant : le module **Intro à l'IA**, absent du formulaire (`hiddenOnSite`), est déclaré **0 fois** alors qu'il est la 2ᵉ activité la plus utilisée sur Capytale — l'intention déclarée ne couvre même pas le périmètre réel.
 
 ---
 
@@ -172,7 +201,7 @@ Profil-type du prof qui va au bout : un **clic ressource suivi d'un clic Capytal
 ## 10. Insights transverses
 
 1. **La déperdition est concentrée sur le dernier sas, pas répartie.** Le site convertit bien jusqu'au compte et même jusqu'à la formation, mais s'effondre au passage en classe (83 % des UAI site sans empreinte Capytale). C'est le croisement funnel site × usage établissement qui localise la fuite tout en bas.
-2. **L'inversion intention/aboutissement se rejoue à deux échelles.** Présentiel = beaucoup de clics, peu de classes ; webinaire = l'inverse. Montpellier = beaucoup de formés, peu d'élèves ; Lille = l'inverse. Le facteur commun n'est ni le format ni l'académie : c'est **l'auto-sélection d'un noyau déjà décidé** vs le ratissage large d'indécis.
+2. **Le même facteur — la concentration — explique l'aboutissement à toutes les échelles.** Une formation concentrée sur un établissement convertit 5× mieux qu'une journée académique dispersée ; un établissement qui bascule (Lille) pèse plus que des dizaines de formés éparpillés (Montpellier) ; un prof qui forme ses collègues installe l'usage là où un prof isolé l'abandonne. Le facteur commun n'est ni le format de formation ni l'académie : c'est qu'**un collectif local se saisit de l'outil**, contre le ratissage large d'individus dispersés.
 3. **Le pic d'inscriptions de janvier et la faible conversion des cohortes 2026 sont le même fait.** Le pic hivernal remplit le haut du funnel d'une population qui, par saisonnalité, ne peut pas encore avoir déployé. Le « creux » 2026 est mécaniquement programmé.
 4. **La découverte spontanée se fait sur Capytale, pas sur le site.** 44 % des UAI à usage sans compte site ; flux inverse marginal ; Intro-IA (hors site) marquant 42 UAI directs. Le site est un **canal de préparation et de relance** pour qui connaît déjà MathAData ; l'entrée « froide » passe par le catalogue Capytale et le réseau de pairs.
 5. **Le funnel est piloté par la formation, pas par la découverte — la signature est dans les activités.** L'Équation réduite (pivot des formations) talonne la vitrine Stat en utilisateurs distincts cliquant vers Capytale. Le contenu réellement poussé en classe est celui montré en formation, pas celui qui ranke en organique.
@@ -184,11 +213,12 @@ Profil-type du prof qui va au bout : un **clic ressource suivi d'un clic Capytal
 
 ## 11. Recommandations opérationnelles
 
-1. **Relancer le réservoir site-only en sursis (~148 établissements à intention non aboutie),** à la **rentrée de septembre** (créneau de déploiement), en mettant en avant le **guide de connexion Capytale** (74 % de ses lecteurs cliquent ensuite vers Capytale — le meilleur marqueur de passage à l'acte).
-2. **Arbitrer l'allocation du présentiel : sortir des terrains déjà conquis.** Prioriser les établissements **vierges d'usage Capytale** (mesurable a priori), et **combiner** les formats — présentiel pour amorcer large, webinaire pour approfondir le noyau motivé — plutôt que les opposer.
-3. **Ouvrir (ou assumer de fermer) la porte collège.** Soit **produire 2-3 activités explicitement collège** (proportionnalité, stats 4e/3e, repérage) pour transformer l'intérêt existant ; soit **assumer le collège comme canal de prescription** et cesser d'en mesurer le ROI à l'aune de la conversion élève. Le statu quo gaspille un contingent de formés réel (Montpellier).
-4. **Capitaliser sur la porte Capytale-directe et le réseau de pairs, pas seulement sur le SEO.** Soigner la **fiche catalogue Capytale** (point d'entrée réel des découvreurs), y placer un lien retour vers les ressources, et **référencer l'Intro à l'IA** sur le site pour la réintégrer au funnel mesurable.
-5. **Instrumenter la conversion au bon grain et au bon moment.** Piloter l'effet formation sur le **proxy établissement-historique-complet** (non biaisé), et **ré-évaluer les cohortes 2026 à la rentrée**, où leur conversion réelle deviendra lisible. Ne jamais comparer cohortes mûres et récentes sur le clic.
+1. **Prioriser les formations établissement-ciblées sur les journées de masse.** Le facteur ~6 d'aboutissement (59 % vs 10 % des établissements) est le levier le plus net du rapport — à confirmer sur une base plus large (22 établissements ciblés à ce jour). Former 3-4 collègues d'un même établissement autour d'un projet local convertit massivement mieux que les journées académiques dispersées (IREM, Labomaths) où chaque prof repart seul. Réorienter une part de l'effort « masse » vers le ciblage établissement.
+2. **Traiter le pré-service comme un canal distinct, à horizon décalé.** Ne plus diluer le taux présentiel avec ENS_25 / MEEF (20 % de l'effectif présentiel, 0 % d'usage immédiat par construction) : les compter à part, avec un objectif d'engagement et un suivi à T+1 an (première titularisation / premier établissement), pas d'usage classe immédiat.
+3. **Déplacer le KPI de l'intention vers le passage à l'acte.** L'intention déclarée (6/99 réalisées) ne pilote rien à court terme. Suivre plutôt le **délai médian formation → 1re séance (~27 j)** et relancer activement, à **J+45**, les profs formés dont l'établissement n'a rien déclenché (85/93 intentions bloquées là). Rendre le module **Intro à l'IA** visible dans le formulaire pour aligner intention et usage réel.
+4. **Relancer le réservoir site-only en sursis (~148 établissements à intention non aboutie)** à la **rentrée de septembre** (créneau de déploiement), avec le **guide de connexion Capytale** en avant (74 % de ses lecteurs cliquent ensuite vers Capytale — le meilleur marqueur de passage à l'acte).
+5. **Capitaliser sur la porte Capytale-directe et le réseau de pairs, pas seulement sur le SEO.** Soigner la **fiche catalogue Capytale** (point d'entrée réel des découvreurs), y placer un lien retour, et référencer l'Intro à l'IA sur le site.
+6. **Ne pas attribuer l'usage présentiel à la formation sans correction d'endogénéité** (9/26 succès présentiels la précèdent), et **ouvrir ou assumer de fermer la porte collège** (cf. §8) : produire 2-3 activités calées 6e-3e, ou traiter le collège comme canal de prescription.
 
 ---
 
@@ -196,7 +226,11 @@ Profil-type du prof qui va au bout : un **clic ressource suivi d'un clic Capytal
 
 - **Aucun identifiant commun.** Appariement individuel inféré (46 paires, dont 29 confiance A) ; grain robuste = établissement + cohorte. 2 UAI portent 2 comptes Capytale appariés (attribution prof ambiguë). 11/46 paires ont une causalité inversée (clone avant clic site).
 - **Fenêtre de tracking au 27 nov. 2025.** Clics/modules sous-capturés avant ; comparaisons mûres/récentes sur le clic invalides. La conversion établissement (historique complet) n'est pas biaisée.
-- **Endogénéité des formations.** On forme des acquis (10/27 établissements présentiel à usage utilisaient déjà Capytale avant). Aucun chiffre n'est un effet causal net ; tout écart mêle causalité, auto-sélection et récence.
+- **Typage formation réel (depuis le 2ᵉ chargement).** Les 4 catégories (nouveau/présentiel/webinaire/ancienne vague) viennent de `formation-codes` via `trainedFormation`. Les **147 « ancienne vague »** (formés avant le 15/01/2026, 2 codes placeholder à date factice 1984) ont **type et date inconnus** — tout chiffre les concernant est indicatif. Correction par rapport au v1, où ils gonflaient le webinaire.
+- **Deux grains à ne pas confondre.** L'effet formation par *type* (§3, tableau du haut) est au **grain prof** (chaque prof formé = une unité). La typologie par *nature* est au **grain établissement distinct** (sinon plusieurs collègues d'un même lycée gonflent le taux : établissement-ciblée 67 % au grain prof → **59 % au grain établissement**). La **base** de l'établissement-ciblée est petite (22 établissements) et 2 cohortes déclarent peu d'UAI (Lille 6/40, Amiens 1/19). Hiérarchie et facteur (~6) robustes ; chiffres = ordres de grandeur.
+- **Typologie « nature » subjective.** Établissement-ciblée vs académique-de-masse repose sur une règle (mots-clés + ratio profs/UAI) ; des cas borderline portent une part du facteur → **ordre de grandeur robuste**, pas chiffre exact.
+- **Redemptions limitées à 2026 ; intention récente.** Les 239 validations datent toutes du ≥ 15/01/2026 et visent souvent un usage à venir : le 6/99 d'intentions réalisées est plombé par la récence, pas un taux d'échec définitif. Effectifs minces (29 déclarants, 3 réalisateurs).
+- **Endogénéité des formations.** On forme des acquis (9/26 établissements présentiel à usage utilisaient déjà Capytale avant). Aucun chiffre n'est un effet causal net ; tout écart mêle causalité, auto-sélection et récence. Le pré-service (ENS/MEEF, 0 % d'usage par construction) ne doit pas être lu comme un échec.
 - **Funnel : ne pas double-compter.** 188 des 631 formés sont newsletter-only : formés = 23 % du total, 26 % des comptes complets ; ne pas enchaîner 1 712 → 631.
 - **Deux portes, deux définitions d'empreinte.** Capytale-direct (77, grain `uai_teach`, borne haute 166) ; site-only (509, empreinte `uai_teach`∪`uai_el`). Comparabilité à manier avec prudence.
 - **`clicked_capytale = 337`** dépend de la définition (rss `/web/b/` ; events `resourceType=capytale` = 306 ; union 360). Tous les taux restent dans ~19-21 %.
@@ -211,6 +245,6 @@ Profil-type du prof qui va au bout : un **clic ressource suivi d'un clic Capytal
 ## 13. Méthode, fichiers et reproductibilité
 
 Pipeline dédié dans `enquete_usages_2026/volet2/` :
-`build_payload_canonical.py` → `compute_cross_facts.py` → `match_individuals.py` → `make_charts_volet2.py`, plus `workflow_volet2.js` (orchestration multi-agents : 8 deep-dives → vérification adversariale → synthèse). Définitions canoniques : **`DEFINITIONS_VOLET2.md`**. Source de vérité des chiffres : **`data/facts_cross.json`**. Sorties pseudonymisées : `data/match_candidates.csv` (site = `S####`, Capytale = md5[:8]), `data/capytale_by_uai_*.csv`, `data/presentiel_etabs.csv`.
+`build_payload_canonical.py` → `compute_cross_facts.py` → `build_formation_cohorts.py` → `match_individuals.py` → `make_charts_volet2.py`, plus deux workflows multi-agents (`workflow_volet2.js` : 8 deep-dives → vérif → synthèse ; `workflow_formation.js` : intégration des données de formation → vérif → « ce qui change »). Le **2ᵉ chargement** a ajouté quatre collections (`formation-codes`, `formation-redemptions`, `modules`, `etablissements`) permettant le **typage formation réel** (§3) et le typage de tous les UAI. Définitions canoniques : **`DEFINITIONS_VOLET2.md`**. Sources de vérité : **`data/facts_cross.json`** (croisement) et **`data/facts_formation.json`** (cohortes/intention) ; cohortes détaillées dans `data/cohorts.csv`. Sorties pseudonymisées : `data/match_candidates.csv` (site = `S####`, Capytale = md5[:8]), `data/capytale_by_uai_*.csv`, `data/presentiel_etabs.csv`.
 
 **Sécurité.** Le snapshot Payload contient des données personnelles : il reste local (gitignore), n'est jamais committé, et aucune sortie versionnée/publiée ne contient nom, prénom ou e-mail. Aucune ré-identification.

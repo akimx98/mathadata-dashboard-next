@@ -5,7 +5,7 @@ import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 
-D="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026"
+D="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/volet1"
 F=json.load(open(f"{D}/data/facts.json"))
 sess=pd.read_csv(f"{D}/data/sessions.csv")
 te=pd.read_csv(f"{D}/data/teachers.csv")

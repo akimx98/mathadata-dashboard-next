@@ -38,7 +38,7 @@ Aucun identifiant commun : comptes Capytale = ENT anonymes. L'appariement indivi
 - Croisement : /Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/volet2/data/facts_cross.json
 - Tables : volet2/data/capytale_by_uai_teach.csv, capytale_by_uai_el.csv, presentiel_etabs.csv, match_candidates.csv (pseudonymise), match_validation.json
 - Table de travail users (PII-free, id payload + activite, SANS nom/email) : /private/tmp/claude-502/-Users-akim-Documents-MathAData-Git-mathadata-dashboard-next/49f4f306-c2bb-43a0-af8f-f1b5ce99e908/scratchpad/payload_users_work.csv
-- Volet 1 (Capytale seul, deja produit) : enquete_usages_2026/data/facts.json (overview/growth/...) et facts_teachers.json (401 engages -> 224 enseignants -> 177 testeurs, +105% eleves, 5854 eleves, IPS, geo).
+- Volet 1 (Capytale seul, deja produit) : enquete_usages_2026/volet1/data/facts.json (overview/growth/...) et facts_teachers.json (401 engages -> 224 enseignants -> 177 testeurs, +105% eleves, 5854 eleves, IPS, geo).
 
 ## METHODO & SECURITE (IMPERATIF)
 - Tu PEUX lire le snapshot PII pour calculer, mais tes SORTIES ne doivent contenir AUCUN nom/prenom/email. Designer les profs par code (S####), commune/academie, etablissement (nom d'etab OK car public), ou compte Capytale md5[:8]. Pas de re-identification.

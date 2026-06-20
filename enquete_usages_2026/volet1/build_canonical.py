@@ -7,7 +7,7 @@ Produit des tables canoniques exploitables par tous les analystes.
 import pandas as pd, numpy as np, json, os
 
 BASE = "/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/public/data"
-OUT  = "/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/data"
+OUT  = "/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/volet1/data"
 os.makedirs(OUT, exist_ok=True)
 
 # ---------------------------------------------------------------- activités

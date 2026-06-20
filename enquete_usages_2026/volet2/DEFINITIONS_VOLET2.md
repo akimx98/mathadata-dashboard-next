@@ -23,10 +23,22 @@ Le tracking clics/sessions/events ne commence que **~27 nov 2025**. Conséquence
 - Les métriques de clic (`clicked_cap`, `active`, profondeur de consultation) **sous-estiment** l'usage des comptes plus anciens → toujours préciser « toutes dates » vs **cohorte trackable** (comptes créés après le 27 nov 2025).
 - La conversion au **grain établissement** (un UAI a-t-il un usage ÉLÈVE Capytale ?) s'appuie sur l'**historique Capytale complet 2023→2026** : **non biaisée**. C'est le proxy d'aboutissement « jusqu'à la classe ».
 
+## Collections de formation (ajout du 20 juin 2026, 2ᵉ chargement)
+Quatre collections sont arrivées et remplacent l'inférence par les vraies données :
+- **`formation-codes.json`** (45) : 1 ligne = 1 session de formation. `id`, `label` (nom réel : `202410_LILLE`, `ENS_25`, `Web Basque 27 nov 2025`, `MEEF INSPÉ Paris`…), `typeFormation` (`presentiel` 22 / `webdecouv` 21 / `webinaire` 2), `formationDate` (vraie date, 2024-10 → 2026-09), `disabled`, `participants[]` (épars, 79 — **ne pas** utiliser comme roster).
+- **`formation-redemptions.json`** (239) : validations. `user`, `code`→code, `formationDate`, `intention.modules` (modules déclarés). Couvre surtout **2026** ; 236 users distincts, 1 seul avec 2 validations.
+- **`modules.json`** (7) : `id`→nom. **Mapping module→activité Capytale** : 1=Stat(3518185), 2=Équation réduite(3515488), 3=Repère/milieu/distance(6659633), 4=Stat fœtus(6944347), 5=1ʳᵉ produit scalaire(5862412), 6=2nde vecteur directeur(8790616), 7=Intro IA(2548348).
+- **`etablissements.json`** (13 040) : `uai`→{`nom`,`ville`,`academie`,`type`(college 7655 / lycee 5385)}. **Type tous les UAI** (corrige les établissements non typés du Volet 2 v1).
+
+### Typage formation RÉEL (remplace `trainedTypeFormation` brut)
+Résoudre `users.trainedFormation` → `formation-codes.id` → type/date/label réels. **4 catégories (`fcat`)** :
+- `nouveau` (2084), `presentiel` (363), `webinaire` (121 = webdecouv+webinaire genuine), **`ancienne_vague` (147)**.
+- **CORRECTION DE FOND** : les 147 `ancienne_vague` = formés **avant le système de codes (15/01/26)**, regroupés dans 2 codes placeholder à date bidon `1984-01-01` (labels « Tous les anciens formés… » / « A classer »), **type & date réels INCONNUS**. Le Volet 2 v1 les comptait à tort comme `webdecouv`/webinaire → gonflait l'usage du webinaire. Désormais **séparés**.
+- **Nature ≠ type** : sous le `presentiel` se cachent des cohortes **pré-service** (`ENS_25` 52, `MEEF INSPÉ` 13 — stagiaires sans établissement, 0 % d'usage classe possible) qui **diluent** le présentiel. Distinguer pré-service / établissement-ciblée / académique-de-masse / distanciel.
+
 ## Modèle des comptes site
-- `statut` : `nouveau` (2086) / `forme` (637) / `mentor` (1). Pour l'analyse binaire : **formé = forme ∪ mentor** (638).
-- `trainedTypeFormation` : **`presentiel`** (366, formation en établissement) / **`webdecouv`** (270, webinaire découverte). 2 formés sans type.
-- `trainedDateFormation` : date de la **session** de formation. **Sentinelle bidon `1984-01-01T12:00:00Z`** (149 cas `webdecouv`) ⟹ traiter comme **manquante**.
+- `statut` : `nouveau` / `forme` / `mentor`. Binaire : **formé = forme ∪ mentor** (631 hors 9 exclus).
+- `trainedDateFormation` (virtuel) avait une **sentinelle bidon `1984-01-01`** (149 cas) → désormais résolue via `formation-codes` (vraie date pour les cohortes datées ; reste inconnue pour `ancienne_vague`).
 - `newsletter_only` (1003) : compte créé via le seul formulaire newsletter (repasse à `false` à la 1ʳᵉ authentification). **Comptes complets** = 1721.
 - `exclude_from_analytics` (9) : comptes équipe/test → **exclure** des KPI.
 - `uai` renseigné pour 803 comptes seulement ; `academie` pour 1749. Normaliser les académies (accents : `Créteil`≡`Creteil`).

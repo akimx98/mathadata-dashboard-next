@@ -31,29 +31,55 @@ def sy(d):
     if pd.isna(d): return 'NA'
     y=d.year if d.month>=8 else d.year-1; return f"{y}-{y+1}"
 
-# ---------- annuaire ----------
+# ---------- annuaire (IPS/commune/dept) + referentiel site etablissements (type/academie, 13040) ----------
 ann=pd.read_csv(f"{BASE}/annuaire_etablissements.csv",dtype=str,keep_default_na=False)
 A={r['uai']:r for _,r in ann.iterrows()}
 def aget(u,k): return A.get(u,{}).get(k,'') if u else ''
+etab_ref=json.load(open(f"{SNAP}/etablissements.json"))
+REF_TYPE={e['uai']:e.get('type','') for e in etab_ref}   # college|lycee, 13040 etabs
+REF_VILLE={e['uai']:e.get('ville','') for e in etab_ref}
+REF_ACAD={e['uai']:e.get('academie','') for e in etab_ref}
+def etype(u):  # type d'etab : referentiel site d'abord (plus complet), sinon annuaire
+    return REF_TYPE.get(u) or aget(u,'type_etablissement') or ''
+
+# ---------- formation-codes : typage reel des formations ----------
+fcodes={c['id']:c for c in json.load(open(f"{SNAP}/formation-codes.json"))}
+# codes placeholder = anciens formes (date sentinelle 1984) -> type/date inconnus
+PLACEHOLDER={cid for cid,c in fcodes.items() if str(c.get('formationDate','')).startswith('1984')}
+def fcat_of(statut, code_id):
+    if statut not in ('forme','mentor'): return 'nouveau'
+    if code_id is None or code_id in PLACEHOLDER: return 'ancienne_vague'  # forme avant 15/01/26, type inconnu
+    t=fcodes.get(code_id,{}).get('typeFormation')
+    if t=='presentiel': return 'presentiel'
+    if t in ('webdecouv','webinaire'): return 'webinaire'   # distanciel (webdecouv + webinaire)
+    return 'ancienne_vague'
+def fdate_of(code_id):
+    if code_id is None or code_id in PLACEHOLDER: return None
+    d=fcodes.get(code_id,{}).get('formationDate')
+    return d if (d and not str(d).startswith('1984')) else None
+def flabel_of(code_id): return fcodes.get(code_id,{}).get('label','') if code_id else ''
 
 # ---------- payload users ----------
 users=json.load(open(f"{SNAP}/users.json"))
 U=pd.DataFrame(users)
 U['createdAt']=to_dt(U['createdAt']); U['updatedAt']=to_dt(U['updatedAt'])
 U['last_login']=to_dt(U['last_login'])
-U['fdate']=to_dt(U['trainedDateFormation'])
-U.loc[U['fdate'].dt.strftime('%Y-%m-%d')==SENTINEL,'fdate']=pd.NaT  # drop sentinel
 U['exclude']=U['exclude_from_analytics'].fillna(False).astype(bool)
 U['is_formed']=U['statut'].isin(['forme','mentor'])
-U['ftype']=U['trainedTypeFormation'].where(U['trainedTypeFormation'].isin(['presentiel','webdecouv']),None)
+# typage formation REEL via formation-codes (remplace trainedTypeFormation brut + sentinelle 1984)
+U['fcode']=U['trainedFormation']
+U['fcat']=[fcat_of(s,c) for s,c in zip(U['statut'],U['fcode'])]
+U['ftype']=U['fcat'].where(U['fcat'].isin(['presentiel','webinaire']),None)  # type connu uniquement
+U['fcode_label']=U['fcode'].map(flabel_of)
+U['fdate']=to_dt(pd.Series([fdate_of(c) for c in U['fcode']]))
 U['uai']=U['uai'].fillna('')
 U['acad']=U['academie'].fillna('')
 # etab enrich
-U['etab_type']=U['uai'].map(lambda u: aget(u,'type_etablissement'))
+U['etab_type']=U['uai'].map(etype)
 U['etab_secteur']=U['uai'].map(lambda u: aget(u,'secteur'))
 U['etab_dep']=U['uai'].map(lambda u: aget(u,'departement'))
 U['etab_ips']=U['uai'].map(lambda u: aget(u,'ips'))
-U['etab_commune']=U['uai'].map(lambda u: aget(u,'commune'))
+U['etab_commune']=U['uai'].map(lambda u: aget(u,'commune') or REF_VILLE.get(u,''))
 U['acct_month']=U['createdAt'].dt.tz_convert('Europe/Paris').dt.strftime('%Y-%m')
 U['fmonth']=U['fdate'].dt.tz_convert('Europe/Paris').dt.strftime('%Y-%m')
 
@@ -132,7 +158,7 @@ CU_el.to_csv(f"{OUT}/capytale_by_uai_el.csv",index=False)
 
 # ---------- save working (PII-free: id only, no name/email) ----------
 UU=UU[~UU['exclude']].copy()   # retirer les comptes equipe/test (exclude_from_analytics)
-keep=['id','statut','is_formed','ftype','fdate','fmonth','createdAt','acct_month',
+keep=['id','statut','is_formed','fcat','ftype','fcode','fcode_label','fdate','fmonth','createdAt','acct_month',
       'newsletter','newsletter_only','acad','uai','etab_type','etab_secteur','etab_dep',
       'etab_ips','etab_commune','hors_lycee','lycee_ville','last_login',
       'n_sessions','n_module_views','n_video_views','n_res_clicks','n_cap_clicks',
@@ -141,5 +167,6 @@ W=UU[keep].copy()
 W.to_csv(f"{SCRATCH}/payload_users_work.csv",index=False)
 print("users:",len(UU),"| excluded:",len(excl),"| formed:",int(UU['is_formed'].sum()),
       "| clicked_cap:",int(UU['clicked_cap'].sum()))
+print("fcat:",{k:int(v) for k,v in UU['fcat'].value_counts().items()})
 print("capytale uai_teach groups:",len(CU_teach),"| uai_el groups:",len(CU_el))
 print("wrote working table ->",f"{SCRATCH}/payload_users_work.csv")

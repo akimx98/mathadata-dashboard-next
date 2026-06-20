@@ -9,7 +9,7 @@ Produit: data/engaged_teachers.csv + data/facts_teachers.json
 """
 import pandas as pd, numpy as np, json
 BASE="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/public/data"
-OUT="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/data"
+OUT="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/volet1/data"
 DEMO='c81e728d9d4c2f636f067f89cc14862c'; PIO='cfcd208495d565ef66e7dff9f98764da'
 
 df=pd.read_csv(f"{BASE}/capytale_fresh_20260619.csv",dtype=str,keep_default_na=False)

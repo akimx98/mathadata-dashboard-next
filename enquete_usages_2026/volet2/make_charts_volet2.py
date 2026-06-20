@@ -17,7 +17,7 @@ def save(fig,name):
 
 # 1. PIPELINE FUNNEL (spine)
 ov=F['overview']
-v1=json.load(open("/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/data/facts_teachers.json"))
+v1=json.load(open("/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/volet1/data/facts_teachers.json"))
 stages=[('Comptes crees',ov['accounts_total'],SLATE),
         ('Comptes complets',ov['full_accounts'],BLUE),
         ('Formes',ov['formed_total'],TEAL),
@@ -38,7 +38,7 @@ save(fig,"01_pipeline_funnel.png")
 
 # 2. EFFET FORMATION grouped bars
 fe=F['formation_effect']
-groups=[('Non formes',fe['nouveau'],SLATE),('Presentiel',fe['forme_presentiel'],TEAL),('Webinaire',fe['forme_webdecouv'],BLUE)]
+groups=[('Non formes',fe['nouveau'],SLATE),('Presentiel',fe['forme_presentiel'],TEAL),('Webinaire',fe['forme_webinaire'],BLUE),('Anc. vague',fe['forme_ancienne_vague'],AMBER)]
 metrics=[('% clic Capytale','pct_clicked_cap'),('% actif sur le site','pct_active'),
          ('% etab. avec usage classe','pct_uai_capytale_usage')]
 import numpy as np
@@ -69,10 +69,10 @@ a1.bar(['Site-first','Capytale-direct'],[td['capytale_uai_with_site_account'],td
 a1.set_title(f"Etabs avec usage Capytale ({td['capytale_uai_teach']})")
 for i,v in enumerate([td['capytale_uai_with_site_account'],td['capytale_uai_no_site_account']]):
     a1.text(i,v+1,str(v),ha='center',fontweight='bold')
-a2.bar(['Usage classe','Sans trace classe'],[td['site_uai_with_capytale_usage'],td['site_uai_no_capytale_footprint']],
+a2.bar(['Avec trace','Sans trace classe'],[td['site_uai_with_capytale_footprint'],td['site_uai_no_capytale_footprint']],
        color=[TEAL,ROSE])
 a2.set_title(f"Etabs declares cote site ({td['site_uai_total']})")
-for i,v in enumerate([td['site_uai_with_capytale_usage'],td['site_uai_no_capytale_footprint']]):
+for i,v in enumerate([td['site_uai_with_capytale_footprint'],td['site_uai_no_capytale_footprint']]):
     a2.text(i,v+4,str(v),ha='center',fontweight='bold')
 for a in (a1,a2): a.grid(axis='x',visible=False)
 fig.suptitle("Les deux portes et les deux fuites",fontweight='bold')
