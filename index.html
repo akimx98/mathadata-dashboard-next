@@ -43,17 +43,8 @@
     margin:30px 0 12px;display:flex;align-items:center;gap:12px}
   .skip::after{content:"";flex:1;height:1px;background:var(--line)}
 
-  /* dashboard interactif (live) — mis en avant */
-  .featured{margin-top:26px;padding:24px 26px;border:1px solid #cdd0f3;border-top:4px solid var(--indigo);
-    background:linear-gradient(180deg,var(--indigo-soft),var(--paper) 60%)}
-  .featured .tag{color:var(--indigo);display:inline-flex;align-items:center;gap:7px}
-  .featured .live{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(14,148,136,.18)}
-  .featured h2{font-size:23px}
-  .featured p{font-size:15px;max-width:62ch}
-  .featured .go{color:var(--indigo)}
-
-  /* les 2 volets */
-  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
+  /* les 2 volets (principaux) */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   @media(max-width:720px){.duo{grid-template-columns:1fr}}
   .duo .card{padding:24px 24px 22px;border-top:4px solid var(--line)}
   .v1{border-top-color:var(--indigo)!important} .v1 .tag{color:var(--indigo)} .v1 .go{color:var(--indigo)}
@@ -61,13 +52,16 @@
   .duo .card h2{font-size:21px}
   .duo .card p{font-size:14.5px}
 
-  /* complément (typologie) — secondaire */
-  .complement{padding:18px 22px;border-left:4px solid var(--amber);display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
-  .complement .tag{color:var(--amber)}
+  /* compléments — secondaires, sous les volets */
+  .complement{padding:18px 22px;border-left:4px solid var(--line);display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .complement + .complement{margin-top:12px}
   .complement h2{font-size:18px;margin:6px 0 4px}
   .complement p{font-size:14px;margin:0 0 10px;max-width:64ch}
-  .complement .go{color:var(--amber)}
   .complement .ctext{flex:1;min-width:240px}
+  .complement.typo{border-left-color:var(--amber)} .complement.typo .tag,.complement.typo .go{color:var(--amber)}
+  .complement.live{border-left-color:var(--indigo)} .complement.live .tag,.complement.live .go{color:var(--indigo)}
+  .complement.live .tag{display:inline-flex;align-items:center;gap:7px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(14,148,136,.18)}
 
   footer{padding:30px 0 60px;color:var(--muted);font-size:12.5px;font-family:var(--font-mono);
     border-top:1px solid var(--line);margin-top:26px}
@@ -78,15 +72,8 @@
   <header>
     <span class="eyebrow">MathAData · données Capytale &amp; mathadata.fr</span>
     <h1>Enquête sur les usages de MathAData</h1>
-    <p class="lede">Le tableau de bord interactif en ligne, et deux volets d'analyse du déploiement réel (extraction juin 2026).</p>
+    <p class="lede">Deux volets d'analyse du déploiement réel, à partir des données d'usage (extraction juin 2026).</p>
   </header>
-
-  <a class="card featured" href="https://mathadata-dashboard-next.vercel.app/">
-    <div class="tag"><span class="live"></span> Dashboard interactif · en ligne</div>
-    <h2>Explorer les données en direct</h2>
-    <p>Le tableau de bord interactif : cartes, filtres et graphiques d'usage mis à jour à partir des données. À explorer soi-même.</p>
-    <span class="go">Ouvrir le dashboard →</span>
-  </a>
 
   <div class="skip">Les analyses</div>
   <div class="duo">
@@ -104,12 +91,20 @@
     </a>
   </div>
 
-  <div class="skip">Complément</div>
-  <a class="card complement" href="typologie.html">
+  <div class="skip">Compléments</div>
+  <a class="card complement typo" href="typologie.html">
     <div class="ctext">
       <div class="tag">Typologie</div>
       <h2>Cinq façons d'enseigner</h2>
       <p>En complément des deux volets : une typologie des enseignants en cinq profils d'usage.</p>
+    </div>
+    <span class="go">Ouvrir →</span>
+  </a>
+  <a class="card complement live" href="https://mathadata-dashboard-next.vercel.app/">
+    <div class="ctext">
+      <div class="tag"><span class="dot"></span> Dashboard interactif · en ligne</div>
+      <h2>Explorer les données en direct</h2>
+      <p>Le tableau de bord interactif : cartes, filtres et graphiques d'usage, à explorer soi-même.</p>
     </div>
     <span class="go">Ouvrir →</span>
   </a>
