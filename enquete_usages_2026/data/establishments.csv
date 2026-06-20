@@ -1,0 +1,183 @@
+uai,nom,type_etab,secteur,academie,departement,commune,ips,lat,lon,n_profs,n_profs_taught,n_profs_tested_only,n_eleves,n_eleves_uniq,n_sessions,n_tests,sy_set
+0020034B,Lycée polyvalent Pierre Méchain,lycee,Public,Amiens,Aisne,Laon,98.2,49.56085698931031,3.634550107206578,1,1,0,1,1,1,1,2025-2026
+0060014H,Lycée général et technologique Jules Ferry,lycee,Public,Nice,Alpes-Maritimes,Cannes,113.3,43.55967544894346,7.021858225692245,1,0,1,0,0,0,1,2025-2026
+0060031B,Lycée général et technologique Albert Calmette,lycee,Public,Nice,Alpes-Maritimes,Nice,117.5,43.70401307338582,7.2713763871002195,1,1,0,28,28,1,0,2025-2026
+0060668U,Lycée général privé Mont Saint Jean,lycee,Privé,Nice,Alpes-Maritimes,Antibes,143.6,43.58099906733003,7.111349758581682,1,1,0,25,25,5,0,2025-2026
+0080804F,"Lycée d'enseignement général, technologique et professionnel agricole de Rethel",lycee,Public,Reims,Ardennes,Rethel,,49.5298392993156,4.374310087231184,1,1,0,12,12,1,0,2023-2024
+0100022V,Lycée général et technologique Chrestien de Troyes,lycee,Public,Reims,Aube,Troyes,107.5,48.2697098160697,4.077339374908083,2,2,0,51,51,3,0,2025-2026
+0110023R,Lycée polyvalent Louise Michel,lycee,Public,Montpellier,Aude,Narbonne,100.7,43.18958280119593,3.0194500406021474,1,1,0,76,50,6,0,2025-2026
+0120006S,Lycée polyvalent La Découverte,lycee,Public,Toulouse,Aveyron,Decazeville,102.7,44.56829786712825,2.255100258607372,1,1,0,20,20,1,1,2025-2026
+0130010R,Lycée polyvalent Montmajour,lycee,Public,Aix-Marseille,Bouches-du-Rhône,Arles,91.8,43.6967512399414,4.6390382745872465,1,1,0,11,11,2,3,2024-2025
+0130051K,Lycée général et technologique Marie Curie,lycee,Public,Aix-Marseille,Bouches-du-Rhône,Marseille  5e  Arrondissement,90.6,43.29373990341497,5.400600554641929,1,1,0,11,11,1,0,2025-2026
+0140013N,Lycée général et technologique Malherbe,lycee,Public,Normandie,Calvados,Caen,129.1,49.17474566925929,-0.37308973026177494,1,1,0,24,24,2,2,2025-2026
+0140014P,Lycée général et technologique Augustin Fresnel,lycee,Public,Normandie,Calvados,Caen,113.8,49.1638472588597,-0.35519374304232526,1,1,0,50,32,3,2,2024-2025|2025-2026
+0180005H,Lycée général Alain Fournier,lycee,Public,Orléans-Tours,Cher,Bourges,108.6,47.10050314893511,2.4137697241098746,1,1,0,12,12,4,0,2023-2024
+0180008L,Lycée polyvalent Pierre-Emile Martin - Lycée des métiers de l'ingénierie de l'énergie et de l'environnement,lycee,Public,Orléans-Tours,Cher,Bourges,104.5,47.07524842409908,2.405960207722748,1,0,1,0,0,0,1,2025-2026
+0212045J,Lycée polyvalent Marey,lycee,Public,Dijon,Côte-d'Or,Beaune,106.9,47.02991281909782,4.850879519017569,1,1,0,97,71,3,5,2025-2026
+0230051F,Lycée polyvalent Jean Favard,lycee,Public,Limoges,Creuse,Guéret,103.8,46.16763472828431,1.8557334973159072,1,1,0,84,84,4,3,2025-2026
+0250010A,Lycée général et technologique Louis Pergaud,lycee,Public,Besançon,Doubs,Besançon,107.6,47.264557933036464,6.042339373613688,1,1,0,59,50,6,0,2023-2024|2024-2025
+0260015A,Lycée général et technologique Alain Borne,lycee,Public,Grenoble,Drôme,Montélimar,112.6,44.55451964466936,4.745179968794982,1,1,0,11,11,1,0,2025-2026
+0261505V,Lycée polyvalent Algoud-Laffemas - Lycée des métiers du numérique,lycee,Public,Grenoble,Drôme,Valence,106.7,44.918186245177196,4.916908181249479,1,1,0,19,19,3,0,2024-2025
+0271582Y,Lycée général et technologique Marc Bloch,lycee,Public,Normandie,Eure,Val-de-Reuil,100.8,49.2682488269445,1.2026898590201793,1,1,0,3,3,1,0,2025-2026
+0280021W,Lycée polyvalent Edouard Branly - Lycée des métiers des sciences et de l'industrie,lycee,Public,Orléans-Tours,Eure-et-Loir,Dreux,102.3,48.73089785965829,1.3783688238619873,1,1,0,8,8,1,0,2025-2026
+0281047L,Lycée général et technologique Fulbert,lycee,Public,Orléans-Tours,Eure-et-Loir,Chartres,107.7,48.44571828486869,1.5081499052757152,1,1,0,20,20,2,1,2025-2026
+0300052U,Lycée polyvalent André Chamson,lycee,Public,Montpellier,Gard,Le Vigan,103.7,43.98961960667231,3.6011304524320003,1,0,1,0,0,0,1,2025-2026
+0300950V,Lycée polyvalent Albert Einstein,lycee,Public,Montpellier,Gard,Bagnols-sur-Cèze,102.7,44.161732020049385,4.6117063195147985,2,2,0,33,33,3,2,2024-2025
+0301722J,Lycée général et technologique Jean Vilar,lycee,Public,Montpellier,Gard,Villeneuve-lès-Avignon,123.0,43.980979359209876,4.79051993015492,1,0,1,0,0,0,1,2025-2026
+0301862L,Lycée polyvalent Lucie Aubrac,lycee,Public,Montpellier,Gard,Sommières,120.3,43.7774617011605,4.067523627131194,1,1,0,37,31,3,0,2025-2026
+0310036W,Lycée général Pierre de Fermat,lycee,Public,Toulouse,Haute-Garonne,Toulouse,141.8,43.6032751508944,1.4398952901892104,2,2,0,98,78,6,0,2024-2025
+0310047H,Lycée général et technologique Ozenne,lycee,Public,Toulouse,Haute-Garonne,Toulouse,126.4,43.60964697502873,1.4417296932885342,1,1,0,18,11,2,0,2024-2025
+0311323V,Lycée général et technologique Joséphine Baker,lycee,Public,Toulouse,Haute-Garonne,Toulouse,101.2,43.584518442901285,1.3975365460346079,1,1,0,4,4,1,2,2024-2025
+0312746S,Lycee polyvalent Marie Louise Dissard Françoise,lycee,Public,Toulouse,Haute-Garonne,Tournefeuille,125.5,43.576689708797176,1.3126805141947637,1,1,0,4,4,1,0,2025-2026
+0313083H,Lycée polyvalent Simone de Beauvoir,lycee,Public,Toulouse,Haute-Garonne,Gragnague,129.5,43.695220304399406,1.5799314862887304,1,1,0,33,33,2,0,2024-2025|2025-2026
+0313228R,Lycée polyvalent Lydie Salvayre,lycee,Public,Toulouse,Haute-Garonne,Auterive,,43.344804976943344,1.4747107086472113,1,1,0,21,21,1,0,2025-2026
+0320002D,Lycée général et technologique Pardailhan,lycee,Public,Toulouse,Gers,Auch,118.6,43.65382826736935,0.5777504886624886,1,1,0,4,4,1,1,2024-2025
+0320025D,Lycée polyvalent d'Artagnan - Lycée des métiers,lycee,Public,Toulouse,Gers,Nogaro,97.3,43.754191900515664,-0.02795020609659151,1,1,0,1,1,1,0,2025-2026
+0331668J,Lycée professionnel Marcel Dassault,lycee,Public,Bordeaux,Gironde,Mérignac,92.4,44.83486785364598,-0.6489183011970837,1,1,0,31,31,3,0,2023-2024|2024-2025
+0332745E,Lycée général Jean Monnet,lycee,Public,Bordeaux,Gironde,Blanquefort,121.8,44.91634371056325,-0.6347964845646115,1,1,0,28,28,1,0,2025-2026
+0333273D,Lycée polyvalent Vaclav Havel,lycee,Public,Bordeaux,Gironde,Bègles,115.8,44.78623395902917,-0.5635368651660392,3,3,0,334,283,16,0,2025-2026
+0333583R,Lycée polyvalent Robert Badinter,lycee,Public,Bordeaux,Gironde,Créon,125.5,44.767211833634036,-0.3633625380118293,1,1,0,31,31,1,1,2025-2026
+0340002T,Lycée polyvalent Auguste Loubatières,lycee,Public,Montpellier,Hérault,Agde,103.8,43.30007019028133,3.483059564561272,2,0,2,0,0,0,3,2025-2026
+0340039H,Lycée général et technologique Georges Clemenceau,lycee,Public,Montpellier,Hérault,Montpellier,115.0,43.602663456709585,3.873020613002154,1,1,0,94,35,6,0,2025-2026
+0341794R,"Lycée polyvalent Jean-François Champollion, Lycée des métiers de la communication et des usages du numérique",lycee,Public,Montpellier,Hérault,Lattes,118.1,43.586276348733875,3.9312699294410627,1,1,0,78,67,11,1,2024-2025|2025-2026
+0342066L,Lycée polyvalent Jean Jaurès,lycee,Public,Montpellier,Hérault,Saint-Clément-de-Rivière,127.1,43.710865475738224,3.833289619119724,2,0,2,0,0,0,3,2023-2024|2025-2026
+0342090M,Lycée polyvalent victor Hugo,lycee,Public,Montpellier,Hérault,Lunel,117.2,43.68966322044608,4.136117779311383,1,1,0,44,44,4,0,2024-2025|2025-2026
+0350011X,Lycée général et technologique Jean Guéhenno,lycee,Public,Rennes,Ille-et-Vilaine,Fougères,107.3,48.34843579021092,-1.2000949545422874,1,1,0,17,17,2,1,2025-2026
+0350028R,Lycée général et technologique Bréquigny,lycee,Public,Rennes,Ille-et-Vilaine,Rennes,113.3,48.08457249925098,-1.688419551002567,1,0,1,0,0,0,1,2024-2025
+0350710G,Lycée général François-René de Chateaubriand,lycee,Public,Rennes,Ille-et-Vilaine,Rennes,139.1,48.1233633632789,-1.6494796949846533,1,1,0,28,28,1,0,2025-2026
+0352760K,Collège Germaine Tillion,college,Public,Rennes,Ille-et-Vilaine,La Mézière,123.6,48.209620117558444,-1.7442999284505625,1,0,1,0,0,0,1,2025-2026
+0382203N,Lycée polyvalent Pablo Neruda - Lycée des métiers de l'électricité et de ses environnements connectés,lycee,Public,Grenoble,Isère,Saint-Martin-d'Hères,116.9,45.17341324185975,5.761840086943631,1,0,1,0,0,0,2,2023-2024|2024-2025
+0382920T,Lycée général et technologique Marie Curie,lycee,Public,Grenoble,Isère,Echirolles,105.1,45.14620717334296,5.717149823733709,1,1,0,4,4,2,0,2024-2025
+0400933X,Lycée général Sud des Landes,lycee,Public,Bordeaux,Landes,Saint-Vincent-de-Tyrosse,119.4,43.66847664353599,-1.2942923104994875,1,1,0,29,29,3,0,2025-2026
+0420008F,Lycée polyvalent Jérémie de la Rue,lycee,Public,Lyon,Loire,Charlieu,108.1,46.16975983274846,4.1714295732686235,1,1,0,7,7,1,0,2025-2026
+0421788R,Lycée général et technologique du Forez,lycee,Public,Lyon,Loire,Feurs,112.1,45.752524309194484,4.227440522060318,1,1,0,21,19,3,0,2025-2026
+0441552Y,Lycée Polyvalent les Bourdonnières,lycee,Public,Nantes,Loire-Atlantique,Nantes,113.2,47.18616538280837,-1.5174799567161925,1,1,0,42,42,2,3,2025-2026
+0442094M,Lycée Polyvalent Nicolas Appert - Lycée des métiers,lycee,Public,Nantes,Loire-Atlantique,Orvault,124.8,47.25224884428174,-1.6090696887606002,2,2,0,47,40,6,0,2025-2026
+0490001K,Lycée général David d'Angers,lycee,Public,Nantes,Maine-et-Loire,Angers,126.1,47.466223023595994,-0.5444200738515328,2,2,0,24,24,2,0,2024-2025|2025-2026
+0492061Z,Lycée général et technologique Auguste et Jean Renoir,lycee,Public,Nantes,Maine-et-Loire,Angers,121.3,47.47567444696256,-0.5695701307031868,1,1,0,15,15,1,1,2025-2026
+0492089E,Lycée général et technologique Emmanuel Mounier,lycee,Public,Nantes,Maine-et-Loire,Angers,108.0,47.489917408044526,-0.5269851587014079,1,1,0,26,25,2,2,2025-2026
+0492123S,Lycée polyvalent Jean Moulin,lycee,Public,Nantes,Maine-et-Loire,Angers,105.9,47.49133245870875,-0.5499195559262553,1,1,0,28,28,3,0,2025-2026
+0492148U,Lycée général et technologique Jean Bodin,lycee,Public,Nantes,Maine-et-Loire,Les Ponts-de-Cé,114.0,47.4413691161452,-0.5285097047395081,1,1,0,29,29,1,1,2025-2026
+0492430A,Lycée polyvalent Julien Gracq,lycee,Public,Nantes,Maine-et-Loire,Beaupréau-en-Mauges,103.9,47.192347918877395,-0.9926804071890801,1,1,0,12,12,1,1,2025-2026
+0500002F,Lycée Géneral et Téchnologique Emile Littré,lycee,Public,Normandie,Manche,Avranches,109.9,48.67801076044812,-1.3591602020756042,1,1,0,17,17,1,0,2024-2025
+0500035S,Collège Roland Vaudatin,college,Public,Normandie,Manche,Gavray-sur-Sienne,92.6,48.909471026638265,-1.3526035848336662,1,1,0,17,17,5,0,2024-2025
+0540070H,Lycée général et technologique Jacques Callot,lycee,Public,Nancy-Metz,Meurthe-et-Moselle,Vandoeuvre-lès-Nancy,110.9,48.66635879315081,6.16134945280061,1,1,0,2,2,1,1,2024-2025
+0561534N,Lycée général et technologique Benjamin Franklin,lycee,Public,Rennes,Morbihan,Auray,119.4,47.67225559989655,-2.979710208529418,1,1,0,3,3,1,0,2023-2024
+0590011S,Lycée polyvalent Gustave Eiffel - Lycée des métiers,lycee,Public,Lille,Nord,Armentières,111.8,50.68889482830899,2.8709805526447854,2,2,0,61,60,4,2,2024-2025|2025-2026
+0590064Z,Lycée général et technologique Jean-Baptiste Corot,lycee,Public,Lille,Nord,Douai,100.6,50.37451372192315,3.0786206356480013,1,1,0,99,52,11,2,2024-2025|2025-2026
+0590073J,Lycée général et technologique Auguste Angellier,lycee,Public,Lille,Nord,Dunkerque,111.7,51.04742707320568,2.418563018096749,3,2,1,58,58,4,6,2024-2025
+0590093F,Lycée polyvalent Beaupré - Lycée des Métiers de la Plasturgie,lycee,Public,Lille,Nord,Haubourdin,109.1,50.599202793596874,2.9873303455090494,2,2,0,473,431,49,5,2023-2024|2024-2025|2025-2026
+0590101P,Lycée général et technologique des Flandres,lycee,Public,Lille,Nord,Hazebrouck,112.2,50.73117704127288,2.5290609979501575,3,3,0,118,118,11,49,2024-2025|2025-2026
+0590102R,Lycée Professionnel des Monts de Flandre,lycee,Public,Lille,Nord,Hazebrouck,82.9,50.73117704127288,2.5290609979501575,4,3,1,14,9,9,4,2025-2026
+0590110Z,Lycée général et technologique Jean Perrin,lycee,Public,Lille,Nord,Lambersart,116.1,50.6475899494943,3.0391493491656583,2,2,0,53,49,7,2,2023-2024|2024-2025
+0590117G,Lycée général et technologique Louis Pasteur,lycee,Public,Lille,Nord,Lille,115.4,50.642779647074164,3.0701394574229663,4,4,0,263,161,26,3,2023-2024|2024-2025|2025-2026
+0590119J,Lycée général et technologique Faidherbe,lycee,Public,Lille,Nord,Lille,128.8,50.61476444362888,3.0777002640212037,1,1,0,30,30,1,1,2025-2026
+0590121L,Lycée général et technologique César Baggio,lycee,Public,Lille,Nord,Lille,95.8,50.61704679945079,3.0683106686912387,3,2,1,47,37,4,3,2023-2024|2024-2025|2025-2026
+0590122M,Lycée polyvalent Valentine Labbé,lycee,Public,Lille,Nord,La Madeleine,85.9,50.647633412189506,3.072290231459998,1,1,0,1,1,1,0,2024-2025
+0590198V,Lycée professionnel Georges Guynemer,lycee,Public,Lille,Nord,Dunkerque,76.9,51.027301603302405,2.356039773078277,1,1,0,6,6,2,1,2025-2026
+0590223X,Lycée général et technologique du Hainaut,lycee,Public,Lille,Nord,Valenciennes,95.7,50.35766226026153,3.510349990297744,1,1,0,7,5,1,0,2025-2026
+0592921E,Lycée général et technologique privé Saint Rémi,lycee,Privé,Lille,Nord,Roubaix,101.4,50.69421574675568,3.181114656257771,1,1,0,19,19,1,1,2025-2026
+0595867G,Lycée général et technologique international Montebello,lycee,Public,Lille,Nord,Lille,106.5,50.620118605335925,3.0474805569861947,1,1,0,36,36,5,0,2024-2025
+0596925G,Lycée polyvalent Charlotte Perriand,lycee,Public,Lille,Nord,Genech,129.9,50.52269734088659,3.218869763943286,3,3,0,205,141,50,0,2024-2025|2025-2026
+0597005U,Lycée polyvalent du Val de Lys,lycee,Public,Lille,Nord,Estaires,99.4,50.644029993116504,2.7044897620264567,1,1,0,28,28,1,2,2025-2026
+0600002B,Lycée polyvalent Paul Langevin - Lycée des métiers de l'industrie et du génie civil,lycee,Public,Amiens,Oise,Beauvais,102.0,49.4150526818292,2.108599765329404,2,2,0,25,25,4,0,2024-2025
+0600013N,Lycée général et technologique Cassini,lycee,Public,Amiens,Oise,Clermont,110.1,49.383578390347346,2.406360498971291,1,1,0,33,33,2,0,2024-2025|2025-2026
+0600021X,Lycée général et technologique Jules Uhry,lycee,Public,Amiens,Oise,Creil,84.5,49.258621263841796,2.47333063537428,1,1,0,13,13,4,0,2024-2025|2025-2026
+0601826J,Lycée général et technologique Hugues Capet,lycee,Public,Amiens,Oise,Senlis,118.5,49.191623321975094,2.571269631202975,1,1,0,27,27,2,0,2025-2026
+0601863Z,Lycée polyvalent Charles de Gaulle - Lycée des métiers de la restauration et du tourisme,lycee,Public,Amiens,Oise,Compiègne,106.8,49.38532643849857,2.780289962648359,2,1,1,15,15,2,11,2024-2025|2025-2026
+0620006V,Lycée général et technologique Robespierre,lycee,Public,Lille,Pas-de-Calais,Arras,122.1,50.28746924484588,2.7655204011797494,1,1,0,38,38,3,0,2025-2026
+0620140R,Lycée polyvalent Eugène Woillez,lycee,Public,Lille,Pas-de-Calais,Montreuil-sur-Mer,103.0,50.46465147539644,1.7656944156132608,4,4,0,118,100,8,2,2024-2025|2025-2026
+0620189U,Lycée professionnel Pierre de Coubertin,lycee,Public,Lille,Pas-de-Calais,Calais,79.5,50.95670366866296,1.8360201778438683,1,1,0,5,4,2,0,2025-2026
+0622276M,Lycée polyvalent Jan Lavezzari,lycee,Public,Lille,Pas-de-Calais,Berck,98.4,50.39813402623474,1.5594971419606591,1,1,0,1,1,1,0,2025-2026
+0622803K,Lycée général et technologique Blaise Pascal,lycee,Public,Lille,Pas-de-Calais,Longuenesse,104.6,50.73867971356185,2.2561397443597024,1,0,1,0,0,0,3,2024-2025
+0623328F,Lycée Professionnel Henri Senez - Lycée des Métiers,lycee,Public,Lille,Pas-de-Calais,Hénin-Beaumont,76.5,50.404301797466154,2.964260263514632,1,0,1,0,0,0,1,2025-2026
+0623915U,Lycée général et technologique Voltaire,lycee,Public,Lille,Pas-de-Calais,Wingles,106.5,50.488411414449956,2.8546904110900857,1,1,0,15,15,4,2,2025-2026
+0624141P,Lycée polyvalent Léonard de Vinci,lycee,Public,Lille,Pas-de-Calais,Calais,101.4,50.95239038150301,1.8800993924364584,6,6,0,392,297,21,6,2024-2025|2025-2026
+0640228A,Collège Irandatz,college,Public,Bordeaux,Pyrénées-Atlantiques,Hendaye,104.4,43.351104277682055,-1.775331375063202,1,1,0,5,4,3,3,2025-2026
+0641941M,Collège privé Piarres Larzabal,college,Privé,Bordeaux,Pyrénées-Atlantiques,Ciboure,124.1,43.38356763367067,-1.6901867572052691,1,1,0,3,3,2,1,2025-2026
+0660004W,"Lycée polyvalent Déodat de Séverac - Lycée des métiers du transport, de la logistique et des gestions associées",lycee,Public,Montpellier,Pyrénées-Orientales,Céret,100.0,42.485310859764,2.7529518903184065,2,2,0,47,47,3,1,2025-2026
+0670002N,Lycée général et technologique Schuré,lycee,Public,Strasbourg,Bas-Rhin,Barr,114.4,48.40860275327867,7.4571555564387975,1,1,0,21,21,2,0,2025-2026
+0670007U,Lycée général et technologique Adrien Zeller,lycee,Public,Strasbourg,Bas-Rhin,Bouxwiller,115.8,48.82617234402131,7.484151560710911,1,1,0,17,17,1,1,2025-2026
+0672806L,Lycée polyvalent Marcel Rudloff,lycee,Public,Strasbourg,Bas-Rhin,Strasbourg,94.3,48.58522934997302,7.694878088925349,1,1,0,35,35,4,0,2024-2025|2025-2026
+0680010S,Lycée polyvalent Blaise Pascal,lycee,Public,Strasbourg,Haut-Rhin,Colmar,98.4,48.08338926810393,7.343335445801183,1,1,0,39,22,4,5,2024-2025
+0690023A,Lycée général et technologique Ampère,lycee,Public,Lyon,Rhône,Lyon 2e  Arrondissement,124.0,45.76528336519406,4.83700438868978,1,1,0,122,110,47,2,2024-2025|2025-2026
+0690026D,Lycée général du Parc,lycee,Public,Lyon,Rhône,Lyon 6e  Arrondissement,135.6,45.77170286114671,4.856922375378193,1,1,0,7,7,6,7,2024-2025|2025-2026
+0750648X,Lycée général et technologique Victor Hugo,lycee,Public,Paris,Paris,Paris  3e  Arrondissement,138.9,48.85751187081702,2.363169676401168,1,1,0,67,67,3,0,2025-2026
+0750655E,Lycée général et technologique publique Louis Le Grand,lycee,Public,Paris,Paris,Paris  5e  Arrondissement,145.1,48.84801821932347,2.344176457952448,1,1,0,63,63,8,0,2024-2025|2025-2026
+0750662M,Lycée général Victor Duruy,lycee,Public,Paris,Paris,Paris  7e  Arrondissement,143.3,48.85230029234186,2.3148477839827657,1,1,0,44,44,8,7,2023-2024|2024-2025|2025-2026
+0750663N,Lycée général et technologique Chaptal,lycee,Public,Paris,Paris,Paris  8e  Arrondissement,139.2,48.881738320109136,2.3196885071009623,1,0,1,0,0,0,1,2025-2026
+0750664P,Lycée général et technologique Racine,lycee,Public,Paris,Paris,Paris  8e  Arrondissement,131.0,48.8764506501621,2.322300419725228,1,1,0,29,18,6,7,2025-2026
+0750668U,Lycée général et technologisue Jacques Decour,lycee,Public,Paris,Paris,Paris  9e  Arrondissement,125.8,48.881485926285514,2.3434236459416136,1,1,0,5,5,5,0,2023-2024
+0750673Z,Lycée général Colbert,lycee,Public,Paris,Paris,Paris 10e  Arrondissement,116.6,48.88270546564568,2.3634152185070483,2,2,0,48,48,3,2,2024-2025|2025-2026
+0750676C,Lycée polyvalent Caroline Dorian,lycee,Public,Paris,Paris,Paris 11e  Arrondissement,103.1,48.85440198778214,2.392412630364061,1,0,1,0,0,0,1,2024-2025
+0750680G,Lycée général et technologique Arago,lycee,Public,Paris,Paris,Paris 12e  Arrondissement,122.7,48.847927308794425,2.394315498648954,1,1,0,15,15,1,1,2025-2026
+0750690T,Lycée général et technologique François Villon,lycee,Public,Paris,Paris,Paris 14e  Arrondissement,99.6,48.826222298748995,2.3058203184226214,1,1,0,2,2,2,0,2023-2024
+0750693W,Lycée général et technologie Buffon,lycee,Public,Paris,Paris,Paris 15e  Arrondissement,132.7,48.843450595841645,2.3117184295922955,2,2,0,73,73,3,0,2025-2026
+0750702F,Lycée général et technologique Jean de La Fontaine,lycee,Public,Paris,Paris,Paris 16e  Arrondissement,140.6,48.845190990860424,2.2565778962761875,1,1,0,31,31,1,0,2025-2026
+0750703G,Lycée général Molière,lycee,Public,Paris,Paris,Paris 16e  Arrondissement,130.2,48.855000626527904,2.2721249445436613,2,1,1,22,22,1,2,2025-2026
+0750711R,Lycée général et technologique Henri Bergson,lycee,Public,Paris,Paris,Paris 19e  Arrondissement,103.7,48.88112074883683,2.377938887612686,2,1,1,20,20,1,2,2023-2024|2024-2025
+0750712S,Lycée polyvalent Diderot - Lycée des métiers de l'ingénierie industrielle et de l'horlogerie,lycee,Public,Paris,Paris,Paris 19e  Arrondissement,103.2,48.88151208852299,2.39587754134031,1,0,1,0,0,0,1,2025-2026
+0750796H,Lycée Professionnel Octave Feuilet,lycee,Public,Paris,Paris,Paris 16e  Arrondissement,108.0,48.86126664977621,2.2724531358357214,1,1,0,14,14,2,2,2025-2026
+0752182P,,,,,,,,,,1,0,1,0,0,0,1,2025-2026
+0752248L,Collège César Franck,college,Public,Paris,Paris,Paris  2e  Arrondissement,130.4,48.86541881778827,2.3443295437046494,1,1,0,38,23,4,1,2025-2026
+0754042L,Lycée polyvalent privé Le Rebours,lycee,Privé,Paris,Paris,Paris 13e  Arrondissement,131.3,48.83014424738715,2.3504442169888615,1,1,0,23,23,2,0,2024-2025
+0762601P,Lycée polyvalent Georges Brassens,lycee,Public,Normandie,Seine-Maritime,Neufchâtel-en-Bray,95.8,49.73705794724505,1.437761868583037,1,1,0,55,32,2,1,2025-2026
+0762976X,"Lycée polyvalent Françoise de Grace - Lycée des métiers E 3S, Environnement, Services, Santé, Social",lycee,Public,Normandie,Seine-Maritime,Le Havre,83.7,49.49280869089038,0.14954842620010605,1,1,0,8,8,1,0,2023-2024
+0770930T,Lycée général et technologique Henri Moissan,lycee,Public,Créteil,Seine-et-Marne,Meaux,105.7,48.9587066334898,2.87505516661365,2,2,0,108,108,8,1,2025-2026
+0771512A,Lycée général et technologique Van Dongen,lycee,Public,Créteil,Seine-et-Marne,Lagny-sur-Marne,114.0,48.86783583652336,2.719144935356008,2,2,0,17,17,2,2,2024-2025|2025-2026
+0772243V,Lycée général et technologique Camille Claudel,lycee,Public,Créteil,Seine-et-Marne,Pontault-Combault,113.7,48.7874049161568,2.599490220817385,1,1,0,21,20,1,0,2024-2025
+0780422K,Lycée général et technologique François Villon,lycee,Public,Versailles,Yvelines,Les Mureaux,101.8,48.97699910971362,1.922362889113734,2,2,0,66,66,5,0,2024-2025
+0781859X,Lycée général et technologique Vincent Van Gogh,lycee,Public,Versailles,Yvelines,Aubergenville,120.5,48.95435672415239,1.8550869574308326,1,1,0,2,2,1,0,2024-2025
+0781898P,Lycée général et technologique Charles de Gaulle,lycee,Public,Versailles,Yvelines,Poissy,126.0,48.946813146880004,2.0620244126996594,1,1,0,14,14,1,1,2025-2026
+0781949V,Lycée général et technologique de Villaroy,lycee,Public,Versailles,Yvelines,Guyancourt,114.7,48.76464573649027,2.068147179051419,2,1,1,16,16,1,1,2025-2026
+0782540M,Lycée polyvalent Jean Rostand,lycee,Public,Versailles,Yvelines,Mantes-la-Jolie,89.3,48.997956370212556,1.6966592625740586,1,1,0,6,6,1,0,2024-2025
+0782568T,Lycée général et technologique Alain,lycee,Public,Versailles,Yvelines,Le Vésinet,143.7,48.890869828101486,2.1226130249115056,1,1,0,2,1,1,0,2024-2025
+0791062A,Lycée général et technologique Venise Verte,lycee,Public,Poitiers,Deux-Sèvres,Niort,113.5,46.31686270488023,-0.48616871387734323,1,0,1,0,0,0,1,2025-2026
+0800010B,Lycée général Madeleine Michelis,lycee,Public,Amiens,Somme,Amiens,117.4,49.88921414281806,2.302983194763526,1,1,0,12,12,1,1,2023-2024
+0830025B,Lycée général et technologique Jean Aicard,lycee,Public,Nice,Var,Hyères,105.5,43.1183869272029,6.126236055918523,1,1,0,41,41,1,0,2025-2026
+0830050D,Lycée général et technologique Beaussier,lycee,Public,Nice,Var,La Seyne-sur-Mer,108.4,43.100072844126316,5.8783155783849335,1,1,0,18,18,1,0,2025-2026
+0831559U,Lycée polyvalent Maurice Janetti,lycee,Public,Nice,Var,Saint-Maximin-la-Sainte-Baume,113.9,43.45702617700875,5.8569990548037305,1,0,1,0,0,0,1,2023-2024
+0840001V,Lycée polyvalent CHARLES DE GAULLE,lycee,Public,Aix-Marseille,Vaucluse,Apt,99.5,43.87620539295645,5.4000690452277,1,1,0,3,3,3,0,2023-2024
+0840003X,Lycée général et technologique Frédéric Mistral,lycee,Public,Aix-Marseille,Vaucluse,Avignon,112.9,43.94722102577662,4.8015709342022594,1,1,0,24,24,3,1,2024-2025
+0890005X,Lycée polyvalent Fourier Saint-Germain,lycee,Public,Dijon,Yonne,Auxerre,95.5,47.791452231543886,3.5517209913190477,1,1,0,6,6,2,1,2025-2026
+0910625K,Lycée général et technologique Rosa Parks,lycee,Public,Versailles,Essonne,Montgeron,109.0,48.704853889908485,2.453640007118009,1,1,0,38,26,4,0,2024-2025
+0910626L,Lycée général et technologique Blaise Pascal,lycee,Public,Versailles,Essonne,Orsay,150.9,48.69577509777111,2.1862962374489117,2,1,1,65,65,9,4,2024-2025|2025-2026
+0910727W,"Lycée polyvalent Parc de Vilgenis, lycée des métiers du numérique, de l'industrie et des services",lycee,Public,Versailles,Essonne,Massy,111.6,48.73154786458686,2.254524266984075,2,2,0,71,71,5,1,2025-2026
+0911632E,Lycée général et technologique René Cassin,lycee,Public,Versailles,Essonne,Arpajon,122.6,48.58009042813943,2.2447813766054168,1,1,0,1,1,1,0,2025-2026
+0911913K,Lycée général et technologique Vallée de Chevreuse,lycee,Public,Versailles,Essonne,Gif-sur-Yvette,145.1,48.70042148470852,2.0973454992825578,1,1,0,60,60,5,2,2025-2026
+0920136Y,Lycée polyvalent Newton-Enrea,lycee,Public,Versailles,Hauts-de-Seine,Clichy,94.3,48.90905297767566,2.3068998920632153,1,1,0,14,14,3,2,2025-2026
+0920137Z,Lycée général et technologique Guy de Maupassant,lycee,Public,Versailles,Hauts-de-Seine,Colombes,95.7,48.92798435958031,2.2414423985323815,1,1,0,2,2,1,0,2025-2026
+0921399W,Lycée général et technologique Maurice Genevoix,lycee,Public,Versailles,Hauts-de-Seine,Montrouge,106.1,48.81052663525963,2.3229896222976945,1,1,0,21,12,2,0,2025-2026
+0922579D,Ecole de danse de l'Opéra de Paris,college,Public,Versailles,Hauts-de-Seine,Nanterre,146.2,48.894126740321205,2.2206979150698913,1,1,0,13,13,1,0,2025-2026
+0922801V,Lycée général et technologique Simone Veil,lycee,Public,Versailles,Hauts-de-Seine,Boulogne-Billancourt,120.3,48.82698608047683,2.2417255523005926,1,1,0,23,23,2,0,2025-2026
+0930119Z,Lycée polyvalent Eugène Delacroix,lycee,Public,Créteil,Seine-Saint-Denis,Drancy,82.3,48.92500721472923,2.457936453412501,1,1,0,1,1,1,0,2025-2026
+0930120A,Lycée général et technologique Jacques Feyder,lycee,Public,Créteil,Seine-Saint-Denis,Epinay-sur-Seine,85.3,48.95509744548008,2.320839880589892,1,1,0,11,11,3,0,2025-2026
+0930122C,Lycée général et technologique Condorcet,lycee,Public,Créteil,Seine-Saint-Denis,Montreuil,96.4,48.85750093339525,2.445528654993236,1,1,0,4,4,1,0,2025-2026
+0930124E,Lycée général et technologique Marcelin Berthelot,lycee,Public,Créteil,Seine-Saint-Denis,Pantin,86.5,48.90541136947215,2.394260520870352,1,1,0,36,36,1,0,2024-2025
+0930833A,Lycée enseignement général et technologique Jean Zay,lycee,Public,Créteil,Seine-Saint-Denis,Aulnay-sous-Bois,93.0,48.936149484824476,2.5034290582623515,1,1,0,8,8,2,1,2025-2026
+0930834B,Lycée général et technologique Voillaume,lycee,Public,Créteil,Seine-Saint-Denis,Aulnay-sous-Bois,81.9,48.94454426421222,2.5082514034395587,1,0,1,0,0,0,3,2023-2024|2024-2025|2025-2026
+0931430Z,Lycée général et technologique Jacques Brel,lycee,Public,Créteil,Seine-Saint-Denis,La Courneuve,80.8,48.929624886331744,2.400326472996749,1,1,0,26,26,1,1,2025-2026
+0931584S,Lycée polyvalent Jean Rostand,lycee,Public,Créteil,Seine-Saint-Denis,Villepinte,89.4,48.96013097773987,2.5465449256491284,1,1,0,56,48,7,0,2024-2025|2025-2026
+0932726H,Collège Miriam Makeba,college,Public,Créteil,Seine-Saint-Denis,Aubervilliers,88.7,48.909751896587984,2.37182835635895,1,1,0,9,9,1,1,2025-2026
+0940116R,Lycée général et technologique Eugène Delacroix,lycee,Public,Créteil,Val-de-Marne,Maisons-Alfort,119.7,48.810789057415114,2.4259112918900176,1,1,0,36,36,3,1,2025-2026
+0940126B,Lycée polyvalent Maximilien Perret,lycee,Public,Créteil,Val-de-Marne,Alfortville,92.6,48.78664176268498,2.4237637613102048,1,0,1,0,0,0,2,2025-2026
+0940580V,Lycée Polyvalent de Cachan,lycee,Public,Créteil,Val-de-Marne,Cachan,107.3,48.78867682535173,2.324774506773462,1,0,1,0,0,0,1,2025-2026
+0940742W,Lycée polyvalent Guillaume Budé,lycee,Public,Créteil,Val-de-Marne,Limeil-Brévannes,103.1,48.743740806816575,2.510720424025152,1,1,0,5,5,2,0,2023-2024
+0942269F,Lycée polyvalent Pauline Roland - Lycée des métiers du transport et de la logistique,lycee,Public,Créteil,Val-de-Marne,Chevilly-Larue,97.3,48.77285638144974,2.3401106946732,1,1,0,25,25,2,0,2025-2026
+0950650R,Lycée polyvalent Jean-Jacques Rousseau,lycee,Public,Versailles,Val-d'Oise,Sarcelles,81.4,48.99399330190295,2.3847513006085923,2,2,0,36,36,3,1,2025-2026
+0951710T,"Lycée polyvalent Camille Claudel, lycée des métiers des arts et du design",lycee,Public,Versailles,Val-d'Oise,Vauréal,119.1,49.033255991192725,2.02202841753786,2,2,0,45,45,5,0,2024-2025
+0951723G,Lycée général et technologique Montesquieu,lycee,Public,Versailles,Val-d'Oise,Herblay-sur-Seine,121.4,48.99997501055952,2.146164327176315,1,1,0,28,25,3,1,2023-2024|2024-2025
+0951756T,Lycée polyvalent Jules Verne,lycee,Public,Versailles,Val-d'Oise,Cergy,111.0,49.051789998059235,2.0098298991653794,1,1,0,6,6,1,0,2025-2026
+0951763A,"Lycée polyvalent Louis Jouvet, Lycée des métiers de la santé et du social",lycee,Public,Versailles,Val-d'Oise,Taverny,107.8,49.019492050995524,2.2086035848039076,1,1,0,9,9,4,1,2023-2024
+0951788C,Lycée polyvalent George Sand,lycee,Public,Versailles,Val-d'Oise,Domont,116.2,49.027078954616286,2.3396725120879878,1,1,0,95,95,7,0,2025-2026
+0952284S,Lycée général et technologique Philippe Kieffer,lycee,Public,Versailles,Val-d'Oise,Cormeilles-en-Parisis,123.9,48.960228892758956,2.1872984545003415,1,1,0,4,4,1,0,2024-2025
+1340005C,,,,,,,,,,1,1,0,36,36,6,41,2024-2025|2025-2026
+2050024M,,,,,,,,,,1,1,0,7,7,1,1,2024-2025
+2200001F,,,,,,,,,,1,0,1,0,0,0,16,2025-2026
+2430001F,,,,,,,,,,2,0,2,0,0,0,16,2025-2026
+3510003W,,,,,,,,,,1,1,0,31,31,13,11,2024-2025|2025-2026
+9840001D,LYCEE DE UTUROA,lycee,Public,Polynésie Française,Polynésie Française,Uturoa,,,,1,1,0,5,5,2,0,2025-2026
+9840002E,Lycée général Paul Gauguin,lycee,Public,Polynésie Française,Polynésie Française,Papeete,,,,4,4,0,103,76,10,4,2024-2025|2025-2026
+9840004G,,,,,,,,,,1,1,0,1,1,1,0,2024-2025
+9840024D,LYCEE POLYVALENT Ihi-tea no Vavau,lycee,Public,Polynésie Française,Polynésie Française,Bora-bora,,,,1,1,0,30,30,2,0,2024-2025
+X,,,,,,,,,,1,1,0,15,15,2,0,2024-2025

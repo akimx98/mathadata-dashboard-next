@@ -1,0 +1,458 @@
+<title>Enquête usages MathAData — Capytale</title>
+<style>
+  :root{
+    --ground:#F2F5FB; --paper:#FFFFFF; --text:#16213E; --muted:#5b6b8c;
+    --accent:#4338CA; --accent-soft:#ECECFB; --teal:#0E9488; --teal-soft:#E0F2F0;
+    --amber:#D98324; --rose:#D6455A; --grey:#9aa6c0; --line:#D8DEEC;
+    --font-body:-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --font-mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+    --grid:#dde4f1; --grid2:#c9d3e8;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--text); font-family:var(--font-body); line-height:1.6;
+    font-size:17px; -webkit-font-smoothing:antialiased;
+    background-color:var(--ground);
+    background-image:
+      linear-gradient(var(--grid) 1px,transparent 1px),
+      linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+      linear-gradient(var(--grid2) 1px,transparent 1px),
+      linear-gradient(90deg,var(--grid2) 1px,transparent 1px);
+    background-size:22px 22px,22px 22px,110px 110px,110px 110px;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  .mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+  .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+
+  /* ---- HERO ---- */
+  header.hero{padding:64px 0 30px}
+  .hero-eyebrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+  .hero h1{
+    font-size:clamp(34px,6.2vw,68px);line-height:1.02;letter-spacing:-.022em;font-weight:800;
+    margin:0 0 18px;max-width:15ch;
+  }
+  .hero h1 em{font-style:normal;color:var(--accent);
+    background:linear-gradient(transparent 62%,var(--accent-soft) 62%)}
+  .hero .lede{font-size:clamp(18px,2.2vw,22px);color:var(--muted);max-width:60ch;margin:0 0 34px}
+  .hero .lede b{color:var(--text);font-weight:600}
+  .statbar{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0 8px}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 16px 14px;
+    box-shadow:0 1px 0 rgba(22,33,62,.04)}
+  .stat .v{font-family:var(--font-mono);font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.02em;line-height:1}
+  .stat .v.teal{color:var(--teal)} .stat .v.ind{color:var(--accent)}
+  .stat .k{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.3}
+
+  /* hero chart */
+  .herochart{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 18px 12px;margin-top:6px;
+    box-shadow:0 6px 24px -16px rgba(22,33,62,.4)}
+  .herochart .ttl{font-family:var(--font-mono);font-size:13px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+
+  /* ---- sections ---- */
+  section{padding:30px 0}
+  .sechead{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+  .secnum{font-family:var(--font-mono);font-size:14px;color:var(--accent);font-weight:600;flex:none;padding-top:4px}
+  h2{font-size:clamp(24px,3.4vw,34px);line-height:1.12;letter-spacing:-.018em;font-weight:800;margin:0}
+  .sub{color:var(--muted);font-size:16px;margin:8px 0 18px;max-width:72ch}
+  p{max-width:72ch}
+  p b{font-weight:600}
+  .pull{color:var(--accent);font-weight:600}
+
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px;
+    box-shadow:0 1px 0 rgba(22,33,62,.04)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .chart-ttl{font-family:var(--font-mono);font-size:13px;color:var(--text);font-weight:600;margin-bottom:2px}
+  .chart-sub{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);margin-bottom:12px}
+  figure{margin:0}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--font-mono);font-size:11.5px;color:var(--muted);margin-top:10px}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+  /* truths */
+  .truths{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .truth{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;position:relative;overflow:hidden}
+  .truth:before{content:attr(data-n);position:absolute;top:-14px;right:6px;font-family:var(--font-mono);font-size:62px;font-weight:800;color:var(--accent-soft);z-index:0}
+  .truth h3{position:relative;z-index:1;font-size:16px;margin:0 0 7px;letter-spacing:-.01em}
+  .truth p{position:relative;z-index:1;font-size:13.5px;color:var(--muted);margin:0;line-height:1.5}
+
+  /* tables */
+  .tablewrap{overflow-x:auto;margin-top:8px}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
+  th{font-family:var(--font-mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+  td.num,th.num{text-align:right;font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+  tbody tr:hover{background:var(--accent-soft)}
+
+  /* case studies */
+  .cases{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:6px}
+  .case{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:12px;padding:16px 18px}
+  .case.echelon{border-left-color:var(--accent)}
+  .case.limit{border-left-color:var(--rose)}
+  .case .tag{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .case h4{margin:5px 0 4px;font-size:15.5px}
+  .case .meta{font-family:var(--font-mono);font-size:12px;color:var(--teal);margin-bottom:8px}
+  .case.echelon .meta{color:var(--accent)} .case.limit .meta{color:var(--rose)}
+  .case p{font-size:13.5px;color:var(--muted);margin:0}
+
+  .callout{background:var(--accent-soft);border:1px solid #d6d6f5;border-radius:12px;padding:16px 20px;margin-top:16px;font-size:15px}
+  .callout b{color:var(--accent)}
+
+  /* recs */
+  .recs{counter-reset:r;display:grid;gap:12px;margin-top:10px}
+  .rec{display:flex;gap:16px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .rec:before{counter-increment:r;content:counter(r,decimal-leading-zero);font-family:var(--font-mono);font-weight:700;color:var(--accent);font-size:15px;flex:none}
+  .rec div b{font-weight:700}
+  .rec div span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+
+  footer{padding:42px 0 60px;color:var(--muted);font-size:13px;font-family:var(--font-mono);border-top:1px solid var(--line);margin-top:30px}
+  footer b{color:var(--text)}
+  .note{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);margin-top:10px;font-style:normal}
+
+  svg .axlbl{font-family:var(--font-mono);font-size:11px;fill:var(--muted)}
+  svg .vlbl{font-family:var(--font-mono);font-size:11px;fill:var(--text);font-weight:600}
+  svg .bl{stroke:var(--line)}
+
+  @media(max-width:860px){
+    .statbar{grid-template-columns:repeat(2,1fr)}
+    .truths{grid-template-columns:repeat(2,1fr)}
+    .grid2,.grid3,.cases{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:no-preference){
+    .reveal:not(.in){opacity:0;transform:translateY(14px)}
+    .reveal{transition:opacity .6s ease,transform .6s ease}
+    .bargrow{transition:height .9s cubic-bezier(.22,1,.36,1),y .9s cubic-bezier(.22,1,.36,1)}
+  }
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="hero-eyebrow">
+    <span class="eyebrow">Enquête sur les usages</span>
+    <span class="mono" style="font-size:12px;color:var(--muted)">· données Capytale · extraction 19 juin 2026</span>
+  </div>
+  <h1>MathAData passe du <em>pilote</em> au déploiement national</h1>
+  <p class="lede">Une lecture des <b>7 353 affectations</b> Capytale : qui utilise l'outil, comment il entre en classe, et ce qui porte une croissance des usages élèves de <b>+105 %</b> en un an — alors que l'année scolaire n'est même pas terminée.</p>
+
+  <div class="herochart">
+    <div class="ttl"><span>USAGES ÉLÈVES PAR MOIS — l'accélération de 2025-2026</span><span id="heroLegend"></span></div>
+    <figure id="heroChart"></figure>
+  </div>
+
+  <div class="statbar">
+    <div class="stat"><div class="v ind">261</div><div class="k">professeurs utilisateurs</div></div>
+    <div class="stat"><div class="v teal">5 854</div><div class="k">élèves uniques touchés</div></div>
+    <div class="stat"><div class="v">97 %</div><div class="k">enseignent en lycée — 98 % public</div></div>
+    <div class="stat"><div class="v teal">×2,1</div><div class="k">usages élèves vs 2024-2025</div></div>
+  </div>
+</header>
+
+<section>
+  <div class="sechead"><span class="secnum">00</span><h2>Quatre vérités structurantes</h2></div>
+  <div class="truths" style="margin-top:14px">
+    <div class="truth" data-n="1"><h3>Un outil de lycée, public, de 2nde</h3><p>219 profs lycée pour 7 collège ; 222 publics pour 4 privés. Le catalogue cible la seconde — le contenu fait le public.</p></div>
+    <div class="truth" data-n="2"><h3>Adoption directe et solitaire</h3><p>⅔ des profs lancent en classe sans test enregistré. 80 % des établissements n'ont qu'un seul prof utilisateur.</p></div>
+    <div class="truth" data-n="3"><h3>Croissance extensive</h3><p>83 % des profs de 2025-26 sont nouveaux et font 74 % du volume. La rétention inter-annuelle n'est que de 30 %.</p></div>
+    <div class="truth" data-n="4"><h3>Le moteur : stats &amp; géométrie</h3><p>Statistiques (+1 340) et géométrie (+1 236) portent la hausse ; l'« Intro à l'IA » historique recule (−485).</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sechead"><span class="secnum">01</span><h2>Qui utilise MathAData, et comment en classe</h2></div>
+  <p class="sub">Le profil est net : lycée général public, classe de seconde, en TP de salle informatique — typiquement un demi-groupe.</p>
+  <div class="grid2">
+    <div class="card">
+      <div class="chart-ttl">La « classe » type : un demi-groupe de 17</div>
+      <div class="chart-sub">répartition des séances par nombre d'élèves · médiane 17</div>
+      <figure id="classChart"></figure>
+      <div class="legend">
+        <span><i style="background:var(--grey)"></i>tests / élèves isolés</span>
+        <span><i style="background:var(--teal)"></i>demi-groupe (12-18)</span>
+        <span><i style="background:var(--accent)"></i>classe entière (19+)</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="chart-ttl">Trois activités portent les ¾ de l'usage</div>
+      <div class="chart-sub">usages élèves cumulés par activité (top 8)</div>
+      <figure id="actChart"></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sechead"><span class="secnum">02</span><h2>Tester… ou plonger ?</h2></div>
+  <p class="sub">Les deux tiers des professeurs donnent l'activité aux élèves <b>sans trace de test personnel</b>. Quand le test a lieu, il fonctionne comme une mise en place de séance : <b>médiane 2,3 jours</b> avant la première classe, 38 % le jour même.</p>
+  <div class="grid2">
+    <div class="card">
+      <div class="chart-ttl">Comment les 261 profs abordent l'outil</div>
+      <div class="chart-sub">trajectoire d'entrée (hors compte de démo)</div>
+      <figure id="behaviorChart"></figure>
+    </div>
+    <div class="card">
+      <div class="chart-ttl">La conversion test → classe dépend de l'activité</div>
+      <div class="chart-sub">% des profs testeurs qui passent en classe · ligne = 70 %</div>
+      <figure id="convChart"></figure>
+    </div>
+  </div>
+  <div class="callout">Les activités <b>signature « IA / données »</b> convertissent le mieux (statistiques&nbsp;: 74 %). « Équation réduite de droite » est la moins convertie (49 %)&nbsp;: une activité géométrique au substitut pédagogique évident, en concurrence avec les autres variantes — c'est aussi celle qu'on retrouve le plus chez les testeurs non convertis.</div>
+</section>
+
+<section>
+  <div class="sechead"><span class="secnum">03</span><h2>Une diffusion encore solitaire</h2></div>
+  <p class="sub">MathAData se diffuse prof par prof, rarement par contagion entre collègues. <b>146 établissements sur 182 (80 %)</b> ne comptent qu'un seul utilisateur. Le frein n'est pas l'essai raté entre collègues (8 cas seulement) — c'est l'absence d'un second prof.</p>
+  <div class="grid2" style="align-items:start">
+    <div class="card">
+      <div class="chart-ttl">Profs utilisateurs par établissement</div>
+      <div class="chart-sub">182 établissements localisés</div>
+      <figure id="localChart"></figure>
+      <div class="legend"><span class="mono">Multi-profs : 23 lancements conjoints · 13 diffusions échelonnées</span></div>
+    </div>
+    <div>
+      <div class="cases">
+        <div class="case echelon">
+          <div class="tag">Diffusion échelonnée</div>
+          <h4>Léonard de Vinci · Calais</h4>
+          <div class="meta">6 profs · ~297 élèves · 21 séances</div>
+          <p>Un noyau de 3 profs en 2024-25 entraîne 3 collègues l'année suivante. Le plus gros foyer collégial — devenu auto-portant sans le pionnier historique.</p>
+        </div>
+        <div class="case">
+          <div class="tag">Lancement conjoint</div>
+          <h4>Vaclav Havel · Bègles</h4>
+          <div class="meta">3 profs · 283 élèves · même année</div>
+          <p>Les 3 profs démarrent ensemble en 2025-26, sans pionnier antérieur. Le plus gros établissement moteur de la période — il propulse Bordeaux au 3ᵉ rang national.</p>
+        </div>
+        <div class="case echelon">
+          <div class="tag">Diffusion lente · 3 ans</div>
+          <h4>Louis Pasteur · Lille</h4>
+          <div class="meta">4 profs · 161 élèves · 2023→2026</div>
+          <p>Environ un collègue de plus par an vient grossir l'équipe. La tache d'huile la plus longue du dispositif.</p>
+        </div>
+        <div class="case limit">
+          <div class="tag">La limite de la diffusion</div>
+          <h4>Haubourdin · Lille (pionnier)</h4>
+          <div class="meta">404 élèves en solo · 1 collègue tardif</div>
+          <p>Le compte pionnier porte 404 élèves sur 3 ans seul ; un seul collègue l'a rejoint, en mai 2026. L'intensité individuelle ne diffuse pas mécaniquement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sechead"><span class="secnum">04</span><h2>Le moteur de la croissance 2025-2026</h2></div>
+  <p class="sub">La hausse n'est <b>pas</b> une intensification des profs en place — leur effet net est quasi nul. Elle vient d'un afflux de <b>nouveaux entrants</b>, et d'un catalogue qui mue vers le programme de seconde.</p>
+  <div class="grid2">
+    <div class="card">
+      <div class="chart-ttl">D'où vient le volume élèves 2025-2026</div>
+      <div class="chart-sub">usages élèves selon l'ancienneté du prof</div>
+      <figure id="newretChart"></figure>
+      <div class="legend">
+        <span><i style="background:var(--accent)"></i>nouveaux profs (123) — 74 %</span>
+        <span><i style="background:var(--grey)"></i>profs récurrents (28) — 26 %</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="chart-ttl">Ce qui porte la hausse, par thème</div>
+      <div class="chart-sub">Δ usages élèves 2024-25 → 2025-26</div>
+      <figure id="themeChart"></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sechead"><span class="secnum">05</span><h2>Du foyer nordiste à la nation</h2></div>
+  <p class="sub">L'histoire géographique se lit en trois temps : un démarrage dispersé, un foyer <b>Hauts-de-France</b> en 2024-25, puis une nationalisation. Lille reste 1ère mais se dilue — non par recul (Lille gagne des élèves) mais parce que la croissance se fait ailleurs.</p>
+  <div class="grid2">
+    <div class="card">
+      <div class="chart-ttl">Part de l'académie de Lille &amp; du Nord</div>
+      <div class="chart-sub">% des élèves localisés, par année scolaire</div>
+      <figure id="lilleChart"></figure>
+      <div class="legend"><span><i style="background:var(--accent)"></i>académie de Lille</span><span><i style="background:var(--teal)"></i>département du Nord</span></div>
+    </div>
+    <div class="card">
+      <div class="chart-ttl">Les académies qui portent 2025-2026</div>
+      <div class="chart-sub">élèves uniques localisés · top 8</div>
+      <figure id="acadChart"></figure>
+    </div>
+  </div>
+  <div class="callout"><b>Le modèle « un gros lycée = un foyer ».</b> En 2025-26, trois lycées (Bègles 283, Calais 227, Lille Pasteur 125) totalisent ~17 % du volume annuel. La croissance se reproduit par foyers-établissements, pas par dispersion fine.</div>
+</section>
+
+<section>
+  <div class="sechead"><span class="secnum">06</span><h2>Beaucoup d'éphémères, un petit noyau</h2></div>
+  <p class="sub">L'enjeu n°1 que révèlent les données : <b>transformer l'essai</b>. 86 % des profs n'ont (à ce jour) enseigné que sur une seule année scolaire, et seuls 30 % des enseignants de 2024-25 ont récidivé en 2025-26.</p>
+  <div class="grid2">
+    <div class="card">
+      <div class="chart-ttl">Années scolaires d'enseignement par prof</div>
+      <div class="chart-sub">224 profs ayant enseigné</div>
+      <figure id="yearsChart"></figure>
+    </div>
+    <div class="card">
+      <div class="chart-ttl">Intensité : séances animées par prof</div>
+      <div class="chart-sub">la médiane anime 2 séances ; 9 profs dépassent 10</div>
+      <figure id="sessChart"></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sechead"><span class="secnum">07</span><h2>Un public légèrement favorisé, sans élitisme</h2></div>
+  <p class="sub">L'IPS moyen des lycées utilisateurs (110,4) dépasse de <b>+3,4 points</b> la moyenne nationale (107,0) : un biais réel mais modéré. MathAData n'est pas réservé aux lycées d'élite.</p>
+  <div class="card" style="max-width:640px">
+    <div class="chart-ttl">IPS — lycées MathAData vs lycées de France</div>
+    <div class="chart-sub">indice de position sociale moyen</div>
+    <figure id="ipsChart"></figure>
+  </div>
+</section>
+
+<section>
+  <div class="sechead"><span class="secnum">08</span><h2>Ce que les données suggèrent de faire</h2></div>
+  <div class="recs">
+    <div class="rec"><div><b>Faire de la rétention la priorité.</b><span>Le point faible n'est pas l'acquisition mais le retour : relancer dès la rentrée les 62 profs de 2024-25 qui n'ont pas réenseigné.</span></div></div>
+    <div class="rec"><div><b>Activer la contagion intra-établissement.</b><span>80 % des établissements n'ont qu'un prof. Outiller le pionnier pour embarquer un collègue (Bègles et Calais prouvent que ça marche).</span></div></div>
+    <div class="rec"><div><b>Retravailler « Équation réduite de droite ».</b><span>Forte curiosité (39 testeurs) mais conversion la plus basse (49 %) : lever le frein de mise en classe.</span></div></div>
+    <div class="rec"><div><b>Concentrer l'accompagnement sur janvier-juin.</b><span>~80 % de l'activité s'y joue, avec un pic en mai à préparer.</span></div></div>
+    <div class="rec"><div><b>Assumer — ou corriger — la cible.</b><span>Sans contenu collège dédié, MathAData reste un outil de lycée public. À assumer dans la communication, ou à investir explicitement.</span></div></div>
+  </div>
+</section>
+
+<footer>
+  <div><b>Source</b> · API statistique Capytale (<span style="color:var(--text)">capytale_fresh_20260619.csv</span>, 7 353 lignes) croisée à l'annuaire de 12 455 établissements.</div>
+  <div class="note">KPI vérifiés par 3 recomputations indépendantes. Un usage = 1 affectation clonée (≠ un élève, ≠ une séance). Séances = reconstruction par regroupement temporel (~600-740 ; médiane de classe 17, invariante). 2025-2026 incomplète au 19 juin : la croissance affichée est un plancher. Compte de démonstration (195 lignes) exclu ; compte pionnier signalé. Identifiants pseudonymisés — aucune ré-identification.</div>
+</footer>
+</div>
+
+<script>
+const D={
+ monthlyStudent:[{ym:"2024-03",v:5},{ym:"2024-04",v:40},{ym:"2024-05",v:64},{ym:"2024-06",v:35},{ym:"2024-07",v:6},{ym:"2024-08",v:2},{ym:"2024-10",v:16},{ym:"2024-11",v:79},{ym:"2024-12",v:155},{ym:"2025-01",v:167},{ym:"2025-02",v:163},{ym:"2025-03",v:434},{ym:"2025-04",v:215},{ym:"2025-05",v:563},{ym:"2025-06",v:387},{ym:"2025-09",v:53},{ym:"2025-10",v:109},{ym:"2025-11",v:44},{ym:"2025-12",v:142},{ym:"2026-01",v:423},{ym:"2026-02",v:480},{ym:"2026-03",v:739},{ym:"2026-04",v:733},{ym:"2026-05",v:1005},{ym:"2026-06",v:751}],
+ classSize:[{l:"1",v:220,k:"t"},{l:"2",v:59,k:"t"},{l:"3-5",v:102,k:"t"},{l:"6-11",v:104,k:"m"},{l:"12-18",v:123,k:"d"},{l:"19-30",v:106,k:"c"},{l:"30+",v:24,k:"c"}],
+ acts:[{n:"Statistiques – classif. chiffres",v:2314},{n:"Intro IA – chiffres 2 et 7",v:1482},{n:"Équation réduite de droite",v:1188},{n:"Statistiques – santé fœtus",v:423},{n:"Géométrie repérée",v:402},{n:"Droite & produit scalaire",v:331},{n:"Équation cartésienne",v:300},{n:"Challenge IA – neurones",v:276}],
+ behavior:[{l:"Enseigné sans\ntest préalable",v:172,c:"#4338CA"},{l:"Testé puis\nenseigné",v:52,c:"#0E9488"},{l:"Testé, jamais\nenseigné",v:37,c:"#D6455A"}],
+ conv:[{n:"Statistiques – classif.",v:73.9},{n:"Droite & produit scal.",v:63.6},{n:"Stat. santé fœtus",v:60.0},{n:"Intro IA 2 et 7",v:57.1},{n:"Géométrie repérée",v:55.6},{n:"Équation réduite droite",v:48.7}],
+ local:[{l:"1 prof",v:146},{l:"2 profs",v:26},{l:"3+ profs",v:10}],
+ newret:[{l:"Nouveaux\nprofs (123)",v:3306,c:"#4338CA"},{l:"Récurrents\n(28)",v:1173,c:"#9aa6c0"}],
+ theme:[{t:"Statistiques",d:1340},{t:"Géométrie",d:1236},{t:"Challenge IA",d:216},{t:"IA (intro)",d:-485}],
+ lille:[{sy:"2023-24",lille:10.3,nord:10.3},{sy:"2024-25",lille:30.4,nord:24.7},{sy:"2025-26",lille:20.2,nord:11.3}],
+ acad:[{a:"Lille",v:763},{a:"Versailles",v:436},{a:"Bordeaux",v:398},{a:"Paris",v:298},{a:"Créteil",v:255},{a:"Nantes",v:214},{a:"Montpellier",v:209},{a:"Nice",v:112}],
+ years:[{l:"1 année",v:192},{l:"2 années",v:28},{l:"3 années",v:4}],
+ sess:[{l:"1 séance",v:91},{l:"2-3",v:77},{l:"4-9",v:47},{l:"10+",v:9}],
+};
+const NS="http://www.w3.org/2000/svg";
+const C={ind:"#4338CA",teal:"#0E9488",grey:"#9aa6c0",rose:"#D6455A",amber:"#D98324",line:"#D8DEEC",text:"#16213E",muted:"#5b6b8c"};
+function el(t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;}
+function svg(w,h){const s=el("svg",{viewBox:`0 0 ${w} ${h}`,width:"100%",preserveAspectRatio:"xMidYMid meet",role:"img"});s.style.display="block";return s;}
+function txt(s,x,y,t,cls,anchor){const e=el("text",{x,y,class:cls||"axlbl","text-anchor":anchor||"middle"});e.textContent=t;s.appendChild(e);}
+
+// vertical bars, value-colored
+function vbars(mount,data,{w=540,h=230,pad=34,colorFn,label,valFmt,grow}={}){
+  const s=svg(w,h);const max=Math.max(...data.map(d=>d.v));const bw=(w-pad*2)/data.length;
+  const base=h-26;
+  s.appendChild(el("line",{x1:pad,y1:base,x2:w-6,y2:base,class:"bl"}));
+  data.forEach((d,i)=>{
+    const bh=(d.v/max)*(base-14);const x=pad+i*bw+bw*0.14;const bwi=bw*0.72;
+    const r=el("rect",{x,y:base-bh,width:bwi,height:bh,rx:3,fill:colorFn?colorFn(d,i):C.ind});
+    if(grow){r.setAttribute("class","bargrow");r.setAttribute("y",base);r.setAttribute("height",0);
+      requestAnimationFrame(()=>{setTimeout(()=>{r.setAttribute("y",base-bh);r.setAttribute("height",bh);},40);});}
+    s.appendChild(r);
+    txt(s,x+bwi/2,base-bh-5,(valFmt?valFmt(d.v):d.v),"vlbl");
+    const lab=label?label(d,i):d.l;
+    if(Array.isArray(lab)){lab.forEach((ln,li)=>txt(s,x+bwi/2,base+15+li*12,ln,"axlbl"));}
+    else if(lab!=="")txt(s,x+bwi/2,base+15,lab,"axlbl");
+  });
+  mount.appendChild(s);
+}
+// horizontal bars
+function hbars(mount,data,{w=540,h,labelW=150,colorFn,unit="",refLine}={}){
+  h=h||data.length*34+16;const s=svg(w,h);const max=Math.max(...data.map(d=>d.v))*1.12;
+  const bw=w-labelW-46;
+  data.forEach((d,i)=>{
+    const y=10+i*34;const len=(d.v/max)*bw;
+    txt(s,labelW-8,y+15,d.n||d.a||d.l,"axlbl","end");
+    s.appendChild(el("rect",{x:labelW,y:y+3,width:Math.max(len,1),height:18,rx:3,fill:colorFn?colorFn(d,i):C.ind}));
+    txt(s,labelW+len+5,y+17,(d.v+unit),"vlbl","start");
+  });
+  if(refLine!=null){const x=labelW+(refLine/max)*bw;
+    s.appendChild(el("line",{x1:x,y1:4,x2:x,y2:h-6,stroke:C.muted,"stroke-dasharray":"3 3","stroke-width":1}));}
+  mount.appendChild(s);
+}
+// diverging horizontal (theme deltas, +/-)
+function dbars(mount,data,{w=540,h}={}){
+  h=h||data.length*38+16;const s=svg(w,h);const max=Math.max(...data.map(d=>Math.abs(d.d)))*1.18;
+  const labelW=120;const zone=w-labelW-20;const zero=labelW+zone*0.62;
+  s.appendChild(el("line",{x1:zero,y1:4,x2:zero,y2:h-6,stroke:C.line,"stroke-width":1.5}));
+  data.forEach((d,i)=>{
+    const y=10+i*38;const len=(Math.abs(d.d)/max)*(d.d>=0?(w-zero-30):(zero-labelW));
+    txt(s,labelW-6,y+18,d.t,"axlbl","end");
+    const x=d.d>=0?zero:zero-len;
+    s.appendChild(el("rect",{x,y:y+4,width:Math.max(len,1),height:20,rx:3,fill:d.d>=0?C.teal:C.rose}));
+    txt(s,d.d>=0?zero+len+5:zero-len-5,y+19,(d.d>=0?"+":"−")+Math.abs(d.d),"vlbl",d.d>=0?"start":"end");
+  });
+  mount.appendChild(s);
+}
+// line chart (lille)
+function lines(mount,data,series,{w=540,h=240,pad=40,ymax=38}={}){
+  const s=svg(w,h);const base=h-28;const plotw=w-pad-14;
+  [0,10,20,30].forEach(g=>{const y=base-(g/ymax)*(base-12);
+    s.appendChild(el("line",{x1:pad,y1:y,x2:w-6,y2:y,class:"bl"}));txt(s,pad-6,y+4,g+"%","axlbl","end");});
+  data.forEach((d,i)=>txt(s,pad+plotw*(i/(data.length-1)),base+16,d.sy,"axlbl"));
+  series.forEach(se=>{
+    let dpath="";data.forEach((d,i)=>{const x=pad+plotw*(i/(data.length-1));const y=base-(d[se.key]/ymax)*(base-12);
+      dpath+=(i?"L":"M")+x+" "+y+" ";});
+    s.appendChild(el("path",{d:dpath,fill:"none",stroke:se.c,"stroke-width":2.6,"stroke-linejoin":"round"}));
+    data.forEach((d,i)=>{const x=pad+plotw*(i/(data.length-1));const y=base-(d[se.key]/ymax)*(base-12);
+      s.appendChild(el("circle",{cx:x,cy:y,r:4,fill:se.c}));
+      txt(s,x,y-9,d[se.key]+"%","vlbl");});
+  });
+  mount.appendChild(s);
+}
+
+function syColor(ym){const y=+ym.slice(0,4),m=+ym.slice(5);const sy=m>=8?y:y-1;return sy===2023?C.grey:sy===2024?C.teal:C.ind;}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  // hero
+  vbars(document.getElementById("heroChart"),D.monthlyStudent,{w:920,h:250,pad:18,grow:true,
+    colorFn:d=>syColor(d.ym),
+    valFmt:v=>v>=200?v:"",
+    label:(d,i)=>(d.ym.endsWith("-01")||i===0)?d.ym.slice(0,4):(d.ym.endsWith("-09")?"":"")});
+  document.getElementById("heroLegend").innerHTML='<span style="color:#9aa6c0">▮</span> 2023-24 &nbsp; <span style="color:#0E9488">▮</span> 2024-25 &nbsp; <span style="color:#4338CA">▮</span> 2025-26';
+
+  vbars(document.getElementById("classChart"),D.classSize,{w:520,h:235,
+    colorFn:d=>d.k==="t"?C.grey:d.k==="m"?"#6fb3ab":d.k==="d"?C.teal:C.ind});
+  hbars(document.getElementById("actChart"),D.acts,{w:520,labelW:168,colorFn:(d,i)=>i<3?C.ind:"#8b93d6"});
+
+  vbars(document.getElementById("behaviorChart"),D.behavior,{w:520,h:250,pad:30,
+    colorFn:d=>d.c,label:d=>d.l.split("\n")});
+  hbars(document.getElementById("convChart"),D.conv,{w:520,labelW:150,unit:" %",refLine:70,
+    colorFn:d=>d.v>=70?C.teal:d.v>=55?C.amber:C.rose});
+
+  vbars(document.getElementById("localChart"),D.local,{w:520,h:215,pad:36,colorFn:(d,i)=>i===0?C.ind:i===1?C.teal:"#8b93d6"});
+  vbars(document.getElementById("newretChart"),D.newret,{w:520,h:235,pad:48,colorFn:d=>d.c,label:d=>d.l.split("\n")});
+  dbars(document.getElementById("themeChart"),D.theme,{w:520});
+
+  lines(document.getElementById("lilleChart"),D.lille,[{key:"lille",c:C.ind},{key:"nord",c:C.teal}],{w:520,h:235});
+  hbars(document.getElementById("acadChart"),D.acad,{w:520,labelW:96,colorFn:(d,i)=>i===0?C.ind:"#8b93d6"});
+
+  vbars(document.getElementById("yearsChart"),D.years,{w:520,h:215,pad:40,colorFn:(d,i)=>[C.ind,C.teal,C.amber][i]});
+  vbars(document.getElementById("sessChart"),D.sess,{w:520,h:215,pad:36,colorFn:(d,i)=>i===0?C.grey:i===3?C.ind:C.teal});
+
+  // ips simple compare
+  (function(){const m=document.getElementById("ipsChart");const s=svg(560,150);
+    const data=[{l:"Lycées MathAData",v:110.4,c:C.ind},{l:"Lycées de France",v:107.0,c:C.grey}];
+    const labelW=170,bw=560-labelW-70,min=95,max=115;
+    data.forEach((d,i)=>{const y=20+i*54;const len=((d.v-min)/(max-min))*bw;
+      txt(s,labelW-8,y+22,d.l,"axlbl","end");
+      s.appendChild(el("rect",{x:labelW,y:y+6,width:len,height:28,rx:4,fill:d.c}));
+      txt(s,labelW+len+8,y+25,d.v.toFixed(1),"vlbl","start");});
+    txt(s,labelW,140,"échelle 95 – 115 · national tous établissements ≈ 105,6","axlbl","start");
+    m.appendChild(s);})();
+
+  // reveal on scroll (fail-safe: content is visible by default; reveal only adds motion)
+  if(matchMedia("(prefers-reduced-motion: no-preference)").matches){
+    const secs=[...document.querySelectorAll("section")];
+    secs.forEach(s=>s.classList.add("reveal"));
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.10});
+    secs.forEach(s=>io.observe(s));
+    // safety net: never leave a section stuck hidden
+    setTimeout(()=>secs.forEach(s=>s.classList.add("in")),1500);
+  }
+});
+</script>

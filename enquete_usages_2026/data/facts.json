@@ -1,0 +1,886 @@
+{
+ "overview": {
+  "extraction_date": "2026-06-19",
+  "n_rows_total": 7353,
+  "n_rows_real": 7158,
+  "n_student_rows": 6810,
+  "n_teacher_rows": 348,
+  "n_emptyrole_rows": 195,
+  "n_teachers": 261,
+  "n_students_uniq": 5854,
+  "n_activities": 12,
+  "n_etabs_with_uai": 182,
+  "date_min": "2023-12-27 17:46:30+01:00",
+  "date_max": "2026-06-16 10:18:15+02:00",
+  "n_sessions": 738,
+  "n_classes_ge10": 294,
+  "note_demo": "195 lignes rôle-vide = compte unique c81e728d (MD5 \"2\"), exclu des KPI",
+  "note_pioneer": "cfcd2084 (MD5 \"0\") = compte pionnier historique, 404 élèves, Haubourdin/Lille, actif 2023-26"
+ },
+ "growth": {
+  "usages_by_sy": {
+   "2023-2024": {
+    "student": 150,
+    "teacher": 18,
+    "total": 168
+   },
+   "2024-2025": {
+    "student": 2181,
+    "teacher": 150,
+    "total": 2331
+   },
+   "2025-2026": {
+    "student": 4479,
+    "teacher": 180,
+    "total": 4659
+   }
+  },
+  "monthly": {
+   "2023-12": 1,
+   "2024-03": 7,
+   "2024-04": 42,
+   "2024-05": 69,
+   "2024-06": 39,
+   "2024-07": 10,
+   "2024-08": 2,
+   "2024-09": 3,
+   "2024-10": 17,
+   "2024-11": 81,
+   "2024-12": 157,
+   "2025-01": 172,
+   "2025-02": 172,
+   "2025-03": 480,
+   "2025-04": 218,
+   "2025-05": 586,
+   "2025-06": 443,
+   "2025-08": 2,
+   "2025-09": 55,
+   "2025-10": 113,
+   "2025-11": 52,
+   "2025-12": 161,
+   "2026-01": 484,
+   "2026-02": 494,
+   "2026-03": 752,
+   "2026-04": 749,
+   "2026-05": 1034,
+   "2026-06": 763
+  },
+  "monthly_student": {
+   "2024-03": 5,
+   "2024-04": 40,
+   "2024-05": 64,
+   "2024-06": 35,
+   "2024-07": 6,
+   "2024-08": 2,
+   "2024-10": 16,
+   "2024-11": 79,
+   "2024-12": 155,
+   "2025-01": 167,
+   "2025-02": 163,
+   "2025-03": 434,
+   "2025-04": 215,
+   "2025-05": 563,
+   "2025-06": 387,
+   "2025-09": 53,
+   "2025-10": 109,
+   "2025-11": 44,
+   "2025-12": 142,
+   "2026-01": 423,
+   "2026-02": 480,
+   "2026-03": 739,
+   "2026-04": 733,
+   "2026-05": 1005,
+   "2026-06": 751
+  },
+  "teaching_profs_by_sy": {
+   "2023-2024": 21,
+   "2024-2025": 88,
+   "2025-2026": 151
+  },
+  "retention": {
+   "taught_2425": 88,
+   "taught_2526": 151,
+   "retained_2425_to_2526": 26,
+   "retention_rate": 29.5,
+   "new_in_2526": 123,
+   "new_in_2526_share": 81.5
+  },
+  "student_by_activity_sy": {
+   "Challenge IA – réseau neurones": {
+    "2023-2024": 0,
+    "2024-2025": 20,
+    "2025-2026": 256
+   },
+   "Challenge MNIST – meilleur pixel": {
+    "2023-2024": 0,
+    "2024-2025": 37,
+    "2025-2026": 17
+   },
+   "Droite & produit scalaire": {
+    "2023-2024": 0,
+    "2024-2025": 62,
+    "2025-2026": 269
+   },
+   "Géométrie repérée (milieu/dist.)": {
+    "2023-2024": 0,
+    "2024-2025": 2,
+    "2025-2026": 400
+   },
+   "Intro IA – chiffres 2 et 7": {
+    "2023-2024": 143,
+    "2024-2025": 912,
+    "2025-2026": 427
+   },
+   "MathAData in English – geometry": {
+    "2023-2024": 0,
+    "2024-2025": 9,
+    "2025-2026": 0
+   },
+   "Prototype équation réduite": {
+    "2023-2024": 0,
+    "2024-2025": 0,
+    "2025-2026": 31
+   },
+   "Statistiques – classif. chiffres": {
+    "2023-2024": 7,
+    "2024-2025": 695,
+    "2025-2026": 1612
+   },
+   "Statistiques – santé fœtus": {
+    "2023-2024": 0,
+    "2024-2025": 0,
+    "2025-2026": 423
+   },
+   "Équation cartésienne": {
+    "2023-2024": 0,
+    "2024-2025": 0,
+    "2025-2026": 300
+   },
+   "Équation réduite de droite": {
+    "2023-2024": 0,
+    "2024-2025": 444,
+    "2025-2026": 744
+   }
+  },
+  "student_by_level_sy": {
+   "1ere": {
+    "2023-2024": 0,
+    "2024-2025": 62,
+    "2025-2026": 269
+   },
+   "2nde": {
+    "2023-2024": 150,
+    "2024-2025": 2053,
+    "2025-2026": 3937
+   },
+   "BTS/NSI": {
+    "2023-2024": 0,
+    "2024-2025": 37,
+    "2025-2026": 17
+   },
+   "Lycée": {
+    "2023-2024": 0,
+    "2024-2025": 29,
+    "2025-2026": 256
+   }
+  },
+  "student_by_theme_sy": {
+   "Challenge IA": {
+    "2023-2024": 0,
+    "2024-2025": 57,
+    "2025-2026": 273
+   },
+   "Géométrie": {
+    "2023-2024": 0,
+    "2024-2025": 508,
+    "2025-2026": 1744
+   },
+   "Géométrie (EN)": {
+    "2023-2024": 0,
+    "2024-2025": 9,
+    "2025-2026": 0
+   },
+   "IA (intro)": {
+    "2023-2024": 143,
+    "2024-2025": 912,
+    "2025-2026": 427
+   },
+   "Statistiques": {
+    "2023-2024": 7,
+    "2024-2025": 695,
+    "2025-2026": 2035
+   }
+  }
+ },
+ "usage_patterns": {
+  "behavior_counts": {
+   "enseigné_sans_test": 133,
+   "testé_puis_enseigné": 52,
+   "enseigné_puis_testé": 39,
+   "testé_seulement": 37
+  },
+  "taught_total": 224,
+  "tested_before_teaching": 52,
+  "taught_without_prior_test": 172,
+  "tested_never_taught": 37,
+  "activity_funnel": [
+   {
+    "activity": "Statistiques – classif. chiffres",
+    "mathadata_id": "3518185",
+    "n_profs_tested": 46,
+    "n_profs_taught": 85,
+    "n_tested_then_taught": 34,
+    "conv_rate": 73.9,
+    "n_taught_no_test": 51,
+    "n_student_rows": 2314
+   },
+   {
+    "activity": "Intro IA – chiffres 2 et 7",
+    "mathadata_id": "2548348",
+    "n_profs_tested": 42,
+    "n_profs_taught": 72,
+    "n_tested_then_taught": 24,
+    "conv_rate": 57.1,
+    "n_taught_no_test": 48,
+    "n_student_rows": 1482
+   },
+   {
+    "activity": "Équation réduite de droite",
+    "mathadata_id": "3515488",
+    "n_profs_tested": 39,
+    "n_profs_taught": 56,
+    "n_tested_then_taught": 19,
+    "conv_rate": 48.7,
+    "n_taught_no_test": 37,
+    "n_student_rows": 1188
+   },
+   {
+    "activity": "Statistiques – santé fœtus",
+    "mathadata_id": "6944347",
+    "n_profs_tested": 15,
+    "n_profs_taught": 21,
+    "n_tested_then_taught": 9,
+    "conv_rate": 60.0,
+    "n_taught_no_test": 12,
+    "n_student_rows": 423
+   },
+   {
+    "activity": "Géométrie repérée (milieu/dist.)",
+    "mathadata_id": "6659633",
+    "n_profs_tested": 9,
+    "n_profs_taught": 13,
+    "n_tested_then_taught": 5,
+    "conv_rate": 55.6,
+    "n_taught_no_test": 8,
+    "n_student_rows": 402
+   },
+   {
+    "activity": "Droite & produit scalaire",
+    "mathadata_id": "5862412",
+    "n_profs_tested": 11,
+    "n_profs_taught": 20,
+    "n_tested_then_taught": 7,
+    "conv_rate": 63.6,
+    "n_taught_no_test": 13,
+    "n_student_rows": 331
+   },
+   {
+    "activity": "Équation cartésienne",
+    "mathadata_id": "8790616",
+    "n_profs_tested": 7,
+    "n_profs_taught": 14,
+    "n_tested_then_taught": 4,
+    "conv_rate": 57.1,
+    "n_taught_no_test": 10,
+    "n_student_rows": 300
+   },
+   {
+    "activity": "Challenge IA – réseau neurones",
+    "mathadata_id": "5909323",
+    "n_profs_tested": 9,
+    "n_profs_taught": 13,
+    "n_tested_then_taught": 5,
+    "conv_rate": 55.6,
+    "n_taught_no_test": 8,
+    "n_student_rows": 276
+   },
+   {
+    "activity": "Challenge MNIST – meilleur pixel",
+    "mathadata_id": "3534169",
+    "n_profs_tested": 5,
+    "n_profs_taught": 6,
+    "n_tested_then_taught": 3,
+    "conv_rate": 60.0,
+    "n_taught_no_test": 3,
+    "n_student_rows": 54
+   },
+   {
+    "activity": "Prototype équation réduite",
+    "mathadata_id": "9747648",
+    "n_profs_tested": 1,
+    "n_profs_taught": 1,
+    "n_tested_then_taught": 0,
+    "conv_rate": 0.0,
+    "n_taught_no_test": 1,
+    "n_student_rows": 31
+   },
+   {
+    "activity": "MathAData in English – geometry",
+    "mathadata_id": "5197770",
+    "n_profs_tested": 0,
+    "n_profs_taught": 1,
+    "n_tested_then_taught": 0,
+    "conv_rate": null,
+    "n_taught_no_test": 1,
+    "n_student_rows": 9
+   },
+   {
+    "activity": "Séance Python – MNIST",
+    "mathadata_id": "4388355",
+    "n_profs_tested": 2,
+    "n_profs_taught": 0,
+    "n_tested_then_taught": 0,
+    "conv_rate": 0.0,
+    "n_taught_no_test": 0,
+    "n_student_rows": 0
+   }
+  ],
+  "profs_multi_sessions": 133,
+  "profs_small_then_big": 46,
+  "delay_test_to_teach_days": {
+   "median": 2.3,
+   "mean": 48.0,
+   "same_day_share": 38.5,
+   "within_7d": 63.5
+  }
+ },
+ "local_dynamics": {
+  "n_etabs": 182,
+  "etabs_1_prof": 146,
+  "etabs_2_profs": 26,
+  "etabs_3plus_profs": 10,
+  "max_profs_in_etab": 6,
+  "multiprof_same_launch_year": 23,
+  "multiprof_staggered_launch": 10,
+  "activity_codes_shared_multi_teacher": 0,
+  "activity_codes_total": 385
+ },
+ "establishment_profiles": {
+  "profs_by_type": {
+   "lycee": 219,
+   "(inconnu)": 35,
+   "college": 7
+  },
+  "students_by_type": {
+   "(inconnu)": 566,
+   "college": 69,
+   "lycee": 5335
+  },
+  "profs_by_secteur": {
+   "Public": 222,
+   "(inconnu)": 35,
+   "Privé": 4
+  },
+  "ips_user_lycees": {
+   "n": 211,
+   "mean": 110.4,
+   "median": 109.1
+  },
+  "ips_national_lycees": {
+   "n": 3587,
+   "mean": 107.0,
+   "median": 105.7
+  },
+  "ips_user_quartiles": [
+   101.4,
+   109.1,
+   119.1
+  ],
+  "ips_national_quartiles": [
+   92.5,
+   105.7,
+   119.0
+  ],
+  "by_academie": {
+   "Lille": {
+    "n_profs": 50,
+    "n_eleves": 1696,
+    "n_sessions": 226
+   },
+   "Versailles": {
+    "n_profs": 29,
+    "n_eleves": 612,
+    "n_sessions": 67
+   },
+   "Paris": {
+    "n_profs": 22,
+    "n_eleves": 468,
+    "n_sessions": 50
+   },
+   "Bordeaux": {
+    "n_profs": 9,
+    "n_eleves": 409,
+    "n_sessions": 29
+   },
+   "Créteil": {
+    "n_profs": 19,
+    "n_eleves": 354,
+    "n_sessions": 35
+   },
+   "Montpellier": {
+    "n_profs": 15,
+    "n_eleves": 307,
+    "n_sessions": 36
+   },
+   "Nantes": {
+    "n_profs": 10,
+    "n_eleves": 215,
+    "n_sessions": 18
+   },
+   "Toulouse": {
+    "n_profs": 10,
+    "n_eleves": 176,
+    "n_sessions": 16
+   },
+   "Lyon": {
+    "n_profs": 4,
+    "n_eleves": 143,
+    "n_sessions": 57
+   },
+   "Normandie": {
+    "n_profs": 7,
+    "n_eleves": 133,
+    "n_sessions": 15
+   },
+   "Amiens": {
+    "n_profs": 9,
+    "n_eleves": 126,
+    "n_sessions": 16
+   },
+   "Nice": {
+    "n_profs": 6,
+    "n_eleves": 112,
+    "n_sessions": 8
+   },
+   "Polynésie Française": {
+    "n_profs": 6,
+    "n_eleves": 111,
+    "n_sessions": 14
+   },
+   "Strasbourg": {
+    "n_profs": 4,
+    "n_eleves": 95,
+    "n_sessions": 11
+   },
+   "Limoges": {
+    "n_profs": 1,
+    "n_eleves": 84,
+    "n_sessions": 4
+   },
+   "Dijon": {
+    "n_profs": 2,
+    "n_eleves": 77,
+    "n_sessions": 5
+   },
+   "Reims": {
+    "n_profs": 3,
+    "n_eleves": 63,
+    "n_sessions": 4
+   },
+   "Besançon": {
+    "n_profs": 1,
+    "n_eleves": 50,
+    "n_sessions": 6
+   },
+   "Aix-Marseille": {
+    "n_profs": 4,
+    "n_eleves": 49,
+    "n_sessions": 9
+   },
+   "Rennes": {
+    "n_profs": 5,
+    "n_eleves": 48,
+    "n_sessions": 4
+   },
+   "Orléans-Tours": {
+    "n_profs": 4,
+    "n_eleves": 40,
+    "n_sessions": 7
+   },
+   "Grenoble": {
+    "n_profs": 4,
+    "n_eleves": 34,
+    "n_sessions": 6
+   },
+   "Nancy-Metz": {
+    "n_profs": 1,
+    "n_eleves": 2,
+    "n_sessions": 1
+   },
+   "Poitiers": {
+    "n_profs": 1,
+    "n_eleves": 0,
+    "n_sessions": 0
+   }
+  },
+  "top_departements": {
+   "Nord": {
+    "n_profs": 34,
+    "n_eleves": 1241
+   },
+   "Paris": {
+    "n_profs": 22,
+    "n_eleves": 468
+   },
+   "Pas-de-Calais": {
+    "n_profs": 16,
+    "n_eleves": 455
+   },
+   "Gironde": {
+    "n_profs": 6,
+    "n_eleves": 373
+   },
+   "Essonne": {
+    "n_profs": 7,
+    "n_eleves": 223
+   },
+   "Val-d'Oise": {
+    "n_profs": 9,
+    "n_eleves": 220
+   },
+   "Haute-Garonne": {
+    "n_profs": 7,
+    "n_eleves": 151
+   },
+   "Hérault": {
+    "n_profs": 7,
+    "n_eleves": 146
+   },
+   "Seine-et-Marne": {
+    "n_profs": 5,
+    "n_eleves": 145
+   },
+   "Seine-Saint-Denis": {
+    "n_profs": 9,
+    "n_eleves": 143
+   },
+   "Maine-et-Loire": {
+    "n_profs": 7,
+    "n_eleves": 133
+   },
+   "Rhône": {
+    "n_profs": 2,
+    "n_eleves": 117
+   },
+   "Oise": {
+    "n_profs": 7,
+    "n_eleves": 113
+   },
+   "Polynésie Française": {
+    "n_profs": 6,
+    "n_eleves": 111
+   },
+   "Yvelines": {
+    "n_profs": 8,
+    "n_eleves": 105
+   }
+  },
+  "n_academies": 24,
+  "n_departements": 52
+ },
+ "tested_not_adopted": {
+  "n": 37,
+  "by_type": {
+   "lycee": 28,
+   "(inconnu)": 8,
+   "college": 1
+  },
+  "by_secteur": {
+   "Public": 29,
+   "(inconnu)": 8
+  },
+  "by_academie": {
+   "(inconnu)": 8,
+   "Montpellier": 6,
+   "Paris": 5,
+   "Lille": 5,
+   "Créteil": 3,
+   "Rennes": 2,
+   "Nice": 2,
+   "Versailles": 2,
+   "Poitiers": 1,
+   "Grenoble": 1,
+   "Amiens": 1,
+   "Orléans-Tours": 1
+  },
+  "by_sy_active": {
+   "2025-2026": 23,
+   "2024-2025": 7,
+   "2023-2024": 4,
+   "2023-2024|2024-2025|2025-2026": 1,
+   "2023-2024|2024-2025": 1,
+   "2024-2025|2025-2026": 1
+  },
+  "tested_activities": {
+   "Équation réduite de droite": 23,
+   "Statistiques – classif. chiffres": 21,
+   "Intro IA – chiffres 2 et 7": 16,
+   "Droite & produit scalaire": 6,
+   "Statistiques – santé fœtus": 6,
+   "Géométrie repérée (milieu/dist.)": 4,
+   "Challenge IA – réseau neurones": 3,
+   "Équation cartésienne": 2,
+   "Challenge MNIST – meilleur pixel": 1,
+   "Séance Python – MNIST": 1,
+   "Prototype équation réduite": 1
+  },
+  "median_n_tests": 1.0,
+  "pioneer_baseline_type_share": {
+   "lycee": 0.839,
+   "(inconnu)": 0.134,
+   "college": 0.027
+  }
+ },
+ "power_users": {
+  "top10_share_students": 21.3,
+  "top20_share_students": 32.2,
+  "gini_students_per_teacher": 0.562,
+  "gini_sessions_per_teacher": 0.576,
+  "top15": [
+   {
+    "teacher": "cfcd2084",
+    "is_pioneer": true,
+    "type": "lycee",
+    "academie": "Lille",
+    "commune": "Haubourdin",
+    "n_eleves_uniq": 404,
+    "n_sessions": 48,
+    "n_tests": 4,
+    "n_activities": 7,
+    "behavior": "enseigné_puis_testé",
+    "sy_active": "2023-2024|2024-2025|2025-2026"
+   },
+   {
+    "teacher": "b89335a0",
+    "is_pioneer": false,
+    "type": "lycee",
+    "academie": "Bordeaux",
+    "commune": "Bègles",
+    "n_eleves_uniq": 140,
+    "n_sessions": 7,
+    "n_tests": 0,
+    "n_activities": 1,
+    "behavior": "enseigné_sans_test",
+    "sy_active": "2025-2026"
+   },
+   {
+    "teacher": "ea95de08",
+    "is_pioneer": false,
+    "type": "lycee",
+    "academie": "Lyon",
+    "commune": "Lyon 2e  Arrondissement",
+    "n_eleves_uniq": 110,
+    "n_sessions": 47,
+    "n_tests": 2,
+    "n_activities": 4,
+    "behavior": "enseigné_puis_testé",
+    "sy_active": "2024-2025|2025-2026"
+   },
+   {
+    "teacher": "1538e5f6",
+    "is_pioneer": false,
+    "type": NaN,
+    "academie": NaN,
+    "commune": NaN,
+    "n_eleves_uniq": 99,
+    "n_sessions": 10,
+    "n_tests": 0,
+    "n_activities": 1,
+    "behavior": "enseigné_sans_test",
+    "sy_active": "2023-2024|2024-2025|2025-2026"
+   },
+   {
+    "teacher": "3e6551cc",
+    "is_pioneer": false,
+    "type": "lycee",
+    "academie": "Lille",
+    "commune": "Genech",
+    "n_eleves_uniq": 96,
+    "n_sessions": 47,
+    "n_tests": 0,
+    "n_activities": 2,
+    "behavior": "enseigné_sans_test",
+    "sy_active": "2024-2025|2025-2026"
+   },
+   {
+    "teacher": "cc384c68",
+    "is_pioneer": false,
+    "type": "lycee",
+    "academie": "Versailles",
+    "commune": "Domont",
+    "n_eleves_uniq": 95,
+    "n_sessions": 7,
+    "n_tests": 0,
+    "n_activities": 1,
+    "behavior": "enseigné_sans_test",
+    "sy_active": "2025-2026"
+   },
+   {
+    "teacher": "a6d83683",
+    "is_pioneer": false,
+    "type": "lycee",
+    "academie": "Bordeaux",
+    "commune": "Bègles",
+    "n_eleves_uniq": 90,
+    "n_sessions": 7,
+    "n_tests": 0,
+    "n_activities": 2,
+    "behavior": "enseigné_sans_test",
+    "sy_active": "2025-2026"
+   },
+   {
+    "teacher": "8c3f4068",
+    "is_pioneer": false,
+    "type": "lycee",
+    "academie": "Limoges",
+    "commune": "Guéret",
+    "n_eleves_uniq": 84,
+    "n_sessions": 4,
+    "n_tests": 3,
+    "n_activities": 1,
+    "behavior": "enseigné_puis_testé",
+    "sy_active": "2025-2026"
+   },
+   {
+    "teacher": "1909aa48",
+    "is_pioneer": false,
+    "type": "lycee",
+    "academie": "Lille",
+    "commune": "Calais",
+    "n_eleves_uniq": 79,
+    "n_sessions": 4,
+    "n_tests": 0,
+    "n_activities": 3,
+    "behavior": "enseigné_sans_test",
+    "sy_active": "2024-2025|2025-2026"
+   },
+   {
+    "teacher": "eb59bc5f",
+    "is_pioneer": false,
+    "type": "lycee",
+    "academie": "Lille",
+    "commune": "Calais",
+    "n_eleves_uniq": 77,
+    "n_sessions": 8,
+    "n_tests": 4,
+    "n_activities": 5,
+    "behavior": "enseigné_puis_testé",
+    "sy_active": "2024-2025|2025-2026"
+   },
+   {
+    "teacher": "83e0de8c",
+    "is_pioneer": false,
+    "type": "lycee",
+    "academie": "Dijon",
+    "commune": "Beaune",
+    "n_eleves_uniq": 71,
+    "n_sessions": 3,
+    "n_tests": 5,
+    "n_activities": 5,
+    "behavior": "testé_puis_enseigné",
+    "sy_active": "2025-2026"
+   },
+   {
+    "teacher": "c9acad9f",
+    "is_pioneer": false,
+    "type": NaN,
+    "academie": NaN,
+    "commune": NaN,
+    "n_eleves_uniq": 68,
+    "n_sessions": 11,
+    "n_tests": 4,
+    "n_activities": 1,
+    "behavior": "enseigné_puis_testé",
+    "sy_active": "2023-2024|2024-2025|2025-2026"
+   },
+   {
+    "teacher": "f12f2b34",
+    "is_pioneer": false,
+    "type": "lycee",
+    "academie": "Paris",
+    "commune": "Paris  3e  Arrondissement",
+    "n_eleves_uniq": 67,
+    "n_sessions": 3,
+    "n_tests": 0,
+    "n_activities": 2,
+    "behavior": "enseigné_sans_test",
+    "sy_active": "2025-2026"
+   },
+   {
+    "teacher": "f071598c",
+    "is_pioneer": false,
+    "type": "lycee",
+    "academie": "Montpellier",
+    "commune": "Lattes",
+    "n_eleves_uniq": 67,
+    "n_sessions": 11,
+    "n_tests": 1,
+    "n_activities": 3,
+    "behavior": "enseigné_puis_testé",
+    "sy_active": "2024-2025|2025-2026"
+   },
+   {
+    "teacher": "36672a3f",
+    "is_pioneer": false,
+    "type": NaN,
+    "academie": NaN,
+    "commune": NaN,
+    "n_eleves_uniq": 67,
+    "n_sessions": 7,
+    "n_tests": 0,
+    "n_activities": 2,
+    "behavior": "enseigné_sans_test",
+    "sy_active": "2023-2024|2024-2025|2025-2026"
+   }
+  ],
+  "median_students_per_teacher": 20.0,
+  "mean_students_per_teacher": 26.7
+ },
+ "temporal": {
+  "n_sy_taught_dist": {
+   "1": 192,
+   "2": 28,
+   "3": 4
+  },
+  "profs_taught_1y": 192,
+  "profs_taught_2y": 28,
+  "profs_taught_3y": 4,
+  "sessions_per_teacher_dist": {
+   "1": 91,
+   "2-3": 77,
+   "4-9": 47,
+   "10+": 9
+  },
+  "classes_by_month": {
+   "1": 29,
+   "2": 27,
+   "3": 51,
+   "4": 43,
+   "5": 70,
+   "6": 47,
+   "9": 3,
+   "10": 4,
+   "11": 6,
+   "12": 14
+  },
+  "classes_by_dow": {
+   "0": 66,
+   "1": 69,
+   "2": 41,
+   "3": 56,
+   "4": 53,
+   "5": 7,
+   "6": 2
+  }
+ }
+}
