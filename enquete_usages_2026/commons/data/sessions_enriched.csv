@@ -1,0 +1,739 @@
+pseudo,arch,scenario,mathadata_id,act_label,n_eleves,date,hour,wd,slot,span_min,sy
+T210,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,5,2024-03-19,15,1,aprem,63.13333333333333,2023-2024
+T197,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,2,2024-04-02,12,1,dejeuner,10.316666666666666,2023-2024
+T197,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,4,2024-04-04,8,3,matin,52.31666666666667,2023-2024
+T197,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,3,2024-04-04,14,3,aprem,3.05,2023-2024
+T197,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,4,2024-04-05,10,4,matin,16.35,2023-2024
+T197,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,12,2025-01-15,10,2,matin,8.833333333333334,2024-2025
+T197,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,21,2025-01-28,9,1,matin,18.466666666666665,2024-2025
+T197,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,17,2026-01-23,10,4,matin,29.933333333333337,2025-2026
+T197,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,1,2026-01-23,14,4,aprem,0.0,2025-2026
+T197,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,1,2026-01-26,8,0,matin,0.0,2025-2026
+T197,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,1,2026-02-11,9,2,matin,0.0,2025-2026
+T197,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,12,2026-04-09,9,3,matin,9.783333333333331,2025-2026
+T136,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,2,2024-04-04,8,3,matin,1.2333333333333334,2023-2024
+T136,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,25,2025-03-03,8,0,matin,25.183333333333337,2024-2025
+T134,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,1,2024-04-11,14,3,aprem,0.0,2023-2024
+T134,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,10,2024-04-11,14,3,aprem,41.166666666666664,2023-2024
+T134,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,20,2025-03-20,11,3,matin,35.81666666666667,2024-2025
+T089,deployeur_classe,one_shot,2548348,Intro IA – chiffres 2 et 7,12,2024-04-16,11,1,matin,6.85,2023-2024
+T090,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,1,2024-04-19,10,4,matin,0.0,2023-2024
+T090,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,1,2024-04-30,9,1,matin,0.0,2023-2024
+T090,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,1,2024-05-05,21,6,soir,0.0,2023-2024
+T090,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,9,2024-05-13,8,0,matin,13.316666666666666,2023-2024
+T214,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,4,2024-05-06,14,0,aprem,2.0166666666666666,2023-2024
+T198,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,1,2024-05-13,11,0,matin,0.0,2023-2024
+T198,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,4,2025-01-09,14,3,aprem,14.166666666666666,2024-2025
+T198,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,10,2025-01-16,11,3,matin,28.733333333333334,2024-2025
+T198,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,13,2025-09-08,16,0,aprem,16.816666666666666,2025-2026
+T099,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,6,2024-05-14,8,1,matin,34.45,2023-2024
+T099,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,1,2024-05-15,8,2,matin,0.0,2023-2024
+T099,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,1,2024-05-21,8,1,matin,0.0,2023-2024
+T099,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,1,2024-05-22,8,2,matin,0.0,2023-2024
+T189,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,1,2024-05-14,11,1,matin,0.0,2023-2024
+T189,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,1,2024-08-19,16,0,aprem,0.0,2024-2025
+T189,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,1,2024-08-20,14,1,aprem,0.0,2024-2025
+T189,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,24,2025-02-27,8,3,matin,25.15,2024-2025
+T189,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,14,2025-03-25,8,1,matin,8.0,2024-2025
+T189,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,9,2025-05-28,9,2,matin,56.38333333333333,2024-2025
+T189,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,1,2025-05-28,16,2,aprem,0.0,2024-2025
+T189,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,24,2026-03-06,8,4,matin,20.266666666666666,2025-2026
+T189,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,3,2026-03-13,8,4,matin,19.95,2025-2026
+T189,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,22,2026-04-08,12,2,dejeuner,17.016666666666666,2025-2026
+T186,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,3,2024-05-16,7,3,tot_matin,10.05,2023-2024
+T186,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,1,2024-05-23,8,3,matin,0.0,2023-2024
+T186,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,1,2024-05-30,8,3,matin,0.0,2023-2024
+T186,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,1,2024-06-06,8,3,matin,0.0,2023-2024
+T209,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,1,2024-05-16,8,3,matin,0.0,2023-2024
+T209,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,16,2024-06-04,13,1,dejeuner,97.2,2023-2024
+T169,petit_groupe,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2024-05-17,14,4,aprem,0.0,2023-2024
+T169,petit_groupe,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2024-05-17,14,4,aprem,0.0,2023-2024
+T207,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,2,2024-05-21,8,1,matin,7.7,2023-2024
+T207,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,28,2025-05-15,16,3,aprem,56.9,2024-2025
+T207,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,18,2025-05-20,16,1,aprem,2.0166666666666666,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2024-05-27,17,0,aprem,0.0,2023-2024
+T214,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,4,2024-05-28,10,1,matin,4.616666666666666,2023-2024
+T214,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,26,2025-03-20,8,3,matin,10.533333333333331,2024-2025
+T214,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,1,2025-04-02,9,2,matin,0.0,2024-2025
+T214,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,1,2025-04-02,16,2,aprem,0.0,2024-2025
+T214,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,1,2025-04-02,20,2,soir,0.0,2024-2025
+T091,deployeur_classe,one_shot,2548348,Intro IA – chiffres 2 et 7,12,2024-05-30,9,3,matin,119.9,2023-2024
+T142,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,8,2024-05-30,13,3,dejeuner,16.733333333333334,2023-2024
+T163,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,3,2024-05-30,13,3,dejeuner,21.516666666666666,2023-2024
+T150,petit_groupe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,1,2024-05-31,12,4,dejeuner,0.0,2023-2024
+T150,petit_groupe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,4,2024-06-04,13,1,dejeuner,2.066666666666667,2023-2024
+T104,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,1,2024-06-01,16,5,aprem,0.0,2023-2024
+T104,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,1,2024-06-02,10,6,matin,0.0,2023-2024
+T104,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,1,2024-06-03,9,0,matin,0.0,2023-2024
+T209,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,1,2024-06-04,14,1,aprem,0.0,2023-2024
+T209,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,1,2024-06-04,14,1,aprem,0.0,2023-2024
+T209,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,1,2024-06-04,14,1,aprem,0.0,2023-2024
+T186,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,3,2024-06-05,13,2,dejeuner,3.2,2023-2024
+T103,deployeur_classe,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,1,2024-06-25,14,1,aprem,0.0,2023-2024
+T103,deployeur_classe,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,1,2024-06-25,14,1,aprem,0.0,2023-2024
+T103,deployeur_classe,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,1,2024-06-25,14,1,aprem,0.0,2023-2024
+T103,deployeur_classe,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,1,2024-06-25,14,1,aprem,0.0,2023-2024
+T103,deployeur_classe,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,1,2024-06-25,15,1,aprem,0.0,2023-2024
+T145,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,6,2024-07-26,2,4,tot_matin,14.183333333333334,2023-2024
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,16,2024-10-16,9,2,matin,132.98333333333332,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,11,2024-12-06,8,4,matin,5.416666666666667,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,13,2024-12-13,8,4,matin,14.6,2024-2025
+T007,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,20,2024-11-12,15,1,aprem,16.016666666666666,2024-2025
+T007,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,21,2024-11-15,14,4,aprem,12.25,2024-2025
+T011,deployeur_classe,soutien_recurrent,3518185,Statistiques – classif. chiffres,15,2024-11-14,9,3,matin,9.616666666666667,2024-2025
+T011,deployeur_classe,soutien_recurrent,3518185,Statistiques – classif. chiffres,14,2024-11-18,11,0,matin,12.583333333333334,2024-2025
+T011,deployeur_classe,soutien_recurrent,3518185,Statistiques – classif. chiffres,5,2024-11-28,9,3,matin,11.933333333333334,2024-2025
+T011,deployeur_classe,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2025-01-25,9,5,matin,0.0,2024-2025
+T207,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,3,2024-11-21,17,3,aprem,4.15,2024-2025
+T011,deployeur_classe,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2024-11-28,9,3,matin,0.0,2024-2025
+T084,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,13,2024-12-11,12,2,dejeuner,8.4,2024-2025
+T084,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2024-12-11,12,2,dejeuner,0.0,2024-2025
+T125,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,31,2024-12-13,15,4,aprem,14.766666666666667,2024-2025
+T125,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,29,2026-03-06,15,4,aprem,10.966666666666669,2025-2026
+T038,deployeur_classe,one_shot,2548348,Intro IA – chiffres 2 et 7,25,2024-12-16,9,0,matin,20.35,2024-2025
+T077,deployeur_classe,one_shot,2548348,Intro IA – chiffres 2 et 7,15,2024-12-18,8,2,matin,5.9,2024-2025
+T033,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,1,2024-12-18,12,2,dejeuner,0.0,2024-2025
+T033,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,1,2024-12-19,11,3,matin,0.0,2024-2025
+T033,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,24,2024-12-20,10,4,matin,30.9,2024-2025
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,8,2024-12-18,14,2,aprem,3.9833333333333334,2024-2025
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,12,2024-12-19,11,3,matin,7.5,2024-2025
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,11,2025-01-09,11,3,matin,452.8833333333333,2024-2025
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-01-27,14,1,aprem,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-01-27,18,1,soir,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,4,2026-01-28,13,2,dejeuner,332.1,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,4,2026-01-29,12,3,dejeuner,227.88333333333333,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-01-29,23,3,soir,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,2,2026-01-30,17,4,aprem,85.1,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-01-31,10,5,matin,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-01-31,14,5,aprem,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-01-31,19,5,soir,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,5,2026-02-01,11,6,matin,147.53333333333333,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,4,2026-02-01,17,6,aprem,60.083333333333336,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-02-01,21,6,soir,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-02-02,8,0,matin,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,2,2026-02-02,17,0,aprem,72.68333333333334,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-02-03,13,1,dejeuner,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,3,2026-02-04,14,2,aprem,187.08333333333337,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,2,2026-02-05,9,3,matin,0.7833333333333333,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-02-05,13,3,dejeuner,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,3,2026-02-05,18,3,soir,95.58333333333331,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-02-05,23,3,soir,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,3,2026-02-06,12,4,dejeuner,183.68333333333337,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-02-06,20,4,soir,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-02-07,1,5,tot_matin,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,8,2026-02-07,10,5,matin,368.23333333333335,2025-2026
+T190,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,11,2026-02-08,9,6,matin,789.3833333333333,2025-2026
+T101,deployeur_classe,one_shot,5197770,MathAData in English – geometry,9,2025-01-09,13,3,dejeuner,11.55,2024-2025
+T158,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,4,2025-01-10,9,4,matin,3.35,2024-2025
+T127,fidele_pluriannuel,marathon,3518185,Statistiques – classif. chiffres,29,2025-01-16,13,3,dejeuner,168.98333333333332,2024-2025
+T016,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,1,2025-01-23,8,3,matin,0.0,2024-2025
+T016,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,17,2025-01-30,8,3,matin,12.75,2024-2025
+T016,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,15,2025-01-30,14,3,aprem,9.9,2024-2025
+T185,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,1,2025-01-27,9,0,matin,0.0,2024-2025
+T133,fidele_pluriannuel,marathon,3515488,Équation réduite de droite,1,2025-01-28,16,1,aprem,0.0,2024-2025
+T133,fidele_pluriannuel,marathon,3515488,Équation réduite de droite,12,2025-01-30,14,3,aprem,8.633333333333333,2024-2025
+T198,pionnier_intensif,marathon,3515488,Équation réduite de droite,19,2025-01-29,11,2,matin,17.916666666666668,2024-2025
+T198,pionnier_intensif,marathon,3515488,Équation réduite de droite,29,2026-03-02,14,0,aprem,132.56666666666666,2025-2026
+T198,pionnier_intensif,marathon,3515488,Équation réduite de droite,11,2026-03-05,9,3,matin,208.08333333333337,2025-2026
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,10,2025-02-08,15,5,aprem,84.85,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,3,2025-03-03,14,0,aprem,5.083333333333333,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-02-10,13,1,dejeuner,0.0,2025-2026
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,12,2025-02-24,14,0,aprem,0.8333333333333334,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,13,2025-03-03,14,0,aprem,2.183333333333333,2024-2025
+T211,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,14,2025-02-24,15,0,aprem,3.066666666666667,2024-2025
+T211,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,7,2025-03-03,16,0,aprem,1.75,2024-2025
+T195,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,1,2025-02-25,9,1,matin,0.0,2024-2025
+T195,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,24,2025-02-26,8,2,matin,8.933333333333334,2024-2025
+T195,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,30,2026-02-12,16,3,aprem,9.9,2025-2026
+T128,fidele_pluriannuel,marathon,3518185,Statistiques – classif. chiffres,25,2025-02-26,9,2,matin,71.53333333333333,2024-2025
+T128,fidele_pluriannuel,marathon,3518185,Statistiques – classif. chiffres,17,2026-06-04,9,3,matin,3.4,2025-2026
+T194,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,26,2025-02-26,10,2,matin,9.066666666666666,2024-2025
+T194,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,28,2026-02-10,9,1,matin,23.416666666666668,2025-2026
+T202,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,16,2025-02-27,10,3,matin,8.6,2024-2025
+T202,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,13,2025-03-06,9,3,matin,28.716666666666665,2024-2025
+T202,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,1,2025-03-09,12,6,dejeuner,0.0,2024-2025
+T202,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,1,2025-03-11,8,1,matin,0.0,2024-2025
+T135,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,10,2025-02-27,15,3,aprem,92.88333333333334,2024-2025
+T184,petit_groupe,one_shot,3515488,Équation réduite de droite,1,2025-02-28,13,4,dejeuner,0.0,2024-2025
+T136,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,1,2025-03-03,8,0,matin,0.0,2024-2025
+T205,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,1,2025-03-03,13,0,dejeuner,0.0,2024-2025
+T205,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,11,2025-03-10,8,0,matin,12.45,2024-2025
+T205,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,11,2025-03-10,13,0,dejeuner,2.183333333333333,2024-2025
+T205,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,14,2026-03-31,13,1,dejeuner,8.116666666666667,2025-2026
+T205,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,10,2026-04-07,13,1,dejeuner,11.033333333333331,2025-2026
+T205,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,2,2026-05-12,13,1,dejeuner,9.016666666666667,2025-2026
+T205,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,7,2026-05-26,13,1,dejeuner,3.066666666666667,2025-2026
+T186,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,7,2025-03-03,15,0,aprem,1.0,2024-2025
+T186,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,3,2025-03-03,15,0,aprem,2.4833333333333334,2024-2025
+T186,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,34,2025-03-24,10,0,matin,138.05,2024-2025
+T186,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,36,2025-03-29,9,5,matin,99.21666666666668,2024-2025
+T211,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,3,2025-03-03,16,0,aprem,0.1166666666666666,2024-2025
+T045,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,1,2025-03-04,9,1,matin,0.0,2024-2025
+T045,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,22,2025-03-05,10,2,matin,172.38333333333333,2024-2025
+T135,fidele_pluriannuel,marathon,3515488,Équation réduite de droite,15,2025-03-06,14,3,aprem,6.583333333333333,2024-2025
+T135,fidele_pluriannuel,marathon,3515488,Équation réduite de droite,12,2026-02-09,9,0,matin,65.28333333333333,2025-2026
+T208,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,12,2025-03-07,15,4,aprem,2.8,2024-2025
+T208,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2025-03-12,11,2,matin,0.0,2024-2025
+T208,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,22,2025-03-19,9,2,matin,11.366666666666667,2024-2025
+T208,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,18,2026-05-27,9,2,matin,113.86666666666666,2025-2026
+T208,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-05-27,18,2,soir,0.0,2025-2026
+T208,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-05-28,14,3,aprem,0.0,2025-2026
+T208,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2025-03-07,15,4,aprem,0.0,2024-2025
+T182,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,1,2025-03-09,17,6,aprem,0.0,2024-2025
+T181,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,2,2025-03-11,11,1,matin,1.3,2024-2025
+T167,petit_groupe,one_shot,3534169,Challenge MNIST – meilleur pixel,2,2025-03-11,13,1,dejeuner,0.6333333333333333,2024-2025
+T072,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,16,2025-03-17,13,0,dejeuner,2.15,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3534169,Challenge MNIST – meilleur pixel,23,2025-03-25,13,1,dejeuner,53.65,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,2,2025-03-27,16,3,aprem,62.56666666666667,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,1,2025-04-05,12,5,dejeuner,0.0,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,1,2025-04-09,20,2,soir,0.0,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,1,2025-04-10,16,3,aprem,0.0,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,13,2025-03-28,9,4,matin,12.816666666666666,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,15,2025-03-28,10,4,matin,0.7166666666666667,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,41,2025-04-24,10,3,matin,66.28333333333333,2024-2025
+T054,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,20,2025-03-28,12,4,dejeuner,12.983333333333333,2024-2025
+T012,deployeur_classe,one_shot,3515488,Équation réduite de droite,36,2025-03-31,14,0,aprem,91.6,2024-2025
+T028,deployeur_classe,one_shot,3515488,Équation réduite de droite,28,2025-04-01,14,1,aprem,67.48333333333333,2024-2025
+T188,pionnier_intensif,soutien_recurrent,3534169,Challenge MNIST – meilleur pixel,12,2025-04-08,17,1,aprem,32.35,2024-2025
+T201,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,6,2025-04-09,8,2,matin,11.116666666666667,2024-2025
+T201,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,22,2025-05-06,12,1,dejeuner,3.5833333333333335,2024-2025
+T201,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,2,2025-05-07,12,2,dejeuner,2.65,2024-2025
+T201,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,1,2025-05-08,12,3,dejeuner,0.0,2024-2025
+T201,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,1,2025-05-13,11,1,matin,0.0,2024-2025
+T201,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,20,2025-05-14,7,2,tot_matin,293.85,2024-2025
+T201,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,10,2026-06-02,15,1,aprem,4.15,2025-2026
+T201,pionnier_intensif,marathon,2548348,Intro IA – chiffres 2 et 7,1,2025-04-09,8,2,matin,0.0,2024-2025
+T009,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,10,2025-04-10,8,3,matin,15.366666666666667,2024-2025
+T009,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,26,2025-05-19,14,0,aprem,30.116666666666667,2024-2025
+T009,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,1,2025-05-21,8,2,matin,0.0,2024-2025
+T156,petit_groupe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,1,2025-04-11,10,4,matin,0.0,2024-2025
+T156,petit_groupe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,3,2025-04-11,13,4,dejeuner,47.43333333333333,2024-2025
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,22,2025-04-14,11,0,matin,18.783333333333335,2024-2025
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2025-04-17,9,3,matin,0.0,2024-2025
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,2,2025-04-20,11,6,matin,29.083333333333332,2024-2025
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2025-04-20,16,6,aprem,0.0,2024-2025
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2025-04-28,15,0,aprem,0.0,2024-2025
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2025-05-02,16,4,aprem,0.0,2024-2025
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2025-05-04,13,6,dejeuner,0.0,2024-2025
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,2,2025-05-04,17,6,aprem,15.833333333333334,2024-2025
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,2,2026-04-01,16,2,aprem,55.61666666666667,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-01,21,2,soir,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-02,19,3,soir,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-03,16,4,aprem,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,2,2026-04-04,11,5,matin,11.666666666666666,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-05,13,6,dejeuner,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,2,2026-04-05,16,6,aprem,61.1,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,2,2026-04-06,13,0,dejeuner,42.36666666666667,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-06,19,0,soir,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-07,13,1,dejeuner,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-07,18,1,soir,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,4,2026-04-08,11,2,matin,104.53333333333332,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-09,11,3,matin,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-10,11,4,matin,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-11,13,5,dejeuner,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-11,18,5,soir,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-11,22,5,soir,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,2,2026-04-12,13,6,dejeuner,25.7,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-12,20,6,soir,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-13,10,0,matin,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-13,20,0,soir,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-14,15,1,aprem,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-14,20,1,soir,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,3,2026-04-15,14,2,aprem,265.6666666666667,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-16,13,3,dejeuner,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-17,2,4,tot_matin,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-17,9,4,matin,0.0,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,3,2026-04-17,13,4,dejeuner,91.9,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,4,2026-04-18,14,5,aprem,155.8,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,3,2026-04-18,23,5,soir,216.61666666666667,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,6,2026-04-19,14,6,aprem,369.8333333333333,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,2,2026-04-20,0,0,tot_matin,166.48333333333332,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,2,2026-04-20,8,0,matin,67.21666666666667,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,2,2026-04-20,12,0,dejeuner,12.833333333333334,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-04-20,16,0,aprem,0.0,2025-2026
+T174,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,1,2025-04-18,3,4,tot_matin,0.0,2024-2025
+T188,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,6,2025-04-18,9,4,matin,1.4833333333333334,2024-2025
+T075,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,9,2025-04-23,9,2,matin,9.916666666666666,2024-2025
+T075,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,6,2025-04-25,11,4,matin,5.616666666666666,2024-2025
+T097,deployeur_classe,ponctuel_petit,3515488,Équation réduite de droite,1,2025-04-24,16,3,aprem,0.0,2024-2025
+T097,deployeur_classe,ponctuel_petit,3515488,Équation réduite de droite,7,2025-05-15,9,3,matin,9.55,2024-2025
+T097,deployeur_classe,ponctuel_petit,3515488,Équation réduite de droite,3,2025-05-15,15,3,aprem,2.4,2024-2025
+T087,deployeur_classe,one_shot,3515488,Équation réduite de droite,14,2025-04-25,8,4,matin,187.36666666666667,2024-2025
+T130,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,10,2025-04-25,14,4,aprem,3.0833333333333335,2024-2025
+T130,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,13,2025-05-02,14,4,aprem,1.8333333333333333,2024-2025
+T130,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,11,2026-01-19,17,0,aprem,1.6333333333333333,2025-2026
+T130,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,1,2026-01-26,16,0,aprem,0.0,2025-2026
+T126,fidele_pluriannuel,marathon,3515488,Équation réduite de droite,21,2025-04-28,9,0,matin,3.3,2024-2025
+T126,fidele_pluriannuel,marathon,3515488,Équation réduite de droite,3,2025-04-29,13,1,dejeuner,0.85,2024-2025
+T170,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,2,2025-04-29,10,1,matin,0.0,2024-2025
+T144,petit_groupe,one_shot,3515488,Équation réduite de droite,7,2025-04-30,9,2,matin,15.466666666666669,2024-2025
+T067,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,2,2025-05-06,13,1,dejeuner,2.933333333333333,2024-2025
+T067,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2025-05-16,8,4,matin,0.0,2024-2025
+T067,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2025-05-20,13,1,dejeuner,0.0,2024-2025
+T067,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,8,2025-06-05,8,3,matin,3.3666666666666667,2024-2025
+T067,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,5,2025-06-12,9,3,matin,9.5,2024-2025
+T160,petit_groupe,one_shot,5862412,Droite & produit scalaire,4,2025-05-07,9,2,matin,1.2166666666666666,2024-2025
+T115,explorateur_multi,deploiement_classe,3515488,Équation réduite de droite,2,2025-05-07,11,2,matin,1.35,2024-2025
+T121,explorateur_multi,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,11,2025-05-09,9,4,matin,41.016666666666666,2024-2025
+T121,explorateur_multi,ponctuel_petit,5909323,Challenge IA – réseau neurones,7,2025-05-09,9,4,matin,22.55,2024-2025
+T215,pionnier_intensif,marathon,3515488,Équation réduite de droite,6,2025-05-13,11,1,matin,95.1,2024-2025
+T171,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,1,2025-05-17,2,5,tot_matin,0.0,2024-2025
+T205,pionnier_intensif,demi_groupe,3515488,Équation réduite de droite,13,2025-05-19,8,0,matin,7.6,2024-2025
+T205,pionnier_intensif,demi_groupe,3515488,Équation réduite de droite,13,2025-05-19,13,0,dejeuner,13.233333333333333,2024-2025
+T205,pionnier_intensif,demi_groupe,3515488,Équation réduite de droite,12,2026-05-12,13,1,dejeuner,4.7,2025-2026
+T205,pionnier_intensif,demi_groupe,3515488,Équation réduite de droite,5,2026-05-19,13,1,dejeuner,11.566666666666666,2025-2026
+T137,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,4,2025-05-19,9,0,matin,17.033333333333335,2024-2025
+T137,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,1,2025-05-23,9,4,matin,0.0,2024-2025
+T137,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,5,2026-06-01,9,0,matin,9.75,2025-2026
+T137,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,3,2026-06-01,15,0,aprem,1.3666666666666667,2025-2026
+T009,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,1,2025-05-19,14,0,aprem,0.0,2024-2025
+T005,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,19,2025-05-19,16,0,aprem,51.95,2024-2025
+T005,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,41,2025-05-23,10,4,matin,27.733333333333334,2024-2025
+T005,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,2,2025-05-19,16,0,aprem,0.4166666666666667,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,1,2025-05-20,8,1,matin,0.0,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,1,2025-05-20,20,1,soir,0.0,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,4,2025-05-21,22,2,soir,3.1333333333333333,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,1,2025-05-23,1,4,tot_matin,0.0,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,2,2025-06-04,22,2,soir,3.316666666666667,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,4,2026-05-21,19,3,soir,34.03333333333333,2025-2026
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2025-05-20,8,1,matin,0.0,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,8,2025-05-21,22,2,soir,12.766666666666667,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,2,2025-06-04,22,2,soir,6.35,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,8,2026-05-21,19,3,soir,35.95,2025-2026
+T207,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,1,2025-05-20,16,1,aprem,0.0,2024-2025
+T043,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,12,2025-05-21,10,2,matin,12.633333333333333,2024-2025
+T043,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,11,2025-05-23,13,4,dejeuner,15.283333333333331,2024-2025
+T043,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,1,2025-05-21,10,2,matin,0.0,2024-2025
+T115,explorateur_multi,deploiement_classe,3518185,Statistiques – classif. chiffres,21,2025-05-22,8,3,matin,3.55,2024-2025
+T207,pionnier_intensif,soutien_recurrent,5909323,Challenge IA – réseau neurones,7,2025-05-22,16,3,aprem,1.5166666666666666,2024-2025
+T199,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,11,2025-05-22,16,3,aprem,11.766666666666667,2024-2025
+T199,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,13,2025-05-26,10,0,matin,24.566666666666663,2024-2025
+T199,pionnier_intensif,demi_groupe,3515488,Équation réduite de droite,8,2025-05-22,17,3,aprem,13.366666666666667,2024-2025
+T199,pionnier_intensif,demi_groupe,3515488,Équation réduite de droite,14,2025-05-23,15,4,aprem,17.983333333333334,2024-2025
+T199,pionnier_intensif,demi_groupe,3515488,Équation réduite de droite,3,2025-05-26,11,0,matin,5.466666666666667,2024-2025
+T199,pionnier_intensif,demi_groupe,3515488,Équation réduite de droite,1,2025-05-23,15,4,aprem,0.0,2024-2025
+T125,fidele_pluriannuel,marathon,6659633,Géométrie repérée (milieu/dist.),2,2025-05-23,15,4,aprem,0.0166666666666666,2024-2025
+T125,fidele_pluriannuel,marathon,6659633,Géométrie repérée (milieu/dist.),25,2026-03-13,15,4,aprem,12.0,2025-2026
+T052,deployeur_classe,one_shot,5862412,Droite & produit scalaire,21,2025-05-26,8,0,matin,17.083333333333332,2024-2025
+T085,deployeur_classe,one_shot,2548348,Intro IA – chiffres 2 et 7,14,2025-05-26,14,0,aprem,16.833333333333332,2024-2025
+T096,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,6,2025-05-27,9,1,matin,126.28333333333332,2024-2025
+T096,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,5,2025-06-06,8,4,matin,150.88333333333333,2024-2025
+T175,petit_groupe,one_shot,3515488,Équation réduite de droite,1,2025-05-27,9,1,matin,0.0,2024-2025
+T051,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,15,2025-05-27,10,1,matin,9.233333333333333,2024-2025
+T051,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,4,2025-05-28,9,2,matin,5.933333333333334,2024-2025
+T051,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,1,2025-06-01,10,6,matin,0.0,2024-2025
+T051,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,1,2025-06-02,17,0,aprem,0.0,2024-2025
+T153,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,4,2025-05-27,12,1,dejeuner,2.8,2024-2025
+T041,deployeur_classe,one_shot,3515488,Équation réduite de droite,24,2025-05-27,13,1,dejeuner,14.483333333333333,2024-2025
+T195,pionnier_intensif,marathon,3515488,Équation réduite de droite,32,2025-05-28,8,2,matin,132.61666666666667,2024-2025
+T128,fidele_pluriannuel,marathon,3515488,Équation réduite de droite,21,2025-05-28,9,2,matin,71.65,2024-2025
+T082,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,14,2025-05-28,10,2,matin,56.583333333333336,2024-2025
+T082,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,1,2025-05-28,11,2,matin,0.0,2024-2025
+T129,fidele_pluriannuel,marathon,3515488,Équation réduite de droite,13,2025-06-02,9,0,matin,69.13333333333334,2024-2025
+T129,fidele_pluriannuel,marathon,3515488,Équation réduite de droite,12,2025-06-04,8,2,matin,8.583333333333334,2024-2025
+T129,fidele_pluriannuel,marathon,3515488,Équation réduite de droite,18,2026-06-02,13,1,dejeuner,13.116666666666667,2025-2026
+T129,fidele_pluriannuel,marathon,3515488,Équation réduite de droite,1,2025-06-02,9,0,matin,0.0,2024-2025
+T059,deployeur_classe,ponctuel_petit,3515488,Équation réduite de droite,14,2025-06-02,10,0,matin,5.483333333333333,2024-2025
+T059,deployeur_classe,ponctuel_petit,3515488,Équation réduite de droite,5,2025-06-04,8,2,matin,65.65,2024-2025
+T060,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,9,2025-06-02,11,0,matin,11.4,2024-2025
+T060,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,5,2025-06-05,8,3,matin,1.8166666666666669,2024-2025
+T060,deployeur_classe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,5,2025-06-10,14,1,aprem,13.916666666666666,2024-2025
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,6,2025-06-02,14,0,aprem,70.96666666666667,2024-2025
+T131,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,19,2025-06-02,15,0,aprem,10.2,2024-2025
+T131,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,14,2026-05-26,10,1,matin,4.583333333333333,2025-2026
+T068,deployeur_classe,one_shot,2548348,Intro IA – chiffres 2 et 7,17,2025-06-02,16,0,aprem,21.916666666666668,2024-2025
+T019,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,13,2025-06-03,0,1,tot_matin,11.033333333333331,2024-2025
+T019,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,17,2025-06-04,21,2,soir,25.233333333333334,2024-2025
+T217,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,21,2025-06-03,8,1,matin,136.41666666666666,2024-2025
+T013,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,20,2025-06-03,10,1,matin,15.116666666666667,2024-2025
+T013,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,15,2025-06-05,8,3,matin,10.083333333333334,2024-2025
+T166,petit_groupe,one_shot,3515488,Équation réduite de droite,2,2025-06-03,10,1,matin,27.25,2024-2025
+T217,pionnier_intensif,demi_groupe,2548348,Intro IA – chiffres 2 et 7,1,2025-06-03,11,1,matin,0.0,2024-2025
+T098,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,10,2025-06-03,11,1,matin,64.5,2024-2025
+T048,deployeur_classe,deploiement_classe,3515488,Équation réduite de droite,15,2025-06-03,20,1,soir,26.883333333333333,2024-2025
+T048,deployeur_classe,deploiement_classe,3515488,Équation réduite de droite,5,2025-06-04,19,2,soir,1.15,2024-2025
+T048,deployeur_classe,deploiement_classe,3515488,Équation réduite de droite,10,2025-06-05,22,3,soir,12.95,2024-2025
+T069,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,32,2025-06-04,1,2,tot_matin,119.56666666666666,2024-2025
+T069,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,2,2025-06-04,1,2,tot_matin,15.183333333333334,2024-2025
+T114,explorateur_multi,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,10,2025-06-04,8,2,matin,3.783333333333333,2024-2025
+T114,explorateur_multi,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,11,2025-06-06,15,4,aprem,2.55,2024-2025
+T146,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,6,2025-06-04,11,2,matin,9.7,2024-2025
+T013,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,1,2025-06-05,8,3,matin,0.0,2024-2025
+T132,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,7,2025-06-05,12,3,dejeuner,5.033333333333333,2024-2025
+T177,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,1,2025-06-05,15,3,aprem,0.0,2024-2025
+T186,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,4,2025-06-06,14,4,aprem,3.3833333333333333,2024-2025
+T221,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,2,2025-06-06,14,4,aprem,0.8833333333333333,2024-2025
+T221,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,2,2025-06-06,14,4,aprem,5.6,2024-2025
+T221,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2025-06-06,15,4,aprem,0.0,2024-2025
+T114,explorateur_multi,ponctuel_petit,3515488,Équation réduite de droite,5,2025-06-06,16,4,aprem,6.666666666666667,2024-2025
+T114,explorateur_multi,ponctuel_petit,3515488,Équation réduite de droite,12,2025-06-10,10,1,matin,15.4,2024-2025
+T195,pionnier_intensif,marathon,5862412,Droite & produit scalaire,1,2025-06-08,18,6,soir,0.0,2024-2025
+T195,pionnier_intensif,marathon,5862412,Droite & produit scalaire,1,2025-06-10,8,1,matin,0.0,2024-2025
+T154,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,4,2025-06-10,8,1,matin,66.76666666666667,2024-2025
+T217,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,11,2025-06-10,14,1,aprem,35.233333333333334,2024-2025
+T217,pionnier_intensif,demi_groupe,5909323,Challenge IA – réseau neurones,6,2025-06-10,14,1,aprem,37.46666666666667,2024-2025
+T100,deployeur_classe,one_shot,3515488,Équation réduite de droite,9,2025-06-10,14,1,aprem,8.233333333333333,2024-2025
+T056,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,12,2025-09-26,10,4,matin,8.466666666666667,2025-2026
+T056,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,8,2025-09-30,17,1,aprem,0.4,2025-2026
+T003,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,20,2025-09-29,10,0,matin,61.916666666666664,2025-2026
+T003,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,25,2025-10-03,10,4,matin,62.266666666666666,2025-2026
+T102,deployeur_classe,one_shot,3515488,Équation réduite de droite,9,2025-10-03,15,4,aprem,8.15,2025-2026
+T213,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,28,2025-10-07,10,1,matin,17.566666666666666,2025-2026
+T213,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,1,2025-10-12,12,6,dejeuner,0.0,2025-2026
+T213,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,3,2025-10-12,16,6,aprem,129.6,2025-2026
+T213,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,33,2025-10-14,10,1,matin,14.483333333333333,2025-2026
+T213,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,1,2025-10-14,17,1,aprem,0.0,2025-2026
+T165,petit_groupe,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2025-10-14,0,1,tot_matin,0.0,2025-2026
+T165,petit_groupe,ponctuel_petit,3518185,Statistiques – classif. chiffres,2,2025-10-22,16,2,aprem,10.15,2025-2026
+T216,pionnier_intensif,marathon,3518185,Statistiques – classif. chiffres,4,2025-10-17,10,4,matin,4.016666666666667,2025-2026
+T216,pionnier_intensif,marathon,6944347,Statistiques – santé fœtus,2,2025-10-17,11,4,matin,0.1166666666666666,2025-2026
+T093,deployeur_classe,one_shot,3515488,Équation réduite de droite,11,2025-11-10,8,0,matin,0.6,2025-2026
+T213,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),28,2025-11-18,10,1,matin,12.033333333333331,2025-2026
+T123,explorateur_multi,ponctuel_petit,3515488,Équation réduite de droite,1,2025-11-25,23,1,soir,0.0,2025-2026
+T123,explorateur_multi,ponctuel_petit,3515488,Équation réduite de droite,2,2025-11-27,15,3,aprem,5.633333333333334,2025-2026
+T123,explorateur_multi,ponctuel_petit,3518185,Statistiques – classif. chiffres,2,2025-11-27,14,3,aprem,2.8666666666666667,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6659633,Géométrie repérée (milieu/dist.),12,2025-12-03,8,2,matin,18.133333333333333,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6659633,Géométrie repérée (milieu/dist.),12,2025-12-10,8,2,matin,12.766666666666667,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6659633,Géométrie repérée (milieu/dist.),4,2025-12-17,8,2,matin,7.716666666666667,2025-2026
+T199,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,19,2025-12-05,8,4,matin,67.91666666666667,2025-2026
+T199,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,1,2025-12-07,15,6,aprem,0.0,2025-2026
+T199,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,1,2025-12-08,10,0,matin,0.0,2025-2026
+T199,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,6,2025-12-08,16,0,aprem,310.15,2025-2026
+T199,pionnier_intensif,demi_groupe,3518185,Statistiques – classif. chiffres,1,2025-12-09,7,1,tot_matin,0.0,2025-2026
+T008,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,16,2025-12-08,17,0,aprem,15.683333333333334,2025-2026
+T062,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,18,2025-12-11,8,3,matin,133.33333333333334,2025-2026
+T159,petit_groupe,ponctuel_petit,3515488,Équation réduite de droite,1,2025-12-11,11,3,matin,0.0,2025-2026
+T159,petit_groupe,ponctuel_petit,3515488,Équation réduite de droite,4,2026-01-07,10,2,matin,5.2,2025-2026
+T025,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,28,2025-12-17,8,2,matin,67.11666666666666,2025-2026
+T215,pionnier_intensif,marathon,5862412,Droite & produit scalaire,1,2025-12-20,21,5,soir,0.0,2025-2026
+T215,pionnier_intensif,marathon,5862412,Droite & produit scalaire,4,2025-12-22,11,0,matin,346.6,2025-2026
+T215,pionnier_intensif,marathon,5862412,Droite & produit scalaire,4,2025-12-23,13,1,dejeuner,349.15,2025-2026
+T215,pionnier_intensif,marathon,5862412,Droite & produit scalaire,3,2025-12-23,22,1,soir,43.93333333333333,2025-2026
+T215,pionnier_intensif,marathon,5862412,Droite & produit scalaire,1,2025-12-24,10,2,matin,0.0,2025-2026
+T215,pionnier_intensif,marathon,5862412,Droite & produit scalaire,1,2025-12-24,14,2,aprem,0.0,2025-2026
+T215,pionnier_intensif,marathon,5862412,Droite & produit scalaire,3,2025-12-27,12,5,dejeuner,69.13333333333334,2025-2026
+T215,pionnier_intensif,marathon,5862412,Droite & produit scalaire,2,2025-12-30,12,1,dejeuner,133.63333333333333,2025-2026
+T215,pionnier_intensif,marathon,5862412,Droite & produit scalaire,1,2025-12-30,21,1,soir,0.0,2025-2026
+T215,pionnier_intensif,marathon,5862412,Droite & produit scalaire,3,2025-12-31,11,2,matin,49.166666666666664,2025-2026
+T215,pionnier_intensif,marathon,5862412,Droite & produit scalaire,1,2026-01-02,15,4,aprem,0.0,2025-2026
+T215,pionnier_intensif,marathon,5862412,Droite & produit scalaire,1,2026-01-02,22,4,soir,0.0,2025-2026
+T095,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,11,2026-01-05,15,0,aprem,11.55,2025-2026
+T219,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,9,2026-01-07,9,2,matin,20.65,2025-2026
+T219,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,9,2026-01-21,9,2,matin,17.133333333333333,2025-2026
+T219,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,5,2026-01-07,10,2,matin,22.766666666666666,2025-2026
+T219,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,3,2026-01-21,10,2,matin,6.383333333333334,2025-2026
+T219,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,2,2026-01-07,10,2,matin,11.55,2025-2026
+T219,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-01-21,10,2,matin,0.0,2025-2026
+T110,explorateur_multi,deploiement_classe,3518185,Statistiques – classif. chiffres,18,2026-01-08,17,3,aprem,20.85,2025-2026
+T110,explorateur_multi,deploiement_classe,3518185,Statistiques – classif. chiffres,13,2026-01-15,17,3,aprem,12.55,2025-2026
+T212,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,12,2026-01-09,8,4,matin,2.466666666666667,2025-2026
+T212,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,14,2026-01-16,8,4,matin,1.9666666666666663,2025-2026
+T212,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,6,2026-02-13,8,4,matin,7.733333333333333,2025-2026
+T212,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,2,2026-03-06,8,4,matin,2.2666666666666666,2025-2026
+T212,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-03-13,8,4,matin,0.0,2025-2026
+T212,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-03-20,9,4,matin,0.0,2025-2026
+T039,deployeur_classe,deploiement_classe,6659633,Géométrie repérée (milieu/dist.),25,2026-01-12,13,0,dejeuner,17.2,2025-2026
+T039,deployeur_classe,deploiement_classe,6659633,Géométrie repérée (milieu/dist.),1,2026-02-06,15,4,aprem,0.0,2025-2026
+T157,petit_groupe,one_shot,3534169,Challenge MNIST – meilleur pixel,4,2026-01-13,7,1,tot_matin,9.9,2025-2026
+T210,pionnier_intensif,soutien_recurrent,8790616,Équation cartésienne,16,2026-01-14,8,2,matin,17.0,2025-2026
+T210,pionnier_intensif,soutien_recurrent,8790616,Équation cartésienne,17,2026-01-21,8,2,matin,15.45,2025-2026
+T000,deployeur_classe,marathon,3515488,Équation réduite de droite,11,2026-01-15,8,3,matin,5.983333333333333,2025-2026
+T000,deployeur_classe,marathon,3515488,Équation réduite de droite,1,2026-01-18,16,6,aprem,0.0,2025-2026
+T000,deployeur_classe,marathon,3515488,Équation réduite de droite,26,2026-06-02,14,1,aprem,83.08333333333333,2025-2026
+T000,deployeur_classe,marathon,3515488,Équation réduite de droite,11,2026-06-03,10,2,matin,5.9,2025-2026
+T000,deployeur_classe,marathon,3515488,Équation réduite de droite,11,2026-06-04,13,3,dejeuner,15.716666666666669,2025-2026
+T211,pionnier_intensif,marathon,6944347,Statistiques – santé fœtus,16,2026-01-16,13,4,dejeuner,177.56666666666666,2025-2026
+T186,pionnier_intensif,soutien_recurrent,6659633,Géométrie repérée (milieu/dist.),39,2026-01-19,11,0,matin,72.58333333333333,2025-2026
+T200,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),1,2026-01-20,19,1,soir,0.0,2025-2026
+T200,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),1,2026-01-22,10,3,matin,0.0,2025-2026
+T200,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),2,2026-01-22,16,3,aprem,32.61666666666667,2025-2026
+T200,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),1,2026-01-22,22,3,soir,0.0,2025-2026
+T200,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),34,2026-01-23,10,4,matin,116.01666666666668,2025-2026
+T200,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),1,2026-01-23,17,4,aprem,0.0,2025-2026
+T200,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),13,2026-01-24,11,5,matin,565.9166666666666,2025-2026
+T200,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),11,2026-01-25,11,6,matin,505.6333333333333,2025-2026
+T200,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),1,2026-01-25,22,6,soir,0.0,2025-2026
+T092,deployeur_classe,one_shot,2548348,Intro IA – chiffres 2 et 7,12,2026-01-22,13,3,dejeuner,8.05,2025-2026
+T109,explorateur_multi,marathon,3518185,Statistiques – classif. chiffres,29,2026-01-22,13,3,dejeuner,6.75,2025-2026
+T178,petit_groupe,one_shot,6944347,Statistiques – santé fœtus,1,2026-01-23,20,4,soir,0.0,2025-2026
+T203,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,17,2026-01-27,9,1,matin,0.9666666666666668,2025-2026
+T203,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,18,2026-02-04,11,2,matin,12.85,2025-2026
+T203,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,1,2026-02-04,15,2,aprem,0.0,2025-2026
+T203,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,3,2026-02-05,10,3,matin,25.133333333333333,2025-2026
+T203,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,1,2026-02-12,10,3,matin,0.0,2025-2026
+T203,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,1,2026-02-13,7,4,tot_matin,0.0,2025-2026
+T203,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,15,2026-04-20,12,0,dejeuner,24.783333333333335,2025-2026
+T057,deployeur_classe,one_shot,3515488,Équation réduite de droite,19,2026-01-27,16,1,aprem,12.316666666666666,2025-2026
+T176,petit_groupe,one_shot,5862412,Droite & produit scalaire,1,2026-01-30,18,4,soir,0.0,2025-2026
+T218,pionnier_intensif,marathon,3515488,Équation réduite de droite,8,2026-02-04,11,2,matin,9.866666666666667,2025-2026
+T191,pionnier_intensif,deploiement_classe,5909323,Challenge IA – réseau neurones,32,2026-02-05,16,3,aprem,64.45,2025-2026
+T191,pionnier_intensif,deploiement_classe,5909323,Challenge IA – réseau neurones,2,2026-02-12,16,3,aprem,65.1,2025-2026
+T191,pionnier_intensif,deploiement_classe,5909323,Challenge IA – réseau neurones,33,2026-03-19,15,3,aprem,90.55,2025-2026
+T191,pionnier_intensif,deploiement_classe,5909323,Challenge IA – réseau neurones,8,2026-04-14,17,1,aprem,15.55,2025-2026
+T191,pionnier_intensif,deploiement_classe,5909323,Challenge IA – réseau neurones,13,2026-04-15,8,2,matin,104.91666666666669,2025-2026
+T191,pionnier_intensif,deploiement_classe,5909323,Challenge IA – réseau neurones,5,2026-04-16,10,3,matin,17.016666666666666,2025-2026
+T191,pionnier_intensif,deploiement_classe,5909323,Challenge IA – réseau neurones,2,2026-05-04,10,0,matin,23.866666666666667,2025-2026
+T047,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,19,2026-02-06,7,4,tot_matin,19.45,2025-2026
+T047,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,1,2026-02-07,8,5,matin,0.0,2025-2026
+T047,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,1,2026-02-12,13,3,dejeuner,0.0,2025-2026
+T047,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,1,2026-02-12,18,3,soir,0.0,2025-2026
+T147,petit_groupe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,4,2026-02-06,8,4,matin,113.1,2025-2026
+T147,petit_groupe,ponctuel_petit,2548348,Intro IA – chiffres 2 et 7,2,2026-04-28,13,1,dejeuner,0.7,2025-2026
+T151,petit_groupe,one_shot,6944347,Statistiques – santé fœtus,7,2026-02-06,8,4,matin,62.5,2025-2026
+T218,pionnier_intensif,marathon,3534169,Challenge MNIST – meilleur pixel,10,2026-02-06,9,4,matin,6.483333333333333,2025-2026
+T023,deployeur_classe,one_shot,6944347,Statistiques – santé fœtus,28,2026-02-06,10,4,matin,58.15,2025-2026
+T202,pionnier_intensif,marathon,6944347,Statistiques – santé fœtus,14,2026-02-06,14,4,aprem,7.283333333333333,2025-2026
+T202,pionnier_intensif,marathon,6944347,Statistiques – santé fœtus,13,2026-02-09,9,0,matin,3.8,2025-2026
+T105,explorateur_multi,deploiement_classe,6944347,Statistiques – santé fœtus,29,2026-02-10,11,1,matin,13.2,2025-2026
+T073,deployeur_classe,one_shot,2548348,Intro IA – chiffres 2 et 7,16,2026-02-13,7,4,tot_matin,157.46666666666667,2025-2026
+T029,deployeur_classe,deploiement_classe,6944347,Statistiques – santé fœtus,26,2026-02-13,10,4,matin,65.73333333333333,2025-2026
+T029,deployeur_classe,deploiement_classe,6944347,Statistiques – santé fœtus,1,2026-03-27,20,4,soir,0.0,2025-2026
+T029,deployeur_classe,deploiement_classe,6944347,Statistiques – santé fœtus,1,2026-03-30,10,0,matin,0.0,2025-2026
+T140,petit_groupe,one_shot,3518185,Statistiques – classif. chiffres,8,2026-02-13,11,4,matin,2.4166666666666665,2025-2026
+T138,petit_groupe,ponctuel_petit,3518185,Statistiques – classif. chiffres,4,2026-02-13,13,4,dejeuner,5.15,2025-2026
+T138,petit_groupe,ponctuel_petit,3518185,Statistiques – classif. chiffres,4,2026-03-13,8,4,matin,3.45,2025-2026
+T106,explorateur_multi,deploiement_classe,3518185,Statistiques – classif. chiffres,31,2026-02-16,9,0,matin,93.43333333333334,2025-2026
+T204,pionnier_intensif,deploiement_classe,3515488,Équation réduite de droite,18,2026-02-16,15,0,aprem,98.95,2025-2026
+T204,pionnier_intensif,deploiement_classe,3515488,Équation réduite de droite,1,2026-02-19,10,3,matin,0.0,2025-2026
+T204,pionnier_intensif,deploiement_classe,3515488,Équation réduite de droite,1,2026-02-22,2,6,tot_matin,0.0,2025-2026
+T204,pionnier_intensif,deploiement_classe,3515488,Équation réduite de droite,1,2026-02-27,23,4,soir,0.0,2025-2026
+T204,pionnier_intensif,deploiement_classe,3515488,Équation réduite de droite,16,2026-03-16,9,0,matin,9.316666666666666,2025-2026
+T204,pionnier_intensif,deploiement_classe,3515488,Équation réduite de droite,18,2026-03-23,9,0,matin,7.383333333333334,2025-2026
+T008,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,23,2026-02-17,11,1,matin,19.633333333333333,2025-2026
+T017,deployeur_classe,one_shot,9747648,Prototype équation réduite,31,2026-02-20,13,4,dejeuner,11.15,2025-2026
+T034,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,26,2026-03-02,17,0,aprem,8.35,2025-2026
+T055,deployeur_classe,one_shot,6944347,Statistiques – santé fœtus,20,2026-03-05,11,3,matin,8.15,2025-2026
+T192,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),25,2026-03-06,14,4,aprem,30.716666666666665,2025-2026
+T192,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),7,2026-03-13,14,4,aprem,5.05,2025-2026
+T192,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),26,2026-03-24,16,1,aprem,3.15,2025-2026
+T192,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),25,2026-04-21,14,1,aprem,129.9,2025-2026
+T192,pionnier_intensif,demi_groupe,6659633,Géométrie repérée (milieu/dist.),17,2026-05-05,14,1,aprem,21.583333333333332,2025-2026
+T187,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,46,2026-03-09,8,0,matin,61.11666666666667,2025-2026
+T187,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,14,2026-03-23,8,0,matin,67.23333333333333,2025-2026
+T187,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,25,2026-04-27,11,0,matin,4.666666666666667,2025-2026
+T187,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,13,2026-04-27,17,0,aprem,2.8333333333333335,2025-2026
+T187,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,26,2026-05-07,16,3,aprem,10.866666666666667,2025-2026
+T187,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,26,2026-05-11,17,0,aprem,12.033333333333331,2025-2026
+T187,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,2,2026-05-21,16,3,aprem,0.6,2025-2026
+T179,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,1,2026-03-09,8,0,matin,0.0,2025-2026
+T206,pionnier_intensif,deploiement_classe,6944347,Statistiques – santé fœtus,14,2026-03-10,10,1,matin,8.15,2025-2026
+T206,pionnier_intensif,deploiement_classe,6944347,Statistiques – santé fœtus,12,2026-03-17,10,1,matin,20.0,2025-2026
+T194,pionnier_intensif,marathon,5862412,Droite & produit scalaire,25,2026-03-10,10,1,matin,0.9166666666666666,2025-2026
+T088,deployeur_classe,one_shot,6659633,Géométrie repérée (milieu/dist.),13,2026-03-11,8,2,matin,12.466666666666669,2025-2026
+T002,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,11,2026-03-13,13,4,dejeuner,5.15,2025-2026
+T002,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,25,2026-03-19,17,3,aprem,3.4833333333333334,2025-2026
+T002,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,13,2026-03-20,13,4,dejeuner,5.983333333333333,2025-2026
+T094,deployeur_classe,soutien_recurrent,3518185,Statistiques – classif. chiffres,4,2026-03-16,8,0,matin,70.01666666666667,2025-2026
+T094,deployeur_classe,soutien_recurrent,3518185,Statistiques – classif. chiffres,4,2026-03-30,8,0,matin,12.083333333333334,2025-2026
+T094,deployeur_classe,soutien_recurrent,3518185,Statistiques – classif. chiffres,3,2026-04-13,8,0,matin,10.966666666666669,2025-2026
+T107,explorateur_multi,deploiement_classe,3518185,Statistiques – classif. chiffres,28,2026-03-16,13,0,dejeuner,15.083333333333334,2025-2026
+T107,explorateur_multi,deploiement_classe,3518185,Statistiques – classif. chiffres,2,2026-03-17,14,1,aprem,120.13333333333334,2025-2026
+T107,explorateur_multi,deploiement_classe,3518185,Statistiques – classif. chiffres,19,2026-06-04,14,3,aprem,2.283333333333333,2025-2026
+T076,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,15,2026-03-16,14,0,aprem,27.75,2025-2026
+T042,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,23,2026-03-16,15,0,aprem,67.76666666666667,2025-2026
+T042,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,1,2026-03-22,20,6,soir,0.0,2025-2026
+T149,petit_groupe,ponctuel_petit,3518185,Statistiques – classif. chiffres,2,2026-03-20,13,4,dejeuner,0.0833333333333333,2025-2026
+T149,petit_groupe,ponctuel_petit,3518185,Statistiques – classif. chiffres,4,2026-03-20,14,4,aprem,8.916666666666666,2025-2026
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,4,2026-03-24,8,1,matin,1.45,2025-2026
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,9,2026-03-31,9,1,matin,5.2,2025-2026
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,13,2026-04-28,8,1,matin,3.4,2025-2026
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,1,2026-05-05,8,1,matin,0.0,2025-2026
+T206,pionnier_intensif,deploiement_classe,3515488,Équation réduite de droite,11,2026-03-24,10,1,matin,3.8,2025-2026
+T030,deployeur_classe,deploiement_classe,8790616,Équation cartésienne,26,2026-03-25,11,2,matin,5.633333333333334,2025-2026
+T030,deployeur_classe,deploiement_classe,8790616,Équation cartésienne,1,2026-03-26,12,3,dejeuner,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,2,2026-03-25,15,2,aprem,176.18333333333334,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-03-28,16,5,aprem,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-03-29,11,6,matin,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,2,2026-03-29,18,6,soir,104.73333333333332,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-03-30,21,0,soir,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,4,2026-03-31,17,1,aprem,104.11666666666666,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-04-02,9,3,matin,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,3,2026-04-02,16,3,aprem,174.46666666666667,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-04-03,9,4,matin,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,5,2026-04-03,15,4,aprem,212.15,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,2,2026-04-04,10,5,matin,34.4,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,3,2026-04-04,14,5,aprem,74.5,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,2,2026-04-05,9,6,matin,0.9333333333333332,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,6,2026-04-05,13,6,dejeuner,135.58333333333334,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,3,2026-04-05,19,6,soir,306.1,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,25,2026-04-06,9,0,matin,947.5,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-04-07,9,1,matin,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-04-07,14,1,aprem,0.0,2025-2026
+T190,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-04-07,23,1,soir,0.0,2025-2026
+T064,deployeur_classe,one_shot,5862412,Droite & produit scalaire,18,2026-03-27,12,4,dejeuner,12.666666666666666,2025-2026
+T195,pionnier_intensif,marathon,6659633,Géométrie repérée (milieu/dist.),24,2026-03-28,8,5,matin,54.3,2025-2026
+T194,pionnier_intensif,marathon,6659633,Géométrie repérée (milieu/dist.),30,2026-03-28,9,5,matin,28.7,2025-2026
+T046,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,23,2026-03-31,10,1,matin,8.366666666666667,2025-2026
+T119,explorateur_multi,ponctuel_petit,3518185,Statistiques – classif. chiffres,9,2026-03-31,10,1,matin,14.45,2025-2026
+T220,pionnier_intensif,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2026-04-02,9,3,matin,0.0,2025-2026
+T220,pionnier_intensif,ponctuel_petit,3518185,Statistiques – classif. chiffres,2,2026-05-13,8,2,matin,22.733333333333334,2025-2026
+T220,pionnier_intensif,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2026-05-21,14,3,aprem,0.0,2025-2026
+T220,pionnier_intensif,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2026-05-26,11,1,matin,0.0,2025-2026
+T220,pionnier_intensif,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2026-05-27,9,2,matin,0.0,2025-2026
+T220,pionnier_intensif,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2026-05-28,8,3,matin,0.0,2025-2026
+T014,deployeur_classe,ponctuel_petit,5909323,Challenge IA – réseau neurones,10,2026-04-03,8,4,matin,7.1,2025-2026
+T014,deployeur_classe,ponctuel_petit,5909323,Challenge IA – réseau neurones,13,2026-04-10,8,4,matin,15.2,2025-2026
+T014,deployeur_classe,ponctuel_petit,5909323,Challenge IA – réseau neurones,13,2026-04-13,11,0,matin,8.9,2025-2026
+T080,deployeur_classe,demi_groupe,5909323,Challenge IA – réseau neurones,2,2026-04-03,9,4,matin,17.55,2025-2026
+T080,deployeur_classe,demi_groupe,5909323,Challenge IA – réseau neurones,1,2026-04-03,14,4,aprem,0.0,2025-2026
+T080,deployeur_classe,demi_groupe,5909323,Challenge IA – réseau neurones,1,2026-04-07,11,1,matin,0.0,2025-2026
+T080,deployeur_classe,demi_groupe,5909323,Challenge IA – réseau neurones,11,2026-04-07,14,1,aprem,90.25,2025-2026
+T186,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,16,2026-04-03,14,4,aprem,72.56666666666666,2025-2026
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,22,2026-04-03,14,4,aprem,69.51666666666667,2025-2026
+T071,deployeur_classe,deploiement_classe,3515488,Équation réduite de droite,15,2026-04-03,15,4,aprem,2.4166666666666665,2025-2026
+T071,deployeur_classe,deploiement_classe,3515488,Équation réduite de droite,1,2026-04-10,15,4,aprem,0.0,2025-2026
+T206,pionnier_intensif,deploiement_classe,6659633,Géométrie repérée (milieu/dist.),11,2026-04-07,10,1,matin,12.233333333333333,2025-2026
+T206,pionnier_intensif,deploiement_classe,6659633,Géométrie repérée (milieu/dist.),8,2026-04-14,10,1,matin,32.85,2025-2026
+T120,explorateur_multi,ponctuel_petit,3518185,Statistiques – classif. chiffres,10,2026-04-07,11,1,matin,3.4,2025-2026
+T120,explorateur_multi,ponctuel_petit,3515488,Équation réduite de droite,11,2026-04-07,11,1,matin,19.266666666666666,2025-2026
+T020,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,30,2026-04-08,11,2,matin,17.0,2025-2026
+T086,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,13,2026-04-09,14,3,aprem,3.8666666666666663,2025-2026
+T086,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2026-04-14,13,1,dejeuner,0.0,2025-2026
+T079,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,15,2026-04-10,13,4,dejeuner,4.683333333333334,2025-2026
+T004,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,45,2026-04-13,13,0,dejeuner,75.85,2025-2026
+T078,deployeur_classe,one_shot,3515488,Équation réduite de droite,15,2026-04-14,10,1,matin,5.766666666666667,2025-2026
+T119,explorateur_multi,ponctuel_petit,3515488,Équation réduite de droite,4,2026-04-14,11,1,matin,14.183333333333334,2025-2026
+T119,explorateur_multi,ponctuel_petit,3515488,Équation réduite de droite,1,2026-05-21,14,3,aprem,0.0,2025-2026
+T112,explorateur_multi,deploiement_classe,3515488,Équation réduite de droite,14,2026-04-14,16,1,aprem,9.3,2025-2026
+T105,explorateur_multi,deploiement_classe,5862412,Droite & produit scalaire,21,2026-04-16,14,3,aprem,13.516666666666667,2025-2026
+T105,explorateur_multi,deploiement_classe,5862412,Droite & produit scalaire,17,2026-04-17,14,4,aprem,6.65,2025-2026
+T216,pionnier_intensif,marathon,5909323,Challenge IA – réseau neurones,26,2026-04-17,8,4,matin,26.0,2025-2026
+T112,explorateur_multi,deploiement_classe,5862412,Droite & produit scalaire,18,2026-04-17,9,4,matin,6.883333333333334,2025-2026
+T192,pionnier_intensif,demi_groupe,3515488,Équation réduite de droite,2,2026-04-21,16,1,aprem,11.283333333333331,2025-2026
+T192,pionnier_intensif,demi_groupe,3515488,Équation réduite de droite,27,2026-05-05,16,1,aprem,21.166666666666668,2025-2026
+T063,deployeur_classe,one_shot,2548348,Intro IA – chiffres 2 et 7,18,2026-04-27,9,0,matin,6.5,2025-2026
+T209,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,4,2026-04-27,14,0,aprem,15.7,2025-2026
+T110,explorateur_multi,deploiement_classe,8790616,Équation cartésienne,27,2026-04-29,10,2,matin,64.1,2025-2026
+T133,fidele_pluriannuel,marathon,3515488,Équation réduite de droite,37,2026-04-30,9,3,matin,26.216666666666665,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5909323,Challenge IA – réseau neurones,12,2026-05-04,8,0,matin,54.733333333333334,2025-2026
+T188,pionnier_intensif,soutien_recurrent,5909323,Challenge IA – réseau neurones,1,2026-05-07,10,3,matin,0.0,2025-2026
+T006,deployeur_classe,one_shot,2548348,Intro IA – chiffres 2 et 7,41,2026-05-05,13,1,dejeuner,134.75,2025-2026
+T143,petit_groupe,one_shot,5909323,Challenge IA – réseau neurones,7,2026-05-06,8,2,matin,3.2333333333333334,2025-2026
+T206,pionnier_intensif,deploiement_classe,5862412,Droite & produit scalaire,20,2026-05-06,9,2,matin,77.98333333333333,2025-2026
+T172,petit_groupe,one_shot,6944347,Statistiques – santé fœtus,1,2026-05-07,15,3,aprem,0.0,2025-2026
+T183,petit_groupe,one_shot,3515488,Équation réduite de droite,1,2026-05-08,11,4,matin,0.0,2025-2026
+T186,pionnier_intensif,soutien_recurrent,8790616,Équation cartésienne,19,2026-05-09,9,5,matin,13.766666666666667,2025-2026
+T111,explorateur_multi,demi_groupe,3515488,Équation réduite de droite,20,2026-05-11,8,0,matin,12.3,2025-2026
+T111,explorateur_multi,demi_groupe,3515488,Équation réduite de droite,12,2026-05-19,13,1,dejeuner,46.38333333333333,2025-2026
+T111,explorateur_multi,demi_groupe,3518185,Statistiques – classif. chiffres,1,2026-05-11,9,0,matin,0.0,2025-2026
+T111,explorateur_multi,demi_groupe,3518185,Statistiques – classif. chiffres,2,2026-05-12,14,1,aprem,3.5166666666666666,2025-2026
+T111,explorateur_multi,demi_groupe,3518185,Statistiques – classif. chiffres,4,2026-05-19,14,1,aprem,1.8,2025-2026
+T141,petit_groupe,one_shot,3515488,Équation réduite de droite,8,2026-05-11,10,0,matin,2.2333333333333334,2025-2026
+T001,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,26,2026-05-11,15,0,aprem,2.316666666666667,2025-2026
+T001,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,27,2026-05-13,9,2,matin,1.1833333333333331,2025-2026
+T083,deployeur_classe,one_shot,8790616,Équation cartésienne,14,2026-05-12,12,1,dejeuner,81.75,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-05-12,19,1,soir,0.0,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-05-12,23,1,soir,0.0,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-05-14,19,3,soir,0.0,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-05-15,12,4,dejeuner,0.0,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-05-15,17,4,aprem,0.0,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,3,2026-05-16,11,5,matin,250.6,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,1,2026-05-17,19,6,soir,0.0,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,5,2026-05-18,12,0,dejeuner,162.45,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,4,2026-05-19,15,1,aprem,359.6333333333333,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,6,2026-05-20,8,2,matin,4.05,2025-2026
+T210,pionnier_intensif,soutien_recurrent,6944347,Statistiques – santé fœtus,2,2026-05-20,12,2,dejeuner,1.0166666666666666,2025-2026
+T010,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,15,2026-05-18,11,0,matin,3.8666666666666663,2025-2026
+T010,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,11,2026-05-19,15,1,aprem,1.9333333333333331,2025-2026
+T010,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,12,2026-05-27,8,2,matin,3.05,2025-2026
+T032,deployeur_classe,one_shot,2548348,Intro IA – chiffres 2 et 7,26,2026-05-18,13,0,dejeuner,19.166666666666668,2025-2026
+T066,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,16,2026-05-19,13,1,dejeuner,77.76666666666667,2025-2026
+T066,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,1,2026-05-31,23,6,soir,0.0,2025-2026
+T139,petit_groupe,one_shot,5909323,Challenge IA – réseau neurones,8,2026-05-20,8,2,matin,20.733333333333334,2025-2026
+T186,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,14,2026-05-20,9,2,matin,9.266666666666667,2025-2026
+T035,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,8,2026-05-20,10,2,matin,7.316666666666666,2025-2026
+T035,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,1,2026-05-21,9,3,matin,0.0,2025-2026
+T035,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,17,2026-05-26,9,1,matin,126.86666666666666,2025-2026
+T186,pionnier_intensif,soutien_recurrent,8790616,Équation cartésienne,1,2026-05-21,13,3,dejeuner,0.0,2025-2026
+T132,fidele_pluriannuel,marathon,6944347,Statistiques – santé fœtus,26,2026-05-21,13,3,dejeuner,54.25,2025-2026
+T223,pionnier_intensif,soutien_recurrent,3518185,Statistiques – classif. chiffres,1,2026-05-21,14,3,aprem,0.0,2025-2026
+T223,pionnier_intensif,soutien_recurrent,3515488,Équation réduite de droite,1,2026-05-21,14,3,aprem,0.0,2025-2026
+T223,pionnier_intensif,soutien_recurrent,5862412,Droite & produit scalaire,1,2026-05-21,14,3,aprem,0.0,2025-2026
+T036,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,13,2026-05-21,16,3,aprem,5.183333333333334,2025-2026
+T036,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,13,2026-05-28,15,3,aprem,117.0,2025-2026
+T058,deployeur_classe,one_shot,3515488,Équation réduite de droite,19,2026-05-21,22,3,soir,17.833333333333332,2025-2026
+T031,deployeur_classe,one_shot,8790616,Équation cartésienne,27,2026-05-22,15,4,aprem,62.18333333333333,2025-2026
+T180,petit_groupe,one_shot,3518185,Statistiques – classif. chiffres,1,2026-05-22,16,4,aprem,0.0,2025-2026
+T195,pionnier_intensif,marathon,8790616,Équation cartésienne,23,2026-05-23,8,5,matin,56.0,2025-2026
+T117,explorateur_multi,deploiement_classe,5862412,Droite & produit scalaire,1,2026-05-25,12,0,dejeuner,0.0,2025-2026
+T193,pionnier_intensif,deploiement_classe,3515488,Équation réduite de droite,15,2026-05-26,8,1,matin,2.0166666666666666,2025-2026
+T193,pionnier_intensif,deploiement_classe,3515488,Équation réduite de droite,26,2026-06-01,14,0,aprem,72.45,2025-2026
+T193,pionnier_intensif,deploiement_classe,3515488,Équation réduite de droite,10,2026-06-02,8,1,matin,1.5666666666666669,2025-2026
+T193,pionnier_intensif,deploiement_classe,3515488,Équation réduite de droite,33,2026-06-03,9,2,matin,77.73333333333333,2025-2026
+T168,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,2,2026-05-26,9,1,matin,74.76666666666667,2025-2026
+T037,deployeur_classe,deploiement_classe,5909323,Challenge IA – réseau neurones,24,2026-05-26,11,1,matin,24.266666666666666,2025-2026
+T037,deployeur_classe,deploiement_classe,5909323,Challenge IA – réseau neurones,1,2026-05-28,13,3,dejeuner,0.0,2025-2026
+T209,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,14,2026-05-26,11,1,matin,18.0,2025-2026
+T209,pionnier_intensif,soutien_recurrent,2548348,Intro IA – chiffres 2 et 7,6,2026-05-28,10,3,matin,7.733333333333333,2025-2026
+T173,petit_groupe,one_shot,5862412,Droite & produit scalaire,1,2026-05-26,12,1,dejeuner,0.0,2025-2026
+T106,explorateur_multi,deploiement_classe,6944347,Statistiques – santé fœtus,22,2026-05-26,13,1,dejeuner,70.56666666666666,2025-2026
+T108,explorateur_multi,deploiement_classe,5862412,Droite & produit scalaire,19,2026-05-26,13,1,dejeuner,12.05,2025-2026
+T216,pionnier_intensif,marathon,5862412,Droite & produit scalaire,24,2026-05-26,14,1,aprem,24.466666666666665,2025-2026
+T065,deployeur_classe,one_shot,6944347,Statistiques – santé fœtus,17,2026-05-27,11,2,matin,16.833333333333332,2025-2026
+T044,deployeur_classe,deploiement_classe,6944347,Statistiques – santé fœtus,22,2026-05-27,15,2,aprem,36.71666666666667,2025-2026
+T044,deployeur_classe,deploiement_classe,6944347,Statistiques – santé fœtus,1,2026-06-04,16,3,aprem,0.0,2025-2026
+T061,deployeur_classe,ponctuel_petit,8790616,Équation cartésienne,10,2026-05-28,9,3,matin,16.3,2025-2026
+T061,deployeur_classe,ponctuel_petit,8790616,Équation cartésienne,8,2026-05-28,15,3,aprem,4.866666666666666,2025-2026
+T108,explorateur_multi,deploiement_classe,3518185,Statistiques – classif. chiffres,23,2026-05-28,10,3,matin,60.93333333333333,2025-2026
+T127,fidele_pluriannuel,marathon,2548348,Intro IA – chiffres 2 et 7,18,2026-05-28,10,3,matin,33.95,2025-2026
+T040,deployeur_classe,ponctuel_petit,5909323,Challenge IA – réseau neurones,12,2026-05-28,10,3,matin,88.31666666666666,2025-2026
+T040,deployeur_classe,ponctuel_petit,5909323,Challenge IA – réseau neurones,4,2026-06-01,10,0,matin,109.4,2025-2026
+T040,deployeur_classe,ponctuel_petit,5909323,Challenge IA – réseau neurones,1,2026-06-02,13,1,dejeuner,0.0,2025-2026
+T040,deployeur_classe,ponctuel_petit,5909323,Challenge IA – réseau neurones,4,2026-06-04,10,3,matin,106.48333333333332,2025-2026
+T040,deployeur_classe,ponctuel_petit,5909323,Challenge IA – réseau neurones,4,2026-06-08,10,0,matin,107.91666666666669,2025-2026
+T116,explorateur_multi,ponctuel_petit,6944347,Statistiques – santé fœtus,3,2026-05-28,10,3,matin,15.966666666666669,2025-2026
+T116,explorateur_multi,ponctuel_petit,6944347,Statistiques – santé fœtus,13,2026-05-28,16,3,aprem,19.933333333333337,2025-2026
+T049,deployeur_classe,one_shot,8790616,Équation cartésienne,22,2026-05-28,14,3,aprem,62.016666666666666,2025-2026
+T126,fidele_pluriannuel,marathon,3518185,Statistiques – classif. chiffres,22,2026-05-29,11,4,matin,4.583333333333333,2025-2026
+T126,fidele_pluriannuel,marathon,3518185,Statistiques – classif. chiffres,1,2026-06-02,14,1,aprem,0.0,2025-2026
+T021,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,29,2026-05-29,13,4,dejeuner,66.76666666666667,2025-2026
+T113,explorateur_multi,deploiement_classe,3518185,Statistiques – classif. chiffres,22,2026-06-01,8,0,matin,61.766666666666666,2025-2026
+T113,explorateur_multi,deploiement_classe,3518185,Statistiques – classif. chiffres,9,2026-06-02,8,1,matin,1.3666666666666667,2025-2026
+T070,deployeur_classe,one_shot,8790616,Équation cartésienne,16,2026-06-01,12,0,dejeuner,6.666666666666667,2025-2026
+T026,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,12,2026-06-01,14,0,aprem,15.333333333333334,2025-2026
+T026,deployeur_classe,deploiement_classe,3518185,Statistiques – classif. chiffres,16,2026-06-02,11,1,matin,4.566666666666666,2025-2026
+T081,deployeur_classe,one_shot,3515488,Équation réduite de droite,15,2026-06-01,14,0,aprem,10.483333333333333,2025-2026
+T018,deployeur_classe,one_shot,3515488,Équation réduite de droite,31,2026-06-01,15,0,aprem,126.31666666666666,2025-2026
+T196,pionnier_intensif,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,44,2026-06-02,8,1,matin,209.11666666666667,2025-2026
+T196,pionnier_intensif,deploiement_classe,3515488,Équation réduite de droite,49,2026-06-02,8,1,matin,536.4,2025-2026
+T113,explorateur_multi,deploiement_classe,5909323,Challenge IA – réseau neurones,6,2026-06-02,9,1,matin,15.666666666666666,2025-2026
+T024,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,28,2026-06-02,10,1,matin,62.333333333333336,2025-2026
+T116,explorateur_multi,ponctuel_petit,3518185,Statistiques – classif. chiffres,13,2026-06-02,13,1,dejeuner,4.516666666666667,2025-2026
+T116,explorateur_multi,ponctuel_petit,3518185,Statistiques – classif. chiffres,9,2026-06-04,16,3,aprem,6.65,2025-2026
+T164,petit_groupe,one_shot,3534169,Challenge MNIST – meilleur pixel,3,2026-06-02,14,1,aprem,24.25,2025-2026
+T196,pionnier_intensif,deploiement_classe,3518185,Statistiques – classif. chiffres,4,2026-06-02,17,1,aprem,15.2,2025-2026
+T122,explorateur_multi,ponctuel_petit,3515488,Équation réduite de droite,1,2026-06-02,21,1,soir,0.0,2025-2026
+T122,explorateur_multi,ponctuel_petit,3515488,Équation réduite de droite,6,2026-06-03,8,2,matin,58.63333333333333,2025-2026
+T152,petit_groupe,ponctuel_petit,3518185,Statistiques – classif. chiffres,4,2026-06-03,0,2,tot_matin,3.7,2025-2026
+T152,petit_groupe,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2026-06-05,21,4,soir,0.0,2025-2026
+T053,deployeur_classe,one_shot,8790616,Équation cartésienne,20,2026-06-03,9,2,matin,14.216666666666669,2025-2026
+T118,explorateur_multi,demi_groupe,3518185,Statistiques – classif. chiffres,8,2026-06-03,23,2,soir,14.566666666666666,2025-2026
+T118,explorateur_multi,demi_groupe,3518185,Statistiques – classif. chiffres,6,2026-06-04,19,3,soir,30.133333333333333,2025-2026
+T118,explorateur_multi,demi_groupe,3515488,Équation réduite de droite,3,2026-06-03,23,2,soir,28.7,2025-2026
+T118,explorateur_multi,demi_groupe,3515488,Équation réduite de droite,3,2026-06-04,19,3,soir,16.416666666666668,2025-2026
+T022,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,7,2026-06-04,8,3,matin,47.6,2025-2026
+T022,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,18,2026-06-04,15,3,aprem,12.266666666666667,2025-2026
+T022,deployeur_classe,deploiement_classe,2548348,Intro IA – chiffres 2 et 7,4,2026-06-05,10,4,matin,13.266666666666667,2025-2026
+T218,pionnier_intensif,marathon,5862412,Droite & produit scalaire,3,2026-06-04,9,3,matin,1.2166666666666666,2025-2026
+T109,explorateur_multi,marathon,3515488,Équation réduite de droite,26,2026-06-04,13,3,dejeuner,14.866666666666667,2025-2026
+T161,petit_groupe,one_shot,3518185,Statistiques – classif. chiffres,4,2026-06-04,14,3,aprem,5.2,2025-2026
+T148,petit_groupe,one_shot,2548348,Intro IA – chiffres 2 et 7,6,2026-06-05,8,4,matin,4.433333333333334,2025-2026
+T015,deployeur_classe,one_shot,3518185,Statistiques – classif. chiffres,35,2026-06-05,12,4,dejeuner,126.26666666666668,2025-2026
+T027,deployeur_classe,one_shot,8790616,Équation cartésienne,28,2026-06-05,16,4,aprem,60.85,2025-2026
+T050,deployeur_classe,one_shot,3515488,Équation réduite de droite,21,2026-06-08,10,0,matin,84.18333333333334,2025-2026
+T074,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,10,2026-06-08,10,0,matin,10.7,2025-2026
+T074,deployeur_classe,ponctuel_petit,3518185,Statistiques – classif. chiffres,6,2026-06-08,14,0,aprem,0.7833333333333333,2025-2026
+T222,pionnier_intensif,ponctuel_petit,3518185,Statistiques – classif. chiffres,2,2026-06-08,11,0,matin,0.7,2025-2026
+T222,pionnier_intensif,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2026-06-10,10,2,matin,0.0,2025-2026
+T122,explorateur_multi,ponctuel_petit,5862412,Droite & produit scalaire,4,2026-06-08,13,0,dejeuner,3.9166666666666665,2025-2026
+T122,explorateur_multi,ponctuel_petit,5862412,Droite & produit scalaire,3,2026-06-09,14,1,aprem,11.966666666666669,2025-2026
+T155,petit_groupe,one_shot,6944347,Statistiques – santé fœtus,4,2026-06-08,15,0,aprem,3.716666666666667,2025-2026
+T107,explorateur_multi,deploiement_classe,8790616,Équation cartésienne,5,2026-06-08,16,0,aprem,5.333333333333333,2025-2026
+T117,explorateur_multi,deploiement_classe,8790616,Équation cartésienne,20,2026-06-09,10,1,matin,8.466666666666667,2025-2026
+T162,petit_groupe,ponctuel_petit,3518185,Statistiques – classif. chiffres,3,2026-06-09,10,1,matin,2.316666666666667,2025-2026
+T222,pionnier_intensif,ponctuel_petit,6659633,Géométrie repérée (milieu/dist.),1,2026-06-11,13,3,dejeuner,0.0,2025-2026
+T222,pionnier_intensif,ponctuel_petit,3515488,Équation réduite de droite,1,2026-06-11,14,3,aprem,0.0,2025-2026
+T124,explorateur_multi,ponctuel_petit,3518185,Statistiques – classif. chiffres,2,2026-06-12,13,4,dejeuner,1.4833333333333334,2025-2026
+T124,explorateur_multi,ponctuel_petit,3518185,Statistiques – classif. chiffres,1,2026-06-15,15,0,aprem,0.0,2025-2026
+T162,petit_groupe,ponctuel_petit,3515488,Équation réduite de droite,1,2026-06-15,10,0,matin,0.0,2025-2026
+T124,explorateur_multi,ponctuel_petit,6659633,Géométrie repérée (milieu/dist.),2,2026-06-15,15,0,aprem,1.6166666666666667,2025-2026

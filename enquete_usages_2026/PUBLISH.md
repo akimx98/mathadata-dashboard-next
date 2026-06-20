@@ -13,7 +13,8 @@ une seule règle :
 | Page | Analyse | Fichier source (repo) | Artifact claude.ai (équipe) | GitHub Pages |
 |---|---|---|---|---|
 | Accueil | portail | `enquete_usages_2026/pages/index.html` | — | [/](https://akimx98.github.io/mathadata-dashboard-next/) |
-| **Typologie** | Cinq façons d'enseigner (synthèse transversale) | `enquete_usages_2026/commons/dashboard_typologie.html` | — | [/typologie.html](https://akimx98.github.io/mathadata-dashboard-next/typologie.html) |
+| **Typologie** | Cinq façons d'enseigner (profils, rétention) | `enquete_usages_2026/commons/dashboard_typologie.html` | — | [/typologie.html](https://akimx98.github.io/mathadata-dashboard-next/typologie.html) |
+| **Séances** | Anatomie d'une séance (scénarios, rythmes, cas) | `enquete_usages_2026/commons/dashboard_seances.html` | — | [/seances.html](https://akimx98.github.io/mathadata-dashboard-next/seances.html) |
 | **Volet 1** | Déploiement réel en classe (Capytale) | `enquete_usages_2026/volet1/dashboard.html` | `f4a6cd35-dc33-46fd-bd08-e121a0d1d517` | [/volet1.html](https://akimx98.github.io/mathadata-dashboard-next/volet1.html) |
 | **Volet 2** | Du site à la classe (mathadata.fr × Capytale) | `enquete_usages_2026/volet2/dashboard_volet2.html` | `79e26dd8-eaf0-422b-86e3-5dd69ba6afa8` | [/volet2.html](https://akimx98.github.io/mathadata-dashboard-next/volet2.html) |
 

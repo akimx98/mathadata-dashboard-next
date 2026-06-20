@@ -27,6 +27,11 @@ Refonte **data-driven et vérifiée** de la sociologie des usages (prolonge et c
 - Page web (canonique) : `commons/dashboard_typologie.html` → https://akimx98.github.io/mathadata-dashboard-next/typologie.html · miroir artifact équipe : https://claude.ai/code/artifact/0b79ed9b-8e7e-4ecf-b7dc-f4f3aa86ea83
 - Pipeline : `build_master.py` (table maître) → `workflow_typologie.js` (enquête + vérif) → charts. Sources de vérité : `commons/data/facts_typologie.json`, `facts_investigation.json`, `master_teachers.csv` (pseudonymisé). Graphiques : `commons/charts/`.
 
+**Séances — Anatomie d'une séance** (pendant « la séance » du précédent « le prof ») : comment l'outil se vit en classe — rythmes horaires, scénarios d'usage (déploiement, soutien récurrent, demi-groupe, reprises, travail-maison), engagement élève, galerie de cas réels. Enquête vérifiée (14 questions).
+- Rapport : [`commons/RAPPORT_SEANCES_2026.md`](commons/RAPPORT_SEANCES_2026.md)
+- Page web (canonique) : `commons/dashboard_seances.html` → https://akimx98.github.io/mathadata-dashboard-next/seances.html
+- Pipeline : `build_scenarios.py` → `workflow_scenarios.js` → charts `sea_*`. Sources : `commons/data/scenarios_teachers.csv`, `sessions_enriched.csv`, `facts_scenarios.json`.
+
 ## Entrées partagées (hors dépôt enquête)
 - `public/data/capytale_fresh_20260619.csv` — extraction usage Capytale (versionnée).
 - `public/data/annuaire_etablissements.csv` — référentiel établissements (IPS, géo).

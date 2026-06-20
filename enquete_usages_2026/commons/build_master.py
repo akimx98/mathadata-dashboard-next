@@ -76,8 +76,8 @@ M['returned_next_year']=M.apply(ret_next,axis=1)
 # ---- IPS buckets ----
 M['ips_bucket']=pd.cut(M['ips'],[0,95,110,200],labels=['faible(<95)','moyen(95-110)','favorise(>110)'])
 
-# ---- pseudonymize teacher ----
-M=M.sort_values(['arch','n_eleves_uniq'],ascending=[True,False]).reset_index(drop=True)
+# ---- pseudonymize teacher (canonical: arch, reach desc, hash tiebreaker -> stable) ----
+M=M.sort_values(['arch','n_eleves_uniq','teacher'],ascending=[True,False,True]).reset_index(drop=True)
 M['pseudo']=['T%03d'%i for i in range(len(M))]
 cols=['pseudo','arch','behavior','n_eleves_uniq','n_sessions','n_activities_taught','n_tests',
  'n_sy_taught','returned','returned_next_year','eligible_return','entry_sy','entry_month',

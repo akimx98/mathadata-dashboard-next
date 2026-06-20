@@ -21,6 +21,7 @@ declare -a MAP=(
   "$E/volet1/dashboard.html:volet1.html"
   "$E/volet2/dashboard_volet2.html:volet2.html"
   "$E/commons/dashboard_typologie.html:typologie.html"
+  "$E/commons/dashboard_seances.html:seances.html"
 )
 
 # garde-fou sécurité : refuser de publier si un email apparaît dans une source

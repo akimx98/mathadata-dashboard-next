@@ -6,6 +6,8 @@
 **Méthode** : clustering k-means (k=5) → 5 archétypes ; puis enquête croisée (10 questions, chacune testée puis **vérifiée de façon adversariale** par un second analyste indépendant) reliant les profils à la rétention, au parcours amont, à la formation, à la géographie et aux trajectoires pluriannuelles.
 
 > Cette note prolonge et **corrige** [`ANALYSE_PATTERNS_USAGE.md`](../../ANALYSE_PATTERNS_USAGE.md) (4 nov. 2025). Elle ne se contente pas de décrire les profils : elle s'en sert comme **grille de lecture** pour répondre à deux questions — *qui atteint la classe ?* et *pourquoi la plupart ne reviennent-ils pas ?*
+>
+> **Pendant** : [`RAPPORT_SEANCES_2026.md`](RAPPORT_SEANCES_2026.md) — « la séance » (comment l'outil se vit en classe : scénarios, rythmes, cas). Ici « le prof ».
 
 ---
 
@@ -107,7 +109,7 @@ Parmi les 32 pluriannuels : **25/32** ont eu un démarrage modeste (<5 séances 
 
 ### Géographie / animation
 
-**Lille** est la plus grande académie (45 profs) **et** la meilleure en rétention : 52 % (12/23) vs 23 % ailleurs (p=0,016), réparti sur 10 établissements distincts (pas une seule école) et parmi les académies les plus formées. Indice que **l'animation régionale** compte plus que le nombre de collègues dans un même bâtiment. *(Caveat : la concentration de cœur durable et l'avantage de rétention de Lille sont largement le même fait — le retour est quasi colinéaire au profil.)*
+**Lille** est la plus grande académie (45 profs) **et** la meilleure en rétention : 52 % (12/23) vs 24 % ailleurs (p=0,02). Mais une vérification poussée montre que c'est un **pur effet de composition, pas un effet de lieu** : la cohorte éligible de Lille contient simplement plus de pionniers/fidèles (57 % vs 27 % ailleurs), et **à profil égal il ne reste aucun écart Lille** (un contrefactuel « mix seul » reproduit exactement l'écart). Lille est distinct sur la formation (47 % de profs en établissement formé vs 19 % ailleurs), mais la formation ne pilote pas la rétention. À ne **pas** lire comme « l'animation régionale fait revenir ».
 
 ---
 
@@ -118,7 +120,7 @@ Parmi les 32 pluriannuels : **25/32** ont eu un démarrage modeste (<5 séances 
 3. **La formation est un artefact de composition, pas une cause** : ne pas lui créditer +26 pts qu'elle n'a pas produits.
 4. **La portée, pas le choix d'activité**, explique l'avantage « Statistiques ».
 5. **Timing et dose sont entrelacés** : les one-shot de fin d'année (juin 14 %) sont le moteur clair du décrochage.
-6. **La masse critique locale est un nul confirmé** ; l'avantage de Lille tient à l'animation régionale, pas au nombre de collègues.
+6. **La masse critique locale est un nul confirmé** ; l'avantage de Lille est un **artefact de composition** (plus de pionniers/fidèles), pas un effet de lieu.
 7. **Atteindre la classe est verrouillé par un fait définitionnel** (stagiaire), pas par le type d'établissement.
 
 ---
@@ -129,7 +131,7 @@ Parmi les 32 pluriannuels : **25/32** ont eu un démarrage modeste (<5 séances 
 2. **Pousser la dose dès l'année 1.** Les leviers qui bougent la rétention : une 2ᵉ séance (40 % vs 20 %), une classe entière plutôt qu'un petit groupe (45 % vs 22 %), une 2ᵉ activité (64 % vs 25 %). Concevoir l'onboarding pour amener une seconde séance et un déploiement classe entière, pas un essai isolé.
 3. **Capter tôt dans l'année.** Les entrées de fin d'année (mars-juin, surtout juin 14 %) décrochent. Un cycle de promotion en septembre-décembre vaut mieux qu'un push de fin d'année.
 4. **Nourrir les entrants modestes, ne pas pré-trier les « intenses ».** Les durables sont faits, pas nés (25/32 ont démarré <5 séances). Le signal à suivre est « a fait une 2ᵉ séance », pas « a fait beaucoup d'emblée ».
-5. **Ne pas surinvestir le collectif intra-établissement ni créditer la formation d'une rétention non prouvée.** Réorienter vers l'animation régionale (modèle Lille) et vers la conversion individuelle des déployeurs.
+5. **Ne pas surinvestir le collectif intra-établissement ni créditer la formation/le territoire d'une rétention non prouvée.** L'avantage apparent de Lille n'est qu'un effet de composition. Réorienter vers la **conversion individuelle des déployeurs** (le seul levier robuste).
 
 ---
 

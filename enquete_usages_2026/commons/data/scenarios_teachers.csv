@@ -1,0 +1,225 @@
+pseudo,arch,scenario,n_sessions,n_days,spread_days,n_acts,med_size,max_size,pct_small,pct_full,med_span,med_work_min,continuation_rate,n_classes,uses_multi_class,dom_slot,fixed_slot_n,demigroupe_days,pct_weekend,pct_evening,n_reprise_pupils,n_home_pupils,n_eleves_uniq,n_sy_taught,entry_sy,eligible_return,returned_next_year,academie,commune,ips,uai
+T000,deployeur_classe,marathon,5,5,140,1,11.0,26,0.2,0.2,5.983333333333333,29.7,0.1,5,True,aprem,1,0,0.2,0.0,5,5,60,1,2025-2026,False,,Versailles,Gif-sur-Yvette,145.1,0911913K
+T001,deployeur_classe,deploiement_classe,2,2,2,1,26.5,27,0.0,1.0,1.75,0.0,0.0,2,True,aprem,1,0,0.0,0.0,0,0,53,1,2025-2026,False,,Bordeaux,Bègles,115.8,0333273D
+T002,deployeur_classe,deploiement_classe,3,3,7,1,13.0,25,0.0,0.3333333333333333,5.15,39.3,0.0,3,True,dejeuner,2,0,0.0,0.0,0,0,49,1,2025-2026,False,,Lille,Calais,101.4,0624141P
+T003,deployeur_classe,deploiement_classe,2,2,4,1,22.5,25,0.0,1.0,62.09166666666667,0.0,0.0,2,True,matin,1,0,0.0,0.0,0,0,45,1,2025-2026,False,,Versailles,Massy,111.6,0910727W
+T004,deployeur_classe,one_shot,1,1,0,1,45.0,45,0.0,1.0,75.85,106.4,1.0,1,False,dejeuner,1,0,0.0,0.0,0,0,45,1,2025-2026,False,,Paris,Paris 15e  Arrondissement,132.7,0750693W
+T005,deployeur_classe,deploiement_classe,3,2,4,1,19.0,41,0.3333333333333333,0.6666666666666666,27.733333333333334,36.4,0.032,3,True,aprem,2,1,0.0,0.0,2,0,42,1,2024-2025,True,False,Toulouse,Toulouse,141.8,0310036W
+T006,deployeur_classe,one_shot,1,1,0,1,41.0,41,0.0,1.0,134.75,0.0,0.049,1,False,dejeuner,1,0,0.0,0.0,1,1,41,1,2025-2026,False,,Nice,Hyères,105.5,0830025B
+T007,deployeur_classe,deploiement_classe,2,2,3,1,20.5,21,0.0,1.0,14.133333333333333,22.0,0.0,2,True,aprem,1,0,0.0,0.0,0,0,41,1,2024-2025,True,False,Lille,Genech,129.9,0596925G
+T008,deployeur_classe,deploiement_classe,2,2,71,1,19.5,23,0.0,1.0,17.65833333333333,0.0,0.0,2,True,aprem,1,0,0.0,0.0,0,3,39,1,2025-2026,False,,Paris,Paris 10e  Arrondissement,116.6,0750673Z
+T009,deployeur_classe,deploiement_classe,4,3,41,1,5.5,26,0.5,0.25,7.683333333333334,0.0,0.053,4,True,aprem,2,1,0.0,0.0,0,0,38,1,2024-2025,True,False,Versailles,Les Mureaux,101.8,0780422K
+T010,deployeur_classe,deploiement_classe,3,3,9,1,12.0,15,0.0,0.3333333333333333,3.05,0.0,0.026,3,True,matin,1,0,0.0,0.0,1,0,38,1,2025-2026,False,,Lille,Arras,122.1,0620006V
+T011,deployeur_classe,soutien_recurrent,5,4,72,1,5.0,15,0.6,0.2,9.616666666666667,29.8,0.139,5,True,matin,3,1,0.2,0.0,5,1,36,1,2024-2025,True,False,Lille,Lille,106.5,0595867G
+T012,deployeur_classe,one_shot,1,1,0,1,36.0,36,0.0,1.0,91.6,37.4,0.278,1,False,aprem,1,0,0.0,0.0,10,1,36,1,2024-2025,True,False,Créteil,Pantin,86.5,0930124E
+T013,deployeur_classe,deploiement_classe,3,2,2,1,15.0,20,0.3333333333333333,0.6666666666666666,10.083333333333334,17.9,0.25,3,True,matin,2,1,0.0,0.0,3,1,36,1,2024-2025,True,False,Toulouse,Toulouse,141.8,0310036W
+T014,deployeur_classe,ponctuel_petit,3,3,10,1,13.0,13,0.0,0.0,8.9,105.8,0.972,3,True,matin,2,0,0.0,0.0,1,1,36,1,2025-2026,False,,Créteil,Maisons-Alfort,119.7,0940116R
+T015,deployeur_classe,one_shot,1,1,0,1,35.0,35,0.0,1.0,126.26666666666668,39.1,0.029,1,False,dejeuner,1,0,0.0,0.0,0,0,35,1,2025-2026,False,,Reims,Troyes,107.5,0100022V
+T016,deployeur_classe,deploiement_classe,3,2,7,1,15.0,17,0.3333333333333333,0.6666666666666666,9.9,0.0,0.0,3,True,matin,2,1,0.0,0.0,0,0,33,1,2024-2025,True,False,Lille,Dunkerque,111.7,0590073J
+T017,deployeur_classe,one_shot,1,1,0,1,31.0,31,0.0,1.0,11.15,98.9,0.935,1,False,dejeuner,1,0,0.0,0.0,2,2,31,1,2025-2026,False,,Paris,Paris 16e  Arrondissement,140.6,0750702F
+T018,deployeur_classe,one_shot,1,1,0,1,31.0,31,0.0,1.0,126.31666666666666,10.2,0.0,1,False,aprem,1,0,0.0,0.0,0,0,31,1,2025-2026,False,,Bordeaux,Créon,125.5,0333583R
+T019,deployeur_classe,deploiement_classe,2,2,1,1,15.0,17,0.0,0.5,18.133333333333333,42.4,0.0,2,True,soir,1,0,0.0,0.5,0,30,30,1,2024-2025,True,False,Polynésie Française,Bora-bora,,9840024D
+T020,deployeur_classe,one_shot,1,1,0,1,30.0,30,0.0,1.0,17.0,45.6,0.0,1,False,matin,1,0,0.0,0.0,0,0,30,1,2025-2026,False,,Lille,Lille,128.8,0590119J
+T021,deployeur_classe,one_shot,1,1,0,1,29.0,29,0.0,1.0,66.76666666666667,0.0,0.034,1,False,dejeuner,1,0,0.0,0.0,1,1,29,1,2025-2026,False,,Nantes,Les Ponts-de-Cé,114.0,0492148U
+T022,deployeur_classe,deploiement_classe,3,2,1,1,7.0,18,0.3333333333333333,0.3333333333333333,13.266666666666667,1172.8,0.552,3,True,matin,1,1,0.0,0.0,16,0,29,1,2025-2026,False,,Bordeaux,Saint-Vincent-de-Tyrosse,119.4,0400933X
+T023,deployeur_classe,one_shot,1,1,0,1,28.0,28,0.0,1.0,58.15,49.2,0.036,1,False,matin,1,0,0.0,0.0,1,0,28,1,2025-2026,False,,Lille,Estaires,99.4,0597005U
+T024,deployeur_classe,one_shot,1,1,0,1,28.0,28,0.0,1.0,62.333333333333336,48.3,0.0,1,False,matin,1,0,0.0,0.0,0,0,28,1,2025-2026,False,,Bordeaux,Blanquefort,121.8,0332745E
+T025,deployeur_classe,one_shot,1,1,0,1,28.0,28,0.0,1.0,67.11666666666666,50.5,0.0,1,False,matin,1,0,0.0,0.0,0,0,28,1,2025-2026,False,,Nice,Nice,117.5,0060031B
+T026,deployeur_classe,deploiement_classe,2,2,1,1,14.0,16,0.0,0.5,9.95,42.2,0.0,2,True,aprem,1,0,0.0,0.0,0,0,28,1,2025-2026,False,,Paris,Paris 15e  Arrondissement,132.7,0750693W
+T027,deployeur_classe,one_shot,1,1,0,1,28.0,28,0.0,1.0,60.85,0.0,0.0,1,False,aprem,1,0,0.0,0.0,0,1,28,1,2025-2026,False,,Rennes,Rennes,139.1,0350710G
+T028,deployeur_classe,one_shot,1,1,0,1,28.0,28,0.0,1.0,67.48333333333333,0.0,0.036,1,False,aprem,1,0,0.0,0.0,0,1,28,1,2024-2025,True,False,Versailles,Les Mureaux,101.8,0780422K
+T029,deployeur_classe,deploiement_classe,3,3,45,1,1.0,26,0.6666666666666666,0.3333333333333333,0.0,65130.4,1.0,3,True,matin,1,0,0.0,0.3333333333333333,27,6,28,1,2025-2026,False,,Nantes,Angers,105.9,0492123S
+T030,deployeur_classe,deploiement_classe,2,2,1,1,13.5,26,0.5,0.5,2.816666666666667,43.4,0.37,2,True,dejeuner,1,0,0.0,0.0,0,3,27,1,2025-2026,False,,Amiens,Senlis,118.5,0601826J
+T031,deployeur_classe,one_shot,1,1,0,1,27.0,27,0.0,1.0,62.18333333333333,41.5,0.037,1,False,aprem,1,0,0.0,0.0,1,1,27,1,2025-2026,False,,Lille,Haubourdin,109.1,0590093F
+T032,deployeur_classe,one_shot,1,1,0,1,26.0,26,0.0,1.0,19.166666666666668,45.2,0.0,1,False,dejeuner,1,0,0.0,0.0,0,0,26,1,2025-2026,False,,Créteil,La Courneuve,80.8,0931430Z
+T033,deployeur_classe,deploiement_classe,3,3,2,1,1.0,24,0.6666666666666666,0.3333333333333333,0.0,3.5,0.0,3,True,matin,1,0,0.0,0.0,0,0,26,1,2024-2025,True,False,,,,
+T034,deployeur_classe,one_shot,1,1,0,1,26.0,26,0.0,1.0,8.35,42.7,0.0,1,False,aprem,1,0,0.0,0.0,0,0,26,1,2025-2026,False,,Lille,Calais,101.4,0624141P
+T035,deployeur_classe,deploiement_classe,3,3,6,1,8.0,17,0.3333333333333333,0.3333333333333333,7.316666666666666,228.6,0.577,3,True,matin,1,0,0.0,0.0,7,0,26,1,2025-2026,False,,Versailles,Massy,111.6,0910727W
+T036,deployeur_classe,ponctuel_petit,2,2,7,1,13.0,13,0.0,0.0,61.09166666666667,35.3,0.0,2,True,aprem,2,0,0.0,0.0,0,0,26,1,2025-2026,False,,Lille,Lille,115.4,0590117G
+T037,deployeur_classe,deploiement_classe,2,2,2,1,12.5,24,0.5,0.5,12.133333333333333,82.7,0.52,2,True,dejeuner,1,0,0.0,0.0,6,0,25,1,2025-2026,False,,Créteil,Chevilly-Larue,97.3,0942269F
+T038,deployeur_classe,one_shot,1,1,0,1,25.0,25,0.0,1.0,20.35,39165.6,0.72,1,False,matin,1,0,0.0,0.0,18,13,25,1,2024-2025,True,False,Lille,Dunkerque,111.7,0590073J
+T039,deployeur_classe,deploiement_classe,2,2,25,1,13.0,25,0.5,0.5,8.6,50.8,0.0,2,True,aprem,1,0,0.0,0.0,0,0,25,1,2025-2026,False,,Nantes,Angers,108.0,0492089E
+T040,deployeur_classe,ponctuel_petit,5,5,11,1,4.0,12,0.8,0.0,106.48333333333332,0.0,0.04,5,True,matin,2,0,0.0,0.0,1,0,25,1,2025-2026,False,,Nice,Antibes,143.6,0060668U
+T041,deployeur_classe,one_shot,1,1,0,1,24.0,24,0.0,1.0,14.483333333333333,0.0,0.083,1,False,dejeuner,1,0,0.0,0.0,0,0,24,1,2024-2025,True,False,Versailles,Vauréal,119.1,0951710T
+T042,deployeur_classe,deploiement_classe,2,2,6,1,12.0,23,0.5,0.5,33.88333333333333,47.3,0.083,2,True,aprem,1,0,0.5,0.5,0,2,24,1,2025-2026,False,,Normandie,Caen,129.1,0140013N
+T043,deployeur_classe,ponctuel_petit,3,2,2,1,11.0,12,0.3333333333333333,0.0,12.633333333333333,0.0,0.0,3,True,matin,2,1,0.0,0.0,0,0,24,1,2024-2025,True,False,Aix-Marseille,Avignon,112.9,0840003X
+T044,deployeur_classe,deploiement_classe,2,2,8,1,11.5,22,0.5,0.5,18.358333333333334,0.0,0.0,2,True,aprem,1,0,0.0,0.0,0,0,23,1,2025-2026,False,,Versailles,Boulogne-Billancourt,120.3,0922801V
+T045,deployeur_classe,deploiement_classe,2,2,1,1,11.5,22,0.5,0.5,86.19166666666666,49.3,0.043,2,True,matin,1,0,0.0,0.0,1,0,23,1,2024-2025,True,False,Lille,Montreuil-sur-Mer,103.0,0620140R
+T046,deployeur_classe,one_shot,1,1,0,1,23.0,23,0.0,1.0,8.366666666666667,3317.4,1.0,1,False,matin,1,0,0.0,0.0,23,0,23,1,2025-2026,False,,Nantes,Angers,126.1,0490001K
+T047,deployeur_classe,deploiement_classe,4,3,6,1,1.0,19,0.75,0.25,0.0,3046.7,0.818,4,True,dejeuner,1,1,0.25,0.25,16,15,22,1,2025-2026,False,,,,,
+T048,deployeur_classe,deploiement_classe,3,3,2,1,10.0,15,0.3333333333333333,0.3333333333333333,12.95,0.0,0.0,3,True,soir,1,0,0.0,1.0,0,30,22,1,2024-2025,True,False,Polynésie Française,Papeete,,9840002E
+T049,deployeur_classe,one_shot,1,1,0,1,22.0,22,0.0,1.0,62.016666666666666,45.2,0.0,1,False,aprem,1,0,0.0,0.0,0,0,22,1,2025-2026,False,,Paris,Paris 16e  Arrondissement,130.2,0750703G
+T050,deployeur_classe,one_shot,1,1,0,1,21.0,21,0.0,1.0,84.18333333333334,37.2,0.0,1,False,matin,1,0,0.0,0.0,0,0,21,1,2025-2026,False,,Toulouse,Auterive,,0313228R
+T051,deployeur_classe,deploiement_classe,4,4,6,1,2.5,15,0.75,0.25,2.966666666666667,1409.6,0.619,4,True,matin,1,0,0.25,0.0,13,1,21,1,2024-2025,True,False,Versailles,Vauréal,119.1,0951710T
+T052,deployeur_classe,one_shot,1,1,0,1,21.0,21,0.0,1.0,17.083333333333332,40.6,0.333,1,False,matin,1,0,0.0,0.0,1,1,20,1,2024-2025,True,False,Créteil,Pontault-Combault,113.7,0772243V
+T053,deployeur_classe,one_shot,1,1,0,1,20.0,20,0.0,1.0,14.216666666666669,29.7,0.05,1,False,matin,1,0,0.0,0.0,0,0,20,1,2025-2026,False,,Toulouse,Decazeville,102.7,0120006S
+T054,deployeur_classe,one_shot,1,1,0,1,20.0,20,0.0,1.0,12.983333333333333,0.0,0.0,1,False,dejeuner,1,0,0.0,0.0,0,0,20,1,2024-2025,True,False,Paris,Paris 19e  Arrondissement,103.7,0750711R
+T055,deployeur_classe,one_shot,1,1,0,1,20.0,20,0.0,1.0,8.15,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,20,1,2025-2026,False,,Lille,Hazebrouck,112.2,0590101P
+T056,deployeur_classe,ponctuel_petit,2,2,4,1,10.0,12,0.0,0.0,4.433333333333334,20174.3,0.85,2,True,aprem,1,0,0.0,0.0,17,0,20,1,2025-2026,False,,Orléans-Tours,Chartres,107.7,0281047L
+T057,deployeur_classe,one_shot,1,1,0,1,19.0,19,0.0,1.0,12.316666666666666,30.4,0.158,1,False,aprem,1,0,0.0,0.0,2,0,19,1,2025-2026,False,,Lille,Roubaix,101.4,0592921E
+T058,deployeur_classe,one_shot,1,1,0,1,19.0,19,0.0,1.0,17.833333333333332,43.4,0.0,1,False,soir,1,0,0.0,1.0,0,19,19,1,2025-2026,False,,Polynésie Française,Papeete,,9840002E
+T059,deployeur_classe,ponctuel_petit,2,2,2,1,9.5,14,0.5,0.0,35.56666666666667,0.0,0.316,2,True,matin,1,0,0.0,0.0,6,0,19,1,2024-2025,True,False,Montpellier,Bagnols-sur-Cèze,102.7,0300950V
+T060,deployeur_classe,ponctuel_petit,3,3,8,1,5.0,9,0.6666666666666666,0.0,11.4,20.2,0.158,3,True,matin,1,0,0.0,0.0,3,0,19,1,2024-2025,True,False,Grenoble,Valence,106.7,0261505V
+T061,deployeur_classe,ponctuel_petit,2,1,0,1,9.0,10,0.0,0.0,10.583333333333334,43.6,0.0,2,True,aprem,1,1,0.0,0.0,0,0,18,1,2025-2026,False,,Versailles,Sarcelles,81.4,0950650R
+T062,deployeur_classe,one_shot,1,1,0,1,18.0,18,0.0,1.0,133.33333333333334,35.2,0.0,1,False,matin,1,0,0.0,0.0,0,0,18,1,2025-2026,False,,Versailles,Sarcelles,81.4,0950650R
+T063,deployeur_classe,one_shot,1,1,0,1,18.0,18,0.0,1.0,6.5,84.2,0.889,1,False,matin,1,0,0.0,0.0,1,0,18,1,2025-2026,False,,Nice,La Seyne-sur-Mer,108.4,0830050D
+T064,deployeur_classe,one_shot,1,1,0,1,18.0,18,0.0,1.0,12.666666666666666,23.8,0.056,1,False,dejeuner,1,0,0.0,0.0,1,1,17,1,2025-2026,False,,Lille,Calais,101.4,0624141P
+T065,deployeur_classe,one_shot,1,1,0,1,17.0,17,0.0,1.0,16.833333333333332,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,17,1,2025-2026,False,,Strasbourg,Bouxwiller,115.8,0670007U
+T066,deployeur_classe,deploiement_classe,2,2,12,1,8.5,16,0.5,0.5,38.88333333333333,41.6,0.0,2,True,dejeuner,1,0,0.5,0.5,0,1,17,1,2025-2026,False,,Rennes,Fougères,107.3,0350011X
+T067,deployeur_classe,ponctuel_petit,5,5,37,1,2.0,8,0.8,0.0,2.933333333333333,29.8,0.412,5,True,matin,2,0,0.0,0.0,7,0,17,1,2024-2025,True,False,Normandie,Gavray-sur-Sienne,92.6,0500035S
+T068,deployeur_classe,one_shot,1,1,0,1,17.0,17,0.0,1.0,21.916666666666668,0.0,0.0,1,False,aprem,1,0,0.0,0.0,0,0,17,1,2024-2025,True,False,Normandie,Avranches,109.9,0500002F
+T069,deployeur_classe,deploiement_classe,2,1,0,1,17.0,32,0.5,0.5,67.375,32.7,0.441,2,True,tot_matin,2,1,0.0,0.0,0,34,17,1,2024-2025,True,False,Polynésie Française,Papeete,,9840002E
+T070,deployeur_classe,one_shot,1,1,0,1,16.0,16,0.0,1.0,6.666666666666667,38.4,0.0,1,False,dejeuner,1,0,0.0,0.0,0,0,16,1,2025-2026,False,,Versailles,Guyancourt,114.7,0781949V
+T071,deployeur_classe,deploiement_classe,2,2,7,1,8.0,15,0.5,0.5,1.2083333333333333,10058.0,0.875,2,True,aprem,2,0,0.0,0.0,14,1,16,1,2025-2026,False,,Reims,Troyes,107.5,0100022V
+T072,deployeur_classe,one_shot,1,1,0,1,16.0,16,0.0,1.0,2.15,0.0,0.0,1,False,dejeuner,1,0,0.0,0.0,0,0,16,1,2024-2025,True,False,Lille,Lambersart,116.1,0590110Z
+T073,deployeur_classe,one_shot,1,1,0,1,16.0,16,0.0,1.0,157.46666666666667,19.9,0.0,1,False,tot_matin,1,0,0.0,0.0,0,0,16,1,2025-2026,False,,Lille,Montreuil-sur-Mer,103.0,0620140R
+T074,deployeur_classe,ponctuel_petit,2,1,0,1,8.0,10,0.0,0.0,5.741666666666666,22.3,0.0,2,True,aprem,1,1,0.0,0.0,0,0,16,1,2025-2026,False,,Lille,Montreuil-sur-Mer,103.0,0620140R
+T075,deployeur_classe,ponctuel_petit,2,2,2,1,7.5,9,0.0,0.0,7.766666666666666,0.0,0.0,2,True,matin,1,0,0.0,0.0,0,0,15,1,2024-2025,True,False,,,,X
+T076,deployeur_classe,one_shot,1,1,0,1,15.0,15,0.0,1.0,27.75,44.8,0.133,1,False,aprem,1,0,0.0,0.0,2,0,15,1,2025-2026,False,,Paris,Paris 12e  Arrondissement,122.7,0750680G
+T077,deployeur_classe,one_shot,1,1,0,1,15.0,15,0.0,1.0,5.9,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,15,1,2024-2025,True,False,,,,
+T078,deployeur_classe,one_shot,1,1,0,1,15.0,15,0.0,1.0,5.766666666666667,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,15,1,2025-2026,False,,Montpellier,Céret,100.0,0660004W
+T079,deployeur_classe,one_shot,1,1,0,1,15.0,15,0.0,1.0,4.683333333333334,59.8,0.467,1,False,dejeuner,1,0,0.0,0.0,0,0,15,1,2025-2026,False,,Nantes,Angers,121.3,0492061Z
+T080,deployeur_classe,demi_groupe,4,2,4,1,1.5,11,0.75,0.0,8.775,9.0,0.333,4,True,aprem,1,2,0.0,0.0,0,0,15,1,2025-2026,False,,Lille,Wingles,106.5,0623915U
+T081,deployeur_classe,one_shot,1,1,0,1,15.0,15,0.0,1.0,10.483333333333333,28.4,0.0,1,False,aprem,1,0,0.0,0.0,0,0,15,1,2025-2026,False,,Créteil,Lagny-sur-Marne,114.0,0771512A
+T082,deployeur_classe,ponctuel_petit,2,1,0,1,7.5,14,0.5,0.0,28.291666666666668,0.0,0.0,2,True,matin,2,1,0.0,0.0,0,0,15,1,2024-2025,True,False,Amiens,Compiègne,106.8,0601863Z
+T083,deployeur_classe,one_shot,1,1,0,1,14.0,14,0.0,0.0,81.75,46.7,0.214,1,False,dejeuner,1,0,0.0,0.0,0,0,14,1,2025-2026,False,,Versailles,Poissy,126.0,0781898P
+T084,deployeur_classe,ponctuel_petit,2,1,0,1,7.0,13,0.5,0.0,4.2,0.0,0.0,2,True,dejeuner,2,1,0.0,0.0,0,0,14,1,2024-2025,True,False,Lille,Armentières,111.8,0590011S
+T085,deployeur_classe,one_shot,1,1,0,1,14.0,14,0.0,0.0,16.833333333333332,0.0,0.071,1,False,aprem,1,0,0.0,0.0,1,0,14,1,2024-2025,True,False,Montpellier,Bagnols-sur-Cèze,102.7,0300950V
+T086,deployeur_classe,ponctuel_petit,2,2,5,1,7.0,13,0.5,0.0,1.9333333333333331,61.1,0.571,2,True,aprem,1,0,0.0,0.0,5,0,14,1,2025-2026,False,,Paris,Paris 16e  Arrondissement,108.0,0750796H
+T087,deployeur_classe,one_shot,1,1,0,1,14.0,14,0.0,0.0,187.36666666666667,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,14,1,2024-2025,True,False,Amiens,Beauvais,102.0,0600002B
+T088,deployeur_classe,one_shot,1,1,0,1,13.0,13,0.0,0.0,12.466666666666669,0.0,0.077,1,False,matin,1,0,0.0,0.0,0,0,13,1,2025-2026,False,,Versailles,Nanterre,146.2,0922579D
+T089,deployeur_classe,one_shot,1,1,0,1,12.0,12,0.0,0.0,6.85,30164.1,0.917,1,False,matin,1,0,0.0,0.0,11,0,12,1,2023-2024,True,False,Amiens,Amiens,117.4,0800010B
+T090,deployeur_classe,ponctuel_petit,4,4,24,1,1.0,9,0.75,0.0,0.0,88.5,0.667,4,True,matin,1,0,0.25,0.25,2,0,12,1,2023-2024,True,False,Orléans-Tours,Bourges,108.6,0180005H
+T091,deployeur_classe,one_shot,1,1,0,1,12.0,12,0.0,0.0,119.9,76.4,0.5,1,False,matin,1,0,0.0,0.0,5,0,12,1,2023-2024,True,False,Reims,Rethel,,0080804F
+T092,deployeur_classe,one_shot,1,1,0,1,12.0,12,0.0,0.0,8.05,0.0,0.083,1,False,dejeuner,1,0,0.0,0.0,0,0,12,1,2025-2026,False,,Nantes,Beaupréau-en-Mauges,103.9,0492430A
+T093,deployeur_classe,one_shot,1,1,0,1,11.0,11,0.0,0.0,0.6,42.8,0.0,1,False,matin,1,0,0.0,0.0,0,0,11,1,2025-2026,False,,Aix-Marseille,Marseille  5e  Arrondissement,90.6,0130051K
+T094,deployeur_classe,soutien_recurrent,3,3,28,1,4.0,4,1.0,0.0,12.083333333333334,0.0,0.273,3,True,matin,3,0,0.0,0.0,2,0,11,1,2025-2026,False,,Créteil,Epinay-sur-Seine,85.3,0930120A
+T095,deployeur_classe,one_shot,1,1,0,1,11.0,11,0.0,0.0,11.55,54.8,0.0,1,False,aprem,1,0,0.0,0.0,0,0,11,1,2025-2026,False,,Grenoble,Montélimar,112.6,0260015A
+T096,deployeur_classe,ponctuel_petit,2,2,10,1,5.5,6,0.5,0.0,138.58333333333331,45.1,0.0,2,True,matin,1,0,0.0,0.0,0,0,11,1,2024-2025,True,False,Aix-Marseille,Arles,91.8,0130010R
+T097,deployeur_classe,ponctuel_petit,3,2,21,1,3.0,7,0.6666666666666666,0.0,2.4,0.0,0.091,3,True,aprem,2,1,0.0,0.0,1,0,11,1,2024-2025,True,False,Amiens,Beauvais,102.0,0600002B
+T098,deployeur_classe,one_shot,1,1,0,1,10.0,10,0.0,0.0,64.5,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,10,1,2024-2025,True,False,Lille,Lille,95.8,0590121L
+T099,deployeur_classe,ponctuel_petit,4,4,8,1,1.0,6,0.75,0.0,0.0,10096.8,0.667,4,True,matin,2,0,0.0,0.0,6,0,9,1,2023-2024,True,False,Versailles,Taverny,107.8,0951763A
+T100,deployeur_classe,one_shot,1,1,0,1,9.0,9,0.0,0.0,8.233333333333333,0.0,0.0,1,False,aprem,1,0,0.0,0.0,0,0,9,1,2024-2025,True,False,Paris,Paris 10e  Arrondissement,116.6,0750673Z
+T101,deployeur_classe,one_shot,1,1,0,1,9.0,9,0.0,0.0,11.55,45.9,0.0,1,False,dejeuner,1,0,0.0,0.0,0,0,9,1,2024-2025,True,False,,,,
+T102,deployeur_classe,one_shot,1,1,0,1,9.0,9,0.0,0.0,8.15,0.0,0.0,1,False,aprem,1,0,0.0,0.0,0,0,9,1,2025-2026,False,,Créteil,Aubervilliers,88.7,0932726H
+T103,deployeur_classe,soutien_recurrent,5,1,0,1,1.0,1,1.0,0.0,0.0,43.6,0.0,5,True,aprem,5,1,0.0,0.0,0,0,5,1,2023-2024,True,False,Paris,Paris  9e  Arrondissement,125.8,0750668U
+T104,deployeur_classe,ponctuel_petit,3,3,2,1,1.0,1,1.0,0.0,0.0,0.0,0.0,3,True,matin,1,0,0.6666666666666666,0.0,0,2,3,1,2023-2024,True,False,Aix-Marseille,Apt,99.5,0840001V
+T105,explorateur_multi,deploiement_classe,3,3,66,2,21.0,29,0.0,1.0,13.2,44.4,0.015,3,True,aprem,1,0,0.0,0.0,1,1,67,1,2025-2026,False,,Paris,Paris  3e  Arrondissement,138.9,0750648X
+T106,explorateur_multi,deploiement_classe,2,2,99,2,26.5,31,0.0,1.0,82.0,116.1,0.585,2,True,dejeuner,1,0,0.0,0.0,0,0,53,1,2025-2026,False,,Créteil,Meaux,105.7,0770930T
+T107,explorateur_multi,deploiement_classe,4,4,84,2,12.0,28,0.5,0.5,10.208333333333334,44.9,0.056,4,True,aprem,1,0,0.0,0.0,2,1,49,1,2025-2026,False,,Lille,Calais,101.4,0624141P
+T108,explorateur_multi,deploiement_classe,2,2,2,2,21.0,23,0.0,1.0,36.49166666666667,19.3,0.024,2,True,dejeuner,1,0,0.0,0.0,1,1,42,1,2025-2026,False,,Nantes,Nantes,113.2,0441552Y
+T109,explorateur_multi,marathon,2,2,133,2,27.5,29,0.0,1.0,10.808333333333334,47.4,0.036,1,False,dejeuner,2,0,0.0,0.0,1,0,32,1,2025-2026,False,,Normandie,Neufchâtel-en-Bray,95.8,0762601P
+T110,explorateur_multi,deploiement_classe,3,3,111,2,18.0,27,0.0,0.6666666666666666,20.85,37.1,0.017,3,True,aprem,2,0,0.0,0.0,1,0,32,1,2025-2026,False,,Lille,Lille,115.4,0590117G
+T111,explorateur_multi,demi_groupe,5,3,8,2,4.0,20,0.6,0.2,3.5166666666666666,4.1,0.051,5,True,aprem,2,2,0.0,0.0,2,1,32,1,2025-2026,False,,Nantes,Orvault,124.8,0442094M
+T112,explorateur_multi,deploiement_classe,2,2,3,2,16.0,18,0.0,0.5,8.091666666666667,31.0,0.031,2,True,aprem,1,0,0.0,0.0,1,1,32,1,2025-2026,False,,Montpellier,Céret,100.0,0660004W
+T113,explorateur_multi,deploiement_classe,3,2,1,2,9.0,22,0.0,0.3333333333333333,15.666666666666666,27.6,0.135,2,True,matin,2,1,0.0,0.0,0,0,31,1,2025-2026,False,,Montpellier,Sommières,120.3,0301862L
+T114,explorateur_multi,ponctuel_petit,4,3,6,2,10.5,12,0.25,0.0,5.225,18.3,0.0,3,True,aprem,2,1,0.0,0.0,0,0,26,1,2024-2025,True,False,Versailles,Montgeron,109.0,0910625K
+T115,explorateur_multi,deploiement_classe,2,2,15,2,11.5,21,0.5,0.5,2.45,0.0,0.043,2,True,matin,1,0,0.0,0.0,0,0,23,1,2024-2025,True,False,Paris,Paris 13e  Arrondissement,131.3,0754042L
+T116,explorateur_multi,ponctuel_petit,4,3,7,2,11.0,13,0.25,0.0,11.308333333333334,0.0,0.053,3,True,aprem,2,1,0.0,0.0,2,0,23,1,2025-2026,False,,Paris,Paris  2e  Arrondissement,130.4,0752248L
+T117,explorateur_multi,deploiement_classe,2,2,15,2,10.5,20,0.5,0.5,4.233333333333333,41.0,0.048,2,True,dejeuner,1,0,0.0,0.0,0,0,21,1,2025-2026,False,,Strasbourg,Barr,114.4,0670002N
+T118,explorateur_multi,demi_groupe,4,2,1,2,4.5,8,0.5,0.0,22.558333333333334,0.0,0.0,4,True,soir,2,2,0.0,1.0,0,20,18,1,2025-2026,False,,Polynésie Française,Papeete,,9840002E
+T119,explorateur_multi,ponctuel_petit,3,3,51,2,4.0,9,0.6666666666666666,0.0,14.183333333333334,0.0,0.0,3,True,matin,2,0,0.0,0.0,0,0,14,1,2025-2026,False,,Versailles,Clichy,94.3,0920136Y
+T120,explorateur_multi,ponctuel_petit,2,1,0,2,10.5,11,0.0,0.0,11.333333333333332,7.0,0.048,1,False,matin,2,1,0.0,0.0,0,0,12,1,2025-2026,False,,Versailles,Montrouge,106.1,0921399W
+T121,explorateur_multi,ponctuel_petit,2,1,0,2,9.0,11,0.0,0.0,31.78333333333333,20.5,0.056,1,False,matin,2,1,0.0,0.0,1,1,11,1,2024-2025,True,False,Toulouse,Toulouse,126.4,0310047H
+T122,explorateur_multi,ponctuel_petit,4,4,7,2,3.5,6,0.75,0.0,7.941666666666667,2.1,0.286,3,True,aprem,1,0,0.0,0.25,4,2,9,1,2025-2026,False,,,,,
+T123,explorateur_multi,ponctuel_petit,3,2,2,2,2.0,2,1.0,0.0,2.8666666666666667,0.0,0.0,3,True,aprem,2,1,0.0,0.3333333333333333,0,1,4,1,2025-2026,False,,Bordeaux,Hendaye,104.4,0640228A
+T124,explorateur_multi,ponctuel_petit,3,2,3,2,2.0,2,1.0,0.0,1.4833333333333334,38.8,0.0,2,True,aprem,2,1,0.0,0.0,0,0,3,1,2025-2026,False,,Lille,Hazebrouck,82.9,0590102R
+T125,fidele_pluriannuel,marathon,4,4,455,2,27.0,31,0.25,0.75,11.483333333333334,0.0,0.023,3,True,aprem,4,0,0.0,0.0,2,1,63,2,2024-2025,True,True,Lille,Lille,115.4,0590117G
+T126,fidele_pluriannuel,marathon,4,4,400,2,12.0,22,0.5,0.5,2.0749999999999997,1714.2,0.638,4,True,matin,1,0,0.0,0.0,28,9,47,2,2024-2025,True,True,,,,
+T127,fidele_pluriannuel,marathon,2,2,497,2,23.5,29,0.0,1.0,101.46666666666667,0.0,0.043,2,True,dejeuner,1,0,0.0,0.0,1,2,46,2,2024-2025,True,True,Lille,Armentières,111.8,0590011S
+T128,fidele_pluriannuel,marathon,3,3,463,2,21.0,25,0.0,1.0,71.53333333333333,46.6,0.048,2,True,matin,2,0,0.0,0.0,0,0,45,2,2024-2025,True,True,Lille,Montreuil-sur-Mer,103.0,0620140R
+T129,fidele_pluriannuel,marathon,4,3,365,1,12.5,18,0.25,0.25,10.850000000000001,0.0,0.0,4,True,matin,2,1,0.0,0.0,0,0,44,2,2024-2025,True,True,Montpellier,Lunel,117.2,0342090M
+T130,fidele_pluriannuel,marathon,4,4,276,1,10.5,13,0.25,0.0,1.7333333333333334,83.5,0.857,4,True,aprem,2,0,0.0,0.0,12,1,35,2,2024-2025,True,True,Strasbourg,Strasbourg,94.3,0672806L
+T131,fidele_pluriannuel,marathon,2,2,358,1,16.5,19,0.0,0.5,7.391666666666666,8.5,0.03,2,True,aprem,1,0,0.0,0.0,0,0,33,2,2024-2025,True,True,Toulouse,Gragnague,129.5,0313083H
+T132,fidele_pluriannuel,marathon,2,2,350,2,16.5,26,0.0,0.5,29.641666666666666,28.2,0.0,2,True,dejeuner,2,0,0.0,0.0,0,0,33,2,2024-2025,True,True,Amiens,Clermont,110.1,0600013N
+T133,fidele_pluriannuel,marathon,3,3,457,1,12.0,37,0.3333333333333333,0.3333333333333333,8.633333333333333,42.0,0.2,3,True,aprem,1,0,0.0,0.0,10,0,32,2,2024-2025,True,True,Normandie,Caen,113.8,0140014P
+T134,fidele_pluriannuel,marathon,3,2,343,1,10.0,20,0.3333333333333333,0.3333333333333333,35.81666666666667,0.0,0.129,3,True,aprem,2,1,0.0,0.0,1,0,31,2,2023-2024,True,True,Bordeaux,Mérignac,92.4,0331668J
+T135,fidele_pluriannuel,marathon,3,3,347,2,12.0,15,0.0,0.3333333333333333,65.28333333333333,52.7,0.378,2,True,aprem,2,0,0.0,0.0,2,0,27,2,2024-2025,True,True,Lille,Lille,95.8,0590121L
+T136,fidele_pluriannuel,marathon,3,2,333,1,2.0,25,0.6666666666666666,0.3333333333333333,1.2333333333333334,45.0,0.214,3,True,matin,2,1,0.0,0.0,0,0,25,2,2023-2024,True,True,Versailles,Herblay-sur-Seine,121.4,0951723G
+T137,fidele_pluriannuel,marathon,4,3,378,1,3.5,5,1.0,0.0,5.558333333333334,0.0,0.077,4,True,matin,2,1,0.0,0.0,1,0,13,2,2024-2025,True,True,Amiens,Creil,84.5,0600021X
+T138,petit_groupe,ponctuel_petit,2,2,28,1,4.0,4,1.0,0.0,4.300000000000001,47.4,0.25,2,True,dejeuner,1,0,0.0,0.0,2,2,8,1,2025-2026,False,,Créteil,Aulnay-sous-Bois,93.0,0930833A
+T139,petit_groupe,one_shot,1,1,0,1,8.0,8,0.0,0.0,20.733333333333334,0.0,0.125,1,False,matin,1,0,0.0,0.0,0,0,8,1,2025-2026,False,,,,,
+T140,petit_groupe,one_shot,1,1,0,1,8.0,8,0.0,0.0,2.4166666666666665,12.1,0.0,1,False,matin,1,0,0.0,0.0,0,0,8,1,2025-2026,False,,Orléans-Tours,Dreux,102.3,0280021W
+T141,petit_groupe,one_shot,1,1,0,1,8.0,8,0.0,0.0,2.2333333333333334,38.5,0.125,1,False,matin,1,0,0.0,0.0,0,0,8,1,2025-2026,False,,Nantes,Orvault,124.8,0442094M
+T142,petit_groupe,one_shot,1,1,0,1,8.0,8,0.0,0.0,16.733333333333334,44.8,0.125,1,False,dejeuner,1,0,0.0,0.0,0,0,8,1,2023-2024,True,False,Normandie,Le Havre,83.7,0762976X
+T143,petit_groupe,one_shot,1,1,0,1,7.0,7,0.0,0.0,3.2333333333333334,105.4,1.0,1,False,matin,1,0,0.0,0.0,0,0,7,1,2025-2026,False,,Lyon,Charlieu,108.1,0420008F
+T144,petit_groupe,one_shot,1,1,0,1,7.0,7,0.0,0.0,15.466666666666669,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,7,1,2024-2025,True,False,,,,2050024M
+T145,petit_groupe,one_shot,1,1,0,1,6.0,6,0.0,0.0,14.183333333333334,38.4,0.0,1,False,tot_matin,1,0,0.0,0.0,0,6,6,1,2023-2024,True,False,,,,
+T146,petit_groupe,one_shot,1,1,0,1,6.0,6,0.0,0.0,9.7,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,6,1,2024-2025,True,False,Versailles,Mantes-la-Jolie,89.3,0782540M
+T147,petit_groupe,ponctuel_petit,2,2,81,1,3.0,4,1.0,0.0,56.9,0.0,0.167,2,True,dejeuner,1,0,0.0,0.0,0,0,6,1,2025-2026,False,,Dijon,Auxerre,95.5,0890005X
+T148,petit_groupe,one_shot,1,1,0,1,6.0,6,0.0,0.0,4.433333333333334,37.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,6,1,2025-2026,False,,Versailles,Cergy,111.0,0951756T
+T149,petit_groupe,ponctuel_petit,2,1,0,1,3.0,4,1.0,0.0,4.5,0.0,0.0,2,True,aprem,1,1,0.0,0.0,0,0,6,1,2025-2026,False,,Lille,Dunkerque,76.9,0590198V
+T150,petit_groupe,ponctuel_petit,2,2,4,1,2.5,4,1.0,0.0,1.0333333333333334,30.8,0.0,2,True,dejeuner,1,0,0.0,0.0,0,0,5,1,2023-2024,True,False,Créteil,Limeil-Brévannes,103.1,0940742W
+T151,petit_groupe,one_shot,1,1,0,1,7.0,7,0.0,0.0,62.5,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,5,1,2025-2026,False,,Lille,Valenciennes,95.7,0590223X
+T152,petit_groupe,ponctuel_petit,2,2,2,1,2.5,4,1.0,0.0,1.85,0.0,0.0,2,True,soir,1,0,0.0,0.5,0,5,5,1,2025-2026,False,,Polynésie Française,Uturoa,,9840001D
+T153,petit_groupe,one_shot,1,1,0,1,4.0,4,1.0,0.0,2.8,29.2,0.0,1,False,dejeuner,1,0,0.0,0.0,0,0,4,1,2024-2025,True,False,Toulouse,Toulouse,101.2,0311323V
+T154,petit_groupe,one_shot,1,1,0,1,4.0,4,1.0,0.0,66.76666666666667,17.8,0.25,1,False,matin,1,0,0.0,0.0,0,0,4,1,2024-2025,True,False,Versailles,Cormeilles-en-Parisis,123.9,0952284S
+T155,petit_groupe,one_shot,1,1,0,1,4.0,4,1.0,0.0,3.716666666666667,45.1,0.0,1,False,aprem,1,0,0.0,0.0,0,0,4,1,2025-2026,False,,Créteil,Montreuil,96.4,0930122C
+T156,petit_groupe,ponctuel_petit,2,1,0,1,2.0,3,1.0,0.0,23.716666666666665,5.0,0.0,2,True,dejeuner,1,1,0.0,0.0,0,0,4,1,2024-2025,True,False,Grenoble,Echirolles,105.1,0382920T
+T157,petit_groupe,one_shot,1,1,0,1,4.0,4,1.0,0.0,9.9,55.1,0.25,1,False,tot_matin,1,0,0.0,0.0,0,0,4,1,2025-2026,False,,,,,
+T158,petit_groupe,one_shot,1,1,0,1,4.0,4,1.0,0.0,3.35,23.1,0.0,1,False,matin,1,0,0.0,0.0,0,0,4,1,2024-2025,True,False,Lille,Genech,129.9,0596925G
+T159,petit_groupe,ponctuel_petit,2,2,27,1,2.5,4,1.0,0.0,2.6,0.0,0.0,2,True,matin,1,0,0.0,0.0,0,0,4,1,2025-2026,False,,Lille,Calais,79.5,0620189U
+T160,petit_groupe,one_shot,1,1,0,1,4.0,4,1.0,0.0,1.2166666666666666,20.8,0.0,1,False,matin,1,0,0.0,0.0,0,0,4,1,2024-2025,True,False,Toulouse,Auch,118.6,0320002D
+T161,petit_groupe,one_shot,1,1,0,1,4.0,4,1.0,0.0,5.2,0.0,0.0,1,False,aprem,1,0,0.0,0.0,0,0,4,1,2025-2026,False,,Toulouse,Tournefeuille,125.5,0312746S
+T162,petit_groupe,ponctuel_petit,2,2,6,2,2.0,3,1.0,0.0,1.1583333333333334,26.3,0.25,2,True,matin,1,0,0.0,0.0,1,0,3,1,2025-2026,False,,Lille,Hazebrouck,82.9,0590102R
+T163,petit_groupe,one_shot,1,1,0,1,3.0,3,1.0,0.0,21.516666666666666,25.0,0.0,1,False,dejeuner,1,0,0.0,0.0,0,0,3,1,2023-2024,True,False,Rennes,Auray,119.4,0561534N
+T164,petit_groupe,one_shot,1,1,0,1,3.0,3,1.0,0.0,24.25,34.5,0.333,1,False,aprem,1,0,0.0,0.0,1,0,3,1,2025-2026,False,,Normandie,Val-de-Reuil,100.8,0271582Y
+T165,petit_groupe,ponctuel_petit,2,2,8,1,1.5,2,1.0,0.0,5.075,0.0,0.0,2,True,aprem,1,0,0.0,0.0,0,1,3,1,2025-2026,False,,Bordeaux,Ciboure,124.1,0641941M
+T166,petit_groupe,one_shot,1,1,0,1,2.0,2,1.0,0.0,27.25,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,2,1,2024-2025,True,False,Versailles,Aubergenville,120.5,0781859X
+T167,petit_groupe,one_shot,1,1,0,1,2.0,2,1.0,0.0,0.6333333333333333,0.0,0.0,1,False,dejeuner,1,0,0.0,0.0,0,0,2,1,2024-2025,True,False,Nancy-Metz,Vandoeuvre-lès-Nancy,110.9,0540070H
+T168,petit_groupe,one_shot,1,1,0,1,2.0,2,1.0,0.0,74.76666666666667,2.2,0.0,1,False,matin,1,0,0.0,0.0,0,0,2,1,2025-2026,False,,Versailles,Colombes,95.7,0920137Z
+T169,petit_groupe,ponctuel_petit,2,1,0,1,1.0,1,1.0,0.0,0.0,66.6,1.0,2,True,aprem,2,1,0.0,0.0,0,0,2,1,2023-2024,True,False,Paris,Paris 14e  Arrondissement,99.6,0750690T
+T170,petit_groupe,one_shot,1,1,0,1,2.0,2,1.0,0.0,0.0,350.4,0.5,1,False,matin,1,0,0.0,0.0,0,1,2,1,2024-2025,True,False,Créteil,Lagny-sur-Marne,114.0,0771512A
+T171,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,0.0,0.0,1,False,tot_matin,1,0,1.0,0.0,0,1,1,1,2024-2025,True,False,,,,9840004G
+T172,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,0.0,0.0,1,False,aprem,1,0,0.0,0.0,0,0,1,1,2025-2026,False,,,,,
+T173,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,7.7,0.0,1,False,dejeuner,1,0,0.0,0.0,0,0,1,1,2025-2026,False,,Versailles,Arpajon,122.6,0911632E
+T174,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,0.0,0.0,1,False,tot_matin,1,0,0.0,0.0,0,1,1,1,2024-2025,True,False,,,,
+T175,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,26.9,0.0,1,False,matin,1,0,0.0,0.0,0,0,1,1,2024-2025,True,False,Nantes,Angers,126.1,0490001K
+T176,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,51.6,0.0,1,False,soir,1,0,0.0,1.0,0,1,1,1,2025-2026,False,,,,,
+T177,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,31.2,0.0,1,False,aprem,1,0,0.0,0.0,0,0,1,1,2024-2025,True,False,Lille,La Madeleine,85.9,0590122M
+T178,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,0.8,0.0,1,False,soir,1,0,0.0,1.0,0,1,1,1,2025-2026,False,,Amiens,Laon,98.2,0020034B
+T179,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,1,1,2025-2026,False,,Lille,Berck,98.4,0622276M
+T180,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,0.0,0.0,1,False,aprem,1,0,0.0,0.0,0,0,1,1,2025-2026,False,,Toulouse,Nogaro,97.3,0320025D
+T181,petit_groupe,one_shot,1,1,0,1,2.0,2,1.0,0.0,1.3,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,1,1,2024-2025,True,False,Versailles,Le Vésinet,143.7,0782568T
+T182,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,0.8,0.0,1,False,aprem,1,0,1.0,0.0,0,1,1,1,2024-2025,True,False,,,,
+T183,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,1,1,2025-2026,False,,Créteil,Drancy,82.3,0930119Z
+T184,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,23.3,0.0,1,False,dejeuner,1,0,0.0,0.0,0,0,1,1,2024-2025,True,False,,,,
+T185,petit_groupe,one_shot,1,1,0,1,1.0,1,1.0,0.0,0.0,0.0,0.0,1,False,matin,1,0,0.0,0.0,0,0,1,1,2024-2025,True,False,,,,
+T186,pionnier_intensif,soutien_recurrent,48,37,735,7,4.0,41,0.5208333333333334,0.20833333333333334,3.3916666666666666,31.5,0.101,45,True,matin,7,7,0.08333333333333333,0.16666666666666666,16,101,404,3,2023-2024,True,True,Lille,Haubourdin,109.1,0590093F
+T187,pionnier_intensif,deploiement_classe,7,6,73,1,25.0,46,0.14285714285714285,0.5714285714285714,10.866666666666667,41.9,0.375,7,True,aprem,3,1,0.0,0.0,57,0,140,1,2025-2026,False,,Bordeaux,Bègles,115.8,0333273D
+T188,pionnier_intensif,soutien_recurrent,47,30,394,4,1.0,22,0.8936170212765957,0.02127659574468085,0.0,81.6,0.533,47,True,aprem,4,13,0.3191489361702128,0.2127659574468085,46,53,110,2,2024-2025,True,True,Lyon,Lyon 2e  Arrondissement,124.0,0690023A
+T189,pionnier_intensif,marathon,10,9,694,1,6.0,24,0.5,0.3,12.508333333333333,40.0,0.18,9,True,matin,2,1,0.0,0.0,17,0,99,3,2023-2024,True,True,,,,
+T190,pionnier_intensif,soutien_recurrent,47,27,475,2,2.0,25,0.851063829787234,0.02127659574468085,3.9833333333333334,3075.5,0.844,46,True,matin,4,14,0.3617021276595745,0.23404255319148937,106,45,96,2,2024-2025,True,True,Lille,Genech,129.9,0596925G
+T191,pionnier_intensif,deploiement_classe,7,7,88,1,8.0,33,0.42857142857142855,0.2857142857142857,64.45,100.9,0.537,7,True,aprem,3,0,0.0,0.0,47,16,95,1,2025-2026,False,,Versailles,Domont,116.2,0951788C
+T192,pionnier_intensif,demi_groupe,7,5,60,2,25.0,27,0.14285714285714285,0.7142857142857143,21.166666666666668,29.0,0.357,6,True,aprem,5,2,0.0,0.0,46,0,90,1,2025-2026,False,,Bordeaux,Bègles,115.8,0333273D
+T193,pionnier_intensif,deploiement_classe,4,4,8,1,20.5,33,0.0,0.75,37.233333333333334,0.0,0.0,4,True,matin,2,0,0.0,0.0,0,0,84,1,2025-2026,False,,Limoges,Guéret,103.8,0230051F
+T194,pionnier_intensif,marathon,4,4,395,3,27.0,30,0.0,1.0,16.241666666666667,44.6,0.211,3,True,matin,2,0,0.25,0.0,4,33,79,2,2024-2025,True,True,Lille,Calais,101.4,0624141P
+T195,pionnier_intensif,marathon,8,8,452,5,23.5,32,0.375,0.625,9.416666666666668,45.0,0.221,6,True,matin,2,0,0.375,0.125,14,51,77,2,2024-2025,True,True,Lille,Calais,101.4,0624141P
+T196,pionnier_intensif,deploiement_classe,3,1,0,3,44.0,49,0.3333333333333333,0.6666666666666666,209.11666666666667,19.5,0.175,3,True,matin,2,1,0.0,0.0,0,0,71,1,2025-2026,False,,Dijon,Beaune,106.9,0212045J
+T197,pionnier_intensif,demi_groupe,11,9,737,1,4.0,21,0.6363636363636364,0.18181818181818182,9.783333333333331,0.0,0.115,11,True,matin,2,2,0.0,0.0,3,2,68,3,2023-2024,True,True,,,,
+T198,pionnier_intensif,marathon,7,7,661,2,11.0,29,0.2857142857142857,0.2857142857142857,17.916666666666668,29.8,0.333,6,True,matin,2,0,0.0,0.0,23,0,67,3,2023-2024,True,True,,,,
+T199,pionnier_intensif,demi_groupe,11,7,201,3,6.0,19,0.45454545454545453,0.09090909090909091,11.766666666666667,11.3,0.128,10,True,aprem,3,4,0.09090909090909091,0.0,9,14,67,2,2024-2025,True,True,Montpellier,Lattes,118.1,0341794R
+T200,pionnier_intensif,demi_groupe,9,5,5,1,1.0,34,0.6666666666666666,0.1111111111111111,0.0,48.5,0.446,9,True,matin,1,3,0.3333333333333333,0.3333333333333333,19,40,65,1,2025-2026,False,,Versailles,Orsay,150.9,0910626L
+T201,pionnier_intensif,marathon,8,7,419,1,4.0,22,0.5,0.25,3.1166666666666667,104.9,0.667,8,True,dejeuner,2,1,0.0,0.0,25,5,63,2,2024-2025,True,True,Paris,Paris  5e  Arrondissement,145.1,0750655E
+T202,pionnier_intensif,marathon,6,6,347,2,13.0,16,0.3333333333333333,0.16666666666666666,5.541666666666666,47.4,0.224,6,True,matin,2,0,0.16666666666666666,0.0,9,10,58,2,2024-2025,True,True,Lille,Hazebrouck,112.2,0590101P
+T203,pionnier_intensif,deploiement_classe,7,6,83,1,3.0,18,0.5714285714285714,0.42857142857142855,0.9666666666666668,1343.8,0.536,7,True,matin,2,1,0.0,0.0,29,2,55,1,2025-2026,False,,,,,
+T204,pionnier_intensif,deploiement_classe,6,6,35,1,8.5,18,0.5,0.5,3.691666666666667,75.7,0.691,6,True,matin,2,0,0.16666666666666666,0.16666666666666666,16,17,55,1,2025-2026,False,,Créteil,Meaux,105.7,0770930T
+T205,pionnier_intensif,demi_groupe,11,8,449,2,11.0,14,0.2727272727272727,0.0,8.116666666666667,0.0,0.02,8,True,dejeuner,6,3,0.0,0.0,2,0,52,2,2024-2025,True,True,Lille,Douai,100.6,0590064Z
+T206,pionnier_intensif,deploiement_classe,6,6,57,4,11.5,20,0.0,0.16666666666666666,16.116666666666667,0.0,0.039,4,True,matin,5,0,0.0,0.0,0,0,50,1,2025-2026,False,,Montpellier,Narbonne,100.7,0110023R
+T207,pionnier_intensif,soutien_recurrent,6,5,366,3,5.0,28,0.5,0.3333333333333333,3.0833333333333335,38.7,0.034,6,True,aprem,3,1,0.0,0.0,1,0,50,2,2023-2024,True,True,Besançon,Besançon,107.6,0250010A
+T208,pionnier_intensif,soutien_recurrent,7,5,447,1,1.0,22,0.5714285714285714,0.2857142857142857,0.0,16.3,0.232,7,True,aprem,3,2,0.0,0.14285714285714285,12,3,48,2,2024-2025,True,True,Créteil,Villepinte,89.4,0931584S
+T209,pionnier_intensif,soutien_recurrent,8,5,742,1,2.5,16,0.625,0.125,3.8666666666666667,31.8,0.182,8,True,aprem,3,1,0.0,0.0,4,1,44,2,2023-2024,True,True,Paris,Paris  7e  Arrondissement,143.3,0750662M
+T210,pionnier_intensif,soutien_recurrent,17,14,792,4,4.0,17,0.7058823529411765,0.11764705882352941,7.716666666666667,41.0,0.272,15,True,matin,6,3,0.11764705882352941,0.23529411764705882,22,7,40,2,2023-2024,True,False,Lille,Lille,115.4,0590117G
+T211,pionnier_intensif,marathon,4,3,326,2,10.5,16,0.25,0.25,2.408333333333333,0.0,0.075,4,True,aprem,3,1,0.0,0.0,1,1,40,2,2024-2025,True,True,Lille,Hazebrouck,112.2,0590101P
+T212,pionnier_intensif,soutien_recurrent,6,6,70,1,4.0,14,0.5,0.0,2.1166666666666663,29.2,0.25,6,True,matin,6,0,0.0,0.0,9,0,36,1,2025-2026,False,,,,,1340005C
+T213,pionnier_intensif,demi_groupe,6,4,42,2,15.5,33,0.5,0.5,13.258333333333333,28.3,0.202,4,True,matin,3,2,0.3333333333333333,0.0,19,18,35,1,2025-2026,False,,Montpellier,Montpellier,115.0,0340039H
+T214,pionnier_intensif,marathon,6,4,331,2,2.5,26,0.8333333333333334,0.16666666666666666,1.0083333333333333,40.4,0.297,5,True,matin,1,1,0.0,0.16666666666666666,5,4,33,2,2023-2024,True,True,Lille,Lambersart,116.1,0590110Z
+T215,pionnier_intensif,marathon,13,9,234,2,2.0,6,0.9230769230769231,0.0,43.93333333333333,1290.5,0.742,13,True,matin,2,4,0.15384615384615385,0.3076923076923077,16,15,31,2,2024-2025,True,True,,,,3510003W
+T216,pionnier_intensif,marathon,4,3,221,4,14.0,26,0.5,0.5,14.241666666666665,40.0,0.393,3,True,matin,3,1,0.0,0.0,6,1,31,1,2025-2026,False,,,,,
+T217,pionnier_intensif,demi_groupe,4,2,7,3,8.5,21,0.25,0.25,36.35,0.0,0.026,3,True,aprem,2,2,0.0,0.0,0,0,22,1,2024-2025,True,False,Strasbourg,Colmar,98.4,0680010S
+T218,pionnier_intensif,marathon,3,3,120,3,8.0,10,0.3333333333333333,0.0,6.483333333333333,15.8,0.0,3,True,matin,1,0,0.0,0.0,0,0,19,1,2025-2026,False,,Lyon,Feurs,112.1,0421788R
+T219,pionnier_intensif,soutien_recurrent,6,2,14,3,4.0,9,0.6666666666666666,0.0,14.341666666666667,0.0,0.276,5,True,matin,6,2,0.0,0.0,0,0,18,1,2025-2026,False,,Paris,Paris  8e  Arrondissement,131.0,0750664P
+T220,pionnier_intensif,ponctuel_petit,6,6,56,1,1.0,2,1.0,0.0,0.0,0.0,0.0,6,True,matin,2,0,0.0,0.0,0,0,7,1,2025-2026,False,,Lyon,Lyon 6e  Arrondissement,135.6,0690026D
+T221,pionnier_intensif,soutien_recurrent,3,1,0,3,2.0,2,1.0,0.0,0.8833333333333333,13.0,0.0,3,True,aprem,3,1,0.0,0.0,0,0,3,1,2024-2025,True,False,,,,
+T222,pionnier_intensif,ponctuel_petit,4,3,3,3,1.0,2,1.0,0.0,0.0,12.1,0.0,2,True,matin,1,1,0.0,0.0,0,0,3,1,2025-2026,False,,Lille,Hazebrouck,82.9,0590102R
+T223,pionnier_intensif,soutien_recurrent,3,1,0,3,1.0,1,1.0,0.0,0.0,0.0,0.0,1,False,aprem,3,1,0.0,0.0,0,0,1,1,2025-2026,False,,,,,

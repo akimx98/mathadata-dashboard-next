@@ -1,0 +1,35 @@
+{
+ "n_sessions": 738,
+ "rhythm": {
+  "matin": 336,
+  "aprem": 215,
+  "dejeuner": 104,
+  "soir": 63,
+  "tot_matin": 20
+ },
+ "weekend_pct": 8.5,
+ "evening_pct": 8.5,
+ "span_median": 7.0,
+ "span_le15_pct": 66,
+ "span_ge45_pct": 20,
+ "scenario_counts": {
+  "one_shot": 91,
+  "deploiement_classe": 44,
+  "ponctuel_petit": 39,
+  "marathon": 26,
+  "soutien_recurrent": 14,
+  "demi_groupe": 10
+ },
+ "reprise_rows": 908,
+ "reprise_pct": 13.3,
+ "reprise_teachers": 89,
+ "home_rows": 679,
+ "home_pct": 10.0,
+ "home_teachers": 71,
+ "demigroupe_teachers": 17,
+ "multi_class_teachers": 129,
+ "multi_class_pct": 57.6,
+ "median_classes_per_teacher": 2.0,
+ "pupil_med_work_min": 34.5,
+ "pupil_continuation_pct": 21.7
+}
