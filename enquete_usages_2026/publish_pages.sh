@@ -47,6 +47,8 @@ for pair in "${MAP[@]}"; do
   cp "$src" "$WT/$dst"
 done
 touch "$WT/.nojekyll"
+# empêche Vercel de déployer cette branche statique (pas d'app Next.js dessus)
+printf '%s\n' '{ "git": { "deploymentEnabled": false } }' > "$WT/vercel.json"
 
 git -C "$WT" add -A
 if git -C "$WT" diff --cached --quiet; then
