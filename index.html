@@ -39,21 +39,26 @@
   .card p{color:var(--muted);margin:0 0 16px}
   .go{font-family:var(--font-mono);font-size:13px;font-weight:600}
 
-  /* featured (typologie) */
-  .feature{border-top:4px solid var(--amber);padding:26px 26px 24px;margin:30px 0 18px}
-  .feature .tag{color:var(--amber)}
-  .feature h2{font-size:26px}
-  .feature p{font-size:15.5px;max-width:66ch}
-  .feature .go{color:var(--amber)}
-
-  /* two volets */
-  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  /* les 2 volets (principaux) */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
   @media(max-width:720px){.duo{grid-template-columns:1fr}}
-  .duo .card{padding:24px 24px 22px}
-  .v1{border-top:4px solid var(--indigo)} .v1 .tag{color:var(--indigo)} .v1 .go{color:var(--indigo)}
-  .v2{border-top:4px solid var(--teal)} .v2 .tag{color:var(--teal)} .v2 .go{color:var(--teal)}
+  .duo .card{padding:24px 24px 22px;border-top:4px solid var(--line)}
+  .v1{border-top-color:var(--indigo)!important} .v1 .tag{color:var(--indigo)} .v1 .go{color:var(--indigo)}
+  .v2{border-top-color:var(--teal)!important} .v2 .tag{color:var(--teal)} .v2 .go{color:var(--teal)}
   .duo .card h2{font-size:21px}
   .duo .card p{font-size:14.5px}
+
+  /* complément (typologie) — secondaire, sous les volets */
+  .sep{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+    margin:30px 0 12px;display:flex;align-items:center;gap:12px}
+  .sep::after{content:"";flex:1;height:1px;background:var(--line)}
+  .complement{padding:18px 22px;border-left:4px solid var(--amber);display:flex;align-items:baseline;
+    gap:16px;flex-wrap:wrap}
+  .complement .tag{color:var(--amber)}
+  .complement h2{font-size:18px;margin:6px 0 4px}
+  .complement p{font-size:14px;margin:0 0 10px;max-width:64ch}
+  .complement .go{color:var(--amber)}
+  .complement .ctext{flex:1;min-width:240px}
 
   footer{padding:30px 0 60px;color:var(--muted);font-size:12.5px;font-family:var(--font-mono);
     border-top:1px solid var(--line);margin-top:26px}
@@ -64,15 +69,8 @@
   <header>
     <span class="eyebrow">MathAData · données Capytale &amp; mathadata.fr</span>
     <h1>Enquête sur les usages de MathAData</h1>
-    <p class="lede">Trois lectures complémentaires du déploiement réel, à partir des données d'usage (extraction juin 2026).</p>
+    <p class="lede">Deux volets d'analyse du déploiement réel, à partir des données d'usage (extraction juin 2026).</p>
   </header>
-
-  <a class="card feature" href="typologie.html">
-    <div class="tag">Vue d'ensemble · typologie</div>
-    <h2>Cinq façons d'enseigner</h2>
-    <p>La synthèse transversale : la carte des usages, cinq profils d'enseignants, où le pipeline fuit, et ce que les données complètes corrigent. Le meilleur point d'entrée.</p>
-    <span class="go">Ouvrir la typologie →</span>
-  </a>
 
   <div class="duo">
     <a class="card v1" href="volet1.html">
@@ -88,6 +86,16 @@
       <span class="go">Ouvrir le volet 2 →</span>
     </a>
   </div>
+
+  <div class="sep">Complément</div>
+  <a class="card complement" href="typologie.html">
+    <div class="ctext">
+      <div class="tag">Typologie</div>
+      <h2>Cinq façons d'enseigner</h2>
+      <p>En complément des deux volets : une typologie des enseignants en cinq profils d'usage.</p>
+    </div>
+    <span class="go">Ouvrir →</span>
+  </a>
 
   <footer>
     Source · données Capytale (extraction 19 juin 2026) &amp; mathadata.fr, croisées à l'annuaire des établissements.
