@@ -14,7 +14,7 @@ En trois ans, MathAData a conquis la **notoriété** et **prouvé qu'il s'utilis
 
 ## I. Une croissance réelle, mais subie et fragile
 
-L'année 2025-2026 a **plus que doublé** le volume de la précédente (2 181 → 4 479 usages élèves, année non finie). Mais deux caractéristiques en font une croissance fragile.
+L'année 2025-2026 a **plus que doublé** le volume de la précédente (2 181 → 4 479 usages élèves) — et, l'année scolaire s'éteignant à la mi-juin (en 2024-25, rien après le 12 juin), l'extraction du 19 juin la capte quasi intégralement : ce n'est pas un plancher. Mais deux caractéristiques en font une croissance fragile.
 
 **Elle est largement organique, pas pilotée.** L'acquisition des comptes site vient à **66,7 % du référencement** (Google en tête) ; l'emailing (Brevo, 6,1 %) entretient mais ne recrute pas. Surtout, **44 % des établissements à usage classe n'ont aucun compte site** : ils sont entrés directement par le catalogue Capytale, sans passer par mathadata.fr. Le dispositif **bénéficie d'un afflux spontané** plus qu'il ne maîtrise son recrutement de déployeurs — et son levier délibéré, la formation, convertit mal (§II).
 
@@ -171,7 +171,7 @@ La **phase 1** est gagnée : prouver que MathAData s'utilise en vraie classe, et
 ---
 
 ### Limites (héritées des quatre rapports)
-- **Censure** : 2025-2026 incomplète (extraction 19 juin) ; la rétention ne se mesure que sur les cohortes ayant *pu* revenir (101 profs).
+- **Fenêtre d'observation** : l'usage en classe s'éteint à la mi-juin (en 2024-25, dernière séance le **12 juin**, rien en juillet) — l'extraction du 19 juin 2026 capte donc l'année 2025-2026 **quasi intégralement**. Le retour, lui, ne s'observe que pour les profs ayant déjà eu une **année suivante** (entrés ≤ 2024-25, n=101) ; les entrants 2025-26 n'ont pas encore d'année d'après.
 - **Causalité** : les prédicteurs de profondeur (≥ 2 activités, séance 45 min) sont **corrélés** au retour, partiellement **confondus** avec l'engagement initial — signaux précoces actionnables, pas causes prouvées.
 - **Circularité** signalée là où elle existe (profils pionnier/fidèle définis via le multi-années ; scénarios « durables »).
 - **Deux mondes sans clé commune** : site (nominatif) et Capytale (anonyme) reliés au grain établissement/cohorte ; appariement individuel inféré (46 paires).

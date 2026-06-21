@@ -39,4 +39,4 @@ python3 make_charts.py
 - KPI vérifiés par 3 recomputations indépendantes (cf. §11 du rapport).
 - Compte `c81e728d…` (MD5 « 2 ») = 195 lignes rôle-vide d'un compte de démo → **exclu** partout.
 - Compte `cfcd2084…` (MD5 « 0 ») = compte pionnier historique (Haubourdin/Lille, 404 élèves, 2023-2026) → conservé mais signalé.
-- 2025-2026 incomplète au 19 juin : la croissance affichée est un plancher.
+- L'année scolaire se termine à la mi-juin (en 2024-2025, plus aucune séance après le 12 juin) → l'extraction du 19 juin couvre 2025-2026 quasi intégralement ; les comparaisons inter-années sont justes.

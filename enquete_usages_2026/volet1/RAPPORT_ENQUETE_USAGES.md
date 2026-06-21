@@ -206,7 +206,7 @@ Deux faits éclairants :
 
 ## 4. La croissance 2025-2026 : qui la porte ?
 
-L'année 2025-2026 (incomplète) a déjà **plus que doublé** le volume de 2024-2025.
+L'année 2025-2026 a **plus que doublé** le volume de 2024-2025. *(L'année scolaire s'éteint à la mi-juin — en 2024-25, plus aucune séance après le 12 juin — donc l'extraction du 19 juin la couvre quasi intégralement : la comparaison est juste, pas un plancher.)*
 
 | Année scolaire | Usages élèves | Tests profs | Profs enseignants |
 |---|---:|---:|---:|
@@ -228,7 +228,7 @@ La trajectoire mensuelle est éloquente : démarrage poussif à l'automne, puis 
 
 Les 123 nouveaux professeurs génèrent à eux seuls **74 % du volume** 2025-2026 et **144 % du delta net** (+2 298). À l'inverse, **l'effet net des professeurs récurrents est quasi nul** : les 26 profs actifs les deux années font 1 065 élèves en 24-25 contre 1 062 en 25-26. Le moteur n'est donc **pas** l'intensification des profs en place, mais l'**acquisition** de nouveaux.
 
-L'intensité progresse tout de même modérément (élèves/prof 24,8 → 29,7 ; séances/prof 2,6 → 3,05), mais les nouveaux profs sont **plus petits** (médiane 20 élèves) que les récurrents (médiane 47,5). Un revers : **62 professeurs de 2024-2025 n'ont pas réenseigné** (~1 116 élèves « perdus ») — en partie un artefact de calendrier (année non finie), en partie un vrai churn.
+L'intensité progresse tout de même modérément (élèves/prof 24,8 → 29,7 ; séances/prof 2,6 → 3,05), mais les nouveaux profs sont **plus petits** (médiane 20 élèves) que les récurrents (médiane 47,5). Un revers : **62 professeurs de 2024-2025 n'ont pas réenseigné** en 2025-2026 (~1 116 élèves « perdus ») — soit un vrai churn, soit un retour différé à 2026-2027 (non encore observable). L'année 2025-26 étant quasi close au 19 juin, ce n'est pas un artefact de calendrier.
 
 ### 4.2 Ce que la 2e année change dans le mix pédagogique
 
@@ -369,7 +369,7 @@ L'écart (**+3,4 points**) est réel mais **modéré** : MathAData n'est **pas**
 **Le seul écart** porte sur le **comptage des séances** : 738 (en conservant tous les clones, y compris ceux sans établissement) vs 613 (en excluant les clones non localisés). Les deux convergent sur l'essentiel : **taille médiane de classe = 17** et **~260-300 vraies classes (≥10)** — invariants à la méthode. Le nombre de séances est donc un **ordre de grandeur** (~600-740), pas une valeur exacte.
 
 **Limites.**
-- **2025-2026 est incomplète** (extraction 19 juin) : les comparaisons inter-annuelles **sous-estiment** l'année en cours ; la croissance réelle est un plancher.
+- **L'année scolaire se termine à la mi-juin** : en 2024-2025, plus aucune séance après le **12 juin** (rien en juillet). L'extraction du 19 juin 2026 couvre donc 2025-2026 **quasi intégralement** ; les comparaisons inter-annuelles sont justes (le seul angle mort est un éventuel **retour à N+1**, mesurable seulement l'an prochain).
 - Le **« test »** mesuré est un clone enregistré, pas l'appropriation réelle (cf. §2).
 - Les **séances** et les **classes** sont des reconstructions par clustering temporel, pas des données natives.
 - 195 lignes « rôle vide » proviennent d'un **unique compte de démonstration**, exclu de toute l'analyse. Un **compte pionnier** (id « 0 », 404 élèves) est conservé mais systématiquement signalé.

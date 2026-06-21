@@ -68,7 +68,7 @@ Le constat utile n'est donc pas « il y a un filtre définitionnel », mais :
 
 ### Le cadrage : 31 % de retour, mesuré proprement
 
-Sur 224 enseignants, seuls **101 ont *pu* revenir** : ceux entrés en 2023-24 ou 2024-25. Les 123 entrés en 2025-26 sont **censurés à droite** (ils n'ont pas encore eu d'année suivante) et sont exclus de tout taux de rétention. Sur les 101 éligibles, **31 reviennent (30,7 %)**.
+Sur 224 enseignants, seuls **101 ont *pu* revenir** : ceux entrés en 2023-24 ou 2024-25, qui ont eu une **année suivante**. Les 123 entrés en 2025-26 n'ont pas encore d'année d'après et sont exclus du taux de rétention. *(L'extraction du 19 juin capte par ailleurs l'année quasi complète : en 2024-25, plus aucune séance après le 12 juin.)* Sur les 101 éligibles, **31 reviennent (30,7 %)**.
 
 ### Le paradoxe du déployeur (le cœur)
 
@@ -143,7 +143,7 @@ Parmi les 32 pluriannuels : **25/32** ont eu un démarrage modeste (<5 séances 
 - Rétention « impossible à établir » → **31 % proprement mesuré** (sur cohorte éligible).
 
 **Au sein de l'enquête elle-même** (vérification adversariale) :
-- Censure à droite corrigée : retenir les **101 éligibles**, pas les 224.
+- Rétention mesurée sur les **101 profs ayant déjà eu une année suivante** (entrés ≤ 2024-25), pas sur les 224.
 - Tautologie profil→retour signalée ; bascule vers des prédicteurs **année-1 propres**.
 - Signal « test » écarté (compteur de carrière, circulaire).
 - « Effet formation » requalifié en **artefact de composition**.
@@ -156,7 +156,7 @@ Parmi les 32 pluriannuels : **25/32** ont eu un démarrage modeste (<5 séances 
 - **Pont individuel ténu** : 46 paires amont↔aval fiables ; l'amont (2 715) et l'aval (224) restent deux photographies, pas un parcours individuel reconstitué pour tous.
 - **Petits n** : plusieurs cellules (≥2 activités n=14, formés n=13, déc-fév n=19) sont **indicatives** ; rien d'important ne repose sur n<10.
 - **Associations bivariées**, pas un modèle ajusté ; les mesures d'intensité sont corrélées entre elles.
-- **Anonymat Capytale** : comportements inférés des logs ; la rétention suppose des identifiants de compte stables d'une année sur l'autre. Fenêtre : 2023-24 → 2025-26 (3 années scolaires, dont une censurée pour la rétention).
+- **Anonymat Capytale** : comportements inférés des logs ; la rétention suppose des identifiants de compte stables d'une année sur l'autre. Fenêtre : 2023-24 → 2025-26 (3 années scolaires ; le retour n'est observable que pour les profs des deux premières).
 - **Reproductibilité** : `commons/build_master.py` (table maître), `commons/workflow_typologie.js` (enquête 10 questions + vérification), faits dans `commons/data/facts_typologie.json` & `facts_investigation.json` (PII-free).
 
 ---

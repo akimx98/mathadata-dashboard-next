@@ -47,7 +47,7 @@ for i,s in enumerate(sys):
     ax.text(i-w/2,g[s]['student']+40,str(g[s]['student']),ha='center',fontsize=9,fontweight='bold')
     ax.text(i+w/2,g[s]['teacher']+40,str(g[s]['teacher']),ha='center',fontsize=8)
 ax.set_xticks(x); ax.set_xticklabels(sys)
-ax.set_title("Usages par année scolaire\n(2025-2026 incomplète, arrêtée au 19 juin)")
+ax.set_title("Usages par année scolaire\n(extraction 19 juin — année scolaire quasi close à la mi-juin)")
 ax.legend(frameon=False); ax.set_ylabel("Nombre d'usages")
 save(fig,"02_usages_par_annee.png")
 

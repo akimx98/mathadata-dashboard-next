@@ -40,5 +40,5 @@
 
 ## Caveats interprétatifs
 - « Test » = clone `role=teacher` capturé. Un prof peut s'approprier une activité sans cloner (donc « enseigné sans test » sur-estime peut-être l'adoption directe).
-- 2025-2026 est **incomplète** (extraction au 19 juin) : comparaisons inter-années à pondérer, mais l'essentiel de l'année est couvert.
+- L'année scolaire se termine à la **mi-juin** (en 2024-2025, plus aucune séance après le 12 juin) : l'extraction du 19 juin couvre 2025-2026 **quasi intégralement** ; les comparaisons inter-années sont justes. Seul angle mort : le retour éventuel en N+1, mesurable l'an prochain.
 - Identifiants pseudonymisés = sensibles ; ne jamais tenter de ré-identifier.
