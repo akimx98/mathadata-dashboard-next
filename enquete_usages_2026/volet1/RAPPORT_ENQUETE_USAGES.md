@@ -90,7 +90,7 @@ Puisque « Intro à l'IA » n'existe **que** sur Capytale, son usage est un **tr
 - **63 professeurs n'utilisent *que* « Intro à l'IA »** et rien d'autre ; ils ont porté ~1 070 usages élèves (et 55 d'entre eux ont bien enseigné).
 - Parmi tous ceux qui touchent « Intro à l'IA », **seuls 16 % touchent aussi la vitrine** Statistiques.
 
-Autrement dit, **près d'un tiers des professeurs découvrent MathAData directement via Capytale**, sans passer par mathadata.fr — et **ne voient donc jamais le catalogue** (santé, géométrie, challenges…). C'est à la fois un **canal d'acquisition gratuit** (le référencement Capytale travaille pour le projet) et une **fuite** : ces enseignants restent captifs d'une activité ancienne qu'on ne souhaite pas mettre en avant. Les rediriger vers le site — par exemple un bandeau « Découvrez les autres activités sur mathadata.fr » dans « Intro à l'IA » — est un levier à coût quasi nul.
+Autrement dit, **près d'un tiers des professeurs découvrent MathAData directement via Capytale**, sans passer par mathadata.fr — et **n'ont déployé aucune autre activité du catalogue** (santé, géométrie, challenges…), qu'ils n'ont vraisemblablement jamais parcouru. C'est à la fois un **canal d'acquisition gratuit** (le référencement Capytale travaille pour le projet) et une **fuite** : ces enseignants restent captifs d'une activité ancienne qu'on ne souhaite pas mettre en avant. Les rediriger vers le site — par exemple un bandeau « Découvrez les autres activités sur mathadata.fr » dans « Intro à l'IA » — est un levier à coût quasi nul.
 
 ---
 
@@ -384,7 +384,7 @@ L'écart (**+3,4 points**) est réel mais **modéré** : MathAData n'est **pas**
 
 1. **Faire de la rétention la priorité n°1.** Le point faible n'est pas l'acquisition (excellente) mais le retour d'une année sur l'autre (**30 %**). Cibler dès la rentrée les **62 professeurs de 2024-2025 qui n'ont pas réenseigné**, avec une relance et les nouveautés du catalogue.
 2. **Activer la contagion intra-établissement — pour le *nombre*, en accompagnant la *profondeur*.** **80 % des établissements n'ont qu'un prof**, et le frein n'est pas l'essai raté mais l'absence de second prof. Outiller le prof-pionnier pour embarquer un collègue (kit « présenter MathAData en réunion de cabinet ») démultiplie sans coût d'acquisition. Le lancement conjoint (Bègles) et la diffusion échelonnée (Calais) prouvent que ça marche **pour recruter**. *Réserve (cf. §3) : les collègues recrutés adoptent un usage plus léger et ne retiennent pas mieux — la contagion ne suffit pas, il faut l'assortir d'un accompagnement vers l'usage profond (2ᵉ activité, vraie séance salle info).*
-3. **Récupérer les profs « Capytale-direct ».** Un tiers des enseignants entrent par « Intro à l'IA » et **63 ne voient jamais le reste du catalogue**. Un simple bandeau « Découvrez les autres activités sur mathadata.fr » dans l'activité historique peut convertir ce trafic gratuit en découverte du catalogue — levier à coût quasi nul, fort potentiel.
+3. **Récupérer les profs « Capytale-direct ».** Un tiers des enseignants entrent par « Intro à l'IA » et **63 n'utilisent que l'activité historique**. Un simple bandeau « Découvrez les autres activités sur mathadata.fr » dans l'activité historique peut convertir ce trafic gratuit en découverte du catalogue — levier à coût quasi nul, fort potentiel.
 4. **Concentrer l'accompagnement sur janvier-juin**, où se joue ~80 % de l'activité, et préparer la **montée en charge de mai**.
 5. **Capitaliser sur le modèle « un gros lycée = un foyer ».** Identifier et accompagner les établissements-grappes émergents (Bègles, Calais, Nantes, Limoges) comme têtes de pont académiques.
 6. **Convertir le vivier de la formation — l'angle mort n°1.** **140 profs formés n'ont jamais enseigné à leurs élèves** (conversion ~4 %). C'est le plus gros gisement d'usage dormant, et il est **collège-friendly** (40 d'entre eux). Une relance systématique post-formation (« passez à votre première classe » : kit + créneau de support à J+15) peut activer ce stock. À industrialiser dès que les **données de formation** seront croisées (voir ci-dessous).
@@ -411,7 +411,7 @@ Rien ne vaut le zoom sur des situations réelles pour sentir la diversité des u
 
 ### Les angles morts
 
-- **🟠 Lycée parisien (Paris 5e) — « Capytale-direct »** · *engagé mais hors-site.* 63 élèves sur 2 ans… **uniquement sur « Intro à l'IA »**. Un prof fidèle qui n'a jamais vu le catalogue mathadata.fr — l'archétype des **63 profs captifs** de l'activité historique (§1.4).
+- **🟠 Lycée parisien (Paris 5e) — « Capytale-direct »** · *engagé mais hors-site.* 63 élèves sur 2 ans… **uniquement sur « Intro à l'IA »**. Un prof fidèle resté sur la seule activité historique, sans déployer le catalogue mathadata.fr — l'archétype des **63 profs captifs** (§1.4).
 - **🔴 Lycée Jean Jaurès — Saint-Clément-de-Rivière (Montpellier)** · *stagnation à deux.* **Deux** collègues ont testé, à deux ans d'écart, **sans qu'aucun n'enseigne jamais**. La curiosité s'est transmise, l'adoption non — le profil-type du **testeur isolé** (§5), candidat n°1 à une relance post-formation.
 
 ### Les marges qui marchent

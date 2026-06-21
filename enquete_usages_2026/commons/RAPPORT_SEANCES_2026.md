@@ -2,7 +2,7 @@
 ## Comment l'outil se vit réellement en classe — scénarios, rythmes, cas
 
 **Date** : 20 juin 2026
-**Corpus** : 738 séances reconstruites · 224 professeurs · ~5 970 participations-élèves
+**Corpus** : 738 séances reconstruites · 224 professeurs · 5 854 élèves distincts (6 810 participations)
 **Méthode** : reconstruction des séances depuis les logs Capytale (horaires, durées, groupes), enrichie des signaux élève (reprises, travail-maison, durée de travail), inspirée de `export_csv_by_teacher.js`. 14 questions investiguées par agents puis **vérifiées de façon adversariale** (circularité, confusions, petits effectifs).
 
 > **Note de cadrage.** Ce rapport (« la séance ») est le pendant de [`TYPOLOGIE_PROFILS_2026.md`](TYPOLOGIE_PROFILS_2026.md) (« le prof »). Là, *qui* enseigne et *qui revient* ; ici, *comment* une séance se déroule. Une **séance** est un *cluster reconstruit d'activité élève*, pas forcément un cours complet : la durée médiane d'un cluster est ~7 min (25ᵉ pct = 0). Les durées décrivent donc des **salves d'activité**, pas la durée réelle d'un cours.

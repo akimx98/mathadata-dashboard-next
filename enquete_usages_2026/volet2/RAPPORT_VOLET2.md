@@ -32,7 +32,7 @@ Quatre garde-fous conditionnent toute interprétation :
 
 - **Ce n'est pas le format qui prédit l'aboutissement en classe, c'est la concentration.** Reclassées par *nature* et comptées au **grain établissement distinct**, les cohortes vont de **59 % (13/22 établissements)** pour une formation **établissement-ciblée** (plusieurs collègues d'un même lieu) à **10 % (13/126)** pour une formation **académique de masse** (IREM, journées, 1 prof dispersé) — un **facteur ~6**, alors que les deux sont du présentiel. Toutes les formations de masse sont quasi nulles (Narbonne 1/20, Nîmes 0/9), toutes les concentrées ont de vraies classes (Lille 2024 : 841 élèves). *Base petite (22 établissements), classification subjective → direction robuste, chiffre = ordre de grandeur. Au grain prof, l'établissement-ciblée monte à ~67 %, mais c'est surestimé (compte les collègues d'un même lycée plusieurs fois).* *(Correction v1 : « webinaire > présentiel » reposait sur 147 « anciens formés » comptés à tort comme webinaire.)*
 
-- **Un cinquième de l'effort présentiel vise un public qui ne peut pas aboutir cette année.** **74 des 364 profs présentiels (20 %)** sont des **pré-service** (ENS_25 52 profs, MEEF INSPÉ 13) : sans classe ni élèves, **0 % d'usage** possible. À traiter comme canal à horizon décalé, pas comme « présentiel raté ».
+- **Un cinquième de l'effort présentiel vise un public qui ne peut pas aboutir cette année.** **74 des 363 profs présentiels (20 %)** sont des **pré-service** (ENS_25 52 profs, MEEF INSPÉ 13) : sans classe ni élèves, **0 % d'usage** possible. À traiter comme canal à horizon décalé, pas comme « présentiel raté ».
 
 - **L'endogénéité reste une limite causale forte.** Avec les vraies dates de formation : sur 26 établissements présentiels à usage élève, **9 utilisaient déjà Capytale *avant*** la formation. Quand l'usage suit, il vient en **~27 jours** (médiane). Ne pas créditer le présentiel d'environ un tiers de l'usage observé.
 
@@ -87,7 +87,7 @@ Les **délais** montrent une bascule très rapide quand elle a lieu : médiane c
 
 | | Non-formés | Présentiel | Webinaire | Ancienne vague |
 |---|---:|---:|---:|---:|
-| Effectif | 2 084 | 364 | 121 | 147 |
+| Effectif | 2 084 | 363 | 121 | 147 |
 | % clic Capytale *(intention, biaisé tracking)* | 9,0 | **26,2** | 24,8 | 17,0 |
 | % actifs sur le site | 26,0 | 45,2 | 46,3 | 28,6 |
 | % établissement à usage élève *(robuste)* | 17,8 | 23,4 | **32,4** | 28,6 |
@@ -95,7 +95,7 @@ Les **délais** montrent une bascule très rapide quand elle a lieu : médiane c
 
 *« Usage élève effectif » = au moins une vraie classe (≥ 1 élève `role=student`), historique Capytale complet 2023-2026, non biaisé par la fenêtre de tracking. Le « % » porte sur les **profs formés à UAI renseigné**, pas sur des établissements distincts (au niveau établissement dédupliqué : 17,8 / 17,1 / 29,5 / 25,8 %). La formation reste associée à un clic Capytale ~2,5× supérieur (effet mêlé de causalité, récence et auto-sélection).*
 
-**Le vrai webinaire converti mieux subsiste — mais sur petite base et n'est pas le moteur.** Le webinaire *genuine* (121 profs, 68 profs-avec-UAI) atterrit en classe à 32,4 % et consulte le plus de ressources (10,2/personne) : il sélectionne des profs déjà décidés. Le présentiel (364) est plus large mais agrège des régimes opposés. Le format, à lui seul, n'explique pas grand-chose.
+**Le vrai webinaire converti mieux subsiste — mais sur petite base et n'est pas le moteur.** Le webinaire *genuine* (121 profs, 68 profs-avec-UAI) atterrit en classe à 32,4 % et consulte le plus de ressources (10,2/personne) : il sélectionne des profs déjà décidés. Le présentiel (363) est plus large mais agrège des régimes opposés. Le format, à lui seul, n'explique pas grand-chose.
 
 **Le prédicteur d'aboutissement, c'est la *concentration* de la formation.** En reclassant les cohortes datées par **nature** — qui était dans la salle — et en comptant au **grain établissement distinct** (et non par prof, qui gonfle le taux en comptant plusieurs collègues d'un même lycée comme autant de succès) :
 
@@ -111,7 +111,7 @@ L'écart est d'un **facteur ~6** (59 % vs 10 %), alors que établissement-ciblé
 
 > **À manier avec prudence.** (1) Le **grain compte** : au niveau prof, l'établissement-ciblée monte à ~67 % (Gif : 13 profs mais 3 établissements) — surestimé ; le **59 % (13/22) au grain établissement** est plus juste. (2) **Base petite** : 22 établissements seulement pour l'établissement-ciblée. (3) **Classification subjective** (mots-clés ; Calais-LP = 8 LP dispersés, plutôt « réseau »). (4) **Déclaration d'UAI faible** dans 2 cohortes (Lille 6/40 profs, Amiens 1/19) → le taux y repose sur une poignée. La **direction** (concentré ≫ dispersé) est robuste ; le chiffre exact est un **ordre de grandeur sur petite base**.
 
-**Un cinquième de l'effort présentiel vise un public qui ne peut pas aboutir cette année : le pré-service.** **74 des 364 profs présentiels (20 %)** sont des stagiaires. Les deux grosses cohortes pré-service — **ENS_25 (52 profs)** et **MEEF INSPÉ Paris (13)** — totalisent 65 stagiaires, ~5 établissements distincts et **0 % d'usage classe** : sans classe en responsabilité ni élèves, elles ne *peuvent* pas produire d'usage. Les compter comme « présentiel raté » est une erreur d'attribution — c'est un canal de diffusion à horizon décalé, pas d'usage immédiat. *(Nuance : une 3ᵉ cohorte INSPÉ « continue » convertit, elle, à 100 % sur 2 établissements ; le 0 % strict ne vaut que pour ENS + MEEF.)*
+**Un cinquième de l'effort présentiel vise un public qui ne peut pas aboutir cette année : le pré-service.** **74 des 363 profs présentiels (20 %)** sont des stagiaires. Les deux grosses cohortes pré-service — **ENS_25 (52 profs)** et **MEEF INSPÉ Paris (13)** — totalisent 65 stagiaires, ~5 établissements distincts et **0 % d'usage classe** : sans classe en responsabilité ni élèves, elles ne *peuvent* pas produire d'usage. Les compter comme « présentiel raté » est une erreur d'attribution — c'est un canal de diffusion à horizon décalé, pas d'usage immédiat. *(Nuance : une 3ᵉ cohorte INSPÉ « continue » convertit, elle, à 100 % sur 2 établissements ; le 0 % strict ne vaut que pour ENS + MEEF.)*
 
 **La maturité ne sauve pas les cohortes faibles.** Contre-intuitivement, les deux meilleures cohortes (Gif 32 j, Arpajon 39 j de recul) sont parmi les **plus récentes**, tandis que des cohortes mûres restent basses (Narbonne 88 j → 4 %, St-Brieuc 156 j → 12 %). Cohortes ≥ 60 j : ~20-23 % ; < 60 j : ~30-34 %. Ce n'est ni le format ni le temps écoulé qui prédit l'usage — c'est la nature.
 
@@ -159,7 +159,7 @@ Le rapprochement au grain établissement révèle deux mondes largement disjoint
 
 **On prépare le début, rarement la fin.** Les fiches version élève de la séquence Stat décroissent fortement : **1 124 clics en séance 1, 132 en séance 7** (rétention ~12 %). Soit usage partiel, soit préparation concentrée sur l'entrée en matière (à recouper avec l'usage réel en classe).
 
-**Formés vs nouveaux : corrélation, pas causalité.** Les formés consultent deux fois plus en profondeur (15,0 vs 8,8 clics/prof), les webinaire le plus (22,1). Mais cette population est **auto-sélectionnée** parmi les plus engagés : l'écart ne mesure pas un effet de la formation. Signal opérationnel net en revanche : le **guide de connexion Capytale** — **~74 % de ses lecteurs cliquent aussi un lien Capytale**. Qui télécharge le mode d'emploi s'apprête à amener ses élèves sur la plateforme : c'est le marqueur de passage à l'acte le plus fiable du funnel.
+**Formés vs nouveaux : corrélation, pas causalité.** Les formés consultent deux fois plus en profondeur (15,0 vs 8,8 clics/prof), les webinaire le plus (22,1). Mais cette population est **auto-sélectionnée** parmi les plus engagés : l'écart ne mesure pas un effet de la formation. Signal opérationnel en revanche : le **guide de connexion Capytale** — **~74 % de ses lecteurs cliquent aussi un lien Capytale** (co-occurrence, n≈96 ; l'ordre guide → clic n'est pas établi). C'est un bon **marqueur d'intention** du funnel, à manier comme corrélation et non comme preuve de causalité.
 
 ---
 
@@ -218,7 +218,7 @@ Profil-type du prof qui va au bout : un **clic ressource suivi d'un clic Capytal
 1. **Prioriser les formations établissement-ciblées sur les journées de masse.** Le facteur ~6 d'aboutissement (59 % vs 10 % des établissements) est le levier le plus net du rapport — à confirmer sur une base plus large (22 établissements ciblés à ce jour). Former 3-4 collègues d'un même établissement autour d'un projet local convertit massivement mieux que les journées académiques dispersées (IREM, Labomaths) où chaque prof repart seul. Réorienter une part de l'effort « masse » vers le ciblage établissement.
 2. **Traiter le pré-service comme un canal distinct, à horizon décalé.** Ne plus diluer le taux présentiel avec ENS_25 / MEEF (20 % de l'effectif présentiel, 0 % d'usage immédiat par construction) : les compter à part, avec un objectif d'engagement et un suivi à T+1 an (première titularisation / premier établissement), pas d'usage classe immédiat.
 3. **Déplacer le KPI de l'intention vers le passage à l'acte.** L'intention déclarée (6/99 réalisées) ne pilote rien à court terme. Suivre plutôt le **délai médian formation → 1re séance (~27 j)** et relancer activement, à **J+45**, les profs formés dont l'établissement n'a rien déclenché (85/93 intentions bloquées là). Rendre le module **Intro à l'IA** visible dans le formulaire pour aligner intention et usage réel.
-4. **Relancer le réservoir site-only en sursis (~148 établissements à intention non aboutie)** à la **rentrée de septembre** (créneau de déploiement), avec le **guide de connexion Capytale** en avant (74 % de ses lecteurs cliquent ensuite vers Capytale — le meilleur marqueur de passage à l'acte).
+4. **Relancer le réservoir site-only en sursis (~148 établissements à intention non aboutie)** à la **rentrée de septembre** (créneau de déploiement), avec le **guide de connexion Capytale** en avant (74 % de ses lecteurs cliquent aussi vers Capytale — bon marqueur d'intention).
 5. **Capitaliser sur la porte Capytale-directe et le réseau de pairs, pas seulement sur le SEO.** Soigner la **fiche catalogue Capytale** (point d'entrée réel des découvreurs), y placer un lien retour, et référencer l'Intro à l'IA sur le site.
 6. **Ne pas attribuer l'usage présentiel à la formation sans correction d'endogénéité** (9/26 succès présentiels la précèdent), et **ouvrir ou assumer de fermer la porte collège** (cf. §8) : produire 2-3 activités calées 6e-3e, ou traiter le collège comme canal de prescription.
 
