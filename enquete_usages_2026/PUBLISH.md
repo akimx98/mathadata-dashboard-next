@@ -14,7 +14,7 @@ une seule règle :
 |---|---|---|---|---|
 | Accueil | portail | `enquete_usages_2026/pages/index.html` | — | [/](https://akimx98.github.io/mathadata-dashboard-next/) |
 | **Synthèse** | Capstone transversal (à lire en premier) | `enquete_usages_2026/commons/dashboard_synthese.html` | — | [/synthese.html](https://akimx98.github.io/mathadata-dashboard-next/synthese.html) |
-| **Typologie** | Cinq façons d'enseigner (profils, rétention) | `enquete_usages_2026/commons/dashboard_typologie.html` | — | [/typologie.html](https://akimx98.github.io/mathadata-dashboard-next/typologie.html) |
+| **Typologie** | Cinq façons d'enseigner (profils, rétention) | `enquete_usages_2026/commons/dashboard_typologie.html` | `0b79ed9b-8e7e-4ecf-b7dc-f4f3aa86ea83` | [/typologie.html](https://akimx98.github.io/mathadata-dashboard-next/typologie.html) |
 | **Séances** | Anatomie d'une séance (scénarios, rythmes, cas) | `enquete_usages_2026/commons/dashboard_seances.html` | — | [/seances.html](https://akimx98.github.io/mathadata-dashboard-next/seances.html) |
 | **Volet 1** | Déploiement réel en classe (Capytale) | `enquete_usages_2026/volet1/dashboard.html` | `f4a6cd35-dc33-46fd-bd08-e121a0d1d517` | [/volet1.html](https://akimx98.github.io/mathadata-dashboard-next/volet1.html) |
 | **Volet 2** | Du site à la classe (mathadata.fr × Capytale) | `enquete_usages_2026/volet2/dashboard_volet2.html` | `79e26dd8-eaf0-422b-86e3-5dd69ba6afa8` | [/volet2.html](https://akimx98.github.io/mathadata-dashboard-next/volet2.html) |
@@ -32,7 +32,7 @@ Liens artifact = `https://claude.ai/code/artifact/<UUID>`.
 3. **Artifact claude.ai** (si la page en a un) : republier **sur le même UUID**.
    - via Claude Code : outil `Artifact` avec `url=https://claude.ai/code/artifact/<UUID>` et le fichier source ;
    - ou sur claude.ai : ouvrir l'artifact → « Update »/nouvelle version.
-   La typologie et l'accueil n'ont **pas** d'artifact → rien à faire.
+   L'accueil, la **Synthèse** et les **Séances** n'ont **pas** d'artifact → rien à faire ; Volet 1, Volet 2 et **Typologie** en ont un (UUID ci-dessus).
 4. **Committer la source** sur `main` (`git add -A && git commit && git push`).
 
 ## Notes
