@@ -78,7 +78,9 @@ C'est exactement la signature d'un **TP en salle informatique en demi-groupe** :
 - **41,8 %** des classes tombent dans la fourchette **12–18 élèves** (demi-groupe, ~18 postes en salle info) ;
 - **25,2 %** dans la fourchette 24–36 (groupe-classe complet).
 
-Le demi-groupe est donc le **mode d'usage dominant**. Par activité, statistiques (médiane 17), Intro IA (16) et équation de droite (15) sont des activités de demi-groupe ; seules « Géométrie repérée » (médiane **25**) et « Droite & produit scalaire » (20) montent vers la classe entière.
+La taille de demi-groupe est donc **la taille de séance dominante**. Par activité, statistiques (médiane 17), Intro IA (16) et équation de droite (15) sont des activités de demi-groupe ; seules « Géométrie repérée » (médiane **25**) et « Droite & produit scalaire » (20) montent vers la classe entière.
+
+> **⚠️ Nuance (renvoi à [Séances](../commons/RAPPORT_SEANCES_2026.md) §III).** Une séance de ~17 est *cohérente* avec un demi-groupe en salle info, mais ce n'est qu'une **inférence de taille**. Quand on cherche la *signature vérifiable* d'un vrai dédoublement — **deux séances complémentaires le même jour** — on ne la trouve que chez **~10 professeurs** (et ~4 dédoublements équilibrés nets). Autrement dit, beaucoup de séances de 17 sont plutôt de **petites classes entières ou des groupes partiels** que des demi-groupes confirmés. Les vrais demi-groupes sont rares et se concentrent chez des pionniers, en établissements un peu plus favorisés (IPS médian 115 vs 110) — un point clé pour l'objectif « vrais demi-groupes » de 2026-2027.
 
 ### 1.4 Deux portes d'entrée : le site-vitrine et le « Capytale-direct »
 
@@ -184,6 +186,10 @@ Deux faits éclairants :
 
 - **Aucun code d'activité n'est partagé entre deux professeurs** (sur 385 codes de distribution) : chaque enseignant crée sa propre distribution. La transmission entre collègues passe par le bouche-à-oreille et la ré-appropriation, jamais par le partage d'un même lien de classe.
 - Le **« collègue non convaincu »** (teste mais n'enseigne pas, alors qu'un confrère du même établissement enseigne) est **rare : 8 cas seulement**. Le frein n'est donc pas l'essai non concluant entre collègues — c'est **l'absence d'un second prof tout court**.
+
+> **⚠️ Mise en cohérence (renvois [Typologie](../commons/TYPOLOGIE_PROFILS_2026.md) §III et [Séances](../commons/RAPPORT_SEANCES_2026.md)).** Deux nuances importantes sur la contagion, issues du suivi fin :
+> 1. **Le collectif augmente le nombre d'usagers, pas le taux de retour.** Être en établissement multi-prof ne change rien à la rétention (30 % multi-prof vs 31 % solo, p=0,87) : c'est un **nul confirmé**. Et le suivi de la diffusion montre que les **collègues recrutés adoptent un usage plus léger** (déploiement ponctuel) et **n'héritent pas de la fidélité du pionnier**. La contagion sert l'objectif « plus de profs », pas mécaniquement l'objectif « usage durable/profond ».
+> 2. **« Même année » ≠ « même mois ».** Les 64 % de « lancement conjoint » sont mesurés *au grain année* ; au grain *mois*, seuls **25 %** des établissements multi-profs démarrent réellement le même mois — l'écart médian d'entrée entre collègues est de ~2 mois. La diffusion est donc plus **échelonnée** qu'il n'y paraît, semée par un pionnier souvent intensif.
 
 ### 3.1 Quatre études de cas
 
@@ -375,7 +381,7 @@ L'écart (**+3,4 points**) est réel mais **modéré** : MathAData n'est **pas**
 ## 12. Recommandations issues des données
 
 1. **Faire de la rétention la priorité n°1.** Le point faible n'est pas l'acquisition (excellente) mais le retour d'une année sur l'autre (**30 %**). Cibler dès la rentrée les **62 professeurs de 2024-2025 qui n'ont pas réenseigné**, avec une relance et les nouveautés du catalogue.
-2. **Activer la contagion intra-établissement.** **80 % des établissements n'ont qu'un prof**, et le frein n'est pas l'essai raté mais l'absence de second prof. Outiller le prof-pionnier pour embarquer un collègue (kit « présenter MathAData en réunion de cabinet ») démultiplie sans coût d'acquisition. Le lancement conjoint (Bègles) et la diffusion échelonnée (Calais) prouvent que ça marche.
+2. **Activer la contagion intra-établissement — pour le *nombre*, en accompagnant la *profondeur*.** **80 % des établissements n'ont qu'un prof**, et le frein n'est pas l'essai raté mais l'absence de second prof. Outiller le prof-pionnier pour embarquer un collègue (kit « présenter MathAData en réunion de cabinet ») démultiplie sans coût d'acquisition. Le lancement conjoint (Bègles) et la diffusion échelonnée (Calais) prouvent que ça marche **pour recruter**. *Réserve (cf. §3) : les collègues recrutés adoptent un usage plus léger et ne retiennent pas mieux — la contagion ne suffit pas, il faut l'assortir d'un accompagnement vers l'usage profond (2ᵉ activité, vraie séance salle info).*
 3. **Récupérer les profs « Capytale-direct ».** Un tiers des enseignants entrent par « Intro à l'IA » et **63 ne voient jamais le reste du catalogue**. Un simple bandeau « Découvrez les autres activités sur mathadata.fr » dans l'activité historique peut convertir ce trafic gratuit en découverte du catalogue — levier à coût quasi nul, fort potentiel.
 4. **Concentrer l'accompagnement sur janvier-juin**, où se joue ~80 % de l'activité, et préparer la **montée en charge de mai**.
 5. **Capitaliser sur le modèle « un gros lycée = un foyer ».** Identifier et accompagner les établissements-grappes émergents (Bègles, Calais, Nantes, Limoges) comme têtes de pont académiques.

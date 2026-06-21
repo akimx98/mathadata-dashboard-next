@@ -6,8 +6,11 @@ Analyse des usages de MathAData en deux volets. Organisation :
 enquete_usages_2026/
 ├── volet1/   — Données Capytale seules (usage en classe, anonyme)
 ├── volet2/   — Croisement mathadata.fr (site, nominatif) × Capytale
-└── commons/  — Analyses transverses aux deux volets
+└── commons/  — Analyses transverses + synthèse finale
 ```
+
+## ★ [Synthèse finale](commons/SYNTHESE_FINALE_2026.md) — à lire en premier
+**Capstone réflexif** croisant les 4 rapports : que conclure de 3 ans d'usage (Capytale × site) sur l'adoption, les profils, l'effet des formations, les dynamiques et les modes d'usage — et **comment déployer mieux en 2026-2027** (plus de profs *et* meilleur mode d'usage). Thèse : l'acquisition est gagnée, la **durée et la profondeur** sont la bataille à venir — et les données montrent que ce sont **les mêmes gestes de la 1ʳᵉ année** (≥2 activités, vraie séance de 45 min) qui les déterminent. → [`commons/SYNTHESE_FINALE_2026.md`](commons/SYNTHESE_FINALE_2026.md)
 
 ## [Volet 1 — Usage Capytale](volet1/) (`volet1/`)
 Que font les profs et les élèves **sur Capytale** (2023→2026) : croissance, comportements (test/enseigne), saisonnalité, géographie, IPS, taille de classe, rétention, modèle des comptes (401 engagés → 224 ont enseigné → 5 854 élèves).

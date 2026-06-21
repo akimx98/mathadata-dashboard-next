@@ -43,7 +43,7 @@ Le clustering sépare nettement les 224 enseignants en cinq archétypes, sur les
 
 <sub>¹ Somme des élèves uniques par prof ; le distinct global est 5 854.</sub>
 
-**La concentration est le premier fait** : 17 % de pionniers touchent autant d'élèves (~2 400) que les 47 % de déployeurs. L'impact repose sur une avant-garde.
+**La concentration est le premier fait** : 17 % de pionniers touchent autant d'élèves (~2 400) que les 47 % de déployeurs. L'impact repose sur une avant-garde. ⚠️ *Caveat : le 1ᵉʳ pionnier par élèves est le **hub fondateur** (compte « 0 », 404 élèves répartis sur 14 établissements — cf. [Volet 1](../volet1/RAPPORT_ENQUETE_USAGES.md) §6 et [Séances](RAPPORT_SEANCES_2026.md) §VI). Net de ce hub, les 37 autres pionniers touchent ~2 000 élèves — la concentration reste forte mais légèrement moindre.*
 
 ⚠️ **Attention** : pionniers et fidèles sont *définis* à partir de l'usage multi-années. Dire « les pionniers reviennent » est donc circulaire. Toute la suite s'attache à des prédicteurs **non circulaires**, mesurés sur la seule première année.
 
