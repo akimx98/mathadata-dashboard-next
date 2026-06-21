@@ -108,6 +108,8 @@ Ce que les données **ne peuvent pas trancher** et qui conditionne des conclusio
 
 ## D. Corrections recommandées (par priorité)
 
+> ✅ **Toutes appliquées le 21 juin 2026** (commit `b36d0f4`) : synthèse (.md + page + chart `syn_double_gain.png` régénéré), Séances, Volet 1, Volet 2 (md + dashboards). gh-pages republié, artifacts Volet 1 / Volet 2 / Typologie redéployés. Reste ouvert : les **hypothèses §C** à valider par l'équipe.
+
 1. **§IV (HAUT)** — remplacer dans le tableau et le dashboard : « 76 % vs 16 % » → **« 64 % vs 25 % (≥2 activités dès l'an 1, n=14, p=0,009) »** ; **retirer** la ligne « séance 45 min → 61/20 » (ou la dégrader en « piste non confirmée : effet année-1 non significatif »). Ajouter une note sur la circularité carrière/année-1. Aligner le hero/strip de la page synthèse (« 76 % vs 16 % » y figure aussi).
 2. **§III/§V (MOYEN)** — préciser que « 28 % / 63 profs » utilise « classe = ≥10 élèves » ; harmoniser « classe entière » partout (cf. glossaire).
 3. **§I (MOYEN)** — « +105 % » → préciser « usages élèves (≈+95 % en élèves distincts) » ; « 1065 vs 1062 effet net quasi nul » → « contribution marginale des récurrents (n=26, IC large) » ; documenter le seuil de « 5 → 44 → 57 % ».
