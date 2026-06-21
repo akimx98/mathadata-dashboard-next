@@ -110,9 +110,11 @@ Le point de départ a été corrigé en cours d'enquête (voir §11). Dans Capyt
                  └──  37 distributeurs ayant testé sans jamais enseigner
 ```
 
+> **⚠️ Terminologie : « stagiaire » est un raccourci trompeur.** Dans ce rapport (Capytale seul), « stagiaire » désigne un compte **vu seulement en formation** (clone créé pendant une séance de formation, jamais déployé). Ce sont, **en quasi-totalité, des profs EN EXERCICE** en formation continue — *pas* des stagiaires/pré-service. Seule la minorité **pré-service** (INSPÉ/MEEF/ENS) est un vrai « stagiaire sans classe », et elle n'est identifiable que par les libellés de formation **côté site** (Volet 2). Lire « stagiaire » ci-dessous comme « vu seulement en formation ».
+
 Deux enseignements forts :
 
-- **La formation est un puissant haut d'entonnoir… à faible rendement.** Sur les **148 comptes vus en formation**, seuls **6 (≈ 4 %) ont ensuite enseigné** à leurs propres élèves. La majorité reste « formée mais pas passée à l'acte ». *(À tempérer : beaucoup de formations sont récentes ; le délai de conversion sera mesurable avec le calendrier officiel.)*
+- **La formation est un puissant haut d'entonnoir… à rendement à mesurer au bon grain.** Sur les **148 comptes vus en formation**, seuls **6 (≈ 4 %) ont ensuite enseigné** *côté Capytale*. ⚠️ Ce taux est **trompeusement bas** : il est biaisé par la **récence** des formations et le **grain compte** (anonyme). La mesure de référence est celle du **[Volet 2](../volet2/RAPPORT_VOLET2.md) §3, au grain établissement** (historique complet, non biaisé) : **~17-30 % selon le type**, **46 % pour les cohortes mûres**, et surtout **établissement-ciblée 59 % vs masse 10 %**. La conversion post-formation est donc **modérée et très inégale**, pas catastrophique.
 - **La formation explique l'intérêt collège** : sur les 140 stagiaires, **40 sont en collège**, 27 en lycée, 73 sans établissement renseigné. C'est cohérent avec ce que montre la carte (§1.1) — des profs de collège formés, mais qui n'enseignent pas (encore) à leurs classes.
 
 Ce haut d'entonnoir est animé par une douzaine de **formateurs** identifiables dans la donnée : **`dda7f8a1`** (lycée des Flandres, Hazebrouck — **37 stagiaires** sur 34 établissements), `6a44e026` (28), `2f6f9511` (15, n'enseigne pas lui-même), `cace46c6` (12)… À eux seuls, les formateurs portent **~39 % des lignes de test**. Ce sont les opérateurs des formations — que les données officielles à venir permettront de nommer et dater.

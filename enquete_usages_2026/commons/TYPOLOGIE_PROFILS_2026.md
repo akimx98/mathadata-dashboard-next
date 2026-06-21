@@ -13,7 +13,7 @@
 
 ## Les deux réponses, en bref
 
-**Qui atteint la classe ?** — Il n'existe **aucun prédicteur propre** : franchir la porte de la classe est verrouillé par un fait quasi définitionnel (être ou non « stagiaire »). 224 des 401 comptes engagés (56 %) enseignent. Parmi les vrais enseignants (non-stagiaires), **86 % atteignent une classe** ; le filtre est en amont, à la frontière stagiaire/testeur. L'écart apparent lycée (78 %) vs collège (13 %) est un artefact : les collèges sont à 87 % des stagiaires.
+**Qui atteint la classe ?** — 224 des 401 comptes engagés (56 %) enseignent. Atteindre la classe n'est pas dur **en soi** : les profs qui découvrent l'outil **seuls** (sans formation) déploient très majoritairement. Le vrai maillon faible est la **conversion post-formation** : modérée et très inégale (mesurée au grain établissement, [Volet 2](../volet2/RAPPORT_VOLET2.md) : ~17-30 % selon le type, **établissement-ciblée 59 % vs masse 10 %**). ⚠️ Les ~140 profs « vus seulement en formation » sont des **profs en exercice** à activer (un réservoir), *pas* des « stagiaires » sans classe (seule la minorité pré-service INSPÉ/MEEF l'est).
 
 **Pourquoi la plupart ne reviennent-ils pas ?** — Sur 101 enseignants ayant *pu* revenir, **31 % reviennent** l'année suivante. La cause n'est pas le profil (le lien profil→retour est tautologique) mais la **dose de la première année**. Le cœur du problème est le **paradoxe du déployeur** : les déployeurs atteignent une vraie classe — le signal même qui prédit le retour — et pourtant **0 sur 41 reviennent**. La perte n'est pas au premier contact, elle est à la **réengagement d'une année sur l'autre**.
 
@@ -51,16 +51,16 @@ Le clustering sépare nettement les 224 enseignants en cinq archétypes, sur les
 
 ## II. Qui atteint la classe ?
 
-Sur 401 comptes engagés : 224 ont enseigné, 140 sont des stagiaires vus seulement en formation, 37 ont testé/distribué sans classe réelle.
+Sur 401 comptes engagés (côté Capytale) : **224 ont enseigné**, **≈140 ne sont vus qu'en formation** (clones créés pendant une séance, jamais déployés), **≈37 ont testé/distribué** une activité sans qu'aucun élève ne s'y connecte.
 
-Le résultat est austère : **il n'y a pas de discriminant propre**. La frontière est définitionnelle.
-- Les **stagiaires ne franchissent presque jamais** le pas : 4 % seulement (6/148) atteignent leur propre classe.
-- L'auto-test n'est **pas** une porte d'entrée : 34 des 37 testeurs/distributeurs ont auto-testé et touché zéro élève.
-- Le type d'établissement ne discrimine **pas**, une fois les stagiaires retirés : parmi les non-stagiaires, lycée 87 % vs collège 83 % (n=6, indicatif), p=0,36. L'écart brut lycée/collège n'est qu'un reflet du fait que les collèges sont à 87 % des stagiaires.
+> **⚠️ Vocabulaire — pas des « stagiaires ».** Les ≈140 « vus seulement en formation » sont, en quasi-totalité, des **profs en exercice** ayant suivi une **formation continue** — *pas* des stagiaires/pré-service. La seule exception, le pré-service (INSPÉ/MEEF/ENS), n'est repérable que par les **libellés de formation côté site** (Volet 2), pas côté Capytale, et reste minoritaire.
 
-Côté amont, seuls **~27,5 % des comptes site traçables** atteignent un jour Capytale (proxy de la vraie classe) — le détail est dans le volet 2.
+Le constat utile n'est donc pas « il y a un filtre définitionnel », mais :
+- **Les profs qui découvrent l'outil seuls** (sans formation : Capytale-direct, organique) **déploient très majoritairement** — atteindre la classe n'est pas dur en soi.
+- **Le maillon faible est la conversion post-formation.** Le taux Capytale brut (6/148 ≈ 4 %) est **trompeusement bas** (récence des formations, grain compte) ; la mesure pertinente est au **grain établissement (Volet 2)** : ~17-30 % selon le type, **46 % pour les cohortes mûres**, et surtout **établissement-ciblée 59 % vs masse 10 %**. Les ≈140 non-déployés sont donc un **réservoir de profs en exercice à activer**, pas des gens « qui ne peuvent pas ».
+- Le type d'établissement ne discrimine **pas** une fois ce public de formation mis à part (lycée 87 % vs collège 83 %, n=6 indicatif) : l'écart brut lycée/collège reflète seulement que les comptes collège passent surtout par la formation (cf. Volet 2 §8).
 
-**Conclusion honnête** : parmi les gens qui sont de vrais enseignants (pas des stagiaires), presque tous (86 %) atteignent une classe. Le goulot est en amont, et il est définitionnel ; il ne faut pas l'habiller en « effet établissement ».
+**Conclusion honnête** : « atteindre la classe » n'est pas un problème pour les profs qui arrivent par découverte spontanée ; c'en est un, réel, pour ceux recrutés par une **formation de masse** — et c'est une conversion à travailler (Volet 2), pas une fatalité.
 
 ---
 
@@ -121,7 +121,7 @@ Parmi les 32 pluriannuels : **25/32** ont eu un démarrage modeste (<5 séances 
 4. **La portée, pas le choix d'activité**, explique l'avantage « Statistiques ».
 5. **Timing et dose sont entrelacés** : les one-shot de fin d'année (juin 14 %) sont le moteur clair du décrochage.
 6. **La masse critique locale est un nul confirmé** ; l'avantage de Lille est un **artefact de composition** (plus de pionniers/fidèles), pas un effet de lieu.
-7. **Atteindre la classe est verrouillé par un fait définitionnel** (stagiaire), pas par le type d'établissement.
+7. **Atteindre la classe est facile pour les profs venus seuls** ; le maillon faible est la **conversion post-formation** (réservoir de profs en exercice à activer), pas le type d'établissement.
 
 ---
 
