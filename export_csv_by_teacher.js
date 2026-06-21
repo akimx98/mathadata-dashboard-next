@@ -2,12 +2,30 @@
 
 /**
  * Script d'export des données MathAData au format CSV pour analyse
- * 
+ *
  * Usage: node export_csv_by_teacher.js
  * Output: Dossier export_csv/ contenant :
  *   - teachers_summary.csv (vue d'ensemble de tous les profs)
  *   - teachers/<teacher_id>_sessions.csv (détail des séances par prof)
  *   - teachers/<teacher_id>_timeline.csv (timeline chronologique par prof)
+ *
+ * ─────────────────────────────────────────────────────────────────────────
+ * ⚠️  HISTORIQUE / STATUT
+ * Créé le 2025-11-04, dernière mise à jour 2026-02-10 (données du 10/02/26).
+ * Outil EXPLORATOIRE de première génération. Il a INSPIRÉ le Dashboard 4
+ * « la séance » de l'enquête (cf. enquete_usages_2026/commons/RAPPORT_SEANCES_2026.md),
+ * mais il est aujourd'hui DÉPASSÉ par le pipeline de référence de l'« enquête usages »
+ * (juin 2026), plus rigoureux et vérifié :
+ *   - enquete_usages_2026/volet1/  (build_canonical.py → compute_facts.py
+ *       → build_teachers_v2.py → make_charts.py)
+ *   - enquete_usages_2026/commons/ (analyse séances — RAPPORT_SEANCES_2026.md)
+ *   - méthodo & définitions : enquete_usages_2026/DEFINITIONS.md, PUBLISH.md
+ *
+ * NE PAS se fier à ses chiffres : modèle de comptes NAÏF (compte « distributeurs »,
+ * et non les « 401 engagés » ; les profs vus en formation ne sont pas rattachés),
+ * compte de démo (MD5 "2") et hub pionnier (MD5 "0") NON exclus, fenêtre de
+ * clustering de séance = 1 h (l'enquête utilise 3 h).
+ * ─────────────────────────────────────────────────────────────────────────
  */
 
 const fs = require('fs');
