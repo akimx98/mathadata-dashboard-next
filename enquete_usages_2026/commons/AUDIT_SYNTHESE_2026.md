@@ -104,6 +104,15 @@ Ce que les données **ne peuvent pas trancher** et qui conditionne des conclusio
 6. **« 44 % Capytale-direct »** repose sur l'appariement UAI site↔Capytale (ténu). Combien de ces 77 établissements ont *réellement* un compte sous un autre UAI/ENT ? → *seule l'équipe peut estimer le faux-négatif.*
 7. **Canaux d'acquisition (66,7 % référencement)** : les logs bruts ne sont pas dans le dépôt → invérifiable en aval. Confirmer la fenêtre (depuis 27 nov.) et que ce n'est pas qu'un effet « visites récentes ». → *accès analytics.*
 
+> **Réponses de l'équipe (21 juin 2026) — intégrées aux livrables :**
+> 1. **« Classe entière » = séance ≥ 10 élèves** (inclut les demi-groupes, mode légitime). KPI et prédicteur §IV alignés sur ≥ 10 (le prédicteur passe à « ≥ 1 séance ≥ 10 él. → 38 % vs 22 %, n=55 ») ; le seuil « > 20 » n'est plus employé que pour le paradoxe du déployeur.
+> 2. **Pousser la 2ᵉ activité** (prédicteur solide) plutôt que la séance 45 min. ✅ reflété dans le playbook.
+> 3. **Classification des formations fiable** : Calais = formation établissement-ciblée en **lycée pro** (expérimentation déploiement LP) ; Amiens = petite formation établissement. Le caveat « classification subjective » est retiré (remplacé par « confirmée par l'équipe »).
+> 4. **ENS_25 (52 profs) = profs EN EXERCICE** — formation francilienne **ouverte, non ciblée**, peu efficace et **non reconduite** — **pas** du pré-service. Seul **MEEF (≈13)** est pré-service sans classe. Corrigé partout : le « ~20 % pré-service / 0 % par construction » devient « pré-service réel ~4 % » ; le 0 % d'ENS_25 est compté comme un **échec de formation de masse**, pas excusé.
+> 5. **Délai formation → séance** : les dates exactes sont dans `cohorts.csv` → la figure précise **≈ 27 j (médiane, n=17)** est restaurée (le « 14-37 j » de l'audit venait d'un proxy mi-mois d'un agent).
+> 6. Faux-négatifs Capytale-direct : indéterminé → le 44 % reste une **borne**.
+> 7. Canaux 66,7 % : laissé en l'état (mono-source signalé) — non bloquant.
+
 ---
 
 ## D. Corrections recommandées (par priorité)

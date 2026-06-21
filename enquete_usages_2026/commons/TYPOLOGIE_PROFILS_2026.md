@@ -53,7 +53,7 @@ Le clustering sépare nettement les 224 enseignants en cinq archétypes, sur les
 
 Sur 401 comptes engagés (côté Capytale) : **224 ont enseigné**, **≈140 ne sont vus qu'en formation** (clones créés pendant une séance, jamais déployés), **≈37 ont testé/distribué** une activité sans qu'aucun élève ne s'y connecte.
 
-> **⚠️ Vocabulaire — pas des « stagiaires ».** Les ≈140 « vus seulement en formation » sont, en quasi-totalité, des **profs en exercice** ayant suivi une **formation continue** — *pas* des stagiaires/pré-service. La seule exception, le pré-service (INSPÉ/MEEF/ENS), n'est repérable que par les **libellés de formation côté site** (Volet 2), pas côté Capytale, et reste minoritaire.
+> **⚠️ Vocabulaire — pas des « stagiaires ».** Les ≈140 « vus seulement en formation » sont, en quasi-totalité, des **profs en exercice** ayant suivi une **formation continue** — *pas* des stagiaires/pré-service. La seule exception, le pré-service (INSPÉ/MEEF), n'est repérable que par les **libellés de formation côté site** (Volet 2), pas côté Capytale, et reste minoritaire.
 
 Le constat utile n'est donc pas « il y a un filtre définitionnel », mais :
 - **Les profs qui découvrent l'outil seuls** (sans formation : Capytale-direct, organique) **déploient très majoritairement** — atteindre la classe n'est pas dur en soi.

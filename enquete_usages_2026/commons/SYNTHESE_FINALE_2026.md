@@ -33,7 +33,7 @@ Avant de parler des goulots, fixons les **mots** — car une part de la confusio
 > **Vocabulaire des profils (côté Capytale, l'usage réel).**
 > - **Engagé** : a mis la main sur l'outil (cloné/testé ou enseigné). *401 comptes.*
 > - **A enseigné** : a donné l'activité à **ses propres élèves** (vraies lignes élèves). *224.*
-> - **Vu seulement en formation** : apparaît uniquement comme clone créé **pendant une séance de formation** (le formateur distribue, le prof clone pour suivre), sans jamais déployer à ses élèves. *≈140.* ⚠️ **Ce sont, en quasi-totalité, des profs EN EXERCICE** ayant suivi une **formation continue** — *pas* des « stagiaires ». La seule exception, le **pré-service** (étudiants INSPÉ / master MEEF / ENS), n'est identifiable que par les **libellés de formation côté site** (et l'appariement site↔Capytale est ténu) ; elle reste minoritaire.
+> - **Vu seulement en formation** : apparaît uniquement comme clone créé **pendant une séance de formation** (le formateur distribue, le prof clone pour suivre), sans jamais déployer à ses élèves. *≈140.* ⚠️ **Ce sont, en quasi-totalité, des profs EN EXERCICE** ayant suivi une **formation continue** — *pas* des « stagiaires ». La seule exception, le **pré-service** (étudiants INSPÉ / master MEEF), n'est identifiable que par les **libellés de formation côté site** (et l'appariement site↔Capytale est ténu) ; il reste minoritaire (≈ 13 comptes). ⚠️ Ne pas confondre avec la cohorte **ENS_25** (52 profs), qui n'était **pas** du pré-service mais une formation francilienne ouverte pour des **profs en exercice** (cf. §VI).
 > - **Testeur / distributeur** : a **cloné ou distribué** une activité (généré un code de partage, ou ouvert l'activité en mode prof) **sans qu'aucun élève ne s'y connecte**. *≈37.*
 
 Avec ce vocabulaire, le parcours fuit à **deux conversions** distinctes — qu'il ne faut pas confondre.
@@ -65,7 +65,7 @@ Les **modes « riches »** — précisément ceux que le pilote veut développer
 | Faire un **vrai demi-groupe** (dédoublement vérifié) | **~10 profs** (signature rare) |
 | **Revenir** l'année suivante | 31 % (cohorte éligible) |
 
-> *« Classe entière » a plusieurs seuils selon le passage (séance ≥ 10 él. ici ; > 20 él. cumulés pour le « paradoxe du déployeur » et les prédicteurs). Les seuils sont précisés à chaque usage.*
+> *Définition retenue : une « **vraie classe / séance qui compte** » = une séance d'**au moins 10 élèves** (elle inclut les demi-groupes, qui sont un mode légitime). Le seuil **> 20** (« classe complète, non dédoublée ») n'est employé que pour le « paradoxe du déployeur » (§II) ; il est alors nommé explicitement.*
 
 > **Mécanisme.** La **profondeur est la ressource rare** du dispositif. Et — point capital de mise en cohérence (cf. [Séances](RAPPORT_SEANCES_2026.md) §III, [Volet 1](../volet1/RAPPORT_ENQUETE_USAGES.md) §1.3) — beaucoup de ce qu'on prenait pour des demi-groupes (séances de ~17 élèves) sont en fait de **petites classes entières ou des groupes partiels** : le *vrai* dédoublement (deux séances complémentaires le même jour) ne se vérifie que chez une dizaine de profs. Le « demi-groupe en salle info », souvent présenté comme le mode dominant, est en réalité une **cible à construire**, pas un acquis.
 
@@ -81,8 +81,8 @@ Voici le résultat qui relie les deux moitiés de l'enquête — et qui doit org
 |---|---|
 | A enseigné **≥ 2 activités** | **64 %** (vs 25 % pour une seule) — n=14, Fisher p=0,009 |
 | Est entré **en milieu d'année** (déc-fév) plutôt qu'en fin (mars-juin) | 53 % (vs 27 %) |
-| A atteint une **classe entière** (> 20 élèves) | 45 % (vs 22 %) — p=0,03 |
 | A fait **≥ 2 séances** | 40 % (vs 20 % pour une seule) — p=0,045 |
+| A fait **≥ 1 vraie séance de classe** (≥ 10 élèves) | 38 % (vs 22 %) — n=55 |
 | **« One-shot » sans test** (le profil négatif) | **19 %** |
 
 > **⚠️ Correction (audit du 21 juin 2026).** Une version antérieure de ce tableau affichait « ≥ 2 activités → **76 %** » et « séance 45 min → **61 %** » : ces deux chiffres étaient en réalité calculés sur la **carrière entière** (pas l'année 1), donc **circulaires** (enseigner une 2ᵉ activité une année *ultérieure* suppose d'être revenu) et divergents du fichier de faits du projet. Les valeurs ci-dessus sont les mesures **année-1** propres. La « **vraie séance de 45 min** » testée comme prédicteur *année-1* n'a **pas** d'effet significatif (37 % vs 30 %, n=8) : elle est **retirée des prédicteurs** — elle reste un **mode-cible de qualité** (§III, §V), pas un signal de durée.
@@ -122,7 +122,7 @@ Trois leviers qu'on crédite spontanément de l'usage durable. Les données obli
 **La formation est un haut d'entonnoir puissant… à faible rendement, et non causal sur la durée.**
 - Elle remplit massivement le haut : 631 comptes formés. Mais le **passage en classe est modéré et très inégal** — et il faut le mesurer au **grain établissement (Volet 2)**, pas par le taux Capytale brut de ~4 % (biaisé par la récence et le grain compte). Établissements formés débouchant sur une vraie classe : **webinaire ~30 %, présentiel ~17 %** (au grain établissement ; **~23 % au grain prof** — ne pas fondre les deux), et davantage pour les **cohortes mûres** (ordre de grandeur **~46 %**, base très mince n≈42, portée par 1-2 cohortes ciblées ; jusqu'à **67 %** sur la cohorte ciblée de Lille-2024, mais n=6 établissements).
 - Ce qui distingue les formations qui aboutissent, ce n'est **pas le format** (présentiel vs webinaire) mais la **concentration** : une formation **établissement-ciblée** (plusieurs collègues d'un même lieu) fait basculer **59 % des établissements** vs **10 %** pour une journée académique de masse (1 prof dispersé) — un **facteur ~6**, alors que les deux sont du présentiel.
-- Mais — mise en cohérence essentielle (cf. [Typologie](TYPOLOGIE_PROFILS_2026.md) §III) — rien n'indique que la formation **fabrique des profs qui reviennent** : l'écart de rétention formés/non-formés (54 % vs 27 %) **n'est pas significatif** (Fisher p=0,103, sur **13 profs éligibles formés dans 8 établissements**) et est **compatible avec un pur artefact de composition** (les établissements formés contiennent déjà plus de pionniers) — mais l'échantillon est **trop faible pour exclure un effet modéré** : c'est une *absence de preuve*, pas une *preuve d'absence*. À ne pas inscrire au KPI rétention. S'ajoutent l'**endogénéité** (9 des 26 établissements présentiels à usage utilisaient déjà Capytale *avant* la formation) et le **pré-service** (ENS/MEEF, ~20 % de l'effort présentiel, **0 % d'usage par construction** — sans classe).
+- Mais — mise en cohérence essentielle (cf. [Typologie](TYPOLOGIE_PROFILS_2026.md) §III) — rien n'indique que la formation **fabrique des profs qui reviennent** : l'écart de rétention formés/non-formés (54 % vs 27 %) **n'est pas significatif** (Fisher p=0,103, sur **13 profs éligibles formés dans 8 établissements**) et est **compatible avec un pur artefact de composition** (les établissements formés contiennent déjà plus de pionniers) — mais l'échantillon est **trop faible pour exclure un effet modéré** : c'est une *absence de preuve*, pas une *preuve d'absence*. À ne pas inscrire au KPI rétention. S'ajoute l'**endogénéité** (9 des 26 établissements présentiels à usage utilisaient déjà Capytale *avant* la formation). Quant au **pré-service** au sens strict (MEEF/INSPÉ, sans classe : ≈ 13 profs, **0 % par construction**), il est minoritaire — à ne **pas** confondre avec la cohorte **ENS_25** (52 profs) : une formation **francilienne ouverte, non ciblée**, pour des **profs en exercice**, dont le **0 % d'usage** est un **échec de formation de masse** (non reconduite), pas un artefact structurel. Le « ~20 % de pré-service » d'une version antérieure agrégeait à tort ENS_25 ; le pré-service réel pèse ~4 %.
 
 **Le collectif intra-établissement ajoute des usagers, pas de la fidélité.** 80 % des établissements n'ont qu'un prof, et embarquer un collègue est précieux **pour le nombre**. Mais l'établissement multi-prof **ne retient pas mieux** (30 % vs 31 %, écart nul), et les collègues recrutés adoptent un usage **plus léger** (déploiement ponctuel) sans hériter de la fidélité du pionnier. La diffusion intra-établissement est par ailleurs plus **échelonnée** qu'il n'y paraît (au grain mois, seuls 25 % des établissements multi-profs démarrent simultanément).
 
@@ -150,7 +150,7 @@ Le pilote a deux objectifs — **plus de profs** et **un meilleur mode d'usage**
 1. **Convertir le réservoir « site-only en sursis ».** ~148 établissements ont un compte qui a cliqué vers Capytale sans classe retrouvée, et 75 % des comptes site-only datent de 2026 : ce n'est pas un cimetière, c'est un **sursis de déploiement**. Relance à la **rentrée de septembre** (le créneau de déploiement), guide de connexion Capytale en avant.
 2. **Relancer les ~62 décrocheurs** de 2024-2025 dès la rentrée (« voici la suite pour votre classe »).
 3. **Récupérer les captifs Capytale-direct** (bandeau Intro-IA → catalogue) et soigner la fiche Capytale.
-4. **Réorienter l'effort de formation** des journées de masse (10 % d'aboutissement) vers le **ciblage établissement** (59 %) ; sortir le **pré-service** du KPI immédiat (le suivre à T+1 an).
+4. **Réorienter l'effort de formation** des journées de masse (10 % d'aboutissement) vers le **ciblage établissement** (59 %) ; sortir le **pré-service strict (MEEF/INSPÉ)** du KPI immédiat (le suivre à T+1 an) — sans pour autant excuser les **formations ouvertes ratées** (type ENS_25, profs en exercice) comme du « pré-service ».
 5. **Activer la contagion** intra-établissement pour le nombre — en sachant qu'elle n'apporte pas la durée toute seule (cf. objectif B).
 
 ### Objectif B — un meilleur mode d'usage (la profondeur, qui nourrit aussi la durée)
@@ -164,7 +164,7 @@ Le fil rouge : **viser la profondeur de l'année 1 sert simultanément les deux 
 - **% des entrants de l'année qui font ≥ 2 activités** (cible : > 23 %) ;
 - **% des entrants qui font ≥ 1 vraie séance de 45 min** (classe ≥ 10 él. ; cible : > 28 %) ;
 - **rétention N+1** (cible : > 31 %) ;
-- **délai médian formation → 1ʳᵉ séance** (de l'ordre de quelques semaines ; relancer à J+45 les formés dont l'établissement n'a rien déclenché).
+- **délai médian formation → 1ʳᵉ séance** (≈ 27 j, n=17 ; relancer à J+45 les formés dont l'établissement n'a rien déclenché).
 
 ---
 

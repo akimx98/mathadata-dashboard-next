@@ -8,19 +8,19 @@
 
 ## 0. Synthèse en une page
 
-En 2025-2026, MathAData a franchi le seuil qui sépare une **expérimentation pilote** d'un **outil diffusé nationalement**. Le volume d'usages élèves a **plus que doublé** (2 181 → 4 479, **+105 %**) *alors même que l'année scolaire n'était pas terminée* à l'extraction. Six vérités structurantes ressortent des données :
+En 2025-2026, MathAData a franchi le seuil qui sépare une **expérimentation pilote** d'un **outil diffusé nationalement**. Le volume d'usages élèves a **plus que doublé** (2 181 → 4 479, **+105 %** en lignes-usage ; ≈ +95 % en élèves distincts) — l'année scolaire étant close à la mi-juin, l'extraction du 19 juin la capte quasi intégralement. Six vérités structurantes ressortent des données :
 
 1. **C'est un outil de lycée, public, de seconde.** En usage classe, 97 % des enseignants sont en lycée, **98 % dans le public**, et l'essentiel du catalogue cible la 2nde. Le collège ne décolle pas *en classe* (≈ 5 collèges avec de vrais élèves) — même si l'**intérêt** y existe via la formation (§2).
 
-2. **L'entonnoir : beaucoup d'essais, peu de classes.** **401 enseignants** ont mis la main sur MathAData ; **224 (56 %) l'ont donné à leurs propres élèves** ; **177 ont seulement testé** — dont **140 vus uniquement en formation**. La formation remplit le haut de l'entonnoir, mais la conversion formation → classe est encore **très faible (~4 %)**.
+2. **L'entonnoir : beaucoup d'essais, peu de classes.** **401 enseignants** ont mis la main sur MathAData ; **224 (56 %) l'ont donné à leurs propres élèves** ; **177 ont seulement testé** — dont **140 vus uniquement en formation**. La formation remplit le haut de l'entonnoir ; la conversion formation → classe **mesurée ici (Capytale seul)** paraît **très faible (~4 %)** — mais ce taux est **trompeusement bas** (récence des formations, grain compte). La mesure de référence est au **grain établissement** (cf. **Volet 2** : ~17-30 % selon le type, jusqu'à 59 % en formation établissement-ciblée).
 
 3. **L'adoption en classe est directe et solitaire.** Les **deux tiers** des profs qui enseignent donnent l'activité *sans trace de test personnel préalable*, et **80 % des établissements n'ont qu'un seul professeur utilisateur**. MathAData se diffuse prof par prof, peu par contagion entre collègues.
 
-4. **La croissance est extensive, pas intensive.** **83 % des professeurs qui enseignent en 2025-2026 sont entièrement nouveaux**, et ils génèrent **74 % du volume** de l'année. L'effet net des professeurs déjà présents est quasi nul. La machine à *recruter* fonctionne ; la machine à *faire revenir* est à construire (rétention inter-annuelle de **30 %**).
+4. **La croissance est extensive, pas intensive.** **83 % des professeurs qui enseignent en 2025-2026 sont entièrement nouveaux**, et ils génèrent **74 % du volume** de l'année. L'effet net des professeurs déjà présents est **marginal** (quasi stable en volume d'usages, léger recul en élèves distincts ; n=26). La machine à *recruter* fonctionne ; la machine à *faire revenir* est à construire (rétention inter-annuelle de **30 %**).
 
 5. **Le moteur du contenu, ce sont les statistiques et la géométrie « programme ».** La croissance 2025-2026 est portée par les statistiques (+1 340 usages) et la géométrie analytique (+1 236), tandis que l'activité historique « Intro à l'IA » **recule** (−485). MathAData réussit sa mue d'un gadget « IA » vers un outil arrimé au programme de seconde.
 
-6. **Un tiers des profs entrent par Capytale, pas par le site.** 32 % des enseignants découvrent MathAData via l'ancienne activité « Intro à l'IA » (absente de mathadata.fr) et **63 n'utilisent qu'elle** — sans jamais voir le catalogue. Canal d'acquisition gratuit, mais aussi fuite à colmater.
+6. **Un tiers des profs entrent par Capytale, pas par le site.** 32 % des enseignants découvrent MathAData via l'ancienne activité « Intro à l'IA » (absente de mathadata.fr) et **63 n'utilisent qu'elle** — sans déployer d'autre activité du catalogue. Canal d'acquisition gratuit, mais aussi fuite à colmater.
 
 Le défi n'est donc pas d'attirer — c'est de **transformer l'essai** : faire revenir les professeurs d'une année sur l'autre, et faire passer un second collègue à l'acte dans les 80 % d'établissements encore mono-utilisateurs.
 
@@ -110,7 +110,7 @@ Le point de départ a été corrigé en cours d'enquête (voir §11). Dans Capyt
                  └──  37 distributeurs ayant testé sans jamais enseigner
 ```
 
-> **⚠️ Terminologie : « stagiaire » est un raccourci trompeur.** Dans ce rapport (Capytale seul), « stagiaire » désigne un compte **vu seulement en formation** (clone créé pendant une séance de formation, jamais déployé). Ce sont, **en quasi-totalité, des profs EN EXERCICE** en formation continue — *pas* des stagiaires/pré-service. Seule la minorité **pré-service** (INSPÉ/MEEF/ENS) est un vrai « stagiaire sans classe », et elle n'est identifiable que par les libellés de formation **côté site** (Volet 2). Lire « stagiaire » ci-dessous comme « vu seulement en formation ».
+> **⚠️ Terminologie : « stagiaire » est un raccourci trompeur.** Dans ce rapport (Capytale seul), « stagiaire » désigne un compte **vu seulement en formation** (clone créé pendant une séance de formation, jamais déployé). Ce sont, **en quasi-totalité, des profs EN EXERCICE** en formation continue — *pas* des stagiaires/pré-service. Seule la minorité **pré-service** (INSPÉ/MEEF) est un vrai « stagiaire sans classe », et elle n'est identifiable que par les libellés de formation **côté site** (Volet 2). Lire « stagiaire » ci-dessous comme « vu seulement en formation ».
 
 Deux enseignements forts :
 
