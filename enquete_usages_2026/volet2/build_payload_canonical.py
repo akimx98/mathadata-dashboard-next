@@ -145,6 +145,11 @@ def cap_by_uai(uai_col):
     for u,grp in cap.groupby(uai_col):
         if not u.strip(): continue
         sg=grp[grp['role']=='student']; tg=grp[grp['role']=='teacher']
+        # ⚠️ PIÈGE : n_teacher_clones / n_teacher_accounts ne comptent QUE les lignes
+        # role=teacher (= clones de TEST que le prof se crée pour lui-même). 59 % des profs
+        # n'en créent jamais (« plongée directe »), donc ces colonnes valent 0 alors que le
+        # prof a bien enseigné (ses élèves portent uai_teach). NE JAMAIS les lire comme
+        # « nombre de profs à cet UAI » : pour ça, distinct(teacher) sur les lignes role=student.
         rows.append(dict(uai=u, n_pupils=sg['student'].nunique(), n_pupil_rows=len(sg),
             n_teacher_clones=len(tg), n_teacher_accounts=tg['teacher'].nunique(),
             first_dt=grp['dt'].min(), last_dt=grp['dt'].max(),
