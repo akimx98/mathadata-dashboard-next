@@ -52,10 +52,10 @@ Légende verdict : ✅ exact · 🟡 exact mais grain/dénominateur à préciser
 | Affirmation | Verdict | Note |
 |---|---|---|
 | 631 comptes formés | ✅ | 3 sources concordantes. Ne pas enchaîner 1712→631 (188 nl-only). |
-| Ciblée 59 % (13/22) · masse 10 % (13/126) · facteur ~6 | 🟡 | Arithmétique exacte, direction robuste ; base 22 étab., classification par mots-clés **subjective** + circularité (la « nature » est corrélée au résultat). |
+| Ciblée 59 % (13/22) · masse 10 % (13/129) · facteur ~6 | 🟡 | Arithmétique exacte, direction robuste ; base 22 étab., classification par mots-clés **subjective** + circularité (la « nature » est corrélée au résultat). |
 | Webinaire ~30 % (18/61) | ✅ | Exact (32 % au grain prof). Auto-sélection des inscrits. |
 | Endogénéité 9/26 | ✅ | « Environ un tiers » de l'usage présentiel pré-existait (autres méthodes : 9/32, 10/27). |
-| Pré-service 20 %, 0 % d'usage | 🟡 | 74/**363** (le rapport écrit 364 — coquille). « 0 % » strict pour les 65 ENS+MEEF ; les 74 incluent 9 INSPÉ à 100 %. |
+| Pré-service 20 %, 0 % d'usage | 🟡 → **corrigé (§C-4)** | À l'audit : 74/363 « pré-service » (ENS_25 52 + MEEF 13 + INSPÉ 9). **Réfuté par l'équipe** : ENS_25 = profs *en exercice* (formation ouverte ratée) → reclassé en masse dans le pipeline. **Pré-service réel = MEEF (~13, ~4 %)** ; `pre-service` de `facts_formation.json` = 13. |
 | 509 site-only · 75 % datés 2026 | 🟡 | Exact (380/509). Borne haute (46 appariements cachés). Récence en partie artefact de la fenêtre de tracking (27 nov.). |
 | ~148 cliqué Capytale sans classe | 🟡 | Exact. Borne basse (clic sous-capturé avant 27 nov.). |
 | 44 % Capytale-direct (77/174) | ✅ | Exact ; effectif 77→166 selon grain teach/el. |
@@ -87,7 +87,7 @@ Une grande part des défauts sont **définitionnels**. Geler ces termes, avec gr
 | **Retour / rétention / éligible** | a ré-enseigné l'année suivante | prof | **101 éligibles** (entrés ≤2024-25) → 31 % ; *ou* 88 (a enseigné en 24-25) → 29,5 % | Deux dénominateurs voisins ; éviter le mot « convergent ». |
 | **Déployeur** | atteint une vraie classe mais résidu mono-année | prof | 105 (cluster) / 41 (éligibles) | « 0 retour » partiellement induit par la définition (exclut le multi-années). |
 | **Usages élèves** | **lignes-usage** (clone × élève × activité) | ligne | 4479 (25-26) | ≠ élèves distincts (3783). +105 % en lignes, +95 % en personnes. |
-| **Formation : ciblée / masse / webinaire / pré-service** | par nature de cohorte | **établissement (UAI)** | 22 / 126 / 61 / 65 | Au grain **prof** les taux montent (ciblée ~67 %, présentiel 23 %) — ne pas mélanger les grains dans une même fourchette. |
+| **Formation : ciblée / masse / webinaire / pré-service** | par nature de cohorte | **établissement (UAI)** | 22 / 129 / 61 / 13 (pré-service = MEEF seul ; ENS_25→masse) | Au grain **prof** les taux montent (ciblée ~67 %, présentiel 23 %) — ne pas mélanger les grains dans une même fourchette. |
 | **Formé** | a un code de formation (`trainedFormation`) | compte site | 631 | Ne pas dériver 631 de 1712 (188 sont newsletter-only). |
 
 ---

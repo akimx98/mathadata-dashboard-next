@@ -61,6 +61,21 @@
    "label": "Entrée milieu d'année (déc-fév)",
    "lo_label": "Entrée fin d'année (mars-juin)",
    "note": "robuste intra-cohorte"
+  },
+  "y1_realclass_ge10": {
+   "hi": [
+    38,
+    55,
+    21
+   ],
+   "lo": [
+    22,
+    46,
+    10
+   ],
+   "label": "≥1 séance de classe (≥10 él.) en année 1",
+   "lo_label": "survol (<10 él.)",
+   "note": "seuil métier ≥10 validé équipe (21/06/2026) — prédicteur de portée retenu pour la synthèse §IV"
   }
  },
  "oneandone": [

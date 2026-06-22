@@ -133,7 +133,13 @@ F['ancienne_vague']=dict(n=len(av), n_uai=len(av_uai),
 
 # ---- typologie par NATURE au grain ETABLISSEMENT distinct ----
 ETAB_KW=['Formation établissement Gif','Arpajon','Calais lycée Pro','202410_LILLE','20250422 AMIENS','MONTPELLIER_25']
-PRESERV_KW=['ENS_25','MEEF INSPÉ']
+# Pré-service STRICT = étudiants sans classe (master MEEF). 'MEEF' suffit (matche
+# 'MEEF INSPÉ Paris') et n'attrape PAS 'INSPE Formation 26/11' (profs en exercice).
+# ⚠️ ENS_25 (52 profs) N'EST PAS du pré-service : formation francilienne OUVERTE,
+# non ciblée, suivie par des profs EN EXERCICE, peu efficace et non reconduite ->
+# elle retombe dans 'academique-de-masse' ; son 0 % d'usage est un vrai échec de
+# formation de masse, pas un artefact structurel. (Réglage validé équipe, 21/06/2026.)
+PRESERV_KW=['MEEF']
 def nature(cid):
     L=str(fcodes.get(cid,{}).get('label',''))
     if cid in PLACEHOLDER: return 'ancienne_vague'
@@ -152,7 +158,7 @@ for u in formed:
 F['nature_typology']={n:dict(cohorts=len(nat_coh[n]),profs=nat_profs[n],etab_distincts=len(nat_estab[n]),
     etab_avec_classe=len(nat_used[n]),pct_etab=round(100*len(nat_used[n])/len(nat_estab[n]),1) if nat_estab[n] else None)
     for n in ['etablissement-ciblee','distanciel-webinaire','ancienne_vague','academique-de-masse','pre-service']}
-F['nature_note']="Grain ETABLISSEMENT distinct (un lycee a plusieurs profs formes compte 1 fois). Au grain prof, etablissement-ciblee ~67% (surestime). Base petite (22 etabs ciblee), classification par mots-cles subjective."
+F['nature_note']="Grain ETABLISSEMENT distinct (un lycee a plusieurs profs formes compte 1 fois) ; 'a une classe' = au moins 1 usage eleve Capytale sur l'historique complet (>=1 eleve = a deploye ; distinct du seuil KPI 'vraie classe >=10'). Au grain prof, etablissement-ciblee ~67% (surestime). Base petite (22 etabs ciblee) -> ordre de grandeur, mais classification CONFIRMEE par l'equipe (Gif, Lille 2024, Calais lycee pro, Amiens = vraies ciblees). Pre-service STRICT = master MEEF (sans classe, ~13) ; ENS_25 (52 profs, profs en exercice, formation ouverte non ciblee) est classee academique-de-masse -> son 0% est un echec reel, pas un artefact."
 
 json.dump(F,open(f"{OUT}/facts_formation.json","w"),ensure_ascii=False,indent=1,default=str)
 print(json.dumps(F,ensure_ascii=False,indent=1,default=str))

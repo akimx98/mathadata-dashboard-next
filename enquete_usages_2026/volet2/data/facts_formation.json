@@ -198,19 +198,19 @@
    "pct_etab": 25.8
   },
   "academique-de-masse": {
-   "cohorts": 12,
-   "profs": 187,
-   "etab_distincts": 126,
+   "cohorts": 13,
+   "profs": 239,
+   "etab_distincts": 129,
    "etab_avec_classe": 13,
-   "pct_etab": 10.3
+   "pct_etab": 10.1
   },
   "pre-service": {
-   "cohorts": 2,
-   "profs": 65,
-   "etab_distincts": 5,
+   "cohorts": 1,
+   "profs": 13,
+   "etab_distincts": 2,
    "etab_avec_classe": 0,
    "pct_etab": 0.0
   }
  },
- "nature_note": "Grain ETABLISSEMENT distinct (un lycee a plusieurs profs formes compte 1 fois). Au grain prof, etablissement-ciblee ~67% (surestime). Base petite (22 etabs ciblee), classification par mots-cles subjective."
+ "nature_note": "Grain ETABLISSEMENT distinct (un lycee a plusieurs profs formes compte 1 fois) ; 'a une classe' = au moins 1 usage eleve Capytale sur l'historique complet (>=1 eleve = a deploye ; distinct du seuil KPI 'vraie classe >=10'). Au grain prof, etablissement-ciblee ~67% (surestime). Base petite (22 etabs ciblee) -> ordre de grandeur, mais classification CONFIRMEE par l'equipe (Gif, Lille 2024, Calais lycee pro, Amiens = vraies ciblees). Pre-service STRICT = master MEEF (sans classe, ~13) ; ENS_25 (52 profs, profs en exercice, formation ouverte non ciblee) est classee academique-de-masse -> son 0% est un echec reel, pas un artefact."
 }

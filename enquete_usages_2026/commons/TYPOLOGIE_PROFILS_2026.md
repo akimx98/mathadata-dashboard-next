@@ -21,7 +21,7 @@
 |---|---|
 | Comptes engagés qui atteignent une vraie classe | 56 % (224/401) |
 | Profs éligibles qui reviennent l'année suivante | **31 % (31/101)** |
-| Déployeurs : ont atteint une classe entière / sont revenus | **44 % / 0 % (0/41)** |
+| Déployeurs : ont atteint une classe complète (>20) / sont revenus | **44 % / 0 % (0/41)** |
 | Retour si ≥2 séances **et** un test en année 1 vs « one-shot » sans test | 62 % vs 19 % |
 | Réplication intra-cohorte (2024-25 seule) de cet écart | 56 % vs 12 % |
 | Masse critique locale (multi-prof vs solo) — **effet nul** | 30 % vs 31 % (p=0,87) |
@@ -74,7 +74,7 @@ Sur 224 enseignants, seuls **101 ont *pu* revenir** : ceux entrés en 2023-24 ou
 
 Le lien profil→retour est spectaculaire mais **tautologique** : fidèles 13/13, pionniers 18/21, tous les autres **0/67**. Il ne *prouve* rien.
 
-Ce qu'il révèle, en revanche, est frappant : les **déployeurs** (le gros du peloton) atteignent une classe entière à un taux proche des pionniers (**44 % vs 52 %** des éligibles ont >20 élèves dès l'an 1) — et pourtant **0 sur 41 reviennent**. Atteindre une vraie classe **ne garantit pas** de revenir. Les deux échecs sont distincts : le premier contact (réussi par les déployeurs) et le réengagement année→année (raté). **Les déployeurs sont le plus gros gisement de « atteints puis perdus » — la cible de conversion n°1.**
+Ce qu'il révèle, en revanche, est frappant : les **déployeurs** (le gros du peloton) atteignent une classe complète (>20 él.) à un taux proche des pionniers (**44 % vs 52 %** des éligibles dès l'an 1) — et pourtant **0 sur 41 reviennent**. Atteindre une classe complète **ne garantit pas** de revenir. Les deux échecs sont distincts : le premier contact (réussi par les déployeurs) et le réengagement année→année (raté). **Les déployeurs sont le plus gros gisement de « atteints puis perdus » — la cible de conversion n°1.**
 
 ### Ce qui prédit vraiment le retour : la dose de la 1ʳᵉ année
 
@@ -85,7 +85,7 @@ Les prédicteurs **propres** (mesurés sur la seule année 1) :
 | Signal année 1 | Retour | vs | Robustesse |
 |---|---|---|---|
 | ≥ 2 activités | 64 % (n=14) | 25 % | indicatif (petit n) |
-| Classe entière (>20 élèves) | 45 % | 22 % | p=0,03 |
+| Vraie classe (séance ≥ 10 él.) | 38 % (n=55) | 22 % | seuil métier ≥10 validé |
 | ≥ 2 séances | 40 % | 20 % | p=0,045 |
 | Entrée en milieu d'année (déc-fév) | 53 % | 27 % (fin d'année) | robuste intra-cohorte |
 
@@ -116,7 +116,7 @@ Parmi les 32 pluriannuels : **25/32** ont eu un démarrage modeste (<5 séances 
 ## IV. Les croisements, classés
 
 1. **La dose de l'année 1 bat toutes les étiquettes** : ≥2 séances + un test → 62 % vs 19 % (one-shot), gap robuste intra-cohorte. Seul moteur non circulaire, transverse à tous les profils.
-2. **Le paradoxe du déployeur** : atteindre une classe entière (le signal qui prédit le retour) n'empêche pas 0/41 de décrocher. Premier contact ≠ rétention.
+2. **Le paradoxe du déployeur** : atteindre une classe complète (>20) n'empêche pas 0/41 de décrocher. Premier contact ≠ rétention.
 3. **La formation est un artefact de composition, pas une cause** : ne pas lui créditer +26 pts qu'elle n'a pas produits.
 4. **La portée, pas le choix d'activité**, explique l'avantage « Statistiques ».
 5. **Timing et dose sont entrelacés** : les one-shot de fin d'année (juin 14 %) sont le moteur clair du décrochage.
@@ -128,7 +128,7 @@ Parmi les 32 pluriannuels : **25/32** ont eu un démarrage modeste (<5 séances 
 ## V. Recommandations (chacune adossée à une preuve)
 
 1. **Convertir les déployeurs (cible n°1).** 105 profs atteignent une vraie classe puis disparaissent (0/41 reviennent). Une relance de rentrée ciblée — « vous aviez déployé X l'an dernier, voici la suite pour la même classe/le niveau au-dessus » — attaque exactement le point de rupture (réengagement), pas le premier contact.
-2. **Pousser la dose dès l'année 1.** Les leviers qui bougent la rétention : une 2ᵉ séance (40 % vs 20 %), une classe entière plutôt qu'un petit groupe (45 % vs 22 %), une 2ᵉ activité (64 % vs 25 %). Concevoir l'onboarding pour amener une seconde séance et un déploiement classe entière, pas un essai isolé.
+2. **Pousser la dose dès l'année 1.** Les leviers qui bougent la rétention : une 2ᵉ séance (40 % vs 20 %), une vraie classe ≥10 él. plutôt qu'un survol (38 % vs 22 %), une 2ᵉ activité (64 % vs 25 %). Concevoir l'onboarding pour amener une seconde séance et un déploiement classe entière, pas un essai isolé.
 3. **Capter tôt dans l'année.** Les entrées de fin d'année (mars-juin, surtout juin 14 %) décrochent. Un cycle de promotion en septembre-décembre vaut mieux qu'un push de fin d'année.
 4. **Nourrir les entrants modestes, ne pas pré-trier les « intenses ».** Les durables sont faits, pas nés (25/32 ont démarré <5 séances). Le signal à suivre est « a fait une 2ᵉ séance », pas « a fait beaucoup d'emblée ».
 5. **Ne pas surinvestir le collectif intra-établissement ni créditer la formation/le territoire d'une rétention non prouvée.** L'avantage apparent de Lille n'est qu'un effet de composition. Réorienter vers la **conversion individuelle des déployeurs** (le seul levier robuste).
