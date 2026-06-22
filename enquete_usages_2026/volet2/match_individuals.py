@@ -66,7 +66,7 @@ for r in CK[CK['uai']!=''].itertuples():
     if len(inwin)==1:
         acc=next(iter(inwin))
         matchesA.append(dict(site_id=r.site_id, cap_acc=acc, uai=r.uai, mid=r.mid,
-            click=r.t, conf='A'))
+            click=r.t, conf='A', prio=0))
 A=pd.DataFrame(matchesA)
 # resoudre : un site_id peut matcher plusieurs activites -> garder paires uniques (site,cap)
 if len(A): A=A.sort_values('click').drop_duplicates(['site_id','cap_acc'])
@@ -81,13 +81,38 @@ matchesB=[]
 for uai in set(site_acc_by_uai)&set(cap_acc_by_uai):
     ss=site_acc_by_uai[uai]; cc=cap_acc_by_uai[uai]
     if len(ss)==1 and len(cc)==1:
-        matchesB.append(dict(site_id=next(iter(ss)), cap_acc=next(iter(cc)), uai=uai, mid='', click=pd.NaT, conf='B'))
+        matchesB.append(dict(site_id=next(iter(ss)), cap_acc=next(iter(cc)), uai=uai, mid='', click=pd.NaT, conf='B', prio=2))
 B=pd.DataFrame(matchesB)
 
-# combine, A wins over B
-allm=pd.concat([A,B],ignore_index=True) if len(A) or len(B) else pd.DataFrame(columns=['site_id','cap_acc','uai','conf'])
-allm['rank']=allm['conf'].map({'A':0,'B':1})
-allm=allm.sort_values('rank').drop_duplicates(['site_id']).drop_duplicates(['cap_acc'])
+# ---- D : déploiement direct (récupère les profs SANS clone-test, ex. « plongée directe ») ----
+# PIÈGE corrigé : A et B ne voient que les profs role=teacher ; or 59% des profs n'en créent
+# jamais. Ici prof RÉEL = MD5 `teacher` ayant des élèves ; son UAI = uai_teach (ou uai_el) de
+# ses lignes élèves. Si un UAI a EXACTEMENT 1 prof réel ET 1 seul compte site ayant cliqué une
+# activité Capytale -> on apparie ce compte à ce prof (conf A si l'activité cliquée recoupe une
+# activité déployée, sinon B). Conservateur : ne se déclenche pas sur les UAI ambigus.
+stud=cap[cap['role']=='student'].copy()
+real_teach_by_uai=defaultdict(set); deployed_acts=defaultdict(set)
+for r in stud.itertuples():
+    u=r.uai_teach.strip() or r.uai_el.strip()
+    if u:
+        real_teach_by_uai[u].add(r.teacher); deployed_acts[(u,r.teacher)].add(r.mathadata_id)
+site_clickers_by_uai=defaultdict(set); clicked_acts_site=defaultdict(set)
+for r in CK[CK['uai']!=''].itertuples():
+    site_clickers_by_uai[r.uai].add(r.site_id); clicked_acts_site[r.site_id].add(r.mid)
+matchesD=[]
+for uai,teachers in real_teach_by_uai.items():
+    clickers=site_clickers_by_uai.get(uai,set())
+    if len(teachers)==1 and len(clickers)==1:
+        tid=next(iter(teachers)); sid=next(iter(clickers))
+        corrob=bool(clicked_acts_site.get(sid,set()) & deployed_acts.get((uai,tid),set()))
+        matchesD.append(dict(site_id=sid, cap_acc=tid, uai=uai, mid='', click=pd.NaT,
+            conf=('A' if corrob else 'B'), prio=1))
+D=pd.DataFrame(matchesD)
+
+# combine : prio croissant gagne (A timing < D déploiement < B uai-1:1) ; 1 site <-> 1 cap
+parts=[df for df in (A,D,B) if len(df)]
+allm=pd.concat(parts,ignore_index=True) if parts else pd.DataFrame(columns=['site_id','cap_acc','uai','conf','prio'])
+allm=allm.sort_values('prio').drop_duplicates(['site_id']).drop_duplicates(['cap_acc'])
 
 # ---- pseudonymisation ----
 site_codes={sid:f"S{idx:04d}" for idx,sid in enumerate(sorted(set(allm['site_id'])))}
