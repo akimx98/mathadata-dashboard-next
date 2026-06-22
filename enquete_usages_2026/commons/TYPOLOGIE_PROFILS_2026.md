@@ -62,6 +62,8 @@ Le constat utile n'est donc pas « il y a un filtre définitionnel », mais :
 
 **Conclusion honnête** : « atteindre la classe » n'est pas un problème pour les profs qui arrivent par découverte spontanée ; c'en est un, réel, pour ceux recrutés par une **formation de masse** — et c'est une conversion à travailler (Volet 2), pas une fatalité.
 
+> **⟂ Ces 5 profils sont la *pointe* d'un entonnoir plus large.** Cette typologie ne décrit que les **224 qui enseignent**. En amont, sur les **2 715 comptes du site**, un regard complémentaire — « **profils de parcours** », [Volet 2 §2](../volet2/RAPPORT_VOLET2.md) — croise la **porte d'entrée** × la **profondeur** : 71 % inactifs, 16 % curieux, 12 % atteignent l'intention-classe (clic activité). ⚠️ Les 5 archétypes ci-dessus **ne s'appliquent pas** à ces 2 715 (autre univers, relié seulement au grain établissement). Deux télescopes complémentaires : *qui entre et jusqu'où* (parcours, 2 715) vs *comment on enseigne* (usage, 224).
+
 ---
 
 ## III. Pourquoi la plupart ne reviennent-ils pas ?

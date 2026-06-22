@@ -77,6 +77,27 @@ Les **délais** montrent une bascule très rapide quand elle a lieu : médiane c
 
 > \* *Population Capytale, distincte des comptes site (aucun identifiant commun ; 44 % des profs enseignants n'ont pas de compte site). Aucun « % du total des comptes site » n'est défini pour ces lignes — le ~8 % parfois cité (224/2 715) est un ordre de grandeur système, pas une conversion.*
 
+### Profils de parcours : porte d'entrée × profondeur (côté site)
+
+L'entonnoir ci-dessus compte les marches ; le **croiser** avec la **porte d'entrée** (comment le compte est arrivé) montre *qui décroche, et où*. Sur les 2 715 comptes, trois profondeurs côté site se dessinent — **inactif** (compte, souvent réduit à la newsletter, jamais suivi d'un usage réel), **curieux** (a exploré module/ressource sans cliquer d'activité), **intention-classe** (a cliqué une activité Capytale = le geste qui précède la classe) :
+
+| Porte d'entrée *(site)* | Inactif | Curieux | Intention-classe | Total | % intention |
+|---|---:|---:|---:|---:|---:|
+| Formé — présentiel | 202 | 66 | 95 | 363 | **26 %** |
+| Formé — webinaire | 65 | 26 | 30 | 121 | **25 %** |
+| Ancienne vague | 105 | 17 | 25 | 147 | 17 % |
+| Spontané *(non formé, compte complet)* | 745 | 337 | 187 | 1 269 | 15 % |
+| Newsletter seule | 814 | 1 | 0 | 815 | 0 % |
+| **Total** | **1 931 (71 %)** | **447 (16 %)** | **337 (12 %)** | **2 715** | **12 %** |
+
+Trois lectures :
+
+1. **L'effet porte est net.** Une formation présentielle ou en webinaire amène **≈ 25 %** des comptes jusqu'à l'intention-classe, contre **15 %** en spontané et **0 %** en newsletter-seule — la porte de formation **double presque** le passage à l'acte (côté site).
+2. **Mais la fuite post-formation domine en absolu.** Sur **631 formés, 481 (76 %) n'atteignent jamais** le clic activité, et **372 restent inactifs** : c'est le grand réservoir « **formé jamais passé en classe** » (cohérent avec le §3 — le *format* de formation pèse moins que la *concentration*).
+3. **Le spontané porte le volume.** À lui seul, il fournit **187 intentions-classe** — davantage que les **150** des trois portes formées réunies : la demande organique est l'actif principal, la formation un accélérateur ciblé.
+
+⚠️ **Trois précautions de lecture.** *(a)* La matrice s'arrête à l'**intention** (clic), **côté site** ; l'enseignement réel (les 224) est l'**autre univers** (mur ci-dessus, atteint à 44 % par des profs sans compte site) — **ne pas chaîner ces colonnes vers 224**. *(b)* Les **5 portes** raffinent la seule porte « site-first » : « spontané » et « newsletter seule » sont le détail des **2 084 non-formés** du §3 ; la porte « **Capytale-direct** » (§5) reste *hors* de ce tableau (ces profs n'ont pas de compte site). *(c)* Le niveau « **curieux** » est **sous-capturé avant le 27 nov. 2025** (fenêtre de tracking) ; les cellules robustes sont le **statut formé** et le **clic activité**. *(Les 188 formés également « newsletter-only » sont comptés dans leur porte de formation, colonne Inactif — pas de double-compte.)*
+
 ---
 
 ## 3. Effet des formations : ce n'est pas le format, c'est la concentration

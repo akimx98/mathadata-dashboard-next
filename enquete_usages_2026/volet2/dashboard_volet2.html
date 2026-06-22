@@ -111,6 +111,84 @@ footer{padding:48px 0 70px;color:var(--faint);font-family:var(--mono);font-size:
       <div class="scroll"><svg id="c_funnel" width="1020" height="300" role="img" aria-label="Entonnoir du pipeline"></svg></div>
       <p class="cap"><b>Lecture.</b> <b>Compte créé</b> = toute inscription, y compris via le seul formulaire newsletter. <b>Compte complet</b> = compte avec mot de passe et profil (a fait plus que s'abonner). <b>Formé</b> = a validé un code de formation. Les 4 premières marches sont des sous-ensembles côté site (mathadata.fr, nominatif).<br>« Ont enseigné » bascule côté <b>Capytale</b> (usage réel, anonyme) : 224 comptes, dont <b>163 vraies classes (≥ 10 élèves)</b>, pour 5 854 élèves. Les deux mondes n'ont pas d'identifiant commun : rapporter 224 aux 2 715 (≈ 8 %) croise deux populations distinctes (44 % des profs enseignants n'ont aucun compte site) — ce n'est <b>pas</b> un taux de conversion.</p>
     </figure>
+    <figure class="reveal">
+      <p class="figtitle">Profils de parcours : porte d'entrée × profondeur (côté site)</p>
+      <p class="cap" style="margin-top:0;margin-bottom:16px">L'entonnoir ci-dessus compte les marches ; le croiser avec la porte d'entrée (comment le compte est arrivé) montre qui décroche, et où. Trois profondeurs côté site : <b>inactif</b> (compte/newsletter jamais suivi d'un usage réel), <b>curieux</b> (a exploré module/ressource sans cliquer d'activité), <b>intention-classe</b> (a cliqué une activité Capytale = le geste qui précède la classe).</p>
+      <div class="scroll"><svg id="c_parcours" width="1020" height="232" role="img" aria-label="Composition de chaque porte d'entrée par profondeur atteinte"></svg></div>
+      <p class="cap" style="margin-top:8px;margin-bottom:18px">Chaque barre = la composition d'une porte (100 %). La part bleue « intention-classe » croît avec la formation présentielle/webinaire et s'effondre pour la newsletter seule — c'est l'<b>effet porte</b>. Effectifs détaillés ci-dessous.</p>
+      <div class="scroll">
+        <table style="width:100%;border-collapse:collapse;font-family:var(--mono);font-size:13px;color:var(--ink2);min-width:560px">
+          <thead>
+            <tr style="text-align:right;border-bottom:2px solid var(--ink)">
+              <th style="text-align:left;padding:8px 10px;font-family:var(--grot);font-weight:700;color:var(--ink)">Porte d'entrée (site)</th>
+              <th style="padding:8px 10px;font-family:var(--grot);font-weight:700;color:var(--ink)">Inactif</th>
+              <th style="padding:8px 10px;font-family:var(--grot);font-weight:700;color:var(--ink)">Curieux</th>
+              <th style="padding:8px 10px;font-family:var(--grot);font-weight:700;color:var(--ink)">Intention-classe</th>
+              <th style="padding:8px 10px;font-family:var(--grot);font-weight:700;color:var(--ink)">Total</th>
+              <th style="padding:8px 10px;font-family:var(--grot);font-weight:700;color:var(--ink)">% intention</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="text-align:right;border-bottom:1px solid var(--rule2)">
+              <td style="text-align:left;padding:8px 10px">Formé — présentiel</td>
+              <td style="padding:8px 10px">202</td>
+              <td style="padding:8px 10px">66</td>
+              <td style="padding:8px 10px">95</td>
+              <td style="padding:8px 10px">363</td>
+              <td style="padding:8px 10px;font-weight:700;color:var(--site)">26 %</td>
+            </tr>
+            <tr style="text-align:right;border-bottom:1px solid var(--rule2)">
+              <td style="text-align:left;padding:8px 10px">Formé — webinaire</td>
+              <td style="padding:8px 10px">65</td>
+              <td style="padding:8px 10px">26</td>
+              <td style="padding:8px 10px">30</td>
+              <td style="padding:8px 10px">121</td>
+              <td style="padding:8px 10px;font-weight:700;color:var(--site)">25 %</td>
+            </tr>
+            <tr style="text-align:right;border-bottom:1px solid var(--rule2)">
+              <td style="text-align:left;padding:8px 10px">Ancienne vague</td>
+              <td style="padding:8px 10px">105</td>
+              <td style="padding:8px 10px">17</td>
+              <td style="padding:8px 10px">25</td>
+              <td style="padding:8px 10px">147</td>
+              <td style="padding:8px 10px">17 %</td>
+            </tr>
+            <tr style="text-align:right;border-bottom:1px solid var(--rule2)">
+              <td style="text-align:left;padding:8px 10px">Spontané (non formé, compte complet)</td>
+              <td style="padding:8px 10px">745</td>
+              <td style="padding:8px 10px">337</td>
+              <td style="padding:8px 10px">187</td>
+              <td style="padding:8px 10px">1 269</td>
+              <td style="padding:8px 10px">15 %</td>
+            </tr>
+            <tr style="text-align:right;border-bottom:1px solid var(--rule2)">
+              <td style="text-align:left;padding:8px 10px">Newsletter seule</td>
+              <td style="padding:8px 10px">814</td>
+              <td style="padding:8px 10px">1</td>
+              <td style="padding:8px 10px">0</td>
+              <td style="padding:8px 10px">815</td>
+              <td style="padding:8px 10px">0 %</td>
+            </tr>
+            <tr style="text-align:right;border-top:2px solid var(--ink);font-family:var(--grot);font-weight:700;color:var(--ink)">
+              <td style="text-align:left;padding:8px 10px">Total</td>
+              <td style="padding:8px 10px">1 931 (71 %)</td>
+              <td style="padding:8px 10px">447 (16 %)</td>
+              <td style="padding:8px 10px">337 (12 %)</td>
+              <td style="padding:8px 10px">2 715</td>
+              <td style="padding:8px 10px">12 %</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ol style="max-width:74ch;margin:18px 0 0;padding-left:22px;font-size:16px;color:var(--ink2);line-height:1.55">
+        <li style="padding:4px 0"><b style="font-family:var(--grot)">L'effet porte est net</b> — présentiel/webinaire ≈ 25 % atteignent l'intention-classe vs 15 % spontané vs 0 % newsletter : la porte de formation double presque le passage à l'acte (côté site).</li>
+        <li style="padding:4px 0"><b style="font-family:var(--grot)">Mais la fuite post-formation domine en absolu</b> — sur 631 formés, 481 (76 %) n'atteignent jamais le clic activité, 372 restent inactifs : le grand réservoir « formé jamais passé en classe » (cohérent avec la section 03 : le format pèse moins que la concentration).</li>
+        <li style="padding:4px 0"><b style="font-family:var(--grot)">Le spontané porte le volume</b> — à lui seul 187 intentions-classe, plus que les 150 des trois portes formées réunies : la demande organique est l'actif principal, la formation un accélérateur ciblé.</li>
+      </ol>
+      <div class="callout" style="margin-top:22px">
+        <p style="margin:0"><b style="font-family:var(--grot);color:var(--ink)">⚠️ Précautions de lecture.</b> <b>(a)</b> La matrice s'arrête à l'intention (clic), côté site ; l'enseignement réel (les 224) est l'autre univers (atteint à 44 % par des profs sans compte site) — ne pas chaîner ces colonnes vers 224. <b>(b)</b> Les 5 portes raffinent la seule porte « site-first » : « spontané » et « newsletter seule » = le détail des 2 084 non-formés de la section 03 ; la porte « Capytale-direct » reste hors de ce tableau. <b>(c)</b> Le niveau « curieux » est sous-capturé avant le 27 nov. 2025 (tracking) ; cellules robustes = statut formé et clic activité. (Les 188 formés aussi « newsletter-only » sont comptés dans leur porte de formation, colonne Inactif — pas de double-compte.)</p>
+      </div>
+    </figure>
     <div class="grid2">
       <figure class="reveal">
         <p class="figtitle">Funnel site : ce que la fenêtre de tracking cachait</p>
@@ -327,6 +405,7 @@ footer{padding:48px 0 70px;color:var(--faint);font-family:var(--mono);font-size:
 const D={
   strip:[["2 715","comptes site"],["631","formés (23 %)"],["337","clics → Capytale"],["5 854","élèves touchés (Capytale)"]],
   funnel:[["Comptes créés",2715,100,""],["Comptes complets",1712,63,""],["Formés",631,23,""],["Clic vers Capytale",337,12,""],["Ont enseigné — dont 163 vraies classes",224,null,"Capytale · univers distinct"]],
+  parcours:[["Formé — présentiel",202,66,95],["Formé — webinaire",65,26,30],["Ancienne vague",105,17,25],["Spontané",745,337,187],["Newsletter seule",814,1,0]],
   track:[["Actifs",46.7,66.4],["Module vu",40.3,57.8],["Ressource",41.3,58.6],["Clic Capytale",19.6,27.5]],
   seq:[["Avant",95],["Le jour même",206],["Après",185],["Sans date",152]],
   form:{cats:["Non-formés","Présentiel","Webinaire","Anc. vague"],s:[["clic",[9.0,26.2,24.8,17.0]],["actif",[26.0,45.2,46.3,28.6]],["usage",[17.8,23.4,32.4,28.6]]]},
@@ -448,9 +527,27 @@ function drawDoors(id){const o=svg(id);if(!o)return;const{s,w,h}=o;
   });
 }
 
+function drawParcours(id){const o=svg(id);if(!o)return;const{s,w,h}=o;const d=D.parcours;
+  const padL=160,padR=58,padT=8,padB=26,rowH=(h-padT-padB)/d.length;
+  const cols=[C.faint,C.amber,C.site],names=['Inactif','Curieux','Intention-classe'];
+  d.forEach((r,i)=>{const y=padT+i*rowH;const tot=r[1]+r[2]+r[3];const barW=w-padL-padR;let x=padL;
+    s.appendChild(txt(padL-8,y+rowH/2+4,r[0],{a:'end',s:11,c:C.ink2,f:'"Helvetica Neue",Arial',w:600}));
+    [r[1],r[2],r[3]].forEach((v,si)=>{const bw=tot?(v/tot)*barW:0;const pct=tot?Math.round(v/tot*100):0;
+      s.appendChild(el('rect',{x,y:y+rowH*0.22,width:Math.max(bw,0),height:rowH*0.56,fill:cols[si]}));
+      if(bw>=26)s.appendChild(txt(x+bw/2,y+rowH/2+4,pct+' %',{a:'middle',s:10,w:700,c:'#fff'}));
+      x+=bw;});
+    const ipct=tot?Math.round(r[3]/tot*100):0;
+    s.appendChild(txt(w-padR+8,y+rowH/2+4,ipct+' %',{s:13,w:800,c:C.site}));
+  });
+  const leg=el('g',{});names.forEach((nm,i)=>{const lx=padL+i*((w-padL-padR)/3);
+    leg.appendChild(el('rect',{x:lx,y:h-13,width:10,height:10,fill:cols[i],rx:2}));
+    leg.appendChild(txt(lx+15,h-4,nm,{s:10,c:C.ink2}));});
+  s.appendChild(leg);
+}
 function render(){
   document.getElementById('strip').innerHTML=D.strip.map(c=>`<div class="cell"><div class="n">${c[0]}</div><div class="l">${c[1]}</div></div>`).join('');
   drawFunnel('c_funnel');
+  drawParcours('c_parcours');
   drawHGroup2('c_track',D.track.map(d=>d[0]),D.track.map(d=>d[1]),D.track.map(d=>d[2]),C.faint,C.site,{padL:96});
   drawBarsV('c_seq',D.seq,(i)=>[C.bridge,C.site,C.amber,C.faint][i]);
   drawHBars('c_nature',D.nature,(i,d)=>i===0?C.classe:(d[1]<15?C.leak:C.bridge),{padL:250,fmt:v=>v+' %'});
