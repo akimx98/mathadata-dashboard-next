@@ -35,7 +35,7 @@ SHARED DATA (run python3/pandas; you may write scratch scripts under ${SP}):
 NON-NEGOTIABLE METHOD RULES:
 1. RETENTION: only the 101 teachers with eligible_return==True can have returned. Use returned_next_year as the target. NEVER compute retention including 2025-2026 entrants (they are right-censored). State the eligible n every time.
 2. Always report the subgroup n. Treat any cell with n<10 as INDICATIVE ONLY (say so). Do not headline a difference resting on <10.
-3. Class size: session-grain (sessions.n_eleves, median ~5) differs from teacher-grain unique pupils (median ~20). Be explicit which you use.
+3. Class size: session-grain (sessions.n_eleves, median ~5) differs from teacher-grain unique pupils (median ~20). Be explicit which you use. THRESHOLD CONVENTION (validated by team 2026-06-21, do not deviate): « vraie classe » = a session of >=10 pupils (includes half-groups — this is the métier threshold; use it for the reach predictor and KPIs, e.g. y1_max_sess>=10, giving ~38% vs 22% retention). « classe complète » = >20 pupils, used ONLY for the deployeur-paradox contrast. Never relabel one as the other.
 4. Archetypes are not random: pionnier/fidele are partly DEFINED using multi-year info, so "fidele return more" is partly tautological — flag any such circularity and prefer first-year-only predictors when testing what PREDICTS return.
 5. Show the actual numbers you computed (counts + rates), not just adjectives.
 `
