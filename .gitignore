@@ -48,3 +48,6 @@ next-env.d.ts
 /public/data/csv_from_metabase.csv
 /public/data/csv_from_metabase_raw.csv
 /public/data/usages-02042026.csv
+
+# Données nominatives (PII) — outreach, jamais committé
+enquete_usages_2026/private/
