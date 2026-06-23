@@ -1177,6 +1177,7 @@ export default function Dashboard() {
     let totalDeuxiemeSeances = 0;
     let totalElevesInSeances = 0;
     let totalDureeSeances = 0; // en minutes
+    const seanceSizes: number[] = []; // nb d'élèves de chaque séance (pour médiane / distribution)
     
     groups.forEach(sessions => {
       // Trier par date de création
@@ -1211,6 +1212,7 @@ export default function Dashboard() {
       clusters.forEach(cluster => {
         totalSeances++;
         totalElevesInSeances += cluster.length;
+        seanceSizes.push(cluster.length);
         
         // Calculer durée moyenne de cette séance
         const workTimes = cluster.map(s => (s.changed - s.created) / 1000 / 60); // en minutes
@@ -1259,6 +1261,15 @@ export default function Dashboard() {
     });
     
     const moyenneElevesParSeance = totalSeances > 0 ? totalElevesInSeances / totalSeances : 0;
+    // Taille médiane d'une "vraie classe" : séances ≥ 10 élèves (on exclut les séances à
+    // 1-quelques élèves = tests profs / élèves isolés, qui tirent la moyenne vers le bas).
+    const vraiesClasses = seanceSizes.filter(n => n >= 10).sort((a, b) => a - b);
+    const nbVraiesClasses = vraiesClasses.length;
+    const medianeTailleClasse = nbVraiesClasses > 0
+      ? (nbVraiesClasses % 2 === 1
+          ? vraiesClasses[(nbVraiesClasses - 1) / 2]
+          : (vraiesClasses[nbVraiesClasses / 2 - 1] + vraiesClasses[nbVraiesClasses / 2]) / 2)
+      : 0;
     const dureeMoyenneSeance = totalSeances > 0 ? totalDureeSeances / totalSeances : 0;
     const pourcentage2eSeance = totalSeances > 0 ? (totalDeuxiemeSeances / totalSeances) * 100 : 0;
     
@@ -1334,6 +1345,8 @@ export default function Dashboard() {
       totalDeuxiemeSeances,
       pourcentage2eSeance,
       moyenneElevesParSeance,
+      medianeTailleClasse,
+      nbVraiesClasses,
       dureeMoyenneSeance,
       profsTestedThenTaught,
       profsTaughtWithoutTesting,
@@ -3151,8 +3164,24 @@ export default function Dashboard() {
                 </td>
               </tr>
               <tr>
-                <td>Nombre moyen élèves par séance</td>
+                <td>
+                  Nombre moyen élèves par séance
+                  {" "}
+                  <span style={{color: "#64748b", fontSize: "0.875rem"}}>
+                    (toutes séances, tests/élèves isolés inclus)
+                  </span>
+                </td>
                 <td style={{textAlign:"right"}}>{globalStats.moyenneElevesParSeance.toFixed(1)}</td>
+              </tr>
+              <tr>
+                <td>
+                  Taille médiane d&apos;une classe
+                  {" "}
+                  <span style={{color: "#64748b", fontSize: "0.875rem"}}>
+                    (séances ≥ 10 élèves, n = {globalStats.nbVraiesClasses.toLocaleString("fr-FR")})
+                  </span>
+                </td>
+                <td style={{textAlign:"right"}}>{globalStats.medianeTailleClasse.toFixed(0)}</td>
               </tr>
               <tr>
                 <td>Usages 2023-2024</td>
