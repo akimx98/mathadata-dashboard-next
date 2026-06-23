@@ -1,4 +1,4 @@
-<title>Flux des profs — canal, réutilisation, retour (MathAData)</title>
+<title>Flux des profs — canal, profondeur, retour (MathAData)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root{
@@ -14,7 +14,7 @@ h1{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
 h2{font-size:21px;font-weight:800;letter-spacing:-.01em;margin:34px 0 2px}
 .sub{font-size:16px;color:var(--ink2);max-width:74ch;margin:0 0 4px}
 .est{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--ink2);background:var(--paper);border:1px solid var(--rule);border-radius:4px;padding:4px 9px}
-.h2sub{font-size:14px;color:var(--ink2);max-width:74ch;margin:2px 0 0}
+.h2sub{font-size:14px;color:var(--ink2);max-width:78ch;margin:2px 0 0}
 .card{background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:8px;margin:14px 0}
 .scroll{overflow-x:auto}
 svg{display:block;max-width:100%;margin:0 auto}
@@ -25,6 +25,8 @@ svg{display:block;max-width:100%;margin:0 auto}
 .nval{font-family:var(--mono);font-size:10.5px;fill:var(--ink2)}
 .legend{display:flex;flex-wrap:wrap;gap:12px 22px;font-size:13px;color:var(--ink2);margin:12px 2px 0}
 .sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+.def{font-family:var(--mono);font-size:11.5px;line-height:1.55;color:var(--ink2);background:var(--paper);border:1px dashed var(--rule);border-radius:6px;padding:10px 13px;margin:8px 0 0;max-width:92ch}
+.def b{color:var(--ink);font-family:var(--grot)} .def .k{color:var(--ink);font-weight:700}
 table{border-collapse:collapse;font-family:var(--mono);font-size:13px;color:var(--ink2);margin:8px 0 0}
 th,td{padding:6px 14px;text-align:right;border-bottom:1px solid var(--rule2)}
 th:first-child,td:first-child{text-align:left;font-family:var(--grot)}
@@ -36,49 +38,63 @@ thead th{font-family:var(--grot);font-weight:700;color:var(--ink);border-bottom:
 </style>
 
 <div class="wrap">
-  <h1>Canal d'arrivée, réutilisation, retour</h1>
-  <p class="sub">Les <b>222 professeurs</b> qui ont enseigné avec MathAData (hub fondateur exclu). Deux questions : <b>qui revient d'une année sur l'autre ?</b> et <b>qui réutilise plus d'une fois ?</b> — en gardant trace du canal d'arrivée tout du long.</p>
-  <span class="est">Canal = <b>estimé</b> (sources site ↔ Capytale disjointes : appariement individuel 75 paires + trace site/formation au moment de l'usage). Réutilisation &amp; retour = <b>mesurés</b>.</span>
+  <h1>Canal d'arrivée, profondeur, retour</h1>
+  <p class="sub"><b>223 professeurs</b> ont touché des élèves avec MathAData (hub fondateur &amp; compte démo exclus). Parmi eux, <b>176 ont atteint une vraie classe</b> (séance ≥ 5 élèves) ; <b>47 sont restés « sous-seuil »</b> (1 à 4 élèves, jamais une classe). Les flux ci-dessous portent sur ces <b>176</b>. Deux questions : <b>qui revient d'une année sur l'autre ?</b> et <b>qui réutilise plus d'une fois dans l'année ?</b></p>
+  <span class="est">Canal = <b>estimé</b> (mondes site ↔ Capytale disjoints : appariement individuel 75 paires + trace établissement). Profondeur &amp; retour = <b>mesurés</b> sur Capytale. Définitions : <a href="https://github.com/akimx98/mathadata-dashboard-next/blob/main/enquete_usages_2026/commons/GLOSSAIRE.md" style="color:var(--site)">GLOSSAIRE</a>.</span>
 
   <div class="legend">
-    <span><span class="sw" style="background:var(--bridge)"></span><b>Capytale-direct</b> (143)</span>
-    <span><span class="sw" style="background:var(--site)"></span><b>Formation</b> (46)</span>
-    <span><span class="sw" style="background:var(--amber)"></span><b>Site-organique</b> (33)</span>
-    <span style="color:var(--faint)">Ruban coloré par <b>canal d'origine</b>, conservé jusqu'au bout.</span>
+    <span><span class="sw" style="background:var(--site)"></span><b>Via le site</b> (87)</span>
+    <span><span class="sw" style="background:var(--bridge)"></span><b>Capytale-direct</b> (89)</span>
+    <span style="color:var(--faint)">Ruban coloré par <b>canal d'origine</b> (figé à la 1ʳᵉ apparition), conservé jusqu'au bout.</span>
   </div>
 
   <h2>1 · Provenance — d'où viennent ceux qui reviennent (et qui décrochent)</h2>
-  <p class="h2sub">Canal d'arrivée → devenir l'année suivante. On lit la <b>composition</b> de chaque colonne de droite.</p>
+  <p class="h2sub">Canal d'arrivée → devenir. On lit la <b>composition</b> de chaque colonne de droite.</p>
   <div class="card scroll" id="dA"><svg id="sankA" viewBox="0 0 1020 300" role="img" aria-label="Sankey canal vers devenir"></svg></div>
+  <div class="def">
+    <span class="k">Via le site</span> = trace de lui sur mathadata.fr (compte / clic), ou compte site à son établissement, <b>antérieure</b> à son 1ᵉʳ usage classe. ·
+    <span class="k">Capytale-direct</span> = aucune trace site détectable au 1ᵉʳ usage : découvert via le catalogue Capytale. ·
+    <span class="k">Revenu</span> = a fait une classe (≥5 él.) sur <b>≥ 2 années scolaires</b>. ·
+    <span class="k">Non-revenu</span> = 1ʳᵉ classe ≤ 2024-25 et jamais revenu. ·
+    <span class="k">Trop récent</span> = 1ʳᵉ classe en 2025-26 → retour 2026-27 <b>pas encore observable</b> (censuré).
+  </div>
 
-  <h2>2 · Trajectoires complètes — canal → réutilisation (année 1) → retour</h2>
-  <p class="h2sub">Chaque ruban est un scénario complet (ex. <i>Capytale-direct → usage unique → décroche</i>, ou <i>Formation → réutilise → revient</i>), coloré par son canal d'origine.</p>
-  <div class="card scroll" id="dB"><svg id="sankB" viewBox="0 0 1020 380" role="img" aria-label="Sankey canal reutilisation retour"></svg></div>
+  <h2>2 · Trajectoires complètes — canal → profondeur (année 1) → retour</h2>
+  <p class="h2sub">Chaque ruban est un scénario complet (ex. <i>Capytale-direct → usage unique → décroche</i>), coloré par son canal d'origine.</p>
+  <div class="card scroll" id="dB"><svg id="sankB" viewBox="0 0 1020 380" role="img" aria-label="Sankey canal profondeur retour"></svg></div>
+  <div class="def">
+    <span class="k">Réutilise (an 1)</span> = <b>≥ 2 occasions</b> d'usage-classe <b>dans la 1ʳᵉ année</b> (≥2 activités, ou même activité à &gt;10 j, ou plusieurs classes pleines). ·
+    <span class="k">Usage unique (an 1)</span> = <b>1 seule</b> occasion la 1ʳᵉ année (demi-groupes d'une même activité à &lt;10 j = 1 occasion). ·
+    Colonne de droite : même sens qu'au diagramme 1.
+    <br><b>⚠️ Réutilisation = strictement intra-annuelle</b> (jamais l'année suivante) ; sinon « réutiliser » et « revenir » se confondent par construction. Le retour est mesuré <b>entre</b> années, à part.
+  </div>
 
-  <h2>3 · Ce qui prédit le retour (cohorte éligible, n=100)</h2>
+  <h2>3 · Ce qui prédit le retour <span style="font-weight:400;font-size:15px;color:var(--ink2)">(cohorte éligible, n = 77)</span></h2>
+  <p class="h2sub">Éligible = a atteint une classe ≥5 él. avec 1ʳᵉ année ≤ 2024-25 (retour observable). Les « trop récents » et les « sous-seuil » sont exclus du dénominateur.</p>
   <table>
     <thead><tr><th>Facteur (posé en année 1)</th><th>Taux de retour</th><th>Base</th></tr></thead>
     <tbody>
-      <tr><td><b>Réutilise en année 1</b> (≥2 occasions)</td><td><b>53 %</b></td><td>8/15</td></tr>
-      <tr><td>Usage unique en année 1</td><td>26 %</td><td>22/85</td></tr>
-      <tr><td style="padding-top:12px"><b>Arrivé par formation</b></td><td style="padding-top:12px"><b>56 %</b></td><td style="padding-top:12px">5/9</td></tr>
-      <tr><td>Arrivé par le site (organique)</td><td>50 %</td><td>3/6</td></tr>
-      <tr><td>Arrivé Capytale-direct</td><td>26 %</td><td>22/85</td></tr>
+      <tr><td><b>Réutilise en année 1</b> (niveau « multiple »)</td><td><b>57 %</b></td><td>13/23</td></tr>
+      <tr><td>Usage unique en année 1</td><td>24 %</td><td>13/54</td></tr>
+      <tr><td style="padding-top:12px"><b>Arrivé via le site</b></td><td style="padding-top:12px"><b>55 %</b></td><td style="padding-top:12px">11/20</td></tr>
+      <tr><td>Arrivé Capytale-direct</td><td>26 %</td><td>15/57</td></tr>
+      <tr><td style="padding-top:12px"><b>Formé (avant l'usage = motrice)</b></td><td style="padding-top:12px"><b>58 %</b></td><td style="padding-top:12px">7/12</td></tr>
+      <tr><td>Jamais formé</td><td>29 %</td><td>19/65</td></tr>
     </tbody>
   </table>
 
   <div class="note key">
-    <b>Réutiliser, c'est revenir.</b> La réutilisation est définie par <b>occasions</b> distinctes (activité différente, ou même activité à &gt; 30 jours d'écart, ou année suivante) — <b>2 demi-groupes sur la même activité comptent pour 1 seul usage</b>. En année 1, seuls <b>23 % réutilisent</b> ; et réutiliser double le taux de retour (53 % vs 26 %). ⚠️ Calculé <b>en année 1 uniquement</b> pour éviter la circularité (sinon les séances de l'année 2 d'un revenu gonflent mécaniquement sa « réutilisation »).
+    <b>Réutiliser, c'est revenir.</b> En 1ʳᵉ année, seuls <b>32 % réutilisent</b> (≥2 occasions classe) ; et réutiliser <b>plus que double</b> le taux de retour (57 % vs 24 %). Calculé <b>en année 1 uniquement</b> pour éviter la circularité : si l'on comptait les séances de l'année 2 d'un revenu, « réutiliser » impliquerait mécaniquement « être revenu ».
   </div>
   <div class="note">
     <b>Trois lectures.</b>
-    <b>(1)</b> Capytale-direct <b>domine partout</b> : 73 % des revenus (22/30) et 90 % des décrocheurs (63/70) en viennent — c'est le gros canal, pas le meilleur convertisseur.
-    <b>(2)</b> <b>22 profs reviennent sans avoir jamais été formés</b> (Capytale-direct) : le retour n'est pas réservé aux formés.
-    <b>(3)</b> Formation et réutilisation-an1 <b>élèvent</b> le retour (56 % / 53 % vs 26 %) mais restent des <b>petits sous-groupes</b> (9 et 15 éligibles) — leviers réels, à confirmer sur de plus gros effectifs.
+    <b>(1) Le canal « via le site » convertit bien mieux — mais arrive surtout récemment.</b> 67 des 87 profs « via le site » sont <b>trop récents</b> (cohortes de formation 2026, retour pas encore observable) ; Capytale-direct reste le gros canal historique observable.
+    <b>(2) Sur la cohorte éligible</b> (n = 77) : via-le-site <b>55 %</b> vs Capytale-direct <b>26 %</b> ; formé-avant-usage <b>58 %</b> vs jamais formé <b>29 %</b> ; réutilise-an-1 <b>57 %</b> vs usage-unique <b>24 %</b>.
+    <b>(3) Petits sous-groupes</b> (via-site éligible n = 20, formé n = 12) : leviers réels mais à confirmer sur de plus gros effectifs à la rentrée.
   </div>
 
   <p class="foot"><a href="index.html">← accueil</a> · <a href="synthese.html">synthèse</a> · <a href="typologie.html">typologie</a> · <a href="volet2.html">volet 2</a></p>
-  <p class="foot">222 enseignants Capytale (hub exclu). Canal estimé via <code>match_individuals</code> (75 paires) + trace temporelle. Sans donnée personnelle. Détails &amp; garde-fous : <a href="https://github.com/akimx98/mathadata-dashboard-next/blob/main/enquete_usages_2026/commons/TYPOLOGIE_PROFILS_2026.md">Typologie</a> · <a href="https://github.com/akimx98/mathadata-dashboard-next/blob/main/enquete_usages_2026/volet2/RAPPORT_VOLET2.md">Volet 2</a>.</p>
+  <p class="foot">223 enseignants Capytale ayant touché des élèves (hub + démo exclus) ; 176 ont atteint une classe ≥5 él. Canal estimé via <code>build_profiles.py</code> (appariement 75 paires + trace établissement). Sans donnée personnelle. Définitions canoniques : <a href="https://github.com/akimx98/mathadata-dashboard-next/blob/main/enquete_usages_2026/commons/GLOSSAIRE.md">GLOSSAIRE.md</a>.</p>
 </div>
 
 <script>
@@ -127,28 +143,26 @@ function pathSankey(svgId, meta, paths, heads, W, H){
   }
 }
 
-// ---- Diagramme 1 : Canal -> Devenir ----
+// ---- Diagramme 1 : Canal -> Devenir (n=176, source: facts_profiles.json traj_canal_devenir) ----
 const metaA={
-  cap:{col:0,label:'Capytale-direct',color:C.bridge}, form:{col:0,label:'Formation',color:C.site}, site:{col:0,label:'Site-organique',color:C.amber},
-  rev:{col:1,label:'Revenu',color:C.bridge}, non:{col:1,label:'Non-revenu',color:C.leak}, rec:{col:1,label:'Trop récent',color:C.grey},
+  via:{col:0,label:'Via le site',color:C.site}, cap:{col:0,label:'Capytale-direct',color:C.bridge},
+  rev:{col:1,label:'Revenu',color:C.classe}, non:{col:1,label:'Non-revenu',color:C.leak}, rec:{col:1,label:'Trop récent',color:C.grey},
 };
 const pathsA=[
-  {ids:['cap','rev'],n:22,color:C.bridge},{ids:['cap','non'],n:63,color:C.bridge},{ids:['cap','rec'],n:58,color:C.bridge},
-  {ids:['form','rev'],n:5,color:C.site},{ids:['form','non'],n:4,color:C.site},{ids:['form','rec'],n:37,color:C.site},
-  {ids:['site','rev'],n:3,color:C.amber},{ids:['site','non'],n:3,color:C.amber},{ids:['site','rec'],n:27,color:C.amber},
+  {ids:['via','rev'],n:11,color:C.site},{ids:['via','non'],n:9,color:C.site},{ids:['via','rec'],n:67,color:C.site},
+  {ids:['cap','rev'],n:15,color:C.bridge},{ids:['cap','non'],n:42,color:C.bridge},{ids:['cap','rec'],n:32,color:C.bridge},
 ];
 pathSankey('sankA',metaA,pathsA,[['CANAL D’ARRIVÉE','estimé'],['DEVENIR','retour l’an+1']],1020,300);
 
-// ---- Diagramme 2 : Canal -> Réutilisation an1 -> Devenir (trajectoires) ----
+// ---- Diagramme 2 : Canal -> Profondeur an1 -> Devenir (source: traj_canal_y1_devenir) ----
 const metaB={
-  cap:{col:0,label:'Capytale-direct',color:C.bridge}, form:{col:0,label:'Formation',color:C.site}, site:{col:0,label:'Site-organique',color:C.amber},
+  via:{col:0,label:'Via le site',color:C.site}, cap:{col:0,label:'Capytale-direct',color:C.bridge},
   multi:{col:1,label:'Réutilise (an 1)',color:C.ink}, uniq:{col:1,label:'Usage unique (an 1)',color:C.faint},
-  rev:{col:2,label:'Revenu',color:C.bridge}, non:{col:2,label:'Non-revenu',color:C.leak}, rec:{col:2,label:'Trop récent',color:C.grey},
+  rev:{col:2,label:'Revenu',color:C.classe}, non:{col:2,label:'Non-revenu',color:C.leak}, rec:{col:2,label:'Trop récent',color:C.grey},
 };
 const pathsB=[
-  {c:'cap',co:C.bridge,r:[['uniq','non',56],['uniq','rev',19],['uniq','rec',42],['multi','non',7],['multi','rev',3],['multi','rec',16]]},
-  {c:'form',co:C.site,r:[['uniq','non',4],['uniq','rev',1],['uniq','rec',24],['multi','rev',4],['multi','rec',13]]},
-  {c:'site',co:C.amber,r:[['uniq','non',3],['uniq','rev',2],['uniq','rec',21],['multi','rev',1],['multi','rec',6]]},
+  {c:'cap',co:C.bridge,r:[['multi','rev',6],['multi','non',8],['multi','rec',7],['uniq','rev',9],['uniq','non',34],['uniq','rec',25]]},
+  {c:'via',co:C.site,  r:[['multi','rev',7],['multi','non',2],['multi','rec',26],['uniq','rev',4],['uniq','non',7],['uniq','rec',41]]},
 ].flatMap(g=>g.r.map(([mid,dev,n])=>({ids:[g.c,mid,dev],n,color:g.co})));
-pathSankey('sankB',metaB,pathsB,[['CANAL','estimé'],['RÉUTILISATION — AN 1','mesuré'],['RETOUR','an+1']],1020,380);
+pathSankey('sankB',metaB,pathsB,[['CANAL','estimé'],['PROFONDEUR — AN 1','mesuré'],['RETOUR','an+1']],1020,380);
 </script>
