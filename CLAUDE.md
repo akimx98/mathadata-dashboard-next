@@ -80,6 +80,15 @@ transverse/build_master.py, build_scenarios.py  # typologie & séances
 Les `data/*.json` (`facts*.json`) sont les **sources de vérité chiffrées** — un dashboard ne
 recalcule pas, il **lit** ces faits.
 
+**Après toute régénération, lancer les contrats** :
+`python3 enquete_usages_2026/transverse/check_contracts.py` (JSON strict, invariants
+population/rétention, pseudonymat md5[:8], hub exclu, zéro e-mail dans `data/`). Doit finir par
+`✅ tous les contrats sont respectés`.
+
+⚠️ **Les dashboards `.html` embarquent leurs chiffres en dur** : régénérer les `facts_*.json` ne
+met **pas** à jour les pages. Après un recalcul, reporter les nombres changés dans le dashboard
+concerné, puis republier (§6). C'est un choix (HTML autonome, CSP-safe), pas un oubli.
+
 ## 6. Publication (ne jamais diverger)
 
 Voir **[`enquete_usages_2026/PUBLISH.md`](enquete_usages_2026/PUBLISH.md)**. Source de vérité = les
