@@ -1,4 +1,15 @@
-# Définitions canoniques — enquête usages MathAData (extraction 2026-06-19)
+# Définitions de source — VOLET 1 (Capytale) — extraction 2026-06-19
+
+> ⚠️ **Le sens des termes transverses est désormais centralisé dans
+> [`../commons/GLOSSAIRE.md`](../commons/GLOSSAIRE.md)** (source de vérité unique). Ce fichier ne
+> garde que les **spécificités de source** (chemins, schémas, détection de séances).
+> **Divergence connue à réconcilier** : ci-dessous « classe » = séance ≥ 10 él. ; le **glossaire**
+> fixe désormais le seuil canonique à **≥ 5 él.** (+ bande « sous-seuil » 1-4). Les chiffres de ce
+> volet calculés sur l'ancien seuil sont à recalculer lors de la passe de mise en cohérence.
+
+---
+
+## (historique) Définitions canoniques — enquête usages MathAData (extraction 2026-06-19)
 
 ## Fichiers (chemins absolus)
 - Brut : `/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/public/data/capytale_fresh_20260619.csv` (7353 lignes)

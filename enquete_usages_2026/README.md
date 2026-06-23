@@ -1,13 +1,20 @@
 # Enquête usages MathAData (juin 2026)
 
-Analyse des usages de MathAData en deux volets. Organisation :
+Le bon cadre mental n'est pas « deux volets » mais **une synthèse transversale + des analyses qui
+répondent à des questions différentes**, toutes calées sur **les mêmes définitions canoniques** et
+les mêmes données. Les dossiers `volet1/` `volet2/` restent l'organisation **physique** (par source
+de données), mais le découpage compte moins que la question traitée.
 
 ```
 enquete_usages_2026/
-├── volet1/   — Données Capytale seules (usage en classe, anonyme)
-├── volet2/   — Croisement mathadata.fr (site, nominatif) × Capytale
-└── commons/  — Analyses transverses + synthèse finale
+├── commons/  — ★ GLOSSAIRE (définitions canoniques) · couche de calcul profils · synthèse · typologie · séances · flux
+├── volet1/   — source Capytale seule (usage en classe, anonyme)
+└── volet2/   — source croisée mathadata.fr (site, nominatif) × Capytale
 ```
+
+> 📖 **Avant tout calcul, lire [`commons/GLOSSAIRE.md`](commons/GLOSSAIRE.md)** — source de vérité
+> unique de toutes les définitions. La couche de calcul canonique des profils est
+> [`commons/build_profiles.py`](commons/build_profiles.py). Playbook complet : `../CLAUDE.md`.
 
 ## ★ [Synthèse finale](commons/SYNTHESE_FINALE_2026.md) — à lire en premier
 **Synthèse réflexive transversale** croisant les 4 rapports : que conclure de 3 ans d'usage (Capytale × site) sur l'adoption, les profils, l'effet des formations, les dynamiques et les modes d'usage — et **comment déployer mieux en 2026-2027** (plus de profs *et* meilleur mode d'usage). Thèse : la **notoriété est acquise**, mais la **conversion** reste à gagner, à trois étages (formation→classe, classe→retour, essai→profondeur) ; la croissance est surtout organique, et les **mêmes gestes de la 1ʳᵉ année** (≥2 activités, vraie séance de 45 min) déterminent la durée. → [`commons/SYNTHESE_FINALE_2026.md`](commons/SYNTHESE_FINALE_2026.md)

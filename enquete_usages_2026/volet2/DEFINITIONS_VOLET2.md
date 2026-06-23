@@ -1,4 +1,15 @@
-# Définitions canoniques — VOLET 2 : croisement mathadata.fr × Capytale (extraction 2026-06-20)
+# Définitions de source — VOLET 2 : croisement mathadata.fr × Capytale (extraction 2026-06-20)
+
+> ⚠️ **Le sens des termes transverses (profondeur, canal, formation, rétention, niveau) est
+> centralisé dans [`../commons/GLOSSAIRE.md`](../commons/GLOSSAIRE.md)** (source de vérité unique).
+> En particulier, le **canal** est désormais à **2 valeurs** (`via_site` / `capytale_direct`), figé
+> à la 1ʳᵉ apparition, et la **formation** est une dimension timée orthogonale (motrice /
+> consolidation / jamais) — voir glossaire §6-7. Ce fichier garde les **spécificités de source**
+> (snapshot Payload, formation-codes, signaux d'appariement).
+
+---
+
+## (historique) Définitions — croisement mathadata.fr × Capytale
 
 Ce volet relie deux mondes sans clé commune :
 - **Capytale** (usage en classe, **anonyme**, comptes ENT pseudonymisés) — déjà analysé au Volet 1.
