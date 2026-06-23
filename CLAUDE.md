@@ -14,7 +14,7 @@ Deux choses vivent ici :
 
 ## 1. La règle nº 1 : les définitions sont canoniques et centralisées
 
-**[`enquete_usages_2026/commons/GLOSSAIRE.md`](enquete_usages_2026/commons/GLOSSAIRE.md) est la
+**[`enquete_usages_2026/transverse/GLOSSAIRE.md`](enquete_usages_2026/transverse/GLOSSAIRE.md) est la
 source de vérité de TOUTES les définitions** (année scolaire, prof, séance, classe, profondeur
 d'usage, canal, formation, rétention, niveau…). **Ne JAMAIS** redéfinir un terme localement ni
 inventer un seuil. Si un calcul a besoin d'une notion, elle doit déjà être dans le glossaire ; sinon,
@@ -27,8 +27,8 @@ Les `DEFINITIONS.md` / `DEFINITIONS_VOLET2.md` ne contiennent que les **spécifi
 ## 2. La couche de calcul canonique
 
 Les variables dérivées par prof naissent dans **un seul** module :
-**[`enquete_usages_2026/commons/build_profiles.py`](enquete_usages_2026/commons/build_profiles.py)**
-→ produit `commons/data/profiles_teacher_year.csv` (prof × année), `profiles_teacher.csv` (attributs
+**[`enquete_usages_2026/transverse/build_profiles.py`](enquete_usages_2026/transverse/build_profiles.py)**
+→ produit `transverse/data/profiles_teacher_year.csv` (prof × année), `profiles_teacher.csv` (attributs
 figés + rétention), `facts_profiles.json` (agrégats = source de vérité des chiffres du dashboard Flux).
 **Toute nouvelle variable « profil » s'ajoute là**, pas dans un script ad hoc du scratchpad.
 
@@ -64,11 +64,11 @@ mondes est **estimé**, jamais mesuré — le dire explicitement.
 ## 5. Pipeline (ordre de calcul)
 
 ```
-volet1/build_canonical.py      # Capytale → usages_enriched, sessions, teachers, establishments
-volet2/build_payload_canonical.py  # Payload (LOCAL) → table site id-only (→ scratchpad) + capytale_by_uai
-volet2/match_individuals.py    # appariement site↔Capytale → match_candidates.csv (75 paires, sans PII)
-commons/build_profiles.py      # ★ couche canonique profils (profondeur/canal/formation/rétention)
-commons/build_master.py, build_scenarios.py  # typologie & séances
+usage-capytale/build_canonical.py      # Capytale → usages_enriched, sessions, teachers, establishments
+site-vers-classe/build_payload_canonical.py  # Payload (LOCAL) → table site id-only (→ scratchpad) + capytale_by_uai
+site-vers-classe/match_individuals.py    # appariement site↔Capytale → match_candidates.csv (75 paires, sans PII)
+transverse/build_profiles.py      # ★ couche canonique profils (profondeur/canal/formation/rétention)
+transverse/build_master.py, build_scenarios.py  # typologie & séances
 */compute_*facts.py, make_charts*.py          # agrégats + PNG
 ```
 Les `data/*.json` (`facts*.json`) sont les **sources de vérité chiffrées** — un dashboard ne
@@ -98,4 +98,4 @@ relecture. Messages de commit en français, scope `(enquête)`.
 
 Historiquement « volet 1 / volet 2 », mais le bon cadre est : **une synthèse transversale + des
 analyses qui répondent à des questions différentes** (mêmes définitions canoniques, mêmes données) —
-voir `enquete_usages_2026/README.md`. À lire en premier : `commons/SYNTHESE_FINALE_2026.md`.
+voir `enquete_usages_2026/README.md`. À lire en premier : `transverse/SYNTHESE_FINALE_2026.md`.

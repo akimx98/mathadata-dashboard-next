@@ -18,12 +18,12 @@ E="$SCRIPT_DIR"
 # fichier source -> nom publié sur gh-pages
 declare -a MAP=(
   "$E/pages/index.html:index.html"
-  "$E/volet1/dashboard.html:volet1.html"
-  "$E/volet2/dashboard_volet2.html:volet2.html"
-  "$E/commons/dashboard_typologie.html:typologie.html"
-  "$E/commons/dashboard_seances.html:seances.html"
-  "$E/commons/dashboard_synthese.html:synthese.html"
-  "$E/commons/dashboard_flux_profs.html:flux.html"
+  "$E/usage-capytale/dashboard.html:volet1.html"
+  "$E/site-vers-classe/dashboard_volet2.html:volet2.html"
+  "$E/transverse/dashboard_typologie.html:typologie.html"
+  "$E/transverse/dashboard_seances.html:seances.html"
+  "$E/transverse/dashboard_synthese.html:synthese.html"
+  "$E/transverse/dashboard_flux_profs.html:flux.html"
 )
 
 # garde-fou sécurité : refuser de publier si un email apparaît dans une source
