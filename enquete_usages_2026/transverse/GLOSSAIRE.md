@@ -108,10 +108,20 @@ Toutes les dates sont converties en **Europe/Paris** avant calcul. Trois années
 
 ## 4. AXE 1 — Profondeur d'usage atteinte dans l'année (escalier exclusif)
 
-Pour un **prof × année scolaire**, on prend le **barreau maximal atteint cette année-là**. L'escalier
-**couvre toute la population** et chaque prof-année tombe dans **un seul** barreau (disjoint par
-construction). Les niveaux 0–1 vivent côté **site** ; 2–5 côté **Capytale** ; un prof apparié est
-positionné au plus haut des deux mondes.
+Pour un **prof × année scolaire**, on prend le **barreau maximal atteint cette année-là** ; chaque
+prof-année tombe dans **un seul** barreau (disjoint par construction). L'escalier est l'**échelle
+canonique** ; **chaque monde n'en mesure que la portion qu'il observe** (mondes disjoints, §0) :
+- **côté Capytale** (niveaux **2–5**) : implémenté par [`build_profiles.py`](build_profiles.py)
+  → `profiles_teacher_year.csv`. ⚠️ **Portée réelle de cette table** : les profs **ayant touché des
+  élèves** (niveaux 3-5, 223 profs) **+** les testeurs purs côté Capytale (niveau 2). Les **testeurs
+  vus uniquement en formation** (stagiaires, ~140) et le **funnel site** sont ailleurs (ci-dessous).
+- **côté site** (niveaux **0–1** : dormant / intention) : population des **2 715 comptes
+  mathadata.fr**, mesurée dans la **matrice « porte × profondeur »** du Volet 2 (`site-vers-classe`),
+  **pas** dans `profiles_teacher`. Les deux mondes ne se recouvrent que via l'appariement (75 paires).
+
+Autrement dit : **il n'existe pas une table unique listant les 0-5 pour une population unique** —
+c'est la conséquence directe des deux mondes disjoints. Un prof apparié est positionné au plus haut
+des deux mondes.
 
 | Niv. | Nom court | Définition exacte (dans l'année) | Monde | Statut |
 |---|---|---|---|---|

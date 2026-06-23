@@ -43,8 +43,8 @@ thead th{font-family:var(--grot);font-weight:700;color:var(--ink);border-bottom:
   <span class="est">Canal = <b>estimé</b> (mondes site ↔ Capytale disjoints : appariement individuel 75 paires + trace établissement). Profondeur &amp; retour = <b>mesurés</b> sur Capytale. Définitions : <a href="https://github.com/akimx98/mathadata-dashboard-next/blob/main/enquete_usages_2026/transverse/GLOSSAIRE.md" style="color:var(--site)">GLOSSAIRE</a>.</span>
 
   <div class="legend">
-    <span><span class="sw" style="background:var(--site)"></span><b>Via le site</b> (87)</span>
-    <span><span class="sw" style="background:var(--bridge)"></span><b>Capytale-direct</b> (89)</span>
+    <span><span class="sw" style="background:var(--site)"></span><b>Via le site</b> (78)</span>
+    <span><span class="sw" style="background:var(--bridge)"></span><b>Capytale-direct</b> (98)</span>
     <span style="color:var(--faint)">Ruban coloré par <b>canal d'origine</b> (figé à la 1ʳᵉ apparition), conservé jusqu'au bout.</span>
   </div>
 
@@ -76,8 +76,8 @@ thead th{font-family:var(--grot);font-weight:700;color:var(--ink);border-bottom:
     <tbody>
       <tr><td><b>Réutilise en année 1</b> (niveau « multiple »)</td><td><b>57 %</b></td><td>13/23</td></tr>
       <tr><td>Usage unique en année 1</td><td>24 %</td><td>13/54</td></tr>
-      <tr><td style="padding-top:12px"><b>Arrivé via le site</b></td><td style="padding-top:12px"><b>55 %</b></td><td style="padding-top:12px">11/20</td></tr>
-      <tr><td>Arrivé Capytale-direct</td><td>26 %</td><td>15/57</td></tr>
+      <tr><td style="padding-top:12px"><b>Arrivé via le site</b></td><td style="padding-top:12px"><b>53 %</b></td><td style="padding-top:12px">8/15</td></tr>
+      <tr><td>Arrivé Capytale-direct</td><td>29 %</td><td>18/62</td></tr>
       <tr><td style="padding-top:12px"><b>Formé (avant l'usage = motrice)</b></td><td style="padding-top:12px"><b>58 %</b></td><td style="padding-top:12px">7/12</td></tr>
       <tr><td>Jamais formé</td><td>29 %</td><td>19/65</td></tr>
     </tbody>
@@ -88,9 +88,9 @@ thead th{font-family:var(--grot);font-weight:700;color:var(--ink);border-bottom:
   </div>
   <div class="note">
     <b>Trois lectures.</b>
-    <b>(1) Le canal « via le site » convertit bien mieux — mais arrive surtout récemment.</b> 67 des 87 profs « via le site » sont <b>trop récents</b> (cohortes de formation 2026, retour pas encore observable) ; Capytale-direct reste le gros canal historique observable.
-    <b>(2) Sur la cohorte éligible</b> (n = 77) : via-le-site <b>55 %</b> vs Capytale-direct <b>26 %</b> ; formé-avant-usage <b>58 %</b> vs jamais formé <b>29 %</b> ; réutilise-an-1 <b>57 %</b> vs usage-unique <b>24 %</b>.
-    <b>(3) Petits sous-groupes</b> (via-site éligible n = 20, formé n = 12) : leviers réels mais à confirmer sur de plus gros effectifs à la rentrée.
+    <b>(1) Le canal « via le site » convertit bien mieux — mais arrive surtout récemment.</b> 63 des 78 profs « via le site » sont <b>trop récents</b> (cohortes de formation 2026, retour pas encore observable) ; Capytale-direct (98) reste le gros canal historique observable.
+    <b>(2) Sur la cohorte éligible</b> (n = 77) : via-le-site <b>53 %</b> vs Capytale-direct <b>29 %</b> ; formé-avant-usage <b>58 %</b> vs jamais formé <b>29 %</b> ; réutilise-an-1 <b>57 %</b> vs usage-unique <b>24 %</b>.
+    <b>(3) Petits sous-groupes</b> (via-site éligible n = 15, formé n = 12) : leviers réels mais à confirmer sur de plus gros effectifs à la rentrée.
   </div>
 
   <p class="foot"><a href="index.html">← accueil</a> · <a href="synthese.html">synthèse</a> · <a href="typologie.html">typologie</a> · <a href="volet2.html">volet 2</a></p>
@@ -149,8 +149,8 @@ const metaA={
   rev:{col:1,label:'Revenu',color:C.classe}, non:{col:1,label:'Non-revenu',color:C.leak}, rec:{col:1,label:'Trop récent',color:C.grey},
 };
 const pathsA=[
-  {ids:['via','rev'],n:11,color:C.site},{ids:['via','non'],n:9,color:C.site},{ids:['via','rec'],n:67,color:C.site},
-  {ids:['cap','rev'],n:15,color:C.bridge},{ids:['cap','non'],n:42,color:C.bridge},{ids:['cap','rec'],n:32,color:C.bridge},
+  {ids:['via','rev'],n:8,color:C.site},{ids:['via','non'],n:7,color:C.site},{ids:['via','rec'],n:63,color:C.site},
+  {ids:['cap','rev'],n:18,color:C.bridge},{ids:['cap','non'],n:44,color:C.bridge},{ids:['cap','rec'],n:36,color:C.bridge},
 ];
 pathSankey('sankA',metaA,pathsA,[['CANAL D’ARRIVÉE','estimé'],['DEVENIR','retour l’an+1']],1020,300);
 
@@ -161,8 +161,8 @@ const metaB={
   rev:{col:2,label:'Revenu',color:C.classe}, non:{col:2,label:'Non-revenu',color:C.leak}, rec:{col:2,label:'Trop récent',color:C.grey},
 };
 const pathsB=[
-  {c:'cap',co:C.bridge,r:[['multi','rev',6],['multi','non',8],['multi','rec',7],['uniq','rev',9],['uniq','non',34],['uniq','rec',25]]},
-  {c:'via',co:C.site,  r:[['multi','rev',7],['multi','non',2],['multi','rec',26],['uniq','rev',4],['uniq','non',7],['uniq','rec',41]]},
+  {c:'cap',co:C.bridge,r:[['multi','rev',8],['multi','non',10],['multi','rec',9],['uniq','rev',10],['uniq','non',34],['uniq','rec',27]]},
+  {c:'via',co:C.site,  r:[['multi','rev',5],['multi','rec',24],['uniq','rev',3],['uniq','non',7],['uniq','rec',39]]},
 ].flatMap(g=>g.r.map(([mid,dev,n])=>({ids:[g.c,mid,dev],n,color:g.co})));
 pathSankey('sankB',metaB,pathsB,[['CANAL','estimé'],['PROFONDEUR — AN 1','mesuré'],['RETOUR','an+1']],1020,380);
 </script>

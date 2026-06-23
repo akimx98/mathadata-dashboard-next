@@ -2,8 +2,8 @@
   "population": 223,
   "seuil_classe": 5,
   "canal": {
-    "capytale_direct": 117,
-    "via_site": 106
+    "capytale_direct": 132,
+    "via_site": 91
   },
   "formation_statut": {
     "jamais": 165,
@@ -11,8 +11,8 @@
   },
   "formation_timing": {
     "na": 165,
-    "motrice": 55,
-    "consolidation": 3
+    "motrice": 54,
+    "consolidation": 4
   },
   "niveau": {
     "lycee": 190,
@@ -34,22 +34,22 @@
   "retour_rate_eligible": 33.8,
   "by_canal": {
     "via_site": {
-      "n": 20,
-      "revenu": 11
+      "n": 15,
+      "revenu": 8
     },
     "capytale_direct": {
-      "n": 57,
-      "revenu": 15
+      "n": 62,
+      "revenu": 18
     }
   },
   "by_formation": {
-    "forme": {
-      "n": 12,
-      "revenu": 7
-    },
     "jamais": {
       "n": 65,
       "revenu": 19
+    },
+    "forme": {
+      "n": 12,
+      "revenu": 7
     }
   },
   "reuse_an1": {
@@ -60,26 +60,25 @@
     "pct_reutilisent_an1": 31.8
   },
   "traj_canal_devenir": {
-    "capytale_direct|non": 42,
-    "capytale_direct|rec": 32,
-    "capytale_direct|rev": 15,
-    "via_site|non": 9,
-    "via_site|rec": 67,
-    "via_site|rev": 11
+    "capytale_direct|non": 44,
+    "capytale_direct|rec": 36,
+    "capytale_direct|rev": 18,
+    "via_site|non": 7,
+    "via_site|rec": 63,
+    "via_site|rev": 8
   },
   "traj_canal_y1_devenir": {
-    "capytale_direct|multi|non": 8,
-    "capytale_direct|multi|rec": 7,
-    "capytale_direct|multi|rev": 6,
+    "capytale_direct|multi|non": 10,
+    "capytale_direct|multi|rec": 9,
+    "capytale_direct|multi|rev": 8,
     "capytale_direct|uniq|non": 34,
-    "capytale_direct|uniq|rec": 25,
-    "capytale_direct|uniq|rev": 9,
-    "via_site|multi|non": 2,
-    "via_site|multi|rec": 26,
-    "via_site|multi|rev": 7,
+    "capytale_direct|uniq|rec": 27,
+    "capytale_direct|uniq|rev": 10,
+    "via_site|multi|rec": 24,
+    "via_site|multi|rev": 5,
     "via_site|uniq|non": 7,
-    "via_site|uniq|rec": 41,
-    "via_site|uniq|rev": 4
+    "via_site|uniq|rec": 39,
+    "via_site|uniq|rev": 3
   },
   "n_reached_classe": 176
 }

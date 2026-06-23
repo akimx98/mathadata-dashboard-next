@@ -125,14 +125,16 @@ for (tid, sy), g in sess_pop.groupby(['teacher','sy']):
     rows.append(dict(teacher=h8(tid), teacher_full=tid, sy=sy, level=lvl,
                      n_sessions=len(g), n_classes=n_classes, n_occasions=n_occ,
                      n_eleves=int(g['n_eleves'].sum()),
-                     n_activites=int(g['mathadata_id'].nunique()), self_test=has_selftest))
+                     n_activites=int(g['mathadata_id'].nunique()),               # toutes activités (incl. sous-seuil)
+                     n_activites_classe=int(classes['mathadata_id'].nunique()),  # activités atteignant une classe ≥5 (pour le prédicteur)
+                     self_test=has_selftest))
 # années où le prof n'a QUE des auto-tests (aucune séance élève) → niveau 2
 seen = {(r['teacher_full'], r['sy']) for r in rows}
 for (tid, sy), n in st_years.items():
     if (tid, sy) not in seen and stud_years.get((tid,sy),0)==0:
         rows.append(dict(teacher=h8(tid), teacher_full=tid, sy=sy, level=2,
                          n_sessions=0, n_classes=0, n_occasions=0, n_eleves=0,
-                         n_activites=0, self_test=True))
+                         n_activites=0, n_activites_classe=0, self_test=True))
 PY = pd.DataFrame(rows)
 PY = PY[PY['sy'] != 'NA'].copy()
 
@@ -168,7 +170,9 @@ W['createdAt'] = pd.to_datetime(W['createdAt'], errors='coerce', utc=True)
 W['fdate']     = pd.to_datetime(W['fdate'], errors='coerce', utc=True)
 W['first_cap'] = pd.to_datetime(W['first_cap'], errors='coerce', utc=True)
 W['is_formed'] = W['is_formed']=='True'
-fdate_by_sid = {r['id']: r['fdate'] for _,r in W.iterrows()}
+fdate_by_sid   = {r['id']: r['fdate'] for _,r in W.iterrows()}
+created_by_sid = {r['id']: r['createdAt'] for _,r in W.iterrows()}   # création du compte site
+firstcap_by_sid= {r['id']: r['first_cap'] for _,r in W.iterrows()}   # 1ᵉʳ clic vers Capytale
 # par UAI : plus ancienne trace site (création de compte) et existence d'un compte formé + sa date
 site_by_uai = {}
 for u, g in W[W['uai']!=''].groupby('uai'):
@@ -189,13 +193,24 @@ def classify(tid):
     h = h8(tid)
     canal, fstatut, ftiming = 'capytale_direct', 'jamais', None
     fdate = pd.NaT
-    # (a) apparié individuellement → via_site ; formation depuis la paire
+    grace = timedelta(days=1)
+    # (a) apparié individuellement : via_site SEULEMENT si le contact site (création de compte ou
+    #     1ᵉʳ clic) est antérieur/simultané au 1ᵉʳ usage élève. Sinon le prof est arrivé par Capytale
+    #     puis a créé son compte APRÈS → capytale_direct (le canal décrit l'ORIGINE, cf. glossaire §6).
     if h in matched:
-        canal = 'via_site'
         m = matched[h]
+        sid = sid_of.get(m['site_code'])
+        created = pd.to_datetime(created_by_sid.get(sid), errors='coerce', utc=True) if sid else pd.NaT
+        fclick  = pd.to_datetime(firstcap_by_sid.get(sid), errors='coerce', utc=True) if sid else pd.NaT
+        site_contact = min([d for d in (created, fclick) if pd.notna(d)], default=pd.NaT)
+        if pd.isna(site_contact) or pd.isna(first_use):
+            canal = 'via_site'                       # pas de date fiable → on garde l'appariement
+        elif site_contact <= first_use + grace:
+            canal = 'via_site'                       # trace site AVANT l'usage → vrai « via le site »
+        else:
+            canal = 'capytale_direct'                # compte site créé APRÈS l'usage → arrivé par Capytale
         if m['statut'] in ('forme','mentor'):
             fstatut = 'forme'
-            sid = sid_of.get(m['site_code'])
             fd = fdate_by_sid.get(sid) if sid else None
             fdate = pd.to_datetime(fd, errors='coerce', utc=True) if fd else pd.NaT
     else:
@@ -212,7 +227,7 @@ def classify(tid):
         if pd.notna(fdate) and pd.notna(first_use):
             ftiming = 'motrice' if fdate <= first_use + timedelta(days=1) else 'consolidation'
         else:
-            ftiming = 'motrice' if h in matched else 'indetermine'  # apparié formé sans date fiable ≈ motrice
+            ftiming = 'motrice' if canal=='via_site' else 'consolidation'  # pas de date fiable → cohérent avec le canal
     return canal, fstatut, ftiming
 
 # ───────────────────────────── 6. Table prof (attributs figés + rétention) ─────────────────────────────

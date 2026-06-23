@@ -36,14 +36,14 @@
       "taux": 24.1
     },
     "via_site": {
-      "n": 20,
-      "rev": 11,
-      "taux": 55.0
+      "n": 15,
+      "rev": 8,
+      "taux": 53.3
     },
     "capytale_direct": {
-      "n": 57,
-      "rev": 15,
-      "taux": 26.3
+      "n": 62,
+      "rev": 18,
+      "taux": 29.0
     },
     "forme": {
       "n": 12,
@@ -58,14 +58,14 @@
   },
   "activites_an1": {
     "ge2": {
-      "n": 13,
-      "rev": 8,
-      "taux": 61.5
+      "n": 11,
+      "rev": 7,
+      "taux": 63.6
     },
     "eq1": {
-      "n": 64,
-      "rev": 18,
-      "taux": 28.1
+      "n": 66,
+      "rev": 19,
+      "taux": 28.8
     }
   },
   "deployeurs_grande_classe": {
@@ -79,8 +79,8 @@
     "college": 6
   },
   "canal_global": {
-    "capytale_direct": 117,
-    "via_site": 106
+    "capytale_direct": 132,
+    "via_site": 91
   },
   "formation_global": {
     "jamais": 165,
@@ -88,7 +88,7 @@
   },
   "formation_timing": {
     "na": 165,
-    "motrice": 55,
-    "consolidation": 3
+    "motrice": 54,
+    "consolidation": 4
   }
 }

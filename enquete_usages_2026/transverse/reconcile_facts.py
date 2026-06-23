@@ -57,10 +57,11 @@ F['effet']=dict(
 
 # ---- 5. effet ≥2 activités année 1 (classe) ----
 # 1ʳᵉ année classe de chaque prof, nb d'activités cette année-là
+acol='n_activites_classe' if 'n_activites_classe' in PY.columns else 'n_activites'
 first=[]
 for h,g in PY.groupby('teacher'):
     gc=g[g['level']>=4].sort_values('sy')
-    if len(gc): first.append((h,int(gc.iloc[0]['n_activites'])))
+    if len(gc): first.append((h,int(gc.iloc[0][acol])))   # activités ATTEIGNANT une classe ≥5 (exclut le sous-seuil)
 fa=pd.DataFrame(first,columns=['teacher','y1_acts']).merge(PROF[['teacher','revenu','censored','n_years_classe']],on='teacher')
 fae=fa[(~fa['censored'])]
 ge2=fae[fae['y1_acts']>=2]; eq1=fae[fae['y1_acts']<2]
