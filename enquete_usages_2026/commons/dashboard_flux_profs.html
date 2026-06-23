@@ -1,0 +1,141 @@
+<title>Flux des profs — du canal d'arrivée à la rétention (MathAData)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --ground:#F4F1E9; --paper:#FBF9F3; --ink:#16212B; --ink2:#3C4A57; --faint:#7C8893;
+  --site:#2F6DB5; --classe:#C85A33; --bridge:#0E8074; --leak:#AE3340; --amber:#C99A2E;
+  --rule:#D8D2C4; --rule2:#E7E2D6; --grey:#B7B2A6;
+  --grot:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--grot);line-height:1.5}
+.wrap{max-width:1060px;margin:0 auto;padding:40px 24px 64px}
+h1{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
+.sub{font-size:16px;color:var(--ink2);max-width:70ch;margin:0 0 4px}
+.est{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--ink2);background:var(--paper);border:1px solid var(--rule);border-radius:4px;padding:4px 9px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:8px 8px 4px;margin:22px 0}
+.scroll{overflow-x:auto}
+svg{display:block;max-width:100%;min-width:760px;margin:0 auto}
+.colhead{font-family:var(--grot);font-weight:800;font-size:13px;fill:var(--ink);letter-spacing:.02em}
+.colsub{font-family:var(--mono);font-size:10px;fill:var(--faint)}
+.nlab{font-family:var(--grot);font-weight:700;font-size:13px;fill:var(--ink)}
+.nval{font-family:var(--mono);font-size:11px;fill:var(--ink2)}
+.legend{display:flex;flex-wrap:wrap;gap:14px 22px;font-size:13px;color:var(--ink2);margin:14px 2px 0}
+.legend b{font-family:var(--grot)}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+.rates{margin:26px 0 0;border-collapse:collapse;font-family:var(--mono);font-size:13px;color:var(--ink2)}
+.rates th,.rates td{padding:7px 14px;text-align:right;border-bottom:1px solid var(--rule2)}
+.rates th:first-child,.rates td:first-child{text-align:left;font-family:var(--grot)}
+.rates thead th{font-family:var(--grot);font-weight:700;color:var(--ink);border-bottom:2px solid var(--ink)}
+.note{font-size:13px;color:var(--ink2);max-width:78ch;margin:22px 0 0;border-left:4px solid var(--amber);background:var(--paper);padding:14px 18px}
+.note b{color:var(--ink)}
+.foot{margin-top:26px;font-size:13px;color:var(--faint)}
+.foot a{color:var(--site)}
+</style>
+
+<div class="wrap">
+  <h1>Comment les profs arrivent — et reviennent (ou pas)</h1>
+  <p class="sub">Les <b>222 professeurs</b> qui ont enseigné avec MathAData sur Capytale (hub fondateur exclu), suivis de leur <b>canal de découverte</b> à leur <b>usage de 1ʳᵉ année</b> puis à leur <b>retour</b> l'année suivante.</p>
+  <span class="est">Canal = <b>estimé</b> (sources site ↔ Capytale disjointes : appariement individuel + trace site/formation au moment de l'usage). Usage &amp; retour = <b>mesurés</b>.</span>
+
+  <div class="card scroll">
+    <svg id="sankey" width="1020" height="440" role="img" aria-label="Diagramme de flux : canal d'arrivée, usage année 1, retour"></svg>
+  </div>
+
+  <div class="legend">
+    <span><span class="sw" style="background:var(--bridge)"></span><b>Capytale-direct</b> — nous ont trouvés seuls sur Capytale (aucune trace site/formation à l'usage)</span>
+    <span><span class="sw" style="background:var(--site)"></span><b>Formation</b> — formés par MathAData avant l'usage</span>
+    <span><span class="sw" style="background:var(--amber)"></span><b>Site-organique</b> — compte site avant l'usage, sans formation</span>
+  </div>
+
+  <table class="rates">
+    <thead><tr><th>Canal d'arrivée</th><th>Profs</th><th>Part</th><th>Retour*</th></tr></thead>
+    <tbody>
+      <tr><td>Capytale-direct</td><td>143</td><td>64 %</td><td>26 % <span style="color:var(--faint)">(22/85)</span></td></tr>
+      <tr><td>Formation</td><td>46</td><td>21 %</td><td>56 % <span style="color:var(--faint)">(5/9)</span></td></tr>
+      <tr><td>Site-organique</td><td>33</td><td>15 %</td><td>50 % <span style="color:var(--faint)">(3/6)</span></td></tr>
+    </tbody>
+  </table>
+  <p class="foot" style="margin-top:8px">*Taux de retour calculé sur les seuls <b>éligibles</b> (entrés en 2023-24 ou 2024-25, qui pouvaient revenir) — 100 profs. Les 122 entrés en 2025-26 sont « trop récents » pour être évalués.</p>
+
+  <div class="note">
+    <b>Trois lectures.</b>
+    <b>(1)</b> Près des <b>deux tiers des profs (64 %) arrivent par Capytale</b>, sans passer par nous — c'est le moteur de recrutement, mais celui qui revient le moins (26 %).
+    <b>(2)</b> <b>Atteindre une vraie classe ne suffit pas</b> : 153 profs y arrivent dès l'an 1, mais parmi les éligibles seuls 22 reviennent (40 décrochent) — le réengagement est une marche distincte.
+    <b>(3)</b> La <b>formation est un petit canal (21 %), mais récent</b> (37 de ses 46 profs sont entrés en 2025-26) et au <b>meilleur retour apparent (56 %)</b> — à confirmer (n=9 éligibles seulement) ; cohérent avec « la formation amorce, la profondeur fidélise ».
+  </div>
+
+  <p class="foot">Sources : <code>master_teachers</code> (224 enseignants Capytale), appariement individuel <code>match_individuals</code> (75 paires), funnel site <code>Volet 2</code>. Diagramme sans donnée personnelle (agrégats). Détails &amp; garde-fous : <a href="https://github.com/akimx98/mathadata-dashboard-next/blob/main/enquete_usages_2026/commons/TYPOLOGIE_PROFILS_2026.md">Typologie</a> · <a href="https://github.com/akimx98/mathadata-dashboard-next/blob/main/enquete_usages_2026/volet2/RAPPORT_VOLET2.md">Volet 2</a>.</p>
+</div>
+
+<script>
+const C={ink:'#16212B',ink2:'#3C4A57',faint:'#7C8893',site:'#2F6DB5',classe:'#C85A33',bridge:'#0E8074',leak:'#AE3340',amber:'#C99A2E',rule:'#D8D2C4',grey:'#B7B2A6',paper:'#FBF9F3'};
+const NS='http://www.w3.org/2000/svg';
+function el(t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;}
+function txt(x,y,s,o={}){const t=el('text',{x,y});t.setAttribute('class',o.cls||'nlab');if(o.a)t.setAttribute('text-anchor',o.a);t.textContent=s;return t;}
+
+const nodes={
+  cap:{col:0,label:'Capytale-direct',val:143,color:C.bridge},
+  form:{col:0,label:'Formation',val:46,color:C.site},
+  site:{col:0,label:'Site-organique',val:33,color:C.amber},
+  classe:{col:1,label:'Vraie classe (≥10 él.)',val:153,color:C.ink},
+  leger:{col:1,label:'Usage léger (<10 él.)',val:69,color:C.faint},
+  rev:{col:2,label:'Revenu',val:30,color:C.bridge},
+  non:{col:2,label:'Non-revenu',val:70,color:C.leak},
+  rec:{col:2,label:'Trop récent',val:122,color:C.grey},
+};
+const links=[
+  {s:'cap',t:'classe',v:89},{s:'cap',t:'leger',v:54},
+  {s:'form',t:'classe',v:36},{s:'form',t:'leger',v:10},
+  {s:'site',t:'classe',v:28},{s:'site',t:'leger',v:5},
+  {s:'classe',t:'rev',v:22},{s:'classe',t:'non',v:40},{s:'classe',t:'rec',v:91},
+  {s:'leger',t:'rev',v:8},{s:'leger',t:'non',v:30},{s:'leger',t:'rec',v:31},
+];
+const colOrder={0:['cap','form','site'],1:['classe','leger'],2:['rev','non','rec']};
+const colX=[40,470,900], NODEW=17, H=440, padTop=54, padBot=14, gap=18;
+
+const s=document.getElementById('sankey'), W=1020;
+s.setAttribute('viewBox',`0 0 ${W} ${H}`); s.removeAttribute('width'); s.style.width='100%';
+// scale: tallest column total
+const colTot={}; for(const c in colOrder) colTot[c]=colOrder[c].reduce((a,id)=>a+nodes[id].val,0);
+const maxTot=Math.max(...Object.values(colTot));
+const avail=H-padTop-padBot;
+const scale=(avail-gap*(Math.max(...Object.values(colOrder).map(a=>a.length))-1))/maxTot;
+// layout nodes
+for(const c in colOrder){
+  const ids=colOrder[c]; const tot=colTot[c];
+  let y=padTop+(avail-(tot*scale+gap*(ids.length-1)))/2;
+  for(const id of ids){const n=nodes[id]; n.x=colX[c]; n.y=y; n.h=n.val*scale; n.outO=0; n.inO=0; y+=n.h+gap;}
+}
+// column headers
+const heads=[['CANAL D’ARRIVÉE','estimé · 222 profs'],['USAGE — ANNÉE 1','mesuré'],['DEVENIR','retour l’an+1']];
+heads.forEach((h,i)=>{const x=colX[i]+NODEW/2;
+  s.appendChild(txt(x,24,h[0],{cls:'colhead',a:'middle'}));
+  s.appendChild(txt(x,38,h[1],{cls:'colsub',a:'middle'}));});
+// links (order by target stacking on source, source stacking on target)
+function curve(l){
+  const a=nodes[l.s], b=nodes[l.t];
+  const y0=a.y+a.outO+l.v*scale/2, y1=b.y+b.inO+l.v*scale/2;
+  a.outO+=l.v*scale; b.inO+=l.v*scale;
+  const x0=a.x+NODEW, x1=b.x, xm=(x0+x1)/2, th=l.v*scale;
+  const p=el('path',{d:`M${x0},${y0-th/2} C${xm},${y0-th/2} ${xm},${y1-th/2} ${x1},${y1-th/2} L${x1},${y1+th/2} C${xm},${y1+th/2} ${xm},${y0+th/2} ${x0},${y0+th/2} Z`,
+    fill:a.color,'fill-opacity':0.30,stroke:'none'});
+  return p;
+}
+// draw links sorted so ribbons stack cleanly: by source col order then target col order
+links.sort((p,q)=> (colOrder[nodes[p.s].col].indexOf(p.s)-colOrder[nodes[q.s].col].indexOf(q.s)) || (colOrder[nodes[p.t].col].indexOf(p.t)-colOrder[nodes[q.t].col].indexOf(q.t)));
+// reset offsets, then draw (outO/inO consumed in curve)
+for(const id in nodes){nodes[id].outO=0;nodes[id].inO=0;}
+links.forEach(l=>s.appendChild(curve(l)));
+// nodes on top
+for(const id in nodes){const n=nodes[id];
+  s.appendChild(el('rect',{x:n.x,y:n.y,width:NODEW,height:Math.max(n.h,1.5),rx:2,fill:n.color}));
+  const right=(n.col===2);
+  const lx=right?n.x-8:(n.col===0?n.x+NODEW+8:n.x+NODEW+8);
+  const anchor=right?'end':'start';
+  const ty=n.y+n.h/2;
+  const t1=txt(lx,ty-1,n.label,{a:anchor}); s.appendChild(t1);
+  const t2=txt(lx,ty+13,`${n.val} profs`,{cls:'nval',a:anchor}); s.appendChild(t2);
+}
+</script>

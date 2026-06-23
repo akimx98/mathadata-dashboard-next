@@ -109,8 +109,32 @@ for uai,teachers in real_teach_by_uai.items():
             conf=('A' if corrob else 'B'), prio=1))
 D=pd.DataFrame(matchesD)
 
-# combine : prio croissant gagne (A timing < D déploiement < B uai-1:1) ; 1 site <-> 1 cap
-parts=[df for df in (A,D,B) if len(df)]
+# ---- E : (UAI, activité) unique des DEUX côtés — désambiguïse les UAI multi-comptes ----
+# Pour une activité donnée à un UAI : si UN SEUL prof réel l'a déployée ET UN SEUL compte site
+# l'a cliquée, avec déploiement après le clic (sens site->classe), on apparie. Capte les
+# plongeurs-directs là où D échoue (plusieurs comptes/profs à l'UAI mais une activité discriminante).
+dep_t={}   # (uai,mid) -> {teacher: first_deploy_dt}
+for r in stud.itertuples():
+    u=r.uai_teach.strip() or r.uai_el.strip()
+    if not u: continue
+    d=dep_t.setdefault((u,r.mathadata_id),{})
+    if r.teacher not in d or r.dt<d[r.teacher]: d[r.teacher]=r.dt
+clk_t={}   # (uai,mid) -> {site_id: first_click}
+for r in CK[CK['uai']!=''].itertuples():
+    d=clk_t.setdefault((r.uai,r.mid),{})
+    if r.site_id not in d or r.t<d[r.site_id]: d[r.site_id]=r.t
+matchesE=[]; WINP=pd.Timedelta(days=2); WINPOST=pd.Timedelta(days=120)
+for key,teach_d in dep_t.items():
+    clk_d=clk_t.get(key)
+    if not clk_d or len(teach_d)!=1 or len(clk_d)!=1: continue
+    tid,ddt=next(iter(teach_d.items())); sid,cdt=next(iter(clk_d.items()))
+    if (cdt-WINP)<=ddt<=(cdt+WINPOST):
+        matchesE.append(dict(site_id=sid, cap_acc=tid, uai=key[0], mid=key[1], click=cdt, conf='A', prio=1))
+E=pd.DataFrame(matchesE)
+if len(E): E=E.drop_duplicates(['site_id','cap_acc'])
+
+# combine : prio croissant gagne (A timing < D/E déploiement < B uai-1:1) ; 1 site <-> 1 cap
+parts=[df for df in (A,D,E,B) if len(df)]
 allm=pd.concat(parts,ignore_index=True) if parts else pd.DataFrame(columns=['site_id','cap_acc','uai','conf','prio'])
 allm=allm.sort_values('prio').drop_duplicates(['site_id']).drop_duplicates(['cap_acc'])
 

@@ -155,7 +155,7 @@ Parmi les 32 pluriannuels : **25/32** ont eu un démarrage modeste (<5 séances 
 
 ## VII. Limites & méthode
 
-- **Pont individuel ténu** : 67 paires amont↔aval fiables ; l'amont (2 715) et l'aval (224) restent deux photographies, pas un parcours individuel reconstitué pour tous.
+- **Pont individuel ténu** : 75 paires amont↔aval fiables ; l'amont (2 715) et l'aval (224) restent deux photographies, pas un parcours individuel reconstitué pour tous.
 - **Petits n** : plusieurs cellules (≥2 activités n=14, formés n=13, déc-fév n=19) sont **indicatives** ; rien d'important ne repose sur n<10.
 - **Associations bivariées**, pas un modèle ajusté ; les mesures d'intensité sont corrélées entre elles.
 - **Anonymat Capytale** : comportements inférés des logs ; la rétention suppose des identifiants de compte stables d'une année sur l'autre. Fenêtre : 2023-24 → 2025-26 (3 années scolaires ; le retour n'est observable que pour les profs des deux premières).
