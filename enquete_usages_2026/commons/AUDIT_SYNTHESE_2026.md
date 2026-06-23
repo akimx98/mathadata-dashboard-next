@@ -56,7 +56,7 @@ Légende verdict : ✅ exact · 🟡 exact mais grain/dénominateur à préciser
 | Webinaire ~30 % (18/61) | ✅ | Exact (32 % au grain prof). Auto-sélection des inscrits. |
 | Endogénéité 9/26 | ✅ | « Environ un tiers » de l'usage présentiel pré-existait (autres méthodes : 9/32, 10/27). |
 | Pré-service 20 %, 0 % d'usage | 🟡 → **corrigé (§C-4)** | À l'audit : 74/363 « pré-service » (ENS_25 52 + MEEF 13 + INSPÉ 9). **Réfuté par l'équipe** : ENS_25 = profs *en exercice* (formation ouverte ratée) → reclassé en masse dans le pipeline. **Pré-service réel = MEEF (~13, ~4 %)** ; `pre-service` de `facts_formation.json` = 13. |
-| 509 site-only · 75 % datés 2026 | 🟡 | Exact (380/509). Borne haute (46 appariements cachés). Récence en partie artefact de la fenêtre de tracking (27 nov.). |
+| 509 site-only · 75 % datés 2026 | 🟡 | Exact (380/509). Borne haute (67 appariements cachés). Récence en partie artefact de la fenêtre de tracking (27 nov.). |
 | ~148 cliqué Capytale sans classe | 🟡 | Exact. Borne basse (clic sous-capturé avant 27 nov.). |
 | 44 % Capytale-direct (77/174) | ✅ | Exact ; effectif 77→166 selon grain teach/el. |
 | 63 profs « n'utilisent qu'Intro IA » | 🟡 | Compte exact (grain prof ; 41 au grain étab.). « **ne voient jamais le catalogue** » = interprétation **non observable**. |

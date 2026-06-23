@@ -184,7 +184,7 @@ La **phase 1** est gagnée : prouver que MathAData s'utilise en vraie classe, et
 - **Fenêtre d'observation** : l'usage en classe s'éteint à la mi-juin (en 2024-25, dernière séance le **12 juin**, rien en juillet) — l'extraction du 19 juin 2026 capte donc l'année 2025-2026 **quasi intégralement**. Le retour, lui, ne s'observe que pour les profs ayant déjà eu une **année suivante** (entrés ≤ 2024-25, n=101) ; les entrants 2025-26 n'ont pas encore d'année d'après.
 - **Causalité** : les prédicteurs de profondeur (≥ 2 activités, ≥ 2 séances) sont **corrélés** au retour, partiellement **confondus** avec l'engagement initial — signaux précoces actionnables, pas causes prouvées. Mesurés **dès l'année 1** (les versions « carrière entière », circulaires, ont été corrigées au §IV).
 - **Circularité** signalée là où elle existe (profils pionnier/fidèle définis via le multi-années ; scénarios « durables »).
-- **Deux mondes sans clé commune** : site (nominatif) et Capytale (anonyme) reliés au grain établissement/cohorte ; appariement individuel inféré (46 paires).
+- **Deux mondes sans clé commune** : site (nominatif) et Capytale (anonyme) reliés au grain établissement/cohorte ; appariement individuel inféré (67 paires).
 - **Une « séance »** est un cluster reconstruit (médiane ~7 min) ; le **hub fondateur** (compte « 0 », 404 élèves sur 14 établissements) est isolé, jamais lu comme un prof local.
 - Petits effectifs (vrais demi-groupes n≈10, formation établissement-ciblée n=22 établissements) : **ordres de grandeur**, directions robustes.
 
