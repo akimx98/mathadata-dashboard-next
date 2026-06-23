@@ -31,6 +31,8 @@ Les variables dérivées par prof naissent dans **un seul** module :
 → produit `transverse/data/profiles_teacher_year.csv` (prof × année), `profiles_teacher.csv` (attributs
 figés + rétention), `facts_profiles.json` (agrégats = source de vérité des chiffres du dashboard Flux).
 **Toute nouvelle variable « profil » s'ajoute là**, pas dans un script ad hoc du scratchpad.
+`reconcile_facts.py` → `facts_reconciliation.json` recalcule les figures récurrentes des rapports
+sur la base canonique (+ écarts ≥5/≥10) : c'est la **fiche de référence chiffrée** pour vérifier/citer.
 
 ## 3. Les deux mondes (le piège structurant)
 
@@ -54,6 +56,10 @@ mondes est **estimé**, jamais mesuré — le dire explicitement.
 - **Circularité rétention.** La réutilisation (intensité) est **strictement intra-annuelle**. Compter
   une activité/séance d'une autre année rend « réutiliser ⇒ revenir » tautologique. Le retour se
   mesure **entre** années, séparément. (Cf. l'audit qui a invalidé le « 76 % vs 16 % » carrière.)
+- **Deux seuils « classe », à ne jamais confondre** (glossaire §3) : **usage-classe = ≥ 5 él.**
+  (seuil canonique, 176 profs — gouverne profondeur/rétention/funnels) vs **séance riche / classe
+  entière = ≥ 10 él.** (mode-cible de qualité, 150 profs — KPI/prédicteur, pas un seuil d'entonnoir) ;
+  **grande classe = ≥ 20** (82). Un « ≥ 10 » dans un rapport = *séance riche*, jamais « la classe ».
 - **Hub fondateur** `cfcd2084…` (MD5 "0") : 404 élèves sur 14 établissements → **isoler**, jamais
   un prof local. **Compte démo** `c81e728d…` (MD5 "2") → **exclure**.
 - **`ancienne_vague`** (147 formés avant le système de codes du 15/01/26) : type & date **inconnus**,
@@ -99,3 +105,51 @@ relecture. Messages de commit en français, scope `(enquête)`.
 Historiquement « volet 1 / volet 2 », mais le bon cadre est : **une synthèse transversale + des
 analyses qui répondent à des questions différentes** (mêmes définitions canoniques, mêmes données) —
 voir `enquete_usages_2026/README.md`. À lire en premier : `transverse/SYNTHESE_FINALE_2026.md`.
+
+## 10. Répondre à une question d'analyse (mode d'emploi)
+
+Quand on te pose une question sur les données, **dans l'ordre** :
+1. **Lis le glossaire** (`transverse/GLOSSAIRE.md`) — vérifie le sens exact des termes en jeu
+   (classe ≥5 vs séance riche ≥10, profondeur, canal, rétention, réutilisation intra-annuelle).
+2. **Cherche d'abord la réponse dans les `facts_*.json`** (sources de vérité chiffrées) et les
+   tables `data/` — **ne recalcule pas** ce qui existe déjà. Voir la carte §11.
+3. **Si la réponse n'existe pas**, calcule-la **depuis les tables canoniques** (`profiles_*`,
+   `usages_enriched`, `sessions`, `teachers`), **jamais** en redéfinissant un terme. Une analyse
+   jetable → scratchpad. Une variable réutilisable → **ajoute-la à `build_profiles.py`** et relance
+   (ne crée pas un n-ième script ad hoc).
+4. **Cite toujours la base** (seuil, dénominateur, cohorte, année) — c'est là que naissent les
+   divergences. Précise « usage-classe ≥5 » vs « séance riche ≥10 », « an-1 seulement », « cohorte
+   éligible n=77 », etc.
+5. **Ne change un chiffre publié que via la source** (rapport `.md` / dashboard `.html` du repo),
+   puis régénère gh-pages + artefact (§6). Jamais d'édition directe d'une copie publiée.
+6. **Garde-fous** : population = exclure démo (MD5 "2") et isoler le hub fondateur (MD5 "0") ;
+   profs = `distinct(teacher)` sur lignes `role=student` ; tout lien site↔Capytale est **estimé**.
+
+## 11. Carte des données (où trouver quoi)
+
+**Tables canoniques** (1 ligne = …) :
+
+| Fichier | Grain | Sert à |
+|---|---|---|
+| `usage-capytale/data/usages_enriched.csv` | 1 affectation Capytale (clone) | base brute enrichie (rôle, activité, UAI, `sy`, dates, `session_id`) |
+| `usage-capytale/data/sessions.csv` | 1 séance reconstruite | tailles de classe (`n_eleves`), durées, rythmes |
+| `usage-capytale/data/teachers.csv` | 1 prof (md5) | comportement test/enseigne, UAI, années actives/enseignées |
+| `usage-capytale/data/establishments.csv` | 1 UAI | géo/IPS/secteur, agrégats établissement |
+| `transverse/data/profiles_teacher.csv` | 1 prof (md5[:8]) | **★ profil canonique** : niveau, canal, formation×timing, rétention |
+| `transverse/data/profiles_teacher_year.csv` | 1 (prof × année) | **★ profondeur par année** (escalier 0-5), classes/occasions |
+| `site-vers-classe/data/match_candidates.csv` | 1 paire site↔Capytale (75) | appariement individuel (sans PII : `S####` ↔ `md5[:8]`) |
+| `site-vers-classe/data/capytale_by_uai_*.csv` | 1 UAI | usage Capytale par établissement (deux portes) |
+| `transverse/data/master_teachers.csv`, `scenarios_teachers.csv` | 1 prof | substrats typologie (k-means) & séances |
+
+**Faits chiffrés** (`*.json`, sources de vérité — lire, pas recalculer) :
+
+| Fichier | Contenu |
+|---|---|
+| `transverse/data/facts_profiles.json` | **★ profils/flux** : canal, profondeur, rétention (n=77→34 %), trajectoires |
+| `transverse/data/facts_reconciliation.json` | **★ fiche de réconciliation** : toutes les figures récurrentes + écarts ≥5/≥10 |
+| `usage-capytale/data/facts.json` | volet 1 : croissance, comportements, géo, IPS, tailles |
+| `site-vers-classe/data/facts_cross.json`, `facts_formation.json` | croisement site×Capytale, effet formation, cohortes |
+| `transverse/data/facts_typologie.json`, `facts_investigation.json`, `facts_scenarios.json` | typologie & séances |
+
+**Entrées brutes** : `public/data/capytale_fresh_20260619.csv` (versionné) ; snapshot Payload
+**local & gitignore** (`../mathadata-website/private/payload-snapshots/2026-06-20T10-37-24-905Z/`).
