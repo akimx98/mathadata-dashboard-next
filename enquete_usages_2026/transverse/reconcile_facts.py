@@ -5,7 +5,11 @@ Sortie : transverse/data/facts_reconciliation.json (référence pour réconcilie
 import pandas as pd, numpy as np, json
 from datetime import timedelta
 
-ROOT="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next"
+import os as _os
+_ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
+_RT=_os.path.dirname(_ENQ)                                           # racine du repo
+_WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+ROOT=_RT
 V1=f"{ROOT}/enquete_usages_2026/usage-capytale/data"
 T =f"{ROOT}/enquete_usages_2026/transverse/data"
 

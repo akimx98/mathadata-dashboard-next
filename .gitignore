@@ -51,3 +51,9 @@ next-env.d.ts
 
 # Données nominatives (PII) — outreach, jamais committé
 enquete_usages_2026/private/
+
+# tables de travail locales de l’enquête (PII-adjacentes, jamais committées)
+enquete_usages_2026/_local/
+
+__pycache__/
+*.pyc

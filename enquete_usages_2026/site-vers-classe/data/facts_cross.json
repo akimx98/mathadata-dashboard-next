@@ -5,8 +5,8 @@
   "full_accounts": 1712,
   "formed_total": 631,
   "formed_presentiel": 363,
-  "formed_webdecouv": 0,
-  "formed_type_unknown": 268,
+  "formed_webinaire": 121,
+  "formed_type_unknown": 147,
   "with_uai": 800,
   "clicked_capytale": 337,
   "tracking_start": "2025-11-27"
@@ -124,7 +124,7 @@
   "site_uai_with_student_usage": 93,
   "site_uai_no_capytale_footprint": 509,
   "pct_site_uai_no_footprint": 82.6,
-  "note": "Grain etablissement (UAI). Capytale-direct = etab a usage Capytale sans compte site declarant cet UAI : borne basse 77 (uai_teach), borne haute 166 (uai_el). site_uai_with_capytale_footprint (107) + site_uai_no_capytale_footprint (511) = site_uai_total (618)."
+  "note": "Grain etablissement (UAI). Capytale-direct = etab a usage Capytale sans compte site declarant cet UAI : borne basse 77 (uai_teach), borne haute 166 (uai_el). site_uai_with_capytale_footprint (107) + site_uai_no_capytale_footprint (509) = site_uai_total (616)."
  },
  "formation_cohorts": [
   {

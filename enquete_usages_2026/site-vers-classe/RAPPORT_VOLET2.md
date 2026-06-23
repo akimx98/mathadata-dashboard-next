@@ -129,7 +129,7 @@ Trois lectures :
 | Distanciel / webinaire | 17 | 121 | 61 | 18 | 30 % |
 | Ancienne vague | 2 | 145 | 31 | 8 | 26 % |
 | **Académique de masse** *(IREM, Labomaths, journées — 1 prof dispersé)* | 12 | 187 | **126** | 13 | **10 %** |
-| Pré-service *(ENS_25, MEEF INSPÉ)* | 2 | 65 | 5 | 0 | **0 %** |
+| Sans usage : ENS_25 *(formation ouverte ratée, profs en exercice)* + MEEF INSPÉ *(pré-service strict)* | 2 | 65 | 5 | 0 | **0 %** |
 
 L'écart est d'un **facteur ~6** (59 % vs 10 %), alors que établissement-ciblée et masse sont **toutes deux du présentiel** : la moyenne présentielle agrégée (23,4 %) mélange ces deux régimes. *Toutes* les formations de masse sont quasi nulles (Narbonne 1/20, Nîmes 0/9, Labomaths Aix-Marseille 0/14, IREM Dijon 1/17), *toutes* les concentrées ont de vraies classes — et certaines massivement (la seule cohorte **Lille 2024** = 841 élèves : Pasteur Lille 309, Vinci Calais 410, Woillez Montreuil 122).
 

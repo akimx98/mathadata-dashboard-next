@@ -5,8 +5,12 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib import font_manager
-OUT="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/site-vers-classe/charts"
-DATA="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/site-vers-classe/data"
+import os as _os
+_ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
+_RT=_os.path.dirname(_ENQ)                                           # racine du repo
+_WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+OUT=f"{_ENQ}/site-vers-classe/charts"
+DATA=f"{_ENQ}/site-vers-classe/data"
 os.makedirs(OUT,exist_ok=True)
 F=json.load(open(f"{DATA}/facts_cross.json"))
 INK='#10243E'; BLUE='#2563EB'; TEAL='#0E9488'; AMBER='#D98324'; ROSE='#D6455A'; SLATE='#64748B'; PAPER='#FBFAF7'
@@ -17,7 +21,7 @@ def save(fig,name):
 
 # 1. PIPELINE FUNNEL (spine)
 ov=F['overview']
-v1=json.load(open("/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/usage-capytale/data/facts_teachers.json"))
+v1=json.load(open(f"{_ENQ}/usage-capytale/data/facts_teachers.json"))
 stages=[('Comptes crees',ov['accounts_total'],SLATE),
         ('Comptes complets',ov['full_accounts'],BLUE),
         ('Formes',ov['formed_total'],TEAL),

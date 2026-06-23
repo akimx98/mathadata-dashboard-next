@@ -1,121 +1,135 @@
 {
-  "downstream_archetypes": {
-    "pionnier_intensif": {
-      "n": 38,
-      "pct": 17.0,
-      "med_eleves": 53.5,
-      "med_sessions": 6.5,
-      "med_activ": 2.0,
-      "pct_tested": 55.0,
-      "pct_multiyear": 50.0,
-      "med_ips": 112.0,
-      "pupils": 2406
-    },
-    "fidele_pluriannuel": {
-      "n": 13,
-      "pct": 5.8,
-      "med_eleves": 33.0,
-      "med_sessions": 3.0,
-      "med_activ": 1.0,
-      "pct_tested": 38.0,
-      "pct_multiyear": 100.0,
-      "med_ips": 111.0,
-      "pupils": 474
-    },
-    "explorateur_multi": {
-      "n": 20,
-      "pct": 8.9,
-      "med_eleves": 24.5,
-      "med_sessions": 3.0,
-      "med_activ": 2.0,
-      "pct_tested": 45.0,
-      "pct_multiyear": 0.0,
-      "med_ips": 111.0,
-      "pupils": 534
-    },
-    "deployeur_classe": {
-      "n": 105,
-      "pct": 46.9,
-      "med_eleves": 20.0,
-      "med_sessions": 1.0,
-      "med_activ": 1.0,
-      "pct_tested": 40.0,
-      "pct_multiyear": 0.0,
-      "med_ips": 111.0,
-      "pupils": 2384
-    },
-    "petit_groupe": {
-      "n": 48,
-      "pct": 21.4,
-      "med_eleves": 3.5,
-      "med_sessions": 1.0,
-      "med_activ": 1.0,
-      "pct_tested": 29.0,
-      "pct_multiyear": 0.0,
-      "med_ips": 102.0,
-      "pupils": 172
-    }
+ "downstream_archetypes": {
+  "pionnier_intensif": {
+   "n": 38,
+   "pct": 17.0,
+   "med_eleves": 53.5,
+   "med_sessions": 6.5,
+   "med_activ": 2.0,
+   "pct_tested": 55.0,
+   "pct_multiyear": 50.0,
+   "med_ips": 112.0,
+   "pupils": 2406
   },
-  "downstream_order": [
-    "pionnier_intensif",
-    "fidele_pluriannuel",
-    "explorateur_multi",
-    "deployeur_classe",
-    "petit_groupe"
-  ],
-  "retention": {
-    "taught_both": 26,
-    "churned_2425": 62,
-    "new_2526": 125,
-    "only_2324": 11,
-    "yoy_retention_pct": 30.0,
-    "new_share_2526_pct": 83.0
+  "fidele_pluriannuel": {
+   "n": 13,
+   "pct": 5.8,
+   "med_eleves": 33.0,
+   "med_sessions": 3.0,
+   "med_activ": 1.0,
+   "pct_tested": 38.0,
+   "pct_multiyear": 100.0,
+   "med_ips": 111.0,
+   "pupils": 474
   },
-  "behavior": {
-    "enseigné_sans_test": 133,
-    "testé_puis_enseigné": 52,
-    "enseigné_puis_testé": 39
+  "explorateur_multi": {
+   "n": 20,
+   "pct": 8.9,
+   "med_eleves": 24.5,
+   "med_sessions": 3.0,
+   "med_activ": 2.0,
+   "pct_tested": 45.0,
+   "pct_multiyear": 0.0,
+   "med_ips": 111.0,
+   "pupils": 534
   },
-  "engaged_layers": {
-    "a_enseigne": 224,
-    "testeur_distributeur": 37,
-    "stagiaire_seul": 140
+  "deployeur_classe": {
+   "n": 105,
+   "pct": 46.9,
+   "med_eleves": 20.0,
+   "med_sessions": 1.0,
+   "med_activ": 1.0,
+   "pct_tested": 40.0,
+   "pct_multiyear": 0.0,
+   "med_ips": 111.0,
+   "pupils": 2384
   },
-  "site_segments": {
-    "clic_capytale": {
-      "n": 337,
-      "pct": 12.4,
-      "pct_formed": 45.0
-    },
-    "explorateur_ressources": {
-      "n": 271,
-      "pct": 10.0,
-      "pct_formed": 24.0
-    },
-    "visiteur_leger": {
-      "n": 195,
-      "pct": 7.2,
-      "pct_formed": 24.0
-    },
-    "newsletter_seul": {
-      "n": 1003,
-      "pct": 36.9,
-      "pct_formed": 19.0
-    },
-    "dormant": {
-      "n": 909,
-      "pct": 33.5,
-      "pct_formed": 20.0
-    }
+  "petit_groupe": {
+   "n": 48,
+   "pct": 21.4,
+   "med_eleves": 3.5,
+   "med_sessions": 1.0,
+   "med_activ": 1.0,
+   "pct_tested": 29.0,
+   "pct_multiyear": 0.0,
+   "med_ips": 102.0,
+   "pupils": 172
+  }
+ },
+ "downstream_order": [
+  "pionnier_intensif",
+  "fidele_pluriannuel",
+  "explorateur_multi",
+  "deployeur_classe",
+  "petit_groupe"
+ ],
+ "retention": {
+  "taught_both": 26,
+  "churned_2425": 62,
+  "new_2526": 125,
+  "only_2324": 11,
+  "yoy_retention_pct": 30.0,
+  "new_share_2526_pct": 83.0
+ },
+ "behavior": {
+  "enseigné_sans_test": 133,
+  "testé_puis_enseigné": 52,
+  "enseigné_puis_testé": 39
+ },
+ "engaged_layers": {
+  "a_enseigne": 224,
+  "testeur_distributeur": 37,
+  "stagiaire_seul": 140
+ },
+ "site_segments": {
+  "clic_capytale": {
+   "n": 337,
+   "pct": 12.4,
+   "pct_formed": 45.0
   },
-  "site_order": [
-    "clic_capytale",
-    "explorateur_ressources",
-    "visiteur_leger",
-    "newsletter_seul",
-    "dormant"
-  ],
-  "n_taught": 224,
-  "n_pupils": 5970,
-  "median_class_size": 20.0
+  "explorateur_ressources": {
+   "n": 271,
+   "pct": 10.0,
+   "pct_formed": 24.0
+  },
+  "visiteur_leger": {
+   "n": 195,
+   "pct": 7.2,
+   "pct_formed": 24.0
+  },
+  "newsletter_seul": {
+   "n": 1003,
+   "pct": 36.9,
+   "pct_formed": 19.0
+  },
+  "dormant": {
+   "n": 909,
+   "pct": 33.5,
+   "pct_formed": 20.0
+  }
+ },
+ "site_order": [
+  "clic_capytale",
+  "explorateur_ressources",
+  "visiteur_leger",
+  "newsletter_seul",
+  "dormant"
+ ],
+ "n_taught": 223,
+ "n_pupils": 5542,
+ "median_class_size": 5.0,
+ "archetype_method": "regles_deterministes (PAS un k-means)",
+ "archetype_counts": {
+  "deployeur_classe": 105,
+  "petit_groupe": 48,
+  "pionnier_intensif": 37,
+  "explorateur_multi": 20,
+  "fidele_pluriannuel": 13
+ },
+ "retention_canonical": {
+  "base": "usage-classe >=5 el., cohorte eligible, hub exclu (cf. GLOSSAIRE)",
+  "eligibles": 77,
+  "revenus": 26,
+  "taux": 33.8
+ }
 }

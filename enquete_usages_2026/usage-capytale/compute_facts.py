@@ -1,8 +1,18 @@
 #!/usr/bin/env python3
 """Calcule l'ensemble des faits analytiques -> facts.json. Source unique de vérité chiffrée."""
-import pandas as pd, numpy as np, json
-D="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/usage-capytale/data"
-BASE="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/public/data"
+import pandas as pd, numpy as np, json, math
+def _san(o):
+    """NaN/inf -> None pour produire du JSON strict (json.dump écrirait sinon `NaN`, invalide)."""
+    if isinstance(o,float) and (math.isnan(o) or math.isinf(o)): return None
+    if isinstance(o,dict): return {k:_san(v) for k,v in o.items()}
+    if isinstance(o,(list,tuple)): return [_san(v) for v in o]
+    return o
+import os as _os
+_ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
+_RT=_os.path.dirname(_ENQ)                                           # racine du repo
+_WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+D=f"{_ENQ}/usage-capytale/data"
+BASE=f"{_RT}/public/data"
 
 df=pd.read_csv(f"{D}/usages_enriched.csv", dtype=str, keep_default_na=False)
 te=pd.read_csv(f"{D}/teachers.csv")
@@ -243,7 +253,7 @@ cl['dow']=cl['start_dt'].dt.dayofweek
 F['temporal']['classes_by_dow']={int(m):int(n) for m,n in cl.groupby('dow').size().items()}
 
 with open(f"{D}/facts.json","w") as f:
-    json.dump(F,f,ensure_ascii=False,indent=1,default=str)
+    json.dump(_san(F),f,ensure_ascii=False,indent=1,default=str,allow_nan=False)
 print("facts.json écrit.")
 print(json.dumps({k:(v if not isinstance(v,dict) else list(v.keys())) for k,v in F.items()},ensure_ascii=False,indent=1))
 print("\nGROWTH usages_by_sy:", F['growth']['usages_by_sy'])

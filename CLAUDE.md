@@ -71,7 +71,7 @@ mondes est **estimé**, jamais mesuré — le dire explicitement.
 
 ```
 usage-capytale/build_canonical.py      # Capytale → usages_enriched, sessions, teachers, establishments
-site-vers-classe/build_payload_canonical.py  # Payload (LOCAL) → table site id-only (→ scratchpad) + capytale_by_uai
+site-vers-classe/build_payload_canonical.py  # Payload (LOCAL, snapshot) → table site id-only (→ enquete_usages_2026/_local/, gitignore) + capytale_by_uai
 site-vers-classe/match_individuals.py    # appariement site↔Capytale → match_candidates.csv (75 paires, sans PII)
 transverse/build_profiles.py      # ★ couche canonique profils (profondeur/canal/formation/rétention)
 transverse/build_master.py, build_scenarios.py  # typologie & séances
@@ -92,7 +92,7 @@ e-mail non-`mathadata.fr` apparaît dans une source.
 - **Aucun** nom / prénom / e-mail dans le repo git **ni** dans les artefacts publiés. Pseudonymes
   `S####` (site) / `md5[:8]` (Capytale), grain établissement/commune.
 - Le snapshot Payload reste **local & gitignore**, **jamais committé**. Les fichiers de travail
-  nominatifs (ex. `scratchpad/match_nominatif.csv`, docs `private/`) **ne sortent jamais** du local.
+  nominatifs (ex. `enquete_usages_2026/_local/match_nominatif.csv`, docs `private/`) **ne sortent jamais** du local (dossier `_local/` gitignore).
 - Jamais de ré-identification.
 
 ## 8. Git (préférence du mainteneur)
@@ -139,7 +139,7 @@ Quand on te pose une question sur les données, **dans l'ordre** :
 | `transverse/data/profiles_teacher_year.csv` | 1 (prof × année) | **★ profondeur par année** (escalier 0-5), classes/occasions |
 | `site-vers-classe/data/match_candidates.csv` | 1 paire site↔Capytale (75) | appariement individuel (sans PII : `S####` ↔ `md5[:8]`) |
 | `site-vers-classe/data/capytale_by_uai_*.csv` | 1 UAI | usage Capytale par établissement (deux portes) |
-| `transverse/data/master_teachers.csv`, `scenarios_teachers.csv` | 1 prof | substrats typologie (k-means) & séances |
+| `transverse/data/master_teachers.csv`, `scenarios_teachers.csv` | 1 prof | substrats typologie (archétypes par règles déterministes) & séances |
 
 **Faits chiffrés** (`*.json`, sources de vérité — lire, pas recalculer) :
 

@@ -23,9 +23,13 @@ ACAD_DISPLAY={'creteil':'Créteil','versailles':'Versailles','lille':'Lille','pa
  'polynesiefrancaise':'Polynésie française','guadeloupe':'Guadeloupe','lareunion':'La Réunion',
  'martinique':'Martinique','guyane':'Guyane','mayotte':'Mayotte','corse':'Corse','wallisetfutuna':'Wallis-et-Futuna'}
 def acad_disp(a): k=norm_acad(a); return ACAD_DISPLAY.get(k,a.strip() if isinstance(a,str) else '')
-BASE="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/public/data"
-OUT ="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/site-vers-classe/data"
-SCRATCH="/private/tmp/claude-502/-Users-akim-Documents-MathAData-Git-mathadata-dashboard-next/49f4f306-c2bb-43a0-af8f-f1b5ce99e908/scratchpad"
+import os as _os
+_ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
+_RT=_os.path.dirname(_ENQ)                                           # racine du repo
+_WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+BASE=f"{_RT}/public/data"
+OUT =f"{_ENQ}/site-vers-classe/data"
+SCRATCH=_os.environ.get("MATHADATA_LOCAL", f"{_ENQ}/_local")  # ex-scratch session -> dossier local stable (gitignore)
 DEMO='c81e728d9d4c2f636f067f89cc14862c'; PIO='cfcd208495d565ef66e7dff9f98764da'
 TRACK_START='2025-11-27'
 
@@ -63,8 +67,8 @@ facts['overview']=dict(
   full_accounts=int((W['newsletter_only']!=True).sum()),
   formed_total=int(W['is_formed'].sum()),
   formed_presentiel=int((W['ftype']=='presentiel').sum()),
-  formed_webdecouv=int((W['ftype']=='webdecouv').sum()),
-  formed_type_unknown=int(W['is_formed'].sum()-((W['ftype']=='presentiel').sum()+(W['ftype']=='webdecouv').sum())),
+  formed_webinaire=int((W['ftype']=='webinaire').sum()),   # FIX (24/06) : la couche amont produit 'webinaire' (webdecouv+webinaire), pas 'webdecouv' → valait 0 à tort
+  formed_type_unknown=int(W['is_formed'].sum()-((W['ftype']=='presentiel').sum()+(W['ftype']=='webinaire').sum())),
   with_uai=int((W['uai']!='').sum()),
   clicked_capytale=int(W['clicked_cap'].sum()),
   tracking_start=TRACK_START,
@@ -130,11 +134,14 @@ facts['two_doors']=dict(
   capytale_direct_high_bound=len(cap_direct_high),       # borne haute (grain uai_el)
   pct_capytale_direct=rate(len(cap_teach_no_site),len(cap_uai_teach)),
   site_uai_total=len(site_uai),
-  site_uai_with_capytale_footprint=len(site_with_footprint),  # 107 ; 107+511=618 coherent
-  site_uai_with_student_usage=len(site_with_student),         # 93 (trace eleve stricte)
+  site_uai_with_capytale_footprint=len(site_with_footprint),  # avec trace Capytale (teach OU el)
+  site_uai_with_student_usage=len(site_with_student),         # trace eleve stricte
   site_uai_no_capytale_footprint=len(site_no_cap),            # declares mais aucune trace Capytale
   pct_site_uai_no_footprint=rate(len(site_no_cap),len(site_uai)),
-  note="Grain etablissement (UAI). Capytale-direct = etab a usage Capytale sans compte site declarant cet UAI : borne basse 77 (uai_teach), borne haute 166 (uai_el). site_uai_with_capytale_footprint (107) + site_uai_no_capytale_footprint (511) = site_uai_total (618)."
+  note=(f"Grain etablissement (UAI). Capytale-direct = etab a usage Capytale sans compte site declarant cet UAI : "
+        f"borne basse {len(cap_teach_no_site)} (uai_teach), borne haute {len(cap_direct_high)} (uai_el). "
+        f"site_uai_with_capytale_footprint ({len(site_with_footprint)}) + site_uai_no_capytale_footprint "
+        f"({len(site_no_cap)}) = site_uai_total ({len(site_uai)}).")
 )
 
 # ---------- 5. COHORTES DE FORMATION ----------

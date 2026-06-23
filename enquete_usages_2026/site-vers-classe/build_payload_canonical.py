@@ -16,10 +16,14 @@ import json, re, csv, os
 import pandas as pd, numpy as np
 from datetime import datetime
 
-SNAP="/Users/akim/Documents/MathAData_Git/mathadata-website/private/payload-snapshots/2026-06-20T10-37-24-905Z"
-BASE="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/public/data"
-OUT ="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/site-vers-classe/data"
-SCRATCH="/private/tmp/claude-502/-Users-akim-Documents-MathAData-Git-mathadata-dashboard-next/49f4f306-c2bb-43a0-af8f-f1b5ce99e908/scratchpad"
+import os as _os
+_ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
+_RT=_os.path.dirname(_ENQ)                                           # racine du repo
+_WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+SNAP=_os.environ.get("MATHADATA_SNAPSHOT", f"{_WS}/mathadata-website/private/payload-snapshots/2026-06-20T10-37-24-905Z")
+BASE=f"{_RT}/public/data"
+OUT =f"{_ENQ}/site-vers-classe/data"
+SCRATCH=_os.environ.get("MATHADATA_LOCAL", f"{_ENQ}/_local")  # ex-scratch session -> dossier local stable (gitignore)
 os.makedirs(SCRATCH, exist_ok=True); os.makedirs(OUT, exist_ok=True)
 DEMO='c81e728d9d4c2f636f067f89cc14862c'; PIO='cfcd208495d565ef66e7dff9f98764da'
 SENTINEL='1984-01-01'

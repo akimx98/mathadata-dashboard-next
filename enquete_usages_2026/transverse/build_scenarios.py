@@ -5,7 +5,11 @@ marathon, one-shot) + sub-cohort tags. Feeds the scenario investigation.
 All teacher/pupil ids are hashes; output keeps pseudonyms + establishment grain only.
 """
 import pandas as pd, numpy as np, json, os
-BASE="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026"
+import os as _os
+_ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
+_RT=_os.path.dirname(_ENQ)                                           # racine du repo
+_WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+BASE=_ENQ
 OUT=f"{BASE}/transverse/data"
 
 S=pd.read_csv(f"{BASE}/usage-capytale/data/sessions.csv")

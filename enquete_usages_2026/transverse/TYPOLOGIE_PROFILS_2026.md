@@ -3,13 +3,13 @@
 
 **Date** : 20 juin 2026
 **Corpus** : 2 715 comptes site (amont, nominatif) · 401 comptes Capytale engagés dont 224 ont enseigné · 5 854 élèves distincts
-**Méthode** : clustering k-means (k=5) → 5 archétypes ; puis enquête croisée (10 questions, chacune testée puis **vérifiée de façon adversariale** par un second analyste indépendant) reliant les profils à la rétention, au parcours amont, à la formation, à la géographie et aux trajectoires pluriannuelles.
+**Méthode** : **règles déterministes** (5 archétypes par seuils explicites, cf. `build_master.py` — *pas* un k-means) → 5 archétypes ; puis enquête croisée (10 questions, chacune testée puis **vérifiée de façon adversariale** par un second analyste indépendant) reliant les profils à la rétention, au parcours amont, à la formation, à la géographie et aux trajectoires pluriannuelles.
 
 > Cette note prolonge et **corrige** [`ANALYSE_PATTERNS_USAGE.md`](../../ANALYSE_PATTERNS_USAGE.md) (4 nov. 2025). Elle ne se contente pas de décrire les profils : elle s'en sert comme **grille de lecture** pour répondre à deux questions — *qui atteint la classe ?* et *pourquoi la plupart ne reviennent-ils pas ?*
 >
 > **Pendant** : [`RAPPORT_SEANCES_2026.md`](RAPPORT_SEANCES_2026.md) — « la séance » (comment l'outil se vit en classe : scénarios, rythmes, cas). Ici « le prof ».
 
-> **Réconciliation glossaire (2026-06-23).** Les 5 archétypes ci-dessous viennent d'un **clustering k-means**, une lecture **indépendante** et complémentaire de l'escalier de profondeur canonique (cf. [`GLOSSAIRE.md`](GLOSSAIRE.md)). Conventions partagées : **usage-classe** = ≥ 5 él. (176 profs) ; **séance riche / classe entière** = ≥ 10 él. (150) ; **grande classe** = ≥ 20 él. (82) ; **réutilisation** = intra-annuelle stricte ; **retour** = entre années (consécutif vs réactivation). Rétention de référence (base *usage-classe* ≥ 5, cohorte éligible **n = 77**) : **34 %** ; **réutiliser en an-1** double le retour (**57 % vs 24 %**).
+> **Réconciliation glossaire (2026-06-23).** Les 5 archétypes ci-dessous viennent d'un **jeu de règles déterministes** (seuils explicites, pas un k-means), une lecture **indépendante** et complémentaire de l'escalier de profondeur canonique (cf. [`GLOSSAIRE.md`](GLOSSAIRE.md)). Conventions partagées : **usage-classe** = ≥ 5 él. (176 profs) ; **séance riche / classe entière** = ≥ 10 él. (150) ; **grande classe** = ≥ 20 él. (82) ; **réutilisation** = intra-annuelle stricte ; **retour** = entre années (consécutif vs réactivation). Rétention de référence (base *usage-classe* ≥ 5, cohorte éligible **n = 77**) : **34 %** ; **réutiliser en an-1** double le retour (**57 % vs 24 %**).
 
 ---
 
@@ -35,7 +35,7 @@
 
 ## I. Les cinq profils (la carte)
 
-Le clustering sépare nettement les 224 enseignants en cinq archétypes, sur les axes intensité × durabilité × largeur de catalogue.
+Les règles séparent les 223 enseignants (hub fondateur isolé) en cinq archétypes, sur les axes intensité × durabilité × largeur de catalogue.
 
 | Archétype | n | % | Élèves¹ | Ce qui le définit |
 |---|---|---|---|---|

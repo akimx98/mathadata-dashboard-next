@@ -31,12 +31,16 @@ Sécurité : aucune sortie ne contient nom/prénom/e-mail. Le prof est pseudonym
 import pandas as pd, numpy as np, json, os
 from datetime import timedelta
 
-ROOT = "/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next"
+import os as _os
+_ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
+_RT=_os.path.dirname(_ENQ)                                           # racine du repo
+_WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+ROOT = _RT
 V1   = f"{ROOT}/enquete_usages_2026/usage-capytale/data"
 V2   = f"{ROOT}/enquete_usages_2026/site-vers-classe/data"
 OUT  = f"{ROOT}/enquete_usages_2026/transverse/data"
-SCRATCH = "/private/tmp/claude-502/-Users-akim-Documents-MathAData-Git-mathadata-dashboard-next/49f4f306-c2bb-43a0-af8f-f1b5ce99e908/scratchpad"
-SNAP = "/Users/akim/Documents/MathAData_Git/mathadata-website/private/payload-snapshots/2026-06-20T10-37-24-905Z"
+SCRATCH=_os.environ.get("MATHADATA_LOCAL", f"{_ENQ}/_local")  # ex-scratch session -> dossier local stable (gitignore)
+SNAP = _os.environ.get("MATHADATA_SNAPSHOT", f"{_WS}/mathadata-website/private/payload-snapshots/2026-06-20T10-37-24-905Z")
 os.makedirs(OUT, exist_ok=True)
 
 DEMO = 'c81e728d9d4c2f636f067f89cc14862c'   # compte démo — EXCLU

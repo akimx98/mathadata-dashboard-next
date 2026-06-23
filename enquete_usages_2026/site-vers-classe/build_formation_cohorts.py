@@ -8,12 +8,22 @@ Apports vs v1 :
 - endogeneite mesuree avec la VRAIE date de formation (usage Capytale anterieur vs posterieur) ;
 - intention declaree (redemption.intention.modules) vs activite Capytale reellement utilisee.
 """
-import json, csv, os
+import json, csv, os, math
 import pandas as pd, numpy as np
 from datetime import datetime
-SNAP="/Users/akim/Documents/MathAData_Git/mathadata-website/private/payload-snapshots/2026-06-20T10-37-24-905Z"
-BASE="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/public/data"
-OUT ="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/site-vers-classe/data"
+def _san(o):
+    """NaN/inf -> None pour produire du JSON strict."""
+    if isinstance(o,float) and (math.isnan(o) or math.isinf(o)): return None
+    if isinstance(o,dict): return {k:_san(v) for k,v in o.items()}
+    if isinstance(o,(list,tuple)): return [_san(v) for v in o]
+    return o
+import os as _os
+_ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
+_RT=_os.path.dirname(_ENQ)                                           # racine du repo
+_WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+SNAP=_os.environ.get("MATHADATA_SNAPSHOT", f"{_WS}/mathadata-website/private/payload-snapshots/2026-06-20T10-37-24-905Z")
+BASE=f"{_RT}/public/data"
+OUT =f"{_ENQ}/site-vers-classe/data"
 DEMO='c81e728d9d4c2f636f067f89cc14862c'
 def dt(s): return pd.to_datetime(s,utc=True,errors='coerce')
 
@@ -160,5 +170,5 @@ F['nature_typology']={n:dict(cohorts=len(nat_coh[n]),profs=nat_profs[n],etab_dis
     for n in ['etablissement-ciblee','distanciel-webinaire','ancienne_vague','academique-de-masse','pre-service']}
 F['nature_note']="Grain ETABLISSEMENT distinct (un lycee a plusieurs profs formes compte 1 fois) ; 'a une classe' = au moins 1 usage eleve Capytale sur l'historique complet (>=1 eleve = a deploye ; distinct du seuil KPI 'vraie classe >=10'). Au grain prof, etablissement-ciblee ~67% (surestime). Base petite (22 etabs ciblee) -> ordre de grandeur, mais classification CONFIRMEE par l'equipe (Gif, Lille 2024, Calais lycee pro, Amiens = vraies ciblees). Pre-service STRICT = master MEEF (sans classe, ~13) ; ENS_25 (52 profs, profs en exercice, formation ouverte non ciblee) est classee academique-de-masse -> son 0% est un echec reel, pas un artefact."
 
-json.dump(F,open(f"{OUT}/facts_formation.json","w"),ensure_ascii=False,indent=1,default=str)
+json.dump(_san(F),open(f"{OUT}/facts_formation.json","w"),ensure_ascii=False,indent=1,default=str,allow_nan=False)
 print(json.dumps(F,ensure_ascii=False,indent=1,default=str))

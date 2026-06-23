@@ -6,8 +6,12 @@ pseudonymous in source); output keeps establishment-grain context (uai/ips/acad)
 is non-PII. No name/email anywhere.
 """
 import pandas as pd, numpy as np, json, os
-BASE="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026"
-SP="/private/tmp/claude-502/-Users-akim-Documents-MathAData-Git-mathadata-dashboard-next/49f4f306-c2bb-43a0-af8f-f1b5ce99e908/scratchpad"
+import os as _os
+_ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
+_RT=_os.path.dirname(_ENQ)                                           # racine du repo
+_WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+BASE=_ENQ
+SP=_os.environ.get("MATHADATA_LOCAL", f"{_ENQ}/_local")  # ex-scratch session -> dossier local stable (gitignore)
 OUT=f"{BASE}/transverse/data"; os.makedirs(OUT,exist_ok=True)
 
 T=pd.read_csv(f"{BASE}/usage-capytale/data/teachers.csv")
@@ -15,8 +19,10 @@ S=pd.read_csv(f"{BASE}/usage-capytale/data/sessions.csv")
 U=pd.read_csv(f"{SP}/payload_users_work.csv")
 PE=pd.read_csv(f"{BASE}/site-vers-classe/data/presentiel_etabs.csv")
 
-# ---- archetype (rule-based, same as facts_typologie) ----
-TT=T[T['taught']==True].copy()
+DEMO='c81e728d9d4c2f636f067f89cc14862c'; PIO='cfcd208495d565ef66e7dff9f98764da'  # démo (exclu) + hub fondateur (isolé)
+# ---- archétype (RÈGLES DÉTERMINISTES — PAS un k-means ; cf. fonction arch ci-dessous) ----
+# Hub fondateur (404 él. sur 14 étab.) et compte démo EXCLUS de la population (règle d'isolement, glossaire §2).
+TT=T[(T['taught']==True) & (~T['teacher'].isin([DEMO,PIO]))].copy()
 for c in ['n_eleves_uniq','n_sessions','n_activities_taught','n_tests','n_sy_taught','ips']:
     TT[c]=pd.to_numeric(TT[c],errors='coerce')
 def arch(r):
@@ -87,6 +93,27 @@ cols=['pseudo','arch','behavior','n_eleves_uniq','n_sessions','n_activities_taug
  'taught_2425','taught_2526','active_2324','active_2425','active_2526']
 M[cols].to_csv(f"{OUT}/master_teachers.csv",index=False)
 print("wrote master_teachers.csv:",M.shape)
+
+# ---- corrige facts_typologie.json : valeurs canoniques (hub exclu, élèves DISTINCTS) ----
+use=pd.read_csv(f"{BASE}/usage-capytale/data/usages_enriched.csv",dtype=str,keep_default_na=False)
+stu=use[(use['role']=='student') & (~use['teacher'].isin([DEMO,PIO]))]
+n_pupils_distinct=int(stu['student'].nunique())   # FIX: distinct global (l'ancien 5970 sommait des distincts par prof -> double-comptait)
+ftp=f"{OUT}/facts_typologie.json"
+if os.path.exists(ftp):
+    ft=json.load(open(ftp))
+    ft['n_taught']=int(len(M))                      # 223 (hub exclu)
+    ft['n_pupils']=n_pupils_distinct
+    ft['median_class_size']=float(S['n_eleves'].median())
+    ft['archetype_method']="regles_deterministes (PAS un k-means)"
+    ft['archetype_counts']={k:int(v) for k,v in M['arch'].value_counts().items()}
+    try:
+        pr=pd.read_csv(f"{OUT}/profiles_teacher.csv")
+        elig=pr[(pr['n_years_classe']>=1)&(~pr['censored'])]
+        ft['retention_canonical']=dict(base="usage-classe >=5 el., cohorte eligible, hub exclu (cf. GLOSSAIRE)",
+            eligibles=int(len(elig)),revenus=int(elig['revenu'].sum()),taux=round(100*elig['revenu'].mean(),1))
+    except FileNotFoundError: pass
+    json.dump(ft,open(ftp,'w'),ensure_ascii=False,indent=1)
+    print("patched facts_typologie.json: n_taught",ft['n_taught'],"n_pupils",ft['n_pupils'])
 print("\n== archetype counts =="); print(M['arch'].value_counts())
 print("\n== entry cohort =="); print(M['entry_sy'].value_counts())
 print("\n== eligible_return =="); print(M['eligible_return'].value_counts())

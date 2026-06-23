@@ -8,8 +8,12 @@ Reconstruction du volet ENSEIGNANT en tenant compte du modèle de comptes Capyta
 Produit: data/engaged_teachers.csv + data/facts_teachers.json
 """
 import pandas as pd, numpy as np, json
-BASE="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/public/data"
-OUT="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/usage-capytale/data"
+import os as _os
+_ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
+_RT=_os.path.dirname(_ENQ)                                           # racine du repo
+_WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+BASE=f"{_RT}/public/data"
+OUT=f"{_ENQ}/usage-capytale/data"
 DEMO='c81e728d9d4c2f636f067f89cc14862c'; PIO='cfcd208495d565ef66e7dff9f98764da'
 
 df=pd.read_csv(f"{BASE}/capytale_fresh_20260619.csv",dtype=str,keep_default_na=False)

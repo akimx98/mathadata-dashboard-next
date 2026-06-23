@@ -5,7 +5,11 @@ import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 
-D="/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/volet1"
+import os as _os
+_ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
+_RT=_os.path.dirname(_ENQ)                                           # racine du repo
+_WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+D=f"{_ENQ}/usage-capytale"
 F=json.load(open(f"{D}/data/facts.json"))
 sess=pd.read_csv(f"{D}/data/sessions.csv")
 te=pd.read_csv(f"{D}/data/teachers.csv")
@@ -138,7 +142,7 @@ save(fig,"09_retention.png")
 ep=F['establishment_profiles']
 fig,ax=plt.subplots(figsize=(7.5,4))
 # reconstruire distributions
-ann=pd.read_csv("/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/public/data/annuaire_etablissements.csv",dtype=str,keep_default_na=False)
+ann=pd.read_csv(f"{_RT}/public/data/annuaire_etablissements.csv",dtype=str,keep_default_na=False)
 nat=pd.to_numeric(ann[ann['type_etablissement']=='lycee']['ips'],errors='coerce').dropna()
 usr=pd.to_numeric(te[te['type_etab']=='lycee']['ips'],errors='coerce').dropna()
 ax.hist(nat,bins=30,density=True,alpha=0.45,color=GREY,label=f"Lycées France (n={len(nat)}, moy {nat.mean():.0f})")
