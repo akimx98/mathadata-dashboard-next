@@ -23,6 +23,7 @@ declare -a MAP=(
   "$E/commons/dashboard_typologie.html:typologie.html"
   "$E/commons/dashboard_seances.html:seances.html"
   "$E/commons/dashboard_synthese.html:synthese.html"
+  "$E/commons/dashboard_flux_profs.html:flux.html"
 )
 
 # garde-fou sécurité : refuser de publier si un email apparaît dans une source
