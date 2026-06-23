@@ -92,6 +92,18 @@ Toutes les dates sont converties en **Europe/Paris** avant calcul. Trois années
   gaps consécutifs **< 10 j**, fusionne en **1 occasion**. *(Deux classes pleines > 15 él. de la
   même activité, même rapprochées, restent 2 occasions : c'est un vrai redéploiement.)*
 
+### ⚠️ Deux seuils à NE PAS confondre (point de réconciliation du 23 juin 2026)
+- **Usage-classe = séance ≥ 5 él.** — le **seuil canonique** qui sépare « a atteint une classe »
+  (escalier niveau ≥ 4) du « sous-seuil » (1-4 él.). Il gouverne la profondeur, la rétention, les
+  funnels. **176 profs** (sur 223 ayant touché des élèves) atteignent ce seuil.
+- **Séance riche / « classe entière » = séance ≥ 10 él.** — un **mode-cible de qualité pédagogique**
+  (une vraie heure en classe complète), **distinct** du seuil canonique. Sert de **KPI** et de
+  **prédicteur de profondeur**, **pas** de seuil d'entonnoir. **150 profs** font ≥ 1 séance riche
+  (médiane de ces séances : 17 él.).
+  - **Grande classe = ≥ 20 él.** (82 profs) : sous-cas du « paradoxe du déployeur ».
+  - Quand un rapport écrit « vraie classe / classe entière (≥ 10) », il vise **ce mode-cible** : à
+    **nommer** « séance riche / classe entière (≥ 10) », jamais « la classe » tout court (= ≥ 5).
+
 ---
 
 ## 4. AXE 1 — Profondeur d'usage atteinte dans l'année (escalier exclusif)

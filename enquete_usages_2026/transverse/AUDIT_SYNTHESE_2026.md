@@ -4,6 +4,24 @@
 
 **Méthode** : re-calcul indépendant (pandas) de ~45 affirmations par 6 vérificateurs adversariaux (croissance, formation/Volet 2, géographie, prédicteurs §IV, glossaire inter-documents, skeptic réfutant les 3 affirmations qui portent la thèse), puis intégration en raisonnement unifié. Données 100 % pseudonymisées.
 
+> ### ✅ Résolution (réconciliation glossaire, 2026-06-23)
+> La plupart des défauts listés ci-dessous sont désormais **traités** par la couche canonique
+> ([`GLOSSAIRE.md`](GLOSSAIRE.md) + [`build_profiles.py`](build_profiles.py) → `data/facts_profiles.json`) :
+> - **IV-1 (circularité « ≥2 activités → 76 % vs 16 %»)** : résolu. Recalcul **année-1 strict** (réutilisation
+>   intra-annuelle imposée par le glossaire) = **61,5 % vs 28,1 %** (n=13) — confirme l'effet sans circularité.
+> - **« 4 acceptions de classe entière »** : résolu par le glossaire §3 — **deux** concepts nommés : *usage-classe*
+>   = ≥ 5 él. (seuil, 176 profs) et *séance riche / classe entière* = ≥ 10 él. (mode-cible, 150 profs ; grande
+>   classe = ≥ 20, 82). Les rapports emploient désormais ces noms.
+> - **Paradoxe du déployeur (0/41)** : précisé — vrai pour *grande classe + 1 seule activité* ; élargi à toutes
+>   les grandes classes (≥ 20), le retour est **47 % (16/34)**. C'est la **profondeur faible**, pas la taille.
+> - **Dénominateurs de rétention multiples (88/101)** : un dénominateur canonique fixé — cohorte éligible
+>   *usage-classe* (≥ 5, 1ʳᵉ classe ≤ 2024-25) = **n=77 → 34 %** (24 consécutif + 2 réactivation).
+> - **Canal** : ramené à **2 valeurs** figées (`via_site`/`capytale_direct`) ; la formation devient une dimension
+>   **timée** (motrice/consolidation), ce qui lève l'ambiguïté « 3 canaux ».
+>
+> Cet audit reste le **journal des défauts trouvés** (document interne, non publié) ; les chiffres « carrière »
+> qu'il cite comme erronés ne doivent pas être réintroduits.
+
 ---
 
 ## Verdict global

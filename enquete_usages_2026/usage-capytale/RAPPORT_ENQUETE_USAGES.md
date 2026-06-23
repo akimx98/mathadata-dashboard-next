@@ -4,6 +4,8 @@
 > **Données** : extraction Capytale du **19 juin 2026** — 7 353 affectations, **401 enseignants engagés** (dont 261 distributeurs), **5 854 élèves uniques**, **12 activités**, **24 académies**, **52 départements**. Période : décembre 2023 → juin 2026.
 > **Méthode et définitions** : [DEFINITIONS.md](DEFINITIONS.md). Tous les chiffres proviennent de `data/facts.json`, recalculés et **vérifiés par trois recomputations indépendantes** (voir §11). Pipeline reproductible : `build_canonical.py` → `compute_facts.py` → `make_charts.py`.
 
+> **Réconciliation glossaire (2026-06-23).** Définitions alignées sur la source de vérité unique [`GLOSSAIRE.md`](../transverse/GLOSSAIRE.md). Conventions : **usage-classe** = séance ≥ 5 él. (176 profs sur 223 ayant touché des élèves ; 47 en « sous-seuil » 1-4 él.) ; **séance riche / classe entière** = ≥ 10 él. (150 profs — mode-cible de qualité, **distinct** du seuil) ; **canal** = `via_site` / `capytale_direct` (figé à la 1ʳᵉ apparition) ; **formation** = dimension timée (motrice/consolidation/jamais), pas un canal ; **réutilisation** = intra-annuelle stricte ; **retour** = entre années (consécutif vs réactivation).
+
 ---
 
 ## 0. Synthèse en une page
@@ -71,7 +73,7 @@ Ce palmarès n'est pas qu'une affaire de qualité pédagogique — il reflète a
 
 ### 1.3 La « classe » type : un demi-groupe de 17 en salle info
 
-En regroupant les clones élèves par professeur, activité et proximité temporelle (fenêtre 3 h), on reconstitue **~700 séances** (738 dans le paramétrage de référence ; 613 si l'on exclut les clones sans établissement — voir §11). Toutes ne sont pas des classes : ~220 séances ne comptent qu'un élève (tests, élèves isolés). Mais **~290 séances réunissent ≥10 élèves**, et leur **taille médiane est de 17** (moyenne 19, quartiles 13–25) — *un résultat stable quelle que soit la méthode de regroupement.*
+En regroupant les clones élèves par professeur, activité et proximité temporelle (fenêtre 3 h), on reconstitue **~700 séances** (738 dans le paramétrage de référence ; 613 si l'on exclut les clones sans établissement — voir §11). Toutes ne sont pas des classes : ~220 séances ne comptent qu'un élève (tests, élèves isolés). Mais **~290 séances sont des séances riches / classes entières (≥ 10 él.)**, et leur **taille médiane est de 17** (moyenne 19, quartiles 13–25) — *un résultat stable quelle que soit la méthode de regroupement.*
 
 C'est exactement la signature d'un **TP en salle informatique en demi-groupe** :
 
@@ -246,7 +248,7 @@ Par niveau, **la 2nde concentre +1 884 du delta**, la 1ère +207. Le message : *
 
 ### 4.3 Saisonnalité : un outil de printemps
 
-Les classes (≥10 élèves) se concentrent nettement sur la **2e moitié de l'année** :
+Les séances riches / classes entières (≥ 10 él.) se concentrent nettement sur la **2e moitié de l'année** :
 
 ```
 Sep  Oct  Nov  Déc │ Jan  Fév  Mar  Avr  Mai  Jun
@@ -340,7 +342,7 @@ C'est **l'enjeu stratégique n°1** : transformer l'essai. La machine à acquér
 
 Au-delà du volume, comment l'outil est-il *réellement* utilisé en classe ?
 
-- **Petit groupe puis classe entière.** **46 professeurs** ont fait une petite séance (≤6 élèves — souvent leurs propres comptes-test) **avant** une vraie classe (≥10) quelques jours plus tard. C'est le pattern de découverte canonique : *on essaie à petite échelle, on lance la classe entière 2-4 jours après* (ex. 2 élèves le 19/05 → 41 élèves le 23/05).
+- **Petit groupe puis classe entière.** **46 professeurs** ont fait une petite séance (≤6 élèves — souvent leurs propres comptes-test) **avant** une séance riche / classe entière (≥ 10 él.) quelques jours plus tard. C'est le pattern de découverte canonique : *on essaie à petite échelle, on lance la classe entière 2-4 jours après* (ex. 2 élèves le 19/05 → 41 élèves le 23/05).
 - **Le travail ne s'arrête pas à la séance.** **21,7 % des copies-élèves** sont modifiées plus d'1 h après leur création (médiane 51 h ; 461 copies rouvertes après une semaine). Les élèves **reprennent réellement** leur travail — l'activité n'est pas one-shot.
 - **Le travail à domicile existe, mais à la marge.** **7,4 %** des clones sont créés hors temps scolaire (**4,1 % le week-end**, 3,8 % en soirée/nuit). L'usage reste massivement **en classe**.
 - **Parcours multi-activités.** **52 professeurs sur 224 (23 %)** enseignent ≥2 activités, 16 en font ≥3. La progression-type est **Statistiques → Géométrie** (18 profs) : on entre par la classification de données, on bascule vers la géométrie repérée — un **parcours annuel cohérent** avec le programme de 2nde.
@@ -366,7 +368,7 @@ L'écart (**+3,4 points**) est réel mais **modéré** : MathAData n'est **pas**
 
 **Vérification.** Les KPI élèves/croissance/géo ont été **recalculés par trois agents indépendants** depuis le CSV brut + l'annuaire. Concordance confirmée : volumes par année (150/2 181/4 479 élèves), **5 854 élèves uniques**, secteur/type, **IPS (110,4 vs 107,0)**, rétention 30 %, distribution des années d'enseignement.
 
-**Le seul écart** porte sur le **comptage des séances** : 738 (en conservant tous les clones, y compris ceux sans établissement) vs 613 (en excluant les clones non localisés). Les deux convergent sur l'essentiel : **taille médiane de classe = 17** et **~260-300 vraies classes (≥10)** — invariants à la méthode. Le nombre de séances est donc un **ordre de grandeur** (~600-740), pas une valeur exacte.
+**Le seul écart** porte sur le **comptage des séances** : 738 (en conservant tous les clones, y compris ceux sans établissement) vs 613 (en excluant les clones non localisés). Les deux convergent sur l'essentiel : **taille médiane de classe = 17** et **~260-300 séances riches / classes entières (≥ 10 él.)** — invariants à la méthode. Le nombre de séances est donc un **ordre de grandeur** (~600-740), pas une valeur exacte.
 
 **Limites.**
 - **L'année scolaire se termine à la mi-juin** : en 2024-2025, plus aucune séance après le **12 juin** (rien en juillet). L'extraction du 19 juin 2026 couvre donc 2025-2026 **quasi intégralement** ; les comparaisons inter-annuelles sont justes (le seul angle mort est un éventuel **retour à N+1**, mesurable seulement l'an prochain).

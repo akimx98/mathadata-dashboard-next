@@ -9,6 +9,8 @@
 >
 > **Pendant** : [`RAPPORT_SEANCES_2026.md`](RAPPORT_SEANCES_2026.md) — « la séance » (comment l'outil se vit en classe : scénarios, rythmes, cas). Ici « le prof ».
 
+> **Réconciliation glossaire (2026-06-23).** Les 5 archétypes ci-dessous viennent d'un **clustering k-means**, une lecture **indépendante** et complémentaire de l'escalier de profondeur canonique (cf. [`GLOSSAIRE.md`](GLOSSAIRE.md)). Conventions partagées : **usage-classe** = ≥ 5 él. (176 profs) ; **séance riche / classe entière** = ≥ 10 él. (150) ; **grande classe** = ≥ 20 él. (82) ; **réutilisation** = intra-annuelle stricte ; **retour** = entre années (consécutif vs réactivation). Rétention de référence (base *usage-classe* ≥ 5, cohorte éligible **n = 77**) : **34 %** ; **réutiliser en an-1** double le retour (**57 % vs 24 %**).
+
 ---
 
 ## Les deux réponses, en bref
@@ -17,10 +19,12 @@
 
 **Pourquoi la plupart ne reviennent-ils pas ?** — Sur 101 enseignants ayant *pu* revenir, **31 % reviennent** l'année suivante. La cause n'est pas le profil (le lien profil→retour est tautologique) mais la **dose de la première année**. Le cœur du problème est le **paradoxe du déployeur** : les déployeurs atteignent une vraie classe — le signal même qui prédit le retour — et pourtant **0 sur 41 reviennent**. La perte n'est pas au premier contact, elle est à la **réengagement d'une année sur l'autre**.
 
+> ⚠️ Ce 0 % vaut pour les déployeurs **grande classe + une seule activité**. Élargi à *toutes* les grandes classes (≥ 20 él.), le retour est de **47 % (16/34)** : ce n'est donc pas la **taille** qui tue le retour mais la **profondeur faible** (1 seule activité).
+
 | Chiffre clé | Valeur |
 |---|---|
 | Comptes engagés qui atteignent une vraie classe | 56 % (224/401) |
-| Profs éligibles qui reviennent l'année suivante | **31 % (31/101)** |
+| Profs éligibles qui reviennent l'année suivante | **31 % (31/101)** (base *usage-classe* ≥ 5 : cohorte éligible n = 77 → **34 %** ; même histoire, dénominateur canonique différent) |
 | Déployeurs : ont atteint une classe complète (>20) / sont revenus | **44 % / 0 % (0/41)** |
 | Retour si ≥2 séances **et** un test en année 1 vs « one-shot » sans test | 62 % vs 19 % |
 | Réplication intra-cohorte (2024-25 seule) de cet écart | 56 % vs 12 % |
@@ -86,8 +90,8 @@ Les prédicteurs **propres** (mesurés sur la seule année 1) :
 
 | Signal année 1 | Retour | vs | Robustesse |
 |---|---|---|---|
-| ≥ 2 activités | 64 % (n=14) | 25 % | indicatif (petit n) |
-| Vraie classe (séance ≥ 10 él.) | 38 % (n=55) | 22 % | seuil métier ≥10 validé |
+| ≥ 2 activités | 64 % (n=14) | 25 % | indicatif (petit n) ; recalcul canonique : **61,5 % vs 28,1 %**, n=13 — confirme l'effet |
+| Séance riche / classe entière (≥ 10 él.) | 38 % (n=55) | 22 % | seuil métier ≥10 validé |
 | ≥ 2 séances | 40 % | 20 % | p=0,045 |
 | Entrée en milieu d'année (déc-fév) | 53 % | 27 % (fin d'année) | robuste intra-cohorte |
 

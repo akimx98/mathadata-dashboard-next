@@ -4,6 +4,8 @@
 
 *Volet 2 de l'enquête usages — extraction du 20 juin 2026. Croise le parcours amont nominatif (mathadata.fr, snapshot Payload) avec l'usage en classe anonyme (Capytale, déjà analysé au Volet 1). Tous les chiffres sont calculés depuis `facts_cross.json` (source de vérité du croisement), `facts.json` / `facts_teachers.json` (Volet 1, historique Capytale complet 2023-2026) et la table de travail des comptes site (PII exclue). Chaque affirmation a fait l'objet d'un recalcul indépendant (vérification adversariale) ; les corrections retenues et les limites sont consolidées en fin de document.*
 
+> **Réconciliation glossaire (2026-06-23).** Définitions alignées sur la source de vérité unique [`GLOSSAIRE.md`](../transverse/GLOSSAIRE.md). Conventions : **usage-classe** = séance ≥ 5 él. (176 profs sur 223 ayant touché des élèves ; 47 en « sous-seuil » 1-4 él.) ; **séance riche / classe entière** = ≥ 10 él. (150 profs — mode-cible de qualité, **distinct** du seuil) ; **canal** = `via_site` / `capytale_direct` (figé à la 1ʳᵉ apparition) ; **formation** = dimension timée (motrice/consolidation/jamais), pas un canal ; **réutilisation** = intra-annuelle stricte ; **retour** = entre années (consécutif vs réactivation).
+
 ---
 
 ## Note de lecture (à lire avant les chiffres)
@@ -24,7 +26,7 @@ Quatre garde-fous conditionnent toute interprétation :
 
 ## 1. Résumé exécutif
 
-- **Un entonnoir qui se rétrécit à chaque marche.** De **2 715 comptes**, **1 003 (37 %) restent « newsletter only »** et ne deviennent jamais comptes complets ; il reste **1 712 comptes complets**. **631 sont formés** (23 % du total) et **337 (12 %) cliquent un jour vers Capytale**. Côté Capytale, **224 comptes ont enseigné** — dont **163 de vraies classes (≥ 10 élèves)** — pour **5 854 élèves**. ⚠️ Ces 224 (Capytale, anonyme) **ne sont pas un sous-ensemble** des 2 715 (site, nominatif) — 44 % des profs qui enseignent n'ont aucun compte site : le rapport 224/2 715 (~8 %) est un **ordre de grandeur système, pas un taux de conversion**. Les fuites les mieux établies sont en haut (37 % newsletter-only) et au clic Capytale (12 %), et au grain établissement (83 % des UAI du site sans empreinte classe, cf. §5).
+- **Un entonnoir qui se rétrécit à chaque marche.** De **2 715 comptes**, **1 003 (37 %) restent « newsletter only »** et ne deviennent jamais comptes complets ; il reste **1 712 comptes complets**. **631 sont formés** (23 % du total) et **337 (12 %) cliquent un jour vers Capytale**. Côté Capytale, **224 comptes ont enseigné** — dont **176 ont atteint une classe (≥ 5 él.)**, et **150 une séance riche (≥ 10 él.)** ; 47 sont restés en *sous-seuil* (1-4 él., hub fondateur exclu) — pour **5 854 élèves**. ⚠️ Ces 224 (Capytale, anonyme) **ne sont pas un sous-ensemble** des 2 715 (site, nominatif) — 44 % des profs qui enseignent n'ont aucun compte site : le rapport 224/2 715 (~8 %) est un **ordre de grandeur système, pas un taux de conversion**. Les fuites les mieux établies sont en haut (37 % newsletter-only) et au clic Capytale (12 %), et au grain établissement (83 % des UAI du site sans empreinte classe, cf. §5).
 
 - **Le funnel vrai est plus dense que le funnel « toutes dates ».** Sur la cohorte trackable (post-27 nov., 1 003 comptes), **66 % deviennent actifs, 58 % consultent un module, 58 % téléchargent une ressource, 27 % cliquent vers Capytale** — contre 47 / 40 / 41 / 20 % toutes dates. Le clic Capytale est la marche la plus pénalisée par la fenêtre de tracking.
 
@@ -58,7 +60,7 @@ Quatre garde-fous conditionnent toute interprétation :
 
 Reconstituer le trajet — entendre parler de MathAData, créer un compte, se former, tester sur Capytale, enseigner — fait apparaître un entonnoir net. mathadata.fr compte **2 715 comptes**. La **première fuite est immédiate** : 1 003 (37 %) restent « newsletter only », jamais convertis en compte complet. Restent **1 712 comptes complets**. Sur l'ensemble, **631 sont formés** (23 % du total) — dont 443 sont des comptes complets et 188 restés au statut newsletter-only ; on ne chaîne donc pas naïvement 1 712 → 631 (ce serait double-compter 188 personnes). **337 comptes (12 %) ont cliqué vers Capytale.**
 
-**Changement d'univers — lire le bas de l'entonnoir avec prudence.** Côté Capytale (anonyme, autre population), **224 comptes ont enseigné** — dont **163 de vraies classes (≥ 10 élèves cumulés ; 16 n'ont eu qu'un seul élève)** — pour **5 854 élèves**. Ces 224 ne sont **pas** un sous-ensemble des 2 715 : les deux mondes n'ont **aucun identifiant commun**, et **44 % des profs qui enseignent n'ont aucun compte site** (porte Capytale-directe, §5). Rapporter 224 aux 2 715 (~8 %) **croise deux populations partiellement disjointes** : c'est un **ordre de grandeur système, pas un taux de conversion individuel**. Les seuls taux propres sont *intra-univers* : côté Capytale, 401 comptes engagés → 224 ont enseigné (**56 %**) ; côté site, 2 715 → 337 clics (**12 %**).
+**Changement d'univers — lire le bas de l'entonnoir avec prudence.** Côté Capytale (anonyme, autre population), **224 comptes ont enseigné** — dont **176 ont atteint une classe (≥ 5 él.)**, et **150 une séance riche (≥ 10 él.)** ; 47 sont restés en *sous-seuil* (1-4 él., hub fondateur exclu) — pour **5 854 élèves**. Ces 224 ne sont **pas** un sous-ensemble des 2 715 : les deux mondes n'ont **aucun identifiant commun**, et **44 % des profs qui enseignent n'ont aucun compte site** (porte Capytale-directe, §5). Rapporter 224 aux 2 715 (~8 %) **croise deux populations partiellement disjointes** : c'est un **ordre de grandeur système, pas un taux de conversion individuel**. Les seuls taux propres sont *intra-univers* : côté Capytale, 401 comptes engagés → 224 ont enseigné (**56 %**) ; côté site, 2 715 → 337 clics (**12 %**).
 
 Cette lecture « toutes dates » sous-estime le site, car le tracking ne démarre que le 27 novembre 2025. Sur la **cohorte trackable** (1 003 comptes), le funnel est bien plus dense : **66 % actifs, 58 % module vu, 59 % ressource téléchargée, 27 % clic Capytale** — contre 47 / 40 / 41 / 20 % sur l'ensemble. Le clic Capytale est la marche la plus pénalisée par la fenêtre.
 
@@ -72,14 +74,15 @@ Les **délais** montrent une bascule très rapide quand elle a lieu : médiane c
 | Ont cliqué vers Capytale *(site)* | 337 | 12 % |
 | *— changement d'univers : Capytale, anonyme —* | | |
 | Ont enseigné (≥ 1 élève) | 224 | n.c.\* |
-| dont vraie classe (≥ 10 élèves) | 163 | n.c.\* |
+| dont usage-classe (≥ 5 él., hub exclu) | 176 | n.c.\* |
+| dont séance riche / classe entière (≥ 10 él.) | 150 | n.c.\* |
 | Élèves touchés | 5 854 | — |
 
 > \* *Population Capytale, distincte des comptes site (aucun identifiant commun ; 44 % des profs enseignants n'ont pas de compte site). Aucun « % du total des comptes site » n'est défini pour ces lignes — le ~8 % parfois cité (224/2 715) est un ordre de grandeur système, pas une conversion.*
 
 ### Profils de parcours : porte d'entrée × profondeur (côté site)
 
-L'entonnoir ci-dessus compte les marches ; le **croiser** avec la **porte d'entrée** (comment le compte est arrivé) montre *qui décroche, et où*. Sur les 2 715 comptes, trois profondeurs côté site se dessinent — **inactif** (compte, souvent réduit à la newsletter, jamais suivi d'un usage réel), **curieux** (a exploré module/ressource sans cliquer d'activité), **intention-classe** (a cliqué une activité Capytale = le geste qui précède la classe) :
+L'entonnoir ci-dessus compte les marches ; le **croiser** avec la **porte d'entrée** (comment le compte est arrivé) montre *qui décroche, et où* (la *porte* = nature de formation/canal ; la *profondeur* = escalier d'usage du glossaire §4 — ce tableau n'est pas l'escalier 0-5 lui-même). Sur les 2 715 comptes, trois profondeurs côté site se dessinent — **inactif** (compte, souvent réduit à la newsletter, jamais suivi d'un usage réel), **curieux** (a exploré module/ressource sans cliquer d'activité), **intention-classe** (a cliqué une activité Capytale = le geste qui précède la classe) :
 
 | Porte d'entrée *(site)* | Inactif | Curieux | Intention-classe | Total | % intention |
 |---|---:|---:|---:|---:|---:|
@@ -150,7 +153,7 @@ L'écart est d'un **facteur ~6** (59 % vs 10 %), alors que établissement-ciblé
 
 **La conversion se mesure en trimestres.** Les cohortes **mûres** (formées avant déc. 2025, > 6 mois de recul) convertissent à **46,5 %** d'établissements à usage élève ; les cohortes **récentes** (2026) à **22,0 %** seulement. Les promotions 2026-03/04/06 affichent des taux planchers (3-5 %) qui remonteront mécaniquement à la rentrée. À l'autre bout, la cohorte présentiel mûre d'octobre 2024 (40 profs, > 18 mois de recul) convertit à **66,7 %** : c'est l'étalon pour projeter les cohortes immatures.
 
-**La rétention est la vraie réserve de croissance.** La trajectoire d'usage est ascendante — **146 → 1 943 → 3 783 élèves distincts** par année scolaire (forte montée initiale puis doublement). Mais la fidélisation pluriannuelle reste fragile : **192 profs n'ont enseigné qu'une seule année** (28 deux ans, 4 trois ans), rétention prof 2024-25 → 2025-26 de **29,5 %**, et **81,5 % des enseignants 2025-26 sont nouveaux**. Le dispositif croît par recrutement. Signal positif : les profs qui restent **diversifient** (le hub de Haubourdin couvre 7 activités sur 3 ans ; Géométrie repérée passe de 2 à 400 élèves en un an). La rétention au grain **établissement** est plus solide que la rétention prof — l'usage migre entre collègues d'un même UAI. *(La rétention prof anonyme sous-estime la continuité : un changement de compte ENT apparaît comme un nouveau prof.)*
+**La rétention est la vraie réserve de croissance.** La trajectoire d'usage est ascendante — **146 → 1 943 → 3 783 élèves distincts** par année scolaire (forte montée initiale puis doublement). Mais la fidélisation pluriannuelle reste fragile : **192 profs n'ont enseigné qu'une seule année** (28 deux ans, 4 trois ans), rétention prof 2024-25 → 2025-26 de **29,5 %** (mesure le **retour consécutif** 2024-25 → 2025-26 ; la **réactivation** non consécutive est comptée à part — cf. page Flux / Profils. Base canonique *usage-classe* ≥ 5, cohorte éligible n = 77 → **34 %**.), et **81,5 % des enseignants 2025-26 sont nouveaux**. Le dispositif croît par recrutement. Signal positif : les profs qui restent **diversifient** (le hub de Haubourdin couvre 7 activités sur 3 ans ; Géométrie repérée passe de 2 à 400 élèves en un an). La rétention au grain **établissement** est plus solide que la rétention prof — l'usage migre entre collègues d'un même UAI. *(La rétention prof anonyme sous-estime la continuité : un changement de compte ENT apparaît comme un nouveau prof.)*
 
 ---
 
