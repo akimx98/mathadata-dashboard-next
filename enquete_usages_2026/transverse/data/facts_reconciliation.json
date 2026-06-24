@@ -7,12 +7,14 @@
     "sous_seuil_1_4": 364
   },
   "population": {
+    "pop_capytale_2_5": 260,
     "touche_eleves": 223,
     "reached_classe_ge5": 176,
     "reached_seance_riche_ge10": 150,
     "reached_grande_classe_ge20": 82,
-    "sous_seuil_only": 47,
+    "sous_seuil_only": 84,
     "max_level": {
+      "2": 37,
       "3": 47,
       "4": 117,
       "5": 59
@@ -76,21 +78,21 @@
     "taux": 47.1
   },
   "niveau": {
-    "lycee": 190,
-    "inconnu": 27,
-    "college": 6
+    "lycee": 218,
+    "inconnu": 35,
+    "college": 7
   },
   "canal_global": {
-    "capytale_direct": 132,
-    "via_site": 91
+    "capytale_direct": 155,
+    "via_site": 105
   },
   "formation_global": {
-    "jamais": 165,
-    "forme": 58
+    "jamais": 193,
+    "forme": 67
   },
   "formation_timing": {
-    "na": 165,
-    "motrice": 54,
-    "consolidation": 4
+    "na": 193,
+    "motrice": 62,
+    "consolidation": 5
   }
 }

@@ -13,20 +13,25 @@ fails=[]
 def check(cond,msg):
     print(("  ✓ " if cond else "  ✗ ")+msg); (fails.append(msg) if not cond else None)
 
-print("1. JSON strict (aucun NaN/Inf) :")
+def _raise_const(x): raise ValueError(f"valeur non-stricte: {x}")
+def loadstrict(f): return json.loads(open(f,encoding='utf-8').read(), parse_constant=_raise_const)  # rejette NaN/Infinity
+print("1. JSON STRICT (rejette réellement NaN/Inf — json.load les accepte par défaut) :")
 for f in glob.glob(f"{_ENQ}/**/data/*.json", recursive=True):
     try:
-        json.load(open(f)); check(True, _os.path.relpath(f,_ENQ))
+        loadstrict(f); check(True, _os.path.relpath(f,_ENQ))
     except Exception as e:
         check(False, f"{_os.path.relpath(f,_ENQ)} — {e}")
 
-print("2. Invariants profils (facts_profiles.json) :")
-fp=json.load(open(f"{TR}/facts_profiles.json"))
-check(fp['population']==fp['n_reached_classe']+fp['max_level'].get('3',0), "population = atteint-classe + sous-seuil")
+print("2. Invariants profils (facts_profiles.json — escalier 2-5) :")
+fp=loadstrict(f"{TR}/facts_profiles.json")
+check(fp['n_touched_students']==fp['reached_classe']+fp['sous_seuil_only'], "touché-élèves = atteint-classe + sous-seuil (223 = 176+47)")
+check(fp['population']==fp['n_touched_students']+fp['testeurs_purs'], "population 2-5 = touché-élèves + testeurs purs (260 = 223+37)")
+check(fp['testeurs_purs']>0 and fp['max_level'].get('2',0)==fp['testeurs_purs'], "testeurs purs (niveau 2) présents dans la couche canonique")
 check(sum(fp['canal'].values())==fp['population'], "somme canal = population")
-check(sum(fp['traj_canal_devenir'].values())==fp['n_reached_classe'], "trajectoires1 = profs atteint-classe")
+check(sum(fp['traj_canal_devenir'].values())==fp['reached_classe'], "trajectoires1 = profs atteint-classe")
 check(fp['eligibles']<=fp['reached_classe'], "éligibles ⊆ atteint-classe")
 check(fp['revenus_total']==fp['retour_consecutif']+fp['reactivation'], "revenus = consécutif + réactivation")
+check('proxy_etab' in fp['canal_source'], "colonne de provenance canal (individuel/proxy_etab) exposée")
 
 print("3. Pseudonymat & canal (profiles_teacher.csv) :")
 pt=pd.read_csv(f"{TR}/profiles_teacher.csv",dtype=str)
@@ -34,17 +39,23 @@ check(pt['teacher'].str.len().eq(8).all(), "teacher = md5[:8] (jamais le md5 com
 check(set(pt['canal'].unique())<={'via_site','capytale_direct'}, "canal ∈ {via_site, capytale_direct}")
 check('cfcd2084' not in set(pt['teacher']), "hub fondateur exclu des profils")
 
-print("4. Hub exclu de la typologie (master_teachers.csv) :")
-mt=pd.read_csv(f"{TR}/master_teachers.csv")
-check(int(mt['n_eleves_uniq'].max())<404, "aucune ligne à 404 élèves (hub isolé)")
+print("4. Hub fondateur isolé partout (master + scénarios + typologie) :")
+mt=pd.read_csv(f"{TR}/master_teachers.csv"); sc=pd.read_csv(f"{TR}/scenarios_teachers.csv")
+ftj=loadstrict(f"{TR}/facts_typologie.json")
+check(int(mt['n_eleves_uniq'].max())<404, "master_teachers : aucune ligne à 404 élèves")
+check(int(sc['n_eleves_uniq'].max())<404 and sc['arch'].isna().sum()==0, "scenarios_teachers : pas de hub, pas de ligne sans archétype")
+check(len(sc)==len(mt), f"scenarios ({len(sc)}) = master ({len(mt)}) — mêmes exclusions")
+STALE={'downstream_archetypes','engaged_layers','site_segments','downstream_order','site_order'}
+check(not (STALE & set(ftj)), "facts_typologie : aucune section périmée (downstream/engaged_layers/site_segments)")
+check(ftj.get('n_pupils')!=5970 and ftj.get('n_taught')==len(mt), "facts_typologie : n_pupils distinct (≠5970) & n_taught = master")
+check(ftj.get('retention_canonical',{}).get('eligibles')==fp['eligibles'], "facts_typologie : rétention canonique alignée sur facts_profiles")
 
-print("5. Pas d'e-mail (PII) dans les CSV versionnés :")
+print("5. Pas d'e-mail dans les CSV versionnés (AUCUN, même @mathadata.fr) :")
 EMAIL=re.compile(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}')
 leak=[]
 for f in glob.glob(f"{_ENQ}/**/data/*.csv", recursive=True):
-    txt=open(f,encoding='utf-8',errors='ignore').read()
-    if [m for m in EMAIL.findall(txt) if not m.endswith('mathadata.fr')]: leak.append(_os.path.relpath(f,_ENQ))
-check(not leak, f"aucun e-mail non-mathadata.fr dans data/ ({'fuites: '+', '.join(leak) if leak else 'OK'})")
+    if EMAIL.search(open(f,encoding='utf-8',errors='ignore').read()): leak.append(_os.path.relpath(f,_ENQ))
+check(not leak, f"aucun e-mail dans data/ ({'fuites: '+', '.join(leak) if leak else 'OK'})")
 
 print("6. Cohérence dashboards ↔ facts (chiffres codés en dur ≠ source de vérité) :")
 def rd(p): return open(f"{_ENQ}/{p}",encoding='utf-8').read()

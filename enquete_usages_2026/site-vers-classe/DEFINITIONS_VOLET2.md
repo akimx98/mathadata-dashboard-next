@@ -45,7 +45,7 @@ Quatre collections sont arrivées et remplacent l'inférence par les vraies donn
 Résoudre `users.trainedFormation` → `formation-codes.id` → type/date/label réels. **4 catégories (`fcat`)** :
 - `nouveau` (2084), `presentiel` (363), `webinaire` (121 = webdecouv+webinaire genuine), **`ancienne_vague` (147)**.
 - **CORRECTION DE FOND** : les 147 `ancienne_vague` = formés **avant le système de codes (15/01/26)**, regroupés dans 2 codes placeholder à date bidon `1984-01-01` (labels « Tous les anciens formés… » / « A classer »), **type & date réels INCONNUS**. Le Volet 2 v1 les comptait à tort comme `webdecouv`/webinaire → gonflait l'usage du webinaire. Désormais **séparés**.
-- **Nature ≠ type** : sous le `presentiel` se cachent des cohortes **pré-service** (`ENS_25` 52, `MEEF INSPÉ` 13 — stagiaires sans établissement, 0 % d'usage classe possible) qui **diluent** le présentiel. Distinguer pré-service / établissement-ciblée / académique-de-masse / distanciel.
+- **Nature ≠ type** : sous le `presentiel` se cachent des cohortes à **0 % d'usage** de natures différentes : le **pré-service strict** (`MEEF INSPÉ` 13 — stagiaires sans établissement, 0 % *par construction*) **et** une **formation ouverte ratée** (`ENS_25` 52 — profs **en exercice**, 0 % = vrai échec, **PAS** du pré-service). Les deux **diluent** le présentiel. Distinguer pré-service-strict / formation-ouverte-ratée / établissement-ciblée / académique-de-masse / distanciel.
 
 ## Modèle des comptes site
 - `statut` : `nouveau` / `forme` / `mentor`. Binaire : **formé = forme ∪ mentor** (631 hors 9 exclus).

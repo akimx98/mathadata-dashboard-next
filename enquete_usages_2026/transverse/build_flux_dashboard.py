@@ -20,7 +20,7 @@ def pct(rev,n): return round(100*rev/n) if n else 0
 def base(rev,n): return f"{rev}/{n}"
 
 vals={
- 'pop':fp['population'], 'reached':fp['n_reached_classe'], 'ss':fp['max_level'].get('3',0), 'elig':fp['eligibles'],
+ 'pop':fp['n_touched_students'], 'reached':fp['n_reached_classe'], 'ss':fp['sous_seuil_only'], 'elig':fp['eligibles'],
  'via.tot':via['tot'], 'cap.tot':cap['tot'], 'via.rec':via['rec'],
  'reuse.pct':pct(ru['reutilise_revenu'],ru['reutilise_n']), 'reuse.base':base(ru['reutilise_revenu'],ru['reutilise_n']),
  'uniq.pct':pct(ru['unique_revenu'],ru['unique_n']),       'uniq.base':base(ru['unique_revenu'],ru['unique_n']),

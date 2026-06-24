@@ -1,28 +1,41 @@
 {
-  "population": 223,
+  "population": 260,
+  "n_touched_students": 223,
+  "testeurs_purs": 37,
   "seuil_classe": 5,
   "canal": {
-    "capytale_direct": 132,
-    "via_site": 91
+    "capytale_direct": 155,
+    "via_site": 105
+  },
+  "canal_source": {
+    "aucune": 140,
+    "individuel": 74,
+    "proxy_etab": 46
   },
   "formation_statut": {
-    "jamais": 165,
-    "forme": 58
+    "jamais": 193,
+    "forme": 67
+  },
+  "formation_source": {
+    "aucune": 193,
+    "individuel": 40,
+    "proxy_etab": 27
   },
   "formation_timing": {
-    "na": 165,
-    "motrice": 54,
-    "consolidation": 4
+    "na": 193,
+    "motrice": 62,
+    "consolidation": 5
   },
   "niveau": {
-    "lycee": 190,
-    "inconnu": 27,
-    "college": 6
+    "lycee": 218,
+    "inconnu": 35,
+    "college": 7
   },
   "max_level": {
     "4": 117,
     "5": 59,
-    "3": 47
+    "3": 47,
+    "2": 37
   },
   "revenus_total": 26,
   "retour_consecutif": 24,
@@ -33,13 +46,13 @@
   "eligibles": 77,
   "retour_rate_eligible": 33.8,
   "by_canal": {
-    "via_site": {
-      "n": 15,
-      "revenu": 8
-    },
     "capytale_direct": {
       "n": 62,
       "revenu": 18
+    },
+    "via_site": {
+      "n": 15,
+      "revenu": 8
     }
   },
   "by_formation": {

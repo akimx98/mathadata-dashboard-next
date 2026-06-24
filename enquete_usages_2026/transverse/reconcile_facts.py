@@ -36,7 +36,8 @@ F['sessions']=dict(total=len(sess), classe_ge5=int(ge5), classe_ge10=int(ge10),
 # ---- 2. population & profondeur ----
 sess['h8']=sess['teacher'].str[:8]
 sp=sess[sess['h8'].isin(set(PROF['teacher']))]
-F['population']=dict(touche_eleves=len(PROF),
+F['population']=dict(pop_capytale_2_5=len(PROF),                      # 260 (inclut 37 testeurs purs niveau 2)
+    touche_eleves=int((PROF['max_level']>=3).sum()),                  # 223 (niveaux 3-5)
     reached_classe_ge5=int((PROF['n_years_classe']>=1).sum()),
     reached_seance_riche_ge10=int(sp[sp['n_eleves']>=10]['h8'].nunique()),   # 150 (mode-cible qualité)
     reached_grande_classe_ge20=int(sp[sp['n_eleves']>=20]['h8'].nunique()),  # 82 (paradoxe déployeur)

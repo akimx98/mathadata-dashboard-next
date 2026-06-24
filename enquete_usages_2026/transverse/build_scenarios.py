@@ -12,8 +12,10 @@ _WS=_os.path.dirname(_RT)                                            # parent (c
 BASE=_ENQ
 OUT=f"{BASE}/transverse/data"
 
+DEMO='c81e728d9d4c2f636f067f89cc14862c'; PIO='cfcd208495d565ef66e7dff9f98764da'  # démo exclu + hub isolé
 S=pd.read_csv(f"{BASE}/usage-capytale/data/sessions.csv")
 U=pd.read_csv(f"{BASE}/usage-capytale/data/usages_enriched.csv")
+S=S[~S['teacher'].isin([DEMO,PIO])].copy(); U=U[~U['teacher'].isin([DEMO,PIO])].copy()  # exclusion canonique dès la source
 M=pd.read_csv(f"{OUT}/master_teachers.csv")
 
 S['start']=pd.to_datetime(S['start'],utc=True,errors='coerce').dt.tz_convert('Europe/Paris')
@@ -100,8 +102,9 @@ T=pd.read_csv(f"{BASE}/usage-capytale/data/teachers.csv")[['teacher','uai','acad
 # master has uai/academie but pseudonymized; re-key master by reconstructing same archetype on teachers.csv
 # Simplest: attach archetype by matching on the behavioural tuple via teachers.csv -> recompute pseudo mapping
 # We instead re-load master raw join key: master rows are sorted; rebuild mapping from teachers.csv directly
+DEMO='c81e728d9d4c2f636f067f89cc14862c'; PIO='cfcd208495d565ef66e7dff9f98764da'  # démo exclu + hub isolé
 TT=pd.read_csv(f"{BASE}/usage-capytale/data/teachers.csv")
-TT=TT[TT['taught']==True].copy()
+TT=TT[(TT['taught']==True) & (~TT['teacher'].isin([DEMO,PIO]))].copy()   # même exclusion canonique que master
 for c in ['n_eleves_uniq','n_sessions','n_activities_taught','n_tests','n_sy_taught']:
     TT[c]=pd.to_numeric(TT[c],errors='coerce')
 def arch(r):

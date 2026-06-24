@@ -94,26 +94,27 @@ cols=['pseudo','arch','behavior','n_eleves_uniq','n_sessions','n_activities_taug
 M[cols].to_csv(f"{OUT}/master_teachers.csv",index=False)
 print("wrote master_teachers.csv:",M.shape)
 
-# ---- corrige facts_typologie.json : valeurs canoniques (hub exclu, élèves DISTINCTS) ----
+# ---- RECONSTRUIT facts_typologie.json INTÉGRALEMENT (hub exclu, élèves distincts) ----
+# (auparavant : patch partiel d'un ancien JSON → cohabitation de chiffres incompatibles. On réécrit tout.)
 use=pd.read_csv(f"{BASE}/usage-capytale/data/usages_enriched.csv",dtype=str,keep_default_na=False)
 stu=use[(use['role']=='student') & (~use['teacher'].isin([DEMO,PIO]))]
-n_pupils_distinct=int(stu['student'].nunique())   # FIX: distinct global (l'ancien 5970 sommait des distincts par prof -> double-comptait)
-ftp=f"{OUT}/facts_typologie.json"
-if os.path.exists(ftp):
-    ft=json.load(open(ftp))
-    ft['n_taught']=int(len(M))                      # 223 (hub exclu)
-    ft['n_pupils']=n_pupils_distinct
-    ft['median_class_size']=float(S['n_eleves'].median())
-    ft['archetype_method']="regles_deterministes (PAS un k-means)"
-    ft['archetype_counts']={k:int(v) for k,v in M['arch'].value_counts().items()}
-    try:
-        pr=pd.read_csv(f"{OUT}/profiles_teacher.csv")
-        elig=pr[(pr['n_years_classe']>=1)&(~pr['censored'])]
-        ft['retention_canonical']=dict(base="usage-classe >=5 el., cohorte eligible, hub exclu (cf. GLOSSAIRE)",
-            eligibles=int(len(elig)),revenus=int(elig['revenu'].sum()),taux=round(100*elig['revenu'].mean(),1))
-    except FileNotFoundError: pass
-    json.dump(ft,open(ftp,'w'),ensure_ascii=False,indent=1)
-    print("patched facts_typologie.json: n_taught",ft['n_taught'],"n_pupils",ft['n_pupils'])
+n_pupils_distinct=int(stu['student'].nunique())   # distinct global (l'ancien 5970 sommait des distincts/prof → double-comptait)
+ft=dict(
+    archetype_method="regles_deterministes (seuils explicites — PAS un k-means)",
+    n_taught=int(len(M)),                                   # 223 (hub fondateur + démo exclus)
+    n_pupils=n_pupils_distinct,                             # élèves DISTINCTS (≠ somme par prof)
+    median_class_size=float(S['n_eleves'].median()),
+    archetype_counts={k:int(v) for k,v in M['arch'].value_counts().items()},
+)
+try:
+    pr=pd.read_csv(f"{OUT}/profiles_teacher.csv")
+    elig=pr[(pr['n_years_classe']>=1)&(~pr['censored'])]
+    ft['retention_canonical']=dict(base="usage-classe >=5 el., cohorte eligible, hub exclu (GLOSSAIRE §5)",
+        eligibles=int(len(elig)),revenus=int(elig['revenu'].sum()),taux=round(100*elig['revenu'].mean(),1))
+    ft['retention_broad_note']="base elargie 'tout contact eleve' (>=1 el.) : ~101 eligibles -> 31 % (~30,7) ; meme histoire, denominateur plus large"
+except FileNotFoundError: pass
+json.dump(ft,open(f"{OUT}/facts_typologie.json",'w'),ensure_ascii=False,indent=1)
+print("reconstruit facts_typologie.json: n_taught",ft['n_taught'],"n_pupils",ft['n_pupils'])
 print("\n== archetype counts =="); print(M['arch'].value_counts())
 print("\n== entry cohort =="); print(M['entry_sy'].value_counts())
 print("\n== eligible_return =="); print(M['eligible_return'].value_counts())

@@ -63,11 +63,15 @@ use['created_dt'] = pd.to_datetime(use['created_dt'], errors='coerce', utc=True)
 sess['start'] = pd.to_datetime(sess['start'], errors='coerce', utc=True)
 sess['n_eleves'] = pd.to_numeric(sess['n_eleves'], errors='coerce').fillna(0).astype(int)
 tea['first_student'] = pd.to_datetime(tea['first_student'], errors='coerce', utc=True)
+tea['first_test']    = pd.to_datetime(tea['first_test'], errors='coerce', utc=True)
 
-# population : profs ayant un usage élève (taught), hors démo & hub fondateur
-tea = tea[(tea['taught']=='True') & (~tea['teacher'].isin([DEMO, PIO]))].copy()
+# population canonique côté Capytale (escalier 2-5, glossaire §4), hors démo & hub fondateur :
+#   - profs ayant touché des élèves (taught → niveaux 3-5) ;
+#   - testeurs purs (tested & !taught → niveau 2 : auto-clone, 0 élève).
+tea = tea[((tea['taught']=='True') | (tea['tested']=='True')) & (~tea['teacher'].isin([DEMO, PIO]))].copy()
 POP = set(tea['teacher'])
-print(f"Population (profs ayant enseigné, hub+démo exclus) : {len(POP)}")
+n_touched = int((tea['taught']=='True').sum())
+print(f"Population Capytale 2-5 (hub+démo exclus) : {len(POP)}  (dont {n_touched} ont touché des élèves, {len(POP)-n_touched} testeurs purs)")
 
 # ───────────────────────────── 2. Niveau collège/lycée ─────────────────────────────
 ref = json.load(open(f"{SNAP}/etablissements.json"))
@@ -184,51 +188,54 @@ for u, g in W[W['uai']!=''].groupby('uai'):
         has_formed = len(formed) > 0)
 
 def classify(tid):
-    """Renvoie (canal, formation_status, formation_timing) pour un prof, FIGÉ à sa 1ʳᵉ apparition.
-    1ʳᵉ apparition ≈ first_student (1ᵉʳ usage observé). canal = via_site s'il existe une trace
-    site/formation à/avant cet instant (appariement individuel, sinon trace établissement)."""
+    """Renvoie (canal, canal_src, formation_status, formation_timing, formation_src), FIGÉ à la 1ʳᵉ
+    apparition (first_student si présent, sinon first_test pour les testeurs purs).
+    ⚠️ canal_src / formation_src = niveau de confiance : 'individuel' (appariement 1:1, fiable) vs
+    'proxy_etab' (un compte/formation d'un COLLÈGUE au même UAI — attribution écologique, prudence)."""
     row = tea[tea['teacher']==tid].iloc[0]
     uai = row['uai']
-    first_use = row['first_student']
+    first_use = row['first_student'] if pd.notna(row['first_student']) else row['first_test']
     h = h8(tid)
     canal, fstatut, ftiming = 'capytale_direct', 'jamais', None
+    canal_src, fstatut_src = 'aucune', 'aucune'
     fdate = pd.NaT
     grace = timedelta(days=1)
     # (a) apparié individuellement : via_site SEULEMENT si le contact site (création de compte ou
     #     1ᵉʳ clic) est antérieur/simultané au 1ᵉʳ usage élève. Sinon le prof est arrivé par Capytale
     #     puis a créé son compte APRÈS → capytale_direct (le canal décrit l'ORIGINE, cf. glossaire §6).
-    if h in matched:
+    if h in matched:                                 # (a) appariement INDIVIDUEL (confiance haute)
         m = matched[h]
         sid = sid_of.get(m['site_code'])
         created = pd.to_datetime(created_by_sid.get(sid), errors='coerce', utc=True) if sid else pd.NaT
         fclick  = pd.to_datetime(firstcap_by_sid.get(sid), errors='coerce', utc=True) if sid else pd.NaT
         site_contact = min([d for d in (created, fclick) if pd.notna(d)], default=pd.NaT)
         if pd.isna(site_contact) or pd.isna(first_use):
-            canal = 'via_site'                       # pas de date fiable → on garde l'appariement
+            canal = 'via_site'
         elif site_contact <= first_use + grace:
-            canal = 'via_site'                       # trace site AVANT l'usage → vrai « via le site »
+            canal = 'via_site'
         else:
             canal = 'capytale_direct'                # compte site créé APRÈS l'usage → arrivé par Capytale
+        canal_src = 'individuel'
         if m['statut'] in ('forme','mentor'):
-            fstatut = 'forme'
+            fstatut = 'forme'; fstatut_src = 'individuel'
             fd = fdate_by_sid.get(sid) if sid else None
             fdate = pd.to_datetime(fd, errors='coerce', utc=True) if fd else pd.NaT
     else:
-        # (b) trace établissement : un compte site à l'UAI, créé/formé avant le 1ᵉʳ usage
+        # (b) trace ÉTABLISSEMENT (proxy écologique — un COLLÈGUE au même UAI ; confiance basse)
         s = site_by_uai.get(uai)
         if s is not None and pd.notna(first_use):
-            site_before = pd.notna(s['first_site']) and s['first_site'] <= first_use + timedelta(days=1)
-            if site_before:
-                canal = 'via_site'
-            if s['has_formed'] and pd.notna(s['first_formed']) and s['first_formed'] <= first_use + timedelta(days=1):
-                fstatut = 'forme'; fdate = s['first_formed']; canal = 'via_site'
+            if pd.notna(s['first_site']) and s['first_site'] <= first_use + grace:
+                canal = 'via_site'; canal_src = 'proxy_etab'
+            if s['has_formed'] and pd.notna(s['first_formed']) and s['first_formed'] <= first_use + grace:
+                fstatut = 'forme'; fstatut_src = 'proxy_etab'; fdate = s['first_formed']
+                canal = 'via_site'; canal_src = 'proxy_etab'
     # timing de la formation
     if fstatut == 'forme':
         if pd.notna(fdate) and pd.notna(first_use):
-            ftiming = 'motrice' if fdate <= first_use + timedelta(days=1) else 'consolidation'
+            ftiming = 'motrice' if fdate <= first_use + grace else 'consolidation'
         else:
-            ftiming = 'motrice' if canal=='via_site' else 'consolidation'  # pas de date fiable → cohérent avec le canal
-    return canal, fstatut, ftiming
+            ftiming = 'motrice' if canal=='via_site' else 'consolidation'
+    return canal, canal_src, fstatut, ftiming, fstatut_src
 
 # ───────────────────────────── 6. Table prof (attributs figés + rétention) ─────────────────────────────
 prof_rows = []
@@ -236,11 +243,11 @@ for tid in POP:
     h = h8(tid)
     g = PY[PY['teacher_full']==tid]
     ret = retention(g)
-    canal, fstatut, ftiming = classify(tid)
+    canal, canal_src, fstatut, ftiming, fstatut_src = classify(tid)
     row = tea[tea['teacher']==tid].iloc[0]
     prof_rows.append(dict(
-        teacher=h, niveau=row['niveau'], canal=canal,
-        formation_statut=fstatut, formation_timing=ftiming,
+        teacher=h, niveau=row['niveau'], canal=canal, canal_source=canal_src,
+        formation_statut=fstatut, formation_source=fstatut_src, formation_timing=ftiming,
         max_level=int(g['level'].max()) if len(g) else 2,
         **ret))
 PROF = pd.DataFrame(prof_rows)
@@ -256,10 +263,14 @@ def vc(s): return {str(k): int(v) for k,v in s.value_counts().items()}
 reached = PROF[PROF['n_years_classe'] >= 1]
 elig = reached[~reached['censored']]
 facts = dict(
-    population = len(PROF),
+    population = len(PROF),                                          # toute la pop Capytale 2-5
+    n_touched_students = int((PROF['max_level']>=3).sum()),          # 223 (niveaux 3-5)
+    testeurs_purs = int((PROF['max_level']==2).sum()),               # 37 (niveau 2)
     seuil_classe = CLASSE_MIN,
     canal = vc(PROF['canal']),
+    canal_source = vc(PROF['canal_source']),                         # individuel vs proxy_etab vs aucune
     formation_statut = vc(PROF['formation_statut']),
+    formation_source = vc(PROF['formation_source']),
     formation_timing = vc(PROF['formation_timing'].fillna('na')),
     niveau = vc(PROF['niveau']),
     max_level = vc(PROF['max_level']),
@@ -268,7 +279,7 @@ facts = dict(
     reactivation = int(PROF['reactivation'].sum()),
     censored = int(reached['censored'].sum()),
     reached_classe = len(reached),
-    sous_seuil_only = int((PROF['n_years_classe']==0).sum()),
+    sous_seuil_only = int((PROF['max_level']==3).sum()),             # 47 (niveau 3, jamais classe ≥5)
     eligibles = len(elig),
     retour_rate_eligible = round(elig['revenu'].mean()*100, 1) if len(elig) else None,
     # déterminants du retour (sur cohorte éligible)
