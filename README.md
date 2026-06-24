@@ -2,7 +2,7 @@
 
 Tableau de bord d'analyse des usages de la plateforme MathAData en établissements scolaires.
 
-## 🎯 Objectif
+## Objectif
 
 Analyser et visualiser les usages réels de MathAData dans les lycées et collèges français :
 - Adoption par les enseignants (test vs enseignement)
@@ -10,7 +10,7 @@ Analyser et visualiser les usages réels de MathAData dans les lycées et collè
 - Succès des activités pédagogiques
 - Distribution géographique et sociale (IPS)
 
-## 📊 Fonctionnalités principales
+## Fonctionnalités principales
 
 ### Statistiques globales
 - **Métriques d'usage** : Nombre total d'usages, élèves uniques, séances détectées
@@ -47,14 +47,14 @@ Analyser et visualiser les usages réels de MathAData dans les lycées et collè
 - **Fidélisation** : Séances par prof
 - **Conversion** : Taux usage après test (test → enseignement)
 
-## 🔧 Technologies
+## Technologies
 
 - **Framework** : Next.js 15.5.4
 - **UI** : React, TypeScript
 - **Visualisation** : Recharts, Leaflet (cartes)
 - **Styling** : CSS modules, Tailwind
 
-## 🚀 Démarrage
+## Démarrage
 
 ```bash
 # Installation
@@ -89,7 +89,7 @@ Capytale est utilisé par défaut. Le jeton n'est jamais envoyé au navigateur.
 La structure et le sens métier du CSV source sont décrits dans
 [DONNEES_BRUTES_CAPYTALE.md](DONNEES_BRUTES_CAPYTALE.md).
 
-## 📁 Structure des données
+## Structure des données
 
 ### Source
 
@@ -113,7 +113,7 @@ Fichier : `public/data/annuaire_etablissements.csv`
 - IPS (Indice de Position Sociale) pour les lycées
 - Coordonnées GPS (latitude, longitude)
 
-## 🧮 Algorithmes clés
+## Algorithmes clés
 
 ### Détection des séances
 **Clustering temporel avec fenêtre de 1 heure** :
@@ -188,7 +188,7 @@ tauxUsageApresTest = (nbProfsTestedThenTaught / nbProfsTested) * 100
 - `Role="teacher"` : Prof teste seul l'activité
 - `Role="student"` : Élève utilise l'activité (en classe ou à domicile)
 
-## 📈 Métriques disponibles
+## Métriques disponibles
 
 ### Niveau global
 - Total usages : 2106
@@ -209,26 +209,15 @@ tauxUsageApresTest = (nbProfsTestedThenTaught / nbProfsTested) * 100
 - Adoption, engagement, fidélisation
 - Taux de conversion test → enseignement
 
-## 🚧 Limitations connues
+## Limitations connues
 
 1. **Clustering** : Une classe peut être divisée en 2 séances si >1h entre premiers et derniers élèves
 2. **UAI NULL** : Profs sans UAI sont classés "Privé" par défaut
 3. **Multi-établissements** : Un prof enseignant dans 2 établissements = 2 séances distinctes (voulu)
 
-## 📚 Ressources
+## Ressources
 
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Recharts Documentation](https://recharts.org/)
 - [Leaflet Documentation](https://leafletjs.com/)
 - [TypeScript Documentation](https://www.typescriptlang.org/)
-
-## 🤝 Contribution
-
-Pour reprendre le développement :
-1. Lire `CHANGELOG_2025-11-04.md` pour contexte récent
-2. Consulter `ANALYSES_COPILOT.md` pour cas d'usage analysés
-3. Respecter les conventions de clustering (1h) et timestamps (×1000)
-
-## 📄 Licence
-
-Projet interne MathAData
