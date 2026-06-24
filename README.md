@@ -2,9 +2,10 @@
 
 Tableau de bord d'analyse des usages de la plateforme MathAData en établissements scolaires.
 
-> **Nouveau collègue ?** Pour cloner le dépôt et interroger directement les données avec Claude,
-> suivre [`POUR_DEMARRER.md`](POUR_DEMARRER.md). Aucun token ni lancement du dashboard n'est
-> nécessaire pour analyser les données déjà versionnées.
+> Les analyses reproductibles, le glossaire canonique, les rapports et les GitHub Pages vivent
+> désormais dans [`mathadata/enquete-usages`](https://github.com/mathadata/enquete-usages).
+> Cette application conserve ses calculs interactifs historiques ; leur alignement avec les
+> définitions canoniques sera traité séparément.
 
 ## Objectif
 
@@ -53,7 +54,7 @@ Analyser et visualiser les usages réels de MathAData dans les lycées et collè
 
 ## Technologies
 
-- **Framework** : Next.js 15.5.4
+- **Framework** : Next.js 15
 - **UI** : React, TypeScript
 - **Visualisation** : Recharts, Leaflet (cartes)
 - **Styling** : CSS modules, Tailwind
@@ -172,9 +173,9 @@ tauxUsageApresTest = (nbProfsTestedThenTaught / nbProfsTested) * 100
 - `app/globals.css` : Styles globaux
 
 ### Documentation
-- `CHANGELOG_2025-11-04.md` : Modifications du 4 novembre 2025
-- `ANALYSES_COPILOT.md` : Analyses détaillées de cas d'usage
 - `CONFIGURATION_ACTIVITES.md` : Configuration des activités MathAData
+- `DONNEES_BRUTES_CAPYTALE.md` : Schéma et récupération des données consommées par l'application
+- [`mathadata/enquete-usages`](https://github.com/mathadata/enquete-usages) : analyses canoniques
 
 ## 🔍 Points d'attention
 

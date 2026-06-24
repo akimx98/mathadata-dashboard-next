@@ -44,16 +44,10 @@ next-env.d.ts
 # uploaded CSV data
 /storage/
 
-# extractions Capytale de travail — non versionnées (cf. enquete_usages_2026/PUBLISH.md)
+# extractions Capytale de travail
 /public/data/csv_from_metabase.csv
 /public/data/csv_from_metabase_raw.csv
 /public/data/usages-02042026.csv
-
-# Données nominatives (PII) — outreach, jamais committé
-enquete_usages_2026/private/
-
-# tables de travail locales de l’enquête (PII-adjacentes, jamais committées)
-enquete_usages_2026/_local/
 
 __pycache__/
 *.pyc

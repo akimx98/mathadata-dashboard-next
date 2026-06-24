@@ -1,16 +1,7 @@
 # AGENTS.md
 
-Ce dépôt utilise **[`CLAUDE.md`](CLAUDE.md)** comme guide unique pour les agents/LLM.
+Ce dépôt utilise [`CLAUDE.md`](CLAUDE.md) comme guide unique pour les agents/LLM.
 Lis-le en entier avant toute tâche.
 
-Pour l'analyse de données MathAData (`enquete_usages_2026/`), l'ordre est :
-1. **`enquete_usages_2026/transverse/GLOSSAIRE.md`** — source de vérité des définitions (ne jamais redéfinir un terme localement).
-2. **`.claude/skills/analyse-usages-mathadata/SKILL.md`** — clarification, méthode et mode nominatif local.
-3. **`CLAUDE.md` §10-11** — comment répondre à une question d'analyse + carte des données (où trouver quoi).
-4. **`enquete_usages_2026/transverse/build_profiles.py`** — la seule couche où naissent les variables « profil ».
-
-Règles d'or : ne pas faire diverger la base (un terme = une définition canonique) ; lire les
-`facts_*.json` plutôt que recalculer ; les analyses nominatives internes explicitement demandées
-restent dans `private/` ou `_local/` (gitignore), et aucune donnée personnelle ne va dans le repo ou
-les pages publiées ; publier via `enquete_usages_2026/publish_pages.sh` (jamais éditer une copie
-publiée à la main).
+Les analyses de données, définitions canoniques, rapports et GitHub Pages sont maintenus dans
+[`mathadata/enquete-usages`](https://github.com/mathadata/enquete-usages). Ne les recrée pas ici.
