@@ -23,8 +23,7 @@ df=df[df['teacher']!=DEMO].copy(); df['role']=df['role'].str.strip().str.lower()
 df['created']=pd.to_numeric(df['created'],errors='coerce')
 df['dt']=pd.to_datetime(df['created'],unit='s',utc=True).dt.tz_convert('Europe/Paris')
 def sy(d):
-    if pd.isna(d): return 'NA'
-    y=d.year if d.month>=8 else d.year-1; return f"{y}-{y+1}"
+    return K.school_year(d)   # impl unique (socle K, coupure 1ᵉʳ août — GLOSSAIRE §1)
 df['sy']=df['dt'].apply(sy)
 typ=ann.set_index('uai')['type_etablissement'].to_dict()
 nom=ann.set_index('uai')['nom'].to_dict(); com=ann.set_index('uai')['commune'].to_dict(); aca=ann.set_index('uai')['academie'].to_dict()

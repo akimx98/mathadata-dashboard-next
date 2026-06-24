@@ -50,7 +50,7 @@ Résoudre `users.trainedFormation` → `formation-codes.id` → type/date/label 
 ## Modèle des comptes site
 - `statut` : `nouveau` / `forme` / `mentor`. Binaire : **formé = forme ∪ mentor** (631 hors 9 exclus).
 - `trainedDateFormation` (virtuel) avait une **sentinelle bidon `1984-01-01`** (149 cas) → désormais résolue via `formation-codes` (vraie date pour les cohortes datées ; reste inconnue pour `ancienne_vague`).
-- `newsletter_only` (1003) : compte créé via le seul formulaire newsletter (repasse à `false` à la 1ʳᵉ authentification). **Comptes complets** = 1721.
+- `newsletter_only` (1003) : compte créé via le seul formulaire newsletter (repasse à `false` à la 1ʳᵉ authentification). **Comptes complets** = 1721 **brut** (2724 − 1003) → **1712 analysé** (après exclusion des 9 `exclude_from_analytics`). Les chiffres canoniques du funnel sont les **analysés** (cf. `facts_cross.json`).
 - `exclude_from_analytics` (9) : comptes équipe/test → **exclure** des KPI.
 - `uai` renseigné pour 803 comptes seulement ; `academie` pour 1749. Normaliser les académies (accents : `Créteil`≡`Creteil`).
 
@@ -69,9 +69,12 @@ Résoudre `users.trainedFormation` → `formation-codes.id` → type/date/label 
   - **75 paires** (53 A, 22 B), calibrées sur le hub fondateur (Haubourdin) et les UAI 1:1.
 
 ## Chiffres-clés (cf. facts_cross.json, à la date d'extraction)
-- Funnel : 2724 comptes → 1721 complets → 638 formés → 337 ont cliqué vers Capytale → (Volet 1) 224 ont enseigné / 5854 élèves.
+- Funnel (chiffres **analysés**, = `facts_cross.json`) : **2715** comptes → **1712** complets → **631** formés → **337** ont cliqué vers Capytale → (Volet 1) 224 ont enseigné / 5854 élèves. *(Bruts avant exclusion des 9 comptes équipe : 2724 / 1721 / 638.)* ⚠️ Marches **non strictement emboîtées** : 188 des 631 formés sont restés newsletter-only → ne pas chaîner 1712 → 631.
 - Effet formation : %clic Capytale 9,0 (nouveau) → 23,5 (formés) ; %établissement-avec-usage 17,8 → 26,0 ; ressources moy. 2,1 → 5,3 (webinaire 7,0).
 - Présentiel par établissement : 154 établissements, 17,5 % avec usage Capytale, 11 % avec usage **postérieur** à la formation (fort plafond de récence).
 
 ## Sécurité
-Identifiants et textes libres = **données personnelles**. Aucune sortie versionnée/publiée ne contient nom/prénom/email. Pas de ré-identification. Le snapshot reste local (gitignore).
+Identifiants et textes libres = **données personnelles**. Aucune sortie versionnée/publiée ne
+contient nom/prénom/email. Une analyse nominative interne explicitement demandée reste dans
+`private/` ou `_local/` et indique la confiance de tout appariement. Le snapshot reste local
+(gitignore).

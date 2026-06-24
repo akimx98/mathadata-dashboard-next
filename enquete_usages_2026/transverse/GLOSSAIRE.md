@@ -33,12 +33,18 @@ les deux. Chaque définition ci-dessous précise **dans quel monde elle est mesu
 
 ## 1. Unité de temps : l'année scolaire
 
-**Année scolaire `sy`** = du **1ᵉʳ septembre au 31 août** (borne usuelle ; en pratique « 21 août »
-n'a aucun effet, aucune séance n'a lieu en août). Règle de calcul :
+**Année scolaire `sy`** : la coupure est au **1ᵉʳ août** (et non au 1ᵉʳ septembre). Une activité
+d'**août** est rattachée à l'année scolaire qui **commence** (préparation de rentrée), pas à celle qui
+s'achève. Règle de calcul (appliquée telle quelle dans le code — `enquete_common.school_year`) :
 
 ```
 sy(date) = année  si mois ≥ 8  sinon année-1     →  format "2024-2025"
+           (donc « 2024-2025 » = 1ᵉʳ août 2024 → 31 juillet 2025)
 ```
+
+> Août est quasi vide mais **pas** : 4 affectations en août sur 3 ans, dont **2 usages élèves**
+> (19-20 août 2024) — rattachés à `2024-2025`. C'est pourquoi la coupure août (≥8), et non septembre,
+> est la bonne : ces séances de pré-rentrée appartiennent à l'année qui démarre.
 
 Toutes les dates sont converties en **Europe/Paris** avant calcul. Trois années peuplées :
 `2023-2024`, `2024-2025`, `2025-2026`.
@@ -213,8 +219,11 @@ La formation **n'est plus un canal**. C'est une dimension à part, qui croise n'
   réels INCONNUS**, à ne **pas** compter comme webinaire). *(Détail dans `site-vers-classe/DEFINITIONS_VOLET2.md`.)*
 - ⚠️ **Endogénéité** : une formation présentiel dans un établissement déjà adoptant gonfle la
   conversion. Croiser avec l'usage **postérieur** à la formation (au grain établissement). Et
-  distinguer les cohortes **pré-service** (ENS, INSPÉ — 0 % d'usage classe possible) qui **diluent**
-  le présentiel.
+  distinguer deux causes différentes de **0 % d'usage** : (a) le **pré-service STRICT** — master
+  **MEEF / INSPÉ** (~13), stagiaires **sans établissement**, 0 % *par construction* (canal à horizon
+  décalé, pas un échec) ; (b) une **formation ouverte ratée** — **`ENS_25`** (52) qui n'est **PAS**
+  du pré-service (ce sont des **profs en exercice**), son 0 % est un **vrai échec** de formation de
+  masse, à compter comme tel. Les deux **diluent** le présentiel, pour des raisons opposées.
 
 ---
 
@@ -260,7 +269,10 @@ individu (sinon : trace établissement).
 
 Identifiants et textes libres = **données personnelles**. **Aucune** sortie versionnée ou publiée ne
 contient nom / prénom / e-mail (pseudonymes `S####` / `md5[:8]`, grain établissement/commune). Le
-snapshot Payload reste **local et gitignore**, jamais committé. Aucune ré-identification.
+snapshot Payload reste **local et gitignore**, jamais committé. Une analyse nominative interne peut
+être réalisée sur demande explicite depuis les sources locales autorisées ; elle reste dans
+`private/` ou `_local/`, signale la confiance de tout appariement site↔Capytale et n'est jamais
+versionnée ni publiée.
 
 ---
 

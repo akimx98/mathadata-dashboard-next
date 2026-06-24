@@ -72,11 +72,20 @@ mondes est **estimé**, jamais mesuré — le dire explicitement.
 ```
 bash enquete_usages_2026/rebuild_all.sh
 ```
-Régénère TOUTE la chaîne dans l'ordre (Capytale → croisé site×Capytale → couche profils → typologie/
-séances → flux) puis lance les contrats. Les étapes croisées (snapshot Payload LOCAL) sont
-auto-sautées si le snapshot/`_local/` est absent ; **idempotent** (re-run = aucune dérive). Ordre détaillé
-dans le script. Les `data/*.json` (`facts*.json`) sont les **sources de vérité chiffrées** — un dashboard
-ne recalcule pas, il **lit** ces faits.
+Régénère la **chaîne de calcul canonique** dans l'ordre (Capytale → croisé site×Capytale → couche
+profils → scénarios → réconciliation → **dashboard Flux généré**), puis lance les contrats. Les étapes
+croisées (snapshot Payload LOCAL) sont auto-sautées si le snapshot/`_local/` est absent ; **idempotent**
+(re-run = aucune dérive ; vérifié stable sous `PYTHONHASHSEED` variable). Ordre détaillé dans le script.
+Les `data/*.json` (`facts*.json`) sont les **sources de vérité chiffrées** — un dashboard ne recalcule pas,
+il **lit** ces faits.
+
+> ⚠️ **Ce que `rebuild_all` ne régénère PAS** (et pourquoi) : (a) les **enquêtes multi-agents** one-shot
+> et non déterministes — `facts_investigation.json` (base élargie n≈101, cf. son `_meta`), `SEC_*`,
+> `sections_final.json` — se rejouent en relançant leur `workflow_*.js`, pas le pipeline ; (b) les
+> **graphiques** (`make_charts*.py`) ; (c) les **dashboards à chiffres en dur** autres que Flux (typologie/
+> volet2/synthèse/séances — reportés à la main, mais leur concordance est **contrôlée** par les contrats) ;
+> (d) les **rapports `.md`** (rédigés). La rétention **canonique** (77/26/33,8 %) vit dans
+> `facts_typologie.json` (régénéré), jamais dans `facts_investigation.json`.
 
 **Socle partagé** : `enquete_usages_2026/enquete_common.py` (= `K`) — **source unique** des constantes
 (`DEMO`/`PIO`, seuils `CLASSE_MIN`…, populations nommées `K.EXPECT`), de `school_year`, `exclude_special`,
@@ -114,8 +123,17 @@ e-mail non-`mathadata.fr` apparaît dans une source.
 - **Aucun** nom / prénom / e-mail dans le repo git **ni** dans les artefacts publiés. Pseudonymes
   `S####` (site) / `md5[:8]` (Capytale), grain établissement/commune.
 - Le snapshot Payload reste **local & gitignore**, **jamais committé**. Les fichiers de travail
-  nominatifs (ex. `enquete_usages_2026/_local/match_nominatif.csv`, docs `private/`) **ne sortent jamais** du local (dossier `_local/` gitignore).
-- Jamais de ré-identification.
+  nominatifs (ex. `enquete_usages_2026/_local/match_nominatif.csv`, docs `private/`) **ne sortent
+  jamais** du local.
+- Une analyse nominative interne est permise **uniquement sur demande explicite**, depuis les
+  sources locales autorisées. Toute sortie fichier va dans `enquete_usages_2026/private/` ou
+  `enquete_usages_2026/_local/`, après vérification avec `git check-ignore -q <chemin>`.
+- Une identité côté site est mesurée ; une identité reliée à Capytale est **inférée**. Pour toute
+  liste issue du pont site↔Capytale, conserver/indiquer la confiance A/B et ne jamais présenter
+  l'attribution comme certaine.
+- Avant de terminer une analyse nominative : vérifier `git status --short` et qu'aucune donnée
+  personnelle n'a été ajoutée aux fichiers suivis. Marquer la sortie « usage interne — données
+  personnelles — ne pas publier ».
 
 ## 8. Git (préférence du mainteneur)
 
@@ -130,22 +148,34 @@ voir `enquete_usages_2026/README.md`. À lire en premier : `transverse/SYNTHESE_
 
 ## 10. Répondre à une question d'analyse (mode d'emploi)
 
+Appliquer la skill **`.claude/skills/analyse-usages-mathadata/SKILL.md`** à toute question
+d'analyse sur `enquete_usages_2026/`, notamment si elle demande des noms/e-mails ou un croisement
+site↔Capytale.
+
 Quand on te pose une question sur les données, **dans l'ordre** :
 1. **Lis le glossaire** (`transverse/GLOSSAIRE.md`) — vérifie le sens exact des termes en jeu
    (classe ≥5 vs séance riche ≥10, profondeur, canal, rétention, réutilisation intra-annuelle).
-2. **Cherche d'abord la réponse dans les `facts_*.json`** (sources de vérité chiffrées) et les
+2. **Explicite le contrat de calcul** : population, période, événement, seuil, grain, dénominateur,
+   exclusions et niveau de confidentialité. Si le glossaire tranche, annonce l'interprétation et
+   continue. Si plusieurs lectures plausibles changent matériellement le résultat, pose **une**
+   question concise en proposant d'abord l'option canonique. Si la catégorie demandée n'existe pas,
+   ne l'invente pas silencieusement : proposer la catégorie canonique la plus proche ou une
+   catégorie exploratoire explicitement nommée.
+3. **Cherche d'abord la réponse dans les `facts_*.json`** (sources de vérité chiffrées) et les
    tables `data/` — **ne recalcule pas** ce qui existe déjà. Voir la carte §11.
-3. **Si la réponse n'existe pas**, calcule-la **depuis les tables canoniques** (`profiles_*`,
+4. **Si la réponse n'existe pas**, calcule-la **depuis les tables canoniques** (`profiles_*`,
    `usages_enriched`, `sessions`, `teachers`), **jamais** en redéfinissant un terme. Une analyse
-   jetable → scratchpad. Une variable réutilisable → **ajoute-la à `build_profiles.py`** et relance
-   (ne crée pas un n-ième script ad hoc).
-4. **Cite toujours la base** (seuil, dénominateur, cohorte, année) — c'est là que naissent les
+   jetable → `/tmp` ou `_local/`. Une variable réutilisable → **ajoute-la à `build_profiles.py`**
+   et relance (ne crée pas un n-ième script ad hoc).
+5. **Cite toujours la base** (seuil, dénominateur, cohorte, année) — c'est là que naissent les
    divergences. Précise « usage-classe ≥5 » vs « séance riche ≥10 », « an-1 seulement », « cohorte
    éligible n=77 », etc.
-5. **Ne change un chiffre publié que via la source** (rapport `.md` / dashboard `.html` du repo),
+6. **Ne change un chiffre publié que via la source** (rapport `.md` / dashboard `.html` du repo),
    puis régénère gh-pages + artefact (§6). Jamais d'édition directe d'une copie publiée.
-6. **Garde-fous** : population = exclure démo (MD5 "2") et isoler le hub fondateur (MD5 "0") ;
+7. **Garde-fous** : population = exclure démo (MD5 "2") et isoler le hub fondateur (MD5 "0") ;
    profs = `distinct(teacher)` sur lignes `role=student` ; tout lien site↔Capytale est **estimé**.
+8. **Forme de réponse** : `Interprétation` → `Résultat` → `Base et méthode` → `Limites`. Pour une
+   sortie nominative, ajouter `Destination et confidentialité`.
 
 ## 11. Carte des données (où trouver quoi)
 

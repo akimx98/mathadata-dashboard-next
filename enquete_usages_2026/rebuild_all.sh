@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 # ---------------------------------------------------------------------------
-# Régénère TOUTE la chaîne de l'enquête dans l'ordre, puis lance les contrats.
-# Un seul point d'entrée déterministe → « régénérer de zéro » = une commande.
+# Régénère la CHAÎNE DE CALCUL canonique (facts_*) + le dashboard Flux généré, puis lance les contrats.
+# Un seul point d'entrée déterministe → « régénérer les chiffres canoniques » = une commande.
 #
 #   bash enquete_usages_2026/rebuild_all.sh
+#
+# NE régénère PAS (par nature) : enquêtes multi-agents one-shot (facts_investigation/SEC_*/sections_final
+# — cf. leur _meta, relancer le workflow_*.js), graphiques (make_charts*.py), dashboards à chiffres en dur
+# autres que Flux (concordance contrôlée par les contrats), rapports .md (rédigés). Cf. CLAUDE.md §5.
 #
 # Deux niveaux (les mondes sont disjoints, cf. GLOSSAIRE §0) :
 #   - étapes Capytale & transverses : reproductibles depuis le dépôt (public/data + data/ versionnés) ;

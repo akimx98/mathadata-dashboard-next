@@ -42,9 +42,7 @@ df['created_dt'] = df['created_dt'].dt.tz_convert('Europe/Paris')
 df['changed_dt'] = df['changed_dt'].dt.tz_convert('Europe/Paris')
 
 def school_year(d):
-    if pd.isna(d): return 'NA'
-    sy = d.year if d.month >= 8 else d.year - 1
-    return f"{sy}-{sy+1}"
+    return K.school_year(d)   # impl unique (socle K, coupure 1ᵉʳ août — GLOSSAIRE §1)
 df['sy']   = df['created_dt'].apply(school_year)
 df['ym']   = df['created_dt'].dt.strftime('%Y-%m')
 df['date'] = df['created_dt'].dt.date.astype(str)

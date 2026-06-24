@@ -40,6 +40,13 @@ check(fp['reached_classe']==E['POP_CLASSE'], f"atteint-classe = POP_CLASSE ({E['
 check(fp['testeurs_purs']==E['TESTEURS'] and fp['sous_seuil_only']==E['SOUS_SEUIL'], f"testeurs={E['TESTEURS']} & sous-seuil={E['SOUS_SEUIL']}")
 check(fp['eligibles']==E['COHORT_ELIGIBLE'], f"cohorte éligible = COHORT_ELIGIBLE ({E['COHORT_ELIGIBLE']})")
 
+print("2b. Coupure année scolaire = 1ᵉʳ août (code ↔ GLOSSAIRE §1, anti-divergence) :")
+import datetime as _dt
+_aug = _dt.datetime(2024, 8, 19, tzinfo=_dt.timezone.utc)   # usage élève réel observé en août
+_jul = _dt.datetime(2024, 7, 15, tzinfo=_dt.timezone.utc)
+check(K.school_year(_aug) == '2024-2025', "août rattaché à l'année qui COMMENCE (mois≥8 → '2024-2025')")
+check(K.school_year(_jul) == '2023-2024', "juillet rattaché à l'année qui s'achève ('2023-2024')")
+
 print("3. Pseudonymat & canal (profiles_teacher.csv) :")
 pt=pd.read_csv(f"{TR}/profiles_teacher.csv",dtype=str)
 check(pt['teacher'].str.len().eq(8).all(), "teacher = md5[:8] (jamais le md5 complet)")
@@ -56,6 +63,13 @@ STALE={'downstream_archetypes','engaged_layers','site_segments','downstream_orde
 check(not (STALE & set(ftj)), "facts_typologie : aucune section périmée (downstream/engaged_layers/site_segments)")
 check(ftj.get('n_pupils')!=5970 and ftj.get('n_taught')==len(mt), "facts_typologie : n_pupils distinct (≠5970) & n_taught = master")
 check(ftj.get('retention_canonical',{}).get('eligibles')==fp['eligibles'], "facts_typologie : rétention canonique alignée sur facts_profiles")
+# facts_investigation = snapshot ÉLARGI (n≈101) figé : doit porter un _meta documentant sa base & provenance,
+# sinon il (re)devient une source stale silencieuse (la rétention CANONIQUE vit dans facts_typologie).
+fiv=loadstrict(f"{TR}/facts_investigation.json")
+_meta=fiv.get('_meta',{})
+check(isinstance(_meta,dict) and 'base' in _meta and 'provenance' in _meta and 'retention_canonique_ailleurs' in _meta,
+      "facts_investigation : _meta documente base élargie + provenance (non stale silencieux)")
+check(fiv.get('eligible_n')==101, "facts_investigation : base élargie n=101 (≠ cohorte canonique 77 ; cf. facts_typologie)")
 
 print("5. Pas d'e-mail dans les CSV versionnés (AUCUN, même @mathadata.fr) :")
 EMAIL=re.compile(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}')

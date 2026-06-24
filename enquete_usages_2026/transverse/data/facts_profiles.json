@@ -4,8 +4,8 @@
   "testeurs_purs": 37,
   "seuil_classe": 5,
   "canal": {
-    "capytale_direct": 155,
-    "via_site": 105
+    "capytale_direct": 156,
+    "via_site": 104
   },
   "canal_source": {
     "aucune": 140,
@@ -23,8 +23,8 @@
   },
   "formation_timing": {
     "na": 193,
-    "motrice": 62,
-    "consolidation": 5
+    "motrice": 61,
+    "consolidation": 6
   },
   "niveau": {
     "lycee": 218,
@@ -74,10 +74,10 @@
   },
   "traj_canal_devenir": {
     "capytale_direct|non": 44,
-    "capytale_direct|rec": 36,
+    "capytale_direct|rec": 37,
     "capytale_direct|rev": 18,
     "via_site|non": 7,
-    "via_site|rec": 63,
+    "via_site|rec": 62,
     "via_site|rev": 8
   },
   "traj_canal_y1_devenir": {
@@ -85,12 +85,12 @@
     "capytale_direct|multi|rec": 9,
     "capytale_direct|multi|rev": 8,
     "capytale_direct|uniq|non": 34,
-    "capytale_direct|uniq|rec": 27,
+    "capytale_direct|uniq|rec": 28,
     "capytale_direct|uniq|rev": 10,
     "via_site|multi|rec": 24,
     "via_site|multi|rev": 5,
     "via_site|uniq|non": 7,
-    "via_site|uniq|rec": 39,
+    "via_site|uniq|rec": 38,
     "via_site|uniq|rev": 3
   },
   "n_reached_classe": 176

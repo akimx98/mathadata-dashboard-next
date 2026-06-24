@@ -1,4 +1,11 @@
 {
+ "_meta": {
+  "provenance": "Snapshot FIGÉ de l'enquête multi-agents (transverse/workflow_typologie.js). N'est PAS régénéré par rebuild_all.sh (analyse one-shot, non déterministe) — pour le rejouer : relancer le workflow.",
+  "base": "Cohorte ÉLARGIE « ≥1 contact élève » (eligible_n=101, base_return=30,7 %) — délibérément plus large que la cohorte canonique « usage-classe ≥5 » (n=77, retour 33,8 %).",
+  "retention_canonique_ailleurs": "Le chiffre de rétention CANONIQUE (77 / 26 / 33,8 %) vit dans facts_typologie.json (régénéré). Ici = base élargie, à lire comme telle.",
+  "reach_class_note": "reach_class.taught=224 / engaged=401 = total volet1 (le hub fondateur compté comme 1 compte ayant enseigné, cf. funnel publié). La base typologie hub-exclu = 223.",
+  "sous_cuts_base": "Les sous-cuts (pred, deployeur, multi_null, formation_artifact, entry_act…) portent sur la base élargie n≈101 — étiquetés « indicatif (petit n) ». Les versions canoniques (classe ≥5) des prédicteurs robustes sont dans facts_reconciliation.json."
+ },
  "eligible_n": 101,
  "base_return": 30.7,
  "pred": {

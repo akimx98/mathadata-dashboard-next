@@ -83,8 +83,8 @@
     "college": 7
   },
   "canal_global": {
-    "capytale_direct": 155,
-    "via_site": 105
+    "capytale_direct": 156,
+    "via_site": 104
   },
   "formation_global": {
     "jamais": 193,
@@ -92,7 +92,7 @@
   },
   "formation_timing": {
     "na": 193,
-    "motrice": 62,
-    "consolidation": 5
+    "motrice": 61,
+    "consolidation": 6
   }
 }

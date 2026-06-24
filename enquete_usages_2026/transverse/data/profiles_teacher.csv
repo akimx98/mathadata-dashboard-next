@@ -151,7 +151,7 @@ a078e37d,lycee,capytale_direct,aucune,jamais,aucune,,2,0,,False,False,False,Fals
 a20565d7,lycee,capytale_direct,aucune,jamais,aucune,,3,0,,False,False,False,False
 a48a4b9a,lycee,via_site,proxy_etab,forme,proxy_etab,motrice,5,2,2024-2025,True,False,True,False
 a4af5977,lycee,via_site,individuel,forme,individuel,motrice,5,1,2025-2026,False,False,False,True
-a6c3c194,lycee,via_site,individuel,forme,individuel,motrice,4,1,2025-2026,False,False,False,True
+a6c3c194,lycee,capytale_direct,individuel,forme,individuel,consolidation,4,1,2025-2026,False,False,False,True
 a6d83683,lycee,via_site,individuel,forme,individuel,motrice,5,1,2025-2026,False,False,False,True
 a81ebd75,inconnu,capytale_direct,aucune,jamais,aucune,,2,0,,False,False,False,False
 a8dbe27e,lycee,via_site,proxy_etab,forme,proxy_etab,motrice,4,1,2024-2025,False,False,False,False

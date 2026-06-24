@@ -31,7 +31,7 @@ Le typage formation est désormais REEL via formation-codes (champ users.trained
 - Effet formation (typage réel) : nouveau usage_classe 17.8% / présentiel 23.4% / webinaire 32.4% / ancienne_vague 28.6%. clic Capytale 9.0/26.2/24.8/17.0. ressources moy 2.05/4.04/10.17/4.56.
 - Endogénéité présentiel (vraies dates) : ~9 établissements utilisaient Capytale AVANT la formation ; délai formation->1re séance médian 27 j (p25 12, p75 71).
 - Intention déclarée (redemption) vs usage : 99 déclarations de modules, 6 réalisées (même activité dans l'étab).
-- Cohortes pré-service repérées : ENS_25 (52 profs, 0% usage, ~aucun UAI) et MEEF INSPÉ Paris (13, 0%) = profs STAGIAIRES/pré-service sans établissement -> ne peuvent structurellement pas montrer d'usage classe -> diluent le présentiel.
+- Cohortes 0% usage repérées : pré-service STRICT = MEEF INSPÉ Paris (13, 0%, stagiaires sans établissement, ne peuvent structurellement pas montrer d'usage classe). ATTENTION : ENS_25 (52 profs, 0% usage, ~aucun UAI) n'est PAS pré-service strict — ce sont des **profs en exercice** (formation ouverte non ciblée, "ratée") → classée académique-de-masse, pas pré-service. Toutes deux diluent le présentiel mais pour des raisons différentes.
 - Fichiers : enquete_usages_2026/site-vers-classe/data/facts_formation.json, cohorts.csv, facts_cross.json (formation_effect mis à jour), et table de travail /private/tmp/claude-502/-Users-akim-Documents-MathAData-Git-mathadata-dashboard-next/49f4f306-c2bb-43a0-af8f-f1b5ce99e908/scratchpad/payload_users_work.csv (colonne fcat).
 - Capytale : public/data/capytale_fresh_20260619.csv (role=student=vrais élèves ; uai_el=étab ; created=epoch s). Démo c81e728d exclue, hub Haubourdin cfcd2084 isolé.
 
@@ -60,7 +60,7 @@ const [cohortNature, intention] = await parallel([
 
 ## TA MISSION — Typologie des cohortes par NATURE (au-delà de présentiel/webinaire)
 Les 45 codes ont des labels parlants. Classe CHAQUE cohorte (via formation-codes + trainedFormation) en NATURE :
-- "pré-service" (ENS, INSPÉ, MEEF, agrégatifs, stagiaires sans établissement) ;
+- "pré-service" STRICT (INSPÉ, MEEF, stagiaires sans établissement) — NB : ENS_25 = profs en exercice, à classer en académique-de-masse, PAS ici ;
 - "établissement-ciblée" (formation dans UN établissement : labels avec nom de lycée/"Formation établissement X") ;
 - "académique de masse" (IREM, Labomaths, journée académique, plan de formation, INSPÉ continue, webinaire ouvert) ;
 - "distanciel/webinaire" (Web*, webinaire) ;

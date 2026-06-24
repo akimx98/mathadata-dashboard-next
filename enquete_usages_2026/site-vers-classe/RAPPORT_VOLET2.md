@@ -117,7 +117,7 @@ Trois lectures :
 | % établissement à usage élève *(robuste)* | 17,8 | 23,4 | **32,4** | 28,6 |
 | Ressources / personne *(moyenne)* | 2,1 | 4,0 | **10,2** | 4,6 |
 
-*« Usage élève effectif » = au moins une vraie classe (≥ 1 élève `role=student`), historique Capytale complet 2023-2026, non biaisé par la fenêtre de tracking. Le « % » porte sur les **profs formés à UAI renseigné**, pas sur des établissements distincts (au niveau établissement dédupliqué : 17,8 / 17,1 / 29,5 / 25,8 %). La formation reste associée à un clic Capytale ~2,5× supérieur (effet mêlé de causalité, récence et auto-sélection).*
+*« Usage élève effectif » = **au moins un usage élève** (≥ 1 élève `role=student`) — c.-à-d. l'établissement a **déployé au moins une fois**, ce qui est **distinct** du seuil qualité canonique « usage-classe » (≥ 5 él., GLOSSAIRE §3) et de la « séance riche » (≥ 10). Historique Capytale complet 2023-2026, non biaisé par la fenêtre de tracking. Le « % » porte sur les **profs formés à UAI renseigné**, pas sur des établissements distincts (au niveau établissement dédupliqué : 17,8 / 17,1 / 29,5 / 25,8 %). La formation reste associée à un clic Capytale ~2,5× supérieur (effet mêlé de causalité, récence et auto-sélection).*
 
 **Le vrai webinaire converti mieux subsiste — mais sur petite base et n'est pas le moteur.** Le webinaire *genuine* (121 profs, 68 profs-avec-UAI) atterrit en classe à 32,4 % et consulte le plus de ressources (10,2/personne) : il sélectionne des profs déjà décidés. Le présentiel (363) est plus large mais agrège des régimes opposés. Le format, à lui seul, n'explique pas grand-chose.
 
@@ -273,4 +273,7 @@ Profil-type du prof qui va au bout : un **clic ressource suivi d'un clic Capytal
 Pipeline dédié dans `enquete_usages_2026/site-vers-classe/` :
 `build_payload_canonical.py` → `compute_cross_facts.py` → `build_formation_cohorts.py` → `match_individuals.py` → `make_charts_volet2.py`, plus deux workflows multi-agents (`workflow_volet2.js` : 8 deep-dives → vérif → synthèse ; `workflow_formation.js` : intégration des données de formation → vérif → « ce qui change »). Le **2ᵉ chargement** a ajouté quatre collections (`formation-codes`, `formation-redemptions`, `modules`, `etablissements`) permettant le **typage formation réel** (§3) et le typage de tous les UAI. Définitions canoniques : **`DEFINITIONS_VOLET2.md`**. Sources de vérité : **`data/facts_cross.json`** (croisement) et **`data/facts_formation.json`** (cohortes/intention) ; cohortes détaillées dans `data/cohorts.csv`. Sorties pseudonymisées : `data/match_candidates.csv` (site = `S####`, Capytale = md5[:8]), `data/capytale_by_uai_*.csv`, `data/presentiel_etabs.csv`.
 
-**Sécurité.** Le snapshot Payload contient des données personnelles : il reste local (gitignore), n'est jamais committé, et aucune sortie versionnée/publiée ne contient nom, prénom ou e-mail. Aucune ré-identification.
+**Sécurité.** Le snapshot Payload contient des données personnelles : il reste local (gitignore),
+n'est jamais committé, et aucune sortie versionnée/publiée ne contient nom, prénom ou e-mail. Ce
+rapport ne publie aucune ré-identification ; les analyses nominatives internes éventuelles restent
+dans `private/` ou `_local/`.

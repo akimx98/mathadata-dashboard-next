@@ -188,12 +188,16 @@ for u, g in W[W['uai']!=''].groupby('uai'):
 
 def classify(tid):
     """Renvoie (canal, canal_src, formation_status, formation_timing, formation_src), FIGÉ à la 1ʳᵉ
-    apparition (first_student si présent, sinon first_test pour les testeurs purs).
+    apparition Capytale TOUS MONDES confondus = min(first_test, first_student) (GLOSSAIRE §6 :
+    « le canal décrit l'origine ; il inclut le 1ᵉʳ clone Capytale »). Un prof qui a auto-testé sur
+    Capytale AVANT tout contact site est arrivé par Capytale, même s'il a créé un compte site ensuite.
     ⚠️ canal_src / formation_src = niveau de confiance : 'individuel' (appariement 1:1, fiable) vs
     'proxy_etab' (un compte/formation d'un COLLÈGUE au même UAI — attribution écologique, prudence)."""
     row = tea[tea['teacher']==tid].iloc[0]
     uai = row['uai']
-    first_use = row['first_student'] if pd.notna(row['first_student']) else row['first_test']
+    # ancre = 1ʳᵉ apparition Capytale (auto-test OU 1ᵉʳ élève), la plus précoce des deux
+    _cands = [d for d in (row['first_test'], row['first_student']) if pd.notna(d)]
+    first_use = min(_cands) if _cands else pd.NaT
     h = h8(tid)
     canal, fstatut, ftiming = 'capytale_direct', 'jamais', None
     canal_src, fstatut_src = 'aucune', 'aucune'

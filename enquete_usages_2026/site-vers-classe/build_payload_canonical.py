@@ -33,8 +33,7 @@ CAP_RE=re.compile(r'web/b/(\d+)')
 def to_dt(s):
     return pd.to_datetime(s, utc=True, errors='coerce')
 def sy(d):
-    if pd.isna(d): return 'NA'
-    y=d.year if d.month>=8 else d.year-1; return f"{y}-{y+1}"
+    return K.school_year(d)   # impl unique (socle K, coupure 1ᵉʳ août — GLOSSAIRE §1)
 
 # ---------- annuaire (IPS/commune/dept) + referentiel site etablissements (type/academie, 13040) ----------
 ann=pd.read_csv(f"{BASE}/annuaire_etablissements.csv",dtype=str,keep_default_na=False)

@@ -17,7 +17,7 @@ ann=pd.read_csv(f"{BASE}/annuaire_etablissements.csv", dtype=str, keep_default_n
 ann['ips_num']=pd.to_numeric(ann['ips'],errors='coerce')
 
 DEMO = K.DEMO
-PIONEER='cfcd208495d565ef66e7dff9f98764da'  # id séquentiel "0"
+PIONEER=K.PIO  # hub fondateur (MD5 "0") — socle partagé, jamais redéfini localement
 for c in ['created']:
     df[c]=pd.to_numeric(df[c],errors='coerce')
 df['created_dt']=pd.to_datetime(df['created'],unit='s',utc=True).dt.tz_convert('Europe/Paris')
@@ -52,7 +52,7 @@ F['overview']={
 
 # ---------- 1. CROISSANCE ----------
 def sy_split(d):
-    sy=d.year if d.month>=8 else d.year-1; return f"{sy}-{sy+1}"
+    return K.school_year(d)   # impl unique (socle K, coupure 1ᵉʳ août — GLOSSAIRE §1)
 real['sy']=real['created_dt'].apply(sy_split)
 real['ym']=real['created_dt'].dt.strftime('%Y-%m')
 g_sy=real.groupby(['sy','role']).size().unstack(fill_value=0)
