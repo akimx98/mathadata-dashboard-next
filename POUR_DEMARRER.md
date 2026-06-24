@@ -15,10 +15,9 @@ La mise à jour complète des sources et des chiffres est une opération distinc
 - pour les questions nominatives : accès au dépôt privé `mathadata-website` et compte administrateur
   sur <https://mathadata.fr/admin>.
 
-Cloner le dépôt d'analyse :
+Configurer le repo :
 
 ```bash
-git clone <URL_DU_DEPOT>
 cd mathadata-dashboard-next
 python3 -m pip install pandas numpy
 git config core.hooksPath enquete_usages_2026/hooks
