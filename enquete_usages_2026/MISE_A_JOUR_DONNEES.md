@@ -36,43 +36,34 @@ modules
 etablissements
 ```
 
-### Attention à la branche du dépôt site
+### ⚠️ La source = la PRODUCTION (`mathadata.fr/admin`), pas ta base locale
 
-La branche par défaut du dépôt site est `master`, mais le script complet est disponible
-sur `dev` à partir du commit `4b4eed45`.
+Le script se connecte à `REMOTE_PAYLOAD_URL=https://mathadata.fr` et s'**authentifie avec un compte
+admin Payload de PRODUCTION** (`mathadata.fr/admin`) pour lire les collections via l'API REST. Donc :
 
-Ne pas changer automatiquement la branche du clone site : un collègue peut avoir des
-modifications en cours. Commencer par récupérer les références distantes et vérifier que
-le commit requis a bien été publié :
+- **Ni la branche du clone site, ni sa base de données locale ne déterminent les données** — seuls
+  comptent l'URL de prod + les identifiants admin. (La base locale `DATABASE_URI` ne sert qu'à l'étape
+  *optionnelle* d'import Postgres local, **inutile** à l'enquête.)
+- Il te faut un **compte administrateur sur `mathadata.fr/admin`**.
+
+### La branche du dépôt site n'a pas d'importance
+
+Le script `src/scripts/snapshotPayloadToLocal.mjs` est présent **sur `master` ET sur `dev`** (le commit
+qui l'a introduit, `4b4eed45`, est mergé sur master). Il suffit que ton clone soit **à jour** ; lance-le
+depuis la branche où tu es, sans worktree ni checkout particulier :
 
 ```bash
 SITE_REPO="/chemin/vers/mathadata-website"
-SNAPSHOT_COMMIT="4b4eed45"
-
-git -C "$SITE_REPO" fetch origin dev
-git -C "$SITE_REPO" cat-file -e "${SNAPSHOT_COMMIT}^{commit}"
-git -C "$SITE_REPO" merge-base --is-ancestor "$SNAPSHOT_COMMIT" origin/dev
+git -C "$SITE_REPO" pull --ff-only      # mettre le clone à jour (master ou dev, peu importe)
 ```
 
-Si l'une des deux dernières commandes échoue, `origin/dev` ne contient pas encore la
-version requise : ne pas poursuivre avec une ancienne version du script.
-
-Vérifier ensuite la branche actuellement ouverte :
-
-```bash
-git -C "$SITE_REPO" merge-base --is-ancestor "$SNAPSHOT_COMMIT" HEAD
-```
-
-- code retour `0` : exécuter directement le script depuis le clone courant ;
-- code retour non nul : utiliser le worktree temporaire ci-dessous.
-
-### Cas A — la branche courante contient le script
+### Lancer le snapshot
 
 ```bash
 SITE_REPO="/chemin/vers/mathadata-website"
 
-read -r -p "E-mail admin Payload : " REMOTE_ADMIN_EMAIL
-read -r -s -p "Mot de passe admin Payload : " REMOTE_ADMIN_PASSWORD
+read -r -p "E-mail admin Payload (PROD) : " REMOTE_ADMIN_EMAIL
+read -r -s -p "Mot de passe admin Payload (PROD) : " REMOTE_ADMIN_PASSWORD
 printf '\n'
 
 REMOTE_PAYLOAD_URL="https://mathadata.fr" \
@@ -83,43 +74,14 @@ node "$SITE_REPO/src/scripts/snapshotPayloadToLocal.mjs" --limit 5000
 unset REMOTE_ADMIN_EMAIL REMOTE_ADMIN_PASSWORD
 ```
 
-Le nouveau snapshot se trouve dans :
+Le snapshot est écrit par défaut dans `mathadata-website/private/payload-snapshots/<timestamp>/`
+(les 8 collections en `.json`).
 
-```text
-mathadata-website/private/payload-snapshots/<timestamp>/
-```
-
-### Cas B — la branche courante ne contient pas le script
-
-Cette méthode n'altère ni la branche courante ni les fichiers de travail du dépôt site :
-
-```bash
-SITE_REPO="/chemin/vers/mathadata-website"
-SNAPSHOT_WORKTREE="${SITE_REPO}-snapshot-worktree"
-SNAPSHOT_ROOT="$SITE_REPO/private/payload-snapshots"
-SNAPSHOT_COMMIT="4b4eed45"
-
-git -C "$SITE_REPO" fetch origin dev
-git -C "$SITE_REPO" merge-base --is-ancestor "$SNAPSHOT_COMMIT" origin/dev
-git -C "$SITE_REPO" worktree add --detach "$SNAPSHOT_WORKTREE" "$SNAPSHOT_COMMIT"
-
-read -r -p "E-mail admin Payload : " REMOTE_ADMIN_EMAIL
-read -r -s -p "Mot de passe admin Payload : " REMOTE_ADMIN_PASSWORD
-printf '\n'
-
-REMOTE_PAYLOAD_URL="https://mathadata.fr" \
-REMOTE_ADMIN_EMAIL="$REMOTE_ADMIN_EMAIL" \
-REMOTE_ADMIN_PASSWORD="$REMOTE_ADMIN_PASSWORD" \
-node "$SNAPSHOT_WORKTREE/src/scripts/snapshotPayloadToLocal.mjs" \
-  --limit 5000 \
-  --output-root "$SNAPSHOT_ROOT"
-
-unset REMOTE_ADMIN_EMAIL REMOTE_ADMIN_PASSWORD
-git -C "$SITE_REPO" worktree remove "$SNAPSHOT_WORKTREE"
-```
-
-Le snapshot est conservé dans le clone principal sous
-`private/payload-snapshots/<timestamp>/`.
+> **Repli** (clone trop ancien dont la branche courante ne contient pas encore le script, sans vouloir
+> changer de branche) : lancer depuis un worktree détaché —
+> `git -C "$SITE_REPO" worktree add --detach /tmp/site-snap 4b4eed45`, exécuter le script depuis
+> `/tmp/site-snap/src/scripts/...` avec `--output-root "$SITE_REPO/private/payload-snapshots"`, puis
+> `git -C "$SITE_REPO" worktree remove /tmp/site-snap`.
 
 Ne jamais passer `--since` pour produire la source complète d'une enquête : cette option
 limite volontairement les collections historiques. Elle est destinée aux diagnostics
