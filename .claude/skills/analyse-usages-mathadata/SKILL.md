@@ -18,6 +18,21 @@ faire sortir de données personnelles du périmètre local autorisé.
 4. Pour une demande nominative ou un croisement individuel, lire aussi
    [references/mode-nominatif-local.md](references/mode-nominatif-local.md).
 
+## Disponibilité des données dans un clone
+
+- **Sans PII, déjà versionné** (répondre directement, ne pas exiger de snapshot) : les tables
+  canoniques `transverse/data/profiles_teacher*.csv`, `usage-capytale/data/{usages_enriched,sessions,
+  teachers}.csv`, l'appariement pseudonymisé `site-vers-classe/data/match_candidates.csv`, l'entrée
+  brute `public/data/capytale_fresh_*.csv` (schéma : `enquete_usages_2026/DONNEES_BRUTES_CAPYTALE.md`),
+  et tous les `facts_*.json`. La plupart des questions Capytale, canal, formation, profondeur et
+  rétention se répondent **sans** le snapshot (canal/formation sont **pré-calculés** dans
+  `profiles_teacher.csv`).
+- **Avec PII, strictement local** : le snapshot Payload (noms/prénoms/e-mails) n'est **pas** dans le
+  clone. Toute question nominative (noms, e-mails) ou tout nouveau croisement individuel l'exige.
+  S'il est absent, ne pas inventer : indiquer qu'il manque et renvoyer à
+  [`enquete_usages_2026/MISE_A_JOUR_DONNEES.md`](../../../enquete_usages_2026/MISE_A_JOUR_DONNEES.md)
+  (récupération via le dépôt voisin `mathadata-website`, variable `MATHADATA_SNAPSHOT`).
+
 ## Workflow
 
 1. Reformuler l'interprétation opérationnelle : population, période, événement, seuil, grain,

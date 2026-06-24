@@ -11,10 +11,11 @@
 
 ## (historique) Définitions canoniques — enquête usages MathAData (extraction 2026-06-19)
 
-## Fichiers (chemins absolus)
-- Brut : `/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/public/data/capytale_fresh_20260619.csv` (7353 lignes)
-- Annuaire : `/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/public/data/annuaire_etablissements.csv`
-- Tables canoniques : `/Users/akim/Documents/MathAData_Git/mathadata-dashboard-next/enquete_usages_2026/usage-capytale/data/`
+## Fichiers (chemins relatifs à la racine du dépôt)
+- Brut : `public/data/capytale_fresh_20260619.csv` (7353 lignes) — schéma colonne par colonne dans
+  [`../DONNEES_BRUTES_CAPYTALE.md`](../DONNEES_BRUTES_CAPYTALE.md).
+- Annuaire : `public/data/annuaire_etablissements.csv`
+- Tables canoniques : `enquete_usages_2026/usage-capytale/data/`
   - `usages_enriched.csv` (1 ligne = 1 affectation, enrichie : rôle, dates Paris, année scolaire `sy`, `act_label/act_level/act_theme`, attributs établissement él. `el_*` et prof `th_*`, `teacher_uai`, `session_id`)
   - `teachers.csv` (1 ligne = 1 prof `teacher`)
   - `establishments.csv` (1 ligne = 1 UAI prof de référence)
