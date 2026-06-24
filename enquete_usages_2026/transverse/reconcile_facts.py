@@ -34,8 +34,12 @@ F['sessions']=dict(total=len(sess), classe_ge5=int(ge5), classe_ge10=int(ge10),
     bande_5_9=int(band59), sous_seuil_1_4=int(((sess['n_eleves']>=1)&(sess['n_eleves']<5)).sum()))
 
 # ---- 2. population & profondeur ----
+sess['h8']=sess['teacher'].str[:8]
+sp=sess[sess['h8'].isin(set(PROF['teacher']))]
 F['population']=dict(touche_eleves=len(PROF),
     reached_classe_ge5=int((PROF['n_years_classe']>=1).sum()),
+    reached_seance_riche_ge10=int(sp[sp['n_eleves']>=10]['h8'].nunique()),   # 150 (mode-cible qualité)
+    reached_grande_classe_ge20=int(sp[sp['n_eleves']>=20]['h8'].nunique()),  # 82 (paradoxe déployeur)
     sous_seuil_only=int((PROF['n_years_classe']==0).sum()),
     max_level=PROF['max_level'].value_counts().sort_index().to_dict())
 

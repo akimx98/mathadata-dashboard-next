@@ -9,6 +9,8 @@
   "population": {
     "touche_eleves": 223,
     "reached_classe_ge5": 176,
+    "reached_seance_riche_ge10": 150,
+    "reached_grande_classe_ge20": 82,
     "sous_seuil_only": 47,
     "max_level": {
       "3": 47,

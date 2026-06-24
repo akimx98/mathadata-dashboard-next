@@ -17,14 +17,14 @@
 
 **Qui atteint la classe ?** — 224 des 401 comptes engagés (56 %) enseignent. Atteindre la classe n'est pas dur **en soi** : les profs qui découvrent l'outil **seuls** (sans formation) déploient très majoritairement. Le vrai maillon faible est la **conversion post-formation** : modérée et très inégale (mesurée au grain établissement, [Volet 2](../site-vers-classe/RAPPORT_VOLET2.md) : ~17-30 % selon le type, **établissement-ciblée 59 % vs masse 10 %**). ⚠️ Les ~140 profs « vus seulement en formation » sont des **profs en exercice** à activer (un réservoir), *pas* des « stagiaires » sans classe (seule la minorité pré-service INSPÉ/MEEF l'est).
 
-**Pourquoi la plupart ne reviennent-ils pas ?** — Sur 101 enseignants ayant *pu* revenir, **31 % reviennent** l'année suivante. La cause n'est pas le profil (le lien profil→retour est tautologique) mais la **dose de la première année**. Le cœur du problème est le **paradoxe du déployeur** : les déployeurs atteignent une vraie classe — le signal même qui prédit le retour — et pourtant **0 sur 41 reviennent**. La perte n'est pas au premier contact, elle est à la **réengagement d'une année sur l'autre**.
+**Pourquoi la plupart ne reviennent-ils pas ?** — Sur **77 enseignants** ayant atteint une vraie classe (≥5 él.) et ayant *pu* revenir, **34 % reviennent** l'année suivante *(base élargie « tout contact élève » : 31 %/101 — même histoire)*. La cause n'est pas le profil (le lien profil→retour est tautologique) mais la **dose de la première année**. Le cœur du problème est le **paradoxe du déployeur** : les déployeurs atteignent une vraie classe — le signal même qui prédit le retour — et pourtant **0 sur 41 reviennent**. La perte n'est pas au premier contact, elle est à la **réengagement d'une année sur l'autre**.
 
 > ⚠️ Ce 0 % vaut pour les déployeurs **grande classe + une seule activité**. Élargi à *toutes* les grandes classes (≥ 20 él.), le retour est de **47 % (16/34)** : ce n'est donc pas la **taille** qui tue le retour mais la **profondeur faible** (1 seule activité).
 
 | Chiffre clé | Valeur |
 |---|---|
 | Comptes engagés qui atteignent une vraie classe | 56 % (224/401) |
-| Profs éligibles qui reviennent l'année suivante | **31 % (31/101)** (base *usage-classe* ≥ 5 : cohorte éligible n = 77 → **34 %** ; même histoire, dénominateur canonique différent) |
+| Profs éligibles qui reviennent l'année suivante | **34 % (26/77)** — base canonique *usage-classe* ≥ 5 *(base élargie « tout contact élève » : 31 %/101, même histoire)* |
 | Déployeurs : ont atteint une classe complète (>20) / sont revenus | **44 % / 0 % (0/41)** |
 | Retour si ≥2 séances **et** un test en année 1 vs « one-shot » sans test | 62 % vs 19 % |
 | Réplication intra-cohorte (2024-25 seule) de cet écart | 56 % vs 12 % |
@@ -72,9 +72,9 @@ Le constat utile n'est donc pas « il y a un filtre définitionnel », mais :
 
 ## III. Pourquoi la plupart ne reviennent-ils pas ?
 
-### Le cadrage : 31 % de retour, mesuré proprement
+### Le cadrage : 34 % de retour, mesuré proprement
 
-Sur 224 enseignants, seuls **101 ont *pu* revenir** : ceux entrés en 2023-24 ou 2024-25, qui ont eu une **année suivante**. Les 123 entrés en 2025-26 n'ont pas encore d'année d'après et sont exclus du taux de rétention. *(L'extraction du 19 juin capte par ailleurs l'année quasi complète : en 2024-25, plus aucune séance après le 12 juin.)* Sur les 101 éligibles, **31 reviennent (30,7 %)**.
+Base canonique (*usage-classe* ≥ 5 él., hub exclu) : **77 enseignants** ont atteint une vraie classe et *pu* revenir (1ʳᵉ classe ≤ 2024-25) → **26 reviennent = 34 %**. *(Base élargie « tout contact élève », ≥1 élève : 101 éligibles → 31 reviennent, 30,7 % — même histoire, dénominateur plus large.)* Les profs entrés en 2025-26 sont exclus (pas encore d'année d'après). *(L'extraction du 19 juin capte l'année quasi complète : en 2024-25, plus aucune séance après le 12 juin.)*
 
 ### Le paradoxe du déployeur (le cœur)
 
@@ -146,7 +146,7 @@ Parmi les 32 pluriannuels : **25/32** ont eu un démarrage modeste (<5 séances 
 **Vs l'ancienne note (nov. 2025) :**
 - « 8 élèves de moyenne » = artefact de **grain séance** (médiane séance 5) ; au grain prof la classe médiane est **20**.
 - « Le collectif intra-établissement est l'avenir » → **nul confirmé**.
-- Rétention « impossible à établir » → **31 % proprement mesuré** (sur cohorte éligible).
+- Rétention « impossible à établir » → **34 % proprement mesuré** (cohorte éligible classe ≥5 ; 31 % sur base élargie).
 
 **Au sein de l'enquête elle-même** (vérification adversariale) :
 - Rétention mesurée sur les **101 profs ayant déjà eu une année suivante** (entrés ≤ 2024-25), pas sur les 224.

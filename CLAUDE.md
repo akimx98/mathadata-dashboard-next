@@ -85,9 +85,14 @@ recalcule pas, il **lit** ces faits.
 population/rétention, pseudonymat md5[:8], hub exclu, zéro e-mail dans `data/`). Doit finir par
 `✅ tous les contrats sont respectés`.
 
-⚠️ **Les dashboards `.html` embarquent leurs chiffres en dur** : régénérer les `facts_*.json` ne
-met **pas** à jour les pages. Après un recalcul, reporter les nombres changés dans le dashboard
-concerné, puis republier (§6). C'est un choix (HTML autonome, CSP-safe), pas un oubli.
+⚠️ **Les dashboards `.html` embarquent leurs chiffres en dur** (HTML autonome, CSP-safe : pas de
+`fetch` possible). Deux régimes :
+- **Flux** : **généré depuis les facts** par `build_flux_dashboard.py` (remplit les `<span data-f>`
+  + l'îlot `F` des Sankeys depuis `facts_profiles.json`). Après `build_profiles.py`, relancer
+  `build_flux_dashboard.py` → la page est à jour automatiquement.
+- **Autres dashboards** (typologie, volet2, synthèse, séances, volet1) : chiffres **encore en dur**
+  → après un recalcul, reporter les nombres à la main. `check_contracts.py` (§ ci-dessus) **vérifie
+  la concordance** dashboards↔facts et casse si ça diverge (filet anti-oubli).
 
 ## 6. Publication (ne jamais diverger)
 
