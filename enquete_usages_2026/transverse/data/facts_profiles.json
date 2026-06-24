@@ -98,18 +98,18 @@
     "touched": {
       "n": 223,
       "xtab": {
-        "capytale_direct|jamais|uniq": 70,
-        "capytale_direct|jamais|multi": 25,
-        "via_site|jamais|multi": 7,
-        "via_site|jamais|uniq": 23,
-        "capytale_direct|jamais|ss": 33,
-        "via_site|forme|uniq": 23,
-        "via_site|forme|multi": 24,
-        "via_site|jamais|ss": 7,
-        "via_site|forme|ss": 6,
         "capytale_direct|forme|multi": 3,
         "capytale_direct|forme|ss": 1,
-        "capytale_direct|forme|uniq": 1
+        "capytale_direct|forme|uniq": 1,
+        "capytale_direct|jamais|multi": 25,
+        "capytale_direct|jamais|ss": 33,
+        "capytale_direct|jamais|uniq": 70,
+        "via_site|forme|multi": 24,
+        "via_site|forme|ss": 6,
+        "via_site|forme|uniq": 23,
+        "via_site|jamais|multi": 7,
+        "via_site|jamais|ss": 7,
+        "via_site|jamais|uniq": 23
       },
       "rates": {
         "canal": {
@@ -141,21 +141,21 @@
     "all": {
       "n": 260,
       "xtab": {
-        "capytale_direct|jamais|uniq": 70,
-        "capytale_direct|jamais|multi": 25,
-        "via_site|jamais|multi": 7,
-        "capytale_direct|jamais|test": 23,
-        "via_site|jamais|uniq": 23,
-        "via_site|jamais|test": 5,
-        "capytale_direct|jamais|ss": 33,
-        "via_site|forme|uniq": 23,
-        "via_site|forme|multi": 24,
-        "via_site|forme|test": 9,
-        "via_site|jamais|ss": 7,
-        "via_site|forme|ss": 6,
         "capytale_direct|forme|multi": 3,
         "capytale_direct|forme|ss": 1,
-        "capytale_direct|forme|uniq": 1
+        "capytale_direct|forme|uniq": 1,
+        "capytale_direct|jamais|multi": 25,
+        "capytale_direct|jamais|ss": 33,
+        "capytale_direct|jamais|test": 23,
+        "capytale_direct|jamais|uniq": 70,
+        "via_site|forme|multi": 24,
+        "via_site|forme|ss": 6,
+        "via_site|forme|test": 9,
+        "via_site|forme|uniq": 23,
+        "via_site|jamais|multi": 7,
+        "via_site|jamais|ss": 7,
+        "via_site|jamais|test": 5,
+        "via_site|jamais|uniq": 23
       },
       "rates": {
         "canal": {
@@ -183,6 +183,94 @@
           }
         }
       }
+    }
+  },
+  "traj_formation_y1_devenir": {
+    "forme|multi|rec": 20,
+    "forme|multi|rev": 5,
+    "forme|uniq|non": 5,
+    "forme|uniq|rec": 19,
+    "forme|uniq|rev": 2,
+    "jamais|multi|non": 10,
+    "jamais|multi|rec": 13,
+    "jamais|multi|rev": 8,
+    "jamais|uniq|non": 36,
+    "jamais|uniq|rec": 47,
+    "jamais|uniq|rev": 11
+  },
+  "formation_effect": {
+    "mult_y1": {
+      "forme": {
+        "k": 25,
+        "n": 51
+      },
+      "jamais": {
+        "k": 31,
+        "n": 125
+      },
+      "motrice": {
+        "k": 22,
+        "n": 47
+      },
+      "via_forme": {
+        "k": 22,
+        "n": 47
+      },
+      "via_jamais": {
+        "k": 7,
+        "n": 30
+      }
+    },
+    "reach": {
+      "forme": {
+        "k": 51,
+        "n": 58
+      },
+      "jamais": {
+        "k": 125,
+        "n": 165
+      }
+    },
+    "retour": {
+      "forme": {
+        "k": 7,
+        "n": 12
+      },
+      "jamais": {
+        "k": 19,
+        "n": 65
+      },
+      "motrice": {
+        "k": 6,
+        "n": 11
+      },
+      "forme_proxy": 9
+    },
+    "med": {
+      "reuse": {
+        "forme": {
+          "k": 5,
+          "n": 5
+        },
+        "jamais": {
+          "k": 8,
+          "n": 18
+        }
+      },
+      "unique": {
+        "forme": {
+          "k": 2,
+          "n": 7
+        },
+        "jamais": {
+          "k": 11,
+          "n": 47
+        }
+      }
+    },
+    "censored_formes": {
+      "k": 39,
+      "n": 51
     }
   }
 }

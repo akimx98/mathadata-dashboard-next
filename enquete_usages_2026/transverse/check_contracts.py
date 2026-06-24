@@ -47,6 +47,15 @@ check(sum(fn['all']['xtab'].values())==fn['all']['n']==E['POP_CAPYTALE'], f"funn
 check(sum(v for k,v in fn['all']['xtab'].items() if k.endswith('|test'))==E['TESTEURS'], f"funnel tous : barreau testeur pur = TESTEURS ({E['TESTEURS']})")
 check(all(k.split('|')[0] in ('via_site','capytale_direct') and k.split('|')[1] in ('forme','jamais') and k.split('|')[2] in ('test','ss','uniq','multi') for k in fn['all']['xtab']), "funnel : clés = canal|formation|profondeur (vocabulaire canonique)")
 
+print("2c. Effet de la formation (facts_profiles — diag §6 : intensité, retour, médiation) :")
+tf=fp['traj_formation_y1_devenir']; feff=fp['formation_effect']
+check(sum(tf.values())==fp['reached_classe'], f"traj_formation Σ = atteint-classe ({fp['reached_classe']})")
+check(all(k.split('|')[0] in ('forme','jamais') and k.split('|')[1] in ('multi','uniq') and k.split('|')[2] in ('rev','non','rec') for k in tf), "traj_formation : clés = formation|intensité|devenir")
+check(feff['mult_y1']['forme']['n']+feff['mult_y1']['jamais']['n']==fp['reached_classe'], "mult_y1 formé+jamais = atteint-classe (176)")
+check(feff['reach']['forme']['n']+feff['reach']['jamais']['n']==fp['n_touched_students'], "reach formé+jamais = touché-élèves (223)")
+check(feff['retour']['forme']['n']+feff['retour']['jamais']['n']==fp['eligibles'], "retour formé+jamais = éligibles (77)")
+check(sum(feff['med'][g][s]['n'] for g in ('reuse','unique') for s in ('forme','jamais'))==fp['eligibles'], "médiation (reuse+unique)×(formé+jamais) = éligibles (77)")
+
 print("2b. Coupure année scolaire = 1ᵉʳ août (code ↔ GLOSSAIRE §1, anti-divergence) :")
 import datetime as _dt
 _aug = _dt.datetime(2024, 8, 19, tzinfo=_dt.timezone.utc)   # usage élève réel observé en août
@@ -107,6 +116,12 @@ _rt=fn['touched']['rates']
 check(span(flux,'rcViaClasse')==_rc(_rt['canal']['via_site']) and span(flux,'rcCapClasse')==_rc(_rt['canal']['capytale_direct']), "flux: spans taux-classe canal (§1) = facts funnel touché")
 check(span(flux,'rcFormeClasse')==_rc(_rt['formation']['forme']) and span(flux,'rcJamaisClasse')==_rc(_rt['formation']['jamais']), "flux: spans taux-classe formation (§1) = facts funnel touché")
 check(span(flux,'popAll')==str(fp['population']) and span(flux,'test')==str(fp['testeurs_purs']), f"flux: spans popAll={fp['population']} & test={fp['testeurs_purs']}")
+# îlot FF (diag §6 formation→intensité→retour) + spans d'effet = générés depuis facts
+mFF=re.search(r'const FF=(\{.*\});',flux)
+check(bool(mFF) and json.loads(mFF.group(1))==tf, "flux: îlot FF = facts traj_formation_y1_devenir")
+def _kb(o): return f"{o['k']}/{o['n']}"
+check(span(flux,'feMultFbase')==_kb(feff['mult_y1']['forme']) and span(flux,'feMultJbase')==_kb(feff['mult_y1']['jamais']), "flux: spans usage-multiple §6 = facts formation_effect")
+check(span(flux,'feRetFbase')==_kb(feff['retour']['forme']) and span(flux,'feMedRFbase')==_kb(feff['med']['reuse']['forme']) and span(flux,'feCensFbase')==_kb(feff['censored_formes']), "flux: spans retour/médiation/censure §6 = facts")
 typo=rd("transverse/dashboard_typologie.html")
 m=re.search(r'<div class="n red">(\d+) %</div><div class="l">des profs',typo)
 check(bool(m) and int(m.group(1))==round(ft['retention_canonical']['taux']), f"typologie: strip rétention = {round(ft['retention_canonical']['taux'])} %")

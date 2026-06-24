@@ -19,7 +19,7 @@ h2{font-size:21px;font-weight:800;letter-spacing:-.01em;margin:34px 0 2px}
 .card{background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:8px;margin:14px 0}
 .scroll{overflow-x:auto}
 svg{display:block;max-width:100%;margin:0 auto}
-#dA svg,#dB svg,#dC svg,#dD svg{min-width:680px}
+#dA svg,#dB svg,#dC svg,#dD svg,#dF svg{min-width:680px}
 .rate{margin:10px 0 0}
 .colhead{font-family:var(--grot);font-weight:800;font-size:13px;fill:var(--ink);letter-spacing:.02em}
 .colsub{font-family:var(--mono);font-size:10px;fill:var(--faint)}
@@ -118,6 +118,33 @@ thead th{font-family:var(--grot);font-weight:700;color:var(--ink);border-bottom:
     <b>Canal et formation : à NE PAS lire comme des prédicteurs établis.</b> Les écarts via-site (53 % vs 29 %) et formation (58 % vs 29 %) sont séduisants, mais sur cette cohorte ils sont <b>non significatifs</b> (Fisher p ≈ 0,13 et 0,09) et, surtout, <b>essentiellement écologiques</b> : <b>12 des 15</b> « via-site » éligibles et <b>9 des 12</b> « formés » éligibles sont attribués par <b>proxy établissement</b> (un collègue au même UAI), pas par appariement individuel — seuls 3 + 3 sont des appariements 1:1. S'y ajoute un biais de <b>récence</b> : <span data-f="via.rec">62</span> des <span data-f="via.tot">77</span> profs « via le site » sont <b>trop récents</b> (cohortes 2026, retour non encore observable). Ces leviers restent <b>plausibles</b> mais demandent de plus gros effectifs <b>individuellement appariés</b> avant d'être affirmés.
   </div>
 
+  <h2>6 · L'effet de la formation : surtout sur l'<i>intensité</i>, et par elle sur le retour</h2>
+  <p class="h2sub">La formation ne change qu'à peine la probabilité d'<b>atteindre</b> une classe (<span data-f="feReachFpct">88</span> % des formés vs <span data-f="feReachJpct">76</span> % des jamais formés). Son vrai levier est l'<b>intensité</b> : dès la 1ʳᵉ année classe, <b><span data-f="feMultFpct">49</span> % des formés réutilisent</b> (≥2 occasions) contre <b><span data-f="feMultJpct">25</span> % des jamais formés</b> — un rapport de 1 à 2 (<span data-f="feMultFbase">25/51</span> vs <span data-f="feMultJbase">31/125</span>, Fisher <b>p = <span data-f="feMultP">0.002</span></b>). Le diagramme suit ce double pas : <b>formation → intensité (an 1) → retour</b>.</p>
+  <div class="card scroll" id="dF"><svg id="sankF" viewBox="0 0 1020 380" role="img" aria-label="Sankey formation intensité retour"></svg></div>
+  <div class="legend">
+    <span><span class="sw" style="background:var(--amber)"></span><b>Formé</b></span>
+    <span><span class="sw" style="background:var(--grey)"></span><b>Jamais formé</b></span>
+    <span style="color:var(--faint)">Ruban coloré par <b>statut de formation</b>. Colonnes : intensité an 1 (réutilise / unique) → retour (même sens qu'au diagramme 3). La masse « trop récent » du côté formé traduit la censure (cohortes 2026).</span>
+  </div>
+  <table>
+    <thead><tr><th>Effet (posé en année 1)</th><th>Formés</th><th>Jamais formés</th><th>Test</th></tr></thead>
+    <tbody>
+      <tr><td><b>Réutilise dès l'an 1</b> (≥2 occasions classe)</td><td><b><span data-f="feMultFpct">49</span> %</b> <span style="color:var(--faint)">(<span data-f="feMultFbase">25/51</span>)</span></td><td><span data-f="feMultJpct">25</span> % <span style="color:var(--faint)">(<span data-f="feMultJbase">31/125</span>)</span></td><td><b style="color:var(--bridge)">✓</b> p = <span data-f="feMultP">0.002</span></td></tr>
+      <tr><td style="padding-left:18px">· dont <b>formation motrice</b> (avant l'usage)</td><td><span data-f="feMotrPct">47</span> % <span style="color:var(--faint)">(<span data-f="feMotrBase">22/47</span>)</span></td><td style="color:var(--faint)">↑ idem</td><td><b style="color:var(--bridge)">✓</b> p = <span data-f="feMotrP">0.009</span></td></tr>
+      <tr><td style="padding-left:18px">· à <b>canal égal</b> (arrivés via le site)</td><td><span data-f="feViaFpct">47</span> % <span style="color:var(--faint)">(<span data-f="feViaFbase">22/47</span>)</span></td><td><span data-f="feViaJpct">23</span> % <span style="color:var(--faint)">(<span data-f="feViaJbase">7/30</span>)</span></td><td>p = <span data-f="feViaP">0.054</span></td></tr>
+      <tr><td style="padding-top:12px">Atteint une classe ≥5 él.</td><td style="padding-top:12px"><span data-f="feReachFpct">88</span> % <span style="color:var(--faint)">(<span data-f="feReachFbase">51/58</span>)</span></td><td style="padding-top:12px"><span data-f="feReachJpct">76</span> % <span style="color:var(--faint)">(<span data-f="feReachJbase">125/165</span>)</span></td><td style="padding-top:12px">p = <span data-f="feReachP">0.061</span></td></tr>
+      <tr><td style="padding-top:12px"><b>Revient</b> d'une année sur l'autre <span style="color:var(--faint)">(éligibles, n = <span data-f="elig">77</span>)</span></td><td style="padding-top:12px"><span data-f="feRetFpct">58</span> % <span style="color:var(--faint)">(<span data-f="feRetFbase">7/12</span>)</span></td><td style="padding-top:12px"><span data-f="feRetJpct">29</span> % <span style="color:var(--faint)">(<span data-f="feRetJbase">19/65</span>)</span></td><td style="padding-top:12px"><span style="color:var(--leak)">n.s.</span> p = <span data-f="feRetP">0.093</span></td></tr>
+      <tr><td style="padding-left:18px">→ <b>si</b> réutilise en an 1</td><td><b><span data-f="feMedRFpct">100</span> %</b> <span style="color:var(--faint)">(<span data-f="feMedRFbase">5/5</span>)</span></td><td><span data-f="feMedRJpct">44</span> % <span style="color:var(--faint)">(<span data-f="feMedRJbase">8/18</span>)</span></td><td>p = <span data-f="feMedRP">0.046</span></td></tr>
+      <tr><td style="padding-left:18px">→ si usage unique en an 1</td><td><span data-f="feMedUFpct">29</span> % <span style="color:var(--faint)">(<span data-f="feMedUFbase">2/7</span>)</span></td><td><span data-f="feMedUJpct">23</span> % <span style="color:var(--faint)">(<span data-f="feMedUJbase">11/47</span>)</span></td><td><span style="color:var(--leak)">n.s.</span> p = <span data-f="feMedUP">1.000</span></td></tr>
+    </tbody>
+  </table>
+  <div class="note key">
+    <b>La formation agit en approfondissant l'usage, pas en ouvrant la porte.</b> Elle <b>double quasiment</b> la réutilisation dès la 1ʳᵉ année (<span data-f="feMultFpct">49</span> % vs <span data-f="feMultJpct">25</span> %), effet qui <b>tient à canal égal</b> et pour la formation <b>motrice</b> (donnée avant l'usage, p = <span data-f="feMotrP">0.009</span>). Et c'est cette intensité qui paie au retour : un formé qui <b>réutilise</b> dès l'an 1 revient presque toujours (<span data-f="feMedRFbase">5/5</span>), alors qu'un formé en <b>usage unique</b> ne revient pas plus qu'un non-formé (<span data-f="feMedUFbase">2/7</span>). Chaîne plausible : <b>formation → intensité an 1 → retour</b>.
+  </div>
+  <div class="note">
+    <b>À ne pas surinterpréter — le retour reste non établi.</b> (1) <b>Confusion</b> : formé ≈ via-site, impossible à séparer proprement ; et <b><span data-f="feRetProxy">9</span> des <span data-f="feRetFn">12</span></b> formés éligibles sont attribués par <b>proxy établissement</b> (un collègue formé au même UAI), pas par appariement individuel. (2) Le retour formé (<span data-f="feRetFpct">58</span> % vs <span data-f="feRetJpct">29</span> %) est <b>non significatif</b> (p = <span data-f="feRetP">0.093</span>) et repose sur <span data-f="feRetFn">12</span> profs. (3) <b>Récence</b> : <b><span data-f="feCensFbase">39/51</span></b> des formés ayant atteint une classe sont <b>trop récents</b> (censurés) → le retour n'est mesurable que sur une petite cohorte ancienne. (4) La cellule « formé + réutilise » est <b>minuscule</b> (5 profs). <b>L'effet sur l'intensité est solide ; l'effet sur le retour reste plausible mais non démontré.</b> Le <b>type</b> de formation pèse aussi (ciblée-établissement ≫ académique de masse ; pré-service nul par construction) — voir <a href="volet2.html" style="color:var(--site)">volet 2</a> &amp; <a href="typologie.html" style="color:var(--site)">typologie</a>.
+  </div>
+
   <p class="foot"><a href="index.html">← accueil</a> · <a href="synthese.html">synthèse</a> · <a href="typologie.html">typologie</a> · <a href="volet2.html">volet 2</a></p>
   <p class="foot"><span data-f="pop">223</span> enseignants Capytale ayant touché des élèves (hub + démo exclus) ; <span data-f="reached">176</span> ont atteint une classe ≥5 él. Canal estimé via <code>build_profiles.py</code>. Chiffres générés par <code>build_flux_dashboard.py</code> depuis <code>facts_profiles.json</code>. Sans donnée personnelle. Définitions : <a href="https://github.com/akimx98/mathadata-dashboard-next/blob/main/enquete_usages_2026/transverse/GLOSSAIRE.md">GLOSSAIRE.md</a>.</p>
 </div>
@@ -129,8 +156,11 @@ const F={pop:223,reached:176,ss:47,elig:77,
  pb:{cap:{multi:{rev:8,non:10,rec:9},uniq:{rev:10,non:34,rec:28}},via:{multi:{rev:5,non:0,rec:24},uniq:{rev:3,non:7,rec:38}}}};
 /*FACTS_END*/
 /*FUNNEL_START*/
-const FN={"touched":{"n":223,"xtab":{"capytale_direct|jamais|uniq":70,"capytale_direct|jamais|multi":25,"via_site|jamais|multi":7,"via_site|jamais|uniq":23,"capytale_direct|jamais|ss":33,"via_site|forme|uniq":23,"via_site|forme|multi":24,"via_site|jamais|ss":7,"via_site|forme|ss":6,"capytale_direct|forme|multi":3,"capytale_direct|forme|ss":1,"capytale_direct|forme|uniq":1},"rates":{"canal":{"via_site":{"n":90,"touched":90,"classe":77},"capytale_direct":{"n":133,"touched":133,"classe":99}},"formation":{"forme":{"n":58,"touched":58,"classe":51},"jamais":{"n":165,"touched":165,"classe":125}}}},"all":{"n":260,"xtab":{"capytale_direct|jamais|uniq":70,"capytale_direct|jamais|multi":25,"via_site|jamais|multi":7,"capytale_direct|jamais|test":23,"via_site|jamais|uniq":23,"via_site|jamais|test":5,"capytale_direct|jamais|ss":33,"via_site|forme|uniq":23,"via_site|forme|multi":24,"via_site|forme|test":9,"via_site|jamais|ss":7,"via_site|forme|ss":6,"capytale_direct|forme|multi":3,"capytale_direct|forme|ss":1,"capytale_direct|forme|uniq":1},"rates":{"canal":{"via_site":{"n":104,"touched":90,"classe":77},"capytale_direct":{"n":156,"touched":133,"classe":99}},"formation":{"forme":{"n":67,"touched":58,"classe":51},"jamais":{"n":193,"touched":165,"classe":125}}}}};
+const FN={"touched":{"n":223,"xtab":{"capytale_direct|forme|multi":3,"capytale_direct|forme|ss":1,"capytale_direct|forme|uniq":1,"capytale_direct|jamais|multi":25,"capytale_direct|jamais|ss":33,"capytale_direct|jamais|uniq":70,"via_site|forme|multi":24,"via_site|forme|ss":6,"via_site|forme|uniq":23,"via_site|jamais|multi":7,"via_site|jamais|ss":7,"via_site|jamais|uniq":23},"rates":{"canal":{"via_site":{"n":90,"touched":90,"classe":77},"capytale_direct":{"n":133,"touched":133,"classe":99}},"formation":{"forme":{"n":58,"touched":58,"classe":51},"jamais":{"n":165,"touched":165,"classe":125}}}},"all":{"n":260,"xtab":{"capytale_direct|forme|multi":3,"capytale_direct|forme|ss":1,"capytale_direct|forme|uniq":1,"capytale_direct|jamais|multi":25,"capytale_direct|jamais|ss":33,"capytale_direct|jamais|test":23,"capytale_direct|jamais|uniq":70,"via_site|forme|multi":24,"via_site|forme|ss":6,"via_site|forme|test":9,"via_site|forme|uniq":23,"via_site|jamais|multi":7,"via_site|jamais|ss":7,"via_site|jamais|test":5,"via_site|jamais|uniq":23},"rates":{"canal":{"via_site":{"n":104,"touched":90,"classe":77},"capytale_direct":{"n":156,"touched":133,"classe":99}},"formation":{"forme":{"n":67,"touched":58,"classe":51},"jamais":{"n":193,"touched":165,"classe":125}}}}};
 /*FUNNEL_END*/
+/*FORM_START*/
+const FF={"forme|multi|rec":20,"forme|multi|rev":5,"forme|uniq|non":5,"forme|uniq|rec":19,"forme|uniq|rev":2,"jamais|multi|non":10,"jamais|multi|rec":13,"jamais|multi|rev":8,"jamais|uniq|non":36,"jamais|uniq|rec":47,"jamais|uniq|rev":11};
+/*FORM_END*/
 const C={ink:'#16212B',ink2:'#3C4A57',faint:'#7C8893',site:'#2F6DB5',classe:'#C85A33',bridge:'#0E8074',leak:'#AE3340',amber:'#C99A2E',rule:'#D8D2C4',grey:'#B7B2A6'};
 const NS='http://www.w3.org/2000/svg';
 function el(t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;}
@@ -228,4 +258,14 @@ function rateTable(id,rates,showTouched){
 }
 drawFunnel('sankC',FN.touched,360);  rateTable('rateC',FN.touched.rates,false);
 drawFunnel('sankD',FN.all,420);      rateTable('rateD',FN.all.rates,true);
+
+// ---- Diagramme F (§6) : Formation -> intensité an1 -> devenir (depuis FF) ----
+const metaF6={
+  forme:{col:0,label:'Formé',color:C.amber}, jamais:{col:0,label:'Jamais formé',color:C.grey},
+  multi:{col:1,label:'Réutilise (an 1)',color:C.ink}, uniq:{col:1,label:'Usage unique (an 1)',color:C.faint},
+  rev:{col:2,label:'Revenu',color:C.classe}, non:{col:2,label:'Non-revenu',color:C.leak}, rec:{col:2,label:'Trop récent',color:C.grey},
+};
+const fco={forme:C.amber,jamais:C.grey}, pathsF6=[];
+for(const key in FF){const p=key.split('|'),n=FF[key]; if(n>0) pathsF6.push({ids:p,n,color:fco[p[0]]});}
+pathSankey('sankF',metaF6,pathsF6,[['FORMATION','estimé'],['INTENSITÉ — AN 1','mesuré'],['RETOUR','an+1']],1020,380);
 </script>

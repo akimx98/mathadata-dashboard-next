@@ -343,10 +343,50 @@ def _funnel(df):
                     classe=int((sub['max_level'] >= 4).sum()))
     rates = dict(canal={c: rate(df[df['canal'] == c]) for c in ('via_site', 'capytale_direct')},
                  formation={f: rate(df[df['formation_statut'] == f]) for f in ('forme', 'jamais')})
-    return dict(n=int(len(df)), xtab=xt, rates=rates)
+    # tri des clés xtab : déterministe quel que soit PYTHONHASHSEED (iterrows suit l'ordre de PROP, issu d'un set)
+    return dict(n=int(len(df)), xtab=dict(sorted(xt.items())), rates=rates)
 facts['funnel'] = dict(
     touched=_funnel(PROF[PROF['max_level'] >= 3]),   # 223 — ont touché des élèves
     all=_funnel(PROF),                                # 260 — l'ensemble des profs Capytale
+)
+
+# ───────────────────────────── 7c. Effet de la formation sur l'usage (intensité & retour) ─────────────────────────────
+# Question : la formation pèse-t-elle sur l'usage multiple (intensité an-1) et sur le retour ?
+# ⚠️ Tout est DESCRIPTIF & confondu : formé ≈ via-site (§6), timing motrice/consolidation (§7),
+# attribution par proxy établissement, et la cohorte retour est petite + censurée à droite (§5).
+# On expose des COMPTES (k/n) ; les p-values sont calculées à l'affichage (build_flux_dashboard.py).
+# diag « formation » (parallèle au diag canal) : formation → intensité an-1 → devenir, sur les 176.
+trajf = {}
+for (f, y, d), n in R.groupby(['formation_statut', 'y1b', 'dev']).size().items():
+    trajf[f"{f}|{y}|{d}"] = int(n)
+facts['traj_formation_y1_devenir'] = trajf
+def _kn(sub, mask): return dict(k=int(mask.sum()), n=int(len(sub)))
+_t = PROF[PROF['max_level'] >= 3]                       # 223 (ont touché des élèves)
+facts['formation_effect'] = dict(
+    # A — usage multiple en année 1 (réutilise dès la 1ʳᵉ année classe) parmi les 176
+    mult_y1 = {lab: _kn(sub, sub['y1_level'] == 5) for lab, sub in [
+        ('forme',      R[R['formation_statut'] == 'forme']),
+        ('jamais',     R[R['formation_statut'] == 'jamais']),
+        ('motrice',    R[R['formation_timing'] == 'motrice']),       # formé AVANT le 1ᵉʳ usage (plausiblement causal)
+        ('via_forme',  R[(R['canal'] == 'via_site') & (R['formation_statut'] == 'forme')]),   # contrôle canal
+        ('via_jamais', R[(R['canal'] == 'via_site') & (R['formation_statut'] == 'jamais')])]},
+    # B — atteindre une classe (≥4) parmi les 223
+    reach = {lab: _kn(sub, sub['max_level'] >= 4) for lab, sub in [
+        ('forme',  _t[_t['formation_statut'] == 'forme']),
+        ('jamais', _t[_t['formation_statut'] == 'jamais'])]},
+    # C — retour parmi la cohorte éligible (n=77)
+    retour = {**{lab: _kn(sub, sub['revenu']) for lab, sub in [
+        ('forme',   elig[elig['formation_statut'] == 'forme']),
+        ('jamais',  elig[elig['formation_statut'] == 'jamais']),
+        ('motrice', elig[elig['formation_timing'] == 'motrice'])]},
+        'forme_proxy': int((elig[elig['formation_statut'] == 'forme']['formation_source'] == 'proxy_etab').sum())},
+    # D — médiation : à intensité an-1 FIXÉE, la formation ajoute-t-elle au retour ? (cohorte éligible)
+    med = {key: {lab: _kn(sub, sub['revenu']) for lab, sub in [
+        ('forme',  elig[(elig['y1_level'] == lvl) & (elig['formation_statut'] == 'forme')]),
+        ('jamais', elig[(elig['y1_level'] == lvl) & (elig['formation_statut'] == 'jamais')])]}
+        for lvl, key in [(5, 'reuse'), (4, 'unique')]},
+    # E — récence : part des formés ayant atteint une classe qui sont censurés (exclus du retour)
+    censored_formes = _kn(R[R['formation_statut'] == 'forme'], R[R['formation_statut'] == 'forme']['censored']),
 )
 json.dump(facts, open(f"{OUT}/facts_profiles.json","w"), ensure_ascii=False, indent=2)
 print("\n=== trajectoires diag1 (canal|devenir) ==="); print(traj1)
