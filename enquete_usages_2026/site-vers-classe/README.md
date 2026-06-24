@@ -23,4 +23,7 @@ Croisement du parcours amont **nominatif** (mathadata.fr, snapshot Payload) avec
 - 9 comptes `exclude_from_analytics` + démo Capytale exclus ; hub fondateur Haubourdin isolé.
 
 ## Sécurité
-Le snapshot Payload (PII) reste **local et gitignore**. Aucune sortie versionnée/publiée ne contient nom/prénom/e-mail. Appariement pseudonymisé (`S####` / md5[:8]). Pas de ré-identification.
+Le snapshot Payload (PII) reste **local et gitignore**. Aucune sortie versionnée/publiée ne contient
+nom/prénom/e-mail. Les analyses nominatives internes explicitement demandées restent dans
+`private/` ou `_local/`. Appariement versionné pseudonymisé (`S####` / md5[:8]) ; toute attribution
+nominative site↔Capytale reste locale et porte sa confiance A/B.

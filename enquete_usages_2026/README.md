@@ -20,6 +20,8 @@ enquete_usages_2026/
 > **contrats** (`transverse/check_contracts.py`). Constantes & populations canoniques centralisées dans
 > [`enquete_common.py`](enquete_common.py). Les contrats tournent aussi en **pre-commit** (`git config
 > core.hooksPath enquete_usages_2026/hooks`) et en **CI GitHub** (un commit qui casse une définition est refusé).
+> Pour récupérer un snapshot Payload à jour sans modifier la branche de travail du dépôt site, suivre
+> [`MISE_A_JOUR_DONNEES.md`](MISE_A_JOUR_DONNEES.md).
 
 ## ★ [Synthèse finale](transverse/SYNTHESE_FINALE_2026.md) — à lire en premier
 **Synthèse réflexive transversale** croisant les 4 rapports : que conclure de 3 ans d'usage (Capytale × site) sur l'adoption, les profils, l'effet des formations, les dynamiques et les modes d'usage — et **comment déployer mieux en 2026-2027** (plus de profs *et* meilleur mode d'usage). Thèse : la **notoriété est acquise**, mais la **conversion** reste à gagner, à trois étages (formation→classe, classe→retour, essai→profondeur) ; la croissance est surtout organique, et les **mêmes gestes de la 1ʳᵉ année** (≥2 activités, vraie séance de 45 min) déterminent la durée. → [`transverse/SYNTHESE_FINALE_2026.md`](transverse/SYNTHESE_FINALE_2026.md)
@@ -53,4 +55,8 @@ Refonte **data-driven et vérifiée** de la sociologie des usages (prolonge et c
 - Snapshot Payload `mathadata.fr` (PII) : `mathadata-website/private/payload-snapshots/…` — **gitignore, hors dépôt, jamais committé**. Le Volet 2 le lit en local pour calculer ; aucune sortie versionnée ne contient nom/prénom/e-mail.
 
 ## Sécurité
-Identifiants pseudonymisés et sensibles. Aucune ré-identification. Les sorties versionnées et les pages publiées ne contiennent aucune donnée personnelle (pseudonymes `S####` / md5, grain établissement/commune).
+Identifiants pseudonymisés et sensibles. Les sorties versionnées et les pages publiées ne
+contiennent aucune donnée personnelle (pseudonymes `S####` / md5, grain
+établissement/commune). Les analyses nominatives internes explicitement demandées utilisent
+uniquement les sources locales autorisées et restent dans `private/` ou `_local/` ; toute
+attribution site↔Capytale indique sa confiance.
