@@ -33,19 +33,20 @@ cf. [`MISE_A_JOUR_DONNEES.md`](MISE_A_JOUR_DONNEES.md)).
 
 ## Provenance & rafraîchissement
 
-L'extraction Capytale est produite **hors de ce dépôt** (export Metabase pseudonymisé ; cf. les CSV
-de travail gitignorés `public/data/csv_from_metabase*.csv`). Elle est **indépendante** du snapshot
-Payload : pas besoin du dépôt site ni d'accès Payload pour la régénérer.
+L'extraction Capytale est obtenue en appelant **l'API de Capytale** (la donnée renvoyée est déjà
+pseudonymisée — aucune PII). Elle est **indépendante** du snapshot Payload : pas besoin du dépôt site
+ni d'accès Payload pour la régénérer.
 
 Pour mettre à jour l'usage Capytale de référence :
 
-1. Produire une nouvelle extraction au **même schéma** que le tableau ci-dessus (mêmes colonnes, même
-   pseudonymisation — aucune PII).
+1. Appeler l'API Capytale pour produire une extraction au **même schéma** que le tableau ci-dessus
+   (mêmes colonnes, même pseudonymisation — aucune PII).
 2. La déposer sous `public/data/` (nom daté, ex. `capytale_fresh_AAAAMMJJ.csv`) et **mettre à jour le
    chemin** dans les scripts qui lisent l'entrée de référence (`usage-capytale/build_canonical.py`,
    `build_teachers_v2.py`, et la valeur par défaut citée dans `usage-capytale/DEFINITIONS.md`).
 3. Relancer la chaîne : `bash enquete_usages_2026/rebuild_all.sh` puis vérifier les contrats.
 
-> 📝 **À compléter par le mainteneur** : la **requête Metabase exacte** (table source, filtres,
-> mapping des colonnes vers le schéma ci-dessus) n'est pas encore versionnée ici. La consigner dans
-> ce fichier la rendrait pleinement reproductible par un collègue.
+> 📝 **À compléter** : l'**appel API exact** (endpoint, authentification, paramètres, mapping des
+> champs renvoyés vers le schéma ci-dessus) n'est pas encore versionné ici. Le consigner — idéalement
+> sous forme d'un petit script d'extraction dans `enquete_usages_2026/` — rendrait le rafraîchissement
+> Capytale pleinement reproductible par un collègue.
