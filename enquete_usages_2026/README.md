@@ -16,6 +16,11 @@ enquete_usages_2026/
 > unique de toutes les définitions. La couche de calcul canonique des profils est
 > [`transverse/build_profiles.py`](transverse/build_profiles.py). Playbook complet : `../CLAUDE.md`.
 
+> 🔁 **Reproduire / vérifier** : `bash rebuild_all.sh` régénère toute la chaîne puis lance les
+> **contrats** (`transverse/check_contracts.py`). Constantes & populations canoniques centralisées dans
+> [`enquete_common.py`](enquete_common.py). Les contrats tournent aussi en **pre-commit** (`git config
+> core.hooksPath enquete_usages_2026/hooks`) et en **CI GitHub** (un commit qui casse une définition est refusé).
+
 ## ★ [Synthèse finale](transverse/SYNTHESE_FINALE_2026.md) — à lire en premier
 **Synthèse réflexive transversale** croisant les 4 rapports : que conclure de 3 ans d'usage (Capytale × site) sur l'adoption, les profils, l'effet des formations, les dynamiques et les modes d'usage — et **comment déployer mieux en 2026-2027** (plus de profs *et* meilleur mode d'usage). Thèse : la **notoriété est acquise**, mais la **conversion** reste à gagner, à trois étages (formation→classe, classe→retour, essai→profondeur) ; la croissance est surtout organique, et les **mêmes gestes de la 1ʳᵉ année** (≥2 activités, vraie séance de 45 min) déterminent la durée. → [`transverse/SYNTHESE_FINALE_2026.md`](transverse/SYNTHESE_FINALE_2026.md)
 
