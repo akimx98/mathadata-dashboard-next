@@ -12,9 +12,10 @@ import os as _os
 _ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
 _RT=_os.path.dirname(_ENQ)                                           # racine du repo
 _WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+import sys as _sys; _sys.path.insert(0,_ENQ); import enquete_common as K  # socle partagé
 BASE=f"{_RT}/public/data"
 OUT=f"{_ENQ}/usage-capytale/data"
-DEMO='c81e728d9d4c2f636f067f89cc14862c'; PIO='cfcd208495d565ef66e7dff9f98764da'
+DEMO, PIO = K.DEMO, K.PIO
 
 df=pd.read_csv(f"{BASE}/capytale_fresh_20260619.csv",dtype=str,keep_default_na=False)
 ann=pd.read_csv(f"{BASE}/annuaire_etablissements.csv",dtype=str,keep_default_na=False)
@@ -78,7 +79,7 @@ for acc in engaged:
         n_trainees_reached=int(n_trainees_reached), category=cat,
         uai=uai, type_etab=T(uai), academie=aca.get(uai,''), commune=com.get(uai,''), nom_etab=nom.get(uai,''),
         first_dt=str(df[(df['teacher']==acc)|((df['role']=='teacher')&(df['student']==acc))]['dt'].min())))
-E=pd.DataFrame(rows)
+E=pd.DataFrame(rows).sort_values(list(pd.DataFrame(rows).columns[:2])).reset_index(drop=True)  # ordre déterministe
 E.to_csv(f"{OUT}/engaged_teachers.csv",index=False)
 
 F={}

@@ -8,6 +8,7 @@ import json, glob, re, sys
 import os as _os
 import pandas as pd
 _ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+sys.path.insert(0,_ENQ); import enquete_common as K   # socle partagé (populations nommées attendues)
 TR=f"{_ENQ}/transverse/data"; V1=f"{_ENQ}/usage-capytale/data"; V2=f"{_ENQ}/site-vers-classe/data"
 fails=[]
 def check(cond,msg):
@@ -32,6 +33,12 @@ check(sum(fp['traj_canal_devenir'].values())==fp['reached_classe'], "trajectoire
 check(fp['eligibles']<=fp['reached_classe'], "éligibles ⊆ atteint-classe")
 check(fp['revenus_total']==fp['retour_consecutif']+fp['reactivation'], "revenus = consécutif + réactivation")
 check('proxy_etab' in fp['canal_source'], "colonne de provenance canal (individuel/proxy_etab) exposée")
+E=K.EXPECT  # populations nommées (enquete_common) = ancrage explicite des effectifs canoniques
+check(fp['population']==E['POP_CAPYTALE'], f"population = POP_CAPYTALE ({E['POP_CAPYTALE']})")
+check(fp['n_touched_students']==E['POP_TOUCHED'], f"touché-élèves = POP_TOUCHED ({E['POP_TOUCHED']})")
+check(fp['reached_classe']==E['POP_CLASSE'], f"atteint-classe = POP_CLASSE ({E['POP_CLASSE']})")
+check(fp['testeurs_purs']==E['TESTEURS'] and fp['sous_seuil_only']==E['SOUS_SEUIL'], f"testeurs={E['TESTEURS']} & sous-seuil={E['SOUS_SEUIL']}")
+check(fp['eligibles']==E['COHORT_ELIGIBLE'], f"cohorte éligible = COHORT_ELIGIBLE ({E['COHORT_ELIGIBLE']})")
 
 print("3. Pseudonymat & canal (profiles_teacher.csv) :")
 pt=pd.read_csv(f"{TR}/profiles_teacher.csv",dtype=str)

@@ -9,6 +9,7 @@ import os as _os
 _ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
 _RT=_os.path.dirname(_ENQ)                                           # racine du repo
 _WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+import sys as _sys; _sys.path.insert(0,_ENQ); import enquete_common as K  # socle partagé
 ROOT=_RT
 V1=f"{ROOT}/enquete_usages_2026/usage-capytale/data"
 T =f"{ROOT}/enquete_usages_2026/transverse/data"

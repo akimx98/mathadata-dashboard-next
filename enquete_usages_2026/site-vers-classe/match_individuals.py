@@ -19,11 +19,12 @@ import os as _os
 _ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
 _RT=_os.path.dirname(_ENQ)                                           # racine du repo
 _WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+import sys as _sys; _sys.path.insert(0,_ENQ); import enquete_common as K  # socle partagé
 SNAP=_os.environ.get("MATHADATA_SNAPSHOT", f"{_WS}/mathadata-website/private/payload-snapshots/2026-06-20T10-37-24-905Z")
 BASE=f"{_RT}/public/data"
 OUT =f"{_ENQ}/site-vers-classe/data"
 SCRATCH=_os.environ.get("MATHADATA_LOCAL", f"{_ENQ}/_local")  # ex-scratch session -> dossier local stable (gitignore)
-DEMO='c81e728d9d4c2f636f067f89cc14862c'; PIO='cfcd208495d565ef66e7dff9f98764da'
+DEMO, PIO = K.DEMO, K.PIO
 CAP_RE=re.compile(r'web/b/(\d+)')
 
 # ---- site : users + clics capytale nominatifs ----
@@ -151,7 +152,7 @@ for r in allm.itertuples():
     rows.append(dict(site_code=site_codes[r.site_id], cap_acc=r.cap_acc[:8], conf=r.conf,
         uai=r.uai, commune=com.get(r.uai,''), academie=aca.get(r.uai,''),
         etab=nom.get(r.uai,''), statut=info.get('statut'), ftype=info.get('trainedTypeFormation')))
-M=pd.DataFrame(rows)
+M=pd.DataFrame(rows).sort_values(['site_code','cap_acc']).reset_index(drop=True)  # ordre déterministe (rebuild idempotent)
 M.to_csv(f"{OUT}/match_candidates.csv",index=False)
 # mapping nominatif -> SCRATCH uniquement
 nominatif=[]

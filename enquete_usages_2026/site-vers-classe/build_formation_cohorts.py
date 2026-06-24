@@ -11,20 +11,16 @@ Apports vs v1 :
 import json, csv, os, math
 import pandas as pd, numpy as np
 from datetime import datetime
-def _san(o):
-    """NaN/inf -> None pour produire du JSON strict."""
-    if isinstance(o,float) and (math.isnan(o) or math.isinf(o)): return None
-    if isinstance(o,dict): return {k:_san(v) for k,v in o.items()}
-    if isinstance(o,(list,tuple)): return [_san(v) for v in o]
-    return o
 import os as _os
 _ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
 _RT=_os.path.dirname(_ENQ)                                           # racine du repo
 _WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+import sys as _sys; _sys.path.insert(0,_ENQ); import enquete_common as K  # socle partagé
+_san = K.sanitize_json
 SNAP=_os.environ.get("MATHADATA_SNAPSHOT", f"{_WS}/mathadata-website/private/payload-snapshots/2026-06-20T10-37-24-905Z")
 BASE=f"{_RT}/public/data"
 OUT =f"{_ENQ}/site-vers-classe/data"
-DEMO='c81e728d9d4c2f636f067f89cc14862c'
+DEMO = K.DEMO
 def dt(s): return pd.to_datetime(s,utc=True,errors='coerce')
 
 users={u['id']:u for u in json.load(open(f"{SNAP}/users.json"))}

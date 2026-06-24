@@ -10,6 +10,7 @@ import os as _os
 _ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
 _RT=_os.path.dirname(_ENQ)                                           # racine du repo
 _WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+import sys as _sys; _sys.path.insert(0,_ENQ); import enquete_common as K  # socle partagé
 BASE=_ENQ
 SP=_os.environ.get("MATHADATA_LOCAL", f"{_ENQ}/_local")  # ex-scratch session -> dossier local stable (gitignore)
 OUT=f"{BASE}/transverse/data"; os.makedirs(OUT,exist_ok=True)
@@ -18,8 +19,7 @@ T=pd.read_csv(f"{BASE}/usage-capytale/data/teachers.csv")
 S=pd.read_csv(f"{BASE}/usage-capytale/data/sessions.csv")
 U=pd.read_csv(f"{SP}/payload_users_work.csv")
 PE=pd.read_csv(f"{BASE}/site-vers-classe/data/presentiel_etabs.csv")
-
-DEMO='c81e728d9d4c2f636f067f89cc14862c'; PIO='cfcd208495d565ef66e7dff9f98764da'  # démo (exclu) + hub fondateur (isolé)
+DEMO, PIO = K.DEMO, K.PIO
 # ---- archétype (RÈGLES DÉTERMINISTES — PAS un k-means ; cf. fonction arch ci-dessous) ----
 # Hub fondateur (404 él. sur 14 étab.) et compte démo EXCLUS de la population (règle d'isolement, glossaire §2).
 TT=T[(T['taught']==True) & (~T['teacher'].isin([DEMO,PIO]))].copy()

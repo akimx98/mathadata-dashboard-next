@@ -9,11 +9,12 @@ import os as _os
 _ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
 _RT=_os.path.dirname(_ENQ)                                           # racine du repo
 _WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+import sys as _sys; _sys.path.insert(0,_ENQ); import enquete_common as K  # socle partagé
 D=f"{_ENQ}/usage-capytale"
 F=json.load(open(f"{D}/data/facts.json"))
 sess=pd.read_csv(f"{D}/data/sessions.csv")
 te=pd.read_csv(f"{D}/data/teachers.csv")
-DEMO='c81e728d9d4c2f636f067f89cc14862c'
+DEMO = K.DEMO
 sess=sess[sess['teacher']!=DEMO]; te=te[te['teacher']!=DEMO]
 
 # palette

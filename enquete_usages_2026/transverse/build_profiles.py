@@ -35,6 +35,7 @@ import os as _os
 _ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
 _RT=_os.path.dirname(_ENQ)                                           # racine du repo
 _WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+import sys as _sys; _sys.path.insert(0,_ENQ); import enquete_common as K  # socle partagé
 ROOT = _RT
 V1   = f"{ROOT}/enquete_usages_2026/usage-capytale/data"
 V2   = f"{ROOT}/enquete_usages_2026/site-vers-classe/data"
@@ -43,12 +44,10 @@ SCRATCH=_os.environ.get("MATHADATA_LOCAL", f"{_ENQ}/_local")  # ex-scratch sessi
 SNAP = _os.environ.get("MATHADATA_SNAPSHOT", f"{_WS}/mathadata-website/private/payload-snapshots/2026-06-20T10-37-24-905Z")
 os.makedirs(OUT, exist_ok=True)
 
-DEMO = 'c81e728d9d4c2f636f067f89cc14862c'   # compte démo — EXCLU
-PIO  = 'cfcd208495d565ef66e7dff9f98764da'   # hub fondateur (MD5 "0") — ISOLÉ
-CLASSE_MIN   = 5      # seuil "classe" (≥5 él.)  — GLOSSAIRE §3
-DEMI_LO, DEMI_HI = 5, 15   # bande demi-groupe
-DEMI_DAYS    = 10    # demi-groupes de même activité à <10j = 1 occasion
-LAST_OBSERVED_SY = '2025-2026'   # année d'extraction → 1ʳᵉ année classe ici = censuré
+DEMO, PIO = K.DEMO, K.PIO                                   # socle partagé (GLOSSAIRE §2)
+CLASSE_MIN = K.CLASSE_MIN                                   # seuil "classe" (≥5 él.) — GLOSSAIRE §3
+DEMI_LO, DEMI_HI, DEMI_DAYS = K.DEMI_LO, K.DEMI_HI, K.DEMI_DAYS
+LAST_OBSERVED_SY = K.LAST_OBSERVED_SY
 
 def h8(md5): return md5[:8]
 def sy_int(s):  # "2024-2025" -> 2024 (année de septembre)

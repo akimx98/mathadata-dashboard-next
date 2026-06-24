@@ -89,18 +89,18 @@
    "nom": "Lycée polyvalent Beaupré - Lycée des Métiers de la Plasturgie"
   },
   {
-   "acc": "c9acad9f",
-   "trainees": 3,
-   "taught": true,
-   "commune": "",
-   "nom": ""
-  },
-  {
    "acc": "670bbddf",
    "trainees": 3,
    "taught": true,
    "commune": "Hendaye",
    "nom": "Collège Irandatz"
+  },
+  {
+   "acc": "c9acad9f",
+   "trainees": 3,
+   "taught": true,
+   "commune": "",
+   "nom": ""
   }
  ],
  "college_teachers_engaged": 47,

@@ -1,0 +1,24 @@
+# MODÈLE de workflow GitHub Actions pour les contrats de l'enquête.
+# (Livré comme template car pousser sous .github/workflows/ exige le scope OAuth `workflow`,
+#  que le mainteneur a depuis son compte.) Installation, une fois :
+#     mkdir -p .github/workflows
+#     cp enquete_usages_2026/hooks/github-workflow-contrats.yml.template .github/workflows/contrats-enquete.yml
+#     git add .github/workflows/contrats-enquete.yml && git commit && git push
+# -------------------------------------------------------------------------------------------
+name: contrats enquête usages
+on:
+  push:
+    paths: ['enquete_usages_2026/**']
+  pull_request:
+    paths: ['enquete_usages_2026/**']
+jobs:
+  contrats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: pip install pandas
+      - name: check_contracts
+        run: python3 enquete_usages_2026/transverse/check_contracts.py

@@ -67,23 +67,31 @@ mondes est **estimé**, jamais mesuré — le dire explicitement.
 - **Récence des cohortes** : lire au présent une cohorte formée en 2026 sous-estime son rendement
   (le déploiement classe se fait au trimestre suivant). Toujours distinguer cohorte mûre / récente.
 
-## 5. Pipeline (ordre de calcul)
+## 5. Pipeline (ordre de calcul) — **une seule commande**
 
 ```
-usage-capytale/build_canonical.py      # Capytale → usages_enriched, sessions, teachers, establishments
-site-vers-classe/build_payload_canonical.py  # Payload (LOCAL, snapshot) → table site id-only (→ enquete_usages_2026/_local/, gitignore) + capytale_by_uai
-site-vers-classe/match_individuals.py    # appariement site↔Capytale → match_candidates.csv (75 paires, sans PII)
-transverse/build_profiles.py      # ★ couche canonique profils (profondeur/canal/formation/rétention)
-transverse/build_master.py, build_scenarios.py  # typologie & séances
-*/compute_*facts.py, make_charts*.py          # agrégats + PNG
+bash enquete_usages_2026/rebuild_all.sh
 ```
-Les `data/*.json` (`facts*.json`) sont les **sources de vérité chiffrées** — un dashboard ne
-recalcule pas, il **lit** ces faits.
+Régénère TOUTE la chaîne dans l'ordre (Capytale → croisé site×Capytale → couche profils → typologie/
+séances → flux) puis lance les contrats. Les étapes croisées (snapshot Payload LOCAL) sont
+auto-sautées si le snapshot/`_local/` est absent ; **idempotent** (re-run = aucune dérive). Ordre détaillé
+dans le script. Les `data/*.json` (`facts*.json`) sont les **sources de vérité chiffrées** — un dashboard
+ne recalcule pas, il **lit** ces faits.
 
-**Après toute régénération, lancer les contrats** :
-`python3 enquete_usages_2026/transverse/check_contracts.py` (JSON strict, invariants
-population/rétention, pseudonymat md5[:8], hub exclu, zéro e-mail dans `data/`). Doit finir par
+**Socle partagé** : `enquete_usages_2026/enquete_common.py` (= `K`) — **source unique** des constantes
+(`DEMO`/`PIO`, seuils `CLASSE_MIN`…, populations nommées `K.EXPECT`), de `school_year`, `exclude_special`,
+`sanitize_json`. **Tout script importe K** ; on ne redéfinit JAMAIS une exclusion ou un seuil localement
+(c'est ce qui causait « hub oublié dans le script N »).
+
+**Contrats anti-régression** — `python3 enquete_usages_2026/transverse/check_contracts.py` :
+JSON **strict** (NaN/Inf réellement rejetés), invariants population/rétention **ancrés sur `K.EXPECT`**
+(260/223/176/47/37/77), pseudonymat md5[:8], hub isolé (profils+scénarios+typologie), cohérence interne
+`facts_typologie`, concordance **dashboards↔facts**, zéro e-mail dans `data/`. Doit finir par
 `✅ tous les contrats sont respectés`.
+- **Exécutés automatiquement** : (a) **hook pre-commit** versionné — installer une fois :
+  `git config core.hooksPath enquete_usages_2026/hooks` (un commit qui casse un contrat est refusé) ;
+  (b) **CI GitHub** — modèle prêt dans `enquete_usages_2026/hooks/github-workflow-contrats.yml.template`,
+  à copier dans `.github/workflows/` côté mainteneur (le push de workflows exige le scope OAuth `workflow`).
 
 ⚠️ **Les dashboards `.html` embarquent leurs chiffres en dur** (HTML autonome, CSP-safe : pas de
 `fetch` possible). Deux régimes :

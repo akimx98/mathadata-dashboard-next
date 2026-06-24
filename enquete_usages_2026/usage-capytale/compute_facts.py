@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
 """Calcule l'ensemble des faits analytiques -> facts.json. Source unique de vérité chiffrée."""
 import pandas as pd, numpy as np, json, math
-def _san(o):
-    """NaN/inf -> None pour produire du JSON strict (json.dump écrirait sinon `NaN`, invalide)."""
-    if isinstance(o,float) and (math.isnan(o) or math.isinf(o)): return None
-    if isinstance(o,dict): return {k:_san(v) for k,v in o.items()}
-    if isinstance(o,(list,tuple)): return [_san(v) for v in o]
-    return o
 import os as _os
 _ENQ=_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))  # enquete_usages_2026
 _RT=_os.path.dirname(_ENQ)                                           # racine du repo
 _WS=_os.path.dirname(_RT)                                            # parent (contient mathadata-website)
+import sys as _sys; _sys.path.insert(0,_ENQ); import enquete_common as K  # socle partagé
+_san = K.sanitize_json
 D=f"{_ENQ}/usage-capytale/data"
 BASE=f"{_RT}/public/data"
 
@@ -20,7 +16,7 @@ sess=pd.read_csv(f"{D}/sessions.csv")
 ann=pd.read_csv(f"{BASE}/annuaire_etablissements.csv", dtype=str, keep_default_na=False)
 ann['ips_num']=pd.to_numeric(ann['ips'],errors='coerce')
 
-DEMO='c81e728d9d4c2f636f067f89cc14862c'  # compte rôle-vide
+DEMO = K.DEMO
 PIONEER='cfcd208495d565ef66e7dff9f98764da'  # id séquentiel "0"
 for c in ['created']:
     df[c]=pd.to_numeric(df[c],errors='coerce')

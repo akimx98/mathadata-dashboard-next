@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Hook pre-commit VERSIONNÉ : bloque le commit si les contrats de l'enquête échouent,
+# quand des fichiers de l'enquête sont mis en index. Installation (une fois) :
+#     git config core.hooksPath enquete_usages_2026/hooks
+# (désinstaller : git config --unset core.hooksPath)
+if git diff --cached --name-only | grep -q '^enquete_usages_2026/'; then
+  echo "→ contrats enquête (check_contracts.py)…"
+  if ! python3 enquete_usages_2026/transverse/check_contracts.py >/tmp/_contracts.log 2>&1; then
+    tail -20 /tmp/_contracts.log
+    echo "✗ commit BLOQUÉ : un contrat de l'enquête a échoué."
+    echo "  Corrige, ou régénère : bash enquete_usages_2026/rebuild_all.sh"
+    exit 1
+  fi
+  echo "  ✓ contrats OK"
+fi
