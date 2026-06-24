@@ -44,8 +44,8 @@ thead th{font-family:var(--grot);font-weight:700;color:var(--ink);border-bottom:
   <span class="est">Canal = <b>estimé</b> (mondes site ↔ Capytale disjoints : appariement individuel 75 paires + trace établissement). Profondeur &amp; retour = <b>mesurés</b> sur Capytale. Chiffres injectés depuis <code>facts_profiles.json</code>. Définitions : <a href="https://github.com/akimx98/mathadata-dashboard-next/blob/main/enquete_usages_2026/transverse/GLOSSAIRE.md" style="color:var(--site)">GLOSSAIRE</a>.</span>
 
   <div class="legend">
-    <span><span class="sw" style="background:var(--site)"></span><b>Via le site</b> (<span data-f="via.tot">78</span>)</span>
-    <span><span class="sw" style="background:var(--bridge)"></span><b>Capytale-direct</b> (<span data-f="cap.tot">98</span>)</span>
+    <span><span class="sw" style="background:var(--site)"></span><b>Via le site</b> (<span data-f="via.tot">77</span>)</span>
+    <span><span class="sw" style="background:var(--bridge)"></span><b>Capytale-direct</b> (<span data-f="cap.tot">99</span>)</span>
     <span style="color:var(--faint)">Ruban coloré par <b>canal d'origine</b> (figé à la 1ʳᵉ apparition), conservé jusqu'au bout.</span>
   </div>
 
@@ -73,25 +73,22 @@ thead th{font-family:var(--grot);font-weight:700;color:var(--ink);border-bottom:
   <h2>3 · Ce qui prédit le retour <span style="font-weight:400;font-size:15px;color:var(--ink2)">(cohorte éligible, n = <span data-f="elig">77</span>)</span></h2>
   <p class="h2sub">Éligible = a atteint une classe ≥5 él. avec 1ʳᵉ année ≤ 2024-25 (retour observable). Les « trop récents » et les « sous-seuil » sont exclus du dénominateur.</p>
   <table>
-    <thead><tr><th>Facteur (posé en année 1)</th><th>Taux de retour</th><th>Base</th></tr></thead>
+    <thead><tr><th>Facteur (posé en année 1)</th><th>Taux de retour</th><th>Base</th><th>Solidité</th></tr></thead>
     <tbody>
-      <tr><td><b>Réutilise en année 1</b> (niveau « multiple »)</td><td><b><span data-f="reuse.pct">57</span> %</b></td><td><span data-f="reuse.base">13/23</span></td></tr>
+      <tr><td><b>Réutilise en année 1</b> (niveau « multiple »)</td><td><b><span data-f="reuse.pct">57</span> %</b></td><td><span data-f="reuse.base">13/23</span></td><td rowspan="2" style="vertical-align:middle"><b style="color:var(--bridge,#0E8074)">✓ robuste</b><br><span style="font-size:12px;color:var(--ink2)">Fisher p ≈ 0,009</span></td></tr>
       <tr><td>Usage unique en année 1</td><td><span data-f="uniq.pct">24</span> %</td><td><span data-f="uniq.base">13/54</span></td></tr>
-      <tr><td style="padding-top:12px"><b>Arrivé via le site</b></td><td style="padding-top:12px"><b><span data-f="via.pct">53</span> %</b></td><td style="padding-top:12px"><span data-f="via.base">8/15</span></td></tr>
+      <tr><td style="padding-top:12px">Arrivé via le site</td><td style="padding-top:12px"><span data-f="via.pct">53</span> %</td><td style="padding-top:12px"><span data-f="via.base">8/15</span></td><td rowspan="2" style="vertical-align:middle;padding-top:12px"><span style="color:var(--leak,#AE3340)">n.s.</span> <span style="font-size:12px;color:var(--ink2)">p ≈ 0,13</span><br><span style="font-size:12px;color:var(--ink2)">12/15 par <b>proxy étab.</b></span></td></tr>
       <tr><td>Arrivé Capytale-direct</td><td><span data-f="cap.pct">29</span> %</td><td><span data-f="cap.base">18/62</span></td></tr>
-      <tr><td style="padding-top:12px"><b>Formé (avant l'usage = motrice)</b></td><td style="padding-top:12px"><b><span data-f="forme.pct">58</span> %</b></td><td style="padding-top:12px"><span data-f="forme.base">7/12</span></td></tr>
+      <tr><td style="padding-top:12px">Formé (avant l'usage = motrice)</td><td style="padding-top:12px"><span data-f="forme.pct">58</span> %</td><td style="padding-top:12px"><span data-f="forme.base">7/12</span></td><td rowspan="2" style="vertical-align:middle;padding-top:12px"><span style="color:var(--leak,#AE3340)">n.s.</span> <span style="font-size:12px;color:var(--ink2)">p ≈ 0,09</span><br><span style="font-size:12px;color:var(--ink2)">9/12 par <b>proxy étab.</b></span></td></tr>
       <tr><td>Jamais formé</td><td><span data-f="jamais.pct">29</span> %</td><td><span data-f="jamais.base">19/65</span></td></tr>
     </tbody>
   </table>
 
   <div class="note key">
-    <b>Réutiliser, c'est revenir.</b> En 1ʳᵉ année, seuls <b><span data-f="pctReuse">32</span> % réutilisent</b> (≥2 occasions classe) ; et réutiliser <b>plus que double</b> le taux de retour (<span data-f="reuse.pct">57</span> % vs <span data-f="uniq.pct">24</span> %). Calculé <b>en année 1 uniquement</b> pour éviter la circularité : si l'on comptait les séances de l'année 2 d'un revenu, « réutiliser » impliquerait mécaniquement « être revenu ».
+    <b>Le seul signal solide : réutiliser, c'est revenir.</b> En 1ʳᵉ année, seuls <b><span data-f="pctReuse">32</span> % réutilisent</b> (≥2 occasions classe) ; et réutiliser <b>plus que double</b> le taux de retour (<span data-f="reuse.pct">57</span> % vs <span data-f="uniq.pct">24</span> %, Fisher <b>p ≈ 0,009</b>). Calculé <b>en année 1 uniquement</b> pour éviter la circularité : si l'on comptait les séances de l'année 2 d'un revenu, « réutiliser » impliquerait mécaniquement « être revenu ».
   </div>
   <div class="note">
-    <b>Trois lectures.</b>
-    <b>(1) Le canal « via le site » convertit bien mieux — mais arrive surtout récemment.</b> <span data-f="via.rec">63</span> des <span data-f="via.tot">78</span> profs « via le site » sont <b>trop récents</b> (cohortes de formation 2026, retour pas encore observable) ; Capytale-direct (<span data-f="cap.tot">98</span>) reste le gros canal historique observable.
-    <b>(2) Sur la cohorte éligible</b> (n = <span data-f="elig">77</span>) : via-le-site <b><span data-f="via.pct">53</span> %</b> vs Capytale-direct <b><span data-f="cap.pct">29</span> %</b> ; formé-avant-usage <b><span data-f="forme.pct">58</span> %</b> vs jamais formé <b><span data-f="jamais.pct">29</span> %</b> ; réutilise-an-1 <b><span data-f="reuse.pct">57</span> %</b> vs usage-unique <b><span data-f="uniq.pct">24</span> %</b>.
-    <b>(3) Petits sous-groupes</b> (via-site éligible n = <span data-f="via.eligN">15</span>, formé n = <span data-f="forme.n">12</span>) : leviers réels mais à confirmer sur de plus gros effectifs à la rentrée.
+    <b>Canal et formation : à NE PAS lire comme des prédicteurs établis.</b> Les écarts via-site (53 % vs 29 %) et formation (58 % vs 29 %) sont séduisants, mais sur cette cohorte ils sont <b>non significatifs</b> (Fisher p ≈ 0,13 et 0,09) et, surtout, <b>essentiellement écologiques</b> : <b>12 des 15</b> « via-site » éligibles et <b>9 des 12</b> « formés » éligibles sont attribués par <b>proxy établissement</b> (un collègue au même UAI), pas par appariement individuel — seuls 3 + 3 sont des appariements 1:1. S'y ajoute un biais de <b>récence</b> : <span data-f="via.rec">62</span> des <span data-f="via.tot">77</span> profs « via le site » sont <b>trop récents</b> (cohortes 2026, retour non encore observable). Ces leviers restent <b>plausibles</b> mais demandent de plus gros effectifs <b>individuellement appariés</b> avant d'être affirmés.
   </div>
 
   <p class="foot"><a href="index.html">← accueil</a> · <a href="synthese.html">synthèse</a> · <a href="typologie.html">typologie</a> · <a href="volet2.html">volet 2</a></p>
@@ -101,8 +98,8 @@ thead th{font-family:var(--grot);font-weight:700;color:var(--ink);border-bottom:
 <script>
 /*FACTS_START*/
 const F={pop:223,reached:176,ss:47,elig:77,
- via:{tot:78,rev:8,non:7,rec:63},cap:{tot:98,rev:18,non:44,rec:36},
- pb:{cap:{multi:{rev:8,non:10,rec:9},uniq:{rev:10,non:34,rec:27}},via:{multi:{rev:5,non:0,rec:24},uniq:{rev:3,non:7,rec:39}}}};
+ via:{tot:77,rev:8,non:7,rec:62},cap:{tot:99,rev:18,non:44,rec:37},
+ pb:{cap:{multi:{rev:8,non:10,rec:9},uniq:{rev:10,non:34,rec:28}},via:{multi:{rev:5,non:0,rec:24},uniq:{rev:3,non:7,rec:38}}}};
 /*FACTS_END*/
 const C={ink:'#16212B',ink2:'#3C4A57',faint:'#7C8893',site:'#2F6DB5',classe:'#C85A33',bridge:'#0E8074',leak:'#AE3340',amber:'#C99A2E',rule:'#D8D2C4',grey:'#B7B2A6'};
 const NS='http://www.w3.org/2000/svg';
