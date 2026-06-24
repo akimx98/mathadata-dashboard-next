@@ -1,153 +1,16 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<title>Enquête usages MathAData</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  :root{
-    --ground:#F2F5FB; --paper:#FFFFFF; --text:#16213E; --muted:#5b6b8c;
-    --indigo:#4338CA; --indigo-soft:#ECECFB; --teal:#0E9488; --amber:#C2410C;
-    --line:#D8DEEC; --grid:#dde4f1; --grid2:#c9d3e8;
-    --font-body:-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    --font-mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;color:var(--text);font-family:var(--font-body);line-height:1.6;font-size:17px;
-    -webkit-font-smoothing:antialiased;background-color:var(--ground);
-    background-image:
-      linear-gradient(var(--grid) 1px,transparent 1px),
-      linear-gradient(90deg,var(--grid) 1px,transparent 1px),
-      linear-gradient(var(--grid2) 1px,transparent 1px),
-      linear-gradient(90deg,var(--grid2) 1px,transparent 1px);
-    background-size:22px 22px,22px 22px,110px 110px,110px 110px;
-    min-height:100vh;
-  }
-  .wrap{max-width:920px;margin:0 auto;padding:0 22px}
-  header{padding:72px 0 22px}
-  .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--indigo);font-weight:600}
-  h1{font-size:clamp(32px,6vw,56px);line-height:1.04;letter-spacing:-.022em;font-weight:800;margin:18px 0 14px;max-width:18ch}
-  .lede{font-size:clamp(17px,2.2vw,21px);color:var(--muted);max-width:62ch;margin:0}
-
-  a.card{display:block;text-decoration:none;color:inherit;background:var(--paper);border:1px solid var(--line);
-    border-radius:16px;box-shadow:0 1px 0 rgba(22,33,62,.04);
-    transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
-  a.card:hover{transform:translateY(-3px);box-shadow:0 16px 36px -22px rgba(22,33,62,.5)}
-  .tag{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
-  .card h2{line-height:1.15;letter-spacing:-.015em;margin:9px 0 8px}
-  .card p{color:var(--muted);margin:0 0 16px}
-  .go{font-family:var(--font-mono);font-size:13px;font-weight:600}
-
-  .skip{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
-    margin:30px 0 12px;display:flex;align-items:center;gap:12px}
-  .skip::after{content:"";flex:1;height:1px;background:var(--line)}
-
-  /* les 2 volets (principaux) */
-  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  @media(max-width:720px){.duo{grid-template-columns:1fr}}
-  .duo .card{padding:24px 24px 22px;border-top:4px solid var(--line)}
-  .v1{border-top-color:var(--indigo)!important} .v1 .tag{color:var(--indigo)} .v1 .go{color:var(--indigo)}
-  .v2{border-top-color:var(--teal)!important} .v2 .tag{color:var(--teal)} .v2 .go{color:var(--teal)}
-  .duo .card h2{font-size:21px}
-  .duo .card p{font-size:14.5px}
-
-  /* synthèse — mise en avant */
-  .feature{padding:28px 28px 24px;border:1px solid var(--line);border-top:5px solid #C2510C;
-    background:linear-gradient(180deg,#FBF4EA,var(--paper));border-radius:16px}
-  .feature .tag{color:#C2510C} .feature .go{color:#C2510C}
-  .feature h2{font-size:clamp(22px,3.4vw,30px);margin:8px 0 10px;max-width:26ch}
-  .feature p{font-size:15.5px;color:var(--muted);max-width:72ch;margin:0 0 14px}
-  .feature .md{font-family:var(--font-mono);font-size:12px;color:var(--muted);margin:10px 0 0}
-  .feature .md a{color:#C2510C}
-
-  /* compléments — secondaires, sous les volets */
-  .complement{padding:18px 22px;border-left:4px solid var(--line);display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
-  .complement + .complement{margin-top:12px}
-  .complement h2{font-size:18px;margin:6px 0 4px}
-  .complement p{font-size:14px;margin:0 0 10px;max-width:64ch}
-  .complement .ctext{flex:1;min-width:240px}
-  .complement.typo{border-left-color:var(--amber)} .complement.typo .tag,.complement.typo .go{color:var(--amber)}
-  .complement.seances{border-left-color:var(--teal)} .complement.seances .tag,.complement.seances .go{color:var(--teal)}
-  .complement.flux{border-left-color:#AE3340} .complement.flux .tag,.complement.flux .go{color:#AE3340}
-  .complement.live{border-left-color:var(--indigo)} .complement.live .tag,.complement.live .go{color:var(--indigo)}
-  .complement.live .tag{display:inline-flex;align-items:center;gap:7px}
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(14,148,136,.18)}
-
-  footer{padding:30px 0 60px;color:var(--muted);font-size:12.5px;font-family:var(--font-mono);
-    border-top:1px solid var(--line);margin-top:26px}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enquête usages MathAData — nouvelle adresse</title>
+  <link rel="canonical" href="https://mathadata.github.io/enquete-usages/">
+  <meta http-equiv="refresh" content="0; url=https://mathadata.github.io/enquete-usages/">
+  <script>location.replace("https://mathadata.github.io/enquete-usages/");</script>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <span class="eyebrow">MathAData · données Capytale &amp; mathadata.fr</span>
-    <h1>Enquête sur les usages de MathAData</h1>
-    <p class="lede">Deux volets d'analyse du déploiement réel, à partir des données d'usage (extraction juin 2026).</p>
-  </header>
-
-  <a class="card feature" href="synthese.html">
-    <div class="tag">★ Synthèse finale · à lire en premier</div>
-    <h2>La notoriété est acquise. La conversion reste à gagner.</h2>
-    <p>La synthèse transversale des quatre analyses : ce que trois ans d'usage disent de l'adoption, des profils, de l'effet des formations et des modes d'usage — et comment déployer mieux en 2026-2027. Thèse : la croissance est surtout organique ; l'enjeu est la conversion à trois étages (formation→classe, classe→retour, essai→profondeur), et les gestes de profondeur de la 1ʳᵉ année (≥2 activités, vraie séance de 45 min) déterminent <i>aussi</i> le retour.</p>
-    <span class="go">Ouvrir la synthèse →</span>
-    <p class="md">📄 Tous les rapports détaillés (Markdown) sont liés en bas de la synthèse et de chaque page.</p>
-  </a>
-
-  <div class="skip">Les analyses</div>
-  <div class="duo">
-    <a class="card v1" href="volet1.html">
-      <div class="tag">Volet 1</div>
-      <h2>Du pilote au déploiement national</h2>
-      <p>Qui utilise MathAData et comment il entre en classe : profil d'usage, entonnoir de l'engagement, diffusion, moteurs de la croissance, géographie.</p>
-      <span class="go">Ouvrir le volet 1 →</span>
-    </a>
-    <a class="card v2" href="volet2.html">
-      <div class="tag">Volet 2</div>
-      <h2>Du site à la classe</h2>
-      <p>Le croisement mathadata.fr × Capytale : de la notoriété à la classe, effet des formations, les deux portes d'entrée, ce que consultent les profs.</p>
-      <span class="go">Ouvrir le volet 2 →</span>
-    </a>
-  </div>
-
-  <div class="skip">Compléments</div>
-  <a class="card complement typo" href="typologie.html">
-    <div class="ctext">
-      <div class="tag">Typologie</div>
-      <h2>Cinq façons d'enseigner</h2>
-      <p>Cinq profils d'enseignants croisés avec toutes les données : qui atteint la classe, et pourquoi la plupart ne reviennent pas (le paradoxe du déployeur).</p>
-    </div>
-    <span class="go">Ouvrir →</span>
-  </a>
-  <a class="card complement seances" href="seances.html">
-    <div class="ctext">
-      <div class="tag">Séances</div>
-      <h2>Anatomie d'une séance</h2>
-      <p>Comment MathAData se vit en classe : rythmes horaires, scénarios d'usage (déploiement, soutien, demi-groupe, reprises, travail-maison), engagement élève et galerie de cas réels.</p>
-    </div>
-    <span class="go">Ouvrir →</span>
-  </a>
-  <a class="card complement flux" href="flux.html">
-    <div class="ctext">
-      <div class="tag">Flux</div>
-      <h2>Canal, réutilisation, retour</h2>
-      <p>D'où viennent les profs (Capytale-direct, formation, site), qui réutilise, qui revient l'année suivante — en Sankey, avec les déterminants du retour.</p>
-    </div>
-    <span class="go">Ouvrir →</span>
-  </a>
-  <a class="card complement live" href="https://mathadata-dashboard-next.vercel.app/">
-    <div class="ctext">
-      <div class="tag"><span class="dot"></span> Dashboard interactif · en ligne</div>
-      <h2>Explorer les données en direct</h2>
-      <p>Le tableau de bord interactif : cartes, filtres et graphiques d'usage, à explorer soi-même.</p>
-    </div>
-    <span class="go">Ouvrir →</span>
-  </a>
-
-  <footer>
-    Source · données Capytale (extraction 19 juin 2026) &amp; mathadata.fr, croisées à l'annuaire des établissements.
-    Identifiants pseudonymisés — aucune ré-identification. Profils désignés par établissement/commune.
-  </footer>
-</div>
+  <p>Cette page a été déplacée vers
+    <a href="https://mathadata.github.io/enquete-usages/">mathadata.github.io/enquete-usages/</a>.
+  </p>
 </body>
 </html>
