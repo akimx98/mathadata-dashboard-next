@@ -161,7 +161,13 @@ les contrats de sécurité de `transverse/check_contracts.py`.
 
 ## 4. Capytale
 
-L'extraction Capytale est indépendante du snapshot Payload. Voir
-[`../DONNEES_BRUTES_CAPYTALE.md`](../DONNEES_BRUTES_CAPYTALE.md) pour le schéma de
-l'API. Après remplacement de l'entrée Capytale de référence, relancer le même
-`rebuild_all.sh`.
+L'extraction Capytale est **indépendante** du snapshot Payload (donnée pseudonymisée, aucune PII).
+Elle s'obtient via l'**API Capytale** avec un script fourni :
+
+```bash
+# token CAPYTALE_MATHADATA_TOKEN dans .env.local (racine), récupéré au trousseau du Drive MathAData
+python3 enquete_usages_2026/fetch_capytale.py     # → public/data/capytale_fresh_<AAAAMMJJ>.csv
+```
+
+Puis pointer les scripts sur ce nouveau fichier et relancer `rebuild_all.sh`. Schéma des colonnes,
+endpoint, gestion du token et étape de promotion : [`DONNEES_BRUTES_CAPYTALE.md`](DONNEES_BRUTES_CAPYTALE.md).

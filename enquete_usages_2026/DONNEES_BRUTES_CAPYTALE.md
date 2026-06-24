@@ -33,20 +33,47 @@ cf. [`MISE_A_JOUR_DONNEES.md`](MISE_A_JOUR_DONNEES.md)).
 
 ## Provenance & rafraîchissement
 
-L'extraction Capytale est obtenue en appelant **l'API de Capytale** (la donnée renvoyée est déjà
-pseudonymisée — aucune PII). Elle est **indépendante** du snapshot Payload : pas besoin du dépôt site
-ni d'accès Payload pour la régénérer.
+L'extraction Capytale est obtenue en appelant **l'API de Capytale** (donnée déjà **pseudonymisée** —
+aucune PII). Elle est **indépendante** du snapshot Payload : pas besoin du dépôt site ni d'accès
+Payload pour la régénérer.
 
-Pour mettre à jour l'usage Capytale de référence :
+- **Endpoint** : `https://capytale2.ac-paris.fr/web/c-stat/mathadata` (override possible par la variable
+  d'environnement `CAPYTALE_MATHADATA_URL`).
+- **Authentification** : en-tête `Authorization: Bearer <token>`, `Accept: text/csv`.
+- La **même logique** alimente l'app Next.js du dashboard ([`app/api/csv/route.ts`](../app/api/csv/route.ts),
+  bouton « synchroniser Capytale ») — c'est la source de vérité de l'appel.
 
-1. Appeler l'API Capytale pour produire une extraction au **même schéma** que le tableau ci-dessus
-   (mêmes colonnes, même pseudonymisation — aucune PII).
-2. La déposer sous `public/data/` (nom daté, ex. `capytale_fresh_AAAAMMJJ.csv`) et **mettre à jour le
-   chemin** dans les scripts qui lisent l'entrée de référence (`usage-capytale/build_canonical.py`,
-   `build_teachers_v2.py`, et la valeur par défaut citée dans `usage-capytale/DEFINITIONS.md`).
-3. Relancer la chaîne : `bash enquete_usages_2026/rebuild_all.sh` puis vérifier les contrats.
+### Le token API (à faire une fois)
 
-> 📝 **À compléter** : l'**appel API exact** (endpoint, authentification, paramètres, mapping des
-> champs renvoyés vers le schéma ci-dessus) n'est pas encore versionné ici. Le consigner — idéalement
-> sous forme d'un petit script d'extraction dans `enquete_usages_2026/` — rendrait le rafraîchissement
-> Capytale pleinement reproductible par un collègue.
+Le token se nomme **`CAPYTALE_MATHADATA_TOKEN`** et vit dans le fichier **`.env.local` à la racine du
+dépôt** (`.env.local` est **gitignore** — le token n'est jamais committé).
+
+1. Récupérer le token dans le **trousseau du Drive MathAData** (keychain partagé de l'équipe).
+2. L'ajouter à son `.env.local` (le créer s'il n'existe pas), une ligne :
+
+   ```
+   CAPYTALE_MATHADATA_TOKEN=collez_le_token_ici
+   ```
+
+### Récupérer une extraction fraîche (script fourni)
+
+```bash
+python3 enquete_usages_2026/fetch_capytale.py
+```
+
+Le script lit le token depuis `.env.local` (jamais affiché), appelle l'API, **valide les 12 colonnes**,
+normalise (`role` en minuscule, `NULL` → vide) et écrit, **sans écraser** :
+
+```text
+public/data/capytale_fresh_<AAAAMMJJ>.csv
+```
+
+### Promouvoir cette extraction en référence de l'enquête
+
+1. **Pointer les scripts** sur le nouveau fichier (remplacer `capytale_fresh_20260619.csv`) :
+   `usage-capytale/build_canonical.py`, `usage-capytale/build_teachers_v2.py`,
+   `usage-capytale/compute_facts.py`, et la valeur citée dans `usage-capytale/DEFINITIONS.md`.
+2. Relancer la chaîne : `bash enquete_usages_2026/rebuild_all.sh`, puis vérifier que
+   `transverse/check_contracts.py` finit par `✅`. ⚠️ Les **populations attendues** (`K.EXPECT` dans
+   `enquete_common.py`) sont ancrées sur l'extraction actuelle : une nouvelle extraction les fera bouger
+   → mettre à jour `K.EXPECT` **consciemment** (c'est le rôle des contrats de forcer cette revue).
