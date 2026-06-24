@@ -93,5 +93,96 @@
     "via_site|uniq|rec": 38,
     "via_site|uniq|rev": 3
   },
-  "n_reached_classe": 176
+  "n_reached_classe": 176,
+  "funnel": {
+    "touched": {
+      "n": 223,
+      "xtab": {
+        "capytale_direct|jamais|uniq": 70,
+        "capytale_direct|jamais|multi": 25,
+        "via_site|jamais|multi": 7,
+        "via_site|jamais|uniq": 23,
+        "capytale_direct|jamais|ss": 33,
+        "via_site|forme|uniq": 23,
+        "via_site|forme|multi": 24,
+        "via_site|jamais|ss": 7,
+        "via_site|forme|ss": 6,
+        "capytale_direct|forme|multi": 3,
+        "capytale_direct|forme|ss": 1,
+        "capytale_direct|forme|uniq": 1
+      },
+      "rates": {
+        "canal": {
+          "via_site": {
+            "n": 90,
+            "touched": 90,
+            "classe": 77
+          },
+          "capytale_direct": {
+            "n": 133,
+            "touched": 133,
+            "classe": 99
+          }
+        },
+        "formation": {
+          "forme": {
+            "n": 58,
+            "touched": 58,
+            "classe": 51
+          },
+          "jamais": {
+            "n": 165,
+            "touched": 165,
+            "classe": 125
+          }
+        }
+      }
+    },
+    "all": {
+      "n": 260,
+      "xtab": {
+        "capytale_direct|jamais|uniq": 70,
+        "capytale_direct|jamais|multi": 25,
+        "via_site|jamais|multi": 7,
+        "capytale_direct|jamais|test": 23,
+        "via_site|jamais|uniq": 23,
+        "via_site|jamais|test": 5,
+        "capytale_direct|jamais|ss": 33,
+        "via_site|forme|uniq": 23,
+        "via_site|forme|multi": 24,
+        "via_site|forme|test": 9,
+        "via_site|jamais|ss": 7,
+        "via_site|forme|ss": 6,
+        "capytale_direct|forme|multi": 3,
+        "capytale_direct|forme|ss": 1,
+        "capytale_direct|forme|uniq": 1
+      },
+      "rates": {
+        "canal": {
+          "via_site": {
+            "n": 104,
+            "touched": 90,
+            "classe": 77
+          },
+          "capytale_direct": {
+            "n": 156,
+            "touched": 133,
+            "classe": 99
+          }
+        },
+        "formation": {
+          "forme": {
+            "n": 67,
+            "touched": 58,
+            "classe": 51
+          },
+          "jamais": {
+            "n": 193,
+            "touched": 165,
+            "classe": 125
+          }
+        }
+      }
+    }
+  }
 }

@@ -40,6 +40,13 @@ check(fp['reached_classe']==E['POP_CLASSE'], f"atteint-classe = POP_CLASSE ({E['
 check(fp['testeurs_purs']==E['TESTEURS'] and fp['sous_seuil_only']==E['SOUS_SEUIL'], f"testeurs={E['TESTEURS']} & sous-seuil={E['SOUS_SEUIL']}")
 check(fp['eligibles']==E['COHORT_ELIGIBLE'], f"cohorte éligible = COHORT_ELIGIBLE ({E['COHORT_ELIGIBLE']})")
 
+print("2a. Entonnoir canal × formation × profondeur (facts_profiles.funnel — Sankey « tous les profs ») :")
+fn=fp['funnel']
+check(sum(fn['touched']['xtab'].values())==fn['touched']['n']==E['POP_TOUCHED'], f"funnel touché : Σxtab = n = POP_TOUCHED ({E['POP_TOUCHED']})")
+check(sum(fn['all']['xtab'].values())==fn['all']['n']==E['POP_CAPYTALE'], f"funnel tous : Σxtab = n = POP_CAPYTALE ({E['POP_CAPYTALE']})")
+check(sum(v for k,v in fn['all']['xtab'].items() if k.endswith('|test'))==E['TESTEURS'], f"funnel tous : barreau testeur pur = TESTEURS ({E['TESTEURS']})")
+check(all(k.split('|')[0] in ('via_site','capytale_direct') and k.split('|')[1] in ('forme','jamais') and k.split('|')[2] in ('test','ss','uniq','multi') for k in fn['all']['xtab']), "funnel : clés = canal|formation|profondeur (vocabulaire canonique)")
+
 print("2b. Coupure année scolaire = 1ᵉʳ août (code ↔ GLOSSAIRE §1, anti-divergence) :")
 import datetime as _dt
 _aug = _dt.datetime(2024, 8, 19, tzinfo=_dt.timezone.utc)   # usage élève réel observé en août
@@ -92,6 +99,14 @@ check(span(flux,'elig')==str(fp['eligibles']), f"flux: span élig = {fp['eligibl
 # l'îlot F (qui alimente les Sankeys) doit refléter les trajectoires facts
 mI=re.search(r'via:\{tot:(\d+),rev:(\d+),non:(\d+),rec:(\d+)\}',flux)
 check(bool(mI) and [int(x) for x in mI.groups()]==[via,fp['traj_canal_devenir'].get('via_site|rev',0),fp['traj_canal_devenir'].get('via_site|non',0),fp['traj_canal_devenir'].get('via_site|rec',0)], "flux: îlot F via = trajectoires facts")
+# îlot FN (entonnoir, Sankey C & D) + spans de taux du §1 = générés depuis facts['funnel'], jamais à la main
+mFN=re.search(r'const FN=(\{.*\});',flux)
+check(bool(mFN) and json.loads(mFN.group(1))==fn, "flux: îlot FN identique à facts_profiles.funnel (généré, pas dérivé)")
+def _rc(o): return str(round(100*o['classe']/o['n']))
+_rt=fn['touched']['rates']
+check(span(flux,'rcViaClasse')==_rc(_rt['canal']['via_site']) and span(flux,'rcCapClasse')==_rc(_rt['canal']['capytale_direct']), "flux: spans taux-classe canal (§1) = facts funnel touché")
+check(span(flux,'rcFormeClasse')==_rc(_rt['formation']['forme']) and span(flux,'rcJamaisClasse')==_rc(_rt['formation']['jamais']), "flux: spans taux-classe formation (§1) = facts funnel touché")
+check(span(flux,'popAll')==str(fp['population']) and span(flux,'test')==str(fp['testeurs_purs']), f"flux: spans popAll={fp['population']} & test={fp['testeurs_purs']}")
 typo=rd("transverse/dashboard_typologie.html")
 m=re.search(r'<div class="n red">(\d+) %</div><div class="l">des profs',typo)
 check(bool(m) and int(m.group(1))==round(ft['retention_canonical']['taux']), f"typologie: strip rétention = {round(ft['retention_canonical']['taux'])} %")

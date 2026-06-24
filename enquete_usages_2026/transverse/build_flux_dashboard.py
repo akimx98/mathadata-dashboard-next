@@ -18,9 +18,17 @@ def pb(canal): return {lvl:{d:int(t2.get(f"{canal}|{lvl}|{d}",0)) for d in ('rev
 bc=fp['by_canal']; bf=fp['by_formation']; ru=fp['reuse_an1']
 def pct(rev,n): return round(100*rev/n) if n else 0
 def base(rev,n): return f"{rev}/{n}"
+def _rc(o): return pct(o['classe'], o['n'])   # taux « atteint une classe ≥5 » d'une sous-population de l'entonnoir
 
 vals={
  'pop':fp['n_touched_students'], 'reached':fp['n_reached_classe'], 'ss':fp['sous_seuil_only'], 'elig':fp['eligibles'],
+ 'popAll':fp['population'], 'test':fp['testeurs_purs'],
+ 'uniqN':fp['max_level'].get('4',0), 'multiN':fp['max_level'].get('5',0),
+ # taux d'atteinte d'une classe ≥5 (population « touché-élèves » = 223), pour le texte du §1
+ 'rcViaClasse':_rc(fp['funnel']['touched']['rates']['canal']['via_site']),
+ 'rcCapClasse':_rc(fp['funnel']['touched']['rates']['canal']['capytale_direct']),
+ 'rcFormeClasse':_rc(fp['funnel']['touched']['rates']['formation']['forme']),
+ 'rcJamaisClasse':_rc(fp['funnel']['touched']['rates']['formation']['jamais']),
  'via.tot':via['tot'], 'cap.tot':cap['tot'], 'via.rec':via['rec'],
  'reuse.pct':pct(ru['reutilise_revenu'],ru['reutilise_n']), 'reuse.base':base(ru['reutilise_revenu'],ru['reutilise_n']),
  'uniq.pct':pct(ru['unique_revenu'],ru['unique_n']),       'uniq.base':base(ru['unique_revenu'],ru['unique_n']),
@@ -47,5 +55,11 @@ island=("const F={pop:%d,reached:%d,ss:%d,elig:%d,\n"
 html=re.sub(r'/\*FACTS_START\*/.*?/\*FACTS_END\*/',
             '/*FACTS_START*/\n'+island+'\n/*FACTS_END*/', html, flags=re.S)
 
+# îlot FN : entonnoir canal × formation × profondeur (alimente les Sankey « tous les profs »).
+# On passe la structure facts['funnel'] telle quelle (touched=223, all=260) — source de vérité unique.
+funnel_island = "const FN=" + json.dumps(fp['funnel'], ensure_ascii=False, separators=(',',':')) + ";"
+html=re.sub(r'/\*FUNNEL_START\*/.*?/\*FUNNEL_END\*/',
+            '/*FUNNEL_START*/\n'+funnel_island+'\n/*FUNNEL_END*/', html, flags=re.S)
+
 open(HTML,'w').write(html)
-print(f"dashboard_flux_profs.html régénéré : {n} spans data-f remplis ; F = via {via['tot']} / cap {cap['tot']} ; éligible {vals['elig']}")
+print(f"dashboard_flux_profs.html régénéré : {n} spans data-f remplis ; F = via {via['tot']} / cap {cap['tot']} ; éligible {vals['elig']} ; FN = touché {fp['funnel']['touched']['n']} / tous {fp['funnel']['all']['n']}")

@@ -324,6 +324,30 @@ for (c,y,d), n in R.groupby(['canal','y1b','dev']).size().items():
 facts['traj_canal_devenir'] = traj1
 facts['traj_canal_y1_devenir'] = traj2
 facts['n_reached_classe'] = len(R)
+
+# ───────────────────────────── 7b. Entonnoir canal × formation × profondeur (dashboard Flux) ─────────────────────────────
+# Pour les diagrammes « tous les profs » (sans rétention) : on croise les trois attributs FIGÉS
+# canal (§6) × formation binaire (§7) × profondeur max atteinte (escalier §4), sur DEUX populations :
+#   - touched (223, niveaux 3-5 : ont touché des élèves) ;
+#   - all     (260, niveaux 2-5 : + les testeurs purs, qui ont cloné sans distribuer).
+# Croisement DESCRIPTIF (canal & formation = estimés ; endogénéité formation×établissement — cf. §7).
+DEPTH_LABEL = {2: 'test', 3: 'ss', 4: 'uniq', 5: 'multi'}   # rungs de l'escalier (codes courts pour le JS)
+def _funnel(df):
+    xt = {}
+    for _, r in df.iterrows():
+        k = f"{r['canal']}|{r['formation_statut']}|{DEPTH_LABEL[int(r['max_level'])]}"
+        xt[k] = xt.get(k, 0) + 1
+    def rate(sub):   # n = base ; touched = ≥3 (a distribué) ; classe = ≥4 (a atteint une classe ≥5)
+        return dict(n=int(len(sub)),
+                    touched=int((sub['max_level'] >= 3).sum()),
+                    classe=int((sub['max_level'] >= 4).sum()))
+    rates = dict(canal={c: rate(df[df['canal'] == c]) for c in ('via_site', 'capytale_direct')},
+                 formation={f: rate(df[df['formation_statut'] == f]) for f in ('forme', 'jamais')})
+    return dict(n=int(len(df)), xtab=xt, rates=rates)
+facts['funnel'] = dict(
+    touched=_funnel(PROF[PROF['max_level'] >= 3]),   # 223 — ont touché des élèves
+    all=_funnel(PROF),                                # 260 — l'ensemble des profs Capytale
+)
 json.dump(facts, open(f"{OUT}/facts_profiles.json","w"), ensure_ascii=False, indent=2)
 print("\n=== trajectoires diag1 (canal|devenir) ==="); print(traj1)
 print("=== trajectoires diag2 (canal|y1|devenir) ==="); print(traj2)
