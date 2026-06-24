@@ -40,7 +40,7 @@ for c in ['fdate','createdAt','first_mv','first_rc','first_cap','last_login']:
 W['uai']=W['uai'].fillna('').astype(str)
 W['acad']=W['acad'].fillna('').astype(str)
 
-cap=pd.read_csv(f"{BASE}/capytale_fresh_20260619.csv",dtype=str,keep_default_na=False)
+cap=pd.read_csv(K.capytale_csv(),dtype=str,keep_default_na=False)
 cap=cap[cap['teacher']!=DEMO].copy(); cap['role']=cap['role'].str.strip().str.lower()
 cap['dt']=pd.to_datetime(pd.to_numeric(cap['created'],errors='coerce'),unit='s',utc=True)
 stud=cap[cap['role']=='student']; teach=cap[cap['role']=='teacher']

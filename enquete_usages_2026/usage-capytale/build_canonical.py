@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Pipeline canonique d'enrichissement des usages MathAData (Capytale).
-Source: public/data/capytale_fresh_20260619.csv (extraction 2026-06-19, 7353 lignes).
+Source par défaut : public/data/capytale_fresh_20260619.csv.
+Override : variable MATHADATA_CAPYTALE_CSV.
 Produit des tables canoniques exploitables par tous les analystes.
 """
 import pandas as pd, numpy as np, json, os
@@ -32,7 +33,7 @@ ACT = {
 }
 
 # ---------------------------------------------------------------- chargement
-df = pd.read_csv(f"{BASE}/capytale_fresh_20260619.csv", dtype=str, keep_default_na=False)
+df = pd.read_csv(K.capytale_csv(), dtype=str, keep_default_na=False)
 for c in df.columns:
     df[c] = df[c].astype(str).str.strip()
 df['role'] = df['role'].str.lower().replace({'nan':''})

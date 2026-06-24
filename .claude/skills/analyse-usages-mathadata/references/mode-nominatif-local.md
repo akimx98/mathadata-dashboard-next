@@ -13,6 +13,20 @@ Un clone seul ne contient volontairement pas les sources nominatives. Le collèg
 - de `MATHADATA_SNAPSHOT` pointant vers ce snapshot si le chemin par défaut n'existe pas ;
 - des fichiers de travail dans `enquete_usages_2026/_local/`, régénérés localement si nécessaire.
 
+## Ne pas reconstruire inutilement les analyses
+
+- Pour une question nominative portant uniquement sur le site, lire directement
+  `$MATHADATA_SNAPSHOT/users.json`. Aucun pipeline n'est nécessaire.
+- Pour rattacher les identités Payload aux profils Capytale déjà versionnés, générer uniquement le
+  pont local :
+
+  `python3 enquete_usages_2026/site-vers-classe/match_individuals.py --local-only`
+
+  Cette commande écrit `_local/match_nominatif.csv` sans modifier les faits, profils ou sorties
+  versionnés.
+- Ne lancer `rebuild_all.sh` que si l'utilisateur demande d'actualiser ou de recalculer les
+  analyses sur un nouveau snapshot ou un nouveau CSV Capytale.
+
 ## Avant le calcul
 
 1. Confirmer dans la réponse de travail que la demande est **nominative et interne**.

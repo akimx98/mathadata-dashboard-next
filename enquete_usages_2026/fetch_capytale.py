@@ -16,7 +16,7 @@ USAGE :
   # → écrit public/data/capytale_fresh_<date Paris>.csv (sans écraser un fichier existant)
 
 ENSUITE (promotion en référence) :
-  1. Pointer les scripts sur le nouveau fichier (cf. enquete_usages_2026/DONNEES_BRUTES_CAPYTALE.md) ;
+  1. Définir MATHADATA_CAPYTALE_CSV sur le nouveau fichier ;
   2. `bash enquete_usages_2026/rebuild_all.sh` puis vérifier les contrats.
 """
 import csv, io, os, sys, urllib.request, urllib.error
@@ -122,7 +122,8 @@ def main():
         w.writerows(rows)
     print(f"✓ {len(rows)} lignes écrites → {os.path.relpath(out, ROOT)}")
     print("  Aucune PII (donnée pseudonymisée). NE PAS committer le token (.env.local est gitignore).")
-    print("  Étape suivante : pointer les scripts sur ce fichier puis lancer rebuild_all.sh")
+    print(f'  Étape suivante : export MATHADATA_CAPYTALE_CSV="$PWD/{os.path.relpath(out, ROOT)}"')
+    print("  puis lancer : bash enquete_usages_2026/rebuild_all.sh")
     print("  (détails : enquete_usages_2026/DONNEES_BRUTES_CAPYTALE.md).")
 
 

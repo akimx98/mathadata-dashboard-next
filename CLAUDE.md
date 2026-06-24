@@ -130,6 +130,14 @@ de publier si un e-mail non-`mathadata.fr` apparaît dans une source.
 - Une analyse nominative interne est permise **uniquement sur demande explicite**, depuis les
   sources locales autorisées. Toute sortie fichier va dans `enquete_usages_2026/private/` ou
   `enquete_usages_2026/_local/`, après vérification avec `git check-ignore -q <chemin>`.
+- **Une demande nominative n'implique pas une reconstruction des analyses.** Avec
+  `MATHADATA_SNAPSHOT` défini :
+  - pour des noms/e-mails ou attributs uniquement côté site, lire directement
+    `$MATHADATA_SNAPSHOT/users.json` ;
+  - pour rattacher des identités aux profils Capytale déjà versionnés, exécuter seulement
+    `python3 enquete_usages_2026/site-vers-classe/match_individuals.py --local-only`, qui écrit
+    `_local/match_nominatif.csv` sans modifier les faits ou profils versionnés.
+  Ne lancer `rebuild_all.sh` que pour actualiser/recalculer les analyses sur de nouvelles données.
 - Une identité côté site est mesurée ; une identité reliée à Capytale est **inférée**. Pour toute
   liste issue du pont site↔Capytale, conserver/indiquer la confiance A/B et ne jamais présenter
   l'attribution comme certaine.

@@ -33,7 +33,7 @@ PLACEHOLDER={cid for cid,c in fcodes.items() if str(c.get('formationDate','')).s
 MOD2MID={1:'3518185',2:'3515488',3:'6659633',4:'6944347',5:'5862412',6:'8790616',7:'2548348'}
 
 # ---- Capytale : usage eleve par UAI + 1re date ----
-cap=[r for r in csv.DictReader(open(f"{BASE}/capytale_fresh_20260619.csv")) if r['teacher']!=DEMO]
+cap=[r for r in csv.DictReader(open(K.capytale_csv())) if r['teacher']!=DEMO]
 for r in cap: r['_dt']=pd.to_datetime(int(r['created']),unit='s',utc=True) if r['created'] else pd.NaT
 stud=[r for r in cap if r['role'].strip().lower()=='student' and r['uai_el'].strip()]
 uai_first_use={}

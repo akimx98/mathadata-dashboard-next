@@ -70,10 +70,19 @@ public/data/capytale_fresh_<AAAAMMJJ>.csv
 
 ### Promouvoir cette extraction en référence de l'enquête
 
-1. **Pointer les scripts** sur le nouveau fichier (remplacer `capytale_fresh_20260619.csv`) :
-   `usage-capytale/build_canonical.py`, `usage-capytale/build_teachers_v2.py`,
-   `usage-capytale/compute_facts.py`, et la valeur citée dans `usage-capytale/DEFINITIONS.md`.
-2. Relancer la chaîne : `bash enquete_usages_2026/rebuild_all.sh`, puis vérifier que
+1. Pointer toute la chaîne sur le nouveau fichier avec une seule variable :
+
+   ```bash
+   export MATHADATA_CAPYTALE_CSV="$PWD/public/data/capytale_fresh_<AAAAMMJJ>.csv"
+   bash enquete_usages_2026/rebuild_all.sh
+   ```
+
+   Si les croisements site × Capytale doivent aussi être reconstruits, définir
+   `MATHADATA_SNAPSHOT` dans le même terminal.
+2. Vérifier que
    `transverse/check_contracts.py` finit par `✅`. ⚠️ Les **populations attendues** (`K.EXPECT` dans
    `enquete_common.py`) sont ancrées sur l'extraction actuelle : une nouvelle extraction les fera bouger
    → mettre à jour `K.EXPECT` **consciemment** (c'est le rôle des contrats de forcer cette revue).
+3. Pour promouvoir durablement le CSV, mettre à jour le fichier de référence et sa date dans le
+   glossaire, les définitions et les rapports concernés, puis committer ensemble l'entrée et les
+   sorties régénérées. Sans cette promotion, la variable ne vaut que pour la session locale.

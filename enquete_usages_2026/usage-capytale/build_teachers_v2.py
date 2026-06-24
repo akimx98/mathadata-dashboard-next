@@ -17,7 +17,7 @@ BASE=f"{_RT}/public/data"
 OUT=f"{_ENQ}/usage-capytale/data"
 DEMO, PIO = K.DEMO, K.PIO
 
-df=pd.read_csv(f"{BASE}/capytale_fresh_20260619.csv",dtype=str,keep_default_na=False)
+df=pd.read_csv(K.capytale_csv(),dtype=str,keep_default_na=False)
 ann=pd.read_csv(f"{BASE}/annuaire_etablissements.csv",dtype=str,keep_default_na=False)
 df=df[df['teacher']!=DEMO].copy(); df['role']=df['role'].str.strip().str.lower()
 df['created']=pd.to_numeric(df['created'],errors='coerce')

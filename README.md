@@ -2,6 +2,10 @@
 
 Tableau de bord d'analyse des usages de la plateforme MathAData en établissements scolaires.
 
+> **Nouveau collègue ?** Pour cloner le dépôt et interroger directement les données avec Claude,
+> suivre [`POUR_DEMARRER.md`](POUR_DEMARRER.md). Aucun token ni lancement du dashboard n'est
+> nécessaire pour analyser les données déjà versionnées.
+
 ## Objectif
 
 Analyser et visualiser les usages réels de MathAData dans les lycées et collèges français :

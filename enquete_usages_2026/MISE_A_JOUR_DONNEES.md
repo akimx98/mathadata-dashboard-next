@@ -131,5 +131,13 @@ Elle s'obtient via l'**API Capytale** avec un script fourni :
 python3 enquete_usages_2026/fetch_capytale.py     # → public/data/capytale_fresh_<AAAAMMJJ>.csv
 ```
 
-Puis pointer les scripts sur ce nouveau fichier et relancer `rebuild_all.sh`. Schéma des colonnes,
-endpoint, gestion du token et étape de promotion : [`DONNEES_BRUTES_CAPYTALE.md`](DONNEES_BRUTES_CAPYTALE.md).
+Puis relancer toute la chaîne sur ce fichier, sans modifier les scripts :
+
+```bash
+export MATHADATA_CAPYTALE_CSV="$PWD/public/data/capytale_fresh_<AAAAMMJJ>.csv"
+export MATHADATA_SNAPSHOT="/chemin/vers/mathadata-website/private/payload-snapshots/<timestamp>"
+bash enquete_usages_2026/rebuild_all.sh
+```
+
+Schéma des colonnes, endpoint, gestion du token et promotion durable comme nouvelle référence :
+[`DONNEES_BRUTES_CAPYTALE.md`](DONNEES_BRUTES_CAPYTALE.md).

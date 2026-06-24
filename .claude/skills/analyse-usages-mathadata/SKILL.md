@@ -32,6 +32,13 @@ faire sortir de données personnelles du périmètre local autorisé.
   S'il est absent, ne pas inventer : indiquer qu'il manque et renvoyer à
   [`enquete_usages_2026/MISE_A_JOUR_DONNEES.md`](../../../enquete_usages_2026/MISE_A_JOUR_DONNEES.md)
   (récupération via le dépôt voisin `mathadata-website`, variable `MATHADATA_SNAPSHOT`).
+  **Ne pas relancer tout le pipeline pour une simple demande nominative** :
+  - question portant uniquement sur le site → lire directement
+    `$MATHADATA_SNAPSHOT/users.json` ;
+  - noms/e-mails à rattacher aux profils Capytale existants → exécuter seulement
+    `python3 enquete_usages_2026/site-vers-classe/match_individuals.py --local-only`, puis lire
+    `_local/match_nominatif.csv`.
+  `rebuild_all.sh` ne sert que si l'utilisateur demande d'actualiser ou recalculer les analyses.
 
 ## Workflow
 

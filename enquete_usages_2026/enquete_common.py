@@ -25,6 +25,13 @@ def snapshot():
     return os.environ.get("MATHADATA_SNAPSHOT",
         os.path.join(WS, "mathadata-website", "private", "payload-snapshots", "2026-06-20T10-37-24-905Z"))
 
+def capytale_csv():
+    """Extraction Capytale brute. Override : env MATHADATA_CAPYTALE_CSV."""
+    return os.path.abspath(os.environ.get(
+        "MATHADATA_CAPYTALE_CSV",
+        os.path.join(PUBLIC, "capytale_fresh_20260619.csv"),
+    ))
+
 # ───────── comptes spéciaux (GLOSSAIRE §2) ─────────
 DEMO = 'c81e728d9d4c2f636f067f89cc14862c'   # compte démo (MD5 "2") → EXCLURE de tout
 PIO  = 'cfcd208495d565ef66e7dff9f98764da'   # hub fondateur (MD5 "0") → ISOLER (jamais un prof local)

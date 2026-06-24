@@ -1,5 +1,8 @@
 # Enquête usages MathAData (juin 2026)
 
+> **Première prise en main avec Claude :**
+> [`../POUR_DEMARRER.md`](../POUR_DEMARRER.md).
+
 Le bon cadre mental n'est pas « deux volets » mais **une synthèse transversale + des analyses qui
 répondent à des questions différentes**, toutes calées sur **les mêmes définitions canoniques** et
 les mêmes données. Les dossiers `usage-capytale/` `site-vers-classe/` restent l'organisation **physique** (par source

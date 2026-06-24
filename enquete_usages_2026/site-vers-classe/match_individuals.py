@@ -11,8 +11,12 @@ Signaux, du + fort au + faible :
 
 Calibration : pionnier (Haubourdin 0590093F) + etablissements 1:1.
 Sortie : pseudonymisee (user site = code S####, compte Capytale = md5[:8]). Mapping en SCRATCH.
+
+Mode local nominatif uniquement :
+  python3 match_individuals.py --local-only
+Calcule seulement SCRATCH/match_nominatif.csv et ne modifie aucune sortie versionnée.
 """
-import json, re, os
+import json, re, os, sys
 import pandas as pd
 from collections import defaultdict, Counter
 import os as _os
@@ -26,6 +30,7 @@ OUT =f"{_ENQ}/site-vers-classe/data"
 SCRATCH=_os.environ.get("MATHADATA_LOCAL", f"{_ENQ}/_local")  # ex-scratch session -> dossier local stable (gitignore)
 DEMO, PIO = K.DEMO, K.PIO
 CAP_RE=re.compile(r'web/b/(\d+)')
+LOCAL_ONLY='--local-only' in sys.argv
 
 # ---- site : users + clics capytale nominatifs ----
 users={u['id']:u for u in json.load(open(f"{SNAP}/users.json"))}
@@ -46,7 +51,7 @@ print("clics capytale nominatifs:",len(CK),"| avec UAI:",int((CK['uai']!='').sum
       "| users distincts:",CK['site_id'].nunique())
 
 # ---- capytale : clones role=teacher (tests/distributions) ----
-cap=pd.read_csv(f"{BASE}/capytale_fresh_20260619.csv",dtype=str,keep_default_na=False)
+cap=pd.read_csv(K.capytale_csv(),dtype=str,keep_default_na=False)
 cap=cap[cap['teacher']!=DEMO].copy(); cap['role']=cap['role'].str.strip().str.lower()
 cap['dt']=pd.to_datetime(pd.to_numeric(cap['created'],errors='coerce'),unit='s',utc=True)
 teach=cap[cap['role']=='teacher'].copy()
@@ -153,7 +158,8 @@ for r in allm.itertuples():
         uai=r.uai, commune=com.get(r.uai,''), academie=aca.get(r.uai,''),
         etab=nom.get(r.uai,''), statut=info.get('statut'), ftype=info.get('trainedTypeFormation')))
 M=pd.DataFrame(rows).sort_values(['site_code','cap_acc']).reset_index(drop=True)  # ordre déterministe (rebuild idempotent)
-M.to_csv(f"{OUT}/match_candidates.csv",index=False)
+if not LOCAL_ONLY:
+    M.to_csv(f"{OUT}/match_candidates.csv",index=False)
 # mapping nominatif -> SCRATCH uniquement
 nominatif=[]
 for r in allm.itertuples():
@@ -173,7 +179,11 @@ val['pioneer_site_accounts_haubourdin']=int(len([u for u,i in users.items() if (
 val['site_clickers_with_uai']=int((CK['uai']!='').sum() and CK[CK['uai']!='']['site_id'].nunique())
 val['matched_share_of_clickers']=round(100*M['site_code'].nunique()/max(1,CK[CK['uai']!='']['site_id'].nunique()),1)
 val['n_uai_1to1']=int(len(B))
-json.dump(val,open(f"{OUT}/match_validation.json","w"),ensure_ascii=False,indent=1,default=str)
+if not LOCAL_ONLY:
+    json.dump(val,open(f"{OUT}/match_validation.json","w"),ensure_ascii=False,indent=1,default=str)
 print(json.dumps(val,ensure_ascii=False,indent=1,default=str))
+if LOCAL_ONLY:
+    print(f"\n✓ Mapping nominatif local écrit : {SCRATCH}/match_nominatif.csv")
+    print("  Aucune sortie versionnée n'a été modifiée (--local-only).")
 print("\nrepartition confiance:",dict(M['conf'].value_counts()))
 print("ex. (pseudonymise):"); print(M.head(12).to_string(index=False))

@@ -19,9 +19,16 @@ set -euo pipefail
 E="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"          # enquete_usages_2026/
 SNAP="${MATHADATA_SNAPSHOT:-$(cd "$E/../.." && pwd)/mathadata-website/private/payload-snapshots/2026-06-20T10-37-24-905Z}"
 LOCAL="${MATHADATA_LOCAL:-$E/_local}"
+CAPYTALE="${MATHADATA_CAPYTALE_CSV:-$E/../public/data/capytale_fresh_20260619.csv}"
+if [ ! -f "$CAPYTALE" ]; then
+  echo "✗ Extraction Capytale introuvable : $CAPYTALE" >&2
+  exit 1
+fi
+export MATHADATA_CAPYTALE_CSV="$CAPYTALE"
 run(){ echo "→ $1"; python3 "$E/$1"; }
 skip(){ echo "⏭  SAUTÉ $1 ($2)"; }
 
+echo "Entrée Capytale : $MATHADATA_CAPYTALE_CSV"
 echo "═══ 1. Capytale (depuis public/data, toujours reproductible) ═══"
 run usage-capytale/build_canonical.py
 run usage-capytale/build_teachers_v2.py

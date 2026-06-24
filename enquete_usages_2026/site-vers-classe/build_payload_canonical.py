@@ -136,7 +136,7 @@ UU['clicked_res']=UU['n_res_clicks']>0
 UU['active']=UU['viewed_module']|UU['clicked_res']|(UU['n_video_views']>0)
 
 # ---------- Capytale usage par UAI ----------
-cap=pd.read_csv(f"{BASE}/capytale_fresh_20260619.csv",dtype=str,keep_default_na=False)
+cap=pd.read_csv(K.capytale_csv(),dtype=str,keep_default_na=False)
 cap=cap[cap['teacher']!=DEMO].copy()
 cap['role']=cap['role'].str.strip().str.lower()
 cap['dt']=to_dt(pd.to_numeric(cap['created'],errors='coerce'),)  # epoch sec
