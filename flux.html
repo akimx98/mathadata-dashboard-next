@@ -19,7 +19,8 @@ h2{font-size:21px;font-weight:800;letter-spacing:-.01em;margin:34px 0 2px}
 .card{background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:8px;margin:14px 0}
 .scroll{overflow-x:auto}
 svg{display:block;max-width:100%;margin:0 auto}
-#dA svg,#dB svg{min-width:680px}
+#dA svg,#dB svg,#dC svg,#dD svg{min-width:680px}
+.rate{margin:10px 0 0}
 .colhead{font-family:var(--grot);font-weight:800;font-size:13px;fill:var(--ink);letter-spacing:.02em}
 .colsub{font-family:var(--mono);font-size:10px;fill:var(--faint)}
 .nlab{font-family:var(--grot);font-weight:700;font-size:12.5px;fill:var(--ink)}
@@ -40,7 +41,7 @@ thead th{font-family:var(--grot);font-weight:700;color:var(--ink);border-bottom:
 
 <div class="wrap">
   <h1>Canal d'arrivée, profondeur, retour</h1>
-  <p class="sub"><b><span data-f="pop">223</span> professeurs</b> ont touché des élèves avec MathAData (hub fondateur &amp; compte démo exclus). Parmi eux, <b><span data-f="reached">176</span> ont atteint une vraie classe</b> (séance ≥ 5 élèves) ; <b><span data-f="ss">47</span> sont restés « sous-seuil »</b> (1 à 4 élèves, jamais une classe). Les flux ci-dessous portent sur ces <b><span data-f="reached">176</span></b>. Deux questions : <b>qui revient d'une année sur l'autre ?</b> et <b>qui réutilise plus d'une fois dans l'année ?</b></p>
+  <p class="sub"><b><span data-f="pop">223</span> professeurs</b> ont touché des élèves avec MathAData (hub fondateur &amp; compte démo exclus) ; en amont, <b><span data-f="test">37</span> autres ont cloné une activité sans jamais la distribuer</b> (« testeurs purs »), soit <b><span data-f="popAll">260</span> profs côté Capytale</b>. Parmi les <span data-f="pop">223</span>, <b><span data-f="reached">176</span> ont atteint une vraie classe</b> (séance ≥ 5 élèves) et <b><span data-f="ss">47</span> sont restés « sous-seuil »</b> (1 à 4 élèves, jamais une classe). Deux lectures ci-dessous : <b>(1) l'entonnoir complet</b> — par quel <b>canal</b> chacun arrive, <b>formé ou non</b>, et jusqu'où il monte sur l'<b>escalier d'usage</b> (tous les profs) ; <b>(2) le retour</b> d'une année sur l'autre, pour les <span data-f="reached">176</span> qui ont atteint une classe.</p>
   <span class="est">Canal = <b>estimé</b> (mondes site ↔ Capytale disjoints : appariement individuel 75 paires + trace établissement). Profondeur &amp; retour = <b>mesurés</b> sur Capytale. Chiffres injectés depuis <code>facts_profiles.json</code>. Définitions : <a href="https://github.com/akimx98/mathadata-dashboard-next/blob/main/enquete_usages_2026/transverse/GLOSSAIRE.md" style="color:var(--site)">GLOSSAIRE</a>.</span>
 
   <div class="legend">
@@ -49,7 +50,33 @@ thead th{font-family:var(--grot);font-weight:700;color:var(--ink);border-bottom:
     <span style="color:var(--faint)">Ruban coloré par <b>canal d'origine</b> (figé à la 1ʳᵉ apparition), conservé jusqu'au bout.</span>
   </div>
 
-  <h2>1 · Provenance — d'où viennent ceux qui reviennent (et qui décrochent)</h2>
+  <h2>1 · L'entonnoir des <span data-f="pop">223</span> profs qui ont touché des élèves</h2>
+  <p class="h2sub">Pour chacun, trois attributs croisés : <b>par quel canal il est arrivé</b> (origine figée), <b>était-il formé</b>, et <b>jusqu'où il est monté</b> sur l'escalier d'usage. Chaque ruban est un scénario complet (ex. <i>Capytale-direct → jamais formé → usage unique</i>), coloré par son canal.</p>
+  <div class="card scroll" id="dC"><svg id="sankC" viewBox="0 0 1020 360" role="img" aria-label="Sankey canal formation profondeur — 223 profs"></svg></div>
+  <div class="legend">
+    <span><span class="sw" style="background:var(--amber)"></span><b>Formé</b></span>
+    <span><span class="sw" style="background:var(--grey)"></span><b>Jamais formé</b></span>
+    <span style="color:var(--faint)">Escalier de profondeur (colonne de droite) : <b>sous-seuil</b> 1-4 él. → <b>usage unique</b> (1 classe ≥5) → <b>usage multiple</b> (≥2 occasions).</span>
+  </div>
+  <div class="def">
+    <span class="k">Sous-seuil</span> = a distribué à des élèves mais <b>jamais</b> une séance ≥5 él. (tous groupes 1-4). ·
+    <span class="k">Usage unique</span> = exactement <b>1 occasion</b> d'usage-classe (demi-groupes d'une même activité fusionnés). ·
+    <span class="k">Usage multiple</span> = <b>≥2 occasions</b>. ·
+    <span class="k">Formé</span> = statut site <i>forme/mentor</i> (binaire) — <b>presque toujours « via le site »</b> (la formation laisse une trace site).
+  </div>
+  <div class="rate" id="rateC"></div>
+  <p class="h2sub" style="margin-top:10px">Taux de lecture : parmi ceux qui <b>arrivent par le site</b>, <span data-f="rcViaClasse">86</span> % atteignent une classe ≥5, contre <span data-f="rcCapClasse">74</span> % des <b>Capytale-direct</b> ; <span data-f="rcFormeClasse">88</span> % des <b>formés</b> contre <span data-f="rcJamaisClasse">76</span> % des <b>jamais formés</b>. Écarts <b>descriptifs</b> et <b>confondus</b> (formé ≈ via-site) — à lire avec l'avertissement en bas de page.</p>
+
+  <h2>2 · Le même entonnoir, élargi à <span data-f="popAll">260</span> profs (tout Capytale)</h2>
+  <p class="h2sub">On ajoute les <b><span data-f="test">37</span> « testeurs purs »</b> : ils ont cloné une activité MathAData pour la tester mais ne l'ont <b>jamais distribuée</b> à des élèves (barreau le plus bas de l'escalier). Même lecture canal × formation × profondeur, escalier complet (<i>testeur pur → sous-seuil → usage unique → usage multiple</i>).</p>
+  <div class="card scroll" id="dD"><svg id="sankD" viewBox="0 0 1020 420" role="img" aria-label="Sankey canal formation profondeur — 260 profs"></svg></div>
+  <div class="def">
+    <span class="k">Testeur pur</span> = clone <b>role=teacher</b> (test perso), <b>0 élève</b> distribué (niveau 2 de l'escalier §4). ·
+    <b>Lecture-clé</b> : la formation est presque entièrement « via le site » — la <b>quasi-totalité des « Capytale-direct » ne sont jamais formés</b> ; et l'escalier se gravit davantage chez les profs arrivés <b>par le site</b> et/ou <b>formés</b>, mais ces deux signaux sont <b>largement le même</b> et restent <b>descriptifs</b>, pas causals.
+  </div>
+  <div class="rate" id="rateD"></div>
+
+  <h2>3 · Provenance — d'où viennent ceux qui reviennent (et qui décrochent)</h2>
   <p class="h2sub">Canal d'arrivée → devenir. On lit la <b>composition</b> de chaque colonne de droite.</p>
   <div class="card scroll" id="dA"><svg id="sankA" viewBox="0 0 1020 300" role="img" aria-label="Sankey canal vers devenir"></svg></div>
   <div class="def">
@@ -60,17 +87,17 @@ thead th{font-family:var(--grot);font-weight:700;color:var(--ink);border-bottom:
     <span class="k">Trop récent</span> = 1ʳᵉ classe en 2025-26 → retour 2026-27 <b>pas encore observable</b> (censuré).
   </div>
 
-  <h2>2 · Trajectoires complètes — canal → profondeur (année 1) → retour</h2>
+  <h2>4 · Trajectoires complètes — canal → profondeur (année 1) → retour</h2>
   <p class="h2sub">Chaque ruban est un scénario complet (ex. <i>Capytale-direct → usage unique → décroche</i>), coloré par son canal d'origine.</p>
   <div class="card scroll" id="dB"><svg id="sankB" viewBox="0 0 1020 380" role="img" aria-label="Sankey canal profondeur retour"></svg></div>
   <div class="def">
     <span class="k">Réutilise (an 1)</span> = <b>≥ 2 occasions</b> d'usage-classe <b>dans la 1ʳᵉ année</b> (≥2 activités, ou même activité à &gt;10 j, ou plusieurs classes pleines). ·
     <span class="k">Usage unique (an 1)</span> = <b>1 seule</b> occasion la 1ʳᵉ année (demi-groupes d'une même activité à &lt;10 j = 1 occasion). ·
-    Colonne de droite : même sens qu'au diagramme 1.
+    Colonne de droite : même sens qu'au diagramme 3 (Provenance).
     <br><b>⚠️ Réutilisation = strictement intra-annuelle</b> (jamais l'année suivante) ; sinon « réutiliser » et « revenir » se confondent par construction. Le retour est mesuré <b>entre</b> années, à part.
   </div>
 
-  <h2>3 · Ce qui prédit le retour <span style="font-weight:400;font-size:15px;color:var(--ink2)">(cohorte éligible, n = <span data-f="elig">77</span>)</span></h2>
+  <h2>5 · Ce qui prédit le retour <span style="font-weight:400;font-size:15px;color:var(--ink2)">(cohorte éligible, n = <span data-f="elig">77</span>)</span></h2>
   <p class="h2sub">Éligible = a atteint une classe ≥5 él. avec 1ʳᵉ année ≤ 2024-25 (retour observable). Les « trop récents » et les « sous-seuil » sont exclus du dénominateur.</p>
   <table>
     <thead><tr><th>Facteur (posé en année 1)</th><th>Taux de retour</th><th>Base</th><th>Solidité</th></tr></thead>
@@ -101,6 +128,9 @@ const F={pop:223,reached:176,ss:47,elig:77,
  via:{tot:77,rev:8,non:7,rec:62},cap:{tot:99,rev:18,non:44,rec:37},
  pb:{cap:{multi:{rev:8,non:10,rec:9},uniq:{rev:10,non:34,rec:28}},via:{multi:{rev:5,non:0,rec:24},uniq:{rev:3,non:7,rec:38}}}};
 /*FACTS_END*/
+/*FUNNEL_START*/
+const FN={"touched":{"n":223,"xtab":{"capytale_direct|jamais|uniq":70,"capytale_direct|jamais|multi":25,"via_site|jamais|multi":7,"via_site|jamais|uniq":23,"capytale_direct|jamais|ss":33,"via_site|forme|uniq":23,"via_site|forme|multi":24,"via_site|jamais|ss":7,"via_site|forme|ss":6,"capytale_direct|forme|multi":3,"capytale_direct|forme|ss":1,"capytale_direct|forme|uniq":1},"rates":{"canal":{"via_site":{"n":90,"touched":90,"classe":77},"capytale_direct":{"n":133,"touched":133,"classe":99}},"formation":{"forme":{"n":58,"touched":58,"classe":51},"jamais":{"n":165,"touched":165,"classe":125}}}},"all":{"n":260,"xtab":{"capytale_direct|jamais|uniq":70,"capytale_direct|jamais|multi":25,"via_site|jamais|multi":7,"capytale_direct|jamais|test":23,"via_site|jamais|uniq":23,"via_site|jamais|test":5,"capytale_direct|jamais|ss":33,"via_site|forme|uniq":23,"via_site|forme|multi":24,"via_site|forme|test":9,"via_site|jamais|ss":7,"via_site|forme|ss":6,"capytale_direct|forme|multi":3,"capytale_direct|forme|ss":1,"capytale_direct|forme|uniq":1},"rates":{"canal":{"via_site":{"n":104,"touched":90,"classe":77},"capytale_direct":{"n":156,"touched":133,"classe":99}},"formation":{"forme":{"n":67,"touched":58,"classe":51},"jamais":{"n":193,"touched":165,"classe":125}}}}};
+/*FUNNEL_END*/
 const C={ink:'#16212B',ink2:'#3C4A57',faint:'#7C8893',site:'#2F6DB5',classe:'#C85A33',bridge:'#0E8074',leak:'#AE3340',amber:'#C99A2E',rule:'#D8D2C4',grey:'#B7B2A6'};
 const NS='http://www.w3.org/2000/svg';
 function el(t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;}
@@ -162,4 +192,40 @@ const pathsB=[
 ].flatMap(g=>['multi','uniq'].flatMap(lvl=>['rev','non','rec'].map(d=>({ids:[g.c,lvl,d],n:g.m[lvl][d]||0,color:g.co}))))
  .filter(p=>p.n>0);
 pathSankey('sankB',metaB,pathsB,[['CANAL','estimé'],['PROFONDEUR — AN 1','mesuré'],['RETOUR','an+1']],1020,380);
+
+// ---- Diagrammes C (223) & D (260) : Canal -> Formation -> Profondeur (depuis FN) ----
+const DLAB={test:'Testeur pur',ss:'Sous-seuil (1-4 él.)',uniq:'Usage unique',multi:'Usage multiple'};
+const DCOL={test:'#C7C1B3',ss:'#9C8E6E',uniq:C.classe,multi:'#7E2F14'};
+const DORD=['multi','uniq','ss','test'];   // escalier : le plus profond en haut, le plus bas (testeur) en bas
+function funnelMeta(depths){
+  const m={
+    via_site:{col:0,label:'Via le site',color:C.site}, capytale_direct:{col:0,label:'Capytale-direct',color:C.bridge},
+    forme:{col:1,label:'Formé',color:C.amber}, jamais:{col:1,label:'Jamais formé',color:C.grey},
+  };
+  DORD.filter(d=>depths.has(d)).forEach(d=>{m[d]={col:2,label:DLAB[d],color:DCOL[d]};});
+  return m;
+}
+function funnelPaths(xtab){
+  const col={via_site:C.site,capytale_direct:C.bridge}, out=[];
+  for(const key in xtab){const p=key.split('|'), n=xtab[key]; if(n>0) out.push({ids:p,n,color:col[p[0]]});}
+  return out;
+}
+function drawFunnel(svgId,fdata,H){
+  const xt=fdata.xtab, depths=new Set(Object.keys(xt).map(k=>k.split('|')[2]));
+  pathSankey(svgId,funnelMeta(depths),funnelPaths(xt),
+    [['CANAL D’ARRIVÉE','estimé'],['FORMATION','estimé'],['PROFONDEUR ATTEINTE','mesuré']],1020,H);
+}
+// tableau de taux : proportion atteignant une classe ≥5 (et, si showTouched, ayant distribué ≥3) par canal & formation
+function rateTable(id,rates,showTouched){
+  const pc=(o,k)=> o.n? `${o[k]}/${o.n} <b>(${Math.round(100*o[k]/o.n)} %)</b>` : '—';
+  const cols = showTouched ? [['A distribué (≥3 él.)','touched'],['A atteint une classe (≥5)','classe']]
+                           : [['A atteint une classe (≥5)','classe']];
+  const head = '<tr><th>Sous-population</th>'+cols.map(c=>`<th>${c[0]}</th>`).join('')+'</tr>';
+  const row=(label,o,top)=>{const ps=top?' style="padding-top:12px"':''; return `<tr><td${ps}>${label}</td>`+cols.map(c=>`<td${ps}>${pc(o,c[1])}</td>`).join('')+'</tr>';};
+  const body = row('Via le site',rates.canal.via_site,false)+row('Capytale-direct',rates.canal.capytale_direct,false)
+             + row('Formé',rates.formation.forme,true)+row('Jamais formé',rates.formation.jamais,false);
+  document.getElementById(id).innerHTML=`<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
+}
+drawFunnel('sankC',FN.touched,360);  rateTable('rateC',FN.touched.rates,false);
+drawFunnel('sankD',FN.all,420);      rateTable('rateD',FN.all.rates,true);
 </script>
