@@ -113,10 +113,12 @@ JSON **strict** (NaN/Inf réellement rejetés), invariants population/rétention
 
 ## 6. Publication (ne jamais diverger)
 
-Voir **[`enquete_usages_2026/PUBLISH.md`](enquete_usages_2026/PUBLISH.md)**. Source de vérité = les
-fichiers HTML du repo. On régénère **gh-pages** (`bash enquete_usages_2026/publish_pages.sh`) **et**
-les **artifacts claude.ai** (même UUID) — jamais l'inverse. Le script **refuse** de publier si un
-e-mail non-`mathadata.fr` apparaît dans une source.
+Voir **[`enquete_usages_2026/PUBLISH.md`](enquete_usages_2026/PUBLISH.md)**. **Une seule surface :
+GitHub Pages** (les anciens artifacts claude.ai sont **retirés** depuis le 24/06/2026 → pages de
+redirection, ne plus y republier). Source de vérité = les fichiers HTML du repo ; on édite la source
+puis on régénère **gh-pages** (`bash enquete_usages_2026/publish_pages.sh`) — jamais l'inverse. Pas de
+dérive possible : le contenu gh-pages vit dans le repo (diffable contre la source). Le script **refuse**
+de publier si un e-mail non-`mathadata.fr` apparaît dans une source.
 
 ## 7. Sécurité (NON NÉGOCIABLE)
 
