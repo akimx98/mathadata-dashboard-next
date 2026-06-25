@@ -1,5 +1,10 @@
 # Documentation des données brutes Capytale MathAData
 
+Ce document décrit le format consommé par l'application Next.js. Les définitions analytiques
+canoniques, exclusions, seuils et méthodes de comptage sont maintenus dans le
+[glossaire de `mathadata/enquete-usages`](https://github.com/mathadata/enquete-usages/blob/main/enquete_usages_2026/transverse/GLOSSAIRE.md).
+En cas de divergence, le glossaire de l'enquête prévaut pour les analyses publiées.
+
 ## Source
 
 Les données sont fournies par l'API statistique Capytale :

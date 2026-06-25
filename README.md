@@ -1,15 +1,17 @@
 # Dashboard MathAData - Next.js
 
-Tableau de bord d'analyse des usages de la plateforme MathAData en établissements scolaires.
+Application interactive de visualisation des usages de la plateforme MathAData en établissements
+scolaires, déployée sur [Vercel](https://mathadata-dashboard-next.vercel.app/).
 
 > Les analyses reproductibles, le glossaire canonique, les rapports et les GitHub Pages vivent
-> désormais dans [`mathadata/enquete-usages`](https://github.com/mathadata/enquete-usages).
+> désormais dans [`mathadata/enquete-usages`](https://github.com/mathadata/enquete-usages) et sur
+> [`mathadata.github.io/enquete-usages`](https://mathadata.github.io/enquete-usages/).
 > Cette application conserve ses calculs interactifs historiques ; leur alignement avec les
 > définitions canoniques sera traité séparément.
 
 ## Objectif
 
-Analyser et visualiser les usages réels de MathAData dans les lycées et collèges français :
+Explorer et visualiser interactivement les usages MathAData dans les lycées et collèges français :
 - Adoption par les enseignants (test vs enseignement)
 - Engagement des élèves (continuité, travail à domicile, 2èmes séances)
 - Succès des activités pédagogiques
@@ -62,8 +64,8 @@ Analyser et visualiser les usages réels de MathAData dans les lycées et collè
 ## Démarrage
 
 ```bash
-# Installation
-npm install
+# Installation reproductible
+npm ci
 
 # Développement
 npm run dev
@@ -90,6 +92,11 @@ CAPYTALE_MATHADATA_TOKEN=...
 
 L'URL peut être remplacée avec `CAPYTALE_MATHADATA_URL`; sinon le endpoint MathAData
 Capytale est utilisé par défaut. Le jeton n'est jamais envoyé au navigateur.
+
+En production, `BLOB_READ_WRITE_TOKEN` est fourni par l'intégration Vercel Blob et permet de
+conserver le CSV synchronisé et ses métadonnées. Sans cette variable, le développement local écrit
+dans `storage/`, ignoré par Git. Si aucune donnée persistée n'existe, l'API utilise
+`public/data/Mathadata20260210.csv`.
 
 La structure et le sens métier du CSV source sont décrits dans
 [DONNEES_BRUTES_CAPYTALE.md](DONNEES_BRUTES_CAPYTALE.md).
@@ -168,7 +175,8 @@ tauxUsageApresTest = (nbProfsTestedThenTaught / nbProfsTested) * 100
 ## 📝 Fichiers principaux
 
 ### Code
-- `components/Dashboard.tsx` (2873 lignes) : Composant principal avec toute la logique
+- `components/Dashboard.tsx` : composant principal et logique interactive
+- `app/api/csv/route.ts` : lecture, synchronisation Capytale et persistance du CSV
 - `app/page.tsx` : Page d'accueil
 - `app/globals.css` : Styles globaux
 
@@ -193,14 +201,17 @@ tauxUsageApresTest = (nbProfsTestedThenTaught / nbProfsTested) * 100
 - `Role="teacher"` : Prof teste seul l'activité
 - `Role="student"` : Élève utilise l'activité (en classe ou à domicile)
 
-## Métriques disponibles
+## Métriques calculées à l'exécution
 
 ### Niveau global
-- Total usages : 2106
-- Élèves uniques : ~1800
-- Séances détectées : ~250
-- 2èmes séances : ~21 (8.4%)
-- Moyenne élèves/séance : ~7
+- affectations et comptes pseudonymisés distincts ;
+- séances reconstruites et taille moyenne ;
+- reprises collectives et deuxièmes séances ;
+- comportement de test puis d'enseignement.
+
+Les valeurs dépendent du CSV actuellement stocké dans Vercel Blob ou, à défaut, du fichier fallback.
+Ne pas recopier de chiffres de cette interface dans un rapport canonique : utiliser
+[`mathadata/enquete-usages`](https://github.com/mathadata/enquete-usages).
 
 ### Par établissement
 - Nombre de séances
@@ -222,6 +233,7 @@ tauxUsageApresTest = (nbProfsTestedThenTaught / nbProfsTested) * 100
 
 ## Ressources
 
+- [Analyses canoniques et GitHub Pages](https://github.com/mathadata/enquete-usages)
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Recharts Documentation](https://recharts.org/)
 - [Leaflet Documentation](https://leafletjs.com/)

@@ -8,11 +8,13 @@ Le dashboard affiche des statistiques officielles sur les établissements scolai
 
 ### Provenance des données
 
-Toutes les données proviennent de **data.education.gouv.fr** (API v2.1) :
+Le fichier versionné actuel a été produit depuis **data.education.gouv.fr** (API v2.1) avec les
+millésimes indiqués ci-dessous. Il s'agit d'un instantané technique, pas d'une source mise à jour
+automatiquement :
 
 #### 1. **Nombre de collèges**
 - **Source** : Dataset `fr-en-adresse-et-geolocalisation-etablissements-premier-et-second-degre`
-- **Date** : Novembre 2025 (données à jour)
+- **Date de génération de l'instantané** : novembre 2025
 - **Méthode** : Comptage des établissements où `nature_uai_libe="COLLEGE"`
 - **URL** : https://data.education.gouv.fr/explore/dataset/fr-en-adresse-et-geolocalisation-etablissements-premier-et-second-degre
 
@@ -126,7 +128,7 @@ Vous verrez une liste comme :
 
 ### Étape 2 : Configurer les noms courts
 
-Dans le fichier `components/Dashboard.tsx`, modifiez l'objet `ACTIVITY_SHORT_NAMES` (lignes 34-45) :
+Dans le fichier `components/Dashboard.tsx`, modifiez l'objet `ACTIVITY_SHORT_NAMES` :
 
 ```typescript
 const ACTIVITY_SHORT_NAMES: Record<string, string> = {
@@ -211,7 +213,8 @@ curl -s -G 'https://data.education.gouv.fr/api/v2/catalog/datasets/fr-en-lycee_p
 public/data/
 ├── academies_stats.json          # Statistiques officielles des académies
 ├── annuaire_etablissements.csv   # Annuaire complet (avec IPS, coordonnées)
-├── mathadata_2025-10-08.csv      # Export des usages MathAData
+├── Mathadata20260210.csv          # Fallback runtime si aucun CSV n'est persisté
+├── mathadata_2025-10-08.csv      # Donnée historique utilisée par la page de test/backup
 └── academies.geojson             # Contours géographiques des académies
 ```
 
@@ -219,10 +222,9 @@ public/data/
 
 ```
 generate_academies_stats_v2.py    # Script principal (utilise les datasets élèves)
-generate_academies_stats_final.py # Ancienne version (à ne plus utiliser)
 ```
 
-**⚠️ Important** : Utiliser uniquement `generate_academies_stats_v2.py` qui compte les établissements depuis les datasets d'élèves (plus cohérent).
+**⚠️ Important** : `generate_academies_stats_v2.py` est le seul script de génération versionné.
 
 ---
 
@@ -296,10 +298,10 @@ Si une académie manque (ex: Mayotte actuellement), elle n'apparaîtra pas sur l
 
 ## 📝 Notes de développement
 
-### Dernières modifications (Nov 2025)
+### Historique de la configuration (novembre 2025)
 
 1. **Correction des sources de données** :
-   - Passage de `generate_academies_stats_final.py` à `generate_academies_stats_v2.py`
+   - Adoption de `generate_academies_stats_v2.py`
    - Comptage depuis les datasets d'élèves (plus cohérent)
    - Paris : 51 → 123 lycées GT, 39 → 58 lycées Pro
 
@@ -316,7 +318,7 @@ Si une académie manque (ex: Mayotte actuellement), elle n'apparaîtra pas sur l
 
 ```
 components/
-├── Dashboard.tsx        # Composant principal (3219 lignes)
+├── Dashboard.tsx        # Composant principal
 │   ├── Filtres (dates, académies, activités)
 │   ├── Graphiques (barres, ligne, répartition)
 │   ├── Tableaux (établissements, activités)
@@ -331,7 +333,7 @@ components/
 
 ### Dépendances clés
 
-- **Next.js 15.5.4** : Framework React
+- **Next.js 15** : framework React
 - **Leaflet 1.9.x** : Bibliothèque de cartes
 - **Papa Parse** : Parsing CSV
 - **Recharts** : Graphiques
@@ -345,9 +347,6 @@ npm run dev
 # Build production
 npm run build
 npm start
-
-# Linter
-npm run lint
 
 # Régénérer les stats académiques
 python3 generate_academies_stats_v2.py

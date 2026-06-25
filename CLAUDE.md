@@ -9,6 +9,7 @@ personnel associé à `mathadata-dashboard-next.vercel.app`.
 - Données runtime : `public/data/`, avec `Mathadata20260210.csv` comme fallback.
 - Synchronisation Capytale : `app/api/csv/route.ts`.
 - Persistance de production : Vercel Blob.
+- Repli local de persistance : `storage/`, ignoré par Git.
 - Variables locales : `.env.local`, jamais versionné.
 
 Les analyses reproductibles, le glossaire canonique, les rapports et GitHub Pages sont dans
@@ -26,6 +27,8 @@ npm run build
 
 Ne modifier ni les domaines, ni les variables Vercel, ni le Blob store sans demande explicite.
 Les pushes sur `main` déclenchent le déploiement Vercel de production.
+Pour un contrôle post-déploiement, tester uniquement `GET /` et `GET /api/csv` ; ne pas utiliser
+`POST /api/csv`, qui écrit dans le Blob store.
 
 ## Git
 
